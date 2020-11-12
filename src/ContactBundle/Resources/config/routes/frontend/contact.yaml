@@ -1,0 +1,16 @@
+frontend_contact_index:
+  path:     /
+  controller: ContactBundle\Controller\Frontend\ContactController::indexAction
+  methods:  [GET]
+
+frontend_contact_popup:
+  path:     /popup/{product_id}
+  controller: ContactBundle\Controller\Frontend\ContactController::PopupFormAction
+  methods:  [GET, POST]
+  defaults:
+    product_id: 0
+
+frontend_contact_save:
+  path:     /save/
+  controller: ContactBundle\Controller\Frontend\ContactController::indexAction
+  methods:  [POST]

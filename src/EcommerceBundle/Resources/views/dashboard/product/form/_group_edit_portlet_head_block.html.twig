@@ -1,0 +1,7 @@
+<p>
+	{% for product in products %}
+		<a href="{{ path('dashboard_product_edit', {id: product.id}) }}" target="_blank">
+			{{ product.title }}
+		</a><br>
+	{% endfor %}
+</p>

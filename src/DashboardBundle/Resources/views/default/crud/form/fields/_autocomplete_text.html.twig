@@ -1,0 +1,27 @@
+{% set divClass = '' %}
+{% set class = '' %}
+
+{% if field.vars.data is null and field.vars['required'] == true or field.vars.valid == false %}
+    {% set divClass = divClass ~ ' ' ~ 'validated validate is-invalid' %}
+    {% set class = 'is-invalid' %}
+{% endif %}
+
+<div class="form-group form-group-marginless kt-margin-t-20 {{ divClass }} row">
+    {{ form_label(field, label|default(null), {'label_attr': {'class': labelLg~ ' col-form-label'}}) }}
+    <div class="{{ divLg }}">
+        {{ form_widget(field, {'attr': {
+            'class': 'form-control autocomplete '~class~' '~(field.vars.attr.class is defined ? field.vars.attr.class),
+            'data-choices': field.vars.choices|json_encode|raw,
+            'placeholder': 'Начните ввод'
+        }}) }}
+        {% if form_errors(field) is empty and field.vars.help_block is defined and field.vars.help_block is not null %}
+            <span class="form-text text-muted">
+             {{ field.vars.help_block }}
+            </span>
+        {% elseif form_errors(field) is not empty %}
+            <span class="error invalid-feedback">
+                {{ form_errors(field) }}
+            </span>
+        {% endif %}
+    </div>
+</div>

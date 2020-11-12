@@ -1,0 +1,33 @@
+<!-- BEGIN NOTIFICATION DROPDOWN -->
+<li class="dropdown dropdown-hoverable dropdown-extended dropdown-dark dropdown-notification"
+    id="header_notification_bar">
+    <a href="javascript:void(0);" class="dropdown-toggle">
+        <i class="icon-basket-loaded"></i>
+        <span class="badge badge-danger "> {{ countNewOrders }} </span>
+    </a>
+    <ul class="dropdown-menu">
+        <li class="external">
+            <h3>
+                <span class="bold">{{ 'ui.pending'|trans([], 'DashboardBundle') }}: {{ countNewOrders }}</span>
+            </h3>
+            <a href="{{ path('dashboard_order_index') }}">{{ 'ui.show_orders'|trans([], 'DashboardBundle') }}</a>
+        </li>
+        <li>
+            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                {% for order in orders %}
+
+                {% endfor %}
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="time">just now</span>
+                        <span class="details">
+                        <span class="label label-sm label-icon">
+                            <i class="icon-basket-loaded"></i>
+                        </span> {{ 'ui.new_order'|trans([], 'DashboardBundle') }} № 1</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<!-- END NOTIFICATION DROPDOWN -->

@@ -1,0 +1,46 @@
+{% if locale == 'ru' or locale == 'uk' or locale == 'en' %}
+    <div class="kt-header__topbar-item kt-header__topbar-item--langs"
+         data-toggle="kt-tooltip" data-placement="right"
+         data-original-title="{{ 'ui.select_your_language'|trans([], 'DashboardBundle') }}">
+        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+            <span class="kt-header__topbar-icon">
+                {% if locale == 'ru' %}
+                    <img src="{{ asset('bundles/dashboard/img/flags/russia.svg') }}">
+                {% elseif locale == 'uk' %}
+                    <img src="{{ asset('bundles/dashboard/img/flags/ukraine.svg') }}">
+                {% elseif locale == 'en' %}
+                    <img src="{{ asset('bundles/dashboard/img/flags/united-states.svg') }}">
+                {% endif %}
+            </span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
+            <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
+                {% for item in localeSupported %}
+                    <li data-toggle="kt-tooltip" data-placement="right" data-original-title="{% if item == 'ru' %}{{ 'locale.ru'|trans([], 'DashboardBundle') }}{% elseif item == 'uk' %}{{ 'locale.uk'|trans([], 'DashboardBundle') }}{% elseif item == 'en' %}{{ 'locale.en'|trans([], 'DashboardBundle') }}{% endif %}"
+                        class="kt-nav__item {% if locale == item %}kt-nav__item--active{% endif %}">
+                        <a rel="nofollow" href="javascript:void(0);" class="kt-nav__link">
+                            <span class="kt-nav__link-icon">
+                                {% if item == 'ru' %}
+                                    <img src="{{ asset('bundles/dashboard/img/flags/russia.svg') }}"/>
+                                {% elseif item == 'uk' %}
+                                    <img src="{{ asset('bundles/dashboard/img/flags/ukraine.svg') }}"/>
+                                {% elseif item == 'en' %}
+                                    <img src="{{ asset('bundles/dashboard/img/flags/united-states.svg') }}"/>
+                                {% endif %}
+                            </span>
+                            <span class="kt-nav__link-text">
+                                 {% if item == 'ru' %}
+                                     {{ 'locale.ru'|trans([], 'DashboardBundle') }}
+                                 {% elseif item == 'uk' %}
+                                     {{ 'locale.uk'|trans([], 'DashboardBundle') }}
+                                 {% elseif item == 'en' %}
+                                     {{ 'locale.en'|trans([], 'DashboardBundle') }}
+                                 {% endif %}
+                            </span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}

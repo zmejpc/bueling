@@ -1,0 +1,22 @@
+{% include '@Seo/frontend/_h1.html.twig' %}
+
+{% if form_errors(form.plainPassword.first) or form_errors(form.plainPassword.second) %}
+    {% if form_errors(form.plainPassword.first) is not empty %}
+        {{ form_errors(form.plainPassword.first) }}
+    {% endif %}
+    {% if form_errors(form.plainPassword.second) is not empty %}
+        {{ form_errors(form.plainPassword.second) }}
+    {% endif %}
+{% endif %}
+
+{% include 'user/reset/_reset_form.html.twig' %}
+
+<a rel="nofollow" href="{{ path('registration') }}">
+{{ 'ui.create.create_an_account'|trans([], 'UserBundle') }}
+</a>
+
+<a rel="nofollow" href="{{ path('security_login') }}">
+{{ 'ui.login_button'|trans([], 'UserBundle') }}
+</a>
+
+{% include 'user/security/_login_as_user.html.twig' %}

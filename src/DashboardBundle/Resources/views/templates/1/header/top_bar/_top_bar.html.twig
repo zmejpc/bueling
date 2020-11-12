@@ -1,0 +1,31 @@
+<div class="kt-header__topbar">
+    <!--begin: Search -->
+    {#{% include '@Dashboard/templates/1/header/top_bar/_search.html.twig' %}#}
+    <!--end: Search -->
+
+    <!--begin: Notifications -->
+    {#{% include '@Dashboard/templates/1/header/top_bar/_notifications.html.twig' %}#}
+    <!--end: Notifications -->
+
+    <!--begin: Quick Actions -->
+    {#{% include '@Dashboard/templates/1/header/top_bar/_quick_actions.html.twig' %}#}
+    <!--end: Quick Actions -->
+
+    <!--begin: My Cart -->
+    {#{% include '@Dashboard/templates/1/header/top_bar/_my_cart.html.twig' %}#}
+    <!--end: My Cart -->
+
+    <!--begin: Quick panel toggler -->
+    {#{% include '@Dashboard/templates/1/header/top_bar/_quick_panel.html.twig' %}#}
+    <!--end: Quick panel toggler -->
+
+    <!--begin: Language bar -->
+    {% include '@Dashboard/templates/1/header/top_bar/_languages.html.twig' %}
+    <!--end: Language bar -->
+
+    {% if app.user %}
+        <!--begin: User Bar -->
+        {% include '@Dashboard/templates/1/header/user_bar/_user_bar.html.twig' %}
+        <!--end: User Bar -->
+    {% endif %}
+</div>

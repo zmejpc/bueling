@@ -1,0 +1,48 @@
+{{ form_start(form, {
+    'action': path('security_login'),
+    'method': 'post',
+    'attr': {
+        'class': '',
+        'novalidate': 'novalidate',
+    }
+}) }}
+
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+
+{{ form_label(form._username, null, {
+    'label_attr': {'class': ''}
+}) }}
+
+{{ form_widget(form._username, {
+    'value': last_username|default(''),
+    'attr': {
+        'class': '',
+        'data-field-type': 'email',
+        'data-error': 'user.email.invalid'|trans([], 'UserValidators'),
+    }}) }}
+
+{{ form_label(form._password, null, {
+    'label_attr': {'class': ''}
+}) }}
+{{ form_widget(form._password, {
+    'value': last_username|default(''),
+    'attr': {
+        'class': '',
+        'data-field-type': 'password',
+        'data-error': "user.password.min"|trans({'limit': 6}, "UserValidators"),
+    }}) }}
+
+<label for="_remember_me">
+    {{ form._remember_me.vars.label|trans({'limit': 6}, form._remember_me.vars.translation_domain) }}
+    {{ form_widget(form._remember_me, {
+        'attr': {
+            'class': '',
+            'checked': 'checked'
+        }}) }}
+</label>
+
+<button>
+    {{ 'log_in'|trans([], 'site') }}
+</button>
+
+{{ form_end(form, {'render_rest': false}) }}

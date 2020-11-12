@@ -1,0 +1,10 @@
+frontend_ajax_callback_init_form:
+  path:     /ajax/init-form/
+  controller: ContactBundle\Controller\Frontend\CallbackController::initFormAction
+  methods:  [GET, POST]
+  condition: "request.isXmlHttpRequest()"
+
+frontend_callback_save:
+  path:     /save/
+  controller: ContactBundle\Controller\Frontend\CallbackController::saveFormAction
+  methods:  [POST]

@@ -1,0 +1,16 @@
+{% set divClass = '' %}
+{% set class = '' %}
+
+{% if field.vars.data is null and field.vars['required'] == true or field.vars.valid == false %}
+    {% set divClass = divClass ~ ' ' ~ 'validated validate is-invalid' %}
+    {% set class = 'is-invalid' %}
+{% endif %}
+
+<div class="form-group form-group-marginless kt-margin-t-20 {{ divClass }} row">
+    {{ form_label(field, label|default(null), {'label_attr': {'class': labelLg~ ' col-form-label'}}) }}
+    <div class="{{ divLg }}">
+        {{ form_widget(field, {'attr': {
+            'class': 'form-control bootstrap-touchspin-vertical-btn js-kt-touch-spin-position '~class
+        }}) }}
+    </div>
+</div>

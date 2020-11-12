@@ -1,0 +1,68 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="canonical" href="{{ absolute_url(path('frontend_homepage')) }}"/>
+{% endblock %}
+
+{% block main %}
+    <section class="hero hero__wrap">
+        {% if staticContent['main_info_title'].poster is defined and staticContent['main_info_title'].poster is not empty %}
+            <div class="hero__wrap-background lazyload-container lazyload"
+                 data-bgset="
+{{ asset(staticContent['main_info_title'].poster|json_decode.webp.fullhd) }} [type: image/webp] [(max-width: 767px)] |
+{{ asset(staticContent['main_info_title'].poster|json_decode.fullhd) }} [type: image/jpeg] [(max-width: 767px)] |
+{{ asset(staticContent['main_info_title'].poster|json_decode.webp.fullhd) }} [type: image/webp] [(min-width: 768px)] |
+{{ asset(staticContent['main_info_title'].poster|json_decode.fullhd) }} [type: image/jpeg] [(min-width: 768px)]">
+            </div>
+        {% else %}
+            <div class="hero__wrap-background lazyload-container lazyload"
+                 data-bgset="{{ asset('build/frontend/img/hero-background-mini.webp') }} [type: image/webp] [(max-width: 991px)] | {{ asset('build/frontend/img/hero-background-mini.jpg') }} [type: image/jpeg] [(max-width: 991px)] | {{ asset('build/frontend/img/hero-background.webp') }} [type: image/webp] [(min-width: 992px)] | {{ asset('build/frontend/img/hero-background.jpg') }} [type: image/jpeg] [(min-width: 992px)"></div>
+        {% endif %}
+        <div class="hero__inner">
+            <div class="container H(100%) Pos(r)">
+{#                <div class="hero__girl lazyload-container lazyload wow animate__animated animate__slideInRight"#}
+{#                     data-wow-duration="1s"#}
+{#                     data-bgset="{{ asset('build/frontend/img/hero-girl2.webp') }} [type: image/webp] [(min-width: 991px)] | {{ asset('build/frontend/img/hero-girl2.png') }} [type: image/png] [(min-width: 991px)]"></div>#}
+                <div class="hero__title wow animate__animated animate__slideInLeft" data-wow-duration="1s">
+                    <h1 style="display:none;">L’eskizzo</h1>
+                    <div class="h1 hero__title-main">{{ 'ui.offer_title'|trans }}</div>
+                    <span class="hero__title-text">
+                        {% if staticContent['main_info_title'] is defined and staticContent['main_info_title'].text is not empty %}
+                            {{ staticContent['main_info_title'].text|raw }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="hero__footer container">
+            <div class="hero__text animated">
+                <div class="hero__text-title D(n)--lg">
+                    <h2 class="h2 hero__text-main">L’eskizzo</h2>
+                    <span class="hero__text-text">
+                        {% if staticContent['main_info_title'] is defined and staticContent['main_info_title'].text is not empty %}
+                            {{ staticContent['main_info_title'].text|raw }}
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="D(n)--xs-lg">
+                    {% if staticContent['main_info_content'] is defined and staticContent['main_info_content'].text is not empty %}
+                        {{ staticContent['main_info_content'].text|raw }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if products|length %}
+        <section class="Mt(8rem)--lg">
+            <div class="container"><h2 class="h2">{{ 'ui.best_offer_title'|trans }}</h2>
+                {% include 'default/_slider.html.twig' %}
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/index.js') }}{{ assetVersion }}"></script>
+{% endblock %}

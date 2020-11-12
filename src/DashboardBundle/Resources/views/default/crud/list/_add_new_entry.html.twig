@@ -1,0 +1,24 @@
+{% if is_granted(role) %}
+    <a href="{{ path }}" class="btn btn-outline-brand kt-margin-r-10">
+        <i class="flaticon-add"></i>
+        <span class="kt-hidden-mobile">
+            {{ 'ui.add.add_new_entry'|trans([], 'DashboardBundle') }}
+        </span>
+    </a>
+{% endif %}
+{% if routeForAjaxDeleteElementsGroup %}
+    <button id="delete-group-btn" class="btn btn-outline-danger kt-margin-r-10">
+        <i class="flaticon-delete"></i>
+        <span class="kt-hidden-mobile">
+            Удалить выбранные
+        </span>
+    </button>
+{% endif %}
+{% if routeForEditElementsGroup %}
+    <button id="edit-group-btn" class="btn btn-outline-brand kt-margin-r-10">
+        <i class="flaticon-edit"></i>
+        <span class="kt-hidden-mobile">
+            Груповое редактирование
+        </span>
+    </button>
+{% endif %}

@@ -1,0 +1,33 @@
+{% if field.vars.attr.class is defined %}
+    {% set class = field.vars.attr.class %}
+{% else %}
+    {% set class = '' %}
+{% endif %}
+<div class="js-collection-widgets">
+    <div id="{{ field.vars.id }}" {% if field|length > 0 %}class="form-group"{% endif %}
+            {% if prototype_template is not null %}
+        data-prototype="{% filter escape %}{{ include(form.vars.prototype_template, { 'form': field.vars.prototype }) }}{% endfilter %}"
+    data-widget-tags="{{ '<div class="collection-elements row"></div>'|e }}"{% endif %}>
+        {% if field|length > 0 %}
+            {% for valueField in field %}
+                <div class="collection-elements row {{ class }}">
+                    {% include prototype_template with{'form': valueField.children} %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% if allow_add == true %}
+    <div class="form-group form-group-marginless kt-margin-t-20 row">
+        <div class="col-lg-4">
+            <a href="javascript:void(0)" class="btn btn-sm btn-outline-brand btn--icon add-another-collection-widget" data-list="#{{ field.vars.id }}">
+                <span title="{{ 'ui.add.add_new_entry'|trans([], 'DashboardBundle') }}">
+                    <i class="la la-plus"></i>
+                    <span>
+                        {{ 'ui.add.add_new_entry'|trans([], 'DashboardBundle') }}
+                    </span>
+                </span>
+            </a>
+        </div>
+    </div>
+{% endif %}

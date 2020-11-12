@@ -1,0 +1,48 @@
+{{ form_start(form, {
+    'method': 'post',
+    'attr': {
+        'class': '',
+        'novalidate': 'novalidate',
+    }
+}) }}
+
+{{ form_label(form.plainPassword.first, null, {
+    'label_attr': {'class': ''}
+}) }}
+
+{{ form_widget(form.plainPassword.first, {
+    'attr': {
+        'class': '',
+        'data-field-type': 'password',
+        'data-error': "user.password.min"|trans({'limit': 6}, "UserValidators"),
+    }}
+) }}
+
+{% if form_errors(form.plainPassword.first) is not empty %}
+    {{ form_errors(form.plainPassword.first) }}
+{% endif %}
+
+{{ form_label(form.plainPassword.second, null, {
+    'label_attr': {'class': ''}
+}) }}
+
+{{ form_widget(form.plainPassword.second, {
+    'attr': {
+        'class': '',
+        'data-field-type': 'password',
+        "data-equals-to": form.plainPassword.first.vars.id,
+        'data-error': "user.password.min"|trans({'limit': 6}, "UserValidators"),
+        'data-equals-error': "user.plainPassword.mismatch"|trans({'limit': 6}, "UserValidators")
+    }
+}) }}
+
+{% if form_errors(form.plainPassword.second) is not empty %}
+    {{ form_errors(form.plainPassword.second) }}
+{% endif %}
+
+<button>
+    {{ 'ui.change.change_password'|trans([], 'UserBundle') }}
+</button>
+
+{{ form_row(form._token) }}
+{{ form_end(form) }}

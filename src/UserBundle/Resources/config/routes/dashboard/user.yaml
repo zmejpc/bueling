@@ -1,0 +1,42 @@
+dashboard_user_index:
+    path:     /user/
+    controller: UserBundle\Controller\Dashboard\UserController::listAction
+    methods:  [GET, POST]
+
+dashboard_user_edit:
+    path:     /user/edit/{id}
+    controller: UserBundle\Controller\Dashboard\UserController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_user_delete:
+    path:     /user/delete/{id}
+    controller: UserBundle\Controller\Dashboard\UserController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_user_mail_setting_index:
+    path:     /user/setting/mail/
+    controller: UserBundle\Controller\Dashboard\UserMailSettingController::listAction
+    methods:  [GET, POST]
+
+dashboard_user_mail_setting_new:
+    path:     /user/setting/mail/new/
+    controller: UserBundle\Controller\Dashboard\UserMailSettingController::newAction
+    methods:  [GET, POST]
+
+dashboard_user_mail_setting_edit:
+    path:     /user/setting/mail/edit/{id}
+    controller: UserBundle\Controller\Dashboard\UserMailSettingController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_user_mail_setting_delete:
+    path:     /user/setting/mail/delete/{id}
+    controller: UserBundle\Controller\Dashboard\UserMailSettingController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

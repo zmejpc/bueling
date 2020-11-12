@@ -1,0 +1,14 @@
+<div class="col-md-10">
+    {{ form_widget(form.attribute) }}
+    {{ form_widget(form.translations) }}
+    {{ form_widget(form.showInParentCategory) }}
+
+    {% if form.attribute is defined and _context._key is defined %}
+    	<div class="text-right mb-3 kt-margin-t-20">
+            <a href="{{ path('dashboard_category_set_product_attributes', {
+            	'category_id': form.attribute.parent.parent.parent.vars.value.id,
+            	'attr_id': form.attribute.vars.value
+            }) }}" class="btn btn-sm btn-elevate btn-outline-brand">Добавить атрибут товарам</a>
+        </div>
+    {% endif %}
+</div>

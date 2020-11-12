@@ -1,0 +1,5 @@
+form:
+  remove_file: 'Удалить файл'
+  cancel_upload: 'Отменить загрузку'
+  only_files_are_allowed_for_upload: 'Только %files_type% файлы разрешено для загрузки.'
+  drag_a_file_here_or_click_to_upload: 'Перетащите файл сюда или нажмите, чтобы загрузить.'

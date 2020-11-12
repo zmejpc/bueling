@@ -1,0 +1,68 @@
+########################################################################################################################
+security_login:
+  path:     /login/
+  methods: [GET, POST]
+  controller: UserBundle\Controller\Frontend\SecurityController::loginAction
+
+security_logout:
+  path: /logout/
+  methods: [GET]
+########################################################################################################################
+registration:
+  path: /registration/
+  methods: [GET, POST]
+  controller: UserBundle\Controller\Frontend\RegistrationController::registrationAction
+
+registration_check_email:
+  path:       /registration/check-email/
+  methods:    [GET]
+  controller: UserBundle\Controller\Frontend\RegistrationController::checkEmail
+
+registration_check_email_exists:
+  path:       /registration/check-email-exists/
+  methods:    [POST]
+  controller: UserBundle\Controller\Frontend\RegistrationController::checkEmailExists
+
+registration_confirmed:
+  path:       /registration/confirm-your-email/
+  methods:    [GET]
+  controller: UserBundle\Controller\Frontend\RegistrationController::confirmedAction
+
+registration_confirm:
+  path:       /registration/confirm/{token}
+  methods:    [GET]
+  controller: UserBundle\Controller\Frontend\RegistrationController::confirmAction
+########################################################################################################################
+password_reset:
+  path:       /password-reset/
+  methods:    [GET, POST]
+  controller: UserBundle\Controller\Frontend\PasswordResetController::indexAction
+
+password_reset_token:
+  path:       /password-reset/confirm/{token}
+  methods:    [GET, POST]
+  controller: UserBundle\Controller\Frontend\PasswordResetController::confirmResetAction
+########################################################################################################################
+connect_facebook_start:
+  path: /connect/facebook
+  controller: UserBundle\Controller\Frontend\FacebookController::connectAction
+
+connect_facebook_check:
+  path: /connect/facebook/check
+  controller: UserBundle\Controller\Frontend\FacebookController::connectCheckAction
+
+connect_facebook_login:
+  path: /connect/facebook/login
+  methods: [GET, POST]
+  controller: UserBundle\Controller\Frontend\FacebookController::loginAction
+
+connect_google_start:
+  path: /connect/google
+  methods: [GET, POST]
+  controller: UserBundle\Controller\Frontend\GoogleController::indexAction
+########################################################################################################################
+
+registration_shipping_form:
+  path:     /shipping/get-form
+  methods: [POST]
+  controller: UserBundle\Controller\Frontend\RegistrationController::getShippingFormAction

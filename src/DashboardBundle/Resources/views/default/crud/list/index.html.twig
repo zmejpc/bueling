@@ -1,0 +1,287 @@
+{% extends '@Dashboard/templates/'~templateNumber~'/_template.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <!--begin::Portlet-->
+            <div class="kt-portlet kt-portlet--bordered kt-portlet--head--noborder kt-portlet--last kt-portlet--head-lg kt-portlet--responsive-mobile"
+                 id="kt_page_portlet">
+                 {% include '@Dashboard/default/crud/list/_head_block.html.twig' %}
+                <div class="kt-portlet__head kt-portlet__head--lg">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                            {% if portletHeadIcon is defined and portletHeadIcon is not empty %}
+                                {% if portletHeadIcon['useSvg'] is defined and portletHeadIcon['useSvg'] == true %}
+                                    <span>
+                                        {{ portletHeadIcon['svg']|raw }}
+                                    </span>
+                                {% elseif portletHeadIcon['icon'] is defined %}
+                                    <span>
+                                        <i class="{{ portletHeadIcon['icon'] }}"></i>
+                                    </span>
+                                {% endif %}
+                            {% endif %}
+                            {% block head_title %}
+                                {{ headTitle|raw }}
+                            {% endblock %}
+                            {#<small>try to scroll the page</small>#}
+                        </h3>
+                    </div>
+                    <div class="kt-portlet__head-toolbar">
+                        {% include '@Dashboard/default/crud/list/_portlet_head_tools.html.twig' %}
+                        {% include '@Dashboard/default/crud/list/_add_new_entry.html.twig' with {
+                            path: routeForGetElementsForNew, role: grantedRoleForNew,
+                        } %}
+                    </div>
+                </div>
+                <div class="kt-portlet__body">
+                    {% include '@Dashboard/default/crud/_flashes.html.twig' %}
+                    {% if isUseWidgetsForList == true and widgetsForList is defined and widgetsForList is not null %}
+                        {{ widgetsForList|raw }}
+                    {% endif %}
+                    {% include '@Dashboard/default/crud/list/_search_form.html.twig' %}
+                    <!--begin: Datatable -->
+                    <div class="kt-datatable" id="api_events"></div>
+                    <!--end: Datatable -->
+                </div>
+            </div>
+            <!--end::Portlet-->
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_page_scripts %}
+    {{ parent() }}
+    {% include '@Dashboard/default/crud/_js_flashes.html.twig' %}
+    <script src="{{ asset('bundles/dashboard/assets/app/bundle/sortable.min.js') }}"
+            type="text/javascript"></script>
+    <script>
+        {% if defaultQuery %}
+            var defaultQuery = JSON.parse('{{ defaultQuery|json_encode|raw }}');
+        {% else %}
+            var defaultQuery = {};
+        {% endif %}
+
+        var KTDefaultDatatableDemo = function() {
+            // basic demo
+            var demo = function() {
+                var datatable = $('.kt-datatable').KTDatatable({
+                    // datasource definition
+                    data: {
+                        type: 'remote',
+                        source: {
+                            read: {
+                                url: '{{ routeForGetElementsForIndex }}',
+                                params: {
+                                    query: defaultQuery
+                                }
+                            },
+                        },
+                        pageSize: {{ configForListDashboard['pageLength'] }},
+                        serverPaging: true,
+                        serverFiltering: true,
+                        serverSorting: true,
+                        saveState: {
+                            cookie: false,
+                            webstorage: false
+                        }
+                    },
+                    rows: {
+                        afterTemplate: function( row, data, dataIndex ) {
+                           if (data.kt_row_class) {
+                             setTimeout(function() {
+                                datatable.find('tbody tr').eq(dataIndex).addClass(data.kt_row_class)   
+                             }, 1000)
+                           }
+                        },
+                    },
+                    // layout definition
+                    layout: {
+                        minHeight: '0px',
+                        theme: 'default',
+                        class: '',
+                        scroll: true, // enable/disable datatable scroll both horizontal and vertical when needed.
+                        height: null, // datatable's body's fixed height
+                        footer: true, // display/hide footer
+                    },
+                    // column sorting
+                    sortable: true,
+                    filterable: false,
+                    pagination: true,
+
+                    // toolbar
+                    toolbar: {
+                        layout: ['pagination', 'info'],
+                        placement: ['bottom'],
+                        items: {
+                            pagination: {
+                                type: 'default',
+                                navigation: {
+                                    prev: true,
+                                    next: true,
+                                    first: true,
+                                    last: true
+                                },
+                                pageSizeSelect: [{{ configForListDashboard['lengthMenu'] }}],
+                            },
+                            info: true
+                        },
+                    },
+
+                    search: {
+                        input: $('#generalSearch'),
+                    },
+
+                    // columns definition
+                    columns: [
+                        {
+                            field: 'id',
+                            title: '№',
+                            sortable: true,
+                            textAlign: 'center',
+                            width: 20,
+                            {% if routeForAjaxDeleteElementsGroup %}
+                                selector: {
+                                    class: 'delete-group-checkbox'
+                                }
+                            {% endif %}
+                        },
+                        {% include '@Dashboard/default/crud/list/_helper_for_th.html.twig' with {
+                            'listElements': listElements,
+                        } %}
+                        {% if showActionsColumn %}
+                            {
+                                field: 'Actions',
+                                title: '{{ 'ui.actions'|trans([], 'DashboardBundle') }}',
+                                sortable: false,
+                                locked: {right: 'xl'},
+                                overflow: 'visible'
+                            }
+                        {% endif %}
+                    ],
+                    translate: {
+                        records: {
+                            processing: "{{ 'ui.table.loadingMessage'|trans([], 'DashboardBundle') }}",
+                            noRecords: "{{ 'ui.table.emptyTable'|trans([], 'DashboardBundle') }}"
+                        },
+                        toolbar: {
+                            pagination: {
+                                items: {
+                                    default: {
+                                        first: "{{ 'ui.table.paginate.first'|trans([], 'DashboardBundle') }}",
+                                        prev: "{{ 'ui.table.paginate.previous'|trans([], 'DashboardBundle') }}",
+                                        next: "{{ 'ui.table.paginate.next'|trans([], 'DashboardBundle') }}",
+                                        last: "{{ 'ui.table.paginate.last'|trans([], 'DashboardBundle') }}",
+                                        more: "{{ 'ui.table.more'|trans([], 'DashboardBundle') }}",
+                                        input: "{{ 'ui.table.input'|trans([], 'DashboardBundle') }}",
+                                        select: "{{ 'ui.table.select'|trans([], 'DashboardBundle') }}"
+                                    },
+                                    info: "{{ 'ui.table.info'|trans([], 'DashboardBundle') }}"
+                                }
+                            }
+                        }
+                    }
+                }).on('kt-datatable--on-init', function() {
+                    {% if listFilterElements|length %}
+                        {% include '@Dashboard/default/crud/list/_thead_filter.html.twig' with {
+                            'listFilterElements': listFilterElements,
+                        } %}
+                    {% endif %}
+
+                    $('body').on('click', '.delete-group-checkbox input', function() {
+                        if($('.delete-group-checkbox input:checked').length)
+                            $('#delete-group-btn, #edit-group-btn').show();
+                        else
+                            $('#delete-group-btn, #edit-group-btn').hide();
+                    });
+                }).on('kt-datatable--on-layout-updated', function() {
+                    
+                    {% if routeForAjaxSort is defined and routeForAjaxSort %}
+                    setTimeout(function(){
+                        if($('.kt-datatable__body .kt-datatable__lock').length)
+                            var el = $('.kt-datatable__body .kt-datatable__lock')[0];
+                        else
+                            var el = $('.kt-datatable__body')[0];
+                        
+                        var sortable = Sortable.create(el,{
+                            forceFallback:true,
+                            handle: ".list-sort-handle",
+                            onSort: function (evt) {
+                                var s_index = evt.oldDraggableIndex;
+                                var e_index = evt.newDraggableIndex;
+                                var curr_value = $(evt.item).find('.list-sort-handle').next().val();
+                                var items = datatable.find('tbody tr')
+                                    .slice(Math.min(s_index, e_index), Math.max(s_index, e_index) + 1);
+
+                                if(s_index < e_index) {
+                                    for(let i = items.length; i >= 0; i--) {
+                                        $(items[i]).find('.list-sort-handle').next()
+                                            .val($(items[i - 1]).find('.list-sort-handle').next().val())
+                                    }
+                                    $(items[0]).find('.list-sort-handle').next().val(curr_value);
+                                } else {
+                                    for(let i = 0; i < items.length - 1; i++) {
+                                        $(items[i]).find('.list-sort-handle').next()
+                                            .val($(items[i + 1]).find('.list-sort-handle').next().val())
+                                    }
+                                    $(items[items.length - 1]).find('.list-sort-handle').next().val(curr_value);
+                                }
+
+                                var data = {};
+
+                                $.each(items, function() {
+                                    var $el = $(this).find('.list-sort-handle');
+                                    data[$el.attr('data-id')] = $el.next().val()
+                                });
+
+                                $.post('{{ routeForAjaxSort }}', {data: data})
+                            },
+                        });
+                    });
+                    {% endif %}
+
+                    $.each($('.kt-datatable__filter-cell'), function() {
+                        $(this).off().removeClass('kt-datatable__cell--sort');
+                    })
+
+                    initNicescroll();
+                });
+
+                $('#delete-group-btn').click(function() {
+                    if(window.confirm('Это действие нельзя отменить.Вы уверены?')) {
+                        var ids = datatable.getSelectedRecords().map(function() { return $(this).find('.delete-group-checkbox input').val() })
+
+                        $.post('{{ routeForAjaxDeleteElementsGroup }}', {ids: ids.toArray()}, function(r) {
+                            if(r.status && r.status == 'success') {
+                                datatable.load();
+                                $('#delete-group-btn').hide();
+                            } else if(r.status && r.status == 'error') {
+                                swal.fire('Ошибка', 'Не удалось удалить', 'error')
+                            }
+                        }, 'json')
+                    }
+                });
+
+                $('#edit-group-btn').click(function() {
+                    var ids = datatable.getSelectedRecords().map(function() { return $(this).find('.delete-group-checkbox input').val() })
+
+                    $.post('{{ routeForEditElementsGroup }}', {ids: ids.toArray()}, function() {
+                        var $a = $('<a>', {href: '{{ routeForEditElementsGroup }}', target: '_blank'});
+                        $a[0].click();
+                    })
+                });
+            };
+
+            return {
+                // public functions
+                init: function() {
+                    demo();
+                },
+            };
+        }();
+
+        jQuery(document).ready(function() {
+            KTDefaultDatatableDemo.init();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,239 @@
+fos_ck_editor:
+  default_config: my_config
+  configs:
+    my_config:
+      filebrowserBrowseRoute: elfinder
+      filebrowserBrowseRouteParameters: []
+      toolbar: full
+
+framework:
+  secret: '%env(APP_SECRET)%'
+  default_locale: '%locale%'
+  translator:
+    fallbacks: ['%locale%']
+  csrf_protection: true
+  http_method_override: true
+
+  # Enables session support. Note that the session will ONLY be started if you read or write from it.
+  # Remove or comment this section to explicitly disable session support.
+  session:
+    enabled: true
+    handler_id: session.handler.native_file
+    save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    cookie_secure: auto
+    cookie_samesite: lax
+    cookie_lifetime: 31536000
+    gc_maxlifetime: 31536000
+
+  esi: true
+  fragments: true
+  php_errors:
+    log: true
+
+  cache:
+  # Put the unique name of your app here: the prefix seed
+  # is used to compute stable namespaces for cache keys.
+  #prefix_seed: your_vendor_name/app_name
+
+  # The app cache caches to the filesystem by default.
+  # Other options include:
+
+  # Redis
+  #app: cache.adapter.redis
+  #default_redis_provider: redis://localhost
+
+  # APCu (not recommended with heavy random-write workloads as memory fragmentation can cause perf issues)
+  #app: cache.adapter.apcu
+
+knp_doctrine_behaviors:
+  blameable:  true
+  sluggable:  true
+  soft_deletable:  true
+  sortable:  true
+  timestampable:  true
+  translatable:  true
+  tree:  true
+
+knp_paginator:
+  page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
+  default_options:
+    page_name: page                 # page query parameter name
+    sort_field_name: sort           # sort field query parameter name
+    sort_direction_name: direction  # sort direction query parameter name
+    distinct: true                  # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    filter_field_name: filterField  # filter field query parameter name
+    filter_value_name: filterValue  # filter value query paameter name
+  template:
+    pagination: KnpPaginatorBundle:Pagination:sliding.html.twig     # sliding pagination controls template
+    sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+    filtration: KnpPaginatorBundle:Pagination:filtration.html.twig  # filters template
+
+jms_i18n_routing:
+  default_locale: "%locale%"
+  locales: "%locale_supported%"
+  strategy: prefix_except_default
+
+
+a2lix_translation_form:
+  locale_provider: default
+  locales: "%locale_supported%"
+  default_locale: "%locale%"
+  required_locales: "%locale_supported%"
+
+#Upload bundle
+upload:
+    web_dir: 'public'
+    temp_upload_dir: "uploads/temp"
+    types:
+        product_gallery_image:
+            type: image
+            mime_type: []  # default
+            format: 'jpg,gif,png,svg'
+            upload_dir: '/uploads/product/gallery_image'
+            max_size: '4761200' #bytes
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 100
+                    height: 100
+                    action: exact_resize
+                cart:
+                    width: 126
+                    height: 126
+                    action: exact_resize
+                list_64_85:
+                    width: 370
+                    height: 85
+                    action: exact_resize
+                list_128_170:
+                    width: 128
+                    height: 170
+                    action: exact_resize
+                list_370_493:
+                    width: 370
+                    height: 493
+                    action: exact_resize
+                list_740_990:
+                    width: 740
+                    height: 990
+                    action: exact_resize
+        product_category_poster:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/product_category/poster'
+            max_size: '4761200' #bytes
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 100
+                    height: 100
+                    action: exact_resize
+                search_mini:
+                    width: 78
+                    height: 78
+                    action: exact_resize
+                list_150_150:
+                    width: 128
+                    height: 128
+                    action: exact_resize
+                list_208_208:
+                    width: 208
+                    height: 208
+                    action: exact_resize
+                list_256_256:
+                    width: 256
+                    height: 256
+                    action: exact_resize
+                list_416_416:
+                    width: 416
+                    height: 416
+                    action: exact_resize
+        static_content_img:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/static_content/img'
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 120
+                    height: 120
+                    action: exact_resize
+                mobile:
+                    width: 960
+                    height: 540
+                    action: exact_resize
+                fullhd:
+                    width: 3500
+                    height: 2333
+                    action: exact_resize
+        news_poster:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/news/poster'
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 120
+                    height: 120
+                    action: exact_resize
+                370x655:
+                    width: 370
+                    height: 655
+                    action: exact_resize
+                740x1310:
+                    width: 740
+                    height: 1310
+                    action: exact_resize
+        news_gallery_image:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/news/gallery_image'
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 120
+                    height: 120
+                    action: exact_resize
+                show:
+                    width: 873
+                    height: 512
+                    action: exact_resize
+        news_author_poster:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/news_author'
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 120
+                    height: 120
+                    action: exact_resize
+                48x48:
+                    width: 48
+                    height: 48
+                    action: exact_resize
+                96x96:
+                    width: 96
+                    height: 96
+                    action: exact_resize
+        static_page_poster:
+            type: image
+            mime_type: []  # default
+            format: 'jpg,gif,png,svg'
+            upload_dir: '/uploads/static/poster'
+            max_size: '4761200' #bytes
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 100
+                    height: 100
+                    action: exact_resize
+                1280x624:
+                    width: 1280
+                    height: 624
+                    action: resize_and_crop

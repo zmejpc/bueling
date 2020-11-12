@@ -1,0 +1,3 @@
+frontend_static_page:
+  resource: "@StaticBundle/Resources/config/routes/frontend/static_page.yaml"
+  prefix:   /page

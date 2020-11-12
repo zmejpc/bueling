@@ -1,0 +1,4 @@
+dashboard_callback_mail_setting_edit:
+    path:     /edit/
+    controller: ContactBundle\Controller\Dashboard\CallbackMailSettingController::indexAction
+    methods:  [GET, POST]

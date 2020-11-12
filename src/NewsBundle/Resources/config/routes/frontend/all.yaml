@@ -1,0 +1,7 @@
+frontend_news:
+  resource: "@NewsBundle/Resources/config/routes/frontend/news.yaml"
+  prefix:   /blog
+
+frontend_news_category:
+  resource: "@NewsBundle/Resources/config/routes/frontend/news_category.yaml"
+  prefix:   /blog-category

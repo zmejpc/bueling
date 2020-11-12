@@ -1,0 +1,8 @@
+upload_bundle_handle_file:
+  path:  /handle-single-file/{secureToken}/{fileSetting}/{field}
+  controller: UploadBundle\Controller\DefaultController::uploadAction
+
+upload_bundle_remove_file:
+  path:  /remove-single-file/
+  controller: UploadBundle\Controller\DefaultController::removeAction
+  methods:  [POST]

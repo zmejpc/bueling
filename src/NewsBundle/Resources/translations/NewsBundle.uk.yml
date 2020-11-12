@@ -1,0 +1,14 @@
+sidebar:
+  news:
+    categories: 'Категорії'
+    news: 'Новини'
+    articles: 'Статті'
+    author: 'Автори'
+
+select_author: 'Обрати автора'
+signature: 'Підпис до фотографії'
+news_signature: 'Підпис статті'
+is_main_news: 'Головна новина?'
+tags: 'Теги'
+signature_url: 'Посилання для підпісу'
+text_under_the_photo: 'Текст під фотографією'

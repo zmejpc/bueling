@@ -1,0 +1,10 @@
+frontend_news_category_show:
+  path:     /{category}/{page}/{countInPage}
+  methods: [GET]
+  controller: NewsBundle\Controller\Frontend\NewsCategoryController::showWithStandardPaginationAction
+  requirements:
+    page:  \d+
+    countInPage:  \d+
+  defaults:
+    page: 1
+    countInPage: 9

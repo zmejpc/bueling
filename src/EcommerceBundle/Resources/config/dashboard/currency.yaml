@@ -1,0 +1,48 @@
+dashboard_currency_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\CurrencyController::listAction
+    methods:  [GET, POST]
+
+dashboard_currency_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\CurrencyController::newAction
+    methods:  [GET, POST]
+
+dashboard_currency_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\CurrencyController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_currency_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\CurrencyController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_currency_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: Ecommerce\Controller\Dashboard\CurrencyController::ajaxDeleteGroupAction
+    methods:  POST
+
+dashboard_exchange_rates_index:
+    path:     /exchange-rates/
+    controller: Ecommerce\Controller\Dashboard\ExchangeRatesController::listAction
+    methods:  [GET, POST]
+
+dashboard_exchange_rates_edit:
+    path:     /exchange-rates/edit/{id}
+    controller: Ecommerce\Controller\Dashboard\ExchangeRatesController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_ajax_set_locale_currency:
+    path:     /ajax/set-locale-currency
+    controller: Ecommerce\Controller\Dashboard\CurrencyController::setLocaleCurrencyAction
+    methods:  [POST]
+    requirements:
+        locale_currency_id:  \d+
+        currency_id:  \d+

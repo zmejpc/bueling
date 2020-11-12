@@ -1,0 +1,63 @@
+{% htmlcompress %}
+    {% spaceless %}
+        <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            {% set assetVersion = '?v='~5 %}
+
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, shrink-to-fit=no">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="theme-color" content="#29a3db">
+            {#favicon#}
+            <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('bundles/frontend/img/favicon/apple-touch-icon.png') }}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('bundles/frontend/img/favicon/favicon-32x32.png') }}">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('bundles/frontend/img/favicon/favicon-32x32.png') }}">
+            <link rel="manifest" href="{{ asset('bundles/frontend/img/favicon/site.webmanifest') }}">
+            <meta name="msapplication-TileColor" content="#da532c">
+            <meta name="theme-color" content="#ffffff">
+            {#end favicon#}
+
+            {% block seo_title %}
+                {% include '@Seo/frontend/_head_meta.html.twig' %}
+            {% endblock %}
+
+            <link rel="stylesheet" href="{{ asset('build/frontend/css/build.css') }}{{ assetVersion }}">
+
+            {% block head_stylesheets %}{% endblock %}
+            {% block head_javascript %}{% endblock %}
+
+            <script>
+                window.resourceBaseUrl = "/build/frontend/";
+                window.assetVersion = '{{ assetVersion }}';
+                localStorage.cartCount = {{ app.session.get('current_cart_count_product')|default(0) }}
+            </script>
+        </head>
+
+        <body>
+
+        <div class="page__wrapper">
+            {% block header %}
+                {{ render(controller('FrontendBundle:Default:initHeader')) }}
+            {% endblock %}
+
+            <main class="page__content">
+                {% include 'default/_breadcrumbs.html.twig' %}
+                {% block main %}{% endblock %}
+            </main>
+
+            {% block footer %}
+                {{ render(controller('FrontendBundle:Default:initFooter')) }}
+            {% endblock %}
+        </div>
+
+        <div class="page__loader">
+            <div class="page__loader-img"></div>
+        </div>
+
+        <script src="{{ asset('build/frontend/js/common.js') }}{{ assetVersion }}"></script>
+        {% block script %}{% endblock %}
+        </body>
+        </html>
+    {% endspaceless %}
+{% endhtmlcompress %}

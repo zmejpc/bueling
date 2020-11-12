@@ -1,0 +1,18 @@
+{% set tabs = {
+    'general': {
+        'name': ' Общая информация',
+        'body': form_widget(form.generalGroup.name)~form_widget(form.generalGroup.surname)~form_widget(form.generalGroup.phoneNumber)~form_widget(form.generalGroup.email)~form_widget(form.generalGroup.discount)~form_widget(form.generalGroup.enabled_locked.enabled)~form_widget(form.generalGroup.enabled_locked.locked)
+    },
+    'roles': {
+        'name': 'Роли',
+        'body': form_widget(form.rolesGroup.roles)
+    },
+    'orders': {
+        'name': 'Заказы',
+        'body': render(controller('Ecommerce\\Controller\\Dashboard\\OrderController::getUserOrdersInfoForForm', {
+        	user: form.vars.value
+    	}))
+    },
+} %}
+
+{% include '@Dashboard/default/crud/form/fields/_tabbable.html.twig' with { 'tabs': tabs } %}

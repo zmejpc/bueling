@@ -1,0 +1,28 @@
+dashboard_news_index:
+    path:     /
+    controller: NewsBundle\Controller\Dashboard\NewsController::listAction
+    methods:  [GET, POST]
+
+dashboard_news_new:
+    path:     /new/
+    controller: NewsBundle\Controller\Dashboard\NewsController::newAction
+    methods:  [GET, POST]
+
+dashboard_news_edit:
+    path:     /edit/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_news_delete:
+    path:     /delete/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_news_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: NewsBundle\Controller\Dashboard\NewsController::ajaxDeleteGroupAction
+    methods:  POST

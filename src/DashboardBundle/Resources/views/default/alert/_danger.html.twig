@@ -1,0 +1,22 @@
+<div {% if id is defined %}id="{{ id }}"{% endif %} class="alert alert-outline-danger {% if isShow is not defined or isShow == true %}fade show{% else %}hide{% endif %}" role="alert">
+    <div class="alert-icon">
+        <i class="flaticon-danger"></i>
+    </div>
+    <div class="alert-text">
+        {% if strongMessage is defined and strongMessage is not empty %}
+            <strong>{{ strongMessage|raw }}</strong>
+        {% endif %}
+        {% if message is defined and message is not empty %}
+            {{ message|raw }}
+        {% endif %}
+    </div>
+    {% if alert_close is not defined or alert_close == true %}
+        <div class="alert-close">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                    <i class="la la-close"></i>
+                </span>
+            </button>
+        </div>
+    {% endif %}
+</div>

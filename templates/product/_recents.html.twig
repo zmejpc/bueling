@@ -1,0 +1,6 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% if products|length %}
+    <h2 class="h2">{{ 'ui.resents_title'|trans }}</h2>
+    {% include('default/_slider.html.twig') %}
+{% endif %}
+

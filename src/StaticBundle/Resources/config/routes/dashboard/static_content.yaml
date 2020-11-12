@@ -1,0 +1,28 @@
+dashboard_static_content_index:
+  path:     /static-content/
+  controller: StaticBundle\Controller\Dashboard\StaticContentController::listAction
+  methods:  [GET, POST]
+
+dashboard_static_content_new:
+  path:     /static-content/new/
+  controller: StaticBundle\Controller\Dashboard\StaticContentController::newAction
+  methods:  [GET, POST]
+
+dashboard_static_content_edit:
+  path:     /static-content/edit/{id}
+  controller: StaticBundle\Controller\Dashboard\StaticContentController::editAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+
+
+dashboard_static_content_delete:
+  path:     /static-content/delete/{id}
+  controller: StaticBundle\Controller\Dashboard\StaticContentController::deleteAction
+  methods:  GET
+  requirements:
+    id:  \d+
+
+dashboard_static_content_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: StaticBundle\Controller\Dashboard\StaticContentController::ajaxDeleteGroupAction
+    methods:  POST

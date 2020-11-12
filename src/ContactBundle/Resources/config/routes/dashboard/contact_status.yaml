@@ -1,0 +1,28 @@
+dashboard_contact_status_index:
+    path:     /
+    controller: ContactBundle\Controller\Dashboard\ContactStatusController::listAction
+    methods:  [GET, POST]
+
+dashboard_contact_status_new:
+    path:     /new/
+    controller: ContactBundle\Controller\Dashboard\ContactStatusController::newAction
+    methods:  [GET, POST]
+
+dashboard_contact_status_edit:
+    path:     /edit/{id}
+    controller: ContactBundle\Controller\Dashboard\ContactStatusController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_contact_status_delete:
+    path:     /delete/{id}
+    controller: ContactBundle\Controller\Dashboard\ContactStatusController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_contact_status_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: ContactBundle\Controller\Dashboard\ContactStatusController::ajaxDeleteGroupAction
+    methods:  POST

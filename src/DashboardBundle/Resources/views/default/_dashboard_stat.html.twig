@@ -1,0 +1,25 @@
+{% spaceless %}
+    <div class="dashboard-stat {% if dashboardColor is defined and dashboardColor is not empty %}{{ dashboardColor }}{% endif %}">
+        <div class="visual">
+            <i class="{% if visualIcon is defined and visualIcon is not empty %}{{ visualIcon }}{% endif %}"></i>
+        </div>
+        <div class="details">
+            {% if value is defined and value is not empty %}
+                <div class="number">
+                    <span data-counter="counterup" data-value="{{ value|number_format }}">0</span>
+                </div>
+            {% endif %}
+            {% if desc is defined and desc is not empty %}
+                <div class="desc">
+                    {{ desc }}
+                </div>
+            {% endif %}
+        </div>
+        {% if href is defined and href is not empty %}
+            <a rel="nofollow" class="more" href="{{ href }}">
+                {% if buttonText is defined and buttonText is not empty %}{{ buttonText }}{% endif %}
+                <i class="{% if buttonIcon is defined and buttonIcon is not empty %}{{ buttonIcon }}{% endif %}"></i>
+            </a>
+        {% endif %}
+    </div>
+{% endspaceless %}

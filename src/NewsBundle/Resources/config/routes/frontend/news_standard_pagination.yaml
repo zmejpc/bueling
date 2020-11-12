@@ -1,0 +1,20 @@
+frontend_news_list:
+  path:     /{page}/{countInPage}
+  methods: [GET]
+  controller: NewsBundle\Controller\Frontend\NewsController::indexWithStandardPaginationAction
+  requirements:
+    page:  \d+
+    countInPage:  \d+
+  defaults:
+    page: 1
+    countInPage: 10
+
+frontend_news_show:
+  path:     /{slug}
+  methods: [GET]
+  controller: NewsBundle\Controller\Frontend\NewsController::showAction
+
+frontend_news_show_with_category:
+  path:     /{category}/{slug}
+  methods: [GET]
+  controller: NewsBundle\Controller\Frontend\NewsController::showAction

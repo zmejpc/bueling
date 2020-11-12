@@ -1,0 +1,74 @@
+dashboard_product_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\ProductController::listAction
+    methods:  [GET, POST]
+
+dashboard_product_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\ProductController::newAction
+    methods:  [GET, POST]
+
+dashboard_product_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\ProductController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_product_copy:
+    path:     /copy/{id}
+    controller: Ecommerce\Controller\Dashboard\ProductController::copyAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_product_edit_group:
+    path:     /edit-group
+    controller: Ecommerce\Controller\Dashboard\ProductController::editGroupAction
+    methods:  [GET, POST]
+
+dashboard_product_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\ProductController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_product_attr_delete:
+    path:     /delete-attr/{attr_id}
+    controller: Ecommerce\Controller\Dashboard\ProductController::deleteAttrAction
+    methods:  GET
+    requirements:
+        attr_id:  \d+
+
+dashboard_product_attr_value_clear:
+    path:     /clear-attr-value/{attr_id}
+    controller: Ecommerce\Controller\Dashboard\ProductController::clearAttrValueAction
+    methods:  GET
+    requirements:
+        attr_id:  \d+
+
+dashboard_product_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: Ecommerce\Controller\Dashboard\ProductController::ajaxDeleteGroupAction
+    methods:  POST
+
+dashboard_product_ajax_sort:
+    path:     /ajax/sort/
+    controller: Ecommerce\Controller\Dashboard\ProductController::ajaxSortAction
+    methods:  POST
+
+dashboard_product_update_price:
+    path:     /update-price
+    controller: Ecommerce\Controller\Dashboard\ProductController::updatePrice
+    methods:  GET
+
+dashboard_product_update_gallery:
+    path:     /update-gallery
+    controller: Ecommerce\Controller\Dashboard\ProductController::updateGallery
+    methods:  GET
+
+dashboard_product_existence_notice_ajax_delete_group:
+    path:     /existence-notice/ajax/delete-group/
+    controller: Ecommerce\Controller\Dashboard\ProductExistenceNoticeController::ajaxDeleteGroupAction
+    methods:  POST

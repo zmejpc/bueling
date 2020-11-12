@@ -1,0 +1,49 @@
+{% for key, element in listElements %}
+    {% if element %}
+        {% if element is iterable %}
+            {
+            {% if element['locked'] is defined and element['locked'] == true %}
+                locked: {right: 'xl'},
+            {% endif %}
+            field: '{{ key }}',
+            title: '{{ element['title'] }}',
+            textAlign: 'center',
+            {% if element['width'] is defined %}
+                width: {{ element['width'] }},
+            {% endif %}
+            {% if key == 'position' %}
+                sortable: 'desc',
+            {% endif %}
+            {% if element['sort'] is defined %}
+                sortable: '{{ element['sort'] }}',
+            {% endif %}
+            },
+        {% else %}
+            {
+            field: '{{ key }}',
+            title: '{{ element }}',
+            textAlign: 'center',
+            {% if key == 'position' %}
+                sortable: 'asc',
+            {% endif %}
+            },
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{#sortable: 'asc',#}
+{#width: 100,#}
+{#locked: {right: 'xl'},#}
+{#// callback function support for column rendering#}
+{#template: function (row) {#}
+{#var status = {#}
+{#1: {'title': 'Pending', 'class': 'm-badge--brand'},#}
+{#2: {'title': 'Delivered', 'class': ' m-badge--metal'},#}
+{#3: {'title': 'Canceled', 'class': ' m-badge--primary'},#}
+{#4: {'title': 'Success', 'class': ' m-badge--success'},#}
+{#5: {'title': 'Info', 'class': ' m-badge--info'},#}
+{#6: {'title': 'Danger', 'class': ' m-badge--danger'},#}
+{#7: {'title': 'Warning', 'class': ' m-badge--warning'},#}
+{#};#}
+{#return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';#}
+{#},#}

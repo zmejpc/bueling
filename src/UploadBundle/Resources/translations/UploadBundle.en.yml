@@ -1,0 +1,5 @@
+form:
+  remove_file: 'Remove file'
+  cancel_upload: 'Cancel upload'
+  only_files_are_allowed_for_upload: 'Only %files_type% files are allowed for upload.'
+  drag_a_file_here_or_click_to_upload: 'Drag a file here or click to upload.'

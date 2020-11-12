@@ -1,0 +1,28 @@
+{% set priceData = product.productPrice(orderController.currentCurrenciesRates, orderController.currentCurrency) %}
+<div class="product-form__holder">
+    <div class="price {{ class is defined ? class }}">
+        {% if priceData.oldPrice != priceData.price %}
+            <div class="price__top">
+                <div class="price__previous">
+{#                    {% if orderController.currentCurrency.systemName == 'eur' %}#}
+{#                        {{ priceData.oldPrice|number_format(2, '.', '') }}#}
+{#                    {% else %}#}
+                        {{ priceData.oldPrice|number_format(0) }}
+{#                    {% endif %}#}
+                </div>
+            </div>
+        {% endif %}
+        <div class="price__bottom">
+            <div class="price__current">
+{#                {% if orderController.currentCurrency.systemName == 'eur' %}#}
+{#                    {{ priceData.price|number_format(2, '.', '') }}#}
+{#                {% else %}#}
+                    {{ priceData.price|number_format(0, '', '') }}
+{#                {% endif %}#}
+            </div>
+            <div class="price__currency">
+                {{ orderController.currentCurrency.shortTitle }}
+            </div>
+        </div>
+    </div>
+</div>

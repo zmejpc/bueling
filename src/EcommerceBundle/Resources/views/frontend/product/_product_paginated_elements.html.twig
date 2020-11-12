@@ -1,0 +1,66 @@
+{% if not app.request.isXmlHttpRequest() %}
+
+	{% if productCategory is defined %}
+		<div class="layout__col W(100%) T(-20px)--lg Pos(r) {{ not showFilter ? 'Jc\(c\)' }}">
+	{% endif %}
+
+	{% if showTags is defined and showTags %}
+		{% include 'filter/_tags.html.twig' %}
+	{% endif %}
+
+		<div class="products products--desktop-in-row-count--{{ productCategory is defined and showFilter ? '3' : '4' }} Ml(-1rem)--lg">
+		    <ul class="products__list infinite-scroll preload-list">
+{% endif %}
+
+		{% for item in elements %}
+	        {% include 'product/_element.html.twig' with {
+	            'item': item
+	        } %}
+		{% endfor %}
+
+		<li role="presentation">
+			{% if showMoreBtnRender is defined and showMoreBtnRender %}
+				<span class="preload-list__next" href="{{ path('frontend_partial_get_products_elements_by_category_and_page', {
+					'category': productCategory.id,
+					'page': elements.currentPageNumber + 1,
+					'countInPage': elements.params.countInPage,
+				}) }}?show_more=1{{ filterQuery ? filterQuery }}"></span>
+			{% endif %}
+		</li>
+
+{% if not app.request.isXmlHttpRequest() %}
+			</ul>
+			<div class="infinite-scroll__load-status" style="display: none;">
+		      	<div class="loader-ellipsis infinite-scroll-request">
+		        	<div class="loader-ellipsis__inner">
+		        		<span class="loader-ellipsis__dot"></span>
+		        		<span class="loader-ellipsis__dot"></span>
+		        		<span class="loader-ellipsis__dot"></span>
+		        		<span class="loader-ellipsis__dot"></span>
+		        	</div>
+		      	</div>
+		    </div>
+		</div>
+
+		<div class="uploader uploader__btn-wrap {{ not (showMoreBtnRender is defined and showMoreBtnRender) ? 'uploader--hidden' }}">
+        	<button class="uploader__btn">
+        		<svg class="svg-icon uploader__icon">
+              		<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#round-arrow"></use>
+            	</svg>
+            	{% if not productsLeftCnt is defined %}
+            		{% set productsLeftCnt = 0 %}
+            	{% endif %}
+            	<span class="uploader__text">Показать ещё{{ productsLeftCnt > 0 ? ' '~productsLeftCnt }}</span>
+            </button>
+        </div>
+
+		{{ knp_pagination_render(elements) }}
+		
+	{% if productCategory is defined %}
+		</div>
+	{% endif %}
+
+	{% include 'product/gtag/page_view.html.twig' with {products: elements} %}
+	{% include 'product/fb/page_view.html.twig' with {products: elements} %}
+
+{% endif %}

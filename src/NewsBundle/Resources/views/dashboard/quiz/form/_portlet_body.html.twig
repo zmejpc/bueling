@@ -1,0 +1,12 @@
+{% include '@Dashboard/default/crud/form/fields/_tabbable.html.twig' with {
+    'tabs': {
+        'general_info': {
+            'name': 'ui.general_info'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.translations)~ include('@News/dashboard/quiz/form/_quiz_show.html.twig')
+        },
+        'newsQuizOptions': {
+            'name': 'ui.value'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.quizOptions),
+        }
+    }
+} %}

@@ -1,0 +1,47 @@
+{% trans_default_domain 'FrontendBundle' %}
+
+{% for product in products %}
+    <li class="products__item {{ is_ajax is defined ? 'js-infinite-scroll-item' }}">
+        <div class="product">
+            <div class="product__inner">
+                <a class="product__img-wrap lazyload-container"
+                   href="{{ path('frontend_product_show', {slug: product.translations[product.defaultLocale].slug, _locale: app.request.locale}) }}">
+                   {% if product.discount and product.discount.isEnabled %}
+                       <div class="product__decorator {% if noFilter is defined and noFilter == true %}product__decorator-noFilter{% endif %}" {% if product.discount.color %}style="background-color: {{product.discount.color}}"{% endif %}>
+                            <span class="product__decorator-text">
+                                <span style="color:{{ product.discount.textColor }}">{{ product.discount.translate.title }}</span>
+                            </span>
+                        </div>
+                    {% endif %}
+                    {% set imageData = product.galleryImages|length ? product.galleryImages|first.image|json_decode : [] %}
+                    {% set defaultImage = 'build/frontend/img/temp/product_1_370.jpg' %}
+                    <img class="lazyload product__img"
+                         data-srcset="{{ asset(imageData['list_370_493']|default(defaultImage)) }} 370w, {{ asset(imageData['list_740_990']|default(defaultImage)) }}  740w"
+                         data-src="{{ asset(imageData['list_370_493']|default(defaultImage)) }}"/>
+                </a>
+                <div class="product__body">
+                    <div class="product__title">
+                        {{ product.translate.title }}
+                    </div>
+                    <div class="product__form product-form js-form-selection product__bottom">
+                        <div class="product-form__item">
+                            {% if not product.status or product.status.systemName != 'in_stock' %}
+                                <p class="suplementary-text">{{ 'product.not_in_stock'|trans }}</p>
+                            {% else %}
+                                {% include 'product/_price.html.twig' %}
+                                {% include 'product/_add_to_cart.html.twig' with { 'product': product, class: 'D(n-767px)' } %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+{% else %}
+    <li class="col">{{ 'filter.nothing_found'|trans }}</li>
+{% endfor %}
+{% if per_page == products|length %}
+    <li role="presentation">
+        <a class="js-infinite-scroll-next" href="?page={{ page + 1 }}"></a>
+    </li>
+{% endif %}

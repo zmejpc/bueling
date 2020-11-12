@@ -1,0 +1,12 @@
+{% if pageCount > 1 %}
+    {% if next is defined %}
+        <span id="inf-load-next" class="hidden">
+            <a href="{{ path(route, {
+                'page': next,
+                'countInPage': query['countInPage'],
+                'searchStr': query['searchStr'],
+            }) }}">
+            </a>
+        </span>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,31 @@
+frontend_search_from_header_save:
+    path:     /save/
+    controller: FrontendBundle\Controller\SearchController::searchSaveAction
+    methods:  POST
+
+frontend_search_from_header_get_hint:
+    path:     /get-hints/
+    controller: FrontendBundle\Controller\SearchController::searchGetHintsAction
+    methods:  [POST]
+
+#frontend_search_get_results_by_page:
+#    path:     /{searchStr}/{page}/{countInPage}
+#    controller: FrontendBundle\Controller\SearchController::getResultsForSearchPageAction
+#    defaults:
+#        searchStr: null
+#        page: 1
+#        countInPage: 10
+#    requirements:
+#        page:  \d+
+#        countInPage:  \d+
+
+frontend_search_index:
+    path:     /{page}/{countInPage}/{searchStr}
+    controller: FrontendBundle\Controller\SearchController::getSearchResultsAction
+    defaults:
+        page: 1
+        countInPage: 9
+        searchStr: null
+    requirements:
+        page:  \d+
+        countInPage:  \d+

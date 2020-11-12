@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="canonical" href="{{ absolute_url(path('frontend_static_page_show', {'slug': element.systemName})) }}"/>
+{% endblock %}
+
+{% block main %}
+    
+{% endblock %}

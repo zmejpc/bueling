@@ -1,0 +1,132 @@
+{% trans_default_domain 'FrontendBundle' %}
+<div class="info container container--min">
+    <div class="info__controls">
+        <div class="info__head">
+            <div class="info__select">
+                <span class="info__select-text">{{ 'product.description'|trans }}</span>
+                <svg class="svg-icon info__select-icon" aria-hidden="true">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down"></use>
+                </svg>
+                <select class="info__select-item">
+                    <option value="0">{{ 'product.description'|trans }}</option>
+                    <option value="1">{{ 'product.comp_and_care'|trans }}</option>
+                    <option value="2">{{ 'product.sizes_table'|trans }}</option>
+                </select>
+            </div>
+            <div class="info__buttons">
+                <button class="info__button info__button--swipe info__button--active" data-index="0">
+                    <div class="info__button-inner">
+                        <span class="info__button-text">{{ 'product.description'|trans }}</span>
+                        <span class="info__button-text info__button-text--active">{{ 'product.description'|trans }}</span>
+                    </div>
+                </button>
+                <button class="info__button info__button--swipe" data-index="1">
+                    <div class="info__button-inner">
+                        <span class="info__button-text">{{ 'product.comp_and_care'|trans }}</span>
+                        <span class="info__button-text info__button-text--active">{{ 'product.comp_and_care'|trans }}</span>
+                    </div>
+                </button>
+                <button class="info__button info__button--swipe" data-index="2">
+                    <div class="info__button-inner">
+                        <span class="info__button-text">{{ 'product.sizes_table'|trans }}</span>
+                        <span class="info__button-text info__button-text--active">{{ 'product.sizes_table'|trans }}</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="info__body">
+        <div class="info__block info-block info__block--active info__block--visible" data-index="0">
+            <div class="info-block__content">
+                <div class="info-block__subcontent">
+                    <div class="static-content">
+                        {{ product.translate.description|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info__block info-block" data-index="1">
+            <div class="info-block__content">
+                <div class="info-block__subcontent">
+                    <div class="static-content">
+                        {{ product.translate.composition|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info__block info-block" data-index="2">
+            <div class="info-block__content">
+                <div class="info-block__subcontent">
+                    <div class="static-content">
+                        {{ product.translate.sizes|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="icon-list D(n)--lg">
+        <div class="icon-list__inner">
+            <ul class="icon-list__list">
+                {% if staticContent.payment is defined %}
+                    <li class="icon-list__item icon-list-item">
+                        <svg class="svg-icon icon-list-item__icon" aria-hidden="true">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#cards"></use>
+                        </svg>
+                        <div class="icon-list-item__content">
+                                                <span class="icon-list-item__title">
+                                                    {{ staticContent.payment.shortDescription|striptags('<p><a>')|raw }}
+                                                </span>
+                            <span class="icon-list-item__text">
+                                                    {{ staticContent.payment.description|striptags('<p><a>')|raw }}
+                                                </span>
+                        </div>
+                    </li>
+                {% endif %}
+                {% if staticContent.delivery is defined %}
+                    <li class="icon-list__item icon-list-item">
+                        <svg class="svg-icon icon-list-item__icon" aria-hidden="true">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#box"></use>
+                        </svg>
+                        <div class="icon-list-item__content">
+                                                <span class="icon-list-item__title">
+                                                    {{ staticContent.delivery.shortDescription|striptags('<p><a>')|raw }}
+                                                </span>
+                            <span class="icon-list-item__text">
+                                                    {{ staticContent.delivery.description|striptags('<p><a>')|raw }}
+                                                </span>
+                        </div>
+                    </li>
+                {% endif %}
+                {% if staticContent.faq is defined %}
+                    <li class="icon-list__item icon-list-item">
+                        <svg class="svg-icon icon-list-item__icon" aria-hidden="true">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#faq"></use>
+                        </svg>
+                        <div class="icon-list-item__content">
+                                                <span class="icon-list-item__title">
+                                                    {{ staticContent.faq.shortDescription|striptags('<p><a>')|raw }}
+                                                </span>
+                            <span class="icon-list-item__text">
+                                                    {{ staticContent.faq.description|striptags('<p><a>')|raw }}
+                                                </span>
+                        </div>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="product-info Mt(2rem)--xs-lg D(n)--lg">
+        <div class="product-info__inner">
+            <div class="product-info__content">
+                {% if staticContent['product_info_content'] is defined %}
+                    <span class="product-info__text product-info__text--main">
+                                            {{ staticContent['product_info_content'].shortDescription|raw }}
+                                        </span>
+                    <span class="product-info__text product-info__text">
+                                            {{ staticContent['product_info_content'].description|raw }}
+                                        </span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

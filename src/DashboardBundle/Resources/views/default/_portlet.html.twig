@@ -1,0 +1,34 @@
+{% spaceless %}
+    <div class="portlet {% if is_create_update is not defined %}light bordered {% endif %}">
+        {% if is_portlet_title is not defined %}
+            <div class="portlet-title">
+                {% if (caption_subject is defined and caption_subject is not empty) or (caption_helper is defined and caption_helper is not empty) %}
+                    <div class="caption {% if caption_color is defined %}{{ caption_color }}{% endif %}">
+                        <i class="{% if caption_subject_icon is defined %}{{ caption_subject_icon }}{% endif %} font-dark {% if caption_color is defined %}{{ caption_color }}{% endif %}"></i>
+                        {% if caption_subject is not empty %}
+                            <span class="caption-subject font-dark bold uppercase">{{ caption_subject|raw }}</span>
+                        {% endif %}
+                        {% if caption_helper is defined and caption_helper is not empty %}
+                            <span class="caption-helper">{{ caption_helper }}</span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                <div class="actions">
+                    {% if actions is defined and actions is not null %}
+                        {{ actions|raw }}
+                    {% endif %}
+                    {% if fullscreen is not defined %}
+                        <a rel="nofollow" href="javascript:void(0);"
+                           class="btn btn-circle btn-icon-only btn-default fullscreen"
+                           data-original-title="{{ 'ui.portlet.full_screen'|trans([], 'DashboardBundle') }}"
+                           title="{{ 'ui.portlet.full_screen'|trans([], 'DashboardBundle') }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+        <div class="portlet-body {% if portlet_body_class is defined %}{{ portlet_body_class }}{% endif %}">
+            {{ portlet_body|raw }}
+        </div>
+    </div>
+{% endspaceless %}

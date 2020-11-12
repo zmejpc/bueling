@@ -1,0 +1,12 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    globals:
+      locale: '%locale%'
+      localeSupported: '%locale_supported%'
+      default_locale: "%locale%"
+      app: "@app.app_variable"
+    form_themes:
+        - '@Dashboard/default/crud/form/_form_widgets.html.twig'
+        - '@Upload/default/crud/form/_form_widgets.html.twig'

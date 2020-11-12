@@ -1,0 +1,29 @@
+<div class="m-portlet">
+    <div class="m-portlet__body  m-portlet__body--no-padding">
+        <div class="row m-row--no-padding m-row--col-separator-xl">
+            {% if is_granted('ROLE_ORDER_LIST') %}
+                <div class="col-md-12 col-lg-6 col-xl-3">
+                    {{ render(controller('IhorDrevetskyi\\eCommerce\\Ecommerce\\Controller\\Dashboard\\OrderController::renderNewOrderWidget')) }}
+                </div>
+            {% endif %}
+
+            {% if is_granted('ROLE_CONTACT_LIST') %}
+                <div class="col-md-12 col-lg-6 col-xl-3">
+                    {{ render(controller('IhorDrevetskyi\\SupportCenter\\ContactBundle\\Controller\\Dashboard\\ContactController::renderNewContactWidget')) }}
+                </div>
+            {% endif %}
+
+            {% if is_granted('ROLE_CALLBACK_LIST') %}
+                <div class="col-md-12 col-lg-6 col-xl-3">
+                    {{ render(controller('IhorDrevetskyi\\SupportCenter\\CallbackBundle\\Controller\\Dashboard\\CallbackController::renderNewCallbackWidget')) }}
+                </div>
+            {% endif %}
+
+            {% if is_granted('ROLE_REVIEW_LIST') %}
+                <div class="col-md-12 col-lg-6 col-xl-3">
+                    {{ render(controller('IhorDrevetskyi\\SupportCenter\\ReviewBundle\\Controller\\Dashboard\\ReviewController::renderNewReviewWidget')) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{% set createAndEdit = form.createAndEdit is defined %}
+{% set createAndCreate = form.createAndCreate is defined %}
+{% set createAndList = form.createAndList is defined %}
+
+{% set saveAndEdit = form.saveAndEdit is defined %}
+{% set saveAndCreate = form.saveAndCreate is defined %}
+{% set saveAndList = form.saveAndList is defined %}
+
+{% if createAndEdit == true or saveAndEdit == true or
+    createAndCreate == true is defined or saveAndCreate == true or
+    createAndList == true is defined or saveAndList == true %}
+    <div class="btn-group">
+        {% if createAndEdit == true %}
+            {{ form_widget(form.createAndEdit) }}
+        {% elseif saveAndEdit == true %}
+            {{ form_widget(form.saveAndEdit) }}
+        {% endif %}
+        {% if createAndCreate == true or saveAndCreate == true or createAndList == true or saveAndList == true %}
+            <button type="button"
+                    class="btn btn-sm btn-outline-brand dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <ul class="kt-nav">
+                    {% if createAndCreate == true %}
+                        {{ form_widget(form.createAndCreate) }}
+                    {% elseif saveAndCreate == true %}
+                        {{ form_widget(form.saveAndCreate) }}
+                    {% endif %}
+
+                    {% if createAndList == true %}
+                        {{ form_widget(form.createAndList) }}
+                    {% elseif saveAndList == true %}
+                        {{ form_widget(form.saveAndList) }}
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

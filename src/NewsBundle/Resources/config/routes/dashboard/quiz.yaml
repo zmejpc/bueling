@@ -1,0 +1,29 @@
+dashboard_news_quiz_index:
+  path:     /{news}/quiz/
+  controller: NewsBundle\Controller\Dashboard\NewsQuizController::customListAction
+  methods:  [GET, POST]
+  requirements:
+    news:  \d+
+
+dashboard_news_quiz_new:
+  path:     /{news}/quiz/new/
+  controller: NewsBundle\Controller\Dashboard\NewsQuizController::customNewAction
+  methods:  [GET, POST]
+  requirements:
+    news:  \d+
+
+dashboard_news_quiz_edit:
+  path:     /{news}/quiz/edit/{id}
+  controller: NewsBundle\Controller\Dashboard\NewsQuizController::customEditAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+
+    news:  \d+
+
+dashboard_news_quiz_delete:
+  path:     /{news}/quiz/delete/{id}
+  controller: NewsBundle\Controller\Dashboard\NewsQuizController::customDeleteAction
+  methods:  GET
+  requirements:
+    id:  \d+
+    news:  \d+

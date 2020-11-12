@@ -1,0 +1,7 @@
+roles:
+  cru: 'CRU'
+  crud: 'CRUD'
+  leading_roles: 'Главные роли'
+  developer: 'Разработчик'
+  director: 'Администратор'
+  users: 'Пользователи'

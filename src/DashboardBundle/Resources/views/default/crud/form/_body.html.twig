@@ -1,0 +1,37 @@
+{% set tabs = {} %}
+
+{% for key, element in form %}
+    {% if element|length > 0 %}
+        {% if 'dashboard_form' in element.vars.block_prefixes %}
+            {% if element.vars.useGroupFields == true %}
+                {{ include('@Dashboard/default/crud/form/fields/_tabbable_body.html.twig', {
+                    'form': element,
+                    'useGroupFields': element.vars.useGroupFields is defined and element.vars.useGroupFields == true
+                }) }}
+            {% else %}
+                {% set tabsName = '' %}
+                {% if element.vars.translation_domain is null %}
+                    {% set tabsName = element.vars.tabName %}
+                {% else %}
+                    {% set tabsName = element.vars.tabName|trans([], element.vars.translation_domain) %}
+                {% endif %}
+                {% set tabs = tabs + {(key): {
+                    'name': tabsName,
+                    'body': include('@Dashboard/default/crud/form/fields/_tabbable_body.html.twig', {
+                        'form': element,
+                        'useGroupFields': element.vars.useGroupFields is defined and element.vars.useGroupFields == true
+                    }),
+                    'icon': element.vars.tabIcon
+                }} %}
+            {% endif %}
+        {% else %}
+            {{ form_widget(element) }}
+        {% endif %}
+    {% else %}
+        {{ form_widget(element) }}
+    {% endif %}
+{% endfor %}
+
+{% include '@Dashboard/default/crud/form/fields/_tabbable.html.twig' with {'tabs': tabs} %}
+
+{% block script_form_page_scripts %}{% endblock %}

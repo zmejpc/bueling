@@ -1,0 +1,7 @@
+frontend_contact:
+    resource: "@ContactBundle/Resources/config/routes/frontend/contact.yaml"
+    prefix:   /contact
+
+frontend_callback:
+    resource: "@ContactBundle/Resources/config/routes/frontend/callback.yaml"
+    prefix:   /callback

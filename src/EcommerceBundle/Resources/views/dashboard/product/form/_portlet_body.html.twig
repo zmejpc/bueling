@@ -1,0 +1,24 @@
+{% include '@Dashboard/default/crud/form/fields/_tabbable.html.twig' with {
+    'tabs': {
+        'general_info': {
+            'name': 'ui.general_info'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.translations)~form_widget(form.categories)~form_widget(form.capsules)~form_widget(form.collaborations)~form_widget(form.status) ~form_widget(form.showOnWebsite)~form_widget(form.position)~form_widget(form.currency)~form_widget(form.discount)~form_widget(form.price)~form_widget(form.topSale),
+        },
+        'seo': {
+            'name': 'sidebar.configuration.seo'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.seo)
+        },
+        'associations': {
+            'name': 'ui.product_associations'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.associations)
+        },
+        'galleryImages': {
+            'name': 'sidebar.photo_gallery.photo_gallery'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.galleryImages)
+        },
+        'sizes': {
+            'name': 'Размеры',
+            'body': form_widget(form.sizes)
+        }
+    }
+} %}

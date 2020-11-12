@@ -1,0 +1,3 @@
+{% if seo.h1 is defined and seo.h1 is not empty %}
+	<h1 class="{{ class is defined and class is not empty ? class : 'h1' }}">{{ seo.h1 }}</h1>
+{% endif %}

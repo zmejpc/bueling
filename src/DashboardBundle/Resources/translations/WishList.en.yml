@@ -1,0 +1,13 @@
+dialog:
+  close: 'Close Dialog'
+  continue: 'Continue'
+  go_to_cabinet: 'Go to cabinet'
+  dialog_auth:
+    title: 'To add products to the "Wish List" you need to be logged in'
+    text: 'Register or log in using the links below.'
+  dialog_success_add:
+    title: 'Product added to "Wish List"'
+    text: 'You have added a product to the "Wish List".'
+  dialog_success_remove:
+    title: 'Product removed from "Wish List"'
+    text: 'You have deleted a product from the "Wish List".'

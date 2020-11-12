@@ -1,0 +1,6 @@
+sidebar:
+  configuration:
+    static_partition:
+      static_partition: 'Статичний розділ'
+      static_content: 'Статичний контент'
+      static_pages: 'Статичні сторінки'

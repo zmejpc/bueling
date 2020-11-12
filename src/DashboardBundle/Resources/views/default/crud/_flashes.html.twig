@@ -1,0 +1,47 @@
+{% for message in app.flashes('flash_create_error') %}
+    {% include '@Dashboard/default/alert/_danger.html.twig' with {
+        'isShow': true, 'alert_close': true,
+        'message': message,
+        'strongMessage':  'ui.error'|trans([], 'DashboardBundle')~'!'
+    } %}
+{% endfor %}
+
+{% for message in app.flashes('flash_create_success') %}
+    {% include '@Dashboard/default/alert/_success.html.twig' with {
+        'isShow': true, 'alert_close': true,
+        'message': message,
+        'strongMessage':  'ui.success'|trans([], 'DashboardBundle')~'!'
+    } %}
+{% endfor %}
+
+{% for message in app.flashes('flash_edit_error') %}
+    {% include '@Dashboard/default/alert/_danger.html.twig' with {
+        'isShow': true, 'alert_close': true,
+        'message': message,
+        'strongMessage':  'ui.error'|trans([], 'DashboardBundle')~'!'
+    } %}
+{% endfor %}
+
+{% for message in app.flashes('flash_edit_success') %}
+    {% include '@Dashboard/default/alert/_success.html.twig' with {
+        'isShow': true, 'alert_close': true,
+        'message': message,
+        'strongMessage':  'ui.success'|trans([], 'DashboardBundle')~'!'
+    } %}
+{% endfor %}
+
+{% for message in app.flashes('flash_delete_error') %}
+    {% include '@Dashboard/default/alert/_danger.html.twig' with {
+        'isShow': true, 'alert_close': true,
+        'message': message,
+        'strongMessage':  'ui.error'|trans([], 'DashboardBundle')~'!'
+    } %}
+{% endfor %}
+
+{% for message in app.flashes('flash_delete_success') %}
+    {% include '@Dashboard/default/alert/_success.html.twig' with {
+        'isShow': true, 'alert_close': true,
+        'message': message,
+        'strongMessage':  'ui.success'|trans([], 'DashboardBundle')~'!'
+    } %}
+{% endfor %}

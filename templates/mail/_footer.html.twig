@@ -1,0 +1,104 @@
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="3" style="border-top:1px solid #f0f0f0;padding-top:22px;padding-bottom:22px;">
+                <table style="border:0;border-collapse:collapse;width:100%;margin-bottom:30px;" cellspacing="0" cellpadding="0">
+                  <tbody style="">
+                  <tr style="text-align:center;">
+                      <td style="width:30%;text-align: center;color:#CED2DD;font-size:14px;font-family: Arial, sans-serif;">
+                          LOOK US AT SOCIAL MEDIA
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+                <table style="border:0;border-collapse:collapse;width:100%" cellspacing="0" cellpadding="0">
+                  <tbody style="">
+                    <tr style="text-align:center;">
+                      <td style="width:30%;">
+                          <a href="https://www.facebook.com/leskizzo/">
+                            <img width="40" src="https://leskizzo.gauriz.com/build/frontend/img/facebook.png" alt="facebook">
+                          </a>
+                      </td>
+                      <td style="width:30%;">
+                         <a href="https://www.instagram.com/leskizzo/">
+                              <img width="40" src="https://leskizzo.gauriz.com/build/frontend/img/instagram.png" alt="instagram">
+                          </a>
+                      </td>
+                      <td style="width:30%;">
+                          <a href="https://www.pinterest.com/leskizzo/">
+                              <img width="40" src="https://leskizzo.gauriz.com/build/frontend/img/pinterest.png" alt="pinterest">
+                          </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            {% set contactData = render(controller('ContactBundle\\Controller\\Frontend\\ContactController:getContactInfoJson'))|json_decode %}
+            <tr>
+              <td style="Margin:0;margin:0;padding:0">
+                <table style="Margin:0 auto;border-collapse:collapse;margin:0 auto;padding:0;width:650px" align="center">
+                  <tbody>
+                    <tr>
+                      <td style="Margin:0;margin:0;padding:0">
+                        <table style="border-collapse:collapse;display:table;padding:0;width:100%">
+                           <tbody>
+                             <tr>
+                              <td style="Margin:0;margin:0;padding:30px 16px;">
+                                <table style="border-collapse:collapse;display:table;padding:0;width:100%">
+                                  <tbody>
+                                    <tr>
+                                      {% if contactData.phones|length and contactData.phones|first.phones is defined %}
+                                        {% for phone in contactData.phones|first.phones %}
+                                          {% if loop.index < 3 %}
+                                            <th style="Margin:0 auto;margin:0 auto;padding:0;width:206px;vertical-align:middle;text-align:center">
+                                              <span style="Margin:0;color:#221f1f;font-size:12px;text-decoration:none;line-height:14px;font-weight:400;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif">
+                                                <a href="tel:{{ phone|striptags }}" style="text-decoration: none;color:#CED2DD;">{{ phone|striptags }}</a>
+                                              </span>
+                                            </th>
+                                          {% endif %}      
+                                        {% endfor %}
+                                      {% endif %}
+                                      {% if contactData.others.mailto is defined and contactData.others.mailto.text is defined %}
+                                        <th style="Margin:0 auto;margin:0 auto;padding:0;width:206px;vertical-align:top;text-align:center">
+                                          <span style="Margin:0;color:#221f1f;font-size:12px;line-height:14px;font-weight:400;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif">
+                                            e-mail:
+                                             <a href="mailto:info@mypr.com.ua" style="color:#9e9fa0;margin:0;padding:0;text-decoration:none" target="_blank">
+                                              {{ contactData.others.mailto.text|striptags }}
+                                            </a>
+                                          </span>
+                                        </th>
+                                      {% endif %}
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

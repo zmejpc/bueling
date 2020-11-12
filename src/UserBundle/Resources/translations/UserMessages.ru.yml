@@ -1,0 +1,40 @@
+ui:
+  email: 'Адрес электронной почты'
+  repeat_password: 'Повторите пароль.'
+
+validators:
+  user:
+    email:
+      not_blank: Пожалуйста, введите ваш email.
+      unique: Этот адрес электронной почты уже используется.
+    plainPassword:
+      not_blank: Пожалуйста, введите ваш пароль.
+
+form:
+  user:
+    billing_address: Адрес для выставления счета
+    different_billing_address: Использовать другой адрес для выставления счета?
+    first_name: Имя
+    groups: Группы
+    roles: Роли
+    last_name: Фамилия
+    email: "*Адрес электронной почты"
+    enabled: Активен
+    password:
+      label: "*Пароль"
+      password_confirmation: Подтвердите пароль
+      confirmation: Верификация
+    remember_me: Запомнить меня
+    shipping_address: Адрес доставки
+    username: Имя пользователя
+  login:
+    username: 'Имя пользователя'
+    password: 'Пароль'
+    remember_me: 'Запомнить меня'
+  user_change_password:
+    confirmation: Подтверждение
+    current: Текущий пароль
+    new: Новый пароль
+  user_reset_password:
+    confirmation: Подтверждение
+    new: Новый пароль

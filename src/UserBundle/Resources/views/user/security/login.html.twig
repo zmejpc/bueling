@@ -1,0 +1,114 @@
+{% set templateNumber = 1 %}
+
+{% extends '@Dashboard/standard_layout.html.twig' %}
+
+{% block global_theme_styles %}
+    <link href="{{ asset('bundles/dashboard/templates/'~templateNumber~'/assets/demo/default/base/style.bundle.css') }}"
+          rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block global_theme_bundle %}
+    <script src="{{ asset('bundles/dashboard/templates/'~templateNumber~'/assets/demo/default/base/scripts.bundle.js') }}"
+            type="text/javascript"></script>
+{% endblock %}
+
+{% block renderQuickSidebar %}{% endblock %}
+
+{% block renderQuickNav %}{% endblock %}
+
+{% block body_class %}
+    class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"
+{% endblock %}
+
+{% block page %}
+    <div class="m-grid m-grid--hor m-grid--root m-page m-auto">
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-3"
+             id="m_login"
+             style="background-image: url({{ asset('bundles/dashboard/assets/app/media/img/bg/bg-2.jpg') }});">
+            <div class="m-grid__item m-grid__item--fluid	m-login__wrapper">
+                <div class="m-login__container">
+                    <div class="m-login__signin">
+                        <div class="m-login__head">
+                            <h3 class="m-login__title">
+                                {{ 'ui.administration_panel_login'|trans([], 'UserBundle') }}
+                            </h3>
+                        </div>
+                        {{ form_start(form, {
+                            'action': path('security_login'),
+                            'method': 'post',
+                            'attr': {
+                                'class': 'm-login__form m-form'
+                            }
+                        }) }}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+
+                        {% if last_error %}
+                            {% include '@Dashboard/default/alert/_danger.html.twig' with {
+                                'strongMessage': '',
+                                'message': last_error.messageKey|trans(last_error.messageData, 'security')
+                            } %}
+                        {% endif %}
+
+                        <div class="form-group m-form__group">
+                            {{ form_widget(form._username, {
+                                'attr': {
+                                    'class': 'form-control m-input',
+                                },
+                                'value': last_username|default(''),
+                            }) }}
+                        </div>
+                        <div class="form-group m-form__group">
+                            {{ form_widget(form._password, {
+                                'attr': {
+                                    'class': 'form-control m-input m-login__form-input--last',
+                                }
+                            }) }}
+                        </div>
+
+                        <div class="row m-login__form-sub">
+                            <div class="col m--align-left m-login__form-left">
+                                <label class="m-checkbox  m-checkbox--light">
+                                    {{ form_widget(form._remember_me, {
+                                        'attr': {
+                                            'checked': 'checked'
+                                        }
+                                    }) }}
+                                    {{ 'ui.remember_me'|trans([], 'UserBundle') }}
+                                    <span></span>
+                                </label>
+                            </div>
+                         {#    <div class="col m--align-right m-login__form-right">
+                                <a rel="nofollow" href="{{ path('password_reset') }}" id="m_login_forget_password"
+                                   class="m-link">
+                                    {{ 'ui.forgot_password'|trans([], 'UserBundle') }}
+                                </a>
+                            </div> #}
+                        </div>
+
+                        <div class="m-login__form-action">
+                            <button id="m_login_signin_submit"
+                                    class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn btn-brand btn-block">
+                                {{ 'ui.login_button'|trans([], 'UserBundle') }}
+                            </button>
+                        </div>
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_page_scripts %}
+    {% if app.request.locale == 'ru' %}
+        <script src="{{ asset('bundles/dashboard/assets/demo/default/custom/crud/forms/jquery-validation/js/localization/messages_ru.min.js') }}"
+                type="text/javascript"></script>
+    {% elseif app.request.locale == 'uk' %}
+        <script src="{{ asset('bundles/dashboard/assets/demo/default/custom/crud/forms/jquery-validation/js/localization/messages_uk.min.js') }}"
+                type="text/javascript"></script>
+    {% endif %}
+
+    <script src="{{ asset('bundles/dashboard/assets/snippets/custom/pages/user/login.js') }}"
+            type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,39 @@
+ui:
+  email: 'Email'
+  repeat_password: 'Repeat password.'
+
+validators:
+  user:
+    email:
+      not_blank: Please enter your email.
+    plainPassword:
+      not_blank: Please enter your password.
+
+form:
+  user:
+    billing_address: Billing address
+    different_billing_address: Use different address for billing?
+    first_name: First name
+    groups: Groups
+    roles: Roles
+    last_name: Last name
+    email: "*Email"
+    enabled: Enabled
+    password:
+      label: "*Password"
+      password_confirmation: Repeat password
+      confirmation: Verification
+    remember_me: Remember me
+    shipping_address: Shipping address
+    username: Username
+  login:
+    username: 'Username'
+    password: 'Password'
+    remember_me: 'Remember me'
+  user_change_password:
+    confirmation: Confirmation
+    current: Current password
+    new: New password
+  user_reset_password:
+    confirmation: Confirmation
+    new: New password

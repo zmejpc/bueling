@@ -1,0 +1,197 @@
+parameters:
+    security.admin_regex: "^/admin"
+    security.api_regex: "^/api"
+    secret: '%env(APP_SECRET)'
+
+security:
+    encoders:
+        UserBundle\Entity\User:
+            algorithm: sha512
+
+    providers:
+        database_users:
+            entity: { class: UserBundle\Entity\User, property: username }
+        oauth:
+            id: knpu.oauth2.user_provider
+
+    firewalls:
+        main:
+            guard:
+                authenticators:
+                    - UserBundle\Utils\MyFacebookAuthenticator
+            # this firewall applies to all URLs
+            pattern: ^/
+            user_checker: UserBundle\Security\UserChecker
+            http_basic: ~
+            provider: database_users
+            # This allows the user to login by submitting a username and password
+            # Reference: https://symfony.com/doc/current/security/form_login_setup.html
+            form_login:
+                # The name of the route where the login form lives
+                # When the user tries to access a protected page, they are redirected here
+                login_path: security_login
+                # The route name that the login form submits to
+                check_path: security_login
+                failure_path: security_login
+                use_forward: false
+                use_referer: true
+                # Secure the login form against CSRF
+                # Reference: https://symfony.com/doc/current/security/csrf_in_login_form.html
+                csrf_token_generator: security.csrf.token_manager
+                # The page users are redirect to when there is no previous page stored in the
+                # session (for example when the users access directly to the login page).
+                always_use_default_target_path: false
+                default_target_path: dashboard_homepage
+            logout:
+                # The route name the user can go to in order to logout
+                path: security_logout
+                # The name of the route to redirect to after logging out
+                target: frontend_homepage
+                invalidate_session: false
+            remember_me:
+                secret: "%secret%"
+                lifetime: 31536000
+                remember_me_parameter: _remember_me
+            # but the firewall does not require login on every page
+            # denying access is done in access_control or in your controllers
+            anonymous: true
+            oauth:
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                    google:             "/login/check-google"
+                login_path:        security_login
+                use_forward:       false
+                failure_path:      security_login
+                oauth_user_provider:
+                    service: UserBundle\Security\Core\User\UserProvider
+        oauth_token:
+            pattern: "%security.api_regex%/oauth/v2/token"
+            security: false
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+    role_hierarchy:
+        ROLE_ADMIN_PANEL:  [ROLE_USER]
+        ROLE_DEVELOPER:  [ROLE_DIRECTOR]
+        #
+        ROLE_CONTACT: [ROLE_ADMIN_PANEL, ROLE_CONTACT_LIST, ROLE_CONTACT_EDIT]
+        ROLE_CONTACT_FULL: [ROLE_CONTACT, ROLE_CONTACT_DELETE]
+        ROLE_CONTACT_STATUS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_CONTACT_STATUS_LIST, ROLE_CONTACT_STATUS_CREATE, ROLE_CONTACT_STATUS_EDIT]
+        ROLE_CONTACT_STATUS_FULL: [ROLE_CONTACT_STATUS_CREATE_EDIT, ROLE_CONTACT_STATUS_DELETE]
+        ROLE_CONTACT_MANAGER_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_CONTACT_MANAGER_LIST, ROLE_CONTACT_MANAGER_CREATE, ROLE_CONTACT_MANAGER_EDIT]
+        ROLE_CONTACT_MANAGER_FULL: [ROLE_CONTACT_MANAGER_CREATE_EDIT, ROLE_CONTACT_MANAGER_DELETE]
+        ROLE_CONTACT_MAIL_SETTING: [ROLE_ADMIN_PANEL,  ROLE_CONTACT_MAIL_SETTING_EDIT]
+        ROLE_CONTACT_PHONE_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_CONTACT_PHONE_LIST, ROLE_CONTACT_PHONE_CREATE, ROLE_CONTACT_PHONE_EDIT]
+        ROLE_CONTACT_PHONE_FULL: [ROLE_CONTACT_PHONE_CREATE_EDIT, ROLE_CONTACT_PHONE_DELETE]
+        #
+        ROLE_SEO: [ROLE_ADMIN_PANEL, ROLE_SEO_LIST, ROLE_SEO_EDIT]
+        ROLE_STATIC: [ROLE_ADMIN_PANEL, ROLE_STATIC_LIST, ROLE_STATIC_EDIT]
+        ROLE_SLIDER: [ROLE_ADMIN_PANEL, ROLE_SLIDER_LIST, ROLE_SLIDER_EDIT]
+        #
+        ROLE_NEWS_CATEGORY_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_NEWS_CATEGORY_LIST, ROLE_NEWS_CATEGORY_CREATE, ROLE_NEWS_CATEGORY_EDIT]
+        ROLE_NEWS_CATEGORY_FULL: [ROLE_NEWS_CATEGORY_CREATE_EDIT, ROLE_NEWS_CATEGORY_DELETE]
+        #
+        ROLE_NEWS_COMMENTS_EDIT: [ROLE_ADMIN_PANEL, ROLE_NEWS_COMMENTS_LIST, ROLE_NEWS_COMMENTS_EDIT]
+        ROLE_NEWS_COMMENTS_FULL: [ROLE_NEWS_COMMENTS_EDIT, ROLE_NEWS_COMMENTS_DELETE]
+        #
+        ROLE_NEWS_AUTHOR_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_NEWS_AUTHOR_LIST, ROLE_NEWS_AUTHOR_CREATE, ROLE_NEWS_AUTHOR_EDIT]
+        ROLE_NEWS_AUTHOR_FULL: [ROLE_NEWS_AUTHOR_CREATE_EDIT, ROLE_NEWS_AUTHOR_DELETE]
+        #
+        ROLE_NEWS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_NEWS_LIST, ROLE_NEWS_CREATE, ROLE_NEWS_EDIT]
+        ROLE_NEWS_FULL: [ROLE_NEWS_CREATE_EDIT, ROLE_NEWS_DELETE]
+        #
+        ROLE_USERS_EDIT: [ROLE_ADMIN_PANEL, ROLE_USER_LIST, ROLE_USER_EDIT, ROLE_USER_MAIL_SETTING]
+        #
+        ROLE_ORDER_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_ORDER_LIST, ROLE_ORDER_CREATE, ROLE_ORDER_EDIT]
+        ROLE_ORDER_FULL: [ROLE_ORDER_CREATE_EDIT, ROLE_ORDER_DELETE]
+
+        ROLE_ORDER_STATUS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_ORDER_STATUS_LIST, ROLE_ORDER_STATUS_CREATE, ROLE_ORDER_STATUS_EDIT]
+        ROLE_ORDER_STATUS_FULL: [ROLE_ORDER_STATUS_CREATE_EDIT, ROLE_ORDER_STATUS_DELETE]
+
+        ROLE_PRODUCT_STATUS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PRODUCT_STATUS_LIST, ROLE_PRODUCT_STATUS_CREATE, ROLE_PRODUCT_STATUS_EDIT]
+        ROLE_PRODUCT_STATUS_FULL: [ROLE_PRODUCT_STATUS_CREATE_EDIT, ROLE_PRODUCT_STATUS_DELETE]
+
+        ROLE_SIZE_STATUS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_SIZE_STATUS_LIST, ROLE_SIZE_STATUS_CREATE, ROLE_SIZE_STATUS_EDIT]
+        ROLE_SIZE_STATUS_FULL: [ROLE_SIZE_STATUS_CREATE_EDIT, ROLE_SIZE_STATUS_DELETE]
+
+        ROLE_PRODUCT_SIZE_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PRODUCT_SIZE_LIST, ROLE_PRODUCT_SIZE_CREATE, ROLE_PRODUCT_SIZE_EDIT]
+        ROLE_PRODUCT_SIZE_FULL: [ROLE_PRODUCT_SIZE_CREATE_EDIT, ROLE_PRODUCT_SIZE_DELETE]
+
+        ROLE_ORDER_MANAGER_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_ORDER_MANAGER_LIST, ROLE_ORDER_MANAGER_CREATE, ROLE_ORDER_MANAGER_EDIT]
+        ROLE_ORDER_MANAGER_FULL: [ROLE_ORDER_MANAGER_CREATE_EDIT, ROLE_ORDER_MANAGER_DELETE]
+        ROLE_ORDER_CURRENCY: [ROLE_ADMIN_PANEL]
+        ROLE_ORDER_PROMO_COD: [ROLE_ADMIN_PANEL]
+        ROLE_ORDER_MAIL_SETTING_EDIT: [ROLE_ADMIN_PANEL,  ROLE_ORDER_MAIL_SETTING_EDIT]
+
+        ROLE_PRODUCT_CATEGORY_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PRODUCT_CATEGORY_LIST, ROLE_PRODUCT_CATEGORY_CREATE, ROLE_PRODUCT_CATEGORY_EDIT]
+        ROLE_PRODUCT_CATEGORY_FULL: [ROLE_PRODUCT_CATEGORY_CREATE_EDIT, ROLE_PRODUCT_CATEGORY_DELETE]
+
+        ROLE_PRODUCT_CAPSULE_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PRODUCT_CAPSULE_LIST, ROLE_PRODUCT_CAPSULE_CREATE, ROLE_PRODUCT_CAPSULE_EDIT]
+        ROLE_PRODUCT_CAPSULE_FULL: [ROLE_PRODUCT_CAPSULE_CREATE_EDIT, ROLE_PRODUCT_CAPSULE_DELETE]
+
+        ROLE_PRODUCT_COLLABORATION_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PRODUCT_COLLABORATION_LIST, ROLE_PRODUCT_COLLABORATION_CREATE, ROLE_PRODUCT_COLLABORATION_EDIT]
+        ROLE_PRODUCT_COLLABORATION_FULL: [ROLE_PRODUCT_COLLABORATION_CREATE_EDIT, ROLE_PRODUCT_COLLABORATION_DELETE]
+
+        ROLE_PRODUCT_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PRODUCT_LIST, ROLE_PRODUCT_CREATE, ROLE_PRODUCT_EDIT]
+        ROLE_PRODUCT_FULL: [ROLE_PRODUCT_CREATE_EDIT, ROLE_PRODUCT_DELETE]
+
+        ROLE_PAYMENT_METHODS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_PAYMENT_METHODS_LIST, ROLE_PAYMENT_METHODS_CREATE, ROLE_PAYMENT_METHODS_EDIT]
+        ROLE_PAYMENT_METHODS_FULL: [ROLE_PAYMENT_METHODS_CREATE_EDIT, ROLE_PAYMENT_METHODS_DELETE]
+
+        ROLE_SHIPPING_METHODS_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_SHIPPING_METHODS_LIST, ROLE_SHIPPING_METHODS_CREATE, ROLE_SHIPPING_METHODS_EDIT]
+        ROLE_SHIPPING_METHODS_FULL: [ROLE_SHIPPING_METHODS_CREATE_EDIT, ROLE_SHIPPING_METHODS_DELETE]
+
+        ROLE_CURRENCY_CREATE_EDIT: [ROLE_ADMIN_PANEL, ROLE_CURRENCY_LIST, ROLE_CURRENCY_CREATE, ROLE_CURRENCY_EDIT]
+        ROLE_CURRENCY_FULL: [ROLE_CURRENCY_CREATE_EDIT, ROLE_CURRENCY_DELETE]
+
+        #
+        ROLE_DIRECTOR:
+#        - ROLE_MANUFACTURER
+        - ROLE_ADMIN_PANEL
+        #
+        - ROLE_CONTACT_FULL
+        - ROLE_CONTACT_PHONE_FULL
+        - ROLE_CONTACT_MANAGER_FULL
+        - ROLE_CONTACT_STATUS_FULL
+        - ROLE_CONTACT_MAIL_SETTING
+        - ROLE_NEWS_FULL
+        - ROLE_NEWS_CATEGORY_FULL
+        - ROLE_NEWS_COMMENTS_FULL
+        - ROLE_NEWS_AUTHOR_FULL
+        #
+        - ROLE_STATIC
+        - ROLE_SEO
+        #
+        - ROLE_USERS_EDIT
+        #
+        - ROLE_ORDER_MANAGER_FULL
+        - ROLE_ORDER_STATUS_FULL
+        - ROLE_PRODUCT_STATUS_FULL
+        - ROLE_SIZE_STATUS_FULL
+        - ROLE_PRODUCT_SIZE_FULL
+        - ROLE_ORDER_FULL
+        - ROLE_ORDER_MAIL_SETTING_EDIT
+        - ROLE_CURRENCY_FULL
+        - ROLE_PRODUCT_FULL
+        - ROLE_PRODUCT_SHOP_FULL
+        - ROLE_PRODUCT_CATEGORY_FULL
+        - ROLE_PRODUCT_CAPSULE_FULL
+        - ROLE_PRODUCT_COLLABORATION_FULL
+        - ROLE_SHIPPING_METHODS_FULL
+        - ROLE_PAYMENT_METHODS_FULL
+        #
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+    - { path: ^/efconnect, role: ROLE_ADMIN_PANEL }
+    - { path: ^/elfinder, role: ROLE_ADMIN_PANEL }
+    # The WDT has to be allowed to anonymous users to avoid requiring the login with the AJAX request
+    - { path: ^/wdt/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/profiler/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/registration, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/password-reset, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/logout, roles: ROLE_USER }
+    - { path: "%security.api_regex%", role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: "%security.admin_regex%", role: ROLE_ADMIN_PANEL }

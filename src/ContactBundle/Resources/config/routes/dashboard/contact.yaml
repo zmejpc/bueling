@@ -1,0 +1,23 @@
+dashboard_contact_index:
+    path:     /
+    controller: ContactBundle\Controller\Dashboard\ContactController::listAction
+    methods:  [GET, POST]
+
+dashboard_contact_edit:
+    path:     /edit/{id}
+    controller: ContactBundle\Controller\Dashboard\ContactController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_contact_delete:
+    path:     /delete/{id}
+    controller: ContactBundle\Controller\Dashboard\ContactController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_contact_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: ContactBundle\Controller\Dashboard\ContactController::ajaxDeleteGroupAction
+    methods:  POST

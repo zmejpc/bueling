@@ -1,0 +1,42 @@
+dashboard_homepage:
+  path:     /admin
+  methods: [GET]
+  controller: BackendBundle\Controller\Dashboard\DashboardController::indexAction
+
+dashboard:
+  resource: "@BackendBundle/Resources/config/dashboard/routing.yaml"
+  prefix:   /admin
+
+#Upload Bundle
+upload:
+  resource: "@UploadBundle/Resources/config/routes/routing.yaml"
+  prefix:   /upload/
+
+user:
+  resource: "@UserBundle/Resources/config/routes/frontend/routing.yaml"
+  prefix:   /
+
+sitemap:
+  path:     /sitemap.{_format}
+  controller: FrontendBundle\Controller\SiteMapController::siteMapAction
+  requirements:
+    _format:  (xml)
+
+change_locale:
+   path:     /change-locale/{locale}
+   methods: [GET]
+   controller: FrontendBundle\Controller\LocaleController::changeLocaleAction
+   requirements:
+       locale: '%app_locales%'
+
+frontend:
+  resource: "@FrontendBundle/Resources/config/routing.yaml"
+  prefix: /
+
+frontend_contact:
+  resource: "@ContactBundle/Resources/config/routes/frontend/all.yaml"
+  prefix:   /
+
+frontend_ecommerce:
+  resource: "@EcommerceBundle/Resources/config/frontend/routing.yaml"
+  prefix:   /

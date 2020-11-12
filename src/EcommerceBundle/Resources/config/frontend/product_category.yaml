@@ -1,0 +1,5 @@
+frontend_show_product_category:
+  path:     /{slug}
+  controller: Ecommerce\Controller\Frontend\ProductCategoryController::showCategoryAction
+  requirements:
+    slug: "[\\w-]+"

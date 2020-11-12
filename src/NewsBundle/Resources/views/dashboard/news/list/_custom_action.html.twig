@@ -1,0 +1,12 @@
+{% include '@Dashboard/default/crud/list/_actions_edit_delete.html.twig' %}
+<br>
+{# <a href="{{ path('dashboard_news_quiz_index', {'news': news}) }}"
+   class="btn btn-hover-brand btn-icon btn-icon-only btn-pill"
+   title="{{ 'ui.quizzes'|trans([], 'DashboardBundle') }}">
+    <i class="flaticon-list"></i>
+</a> #}
+<a rel="nofollow" target="_blank" href="{{ path('news_preview_page', {'id': news}) }}"
+   class="btn btn-hover-brand btn-icon btn-icon-only btn-pill"
+   title="Предпросмотр">
+    <i class="flaticon-visible"></i>
+</a>

@@ -1,0 +1,38 @@
+<ul class="nav nav-tabs  nav-tabs-line nav-tabs-line-info" role="tablist">
+    {% for translationsFields in form %}
+        {% set locale = translationsFields.vars.name %}
+        <li class="nav-item">
+            <a rel="nofollow" class="nav-link {% if default_locale == locale %}active{% endif %}" data-toggle="tab"
+               href="#{{ translationsFields.vars.id }}-{{ locale }}" role="tab">
+                {% if locale == 'ru' %}
+                    <img style="width: 20px; margin-right: 5px;"
+                         src="{{ asset('bundles/dashboard/img/flags/russia.svg') }}">
+                {% elseif locale == 'uk' %}
+                    <img style="width: 20px; margin-right: 5px;"
+                         src="{{ asset('bundles/dashboard/img/flags/ukraine.svg') }}">
+                {% elseif locale == 'en' %}
+                    <img style="width: 20px; margin-right: 5px;"
+                         src="{{ asset('bundles/dashboard/img/flags/united-states.svg') }}">
+                {% elseif locale == 'it' %}
+                    <img style="width: 20px; margin-right: 5px;"
+                         src="{{ asset('bundles/dashboard/img/flags/italy.svg') }}">
+                {% endif %}
+                {{ ('locale.'~locale)|trans([], 'DashboardBundle') }}
+                {% if default_locale == locale %}
+                    <span style="color: #e02222;font-size: 14px;"> * </span>
+                {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<div class="tab-content">
+    {% for translationsFields in form %}
+        {% set locale = translationsFields.vars.name %}
+        <div class="tab-pane {% if default_locale == locale %}active{% endif %}"
+             id="{{ translationsFields.vars.id }}-{{ locale }}" role="tabpanel">
+            {% for translationsField in translationsFields %}
+                {{ form_widget(translationsField) }}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

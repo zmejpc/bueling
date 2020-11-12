@@ -1,0 +1,38 @@
+sidebar:
+  customers:
+    customers: 'Customers'
+    users: 'Users'
+    user_settings:
+      user_settings: 'Settings'
+      user_mail_setting: 'Email settings'
+
+ui:
+  authorization: 'Authorization'
+  administration_panel_login: 'Administration panel login'
+  remember_me: 'Remember me'
+  forgot_password: 'Forgot password?'
+  login_button: 'Login'
+  no:
+    no_account: 'No account yet'
+  create:
+    create_an_account: 'Create an account'
+    create_a_new_customer_account: 'Create a new customer account'
+  confirmation_of_registration_on_the_site: 'Confirmation of registration on the site'
+  password_reset_on_the_site: 'Password reset on the site'
+  reset_password: 'Reset password'
+  password: 'Password'
+  new_password: 'New password'
+  current_password: 'Current password'
+  change:
+    change_password: 'Change password'
+    change_your_password: 'Change your password'
+  have_an_account_already: 'Have an account already?'
+  register:
+    register: 'Register'
+    register_button: 'Register'
+    register_in_the_store: 'Register in the store'
+    registered_customers: 'Registered customers'
+    registration_create_an_account_in_store: 'Registration <small>Create an account in store</small>'
+    registration_date: 'Registration date'
+  reset_button: 'Reset'
+  login_as_user: 'Login as user'

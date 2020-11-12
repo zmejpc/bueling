@@ -1,0 +1,28 @@
+dashboard_seo_page_index:
+  path:     /seo-page/
+  controller: SeoBundle\Controller\Dashboard\SeoPageController::listAction
+  methods:  [GET, POST]
+
+dashboard_seo_page_new:
+  path:     /seo-page/new/
+  controller: SeoBundle\Controller\Dashboard\SeoPageController::newAction
+  methods:  [GET, POST]
+
+dashboard_seo_page_edit:
+  path:     /seo-page/edit/{id}
+  controller: SeoBundle\Controller\Dashboard\SeoPageController::editAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+
+
+dashboard_seo_page_delete:
+  path:     /seo-page/delete/{id}
+  controller: SeoBundle\Controller\Dashboard\SeoPageController::deleteAction
+  methods:  GET
+  requirements:
+    id:  \d+
+
+dashboard_seo_page_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: SeoBundle\Controller\Dashboard\SeoPageController::ajaxDeleteGroupAction
+    methods:  POST

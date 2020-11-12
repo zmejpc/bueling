@@ -1,0 +1,22 @@
+frontend_news_by_author_list:
+    path:     /by-author/{author}/{page}/{countInPage}
+    methods: [GET]
+    controller: NewsBundle\Controller\Frontend\NewsAuthorController::byAuthorWithStandardPaginationAction
+    requirements:
+        page:  \d+
+        countInPage:  \d+
+    defaults:
+        page: 1
+        countInPage: 10
+
+#frontend_partial_get_news_elements_by_author_and_page:
+#    path:     /partial-get-news-elements-by-author-and-page/{authorSlug}/{page}/{countInPage}
+#    controller: NewsBundle:Frontend\NewsAuthor:getNewsElementsByAuthorAndPage
+#    requirements:
+#        page:  \d+
+#        countInPage:  \d+
+#    defaults:
+#        page: 1
+#        countInPage: 10
+#    condition: "request.isXmlHttpRequest()"
+#

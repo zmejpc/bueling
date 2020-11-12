@@ -1,0 +1,1 @@
+var KTBootstrapMaxlength={init:function(){$(".kt_maxlength").length>0&&$(".kt_maxlength").maxlength({alwaysShow:!0,warningClass:"kt-badge kt-badge--warning kt-badge--rounded kt-badge--inline",limitReachedClass:"kt-badge kt-badge--success kt-badge--rounded kt-badge--inline"})}};jQuery(document).ready(function(){KTBootstrapMaxlength.init()});

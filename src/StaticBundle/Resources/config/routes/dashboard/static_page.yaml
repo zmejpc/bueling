@@ -1,0 +1,28 @@
+dashboard_static_page_index:
+  path:     /static-page/
+  controller: StaticBundle\Controller\Dashboard\StaticPageController::listAction
+  methods:  [GET, POST]
+
+dashboard_static_page_new:
+  path:     /static-page/new/
+  controller: StaticBundle\Controller\Dashboard\StaticPageController::newAction
+  methods:  [GET, POST]
+
+dashboard_static_page_edit:
+  path:     /static-page/edit/{id}
+  controller: StaticBundle\Controller\Dashboard\StaticPageController::editAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+
+
+dashboard_static_page_delete:
+  path:     /static-page/delete/{id}
+  controller: StaticBundle\Controller\Dashboard\StaticPageController::deleteAction
+  methods:  GET
+  requirements:
+    id:  \d+
+
+dashboard_static_page_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: StaticBundle\Controller\Dashboard\StaticPageController::ajaxDeleteGroupAction
+    methods:  POST

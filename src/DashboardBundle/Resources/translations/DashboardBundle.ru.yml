@@ -1,0 +1,1987 @@
+locale:
+  en: 'English'
+  ru: 'Русский'
+  uk: 'Українська'
+  it: 'Итальянский'
+
+dashboard_stat:
+  new_requests: 'Новые запросы'
+  contact:
+    from_contact_form: 'от контактной формы'
+
+sidebar:
+  products_statuses: 'Статусы товаров'
+  size_statuses: 'Статусы размеров'
+  catalog:
+    catalog: 'Каталог'
+    categories: 'Категории товаров'
+    collections: 'Коллекции'
+    kits: 'Комплекты'
+    products:
+      products: 'Товары'
+      products_tags: 'Теги товаров'
+      products_types: 'Типы товаров'
+      products_attributes: 'Атрибуты'
+  sales:
+    sales: 'Продажи'
+    orders:
+      orders: 'Заказы'
+      orders_settings:
+        orders_settings: 'Настройки'
+        orders_statuses: 'Статусы заказов'
+        orders_managers: 'Менеджеры'
+  payment_shipping:
+    payment_shipping: 'Оплата и доставка'
+    payment_methods: 'Способы оплаты'
+    shipping_methods: 'Способы доставки'
+  customers:
+    customers: 'Клиенты'
+    users: 'Пользователи'
+  marketing:
+    marketing: 'Маркетинг'
+    discounts: 'Скидки'
+    slider_on_the_main: 'Слайдер на главной'
+    seo: 'SEO'
+    static_partition:
+      static_partition: 'Статический раздел'
+      static_content: 'Статический контент'
+      static_pages: 'Статические страницы'
+    log: 'Log'
+  currencies:
+    currencies: 'Валюты'
+    currency: 'Валюта'
+    exchange_rates: 'Курсы валют'
+  partners: 'Партнеры'
+  back_to_site: "Вернуться на сайт"
+  homepage: "Главная страница"
+  support_center: 'Центр поддержки'
+  contacts:
+    contacts: 'Контакты'
+    contact_form: 'Сообщение из контактной формы'
+    contact_settings:
+      contact_settings: 'Настройки'
+      contact_statuses: 'Статусы'
+      contact_managers: 'Менеджеры'
+      contact_mail_setting: 'Почта'
+    contact_phones: 'Контактные телефоны'
+    callback:
+      callback: 'Обратные звонки'
+      callback_form: 'Сообщение из формы обратного вызова'
+      callback_settings:
+        callback_settings: 'Настройки'
+        callback_statuses: 'Статусы'
+        callback_managers: 'Менеджеры'
+        callback_mail_setting: 'Почта'
+  callback:
+    callback: 'Обратные звонки'
+    callback_form: 'Сообщение из формы обратного вызова'
+    callback_settings:
+      callback_settings: 'Настройки'
+      callback_statuses: 'Статусы'
+      callback_managers: 'Менеджеры'
+      callback_mail_setting: 'Почта'
+  subscription:
+    subscription: 'Подписка'
+    subscription_form: 'Сообщения из формы подписки'
+    subscription_settings:
+      subscription_settings: 'Настройки'
+      subscription_statuses: 'Статусы'
+      subscription_managers: 'Менеджеры'
+  messages:
+    messages: 'Сообщения'
+    messages_form: 'Сообщения из формы сообщений'
+    messages_settings:
+      messages_settings: 'Настройки'
+      messages_statuses: 'Статусы'
+      messages_managers: 'Менеджеры'
+  configuration:
+    configuration: 'Конфигурация'
+    synchronization_delovod: 'Синхронизация (delovod.ua)'
+    import_by_waybill_number: 'Импорт по № накладной'
+    log: 'Logs'
+    seo : 'SEO'
+  warehouses: 'Склады'
+  photo_gallery:
+    photo_gallery: "Фотогалерея"
+    photo: 'Фото'
+    сategory: "Категории"
+
+ui:
+  processed: 'Обработан'
+  contact_info: 'Контактная информация'
+  attr_name: 'Название атрибута'
+  show_in_categories: 'Отображать на карточке товара'
+  gallery_image_from_product: 'Изображение галереи из продукта'
+  delovod:
+    synchronize: 'Синхронизировать'
+    title: 'Название'
+    process: 'Процесс'
+    categories_of_goods: 'Категории товаров'
+    exchange_rates: 'Курсы валют'
+    availability_status_of_goods_for_ordering: 'Статусы наличии товаров для заказа'
+    goods: 'Товары'
+  sum: 'Сумма'
+  sale: 'Распродажа'
+  product_associations: 'Ассоциации продуктов'
+  top_sale: 'Топ-продаж'
+  categories: 'Категории'
+  is_limited_count: 'Или количество ограничено?'
+  is_send_for_subscription: 'Отправить для подписки?'
+  is_work_without_promo_code: 'Работает без промо-кода?'
+  product_variant: 'Вариант товара'
+  products: 'Товары'
+  order_details: 'Детали заказа'
+  customer_details: 'Информация о клиенте'
+  payment_method: 'Метод оплаты'
+  shipping_method: 'Способ доставки'
+  size: 'Размер'
+  summary_of_order: 'Итого по заказу'
+  order_state: 'Статус заказа'
+  order_date: 'Дата заказа'
+  order_number: 'Номер заказа'
+  order_comment: 'Комментарий к заказу'
+  order_manager_comment: 'Комментарий менеджера к заказу'
+  order_comments: 'Комментарии к заказу'
+  new_order: 'Новый заказ'
+  new_orders: 'Новые заказы'
+  answer: 'Ответ'
+  read_more: 'Читать далее'
+  view_more: 'Показать еще'
+  view_all: 'Показать все'
+  video: 'Видео'
+  background: 'Фон'
+  sender_name: 'Имя отправителя'
+  manager_subject: 'Темы email сообщения для менеджера'
+  message_subject: 'Тема сообщения для пользователя'
+  message_body: 'Тело сообщения для пользователя'
+  success_flash_message: 'Успешное флэш сообщение'
+  title_for_flash_message: 'Название для флэш сообщения'
+  smtp_host: 'Хост (smtp)'
+  smtp_username: 'Имя пользователя (smtp)'
+  smtp_password: 'Пароль (smtp)'
+  smtp_port: 'Порт (smtp)'
+  key: 'Ключ'
+  short_title: 'Краткое название'
+  sharing: 'Поделиться в социальных сетях'
+  quizzes: 'Опросы'
+  nothing_is_selected: 'Ничего не выбрано'
+  poster_alt: 'Альтернативный текст для изображения'
+  poster: 'Изображение'
+  show_in_menu: 'Показать в меню?'
+  show_on_website: 'Отображать на сайте?'
+  show_on_main_page: 'Отображать на главной?'
+  show_in_html_site_map: 'Отображать в HTML карте сайта?'
+  site_pages:
+    main: 'Главная страница'
+    news_feed: 'Страница категории'
+    news_item: 'Страница новости'
+    contacts: 'Страница контактов'
+  banner_positions:
+    upper_page: 'Сверху страницы'
+    aside_page: 'С боку страницы'
+    bottom_page: 'Снизу страницы'
+  synchronization:
+    synchronization: 'Синхронизация'
+    category: 'Синхронизация по категориям'
+    goods: 'Синхронизация товаров'
+  notFound: 'Не найдено.'
+  accessDenied: 'Доступ закрыт.'
+  table:
+    metronicGroupActions: 'Выбрано _TOTAL_ записей'
+    metronicAjaxRequestGeneralError: 'Не удалось выполнить запрос. Пожалуйста, проверьте подключение к интернету'
+    lengthMenu:
+      lengthMenu: 'Показать _MENU_ записей'
+      all: 'Все'
+    select: 'Выбрать размер страницы'
+    input: 'Номер страницы'
+    more: 'Другие страницы'
+    infoEmpty: 'Не найдено записей для показа'
+    emptyTable: 'В таблице отсутствуют данные'
+    zeroRecords: 'Записи отсутствуют.'
+    paginate:
+      previous: 'Предыдущая'
+      next: 'Следующая'
+      last: 'Последняя'
+      first: 'Первая'
+      page: 'Страница'
+      pageOf: 'из'
+    loadingMessage: "Подождите..."
+    info: 'Записи с {{start}} до {{end}} из {{total}} записей'
+  select_your_language: 'Выберите ваш язык'
+  by: 'от'
+  abandoned: 'Отменен'
+  about: 'О нас'
+  accept: 'Принять'
+  accepted: 'Принят'
+  access_token: 'Ключ доступа'
+  access_your_store_account_or_create_a_new_one: 'Войдите в вашу учетную запись или создайте новую'
+  account_credentials: 'Данные учетной записи'
+  account_panel_outline: 'Насладжайтесь всеми возможностями которые доступны для просмотра, отслеживания и управлени всеми вашими данными'
+  action:
+    action: 'Действие'
+    action_delete: 'Удалить'
+    action_create: 'Добавить новый'
+    action_list:  'Вернуться к списку'
+    action_show: 'Показать'
+    action_edit: 'Редактировать'
+  actions: 'Действия'
+  add:
+    add: 'Добавить'
+    add_action: 'Добавить действие'
+    add_address: 'Добавить адрес'
+    add_association: 'Добавить связь'
+    add_attribute: 'Добавить атрибут'
+    add_attributes: 'Добавить атрибуты'
+    add_channel: 'Добавить канал'
+    add_choice: 'Добавить вариант'
+    add_coupon: 'Добавить купон'
+    add_image: 'Добавить изображение'
+    add_member: 'Добавить'
+    add_menu_element: 'Добавить элемент меню'
+    add_new_email: 'Добавить новый Email'
+    add_new_permission: 'Добавить новую привилегию'
+    add_new_role: 'Добавить новую роль'
+    add_province: 'Добавить регион'
+    add_rule: 'Добавить правило'
+    add_to_cart: 'Добавить в корзину'
+    add_value: 'Добавить значение'
+    add_your_review: 'Добавить свой отзыв'
+    add_new_entry: 'Добавить новую запись'
+    add_new: 'Добавить новый'
+    adding_new_customer_groups: 'Добавление новых групп клиентов'
+    adding_new_email: 'Добавление новых почтовых ящиков'
+    adding_new_locale: 'Добавление нового языка'
+  additional_information: 'Дополнительная информация'
+  address: 'Адрес'
+  address_book: 'Адресная книга'
+  adjustments: 'Корректировки'
+  administration: 'Управление'
+  administration_dashboard: 'Административная панель'
+  admin_users: 'Администраторы'
+  all: 'Все'
+  all_your_addresses: 'Ваши адреса'
+  amount: 'Количество'
+  an_error_occurred: 'Произошла ошибка'
+  api: 'API'
+  apply_coupon: 'Применить купон'
+  archival: 'Архивный'
+  archive: 'Архив'
+  are_your_sure_you_want_to_perform_this_action: 'Вы действительно хотите выполнить это действие?'
+  association: 'Взаимосвязи'
+  association_types: 'Типы взаимосвязей'
+  associations: 'Связи'
+  assortment: 'Ассортимент'
+  attributes: 'Атрибуты'
+  author: 'Автор'
+  availability: 'Доступность'
+  available_on: 'Доступен с'
+  available_on_hand: 'В наличии'
+  available_until: 'Доступно до'
+  average_order_value: 'Средний чек'
+  awaiting_payment: 'Ожидание оплаты'
+  back: 'Назад'
+  back_to_store: 'Вернуться в магазин'
+  back_to_details: 'Вернуться к деталям'
+  backorder: 'Не выполнен'
+  backordered: 'Временно недоступен'
+  balance_due: 'Сумма к оплате'
+  base_currency: 'Базовая валюта'
+  bill_to: 'Адрес для оформления счета'
+  billing_address: 'Адрес для выставления счета'
+  billing_address_changes_history: 'История изменений платёжного адреса'
+  blocks: 'Блоки'
+  body: 'Содержание'
+  browse_products: 'Обзор продукции'
+  browse_all_products: 'Просмотреть все продукты'
+  browse_your_addresses: 'Просмотр адресов'
+  browse_your_orders_from_the_past: 'Просмотреть ваши заказы из прошлого'
+  build: 'Построить'
+  by_position: 'По позиции'
+  calculator: 'Калькулятор'
+  call_us: 'Позвоните нам!'
+  cancel: 'Отмена'
+  cancelled: 'Отменён'
+  cart: 'Корзина'
+  cart_locked: 'Корзина заблокирована'
+  cart_summary: 'Итого'
+  categorization: 'Каталоги'
+  category: 'Категория'
+  category_requirements: 'Требования категории'
+  change:
+    change_address: 'Изменить адрес'
+    change_file: 'Изменить файл'
+    change_password: 'Сменить пароль'
+    change_payment_method: 'Изменить способ оплаты'
+    change_position: 'Изменить положение'
+    change_shipping_method: 'Изменить способ доставки'
+    change_your_password: 'Изменить свой пароль'
+  changes: 'Изменения'
+  channel: 'Канал'
+  channels: 'Каналы'
+  charges_and_taxes: 'Сборы и налоги'
+  cheapest_first: 'Дешёвые первыми'
+  checkbox: 'Флажок'
+  checking_out_as: 'Проверить как'
+  checkout: 'Оформление заказа'
+  choose_channel: 'Выберите канал'
+  choose_file: 'Выбрать файл'
+  choose_how_your_goods_will_be_delivered: 'Выберите, как ваш товар будет доставлен'
+  choose_how_you_will_pay: 'Выберите, как вы будете платить'
+  city: 'Город'
+  clear: 'Очистить'
+  clear_cart: 'Очистка корзины'
+  clear_filters: 'Сбросить фильтр'
+  code: 'Код'
+  color: 'Цвет'
+  comment: 'Комментарий'
+  company: 'Компания'
+  complete: 'Завершено'
+  completed: 'Завершен'
+  configurable_product: 'Вариативный товар'
+  configuration: 'Конфигурация'
+  configure_channels_available_in_your_store: 'Настройка каналов, доступных в вашем магазине'
+  confirm_your_action: 'Подтвердите ваше действие'
+  confirmation: 'Подтверждение'
+  confirmation_title: 'Подтверждение'
+  confirmed: 'Подтвержден'
+  contact_us: 'Напишите нам'
+  contact_your_technician_to_upgrade: 'Свяжитесь с администратором для обновления'
+  contain_variants: 'Содержит варианты'
+  contains: 'Содержит'
+  content: 'Содержимое'
+  countries: 'Страны'
+  country: 'Страна'
+  country_details: 'Информация о стране'
+  coupon: 'Купон'
+  coupon_based: 'Основана на купонах'
+  coupons: 'Купоны'
+  create:
+    create: 'Создать'
+    create_and_return_to_the_list: 'Создать и вернуться к списку'
+    create_and_add_new: 'Создать и добавить новый'
+    create_a_new_address: 'Добавить адрес'
+    create_association_type: 'Создать тип взаимосвязи'
+    create_country: 'Добавить поселок, село'
+    create_currency: 'Добавить валюту'
+    create_customer: 'Создание клиента'
+    create_imagine_block: 'Создать блок-изображение'
+    create_locale: 'Добавить язык'
+    create_menu: 'Создать меню'
+    create_menu_node: 'Создание пункта меню'
+    create_new_coupon: 'Создать новый купон'
+    create_new_page: 'Создать новую страницу'
+    create_new_report: 'Создание нового отчета'
+    create_option: 'Добавить опцию'
+    create_order: 'Заказать'
+    create_payment: 'Создать платеж'
+    create_payment_method: 'Создать метод оплаты'
+    create_product: 'Создать товар'
+    create_product_association: 'Создание связи товара'
+    create_product_association_type: 'Создание типа связи товара'
+    create_product_attribute: 'Создать атрибут товара'
+    create_promotion: 'Создать акцию'
+    create_report: 'Создать отчет'
+    create_shipping_category: 'Создать категорию доставки'
+    create_shipping_method: 'Создать способ доставки'
+    create_simple_block: 'Создать простой блок'
+    create_slideshow_block: 'Создать слайд-шоу блок'
+    create_string_block: 'Создать строковой блок'
+    create_tax_category: 'Создать налоговую категорию'
+    create_tax_rate: 'Создать налоговую ставку'
+    create_taxon: 'Создать категорию'
+    create_user: 'Создать пользователя'
+    create_variant: 'Создать вариант'
+    create_zone: 'Создать новую зону'
+    created: 'Время создания'
+    created_at: 'Создано'
+    creating_a_new_imagine_block: 'Создание нового блока-изображения'
+    creating_a_new_simple_block: 'Создание нового простого блока'
+    creating_a_new_slideshow_block: 'Создание нового слайд-шоу блока'
+    creating_a_new_string_block: 'Создание нового стрового блока'
+    creating_menu: 'Создание меню'
+    creating_menu_node: 'Создание элемента меню'
+    creating_new_page: 'Создание новой страницы'
+    creation_date: 'По дате создания'
+    creation_time: 'Время создания'
+  criteria: 'Критерий'
+  currency: 'Валюта'
+  current_orders: 'Текущие заказы'
+  current_promotions: 'Список рекламных акций'
+  current_stock: 'Количество на складе'
+  customer:
+    customer: 'Клиент'
+    customer_can_login_to_the_store: 'Клиент может войти в магазин?'
+    customer_care: 'Служба поддержки'
+    customer_details: 'Информация о клиенте'
+    customer_groups: 'Группы клиентов'
+    customer_id: 'Идентификатор клиента'
+    customer_login: 'Авторизация пользователя'
+    customer_not_notified: 'Клиент не уведомлён'
+    customer_notified: 'Клиент уведомлён'
+    customer_orders: 'Заказы клиента'
+    customer_since: 'Клиент начиная с'
+    customers: 'Клиенты'
+    customers_list_of_all_customers_in_store: 'Клиенты <small>список всех клиентов магазина</small>'
+  customize_default_metadata: 'Настроить метаданные по умолчанию'
+  customize_metadata: 'Настроить метаданные'
+  customize_products_metadata: 'Настройка метаданных товаров'
+  customizing_metadata: 'Настройка метаданных'
+  dashboard: 'Панель инструментов'
+  data: 'Данные'
+  date: 'Дата'
+  datetime: 'Дата и время'
+  default:
+    default: 'По умолчанию'
+    default_address: 'Адрес по умолчанию'
+    default_billing_address: 'Адрес оплаты по умолчанию'
+    default_currency: 'Валюта по умолчанию'
+    default_locale: 'Локаль по умолчанию'
+    default_shipping_address: 'Адрес доставки по умолчанию'
+  delete: 'Удалить'
+  delete_image: 'Удалить товар'
+  deleted: '﻿Удалено'
+  delivery_and_shipping: 'Отправка и доставка'
+  description: 'Описание'
+  composition: 'Состав и уход'
+  sizes: 'Размерная сетка'
+  details: 'Подробнее'
+  disable: 'Выкл'
+  disabled: 'Отключёно'
+  discount: 'Скидка'
+  discounted_unit_price: 'Цена со скидкой'
+  display: 'Показать'
+  edit:
+    edit: 'Редактировать'
+    edit_admin_user: 'Редактировать администратора'
+    edit_association_type: 'Редактировать тип взаимосвязи'
+    edit_channel: 'Редактировать канал'
+    edit_country: 'Редактировать страну'
+    edit_coupon: 'Редактировать купон'
+    edit_currency: 'Редактировать валюту'
+    edit_customer: 'Редактировать клиента'
+    edit_exchange_rate: 'Изменить валютный курс'
+    edit_locale: 'Редактировать язык'
+    edit_my_address: 'Изменить адрес'
+    edit_order: 'Редактировать Заказ'
+    edit_payment_method: 'Редактировать способ оплаты'
+    edit_product: 'Редактировать товар'
+    edit_product_association_type: 'Редактировать тип связи товара'
+    edit_product_attribute: 'Изменить атрибут продукта'
+    edit_product_option: 'Изменить вариант продукта'
+    edit_product_review: 'Редактировать отзыв товара'
+    edit_product_variant: 'Изменить вариант товара'
+    edit_promotion: 'Редактировать продвижение'
+    edit_promotion_coupon: 'Редактировать купон'
+    edit_report: 'Редактировать отчет'
+    edit_shipping_address: 'Редактировать адрес доставки'
+    edit_shipping_category: 'Изменить категорию доставки'
+    edit_shipping_method: 'Редактировать способ доставки'
+    edit_tax_category: 'Редактировать категорию наголовой ставки'
+    edit_tax_rate: 'Редактирование налоговой ставки'
+    edit_taxon: 'Редактировать категорию'
+    edit_your_items_apply_coupon_or_proceed_to_the_checkout: 'Отредактируйте заказ, примените купон или перейдите к оформлению заказа'
+    edit_your_personal_information: 'Edit my personal information'
+    edit_zone: 'Редактирование зоны'
+    editing_attribute: 'Редактирование атрибута'
+    editing_channel: 'Редактировать каналы'
+    editing_country: 'Редактировать страну'
+    editing_coupon: 'Редактирование купона'
+    editing_currency: 'Изменение валюты'
+    editing_customer: 'Редактирование клиента'
+    editing_email: 'Редактирование электронной почты'
+    editing_exchange_rate: 'Изменение валютного курса'
+    editing_imagine_block: 'Редактирование блока изображения'
+    editing_menu: 'Редактирование меню'
+    editing_menu_node: 'Редактирование элемента меню'
+    editing_option: 'Редактирование опции'
+    editing_order: 'Редактирование заказа'
+    editing_page: 'Редактирование страницы'
+    editing_payment: 'Редактирование платежа'
+    editing_payment_method: 'Изменение способа метода оплаты'
+    editing_permission: 'Редактирование прав доступа'
+    editing_product: 'Редактирование товара'
+    editing_promotion: 'Редактирование акции'
+    editing_review: 'Редактирование отзыва'
+    editing_role: 'Изменение роли'
+    editing_shipment: 'Редактирование отгрузки'
+    editing_shipping_category: 'Редактировать категорию доставки'
+    editing_shipping_method: 'Редактировать способ доставки'
+    editing_simple_block: 'Редактирование простого блока'
+    editing_slideshow_block: 'Редактирование слайд-шоу блока'
+    editing_string_block: 'Редактирование строкового блока'
+    editing_tax_category: 'Редактирование налоговой категории'
+    editing_taxon: 'Редактировать подкатегорию'
+    editing_user: 'Редактировать пользователя'
+    editing_variant: 'Редактирование вариантов'
+    editing_zone: 'Редактирование зоны'
+  email: 'Адрес электронной почты'
+  email_templates: 'Шаблоны электронной почты'
+  email_verified: 'Электронная почта проверена'
+  emails: 'Emails'
+  empty: 'Пусто'
+  enable: 'Вкл'
+  enabled: 'Активен'
+  end_date: 'Дата окончания'
+  ends_at: 'Конец'
+  ends_with: 'Заканчивается на'
+  enjoy_all_the_features_that_are_available_on_your_personal_space_to_view_track_and_manage_all_your_data: 'Насладжайтесь всеми возможностями которые доступны для просмотра, отслеживания и управлени всеми вашими данными'
+  enter_your_code: 'Введите код'
+  equal: 'Равно'
+  error: 'Ошибка'
+  exchange_rate: 'Обменный курс'
+  exchange_rates: 'Обменный курс'
+  exclusive: 'Эксклюзив'
+  existing_customer: 'Существующий клиент'
+  expiration_and_usage_limits: 'Окончание срока действия и ограничения использования'
+  expires_at: 'Истекает'
+  extra_information: 'Дополнительная информация'
+  extra_notes: 'Дополнительные заметки'
+  failed: 'Провален'
+  female: 'Женский'
+  filter: 'Фильтровать'
+  filters: 'Фильтры'
+  fill_in_your_billing_and_shipping_addresses: 'Заполните ваши адреса для отправки счета-фактуры и доставки товара'
+  name_first: 'Имя'
+  first_name: '*Имя'
+  fio: 'ФИО'
+  from: 'От'
+  from_a_to_z: 'От А до Я'
+  from_the_newest: 'От новых к старым'
+  from_the_oldest: 'От старых к новым'
+  from_z_to_a: 'От Я до А'
+  fulfill: 'Завершён'
+  fulfilled: 'Заполненные'
+  fulfilled_orders: 'Выполненные заказы'
+  gateway: 'Терминал'
+  gateway_configuration: 'Конфигурация шлюза'
+  general_info: 'Общая информация'
+  general_settings: 'Общие настройки'
+  generate: 'Сгенерировать'
+  generate_coupons: 'Генерировать купоны'
+  generate_variants: 'Генерировать варианты'
+  generating_coupons: 'Генерирование купонов'
+  go: 'Перейти'
+  go_level_up: 'Перейти на уровень вверх'
+  go_to_dashboard: 'Перейти в панель управления'
+  grand_total: 'Всего в корзине'
+  greater_than: 'Больше, чем'
+  group_membership: 'Членство в группе'
+  guest: 'Гость'
+  hello: 'Здравствуйте'
+  hello_name: 'Здравствуйте, <b>%name%</b>'
+  hide_deleted: 'Скрыть удаленные'
+  history: 'История'
+  home: 'Домой'
+  hostname: 'Хост'
+  id: 'ID'
+  identifier: 'Идентификатор'
+  if_you_have_an_account_sign_in_with_your_email_address: 'Если у вас есть учетная запись, войдите с помошью Вашего адреса электронной почты'
+  image: 'Изображение'
+  images: 'Изображения'
+  imagine_blocks: 'Блоки изображений'
+  impersonate: 'Представиться как пользователь'
+  in: 'В'
+  included_in_price: 'Включено в цену'
+  index_metadata: 'Метаданные'
+  index_of_all_configured_locales: 'Список всех настроенных языков'
+  info: 'Сведения'
+  information: 'Информация'
+  integer: 'Целое число'
+  inventory: 'Остатки'
+  inventory_here_you_can_see_current_stock_levels: 'Склад <small>Здесь вы можете увидеть уровень запасов</small>'
+  inventory_index: 'Остатки'
+  inventory_tracking: 'Отслеживание продаж'
+  invoice: 'Счет-фактура'
+  is_enabled: 'Включено'
+  it_seems_you_have_an_account_already: 'Кажется, что у вас уже есть учетная запись'
+  item: 'Товар'
+  items: 'Элементы'
+  item.choice: "|, %count% товар|, %count% товара|, %count% товаров"
+  items_total: 'Всего товаров'
+  jump_to_page: 'Перейти на страницу'
+  label: 'Метка'
+  last_login: 'Последний вход'
+  last_name: 'Фамилия'
+  last_update: 'Последнее изменение'
+  last_updated: 'Последнее обновление'
+  last_week_orders: 'Заказы прошлой недели'
+  last_week_revenue: 'Доход прошлой недели'
+  lastname: 'Фамилия'
+  latest_orders: 'Заказы'
+  latest_products: 'Новые продукты'
+  less_than: 'Менее, чем'
+  links: 'Ссылки'
+  link: 'Ссылка'
+  list_coupons: 'Список купонов'
+  list_variants: 'Список вариантов'
+  locale: 'Язык'
+  locales: 'Языки'
+  lock: 'Блокировать'
+  locked: 'Заблокировано'
+  logged_at: 'Дата входа'
+  logged_in_as: 'Вы вошли в систему как %username%'
+  login: 'Вход'
+  logout: 'Выход'
+  main_taxon: 'Основной таксон'
+  male: 'Мужской'
+  manage:
+    manage: 'Управление'
+    manage_adjustments: 'Управление настройками'
+    manage_admin_users: 'Управление администраторами'
+    manage_attributes: 'Управление атрибутами'
+    manage_association_types_of_your_products: 'Управление типами связей ваших товаров'
+    manage_attributes_of_your_products: 'Управление атрибутами ваших товаров'
+    manage_categorization_of_your_products: 'Управление категориями продуктов'
+    manage_channels: 'Управление каналами'
+    manage_configuration_options_of_your_products: 'Управление параметрами конфигурации вашей продукции'
+    manage_countries: 'Управление странами'
+    manage_coupons: 'Управление купонами'
+    manage_currencies_available_in_the_store: 'Управление валютами, что доступны в магазине'
+    manage_customers: 'Управление клиентами'
+    manage_customer_groups: 'Управление группами покупателей'
+    manage_discounts_and_promotional_campaigns: 'Управление скидками и рекламными кампаниями'
+    manage_emails: 'Управление адресами электронной почты'
+    manage_exchange_rates: 'Управление валютными курсами'
+    manage_geographical_zones: 'Управление географическими зонами'
+    manage_inventory: 'Управление инвентаризацией'
+    manage_languages_available_in_the_store: 'Управление языками, доступными в магазине'
+    manage_metadata: 'Управление метаданными'
+    manage_options: 'Настройка опций'
+    manage_orders: 'Управление заказами'
+    manage_payment_methods_available_to_your_customers: 'Управление способами оплаты, доступными для ваших клиентов'
+    manage_payments: 'Платежи'
+    manage_products: 'Редактировать товары'
+    manage_promotions: 'Управление рекламными акциями'
+    manage_reviews: 'Управление отзывами'
+    manage_reviews_of_your_products: 'Управление отзывами о ваших товарах'
+    manage_shipments: 'Управление посылками'
+    manage_shipping_categories: 'Редактировать категорию доставки'
+    manage_shipping_categories_for_your_store: 'Управление категориями доставки для вашего магазина'
+    manage_shipping_destinations: 'Управление направлениями доставки'
+    manage_shipping_methods: 'Редактировать способы доставки'
+    manage_shipping_methods_for_your_store: 'Управление методами доставки для вашего магазина'
+    manage_taxons: 'Управление таксонами'
+    manage_tax_categories: 'Редактировать налоговые категории'
+    manage_tax_rates: 'Налоговые ставки'
+    manage_taxation_of_your_products: 'Управление категориями товаров'
+    manage_users: 'Управление пользователями'
+    manage_users_able_to_access_administration_panel: "Управление пользователями, которые имеют доступ к панели администрирования"
+    manage_variants: 'Управление вариантами'
+    manage_your_customers: 'Управление клиентами'
+    manage_your_personal_information_and_preferences: 'Управление вашей личной информацией и настройками'
+    manage_your_product_catalog: 'Управление каталогом товаров'
+    manage_your_saved_addresses: 'Управление вашими сохраненными адресами'
+    manage_zones: 'Редактирование зон'
+  marketing: 'Маркетинг'
+  media: 'Медия'
+  members: 'Области'
+  menu_nodes: 'Узлы меню'
+  menus: 'Элементы меню'
+  message: 'Сообщение'
+  metadata_index: 'Метаданные'
+  method: 'Способ'
+  modified: 'Изменен'
+  most_expensive_first: 'Сначала самые дорогие'
+  move_down: 'Переместить ниже'
+  move_up: 'Переместить выше'
+  my_account: 'Моя учетная запись'
+  n_a: 'Н/Д'
+  name: 'Название'
+  need_assistance: 'Нужна помощь?'
+  new:
+    new: 'Новый'
+    new_admin_user: 'Новый администратор'
+    new_channel: 'Новый канал'
+    new_comment_posted_on_order: 'Новый комментарий, добавленный к заказу'
+    new_country: 'Добавить страну'
+    new_coupon: 'Новый купон'
+    new_currency: 'Новая валюта'
+    new_customer: 'Новый клиент'
+    new_customers: 'Новые клиенты'
+    new_exchange_rate: 'Новый обменный курс'
+    new_locale: 'Новый язык'
+    new_order: 'Новый заказ'
+    new_orders: 'Новые заказы'
+    new_payment: 'Новый платеж'
+    new_payment_method: 'Новый метод оплаты'
+    new_permission: 'Новая привилегия'
+    new_product: 'Добавить товар'
+    new_product_association_type: 'Новый тип связи товара'
+    new_product_attribute: 'Новый атрибут товара'
+    new_product_option: 'Новая опция продукта'
+    new_product_variant: 'Новый вариант продукта'
+    new_promotion: 'Новая акция'
+    new_promotion_coupon: 'Новый акционный купон'
+    new_review: 'Новый отзыв'
+    new_role: 'Новая роль'
+    new_shipping_category: 'Новая категория доставки'
+    new_shipping_method: 'Новый способ доставки'
+    new_tax_category: 'Создать налоговую категорию'
+    new_tax_rate: 'Создание налоговой ставки'
+    new_taxon: 'Новая категория'
+    new_user: 'Новый пользователь'
+    new_zone: 'Новая зона'
+  newest_products: 'Новейшие продукты'
+  newest_first: 'Сначала новые'
+  next: 'Следующее'
+  no:
+    no_label: 'Нет'
+    no_addresses: 'Нету адресов для отображения'
+    no_association_types_to_display: 'Не определено ни одной связи'
+    no_comment: 'Комментариев нет'
+    no_default_billing_address: 'Адрес оплаты не по умолчанию'
+    no_default_shipping_address: 'Адрес доставки не по умолчанию'
+    no_description: 'Нет описания'
+    no_new_notifications: 'Нет новых уведомлений'
+    no_payment_methods_available: 'В настоящее время не существует методов оплаты для вашего заказа'
+    no_pricing_configuration: 'Нет настроенных цен'
+    no_promotion: 'Без скидки'
+    no_requirement: 'Нет требований'
+    no_results: 'Нет результатов'
+    no_results_to_display: 'Нет результатов для отображения'
+    no_shipping_category: 'Нет категории доставки'
+    no_shipping_charges: 'Без оплаты за пересылку'
+    no_shipping_methods_available: 'В настоящее время не существует способов доставки для вашего адреса'
+    no_short_description: '<i>Нет краткого описания</i>'
+    no_sku: '<i>Без ИПТ</i>'
+    no_tax_category: 'Нет налоговой категории'
+    no_taxes: 'Без НДС'
+    no_theme: 'Нет темы'
+    not_available_in_your_country: 'Недоступно в вашей стране'
+    not_contains: 'Не содержит'
+    not_empty: 'Не пустой'
+    not_equal: 'Не равно'
+    not_in: 'Не в списке'
+    not_verified: 'Не подтверждено'
+    not_tracked: 'Не отслеживается'
+  notes: 'Примечания'
+  notify_customer: 'Уведомление клиента'
+  number: 'Номер'
+  number_of_orders: 'Количество заказов'
+  oauth_provider: 'OAuth провайдер'
+  oldest_first: 'Сначала старые'
+  on_hold: 'В ожидании'
+  options: 'Список опций'
+  options_matching: 'Параметры сопоставления'
+  or: 'или'
+  order:
+    order: 'заказ'
+    order_comment: 'Комментарий к заказу'
+    order_manager_comment: 'Комментарий менеджера к заказу'
+    order_comments: 'Комментарии к заказу'
+    order_confirmation_name: 'Подтверждение заказа'
+    order_details: 'Детали заказа'
+    order_history: 'История заказов'
+    order_item_product: 'Товар'
+    order_state: 'Статус заказа'
+    order_summary: 'Ваш заказ'
+    order_total: 'Итого'
+    base_currency_order_total: 'Сумма заказа в основной валюте'
+    order_value: 'Стоимость заказа'
+    ordered: 'Заказан'
+    orders: 'Заказы'
+    orders_statistics: 'Статистика заказов'
+  original_price: 'Исходная цена'
+  old_price: 'Старая цена'
+  out_of_stock: 'Нет на складе'
+  overall_this_customer_has_placed_orders_across_all_channels.choice: '{0}|{1}Этот клиент разместил один заказ |] 1, Inf] в целом, этот клиент разместил %count% заказы(-ов) по всем каналам'
+  overview_of_your_store: 'Обзор вашего магазина'
+  page: 'Страница'
+  pages: 'Страницы'
+  paid: 'Оплачен'
+  parent: 'Родитель'
+  partially_paid: 'Оплачено частично'
+  partially_shipped: 'Частично отгружено'
+  payment:
+    payment: 'Оплата'
+    payment_details: 'Детали платежа'
+    payment_method: 'Метод оплаты'
+    payment_methods: 'Способы оплаты'
+    payment_mode: 'Способ оплаты'
+    payment_ready_to_pay: 'Теперь вы можете сделать платеж'
+    payment_state: 'Статус платежа'
+    payments: 'Платежи'
+    pay: 'Оплатить'
+    pay_again: 'Нажмите заплатить, чтобы повторить попытку'
+  pending: 'Ожидает'
+  per_customer_usage_limit: 'Клиентские ограничения'
+  percent: 'Процент'
+  permissions: 'Права доступа'
+  personal_information: 'Персональные данные'
+  phone: 'Контактный телефон'
+  phone_number: '*Контактный телефон'
+  place_order: 'Заказать'
+  placed_an_order: 'Вы успешно оформили заказ.'
+  placed_at: 'Создан'
+  please_sign_in: 'Пожалуйста, войдите'
+  postcode: 'Индекс'
+  position: 'Позиция'
+  powered_by: 'Разработано в'
+  preferences: 'Настройки'
+  presentation: 'Публичное название'
+  previous: 'Предыдущее'
+  price: 'Цена'
+  pricing: 'ценообразование'
+  priority: 'Приоритет'
+  privacy_policy: 'Политика конфидециальности'
+  process_your_orders: 'Обработать ваши заказы'
+  processing: 'Обрабатывается'
+  product:
+    attribute: 'Атрибут'
+    product: 'Товар'
+    product_association_index: 'Взаимосвязи'
+    product_association_type_index: 'Типы взаимосвязи'
+    product_association_types: 'Типы взаимосвязей продуктов'
+    product_associations: 'Ассоциации продуктов'
+    product_attributes: 'Характеристики товара'
+    product_details_viewing_product_product: 'Детали товара <small>Просмотр товара "<strong>%product%</strong>"</small>'
+    product_options: 'Опции товара'
+    product_review: 'Отзыв о товаре'
+    product_reviews: 'Отзывы о товаре'
+    product_taxon: 'Категория товара'
+    product_variant: 'Вариант товара'
+    product_variants: 'Варианты товара'
+    products: 'Товары'
+    products_categorized_as_name: 'Товары категории «%name%»'
+    products_categorized_under_taxon_taxon: 'Товары <small>категории "%taxon%"</small>'
+    products_index_of_all_products_in_your_store: 'Товары <small>Список всех товаров в вашем магазине</small>'
+  profile: 'Профиль'
+  promotion:
+    promotion_coefficient: 'Коэффициент'
+    promotion_configuration: 'Конфигурация продвижения'
+    promotion_coupons: 'Купоны'
+    promotion_details: 'Детали акции'
+    promotion_discount: 'Продвижение скидки'
+    promotion_information: 'Информация по продвижению'
+    promotion_total: 'Сумма скидки'
+    promotions: 'Рекламные акции'
+  properties: 'Настройки'
+  province: 'Область'
+  provinces: 'Области'
+  purchased_from: 'Приобретенные'
+  qty: 'Кол-во'
+  qty_max: 'Макс. кол-во'
+  qty_min: 'Мин. кол-во'
+  quantity: 'Количество'
+  rating: 'Рейтинг'
+  ratio: 'По рейтингу'
+  ready: 'Готов'
+  recent_customers: 'Последние клиенты'
+  recent_orders: 'Недавние заказы'
+  recent_users: 'Последние пользователи'
+  records: 'Записи'
+  refund: 'Возврат'
+  refunded: 'Возвращено'
+  reject: 'Отменить'
+  rejected: 'Отклонено'
+  release_inventory: 'Инвентаризация выпуска'
+  remove_attribute: 'Удалить атрибут'
+  report_details: 'Сведения об отчете'
+  reports: 'Отчеты'
+  reserved: 'Зарезервировано'
+  reset: 'Сбросить'
+  restore: 'Восстановить'
+  retail_price: 'Розничная цена'
+  return: 'Возврат'
+  returned: 'Возвращено'
+  returns_policy: 'Условия возврата товара'
+  revert: 'Вернуть'
+  review_and_confirm_your_order: 'Просмотрите и подтвердите свой заказ'
+  review_details: 'Просмотрите сведения о'
+  reviews: 'Отзывы'
+  roles: 'Роли'
+  rules: 'Правила'
+  sales_this_month: 'Продажи'
+  save:
+    save: 'Сохранить'
+    save_and_return_to_the_list: 'Сохранить и вернуться к списку'
+    save_and_add_new: 'Сохранить и добавить новый'
+    save_changes: 'Сохранить изменения'
+    save_positions: 'Сохранить позиции'
+  scope: 'Область'
+  search: 'Поиск'
+  search_products: 'Поиск товаров'
+  security_settings: 'Настройки безопасности'
+  select_address_from_book: 'Выберите адрес из адресной книги'
+  select_products: 'Выберите товар'
+  select_taxon: 'Выберите категорию'
+  send: 'Послать'
+  server_has_encountered_some_errors: 'Сервер обнаружил некоторые ошибки.'
+  set_a_new_password_for_your_account: 'Установить новый пароль для вашей учетной записи'
+  set_as_default: 'Установить по умолчанию'
+  set_as_default_billing_address: 'Сделать адресом для выставления счёта по-умолчанию'
+  set_as_default_shipping_address: 'Сделать адресом доставки по-умолчанию'
+  ship:
+    ship: 'Доставка'
+    ship_to: 'Доставить в'
+    shipment: 'Доставка'
+    shipment_confirmation_name: 'Подтверждение посылки'
+    shipment_details: 'Детали посылки'
+    shipment_mode: 'Способ доставки'
+    shipment_state: 'Статус доставки'
+    shipments: 'Посылки'
+    shipped: 'Доставлено'
+  shipping:
+    shipping: 'Способ доставки'
+    shipping_address: 'Адрес доставки'
+    shipping_and_payment_methods: 'Способы доставки и оплаты'
+    shipping_categories: 'Категории доставки'
+    shipping_category: 'Категория доставки'
+    shipping_address_changes_history: 'История изменений адреса доставки'
+    shipping_charges: 'Затраты на доставку'
+    shipping_method: 'Способ доставки'
+    shipping_method_details: 'Детали способа доставки'
+    shipping_methods: 'Способы доставки'
+    shipping_state: 'Статус доставки'
+    shipping_total: 'Стоимость доставки'
+  shop_by: 'Каталог товаров'
+  shop_by_brand: 'Магазин по марке'
+  show:
+    show: 'Просмотр'
+    show_all: 'Показать все'
+    show_deleted: 'Показать удаленные'
+    show_in_store: 'Показать в магазине'
+    show_metadata: 'Показать метаданные'
+    show_order_details: 'Показать сведения о заказе'
+    show_orders: 'Показать заказы'
+  sign_in:
+    sign_in: 'Войти'
+    sign_in_here: 'Вход здесь'
+    sign_in_to_the_store_or_create_new_account: 'Войти <small>или зарегистрироваться</small>'
+  sign_out: 'Выйти'
+  simple_blocks: 'Простые блок'
+  simple_product: 'Простой товар'
+  sku: 'Артикул'
+  slideshow: 'Слайд-шоу'
+  slideshow_blocks: 'Слайд-шоу блоки'
+  sort: 'Сортировка'
+  sort_by_date: 'Сортировка по дате'
+  source_currency: 'Исходная валюта'
+  start_date: 'Дата начала'
+  starts_at: 'Начало'
+  starts_with: 'Начинается с'
+  state: 'Статус'
+  status: 'Статус'
+  street: 'Улица'
+  string_blocks: 'Текстовые блоки'
+  subject: 'Тема сообщения'
+  subscribed_to_newsletter: 'Подписаться на рассылку новостей'
+  subtotal: 'Промежуточный итог'
+  success: 'Успешно'
+  summary: 'Резюме'
+  summary_of_your_order: 'Итого по заказу'
+  support: 'Поддержка'
+  target_currency: 'Целевая валюта'
+  tax:
+    tax: 'Налог'
+    tax_categories: 'Список налоговых категорий'
+    tax_category: 'Категория налогов'
+    tax_rate_details: 'Детали налоговой ставки'
+    tax_rates: 'Налоговые ставки'
+    tax_total: 'Сумма налогов'
+    taxation_categories: 'Налоговые категории'
+    taxation_settings: 'Настройки налогооблажения'
+    taxes: 'Налоги'
+  taxonomy: 'Тип товара'
+  taxons: 'Категории'
+  terms_and_conditions: 'Условия использования'
+  text: 'Текст'
+  textarea: 'Текстовая область'
+  thank_you:
+    thank_you: 'Спасибо!'
+    thank_you_for_your_order: 'Спасибо за Ваш заказ'
+  theme: 'Тема оформления'
+  the_instructions_below_will_be_displayed_to_the_customer: 'Инструкции будут отображаться для клиента'
+  the_page_you_are_looking_for_does_not_exist: 'Страница, которую вы ищете, не существует.'
+  there_are_no:
+    there_are_no_attributes_configured: 'Нет настроенных атрибутов'
+    there_are_no_blocks_to_display: 'Нет блоков для отображения'
+    there_are_no_channels_configured: 'Нет настроенных каналов'
+    there_are_no_countries_configured: 'Ни одна страна не была настроена'
+    there_are_no_coupon_to_display: 'Нет купонов для отображения'
+    there_are_no_currencies_to_display: 'Нет валюты для отображения'
+    there_are_no_customers_to_display: 'Нету клиентов для отображения'
+    there_are_no_emails_configured: 'Нет подключенных емейлов'
+    there_are_no_images_for_this_product: 'Нет изображений для данного товара'
+    there_are_no_inventory_items_to_display: 'Нет товаров для отображения'
+    there_are_no_inventory_units_to_display: 'Отсутствуют предметы для отображения'
+    there_are_no_locales_configured: 'Нет настроенных языков'
+    there_are_no_logged_events_to_display: 'Нет зарегистрированных событий для отображения'
+    there_are_no_menu_nodes_to_display: 'Нет элементов меню для отображения'
+    there_are_no_menus_to_display: 'Нет меню для отображения'
+    there_are_no_options_configured: 'Нету сконфигурированных опций'
+    there_are_no_options_for_this_product: 'Нет опций для данного товара'
+    there_are_no_orders_for_this_customer_to_display: 'Нет заказов этого пользователя для отображения'
+    there_are_no_pages_to_display: 'Нет страниц для отображения'
+    there_are_no_payment_methods_configured: 'Способы оплаты не настроены'
+    there_are_no_payments_configured: 'Способы оплаты не настроены'
+    there_are_no_permissions_defined: 'Не определено привилегий'
+    there_are_no_products_to_display: 'Нет товаров для отображения'
+    there_are_no_promotions_configured: 'Нет настроенных промо-акций'
+    there_are_no_reports_created: 'Нет созданных отчетов'
+    there_are_no_reviews: 'Нет отзывов'
+    there_are_no_roles_defined: 'Роли не определены'
+    there_are_no_shipments_to_display: 'Нет отправлений для отображения'
+    there_are_no_shipping_categories_configured: 'Нет созданных категорий доставки'
+    there_are_no_shipping_methods_configured: 'Нет созданных способов доставки'
+    there_are_no_tax_categories_configured: 'Нет налоговых категорий для отображения'
+    there_are_no_tax_rates_configured: 'Нет налоговых ставок для отображения'
+    there_are_no_taxons_for_this_product: 'У этого товара не заданы категории'
+    there_are_no_taxons_to_display: 'Нет категорий для отображения'
+    there_are_no_users_to_display: 'Нет пользователей для отображения'
+    there_are_no_variants_to_display: 'Нет вариантов для отображения'
+    there_are_no_zones_configured: 'Нет настроенных зон'
+  there_is_no_main_taxon_for_this_product: 'Нет основных таксон для этого продукта'
+  this_customer_does_not_have_a_default_address: 'У этого клиента не указан адрес по умолчанию'
+  this_customer_has_not_completed_any_orders_yet: 'Этот пользователь еще не совершил ни одного заказа'
+  this_months_statistics: 'Статистика за этот месяц'
+  this_product_has_no_attributes_defined: 'Этот продукт не имеет определенных атрибутов'
+  title: 'Название'
+  to: 'До'
+  toggle_sidebar: 'Боковая панель'
+  topic: 'Тема'
+  total:
+    total: 'Итого'
+    total_in_base_currency: 'Всего в основной валюте'
+    total_orders: 'Заказов в этом месяце'
+    total_qty: 'Общее количество'
+    total_records: 'Всего записей'
+    total_registrations: 'Регистраций в этом месяце'
+    total_value_of_orders: 'Общая стоимость заказов'
+  tracking_code: 'Код для отслеживания'
+  tracking_number: 'Номер для отслеживания'
+  translations: '﻿Переводы'
+  type: 'Тип'
+  unavailable: 'Недоступен'
+  unexpected_error_occurred: 'Произошла непредвиденная ошибка.'
+  unit_price: 'Цена'
+  unknown: 'Неизвестен'
+  unlimited: 'Безлимитный'
+  unlock: 'Разблокировать'
+  update:
+    update: 'Обновить'
+    updated: 'Дата изменения'
+    update_cart: 'Обновить корзину'
+    update_product_association_type: 'Обновление типа связи товара'
+    updating_tax_rate: 'Редактирование налоговой ставки'
+    updating_date: 'Дата обновления'
+  usage: 'Использование'
+  usage_limit: 'Предел использования'
+  use_the_contact_form_below_to_send_us_a_message: 'Используйте контактную форму ниже, чтобы отправить нам сообщение.'
+  used: 'Использован'
+  user_details: 'Детали пользователя'
+  username: 'Имя пользователя'
+  users_list_of_all_users_registered_in_store: 'Пользователи <small>список всех пользователей зарегистрированных в магазине</small>'
+  value: 'Значение'
+  values: 'Значения'
+  variant: 'Вариант'
+  variant_choice: 'Вариант выбора'
+  variant_selection_method: 'Метод выбора вариантов'
+  variants: 'Варианты'
+  verified: 'Проверено'
+  verify: 'Подтвердите'
+  view:
+    view: 'Просмотреть'
+    view_and_edit_cart: 'Перейти в корзину'
+    view_more: 'Посмотреть больше'
+    view_product_details: 'Просмотреть подробные сведения о %product%'
+    view_your_order_or_change_payment_method: 'Просмотреть заказ или изменить способ оплаты'
+    view_your_store: 'Просмотр вашего магазина'
+  void: 'Пустой'
+  volume_based_pricing: 'Объем на основе цены'
+  warning: 'Предупреждение'
+  welcome:
+    welcome: 'Добро пожаловать'
+    welcome_to_our_store: 'Добро пожаловать в наш магазин'
+    welcome_to_your_space: 'Добро пожаловать в ваш кабинет'
+  write_your_own_review: 'Написать собственный отзыв'
+  yes_label: 'Да'
+  you:
+    you_are_customer_since: 'Вы являетесь клиентом с'
+    you_are_reviewing: 'Вы просматриваете'
+    you_can_no_longer_change_payment_method_of_this_order: 'Вы уже не можете изменить способ оплаты данного заказа'
+    you_have_no_addresses_defined: 'Вы не указали ни одного адреса'
+    you_have_no_new_orders: 'У вас нет новых заказов'
+    you_may_also_like: 'Вам также может понравиться'
+  your:
+    your_cart_is_empty: 'Ваша корзина пуста'
+    your_default_address: 'Ваш адрес по умолчанию'
+    your_last_5_orders: '5 последних заказов'
+    your_order_has_been_shipped: 'Ваш заказ был отправлен'
+    your_products: 'Товары'
+    your_profile: 'Ваш профиль'
+    your_shopping_cart: 'Ваша корзина'
+    your_store: 'Ваш магазин'
+
+form:
+  main_product: 'Основной товар'
+  empty:
+    data: 'Ничего не выбрано'
+  is_send_for_email: 'Отправлять на электронный адрес?'
+  short_description: 'Краткое описание'
+  static_content:
+    link_name: 'Название блока (на английском)'
+    page: 'Относительный путь к странице'
+  system_name: "Системное имя"
+  option:
+    name: 'Округ'
+  notes: 'Дополнительные заметки'
+  variant:
+    depth: Глубина
+    height: Высота
+    on_hand: Количество на складе
+    price: Цена
+    sku: Идентификатор товарной позиции
+    shipping_required: Требуется ли доставка?
+    weight: Вес
+    width: Ширина
+    tracked: 'Отслеживаемая'
+  taxon:
+    name: Округ
+    parent: Родитель
+    slug: Псевдоним
+    code: Код
+    file: Выберите изображение
+    images: Изображения
+  taxonomy:
+    name: Округ
+    file: Выберите изображение
+  user_filter:
+    query: Поиск
+  tax_category:
+    name: Округ
+  tax_rate:
+    category: Категория
+    name: Округ
+    amount: Количество
+    included_in_price: Включено в цену?
+    calculator: Калькулятор
+  rule:
+    unit_count_configuration:
+      count: Кол-во
+      equal: Равно
+    type: Тип измерения
+  shipment:
+    state: Cтатус
+    states:
+      checkout: Сверка
+      pending: Ожидает
+      ready: Готов
+      shipped: Доставлено
+      returned: Возвращено
+      cancelled: Отменён
+    tracking_code: Код отслеживания
+  shipping_calculator:
+    flat_rate_configuration:
+      label: Фиксированная ставка за доставку
+      amount: Количество
+    per_unit_rate_configuration:
+      label: Фиксированная ставка за единицу товара
+      amount: Количество
+  shipping_category:
+    name: Округ
+  shipping_method:
+    zone: Зона
+    calculator: Калькулятор
+    category: Категория
+    category_requirement: Условия категории
+    channels: Каналы
+    configuration: Конфигурация
+    enabled: Активен
+    name: Округ
+    position: Позиция
+    tax_category: Категория налогов
+    translations: '﻿Переводы'
+  review:
+    author: Автор
+    comment: Комментарий
+    header: Добавить отзыв
+    rating: Рейтинг
+    status:
+      approved: Одобрено
+      label: Статус
+      new: Новый
+      rejected: Отклонено
+    submit: Отправить
+    title: Название
+  collection:
+    add: Добавить
+    delete: Удалить
+  promotion:
+    channels: Каналы
+    actions: Действия
+    add_action: Добавить действие
+    add_rule: Добавить правило
+    coupon_based: Основана на купонах
+    ends_at: Конец
+    exclusive: Эксклюзив
+    name: Округ
+    priority: Приоритет
+    rules: Правила
+    starts_at: Начало
+    usage_limit: Предел
+  promotion_action:
+    add_product_configuration:
+      product: Продукт
+    fixed_discount_configuration:
+      amount: Количество
+    percentage_discount_configuration:
+      percentage: Процент
+    type: Тип
+  promotion_coupon:
+    expires_at: Истекает
+    usage_limit: Предел
+    per_customer_usage_limit: Лимит использования на клиента
+  promotion_coupon_generator_instruction:
+    amount: Количество
+    code_length: Длина кода
+    expires_at: Истекает
+    usage_limit: Предел
+  promotion_filter:
+    price_range: Фильтр диапазона цен
+    products: Фильтр товаров
+    taxons: Фильтр таксонов
+  promotion_rule:
+    customer_group:
+      group: Группа клиента
+    has_taxon:
+      taxons: Категории
+    product:
+      products: Товары
+    total_of_items_from_taxon:
+      taxon: Налог
+      amount: Количество
+    taxonomy: Тип товара
+    cart_quantity_configuration:
+      count: Кол-во
+      equal: Равно
+    contains_product_configuration:
+      exclude: Исключить
+      variants: Товары
+    item_total_configuration:
+      amount: Количество
+    nth_order_configuration:
+      nth: Количество
+    shipping_country_configuration:
+      country: Страна
+    taxonomy_configuration:
+      exclude: Исключить
+      taxons: Категории
+    type: Тип
+  product:
+    name: Округ
+    attributes: Атрибуты
+    options: Список опций
+    meta_keywords: Ключевые слова метаданных
+    meta_description: Описание метаданных
+    slug: Псевдоним
+    taxons: Категории
+    images: Изображения
+    restricted_zone: Зона ограничений
+    variant_selection_method: Метод выбора вариантов
+    main_taxon: Основной таксон
+    channels: Каналы
+    enabled: Активен
+  product_variant:
+    name: Округ
+    tax_category: Категория налогов
+    shipping_category: Категория доставки
+  association_type:
+    name: Округ
+    translations: '﻿Переводы'
+  association:
+    type: Тип взаимосвязи
+    product: Связанные продукты
+  option_value:
+    add_value: Добавить значение
+    value: Значение
+  credit_card:
+    cardholder_name: Имя владельца карты
+    expiry_month: Месяц
+    expiry_year: Год
+    number: Номер карты
+    security_code: Код безопасности (CVV)
+    type: Тип карты
+  payment:
+    amount: Сумма платежа
+    method: Метод платежа
+    state:
+      header: Статус платежа
+      checkout: Сверка
+      completed: Завершен
+      authorized: Авторизовано
+      failed: Провален
+      new: Новый
+      pending: Ожидает
+      processing: Обрабатывается
+      unknown: Неизвестен
+      void: Пустой
+      cancelled: Отменён
+      refunded: Возвращено
+  payment_method:
+    channels: Каналы
+    enabled: Включен?
+    instructions: Инструкции
+    name: Округ
+    position: Позиция
+  customer:
+    first_name: Имя
+    group: Группа
+    last_name: Фамилия
+    email: Email
+    phone_number: Контактный телефон
+    gender: Пол
+    birthday: День рождения
+    billing_address: Адрес для выставления счета
+    different_billing_address: Использовать другой адрес для выставления счета?
+    only_customer_registration: Создать учетную запись?
+    subscribed_to_newsletter: Подписаться на рассылку новостей
+  customer_group:
+    name: Округ
+    roles: Роли
+  gender:
+    unknown: Неизвестен
+    male: Мужской
+    female: Женский
+  currency:
+    base: Базовая валюта
+    code: Округ
+    enabled: Активен
+    exchange_rate: Обменный курс
+  exchange_rate:
+    source_currency: Исходная валюта
+    target_currency: Целевая валюта
+    ratio: По рейтингу
+  address:
+    city: Город
+    company: Компания
+    country: Страна
+    first_name: Имя
+    last_name: Фамилия
+    phone_number: Контактный телефон
+    postcode: Индекс
+    street: Улица
+    province: Область
+    zone: Зона
+  country:
+    add_province: Добавить регион
+    name: Округ
+    provinces: Области
+    select: Выбрать
+    enabled: Активен
+  province:
+    name: Округ
+    abbreviation: Аббревиатура
+    select: Выбрать
+  zone:
+    add_member: Добавить
+    members: Области
+    name: Округ
+    type: Тип
+    types:
+      country: Страна
+      province: Область
+      zone: Зона
+    scope: Область
+    scopes:
+      shipping: Способ доставки
+      tax: Налог
+      all: Все
+    select: Выбрать
+    select_scope: Выберите область
+  zone_member:
+    select: Выбрать
+  attribute:
+    product_attribute_value:
+      attribute: Атрибут
+      value: Значение
+    add: Добавить
+    add_attributes: Добавить атрибуты
+    choices: Выбор
+    code: Код
+    name: Округ
+    translations: '﻿Переводы'
+    type: Тип
+  attribute_type:
+    checkbox: Флажок
+    configuration: Конфигурация
+    date: Дата
+    datetime: Дата и время
+    integer: Целое число
+    percent: Процент
+    select: Выбрать
+    text: Текст
+    textarea: Текстовая область
+    title: Тип атрибута
+    validation: Проверка
+  attribute_type_configuration:
+    datetime:
+      format: Формат
+    date:
+      format: Формат
+    select:
+      multiple: Несколько
+      values: Значения
+      choose: Выберите настройку
+      min: Минимальное количество
+      max: Максимальное количество
+    text:
+      min: Минимальная длина
+      max: Максимальная длина
+  block:
+    body: Содержание
+    id: ID
+    title: Название
+  cart:
+    coupon: Купон
+  checkout:
+    addressing:
+      different_billing_address: Использовать другой адрес для выставления счета?
+    payment_method: Способ оплаты
+    shipping_method: Способ доставки
+  group:
+    name: Округ
+    roles: Роли
+  channel:
+    contact_email: Контактный email
+    currencies: Валюты
+    currency_base: Базовая валюта
+    account_verification_required: Требуется ли подтверждение аккаунта?
+    hostname: Хост
+    locale_default: По умолчанию
+    locales: Языки
+    payment_methods: Список методов оплаты
+    shipping_methods: Список способов доставки
+    skipping_shipping_step_allowed: Пропустить шаг доставки, если доступен только один способ доставки?
+    skipping_payment_step_allowed: Пропустить шаг оплаты, если только один способ оплаты доступен?
+    tax_calculation_strategy: Способ расчета налогов
+    tax_zone_default: Налоговая зона по умолчанию
+    taxonomies: Список каталогов
+    theme: Тема оформления
+  image:
+    type: Тип
+    file: Изображение
+  locale:
+    code: Код
+    enabled: Активен
+  order_filter:
+    created_at_from: Создан после
+    created_at_to: Создан до
+    number: Номер
+    total_from: От
+    total_to: До
+    payment_state: Статус платежа
+    channel: Все каналы
+  page:
+    body: Содержание
+    id: ID
+    title: Название
+  product_filter:
+    name: Округ
+    code: Код
+  shipment_filter:
+    created_at_from: От
+    created_at_to: До
+    number: Номер заказа
+    shipping_address: Имя получателя
+    channel: Все каналы
+  payment_filter:
+    created_at_from: От
+    created_at_to: До
+    number: Номер заказа
+    billing_address: Счет на имя
+    channel: Все каналы
+  guest:
+    email: Email
+  product_association:
+    product: Связанные продукты
+    type: Типы взаимосвязи
+  product_association_type:
+    name: Округ
+  product_attribute:
+    position: Позиция
+
+payum_gateway:
+  cash_on_delivery: Наличными при доставке
+  offline: Офлайн
+  paypal_express_checkout: PayPal Express Checkout
+
+shipping_method_resolver:
+  by_zones_and_channel: По зонам и каналам
+
+flashes:
+  flash:
+    flash_batch_empty: 'Действие отменено. Нет выбранных объектов.'
+    flash_create_success: 'Элемент создан успешно.'
+    flash_create_error: 'при создании элемента.'
+    flash_edit_success: 'Элемент успешно обновлен.'
+    flash_edit_error: 'во время обновления элемента.'
+    flash_batch_delete_success: 'Выбранные элементы были успешно удалены.'
+    flash_batch_delete_error: 'во время удаления выбранных элементов.'
+    flash_delete_error: 'во время удаления элемента.'
+    flash_delete_success: 'Элемент успешно удален.'
+    flash_data_success: 'Данные сохранены.'
+  channel:
+    delete_error: 'Канал не может быть удален. Требуется по крайней мере один активный канал.'
+  checkout:
+    complete_error: 'Произошла неожиданная проблема при завершении заказа. Пожалуйста попробуйте зарегистрировать заказ еще раз.'
+  contact:
+    request_success: 'Ваш запрос успешно отправлен.'
+    request_error: 'Возникла проблема при отправке запроса. Пожалуйста, повторите попытку позже.'
+  customer:
+    register: 'Благодарим вас за регистрацию, проверьте свою электронную почту, чтобы подтвердить свой аккаунт.'
+    add_address: 'Адрес был успешно добавлен.'
+    impersonate: 'Имя успешно изменено на %name%.'
+    set_address_as_default: 'Адрес выбран в качестве основного.'
+  order:
+    apply_state_machine_transition_error: 'Произошла неожиданная проблема при обновлении заказа. Пожалуйста попробуйте обновить заказ еще раз.'
+    promotion_integrity: 'Вы больше не являетесь участником акции %promotionName%.'
+    total_integrity: 'Стоимость вашего заказа была изменена, пожалуйста проверьте информацию вашего заказа и подтвердите его снова.'
+    update_error: 'Произошла неожиданная проблема при обновлении заказа. Пожалуйста попробуйте обновить заказ еще раз.'
+  payment:
+    cancelled: 'Оплата была отменена.'
+    completed: 'Оплата прошла успешно.'
+    failed: 'Ошибка платежа.'
+    processing: 'Оплата обрабатывается.'
+    refunded: 'Оплата была успешно возвращена.'
+    unknown: 'Произошла неизвестная проблема во время оплаты.'
+    apply_state_machine_transition_error: 'Произошла неожиданная проблема при обновлении платежа. Пожалуйста попробуйте обновить платеж еще раз.'
+  product:
+    out_of_stock: 'В наличии только %quantity% этого продукта.'
+  product_variant:
+    generate: 'Варианты продукта были успешно созданы.'
+    update_error: 'Произошла неожиданная проблема при обновлении варианта продукта. Пожалуйста попробуйте обновить вариант еще раз.'
+  review:
+    accept: 'Отзыв был успешно принят.'
+    reject: 'Отзыв отклонен.'
+    wait_for_the_acceptation: 'Ваш отзыв ожидает подтверждения.'
+  resource:
+    update: '%resource% успешно изменен.'
+    delete: '%resource% удален успешно.'
+    move: '%resource% успешно перемещен.'
+    generate: '% resource%ы созданы успешно.'
+    revert: '%resource% успешно откачен.'
+    restore_deleted: '%resource% успешно восстановлен.'
+    enable: '%resource% успешно включен.'
+    disable: '%resource% успешно отключен.'
+    delete_error: 'Не удается удалить %resource%, т. к. он используется.'
+    race_condition_error: 'Не удается обновить, %resource% был изменен ранее.'
+    something_went_wrong_error: 'Что-то пошло не так. Попробуйте еще раз.'
+  promotion_coupon:
+    generate: 'Промокупоны были успешно созданы.'
+  cart:
+    add_item: 'Позиция добавлена в корзину'
+    cannot_modify: 'Корзина, которую вы пытаетесь изменить уже содержит заказы.'
+    remove_item: 'Позиция удалена из корзины'
+    save: 'Корзина успешно обновлена'
+
+list:
+  product_category:
+    tree_title: 'Путь'
+
+validators:
+  address:
+    city:
+      max_length: Название города не должно превышать 255 символов.
+      min_length: Название города не должно быть короче 2 символов.
+      not_blank: Пожалуйста, укажите город.
+    country:
+      not_blank: Пожалуйста, выберите страну.
+      disabled: Выбранная страна отключена. Пожалуйста, выберите другую страну.
+    first_name:
+      max_length: Имя не должно превышать 255 символов.
+      min_length: Имя не должно быть короче 2 символов.
+      not_blank: Пожалуйста, введите имя.
+    last_name:
+      max_length: Фамилия не должна быть длиннее 255 символов.
+      min_length: Фамилия не должна быть короче 2 символов.
+      not_blank: Пожалуйста, введите фамилию.
+    postcode:
+      max_length: Индекс не должен превышать 255 символов.
+      min_length: Индекс не должен быть короче 2 символов.
+      not_blank: Пожалуйста, укажите индекс.
+    province:
+      valid: Пожалуйста, укажите существующую область.
+    street:
+      max_length: Название улицы не должно превышать 255 символов.
+      min_length: Название улицы не должно быть короче 2 символов.
+      not_blank: Пожалуйста, укажите улицу.
+    not_shippable: Этот адрес не является допустимым адресом доставки.
+  country:
+    code:
+      not_blank: Пожалуйста, введите ISO код страны.
+      regex: Код страны может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: ISO код страны должен быть уникальным.
+  province:
+    code:
+      min_length: Название области не должно быть короче 2 символов.
+      not_blank: Пожалуйста, введите код области.
+      regex: Код области должен иметь формат XX-XX (например US-FL).
+      unique: Код области должен быть уникальным.
+    name:
+      max_length: Название области не должно превышать 255 символов.
+      min_length: Название области не должно быть короче 2 символов.
+      not_blank: Пожалуйста, укажите область.
+      unique: Название области должно быть уникально.
+  zone:
+    scope:
+      not_blank: Пожалуйста, введите границы.
+    code:
+      not_blank: Пожалуста, введите код зоны.
+      regex: Код зоны может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код зоны должен быть уникальным.
+    members:
+      min_count: Пожалуйста, добавьте как минимум {{ limit }} область.|Пожалуйста, добавьте как минимум {{ limit }} области.|Пожалуйста, добавьте как минимум {{ limit }} областей.
+    name:
+      max_length: Наименование округа не должно превышать 255 символов.
+      min_length: Название зоны должно быть не менее 2 символов.
+      not_blank: Пожалуйста, укажите округ.
+  zone_member:
+    code:
+      not_blank: Пожалуйста, выберите члена зоны.
+      regex: Код пользователя может состоять только из букв, цифр, тире и знаков подчеркивания.
+    unique: Выбранный член уже находится в этой зоне.
+  attribute:
+    name:
+      not_blank: Пожалуйста, введите имя атрибута.
+      min_length: Имя атрибута должно состоять хотя бы из одного символа. |Имя атрибута должно быть не менее {{ limit }} символов.
+      max_length: Имя атрибута должно быть не больше одного символа.|Имя атрибута не должно быть длиннее, чем {{ limit }} символов.
+    code:
+      not_blank: Пожалуйста, введите код атрибута.
+      regex: Код аттрибута может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Этот код уже используется.
+    configuration:
+      max_entries: Максимальное число вариантов должно быть больше или равно минимальному.
+      max_length: Максимальная длина должна быть больше или равна минимальной длине.
+    presentation:
+      not_blank: Пожалуйста, заполние отображение атрибута.
+      min_length: Отоброжение атрибута должно состоять хотя бы из одного символа.|Отоброжение атрибута должно быть не менее {{ limit }} символов.
+      max_length: Отоброжение атрибута не должно превышать 1 символа.|Отоброжение атрибута должно быть не длиннее {{ limit }} символов.
+  attribute_value:
+    attribute:
+      not_blank: Пожалуйста, выберите атрибут.
+    value:
+      not_blank: Пожалуйста, введите значение атрибута.
+  channel:
+    base_currency:
+      not_blank: Пожалуйста, установите основную валюту.
+    default_locale:
+      not_blank: Пожалуйста, введите язык по умолчанию для канала.
+    contact_email:
+      invalid: Не правильный e-mail адрес.
+      max: E-mail не должен быть длиннее {{ limit }} символов.
+      min: E-mail должн быть по крайней мере {{ limit }} символов.
+  channel_pricing:
+    price:
+      min: Цена должна быть не менее {{ limit }}.
+      not_blank: Пожалуйста введите стоимость.
+  checkout:
+    shipping_method:
+      not_blank: Пожалуйста, выберите метод доставки.
+  contact:
+    email:
+      invalid: Не правильный e-mail адрес.
+      not_blank: Пожалуйста, введите ваш email.
+    message:
+      not_blank: Пожалуйста, введите ваше сообщение.
+  cart_item:
+    not_available: 'Недостаточное количество %itemName%.'
+  order:
+    currency_code:
+      not_valid: Код валюты, что вы ввели, неверный.
+    payment_method_eligibility: 'Метод оплаты %paymentMethodName% был выключен. Пожалуйста выберете другой метод оплаты.'
+    product_eligibility: 'Продукт %productName% был выключен.'
+    shipping_method_eligibility: 'Продукт не соответствует требованиям способа доставки %shippingMethodName%. Пожалуйста выберете другой способ доставки.'
+  locale:
+    code:
+      not_blank: Пожалуйста, введите код языка.
+      unique: Этот язык уже существует.
+    enabled:
+      cannot_disable_base: Базовый язык не может быть отключен.
+  product_attribute:
+    invalid: Значение должно быть целым числом.
+  product_image:
+    file:
+      max_size: Изображение слишком велико - {{ size }}{{ suffix }}. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
+      upload_ini_size: Изображение слишком велико. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
+  product_variant:
+    combination: Вариант с этой опцией уже существует.
+    code:
+      not_blank: Пожалуйста, введите код.
+      regex: Код варианта продукта может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код варианта продукта должен быть уникальным.
+      within_product_unique: Этот код должен быть уникальным в пределах данного продукта.
+    onHand:
+      min: Количество товара на складе должно быть больше {{ limit }}.
+      not_blank: Пожалуйста, укажите количество товара на складе.
+      reserved: Количество заказанных товаров не должно превышать количество товаров в наличии
+    original_price:
+      min: Первоначальная стоимость не может быть отрицательной.
+    weight:
+      min: Вес не может быть отрицательным.
+      invalid: Вес должен быть числом.
+    width:
+      min: Ширина не может быть отрицательной.
+      invalid: Ширина должна быть числом.
+    height:
+      min: Высота не может быть отрицательной.
+      invalid: Высота должна быть числом.
+    depth:
+      min: Глубина не может быть отрицательной.
+      invalid: Глубина должна быть числом.
+    channel_pricing:
+      all_defined: 'Необходимо определить цену для каждого канала.'
+  taxon_image:
+    file:
+      max_size: Изображение слишком велико - {{ size }}{{ suffix }}. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
+      upload_ini_size: Изображение слишком велико. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
+  currency:
+    enabled:
+      cannot_disable_base: Базовая валюта не может быть отключена.
+    code:
+      exact_length: Код валюты должен быть точно 3 символов.
+      not_blank: Пожалуйста выберите код валюты.
+      regex: Код валюты может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код валюты должен быть уникальным.
+    exchange_rate:
+      not_blank: Пожалуйста введите обменный курс.
+  exchange_rate:
+    ratio:
+      greater_than: Соотношение должно быть больше 0.
+      invalid: Соотношение должно быть числом.
+      not_blank: Пожалуйста, введите коэффициент обменного курса.
+    source_currency:
+      not_blank: Введите, пожалуйста, из какой валюты должен быть получен обменный курс.
+    target_currency:
+      not_blank: Пожалуйста, укажите в какой валюте должен быть установлен валютный курс.
+    unique_currency_pair: Валютная пара должна быть уникальной.
+    different_source_target_currency: Исходная и целевая валюты должны отличаться.
+  customer:
+    currency_code:
+      not_valid: Код валюты, что вы ввели, неверный.
+    first_name:
+      max: Имя не должно быть длиннее {{ limit }} символов.
+      min: Имя должно содержать как минимум {{ limit }} символов.
+      not_blank: Пожалуйста, введите ваше имя.
+    last_name:
+      max: Фамилия не должна быть длиннее {{ limit }} символов.
+      min: Фамилия должна содержать как минимум {{ limit }} символов.
+      not_blank: Пожалуйста введите фамилию.
+    gender:
+      not_blank: Пожалуйста, выберите ваш пол.
+    email:
+      already_used: Этот e-mail уже занят, пожалуйста, войдите или используйте восстановлением пароля.
+      max: E-mail не должен быть длиннее {{ limit }} символов.
+      not_blank: Пожалуйста, введите ваш email.
+      invalid: Не правильный e-mail адрес.
+      unique: Этот адрес электронной почты уже используется.
+      registered: Этот e-mail уже занят, пожалуйста, войдите или используйте восстановление пароля.
+  customer_group:
+    code:
+      regex: Код группы клиентов может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код группы клиента должен быть уникальным.
+    name:
+      max: Имя группы клиентов не должно быть длиннее {{ limit }} символов.
+      min: Имя группы клиентов должно быть не менее {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя группы клиентов.
+  order_item:
+    quantity:
+      min: Количество товаров заказа не может быть меньше 1.
+  credit_card:
+    cardholder_name:
+      min_length: Имя владельца карты должно быть по крайней мере {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя владельца карты.
+    expiry_month:
+      max_range: Месяц окончания срока действия кредитной карты должны быть между {{ min }} и {{ max }}.
+      min_range: Месяц окончания срока действия кредитной карты должны быть между {{ min }} и {{ max }}.
+      not_blank: Пожалуйста, выберите месяц окончания срока действия.
+    number:
+      not_blank: Пожалуйста, введите номер карты.
+      luhn: Недопустимый номер кредитной карты.
+    security_code:
+      not_blank: Пожалуйста, введите защитный код.
+      max_length: CVV код кредитной карты должен содержать по крайней мере {{ limit }} цифр.
+      min_length: CVV код кредитной карты должен быть длиннее чем {{ limit }} цифр.
+    expiry_year:
+      not_blank: Пожалуйста, выберите год окончания.
+  payment:
+    currency_code:
+      not_valid: Код валюты, что вы ввели, неверный.
+    method:
+      not_blank: 'Пожалуйста, выберите способ оплаты.'
+  payment_method:
+    gateway:
+      not_blank: Пожалуйста, выберите способ оплаты.
+    name:
+      max_length: Имя метода оплаты должно быть {{ limit }} символов длиной или меньше.
+      min_length: Имя метода оплаты должно быть по крайней мере {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя метода оплаты.
+    fee_calculator_configuration:
+      amount:
+        greater_than_or_equal: Комиссия не может быть ниже, чем {{ compared_value }}.
+        not_blank: Пожалуйста, введите сумму комиссии.
+      percent:
+        max_range: Процент комиссии не может быть больше чем {{ limit }}.
+        min_range: Процент комиссии не может быть меньше, чем {{ limit }}.
+        not_blank: Пожалуйста, введите процент комиссии.
+    code:
+      not_blank: 'Пожалуйста, введите название метода оплаты.'
+      regex: 'Код метода оплаты может состоять только из букв, цифр, тире и знаков подчеркивания.'
+      unique: 'Метод оплаты с данным кодом уже существует.'
+  product:
+    variants:
+      all_prices_defined: Вы должны сначала определить цены продуктов для вновь назначенных каналов.
+    sku:
+      not_blank: Пожалуйста введите идентификатор товарной позиции продукта.
+      unique: Идентификатор товарной позиции продукта должен быть уникальным.
+    slug:
+      not_blank: Пожалуйста, введите псевдоним продукта.
+      unique: Slug продукта должен быть уникальным.
+    code:
+      not_blank: Пожалуйста, введите код товара.
+      regex: Код продукта может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код товара должен быть уникальным.
+    name:
+      not_blank: Пожалуйста введите название продукта.
+      min_length: Название продукта должно быть не менее 1 символа.|Название продукта должно быть не менее {{ limit }} символов.
+      max_length: Название продукта должно быть длиннее 1 символа.|Название продукта должно быть длиннее {{ limit }} символов.
+  simple_product:
+    code:
+      unique: Простой код продукта должен быть уникальным среди всех продуктов и вариантов продукта.
+  option:
+    code:
+      not_blank: Пожалуйста введите код опции.
+      regex: Код опции может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Опция с таким кодом уже существует.
+    name:
+      not_blank: Пожалуйста введите название опции.
+      min_length: Название опции должно быть не менее 1 символа.|Название опции должно быть не менее {{ limit }} символов.
+      max_length: Название опции должно быть длиннее 1 символа.|Название опции должно быть длиннее {{ limit }} символов.
+    values:
+      min_count: Пожалуйста введите не менее {{ limit }} значения опции.|Пожалуйста введите не менее {{ limit }} значений опции.
+  option_value:
+    code:
+      not_blank: Пожалуйста введите код значения опции.
+      regex: Значение опции может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Значение опции с таким кодом уже существует.
+    value:
+      not_blank: Пожалуйста введите значение опции.
+  association_type:
+    name:
+      not_blank: Пожалуйста, введите название типа связи.
+      min_length: Название взаимосвязи должно содержать по крайней мере 1 символ.|Название взаимосвязи должно быть по крайней мере {{ limit }} символов.
+      max_length: Название взаимосвязи не должно превышать 1 символ.|Название взаимосвязи не должно превышать {{ limit }} символов.
+    code:
+      not_blank: Пожалуйста, введите название типа связи.
+      regex: Код типа ассоциации может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Тип связи с таким кодом уже существует.
+  promotion:
+    code:
+      unique: Акция с данным кодом уже существует.
+      regex: Код промоакции может состоять только из букв, цифр, тире и знаков подчеркивания.
+      not_blank: Пожалуйста, введите промо-код.
+    description:
+      max_length: Описание акции должно быть не более 1 символа.|Описание акции должно быть не более {{ limit }} символов.
+      min_length: Описание акции должно быть не менее 1 символа.|Описание акции должно быть не менее {{ limit }} символов.
+      not_blank: Пожалуйста, введите описание акции.
+    end_date_cannot_be_set_prior_start_date: Дата окончания не может быть раньше даты начала.
+    name:
+      max_length: Название акции должно быть не более 1 символа.|Название акции должно быть не более {{ limit }} символов.
+      min_length: Название акции должно быть не менее 1 символа.|Название акции должно быть не менее {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя акции.
+  promotion_action:
+    percentage_discount_configuration:
+      min: Значение процента скидки должно быть как минимум 0%.
+      max: Максимальное значение процента скидки составляет 100%.
+  promotion_coupon:
+    code:
+      max_length: Длинна кода купона должна быть не более 1 символа.|Код купона должен быть не более чем {{ limit }} символов.
+      min_length: Код купона должен содержать хотя бы один символ.|Код купона должен содержать минимум {{ limit }} символов.
+      not_blank: Пожалуйста, введите код купона.
+      regex: Код купона может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Этот купон уже существует.
+    is_invalid: Код скидки недействительный.
+    usage_limit:
+      min: Лимит использования купона должен быть не менее {{ limit }}.
+  promotion_coupon_generator_instruction:
+    amount:
+      min: Количество купонов для генерации должно быть не меньше {{ limit }}.
+      not_blank: Пожалуйста, введите количество купонов для генерации.
+    code_length:
+      min: Код купона должен быть не менее {{ limit }} символов.
+      max: Код купона не должен быть длиннее {{ limit }} символов.
+      not_blank: Пожалуйста, введите длину кода купона.
+    possible_generation_amount: Недопустимая длина кода купона или количество купонов. Невозможно генерировать %expectedAmount% уникальных купонов с длиной равной %codeLength%. Возможное количество составляет %possibleAmount%.
+    usage_limit:
+      min: Лимит на использование сгенерированных купонов должен быть не менее {{ limit }}.
+  review:
+    author:
+      already_exists: Этот e-mail уже занят, пожалуйста, войдите или используйте восстановление пароля.
+    comment:
+      not_blank: Комментарий к отзыву не должен быть пустым.
+    rating:
+      not_blank: Вы должны проверить рейтинг обзора.
+    title:
+      not_blank: Заголовок отзыва не должен быть пустым.
+      min_length: Заголовок отзыва должен иметь по крайней мере 2 символа.
+      max_length: Заголовок отзыва может иметь не более чем 255 символов.
+  shipping_category:
+    name:
+      max_length: 'Название категории не должно быть длиннее {{ limit }} символов.'
+      min_length: 'Название категории должно содержать не менее {{ limit }} символов.'
+      not_blank: 'Пожалуйста, введите название категории доставки.'
+    code:
+      not_blank: 'Пожалуйста, введите код категории доставки.'
+      regex: 'Код категории доставки может состоять только из букв, цифр, тире и знаки подчеркивания.'
+      unique: 'Категория доставки с данным кодом уже существует.'
+  shipping_method:
+    name:
+      max_length: 'Название способа доставки не должно быть длиннее {{ limit }} символов.'
+      min_length: 'Название способа доставки должно содержать не менее {{ limit }} символов.'
+      not_blank: 'Пожалуйста, введите название способа доставки.'
+    code:
+      not_blank: 'Пожалуйста, введите код способа доставки.'
+      regex: 'Код метода доставки может состоять только из букв, цифр, тире и знаки подчеркивания.'
+      unique: 'Метод доставки с данным кодом уже существует.'
+    zone:
+      not_blank: 'Пожалуйста, выберите метод доставки.'
+  shipment:
+    shipping_method:
+      not_blank: 'Пожалуйста, выберите метод доставки.'
+  tax_category:
+    name:
+      not_blank: Пожалуйста, введите название категории налога.
+    code:
+      not_blank: Пожалуйста, введите код категории налога.
+      regex: Код налоговой категории может состоять только из букв, цифр, тире и знаки подчеркивания.
+      unique: Категория налога с таким кодом уже существует.
+  tax_rate:
+    category:
+      not_blank: Пожалуйста, выберите категорию налога.
+    name:
+      not_blank: Пожалуйста, введите название ставки налога.
+    amount:
+      not_blank: Пожалуйста, введите сумму ставки налога.
+    calculator:
+      not_blank: Пожалуйста, выберите калькулятор налогов.
+    zone:
+      not_blank: Пожалуйста, выберите налоговую зону.
+    code:
+      not_blank: Пожалуйста, введите код ставки налога.
+      regex: Код налоговой категории может состоять только из букв, цифр, тире и знаки подчеркивания.
+      unique: Ставка налога с таким кодом уже существует.
+  taxon:
+    code:
+      not_blank: Пожалуйста, введите код категории.
+      regex: Код категории может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Категория с таким кодом уже существует.
+    name:
+      max_length: Название категории не должно быть длиннее 255 символов.
+      not_blank: Пожалуйста, введите название категории.
+    slug:
+      not_blank: Пожалуйста, введите псевдоним для категории.
+      unique: Псевдоним для категории должен быть уникальным.
+  taxonomy:
+    name:
+      max_length: Название категории не должно быть длиннее 255 символов.
+      not_blank: Пожалуйста, введите название категории.

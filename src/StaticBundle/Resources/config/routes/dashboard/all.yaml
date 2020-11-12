@@ -1,0 +1,11 @@
+dashboard_static_content:
+  resource: "@StaticBundle/Resources/config/routes/dashboard/static_content.yaml"
+  prefix:   /static-content
+
+dashboard_static_page:
+  resource: "@StaticBundle/Resources/config/routes/dashboard/static_page.yaml"
+  prefix:   /static-page
+
+dashboard_footer_settings_page:
+  resource: "@StaticBundle/Resources/config/routes/dashboard/footer_settings.yaml"
+  prefix:   /footer-settings

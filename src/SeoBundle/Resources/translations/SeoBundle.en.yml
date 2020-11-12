@@ -1,0 +1,11 @@
+form:
+  seo:
+    meta_title: 'The page title (SEO)'
+    meta_keyword: 'Keywords page (SEO)'
+    meta_description: 'description page (SEO)'
+    bread_crumbs: 'Bread crumbs'
+    h1: 'H1'
+
+sidebar:
+  configuration:
+    seo: 'SEO'

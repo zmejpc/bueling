@@ -1,0 +1,14 @@
+{% include '@Dashboard/default/crud/form/fields/_tabbable.html.twig' with {
+    'tabs': {
+        'seo': {
+            'name': 'sidebar.configuration.seo'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.seo),
+            'icon': 'flaticon-stopwatch'
+        },
+        'general_info': {
+            'name': 'ui.general_info'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.translations) ~ form_widget(form.poster)
+            ~ form_widget(form.publishAt) ~ include('@News/dashboard/news/form/_show.html.twig')
+        },
+    }
+} %}

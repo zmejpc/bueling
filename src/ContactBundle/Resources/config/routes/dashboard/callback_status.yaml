@@ -1,0 +1,28 @@
+dashboard_callback_status_index:
+    path:     /
+    controller: ContactBundle\Controller\Dashboard\CallbackStatusController::listAction
+    methods:  [GET, POST]
+
+dashboard_callback_status_new:
+    path:     /new/
+    controller: ContactBundle\Controller\Dashboard\CallbackStatusController::newAction
+    methods:  [GET, POST]
+
+dashboard_callback_status_edit:
+    path:     /edit/{id}
+    controller: ContactBundle\Controller\Dashboard\CallbackStatusController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_callback_status_delete:
+    path:     /delete/{id}
+    controller: ContactBundle\Controller\Dashboard\CallbackStatusController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_callback_status_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: ContactBundle\Controller\Dashboard\CallbackStatusController::ajaxDeleteGroupAction
+    methods:  POST

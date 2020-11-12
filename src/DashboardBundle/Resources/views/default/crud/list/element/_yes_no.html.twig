@@ -1,0 +1,20 @@
+{% if element.id is defined %}
+	<span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--success">
+		<label>
+			 <input class="ajax-checkbox {{ class is defined ? class }}" type="checkbox" data-id="{{ element.id }}" data-entity="{{ element.getClassName }}" data-field="{{ fieldName }}" {% if attribute(element, fieldName) %}checked="checked"{% endif %}>
+			<span></span>
+		</label>
+	</span>	
+{% else %}
+	<span>
+	    {% if element == 1 %}
+	        <span class="btn btn-bold btn-sm btn-font-sm  btn-label-success">
+	            {{ 'ui.yes_label'|trans([], 'DashboardBundle') }}
+	        </span>
+	    {% elseif element == 0 %}
+	        <span class="btn btn-bold btn-sm btn-font-sm  btn-label-danger">
+	            {{ 'ui.no.no_label'|trans([], 'DashboardBundle') }}
+	        </span>
+	    {% endif %}
+	</span>
+{% endif %}

@@ -1,0 +1,95 @@
+{% extends '@User/user/security/login.html.twig' %}
+
+{% block page %}
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signup m-login--2 m-login-2--skin-3"
+             id="m_login"
+             style="background-image: url({{ asset('bundles/dashboard/assets/app/media/img//bg/bg-2.jpg') }});">
+            <div class="m-grid__item m-grid__item--fluid m-login__wrapper">
+                <div class="m-login__container">
+                    <div class="m-login__signup">
+                        <div class="m-login__head">
+                            <h3 class="m-login__title">
+                                {{ 'ui.register.register'|trans([], 'UserBundle') }}
+                            </h3>
+                            <div class="m-login__desc">
+                                {{ 'ui.create.create_a_new_customer_account'|trans([], 'UserBundle') }}
+                            </div>
+                        </div>
+
+                        {{ form_start(form, {
+                            'method': 'post',
+                            'action': path('registration'),
+                            'attr': {
+                                'class': 'm-login__form m-form'
+                            }}
+                        ) }}
+
+                        {% if form_errors(form.email) or form_errors(form.plainPassword.first) or form_errors(form.plainPassword.second) %}
+                            {% if form_errors(form.email) is not empty %}
+                                {% include '@Dashboard/default/alert/_danger.html.twig' with {
+                                    'strongMessage': 'Email',
+                                    'message': form_errors(form.email)
+                                } %}
+                            {% endif %}
+                            {% if form_errors(form.plainPassword.first) is not empty %}
+                                {% include '@Dashboard/default/alert/_danger.html.twig' with {
+                                    'strongMessage': 'Password',
+                                    'message': form_errors(form.plainPassword.first)
+                                } %}
+                            {% endif %}
+                            {% if form_errors(form.plainPassword.second) is not empty %}
+                                {% include '@Dashboard/default/alert/_danger.html.twig' with {
+                                    'strongMessage': 'Confirm your password',
+                                    'message': form_errors(form.plainPassword.second)
+                                } %}
+                            {% endif %}
+                        {% endif %}
+
+                        <div class="form-group m-form__group">
+                            {{ form_widget(form.email, {
+                                'attr': {
+                                    'class': 'form-control m-input',
+                                }
+                            }) }}
+                        </div>
+
+                        <div class="form-group m-form__group">
+                            {{ form_widget(form.plainPassword.first, {
+                                'attr': {
+                                    'class': 'form-control m-input',
+                                }
+                            }) }}
+                        </div>
+
+                        <div class="form-group m-form__group">
+                            {{ form_widget(form.plainPassword.second, {
+                                'attr': {
+                                    'class': 'form-control m-input m-login__form-input--last',
+                                }
+                            }) }}
+                        </div>
+
+                        <div class="m-login__form-action">
+                            <button id="m_login_signup_submit"
+                                    class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn">
+                                {{ 'ui.register.register_button'|trans([], 'UserBundle') }}
+                            </button>
+                        </div>
+                        {{ form_row(form._token) }}
+                        {{ form_end(form) }}
+                    </div>
+                    <div class="m-login__account">
+							<span class="m-login__account-msg">
+                                {{ 'ui.have_an_account_already'|trans([], 'UserBundle') }}
+							</span>
+                        <a rel="nofollow" href="{{ path('security_login') }}" id="m_login_signup"
+                           class="m-link m-link--light m-login__account-link">
+                            {{ 'ui.login_button'|trans([], 'UserBundle') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

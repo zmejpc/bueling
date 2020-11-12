@@ -1,0 +1,6 @@
+{% block upload_widget %}
+    {% spaceless %}
+        {% include template with {'field': form, 'name': name,'value': value, 'token': secure_token,'id': id} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% if tabs|length %}
+    <ul class="nav nav-tabs  nav-tabs-line nav-tabs-line-info" role="tablist">
+        {% for key, tab in tabs %}
+            <li class="nav-item">
+                <a rel="nofollow" class="nav-link {% if loop.first %}active{% endif %}" data-toggle="tab"
+                   href="#{{ key }}" role="tab">
+                    {% if tab['icon']  is defined %}
+                        <i class="{{ tab['icon'] }}"></i>
+                    {% endif %}
+                    {{ tab['name']|raw }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<div class="tab-content">
+    {% for key, tab in tabs %}
+        <div class="tab-pane {% if loop.first %}active{% endif %}" id="{{ key }}" role="tabpanel">
+            <div class="kt-portlet kt-portlet--bordered kt-portlet--head--noborder">
+                <div class="kt-portlet__body">
+                    {% if tab['body']  is defined %}
+                        {{ tab['body']|raw }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

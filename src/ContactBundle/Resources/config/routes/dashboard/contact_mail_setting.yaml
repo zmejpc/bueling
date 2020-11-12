@@ -1,0 +1,4 @@
+dashboard_contact_mail_setting:
+    path:     /
+    controller: ContactBundle\Controller\Dashboard\ContactMailSettingController::indexAction
+    methods:  [GET, POST]

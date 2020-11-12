@@ -1,0 +1,75 @@
+dashboard_homepage_index:
+  path:     /
+  methods: [GET]
+  controller: BackendBundle\Controller\Dashboard\DashboardController::indexAction
+
+dashboard_contact_all:
+  resource: "@ContactBundle/Resources/config/routes/dashboard/all.yaml"
+  prefix:   /
+
+dashboard_news:
+  resource: "@NewsBundle/Resources/config/routes/dashboard/all.yaml"
+  prefix:   /
+
+dashboard_seo_page:
+  resource: "@SeoBundle/Resources/config/routes/dashboard/seo_page.yaml"
+  prefix:   /
+
+dashboard_static_content:
+  resource: "@StaticBundle/Resources/config/routes/dashboard/static_content.yaml"
+  prefix:   /
+
+dashboard_static_page:
+  resource: "@StaticBundle/Resources/config/routes/dashboard/static_page.yaml"
+  prefix:   /
+
+dashboard_footer_settings_page:
+  resource: "@StaticBundle/Resources/config/routes/dashboard/footer_settings.yaml"
+  prefix:   /footer-settings
+
+dashboard_user:
+  resource: "@UserBundle/Resources/config/routes/dashboard/user.yaml"
+  prefix:   /
+
+dashboard_ecommerce:
+  resource: "@EcommerceBundle/Resources/config/dashboard/all.yaml"
+  prefix:   /
+
+dashboard_ajax_checkbox:
+  path:     /ajax/checkbox
+  controller: BackendBundle\Controller\Dashboard\DashboardController:ajaxCheckboxAction
+  methods:  POST
+
+dashboard_ajax_position:
+  path:     /ajax/sort-position
+  controller: BackendBundle\Controller\Dashboard\DashboardController:ajaxSortPositionAction
+  methods:  POST
+
+dashboard_slider_index:
+  path:     /slider/
+  controller: BackendBundle\Controller\Dashboard\SliderController::listAction
+  methods:  [GET, POST]
+
+dashboard_slider_new:
+  path:     /slider/new/
+  controller: BackendBundle\Controller\Dashboard\SliderController::newAction
+  methods:  [GET, POST]
+
+dashboard_slider_edit:
+  path:     /slider/edit/{id}
+  controller: BackendBundle\Controller\Dashboard\SliderController::editAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+
+
+dashboard_slider_delete:
+  path:     /slider/delete/{id}
+  controller: BackendBundle\Controller\Dashboard\SliderController::deleteAction
+  methods:  GET
+  requirements:
+    id:  \d+
+
+dashboard_slider_ajax_delete_group:
+  path:     /ajax/delete-group/
+  controller: BackendBundle\Controller\Dashboard\SliderController::ajaxDeleteGroupAction
+  methods:  POST

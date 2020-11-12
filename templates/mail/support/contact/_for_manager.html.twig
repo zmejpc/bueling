@@ -1,0 +1,31 @@
+{% include('mail/_header.html.twig') %}
+
+  <tr>
+    <td style="padding:25px 30px 32px 27px;vertical-align:top;border-bottom:1px solid #cccccc">
+      <h1 style="font-size:28px;line-height:32px;padding-bottom:15px;font-weight:normal;margin:0">
+         Cообщение из контактной формы
+      </h1>
+      <p class="text" style="font-size:15px;line-height:24px;margin:0">
+          Имя, Фамилия: {{ entity.name }}
+      </p>
+      <p class="text" style="font-size:15px;line-height:24px;margin:0">
+          Адрес электронной почты: {{ entity.email }}
+      </p>
+      <p class="text" style="font-size:15px;line-height:24px;margin:0">
+          Телефон: {{ entity.phone }}
+      </p>
+      <p class="text" style="font-size:15px;line-height:24px;margin:0">
+          Тема сообщения: {{ entity.subject }}
+      </p>
+      {% if entity.product %}
+          <p class="text" style="font-size:15px;line-height:24px;margin:0">
+              Товар: {{ entity.product.title }}
+          </p>
+      {% endif %}
+      <p class="text" style="font-size:15px;line-height:24px;margin:0">
+          Сообщение: {{ entity.message }}
+      </p>
+    </td>
+  </tr>
+
+{% include('mail/_footer.html.twig') %}

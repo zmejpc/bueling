@@ -1,0 +1,296 @@
+{% extends '@Dashboard/templates/'~templateNumber~'/_template.html.twig' %}
+
+{% block page_vendors_styles %}
+    <link href="{{ asset('bundles/dashboard/assets/vendors/custom/datatables/datatables.bundle.css') }}"
+          rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block script_page_vendors %}
+    <script src="{{ asset('bundles/dashboard/assets/vendors/custom/datatables/datatables.bundle.js') }}"
+            type="text/javascript"></script>
+{% endblock %}
+
+{% block page_body_sub_header %}{% endblock %}
+
+{% block script_page_scripts %}
+    {{ parent() }}
+    <script>
+        var DatatableChildRemoteDataDemo = function () {
+            var demo = function () {
+                var datatable = $('.m_datatable').KTDatatable({
+                    data: {
+                        type: 'remote',
+                        source: {read: {url: '{{ routeForGetElementsForIndex }}'}},
+                        pageSize: "{{ configForListDashboard['pageLength'] }}",
+                        serverPaging: true,
+                        serverFiltering: true,
+                        serverSorting: true,
+                        saveState: {
+                            cookie: false,
+                            webstorage: false
+                        }
+                    },
+                    layout: {
+                        minHeight: '0px',
+                        theme: 'default',
+                        class: '',
+                        scroll: true,
+                        height: null,
+                        footer: true,
+                    },
+                    // column sorting
+                    sortable: true,
+
+                    filterable: false,
+
+                    pagination: true,
+
+                    // detail: {
+                    //     title: 'Load sub table',
+                    //     // isAutoOpen: true,
+                    //     isAutoOpen: false,
+                    //     content: subTableInit,
+                    // },
+
+                    search: {
+                        input: $('#generalSearch')
+                    },
+
+                    columns: [
+                        {
+                            field: 'id',
+                            title: '№',
+                            sortable: true,
+                            textAlign: 'center',
+                        },
+                        {% include '@Dashboard/default/crud/list/_helper_for_th.html.twig' with {
+                            'listElements': listElements,
+                        } %}
+                        // {
+                        //      field: 'Status',
+                        //      title: 'Status',
+                        //      width: 100,
+                        //      locked: {right: 'xl'},
+                        //      // callback function support for column rendering
+                        //      template: function (row) {
+                        //          var status = {
+                        //              1: {'title': 'Pending', 'class': 'm-badge--brand'},
+                        //              2: {'title': 'Delivered', 'class': ' m-badge--metal'},
+                        //              3: {'title': 'Canceled', 'class': ' m-badge--primary'},
+                        //              4: {'title': 'Success', 'class': ' m-badge--success'},
+                        //              5: {'title': 'Info', 'class': ' m-badge--info'},
+                        //              6: {'title': 'Danger', 'class': ' m-badge--danger'},
+                        //              7: {'title': 'Warning', 'class': ' m-badge--warning'},
+                        //          };
+                        //          return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
+                        //      },
+                        //  },
+                        {
+                            field: 'Actions',
+                            title: '{{ 'ui.actions'|trans([], 'DashboardBundle') }}',
+                            sortable: false,
+                            locked: {right: 'xl'},
+                            overflow: 'visible'
+                        }],
+                    toolbar: {
+                        layout: ['pagination', 'info'],
+                        placement: ['bottom'],  //'top', 'bottom'
+                        items: {
+                            pagination: {
+                                type: 'default',
+                                navigation: {
+                                    prev: true,
+                                    next: true,
+                                    first: true,
+                                    last: true
+                                },
+                                pageSizeSelect: [{{ configForListDashboard['lengthMenu'] }}]
+                            },
+                            info: true
+                        }
+                    },
+                    translate: {
+                        records: {
+                            processing: "{{ 'ui.table.loadingMessage'|trans([], 'DashboardBundle') }}",
+                            noRecords: "{{ 'ui.table.emptyTable'|trans([], 'DashboardBundle') }}"
+                        },
+                        toolbar: {
+                            pagination: {
+                                items: {
+                                    default: {
+                                        first: "{{ 'ui.table.paginate.first'|trans([], 'DashboardBundle') }}",
+                                        prev: "{{ 'ui.table.paginate.previous'|trans([], 'DashboardBundle') }}",
+                                        next: "{{ 'ui.table.paginate.next'|trans([], 'DashboardBundle') }}",
+                                        last: "{{ 'ui.table.paginate.last'|trans([], 'DashboardBundle') }}",
+                                        more: "{{ 'ui.table.more'|trans([], 'DashboardBundle') }}",
+                                        input: "{{ 'ui.table.input'|trans([], 'DashboardBundle') }}",
+                                        select: "{{ 'ui.table.select'|trans([], 'DashboardBundle') }}"
+                                    },
+                                    info: "{{ 'ui.table.info'|trans([], 'DashboardBundle') }}"
+                                }
+                            }
+                        }
+                    }
+                });
+
+                //   function subTableInit(e) {
+                //     $('<div/>').attr('id', 'child_data_ajax_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
+                //         data: {
+                //             type: 'remote',
+                //             source: {
+                //                 read: {
+                //                     url: 'inc/api/datatables/demos/orders.php',
+                //                     headers: {'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
+                //                     params: {
+                //                         // custom query params
+                //                         query: {
+                //                             generalSearch: '',
+                //                             CustomerID: e.data.RecordID,
+                //                         },
+                //                     },
+                //                 },
+                //             },
+                //
+                //             serverPaging: true,
+                //             serverFiltering: false,
+                //             serverSorting: true,
+                //         },
+                //
+                //         // layout definition
+                //         layout: {
+                //             theme: 'default',
+                //             scroll: true,
+                //             height: 300,
+                //             footer: false,
+                //
+                //             // enable/disable datatable spinner.
+                //             spinner: {
+                //                 type: 1,
+                //                 theme: 'default',
+                //             },
+                //         },
+                //
+                //         sortable: true,
+                //
+                //         // columns definition
+                //         columns: [
+                //             {
+                //                 field: 'RecordID',
+                //                 title: '#',
+                //                 sortable: false,
+                //                 width: 20,
+                //                 selector: {class: 'm-checkbox--solid m-checkbox--brand'},
+                //             }, {
+                //                 field: 'OrderID',
+                //                 title: 'Order ID',
+                //                 template: function (row) {
+                //                     return '<span>' + row.OrderID + ' - ' + row.ShipCountry + '</span>';
+                //                 },
+                //             }, {
+                //                 field: 'ShipCountry',
+                //                 title: 'Country',
+                //                 width: 100,
+                //             }, {
+                //                 field: 'ShipAddress',
+                //                 title: 'Ship Address',
+                //             }, {
+                //                 field: 'ShipName',
+                //                 title: 'Ship Name',
+                //             }, {
+                //                 field: 'TotalPayment',
+                //                 title: 'Payment',
+                //                 type: 'number',
+                //             }, {
+                //                 field: 'Status',
+                //                 title: 'Status',
+                //                 // callback function support for column rendering
+                //                 template: function (row) {
+                //                     var status = {
+                //                         1: {'title': 'Pending', 'class': 'm-badge--brand'},
+                //                         2: {'title': 'Delivered', 'class': ' m-badge--metal'},
+                //                         3: {'title': 'Canceled', 'class': ' m-badge--primary'},
+                //                         4: {'title': 'Success', 'class': ' m-badge--success'},
+                //                         5: {'title': 'Info', 'class': ' m-badge--info'},
+                //                         6: {'title': 'Danger', 'class': ' m-badge--danger'},
+                //                         7: {'title': 'Warning', 'class': ' m-badge--warning'},
+                //                     };
+                //                     return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
+                //                 },
+                //             }, {
+                //                 field: 'Type',
+                //                 title: 'Type',
+                //                 // callback function support for column rendering
+                //                 template: function (row) {
+                //                     var status = {
+                //                         1: {'title': 'Online', 'state': 'danger'},
+                //                         2: {'title': 'Retail', 'state': 'primary'},
+                //                         3: {'title': 'Direct', 'state': 'accent'},
+                //                     };
+                //                     return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
+                //                         status[row.Type].title + '</span>';
+                //                 },
+                //             },],
+                //     });
+                // }
+
+            };
+
+            return {
+                // public functions
+                init: function () {
+                    demo();
+                }
+            };
+        }();
+
+        jQuery(document).ready(function () {
+            DatatableChildRemoteDataDemo.init();
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+        {% if isUseWidgetsForList == true and widgetsForList is defined and widgetsForList is not null %}
+            {{ widgetsForList|raw }}
+        {% endif %}
+
+        <div class="m-section__content">
+            {#{% include '@Dashboard/default/alert/_info.html.twig' %}#}
+            {#{% include '@Dashboard/default/alert/_danger.html.twig' %}#}
+            {#{% include '@Dashboard/default/alert/_warning.html.twig' %}#}
+
+            <div class="m-portlet m-portlet--mobile">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-wrapper">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                {% if portletHeadIcon is defined and portletHeadIcon is not empty %}
+                                    <span class="m-portlet__head-icon">
+                                    <i class="{{ portletHeadIcon }}"></i>
+                                </span>
+                                {% endif %}
+                                <h3 class="m-portlet__head-text">
+                                    {% block head_title %}
+                                        {{ headTitle }}
+                                    {% endblock %}
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="kt-portlet__head-toolbar">
+                            {% include '@Dashboard/default/crud/form/_back_to_list.html.twig' with {'path': routeForGetElementsForNewsIndex} %}
+                            {% include '@Dashboard/default/crud/list/_add_new_entry.html.twig' with {
+                                path: routeForGetElementsForNew, role: grantedRoleForNew,
+                            } %}
+                        </div>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    {% include '@Dashboard/default/crud/_flashes.html.twig' %}
+                    {% include '@Dashboard/default/crud/list/_search_form.html.twig' %}
+                    <!--begin: Datatable -->
+                    <div class="m_datatable" id="child_data_ajax"></div>
+                    <!--end: Datatable -->
+                </div>
+            </div>
+        </div>
+{% endblock %}

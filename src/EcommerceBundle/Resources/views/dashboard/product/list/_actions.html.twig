@@ -1,0 +1,8 @@
+{% if action_copy_url is defined and action_edit_role is defined and is_granted(action_edit_role) %}
+    <a target="_blank" href="{% if action_copy_url is not empty %}{{ action_copy_url }}{% else %}javascript:void(0);{% endif %}"
+       class="btn btn-hover-brand btn-icon btn-icon-only btn-pill"
+       title="Копировать">
+        <i class="flaticon-background"></i>
+    </a>
+{% endif %}
+{% include '@Dashboard/default/crud/list/_actions_edit_delete.html.twig' %}

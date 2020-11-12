@@ -1,0 +1,27 @@
+{% set divClass = '' %}
+{% set class = '' %}
+{% if field.vars.data is null and field.vars['required'] == true or field.vars.valid == false %}
+    {% set divClass = divClass ~ ' ' ~ 'validated validate is-invalid' %}
+	{% set class = 'is-invalid' %}
+{% endif %}
+
+<div class="form-group form-group-marginless kt-margin-t-20 {{ divClass }} row">
+	{{ form_label(field, label|default(null), {'label_attr': {'class': labelLg~ ' col-form-label'}}) }}
+    <div class="{{ divLg }}">
+		<span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--success">
+			<label>
+				 {{ form_widget(field) }}
+				<span></span>
+			</label>
+		</span>
+		{% if form_errors(field) is empty and field.vars.help_block is defined and field.vars.help_block is not null %}
+			<span class="form-text text-muted">
+             {{ field.vars.help_block }}
+            </span>
+		{% elseif form_errors(field) is not empty %}
+			<span class="error invalid-feedback">
+                {{ form_errors(field) }}
+            </span>
+		{% endif %}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+var filterData = JSON.parse('{{ listFilterElements|json_encode|raw }}'), select, field_name;
+
+$('.kt-datatable__table thead tr').clone().appendTo('.kt-datatable__table thead');
+$('.kt-datatable__table thead tr:eq(1) th').each( function (i) {
+	field_name = $(this).attr('data-field');
+	$(this).attr('class', 'kt-datatable__cell kt-datatable__filter-cell').find('span').html('');
+
+	if(filterData[field_name]) {
+		$select = $('<select>', {name: field_name}).append('<option value="">Все</option>');
+
+		for(let k in filterData[field_name].options) {
+			$select.append('<option '+( filterData[field_name].options[k].value !== undefined ? 'value="'+filterData[field_name].options[k].value+'"' : '' )+' '+(filterData[field_name].options[k].defaultValue ? 'selected="selected"' : "")+'>'+filterData[field_name].options[k].title+'</option>');
+		}
+
+		$select.appendTo($(this).find('span').addClass('kt-datatable__filter-cell-active')).select2()
+			.on('select2:select', function (e) {
+  				$(this).next().find('.select2-selection__rendered').text(e.params.data.text.trim())
+			});
+		$select.change(function() {
+			datatable.setDataSourceParam('query[filter]['+$(this).attr('name')+']', $(this).val().trim())
+			datatable.load()
+		});
+	}
+});

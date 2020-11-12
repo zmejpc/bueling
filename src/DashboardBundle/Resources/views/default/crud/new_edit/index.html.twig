@@ -1,0 +1,68 @@
+{% extends '@Dashboard/templates/'~templateNumber~'/_template.html.twig' %}
+
+{% block head_title %}
+    {{ headTitle|raw }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <!--begin::Portlet-->
+            {{ form_start(form, {
+                'attr': {
+                    'id': form.vars.id,
+                    'class': 'kt-form kt-form--label-right',
+                    'novalidate': "novalidate"
+                }}) }}
+            <div class="kt-portlet kt-portlet--bordered kt-portlet--head--noborder kt-portlet--last kt-portlet--head-lg kt-portlet--responsive-mobile"
+                 id="kt_page_portlet">
+                <div class="kt-portlet__head kt-portlet__head--lg">
+                    {% include '@Dashboard/default/crud/new_edit/_head_label.html.twig' %}
+                    {% include '@Dashboard/default/crud/new_edit/_head_tools.html.twig' %}
+                </div>
+                <div class="kt-portlet__body">
+                    {% include '@Dashboard/default/crud/_flashes.html.twig' %}
+                    {% include '@Dashboard/default/crud/form/_flash.html.twig' %}
+
+                    <div class="alert alert-danger kt-hide" role="alert" id="kt_form_msg">
+                        <div class="alert-icon">
+                            <i class="flaticon-warning"></i>
+                        </div>
+                        <div class="alert-text"></div>
+                        <div class="alert-close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="la la-close"></i>
+                            </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    {% if portletBodyHeaderBlock is defined %}
+                        {{ portletBodyHeaderBlock|raw }}
+                    {% endif %}
+
+                    {% if portletBodyTemplateForForm is defined and portletBodyTemplateForForm is not null %}
+                        {% include portletBodyTemplateForForm with {'form': form} %}
+                    {% endif %}
+                    {{ form_rest(form) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+            <!--end::Portlet-->
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_page_scripts %}
+    {{ parent() }}
+    {% include '@Dashboard/default/crud/new_edit/_script.html.twig' %}
+    {% include '@Dashboard/default/crud/_js_flashes.html.twig' %}
+    <script src="{{ asset('bundles/dashboard/assets/demo/default/custom/crud/forms/widgets/jscolor.js') }}"
+            type="text/javascript"></script>
+{% endblock %}
+
+{% block page_vendors_scripts %}
+    <script src="{{ asset('bundles/dashboard/assets/vendors/custom/dropzone/dropzone.min.js') }}"
+            type="text/javascript"></script>
+{% endblock %}

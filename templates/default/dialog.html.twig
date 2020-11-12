@@ -1,0 +1,18 @@
+<div class="dialog page__dialog {{ class is defined ? class }}" role="dialog" aria-labelledby="dialog-label" aria-modal="true">
+    <div class="dialog__backdrop"></div>
+    <div class="dialog__inner">
+        <h2 class="h1 dialog__title" id="dialog-label">{{ title }}</h2>
+        <div class="dialog__content">
+            {% block dialogBody %}
+                <div class="Ta(c)">
+                    <p>{{ body|raw }}</p>
+                </div>
+            {% endblock %}
+        </div>
+        <a class="dialog__close js-dialog-close" aria-label="Закрыть диалоговое окно" title="Закрыть диалоговое окно">
+            <svg class="svg-icon dialog__close-icon">
+                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#close"></use>
+            </svg>
+        </a>
+    </div>
+</div>

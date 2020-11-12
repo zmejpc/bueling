@@ -1,0 +1,18 @@
+user:
+  email:
+    not_registered: User with this email does not exist. Please register first.
+    unique: This email is already used.
+    min: Email must have at least {{ min }} characters.
+    max: Email must have at most {{ max }} characters.
+    invalid: This email is invalid.
+  username:
+    unique: This username is already used.
+    not_blank: Please enter your name.
+  locale_code:
+    not_blank: Please choose a locale.
+  plainPassword:
+    mismatch: The entered passwords don't match
+    wrong_current: Provided password is different than the current one.
+  password:
+    min: Password must be at least {{ limit }} characters long.
+    max: Password must not be longer than {{ limit }} characters.

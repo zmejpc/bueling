@@ -1,0 +1,6 @@
+sidebar:
+  configuration:
+    static_partition:
+      static_partition: 'Static partition'
+      static_content: 'Static content'
+      static_pages: 'Static pages'

@@ -1,0 +1,43 @@
+<header class="page-header page__header">
+    <div class="page__overlay"></div>
+    <div class="page-header__decor"></div>
+    <div class="page-header__inner container">
+        <div class="page-header__holder D(n)--lg">
+            <button class="page-header__button page-header__toggle js-menu-switcher">
+                <svg class="svg-icon page-header__button-icon" aria-hidden="true">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#menu"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="page-header__holder"><a class="page-header__logo"
+                                            href="{{ path('frontend_homepage', {_locale: app.request.locale}) }}"><img
+                        class="page-header__logo-img"
+                        src="{{ asset('build/frontend/img/logo.svg') }}"></a></div>
+        <div class="page-header__holder page-header__holder--adaptive page-header__holder--desktop">
+            {% include('default/_menu.html.twig') %}
+        </div>
+        <div class="page-header__holder page-header__holder--row">
+            <div class="dropdown page-header__dropdown">
+                <div class="dropdown__inner">
+                    <a class="dropdown__btn" id="dropdownLink-2" href="#" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+{#                        <span class="dropdown__btn-text">{{ app.request.locale|upper }}</span>#}
+                        <svg class="svg-icon dropdown__btn-icon" aria-hidden="true">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#lang"></use>
+                        </svg>
+                    </a>
+                    <div class="dropdown__menu" aria-labelledby="dropdownLink-2">
+                        <ul class="dropdown__list">
+                            {% for item in localeSupported %}
+                                <li class="dropdown__list-item">
+                                    <a class="dropdown__list-link Jc(c)"
+                                       href="{{ path('change_locale', {locale: item}) }}">{{ item|upper }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

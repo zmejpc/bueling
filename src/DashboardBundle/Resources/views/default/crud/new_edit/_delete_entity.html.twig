@@ -1,0 +1,11 @@
+{% if routeForGetElementsForDelete is defined and routeForGetElementsForDelete is not null
+    and action_delete_role is defined and is_granted(action_delete_role) %}
+    <a data-toggle="kt-tooltip" data-placement="top"
+       data-original-title="{{ 'ui.action.action_delete'|trans([], 'DashboardBundle') }}" href="{{ routeForGetElementsForDelete }}"
+       class="btn btn-sm btn-icon btn-outline-danger kt-margin-r-10">
+        <i class="flaticon-delete"></i>
+        {#<span class="kt-hidden-mobile">#}
+            {#{{ 'ui.action.action_delete'|trans([], 'DashboardBundle') }}#}
+        {#</span>#}
+    </a>
+{% endif %}

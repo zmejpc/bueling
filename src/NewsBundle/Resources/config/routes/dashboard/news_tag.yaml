@@ -1,0 +1,23 @@
+dashboard_news_tag_index:
+    path:     /
+    controller: NewsBundle\Controller\Dashboard\NewsTagController::listAction
+    methods:  [GET, POST]
+
+dashboard_news_tag_new:
+    path:     /new/
+    controller: NewsBundle\Controller\Dashboard\NewsTagController::newAction
+    methods:  [GET, POST]
+
+dashboard_news_tag_edit:
+    path:     /edit/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsTagController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_news_tag_delete:
+    path:     /delete/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsTagController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

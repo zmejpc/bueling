@@ -1,0 +1,31 @@
+<div class="products-slider">
+    <div class="products-slider__inner container--min">
+        <div class="glide glide--products-slider" data-gap="0" data-per-view="3">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    {% for product in products %}
+                        <li class="glide__slide">
+                            {% include('default/_product_element.html.twig') %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button
+                            class="glide__arrow glide__arrow--left glide__arrow--position--center glide__arrow--theme--secondary"
+                            data-glide-dir="&lt;">
+                        <svg class="svg-icon glide__arrow-icon" aria-hidden="true">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button
+                            class="glide__arrow glide__arrow--right glide__arrow--position--center glide__arrow--theme--secondary"
+                            data-glide-dir="&gt;">
+                        <svg class="svg-icon glide__arrow-icon" aria-hidden="true">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

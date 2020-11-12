@@ -1,0 +1,59 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="canonical" href="{{ absolute_url(path('frontend_news_list')) }}"/>
+{% endblock %}
+
+{% block main %}
+    <section>
+        <div class="container">
+          	<div class="row">
+            	<div class="col col-lg-9">
+                    <div class="main-title-holder">
+                        <h1 class="h2 h2--left main-title">{{ 'blog.title'|trans }}</h1>
+                        {% if newsCategory is defined %}
+                            <h2 class="h2 h2--left main-title main-title--desktop">{{ newsCategory.translate.title }}</h2>
+                        {% endif %}
+                    </div>
+              		<div class="news">
+                		<ul class="news__list">
+                			{% for item in news %}
+                                <li class="news-item news__item">
+                                    <div class="news-item__inner">
+                                        <div class="news-item__head">
+                                            <a class="news-item__img-wrap lazyload-container" href="{{ path('frontend_news_show', {slug: item.translate.slug}) }}">
+                                                {% set imageData = item.poster|json_decode %}
+                                                <img class="news-item__img lazyload" data-srcset="{{ asset(imageData['370x655']|default('')) }} 370w, {{ asset(imageData['740x1310']|default('')) }} 740w" data-src="{{ asset(imageData['370x655']|default('')) }}" />
+                                                <div class="news-item__holder"></div>
+                                            </a>
+                                        </div>
+                                        <div class="news-item__body">
+                                            <date class="news-item__date" time="{{ item.publishAt|localizeddate('medium', 'none', 'ru') }}">
+                                                {{ item.publishAt|localizeddate('medium', 'none', 'ru') }}
+                                            </date>
+                                            <a class="news-item__title" href="{{ path('frontend_news_show', {slug: item.translate.slug}) }}">
+                                                {{ item.translate.title }}
+                                            </a>
+                                            <div class="news-item__content">
+                                                {{ item.translate.shortDescription }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                  			{% endfor %}
+                		</ul>
+              		</div>
+            	</div>
+            	<div class="col col-lg-3">
+
+                    {{ render(controller('NewsBundle\\Controller\\Frontend\\NewsController::asideResentsAction')) }}
+
+                    {{ render(controller('NewsBundle\\Controller\\Frontend\\NewsController::asideCategoriesAction')) }}
+                    
+                </div>
+            </div>
+        </div>
+     </section>
+{% endblock %}

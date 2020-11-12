@@ -1,0 +1,17 @@
+{% include '@Seo/frontend/_h1.html.twig' %}
+
+{% if last_error %}
+    {{ last_error.messageKey|trans(last_error.messageData, 'security') }}
+{% endif %}
+
+{% include 'user/security/_form.html.twig' %}
+
+<a rel="nofollow" href="{{ path('password_reset') }}">
+    {{ 'ui.forgot_password'|trans([], 'UserBundle') }}
+</a>
+
+<a rel="nofollow" href="{{ path('registration') }}">
+    {{ 'ui.create.create_an_account'|trans([], 'UserBundle') }}
+</a>
+
+{% include 'user/security/_login_as_user.html.twig' %}

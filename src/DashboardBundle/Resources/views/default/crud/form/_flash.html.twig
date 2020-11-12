@@ -1,0 +1,17 @@
+{% for key, formElement in form.children %}
+    {% if key != '_token' and key != 'createAndEdit' and key != 'createAndCreate' and key != 'createAndList' and
+        key != 'saveAndEdit' and key != 'saveAndCreate' and key != 'saveAndList' %}
+        {% if form_errors(formElement) is not empty %}
+            {% include '@Dashboard/default/alert/_danger.html.twig' with {
+                'isShow': true, 'alert_close': true,
+                'message': form_errors(formElement),
+                'strongMessage': form_label(formElement)
+            } %}
+        {% endif %}
+        {% if formElement.children|length > 0 %}
+            {% include '@Dashboard/default/crud/form/_flash.html.twig' with {
+                'form': formElement
+            } %}
+        {% endif %}
+    {% endif %}
+{% endfor %}

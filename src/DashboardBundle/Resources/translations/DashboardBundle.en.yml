@@ -1,0 +1,1870 @@
+locale:
+  en: 'English'
+  ru: 'Русский'
+  uk: 'Українська'
+  it: 'Italian'
+
+sidebar:
+  partners: 'Partners'
+  back_to_site: 'Go to the site'
+  homepage: 'Home'
+  support_center: 'Support center'
+  subscription:
+    subscription: 'Subscription'
+    subscription_form: 'Message from subscription form'
+    subscription_settings:
+      subscription_settings: 'Settings'
+      subscription_statuses: 'Statuses'
+      subscription_managers: 'Managers'
+  messages:
+    messages: 'Messages'
+    messages_form: 'Message from messages form'
+    messages_settings:
+      messages_settings: 'Settings'
+      messages_statuses: 'Statuses'
+      messages_managers: 'Managers'
+  catalog:
+    catalog: 'Catalog'
+    collections: 'Collections'
+  payment_shipping:
+    payment_shipping: 'Payment & shipping'
+  marketing:
+    marketing: 'Marketing'
+    discounts: 'Discounts'
+    slider_on_the_main: 'Slider on the main'
+  configuration:
+    configuration: 'Configuration'
+    synchronization_delovod: 'Synchronization (delovod.ua)'
+    import_by_waybill_number: 'Import by waybill number'
+    log: 'Logs'
+  warehouses: 'Warehouses'
+  photo_gallery:
+    photo_gallery: 'Gallery'
+    photo: 'Photo'
+    сategory: 'Categories'
+
+ui:
+  answer: 'Answer'
+  video: 'Video'
+  background: 'Background'
+  sender_name: "Sender's name"
+  manager_subject: 'Themes of the email message for the manager'
+  message_subject: 'Subject of the message for the user'
+  message_body: 'Message body for user'
+  success_flash_message: 'Successful flash message'
+  title_for_flash_message: 'Title for flash message'
+  smtp_host: 'Host (smtp)'
+  smtp_username: 'User name (smtp)'
+  smtp_password: 'Password (smtp)'
+  smtp_port: 'Port (smtp)'
+  key: 'Key'
+  short_title: 'Short title'
+  sharing: 'Share on social networks'
+  quizzes: 'Quizzes'
+  nothing_is_selected: 'No selection'
+  poster_alt: 'Alternative text for image'
+  poster: 'Poster'
+  show_in_menu: 'Show in menu?'
+  show_on_website: 'Show on website?'
+  show_in_html_site_map: 'Show in html site map?'
+  synchronization:
+    synchronization: 'Synchronization'
+    category: 'Category synchronization'
+    goods: 'Goods synchronization'
+  notFound: 'Not Found.'
+  accessDenied: 'Access Denied.'
+  table:
+    metronicGroupActions: '_TOTAL_ records selected'
+    metronicAjaxRequestGeneralError: 'Could not complete request. Please check your internet connection'
+    lengthMenu:
+      lengthMenu: 'View _MENU_ records'
+      all: 'All'
+    select: 'Select page size'
+    input: 'Page number'
+    more: 'More pages'
+    infoEmpty: 'No records found to show'
+    emptyTable: 'No data available in table'
+    zeroRecords: 'No matching records found'
+    paginate:
+      previous: 'Prev'
+      next: 'Next'
+      last: 'Last'
+      first: 'First'
+      page: 'Page'
+      pageOf: 'of'
+    loadingMessage: "Loading..."
+    info: 'Showing {{start}} to {{end}} of {{total}} entries'
+  select_your_language: 'Select your language'
+  by: 'by'
+  abandoned: 'Abandoned'
+  about: 'About'
+  accept: 'Accept'
+  accepted: 'Accepted'
+  access_token: 'Access Token'
+  access_your_store_account_or_create_a_new_one: 'Access your store account or create a new one'
+  account_credentials: 'Account credentials'
+  account_panel_outline: 'Enjoy all the features that are available on your personal space to view, track and manage all your data'
+  action:
+    action: 'Action'
+    action_delete: 'Delete'
+    action_create: 'Add new'
+    action_list: 'Return to list'
+    action_show: 'Show'
+    action_edit: 'Edit'
+  actions: 'Actions'
+  add:
+    add: 'Add'
+    add_action: 'Add action'
+    add_address: 'Add address'
+    add_association: 'Add association'
+    add_attribute: 'Add attribute'
+    add_attributes: 'Add attributes'
+    add_channel: 'Add channel'
+    add_choice: 'Add choice'
+    add_coupon: 'Add coupon'
+    add_image: 'Add image'
+    add_member: 'Add member'
+    add_menu_element: 'Add menu element'
+    add_new_email: 'Add new Email'
+    add_new_permission: 'Add new permission'
+    add_new_role: 'Add new role'
+    add_province: 'Add province'
+    add_rule: 'Add rule'
+    add_to_cart: 'Add to cart'
+    add_value: 'Add value'
+    add_your_review: 'Add your review'
+    add_new_entry: 'Add new entry'
+    add_new: 'Add new'
+    adding_new_customer_groups: 'Adding new customer groups'
+    adding_new_email: 'Adding new Email'
+    adding_new_locale: 'Adding new locale'
+  additional_information: 'Additional information'
+  address: 'Address'
+  address_book: 'Address book'
+  adjustments: 'Adjustments'
+  administration: 'Administration'
+  administration_dashboard: 'Administration dashboard'
+  admin_users: 'Administrators'
+  all: 'All'
+  all_your_addresses: 'All your addresses'
+  amount: 'Amount'
+  an_error_occurred: 'An error occurred'
+  api: 'Api'
+  apply_coupon: 'Apply coupon'
+  archival: 'Archival'
+  archive: 'Archive'
+  are_your_sure_you_want_to_perform_this_action: 'Are you sure you want to perform this action?'
+  association: 'Association'
+  association_types: 'Association types'
+  associations: 'Associations'
+  assortment: 'Assortment'
+  attributes: 'Attributes'
+  author: 'Author'
+  availability: 'Availability'
+  available_on: 'Available on'
+  available_on_hand: 'Available on hand'
+  available_until: 'Available until'
+  average_order_value: 'Average order value'
+  awaiting_payment: 'Awaiting payment'
+  back: 'Back'
+  back_to_store: 'Back to store'
+  back_to_details: 'Back to details'
+  backorder: 'Backorder'
+  backordered: 'Backordered'
+  balance_due: 'Balance due'
+  base_currency: 'Base currency'
+  bill_to: 'Bill to'
+  billing_address: 'Billing address'
+  billing_address_changes_history: 'Billing address changes history'
+  blocks: 'Blocks'
+  body: 'Body'
+  browse_products: 'Browse products'
+  browse_all_products: 'Browse all products'
+  browse_your_addresses: 'Browse your addresses'
+  browse_your_orders_from_the_past: 'Browse your orders from the past'
+  build: 'Build'
+  by_position: 'By position'
+  calculator: 'Calculator'
+  call_us: 'Call us!'
+  cancel: 'Cancel'
+  cancelled: 'Cancelled'
+  cart: 'Cart'
+  cart_locked: 'Cart locked'
+  cart_summary: 'Cart summary'
+  categorization: 'Categorization'
+  category: 'Category'
+  category_requirements: 'Category requirements'
+  change:
+    change_address: 'Change address'
+    change_file: 'Change file'
+    change_password: 'Change password'
+    change_payment_method: 'Change payment method'
+    change_position: 'Change position'
+    change_shipping_method: 'Change shipping method'
+    change_your_password: 'Change your password'
+  changes: 'Changes'
+  channel: 'Channel'
+  channels: 'Channels'
+  charges_and_taxes: 'Charges and taxes'
+  cheapest_first: 'Cheapest first'
+  checkbox: 'Checkbox'
+  checking_out_as: 'Checking out as'
+  checkout: 'Checkout'
+  choose_channel: 'Choose channel'
+  choose_file: 'Choose file'
+  choose_how_your_goods_will_be_delivered: 'Choose how your goods will be delivered'
+  choose_how_you_will_pay: 'Choose how you will pay'
+  city: 'City'
+  clear: 'Clear'
+  clear_cart: 'Clear cart'
+  clear_filters: 'Clear filters'
+  code: 'Code'
+  color: 'Color'
+  comment: 'Comment'
+  company: 'Company'
+  complete: 'Complete'
+  completed: 'Completed'
+  configurable_product: 'Configurable product'
+  configuration: 'Configuration'
+  configure_channels_available_in_your_store: 'Configure channels available in your store'
+  confirm_your_action: 'Confirm your action'
+  confirmation: 'Confirmation'
+  confirmation_title: 'Confirmation'
+  confirmed: 'Confirmed'
+  contact_us: 'Contact us'
+  contact_your_technician_to_upgrade: 'Contact your technician to upgrade'
+  contain_variants: 'Contain Variants'
+  contains: 'Contains'
+  content: 'Content'
+  countries: 'Countries'
+  country: 'Country'
+  country_details: 'Country details'
+  coupon: 'Coupon'
+  coupon_based: 'Coupon based'
+  coupons: 'Coupons'
+  create:
+    create: 'Create'
+    create_and_return_to_the_list: 'Create and return to the list'
+    create_and_add_new: 'Create and add new'
+    create_a_new_address: 'Create a new address'
+    create_association_type: 'Create Association type'
+    create_country: 'Create country'
+    create_currency: 'Create currency'
+    create_customer: 'Create customer'
+    create_imagine_block: 'Create imagine block'
+    create_locale: 'Create locale'
+    create_menu: 'Create menu'
+    create_menu_node: 'Create menu node'
+    create_new_coupon: 'Create new coupon'
+    create_new_page: 'Create new page'
+    create_new_report: 'Create new report'
+    create_option: 'Create option'
+    create_order: 'Create order'
+    create_payment: 'Create payment'
+    create_payment_method: 'Create payment method'
+    create_product: 'Create product'
+    create_product_association: 'Create product association'
+    create_product_association_type: 'Create product association type'
+    create_product_attribute: 'Create product attribute'
+    create_promotion: 'Create promotion'
+    create_report: 'Create report'
+    create_shipping_category: 'Create shipping category'
+    create_shipping_method: 'Create shipping method'
+    create_simple_block: 'Create simple block'
+    create_slideshow_block: 'Create slideshow block'
+    create_string_block: 'Create string block'
+    create_tax_category: 'Create tax category'
+    create_tax_rate: 'Create tax rate'
+    create_taxon: 'Create taxon'
+    create_user: 'Create user'
+    create_variant: 'Create variant'
+    create_zone: 'Create zone'
+    created: 'Created'
+    created_at: 'Created at'
+    creating_a_new_imagine_block: 'Creating a new imagine block'
+    creating_a_new_simple_block: 'Creating a new simple block'
+    creating_a_new_slideshow_block: 'Creating a new slideshow block'
+    creating_a_new_string_block: 'Creating a new string block'
+    creating_menu: 'Creating menu'
+    creating_menu_node: 'Creating menu node'
+    creating_new_page: 'Creating new page'
+    creation_date: 'Creation date'
+    creation_time: 'Creation time'
+  criteria: 'Criteria'
+  currencies: 'Currencies'
+  currency: 'Currency'
+  current_orders: 'Current orders'
+  current_promotions: 'Current promotions'
+  current_stock: 'Current stock'
+  customer:
+    customer: 'Customer'
+    customer_can_login_to_the_store: 'Customer can login to the store?'
+    customer_care: 'Customer Care'
+    customer_details: 'Customer details'
+    customer_groups: 'Customer groups'
+    customer_id: 'Customer ID'
+    customer_login: 'Customer login'
+    customer_not_notified: 'Customer not notified'
+    customer_notified: 'Customer notified'
+    customer_orders: 'Customer orders'
+    customer_since: 'Customer since'
+    customers: 'Customers'
+    customers_list_of_all_customers_in_store: 'Customers <small>List of all customers in store</small>'
+  customize_default_metadata: 'Customize default metadata'
+  customize_metadata: 'Customize metadata'
+  customize_products_metadata: 'Customize products metadata'
+  customizing_metadata: 'Customizing metadata'
+  dashboard: 'Dashboard'
+  data: 'Data'
+  date: 'Date'
+  datetime: 'Datetime'
+  default:
+    default: 'Default'
+    default_address: 'Default address'
+    default_billing_address: 'Default billing address'
+    default_currency: 'Default currency'
+    default_locale: 'Default locale'
+    default_shipping_address: 'Default shipping address'
+  delete: 'Delete'
+  delete_image: 'Delete image'
+  deleted: 'Deleted'
+  delivery_and_shipping: 'Delivery & Shipping'
+  description: 'Description'
+  composition: 'Composition and Care'
+  sizes: 'Size chart'
+  details: 'Details'
+  disable: 'Disable'
+  disabled: 'Disabled'
+  discount: 'Discount'
+  discounted_unit_price: 'Discounted unit price'
+  display: 'Display'
+  edit:
+    edit: 'Edit'
+    edit_admin_user: 'Edit administrator'
+    edit_association_type: 'Edit Association type'
+    edit_channel: 'Edit channel'
+    edit_country: 'Edit country'
+    edit_coupon: 'Edit coupon'
+    edit_currency: 'Edit currency'
+    edit_customer: 'Edit customer'
+    edit_exchange_rate: 'Edit exchange rate'
+    edit_locale: 'Edit locale'
+    edit_my_address: 'Edit my address'
+    edit_order: 'Edit order'
+    edit_payment_method: 'Edit payment method'
+    edit_product: 'Edit product'
+    edit_product_association_type: 'Edit product association type'
+    edit_product_attribute: 'Edit product attribute'
+    edit_product_option: 'Edit product option'
+    edit_product_review: 'Edit product review'
+    edit_product_variant: 'Edit product variant'
+    edit_promotion: 'Edit promotion'
+    edit_promotion_coupon: 'Edit promotion coupon'
+    edit_report: 'Edit report'
+    edit_shipping_address: 'Edit shipping address'
+    edit_shipping_category: 'Edit shipping category'
+    edit_shipping_method: 'Edit shipping method'
+    edit_tax_category: 'Edit tax category'
+    edit_tax_rate: 'Edit tax rate'
+    edit_taxon: 'Edit taxon'
+    edit_your_items_apply_coupon_or_proceed_to_the_checkout: 'Edit your items, apply coupon or proceed to the checkout'
+    edit_your_personal_information: 'Edit your personal information'
+    edit_zone: 'Edit zone'
+    editing_attribute: 'Editing attribute'
+    editing_channel: 'Editing channel'
+    editing_country: 'Editing country'
+    editing_coupon: 'Editing coupon'
+    editing_currency: 'Editing currency'
+    editing_customer: 'Editing customer'
+    editing_email: 'Editing Email'
+    editing_exchange_rate: 'Editing exchange rate'
+    editing_imagine_block: 'Editing imagine block'
+    editing_menu: 'Editing menu'
+    editing_menu_node: 'Editing menu node'
+    editing_option: 'Editing option'
+    editing_order: 'Editing order'
+    editing_page: 'Editing page'
+    editing_payment: 'Editing payment'
+    editing_payment_method: 'Editing payment method'
+    editing_permission: 'Editing permission'
+    editing_product: 'Editing product'
+    editing_promotion: 'Editing promotion'
+    editing_review: 'Editing review'
+    editing_role: 'Editing role'
+    editing_shipment: 'Editing shipment'
+    editing_shipping_category: 'Editing shipping category'
+    editing_shipping_method: 'Editing shipping method'
+    editing_simple_block: 'Editing simple block'
+    editing_slideshow_block: 'Editing slideshow block'
+    editing_string_block: 'Editing string block'
+    editing_tax_category: 'Editing tax category'
+    editing_taxon: 'Editing taxon'
+    editing_user: 'Editing user'
+    editing_variant: 'Editing variant'
+    editing_zone: 'Editing zone'
+  email: 'Email'
+  email_templates: 'Email Templates'
+  email_verified: 'Email verified'
+  emails: 'Emails'
+  empty: 'Empty'
+  enable: 'Enable'
+  enabled: 'Enabled'
+  end_date: 'End date'
+  ends_at: 'Ends at'
+  ends_with: 'Ends with'
+  enjoy_all_the_features_that_are_available_on_your_personal_space_to_view_track_and_manage_all_your_data: 'Enjoy all the features that are available on your personal space to view, track and manage all your data'
+  enter_your_code: 'Enter your code'
+  equal: 'Equal'
+  error: 'Error'
+  exchange_rate: 'Exchange rate'
+  exchange_rates: 'Exchange rates'
+  exclusive: 'Exclusive'
+  existing_customer: 'Existing Customer'
+  expiration_and_usage_limits: 'Expiration and usage limits'
+  expires_at: 'Expires at'
+  extra_information: 'Extra information'
+  extra_notes: 'Extra notes'
+  failed: 'Failed'
+  female: 'Female'
+  filter: 'Filter'
+  filters: 'Filters'
+  fill_in_your_billing_and_shipping_addresses: 'Fill in your billing and shipping addresses'
+  name_first: 'First name'
+  first_name: '*First name'
+  from: 'From'
+  from_a_to_z: 'From A to Z'
+  from_the_newest: 'From the newest'
+  from_the_oldest: 'From the oldest'
+  from_z_to_a: 'From Z to A'
+  fulfill: 'Fulfill'
+  fulfilled: 'Fulfilled'
+  fulfilled_orders: 'Fulfilled orders'
+  gateway: 'Gateway'
+  gateway_configuration: 'Gateway configuration'
+  general_info: 'General Info'
+  general_settings: 'General Settings'
+  generate: 'Generate'
+  generate_coupons: 'Generate coupons'
+  generate_variants: 'Generate variants'
+  generating_coupons: 'Generating coupons'
+  go: 'Go'
+  go_level_up: 'Go level up'
+  go_to_dashboard: 'Go to dashboard'
+  grand_total: 'Grand total'
+  greater_than: 'Greater than'
+  group_membership: 'Group membership'
+  guest: 'Guest'
+  hello: 'Hello'
+  hello_name: 'Hello <b>%name%</b>'
+  hide_deleted: 'Hide deleted'
+  history: 'History'
+  home: 'Home'
+  hostname: 'Hostname'
+  id: 'ID'
+  identifier: 'Identifier'
+  if_you_have_an_account_sign_in_with_your_email_address: 'If you have an account, sign in with your e-mail address'
+  image: 'Image'
+  images: 'Images'
+  imagine_blocks: 'Imagine blocks'
+  impersonate: 'Impersonate'
+  in: 'In'
+  included_in_price: 'Included in price'
+  index_metadata: 'Metadata'
+  index_of_all_configured_locales: 'Index of all configured locales'
+  info: 'Info'
+  information: 'Information'
+  integer: 'Integer'
+  inventory: 'Inventory'
+  inventory_here_you_can_see_current_stock_levels: 'Inventory <small>Here you can see current stock levels</small>'
+  inventory_index: 'Inventory'
+  inventory_tracking: 'Inventory tracking'
+  invoice: 'Invoice'
+  is_enabled: 'Is enabled'
+  it_seems_you_have_an_account_already: 'It seems you have an account already'
+  item: 'Item'
+  items: 'Items'
+  item.choice: "{0} |{1}, 1 item|]1,Inf], %count% items"
+  items_total: 'Items total'
+  jump_to_page: 'Jump to page'
+  label: 'Label'
+  last_login: 'Last login'
+  last_name: 'Last name'
+  last_update: 'Last update'
+  last_updated: 'Last updated'
+  last_week_orders: 'Last week orders'
+  last_week_revenue: 'Last week revenue'
+  lastname: 'Last name'
+  latest_orders: 'Latest orders'
+  latest_products: 'Latest products'
+  less_than: 'Less than'
+  links: 'Links'
+  link: 'Link'
+  list_coupons: 'List coupons'
+  list_variants: 'List variants'
+  locale: 'Locale'
+  locales: 'Locales'
+  lock: 'Lock'
+  locked: 'Locked'
+  logged_at: 'Logged at'
+  logged_in_as: 'Logged in as %username%'
+  login: 'Login'
+  logout: 'Logout'
+  main_taxon: 'Main taxon'
+  male: 'Male'
+  manage:
+    manage: 'Manage'
+    manage_adjustments: 'Manage adjustments'
+    manage_admin_users: 'Manage administrators'
+    manage_attributes: 'Manage attributes'
+    manage_association_types_of_your_products: 'Manage association types of your products'
+    manage_attributes_of_your_products: 'Manage attributes of your products'
+    manage_categorization_of_your_products: 'Manage categorization of your products'
+    manage_channels: 'Manage channels'
+    manage_configuration_options_of_your_products: 'Manage configuration options of your products'
+    manage_countries: 'Manage countries'
+    manage_coupons: 'Manage coupons'
+    manage_currencies_available_in_the_store: 'Manage currencies available in the store'
+    manage_customers: 'Manage customers'
+    manage_customer_groups: 'Manage groups of your customers'
+    manage_discounts_and_promotional_campaigns: 'Manage discounts and promotional campaigns'
+    manage_emails: 'Manage Emails'
+    manage_exchange_rates: 'Manage exchange rates'
+    manage_geographical_zones: 'Manage geographical zones'
+    manage_inventory: 'Manage inventory'
+    manage_languages_available_in_the_store: 'Manage languages available in the store'
+    manage_metadata: 'Manage metadata'
+    manage_options: 'Manage options'
+    manage_orders: 'Manage orders'
+    manage_payment_methods_available_to_your_customers: 'Manage payment methods available to your customers'
+    manage_payments: 'Manage payments'
+    manage_products: 'Manage products'
+    manage_promotions: 'Manage promotions'
+    manage_reviews: 'Manage reviews'
+    manage_reviews_of_your_products: 'Manage reviews of your products'
+    manage_shipments: 'Manage shipments'
+    manage_shipping_categories: 'Manage shipping categories'
+    manage_shipping_categories_for_your_store: 'Manage shipping categories for your store'
+    manage_shipping_destinations: 'Manage shipping destinations'
+    manage_shipping_methods: 'Manage shipping methods'
+    manage_shipping_methods_for_your_store: 'Manage shipping methods for your store'
+    manage_taxons: 'Manage taxons'
+    manage_tax_categories: 'Manage tax categories'
+    manage_tax_rates: 'Manage tax rates'
+    manage_taxation_of_your_products: 'Manage taxation of your products'
+    manage_users: 'Manage users'
+    manage_users_able_to_access_administration_panel: "Manage users able to access the administration panel"
+    manage_variants: 'Manage variants'
+    manage_your_customers: 'Manage your customers'
+    manage_your_personal_information_and_preferences: 'Manage your personal information and preferences'
+    manage_your_product_catalog: 'Manage your product catalog'
+    manage_your_saved_addresses: 'Manage your saved addresses'
+    manage_zones: 'Manage zones'
+  marketing: 'Marketing'
+  media: 'Media'
+  members: 'Members'
+  menu_nodes: 'Menu nodes'
+  menus: 'Menus'
+  message: 'Message'
+  metadata_index: 'Metadata'
+  method: 'Method'
+  modified: 'Modified'
+  most_expensive_first: 'Most expensive first'
+  move_down: 'Move down'
+  move_up: 'Move up'
+  my_account: 'My account'
+  n_a: 'N/A'
+  name: 'Name'
+  need_assistance: 'Need assistance?'
+  new:
+    new: 'New'
+    new_admin_user: 'New administrator'
+    new_channel: 'New channel'
+    new_comment_posted_on_order: 'New comment posted on order'
+    new_country: 'New country'
+    new_coupon: 'New coupon'
+    new_currency: 'New currency'
+    new_customer: 'New customer'
+    new_customers: 'New customers'
+    new_exchange_rate: 'New exchange rate'
+    new_locale: 'New locale'
+    new_order: 'New order'
+    new_orders: 'New orders'
+    new_payment: 'New payment'
+    new_payment_method: 'New payment method'
+    new_permission: 'New permission'
+    new_product: 'New product'
+    new_product_association_type: 'New product association type'
+    new_product_attribute: 'New product attribute'
+    new_product_option: 'New product option'
+    new_product_variant: 'New product variant'
+    new_promotion: 'New promotion'
+    new_promotion_coupon: 'New promotion coupon'
+    new_review: 'New review'
+    new_role: 'New role'
+    new_shipping_category: 'New shipping category'
+    new_shipping_method: 'New shipping method'
+    new_tax_category: 'New tax category'
+    new_tax_rate: 'New tax rate'
+    new_taxon: 'New taxon'
+    new_user: 'New user'
+    new_zone: 'New zone'
+  newest_products: 'Newest products'
+  newest_first: 'Newest first'
+  next: 'Next'
+  no:
+    no_label: 'No'
+    no_addresses: 'There are no addresses to display'
+    no_association_types_to_display: 'There are no association types defined'
+    no_comment: 'No comment'
+    no_default_billing_address: 'No default billing address'
+    no_default_shipping_address: 'No default shipping address'
+    no_description: 'No description'
+    no_new_notifications: 'No new notifications'
+    no_payment_methods_available: 'There are currently no payment methods available for your order'
+    no_pricing_configuration: 'No pricing configuration'
+    no_promotion: 'No promotion applied'
+    no_requirement: 'No requirement'
+    no_results: 'No results'
+    no_results_to_display: 'There are no results to display'
+    no_shipping_category: 'No shipping category'
+    no_shipping_charges: 'No shipping charges applied'
+    no_shipping_methods_available: 'There are currently no shipping methods available for your shipping address'
+    no_short_description: '<i>No short description</i>'
+    no_sku: 'No SKU'
+    no_tax_category: 'No tax category'
+    no_taxes: 'No taxes applied'
+    no_theme: 'No theme'
+    not_available_in_your_country: 'Not available in your country'
+    not_contains: 'Not contains'
+    not_empty: 'Not empty'
+    not_equal: 'Not equal'
+    not_in: 'Not in'
+    not_verified: 'Not verified'
+    not_tracked: 'Not tracked'
+  notes: 'Notes'
+  notify_customer: 'Notify Customer'
+  number: 'Number'
+  number_of_orders: 'Number of orders'
+  oauth_provider: 'OAuth Provider'
+  oldest_first: 'Oldest first'
+  on_hold: 'On hold'
+  options: 'Options'
+  options_matching: 'Options matching'
+  or: 'or'
+  order:
+    order: 'Order'
+    order_comment: 'Order comment'
+    order_manager_comment: 'Order manager comment'
+    order_comments: 'Order comments'
+    order_confirmation_name: 'Order confirmation'
+    order_details: 'Details of order'
+    order_history: 'Order history'
+    order_item_product: 'Item'
+    order_state: 'Order state'
+    order_summary: 'Order summary'
+    order_total: 'Order total'
+    base_currency_order_total: 'Order total in base currency'
+    order_value: 'Order value'
+    ordered: 'Ordered'
+    orders: 'Orders'
+    orders_statistics: 'Orders statistics'
+  original_price: 'Original price'
+  out_of_stock: 'Out of stock'
+  overall_this_customer_has_placed_orders_across_all_channels.choice: '{0}|{1}This customer has placed one order|]1,Inf]Overall, this customer has placed %count% orders across all channels'
+  overview_of_your_store: 'Overview of your store'
+  page: 'Page'
+  pages: 'Pages'
+  paid: 'Paid'
+  parent: 'Parent'
+  partially_paid: 'Partially paid'
+  partially_shipped: 'Partially shipped'
+  payment:
+    payment: 'Payment'
+    payment_details: 'Payment details'
+    payment_method: 'Payment method'
+    payment_methods: 'Payment methods'
+    payment_mode: 'Payment mode'
+    payment_ready_to_pay: 'You can now make your payment'
+    payment_state: 'Payment state'
+    payments: 'Payments'
+    pay: 'Pay'
+    pay_again: 'Click pay to try again'
+  pending: 'Pending'
+  per_customer_usage_limit: 'Per customer usage limit'
+  percent: 'Percent'
+  permissions: 'Permissions'
+  personal_information: 'Personal information'
+  phone: 'Phone number'
+  phone_number: '*Phone number'
+  place_order: 'Place order'
+  placed_an_order: 'You have successfully placed an order.'
+  placed_at: 'Placed at'
+  please_sign_in: 'Please sign in'
+  postcode: 'Postcode'
+  position: 'Position'
+  powered_by: 'Powered by'
+  preferences: 'Preferences'
+  presentation: 'Presentation'
+  previous: 'Previous'
+  price: 'Price'
+  pricing: 'Pricing'
+  priority: 'Priority'
+  privacy_policy: 'Privacy Policy'
+  process_your_orders: 'Process your orders'
+  processing: 'Processing'
+  product:
+    product: 'Product'
+    product_association_index: 'Association'
+    product_association_type_index: 'Association type'
+    product_association_types: 'Product association types'
+    product_associations: 'Product associations'
+    product_attributes: 'Product attributes'
+    product_details_viewing_product_product: 'Product details <small>Viewing product "<strong>%product%</strong>"</small>'
+    product_options: 'Product options'
+    product_review: 'Product review'
+    product_reviews: 'Product reviews'
+    product_taxon: 'Product taxon'
+    product_variant: 'Product variant'
+    product_variants: 'Product variants'
+    products: 'Products'
+    products_categorized_as_name: 'Products categorized as "%name%"'
+    products_categorized_under_taxon_taxon: 'Products <small>Categorized under "%taxon%" taxon</small>'
+    products_index_of_all_products_in_your_store: 'Products <small>Index of all products in your store</small>'
+  profile: 'Profile'
+  promotion:
+    promotion_coefficient: 'Coefficient'
+    promotion_configuration: 'Promotion configuration'
+    promotion_coupons: 'Coupons'
+    promotion_details: 'Promotion details'
+    promotion_discount: 'Promotion discount'
+    promotion_information: 'Promotion information'
+    promotion_total: 'Promotion total'
+    promotions: 'Promotions'
+  properties: 'Properties'
+  province: 'Province'
+  provinces: 'Provinces'
+  purchased_from: 'Purchased from'
+  qty: 'Qty'
+  qty_max: 'Qty max'
+  qty_min: 'Qty min'
+  quantity: 'Quantity'
+  rating: 'Rating'
+  ratio: 'Ratio'
+  ready: 'Ready'
+  recent_customers: 'Recent customers'
+  recent_orders: 'Recent orders'
+  recent_users: 'Recent users'
+  records: 'Records'
+  refund: 'Refund'
+  refunded: 'Refunded'
+  reject: 'Reject'
+  rejected: 'Rejected'
+  release_inventory: 'Release inventory'
+  remove_attribute: 'Remove attribute'
+  report_details: 'Report details'
+  reports: 'Reports'
+  reserved: 'Reserved'
+  reset: 'Reset'
+  restore: 'Restore'
+  retail_price: 'Retail price'
+  return: 'Return'
+  returned: 'Returned'
+  returns_policy: 'Returns Policy'
+  revert: 'Revert'
+  review_and_confirm_your_order: 'Review and confirm your order'
+  review_details: 'Review details'
+  reviews: 'Reviews'
+  roles: 'Roles'
+  rules: 'Rules'
+  sales: 'Sales'
+  sales_this_month: 'Sales'
+  save:
+    save: 'Save'
+    save_and_return_to_the_list: 'Save and return to the list'
+    save_and_add_new: 'Save and add new'
+    save_changes: 'Save changes'
+    save_positions: 'Save positions'
+  scope: 'Scope'
+  search: 'Search'
+  search_products: 'Search products'
+  security_settings: 'Security Settings'
+  select_address_from_book: 'Select address from my book'
+  select_products: 'Select products'
+  select_taxon: 'Select taxon'
+  send: 'Send'
+  server_has_encountered_some_errors: 'Server has encountered some errors.'
+  set_a_new_password_for_your_account: 'Set a new password for your account'
+  set_as_default: 'Set as default'
+  set_as_default_billing_address: 'Set as default billing address'
+  set_as_default_shipping_address: 'Set as default shipping address'
+  ship:
+    ship: 'Ship'
+    ship_to: 'Ship to'
+    shipment: 'Shipment'
+    shipment_confirmation_name: 'Shipment confirmation'
+    shipment_details: 'Shipment details'
+    shipment_mode: 'Shipment mode'
+    shipment_state: 'Shipment state'
+    shipments: 'Shipments'
+    shipped: 'Shipped'
+  shipping:
+    shipping: 'Shipping'
+    shipping_address: 'Shipping address'
+    shipping_and_payment_methods: 'Shipping and payment methods'
+    shipping_categories: 'Shipping categories'
+    shipping_category: 'Shipping category'
+    shipping_address_changes_history: 'Shipping address changes history'
+    shipping_charges: 'Shipping charges'
+    shipping_method: 'Shipping method'
+    shipping_method_details: 'Shipping method details'
+    shipping_methods: 'Shipping methods'
+    shipping_state: 'Shipping state'
+    shipping_total: 'Shipping total'
+  shop_by: 'Shop by'
+  shop_by_brand: 'Shop by brand'
+  show:
+    show: 'Show'
+    show_all: 'Show all'
+    show_deleted: 'Show deleted'
+    show_in_store: 'Show in store'
+    show_metadata: 'Show metadata'
+    show_order_details: 'Show order details'
+    show_orders: 'Show orders'
+  sign_in:
+    sign_in: 'Sign in'
+    sign_in_here: 'Sign in here'
+    sign_in_to_the_store_or_create_new_account: 'Sign in to the store <small>or create new account</small>'
+  sign_out: 'Sign out'
+  simple_blocks: 'Simple blocks'
+  simple_product: 'Simple product'
+  size: 'Size'
+  sku: 'SKU'
+  slideshow: 'Slideshow'
+  slideshow_blocks: 'Slideshow blocks'
+  sort: 'Sort'
+  sort_by_date: 'Sort by date'
+  source_currency: 'Source currency'
+  start_date: 'Start Date'
+  starts_at: 'Starts at'
+  starts_with: 'Starts with'
+  state: 'State'
+  status: 'Status'
+  street: 'Street'
+  string_blocks: 'String blocks'
+  subject: 'Subject'
+  subscribed_to_newsletter: 'Subscribed to the newsletter'
+  subtotal: 'Subtotal'
+  success: 'Success'
+  summary: 'Summary'
+  summary_of_your_order: 'Summary of order'
+  support: 'Support'
+  target_currency: 'Target currency'
+  tax:
+    tax: 'Tax'
+    tax_categories: 'Tax Categories'
+    tax_category: 'Tax category'
+    tax_rate_details: 'Tax rate details'
+    tax_rates: 'Tax Rates'
+    tax_total: 'Tax total'
+    taxation_categories: 'Taxation categories'
+    taxation_settings: 'Taxation Settings'
+    taxes: 'Taxes'
+  taxonomy: 'Taxonomy'
+  taxons: 'Taxons'
+  terms_and_conditions: 'Terms and Conditions'
+  text: 'Text'
+  textarea: 'Textarea'
+  thank_you:
+    thank_you: 'Thank you!'
+    thank_you_for_your_order: 'Thank you for your order'
+  theme: 'Theme'
+  the_instructions_below_will_be_displayed_to_the_customer: 'The instructions below will be displayed to the customer'
+  the_page_you_are_looking_for_does_not_exist: 'The page you are looking for does not exist.'
+  there_are_no:
+    there_are_no_attributes_configured: 'There are no attributes configured'
+    there_are_no_blocks_to_display: 'There are no blocks to display'
+    there_are_no_channels_configured: 'There are no channels configured'
+    there_are_no_countries_configured: 'There are no countries configured'
+    there_are_no_coupon_to_display: 'There are no coupon to display'
+    there_are_no_currencies_to_display: 'There are no currencies to display'
+    there_are_no_customers_to_display: 'There are no customers to display'
+    there_are_no_emails_configured: 'There are no emails configured'
+    there_are_no_images_for_this_product: 'There are no images for this product'
+    there_are_no_inventory_items_to_display: 'There are no inventory items to display'
+    there_are_no_inventory_units_to_display: 'There are no inventory units to display'
+    there_are_no_locales_configured: 'There are no locales configured'
+    there_are_no_logged_events_to_display: 'There are no logged events to display'
+    there_are_no_menu_nodes_to_display: 'There are no menu nodes to display'
+    there_are_no_menus_to_display: 'There are no menus to display'
+    there_are_no_options_configured: 'There are no options configured'
+    there_are_no_options_for_this_product: 'There are no options for this product'
+    there_are_no_orders_for_this_customer_to_display: 'There are no orders for this customer to display'
+    there_are_no_pages_to_display: 'There are no pages to display'
+    there_are_no_payment_methods_configured: 'There are no payment methods configured'
+    there_are_no_payments_configured: 'There are no payments configured'
+    there_are_no_permissions_defined: 'There are no permissions defined'
+    there_are_no_products_to_display: 'There are no products to display'
+    there_are_no_promotions_configured: 'There are no promotions configured'
+    there_are_no_reports_created: 'There are no reports created'
+    there_are_no_reviews: 'There are no reviews'
+    there_are_no_roles_defined: 'There are no roles defined'
+    there_are_no_shipments_to_display: 'There are no shipments to display'
+    there_are_no_shipping_categories_configured: 'There are no shipping categories configured'
+    there_are_no_shipping_methods_configured: 'There are no shipping methods configured'
+    there_are_no_tax_categories_configured: 'There are no tax categories configured'
+    there_are_no_tax_rates_configured: 'There are no tax rates configured'
+    there_are_no_taxons_for_this_product: 'There are no taxons for this product'
+    there_are_no_taxons_to_display: 'There are no taxons to display'
+    there_are_no_users_to_display: 'There are no users to display'
+    there_are_no_variants_to_display: 'There are no variants to display'
+    there_are_no_zones_configured: 'There are no zones configured'
+  there_is_no_main_taxon_for_this_product: 'There is no main taxon for this product'
+  this_customer_does_not_have_a_default_address: 'This customer does not have a default address'
+  this_customer_has_not_completed_any_orders_yet: 'This customer has not completed any orders yet'
+  this_months_statistics: 'This month''s statistics'
+  this_product_has_no_attributes_defined: 'This product has no attributes defined'
+  title: 'Title'
+  to: 'To'
+  toggle_sidebar: 'Toggle sidebar'
+  topic: 'Topic'
+  total:
+    total: 'Total'
+    total_in_base_currency: 'Total in base currency'
+    total_orders: 'Total orders'
+    total_qty: 'Total Qty'
+    total_records: 'Total records'
+    total_registrations: 'Total registrations'
+    total_value_of_orders: 'Total value of orders'
+  tracking_code: 'Tracking code'
+  tracking_number: 'Tracking number'
+  translations: 'Translations'
+  type: 'Type'
+  unavailable: 'Unavailable'
+  unexpected_error_occurred: 'Unexpected error occurred.'
+  unit_price: 'Unit price'
+  unknown: 'Unknown'
+  unlimited: 'Unlimited'
+  unlock: 'Unlock'
+  update:
+    update: 'Update'
+    updated: 'Updated'
+    update_cart: 'Update cart'
+    update_product_association_type: 'Update product association type'
+    updating_tax_rate: 'Updating tax rate'
+    updating_date: 'Updating date'
+  usage: 'Usage'
+  usage_limit: 'Usage limit'
+  use_the_contact_form_below_to_send_us_a_message: 'Use the contact form below to send us a message.'
+  used: 'Used'
+  user_details: 'User details'
+  username: 'Username'
+  users_list_of_all_users_registered_in_store: 'Users <small>List of all users registered in store</small>'
+  value: 'Value'
+  values: 'Values'
+  variant: 'Variant'
+  variant_choice: 'Variant choice'
+  variant_selection_method: 'Variant selection method'
+  variants: 'Variants'
+  verified: 'Verified'
+  verify: 'Verify'
+  view:
+    view: 'View'
+    view_and_edit_cart: 'View and edit cart'
+    view_more: 'View more'
+    view_product_details: 'View %product% details'
+    view_your_order_or_change_payment_method: 'View order or change payment method'
+    view_your_store: 'View your store'
+  void: 'Void'
+  volume_based_pricing: 'Volume based pricing'
+  warning: 'Warning'
+  welcome:
+    welcome: 'Welcome'
+    welcome_to_our_store: 'Welcome to our store'
+    welcome_to_your_space: 'Welcome to your space'
+  write_your_own_review: 'Write your own review'
+  yes_label: 'Yes'
+  you:
+    you_are_customer_since: 'You are customer since'
+    you_are_reviewing: 'You are reviewing'
+    you_can_no_longer_change_payment_method_of_this_order: 'You can no longer change payment method of this order'
+    you_have_no_addresses_defined: 'You have no addresses defined'
+    you_have_no_new_orders: 'You have no new orders'
+    you_may_also_like: 'You may also like'
+  your:
+    your_cart_is_empty: 'Your cart is empty'
+    your_default_address: 'Your default address'
+    your_last_5_orders: 'Your last 5 orders'
+    your_order_has_been_shipped: 'Your order has been shipped'
+    your_products: 'Your products'
+    your_profile: 'Your profile'
+    your_shopping_cart: 'Your shopping cart'
+    your_store: 'Your Store'
+
+form:
+  is_send_for_email: 'Send to email address?'
+  short_description: 'Short description'
+  static_content:
+    link_name: 'The name of the block (in English)'
+    page: 'The relative path to page'
+  system_name: "System name"
+  option:
+    name: 'Name'
+  notes: 'Extra notes'
+  variant:
+    depth: Depth
+    height: Height
+    on_hand: Current stock
+    price: Price
+    sku: SKU
+    shipping_required: Is shipping required?
+    weight: Weight
+    width: Width
+    tracked: 'Tracked'
+  taxon:
+    name: Name
+    parent: Parent
+    slug: Slug
+    code: Code
+    file: Select image
+    images: Images
+  taxonomy:
+    name: Name
+    file: Select image
+  user_filter:
+    query: Search
+  tax_category:
+    name: Name
+  tax_rate:
+    category: Category
+    name: Name
+    amount: Amount
+    included_in_price: Included in price?
+    calculator: Calculator
+  rule:
+    unit_count_configuration:
+      count: Count
+      equal: Equal to
+    type: Rule type
+  shipment:
+    state: State
+    states:
+      checkout:   Checkout
+      pending:    Pending
+      ready:      Ready
+      shipped:    Shipped
+      returned:   Returned
+      cancelled:  Cancelled
+    tracking_code: Tracking Code
+  shipping_calculator:
+    flat_rate_configuration:
+      label: Flat rate per shipment
+      amount: Amount
+    per_unit_rate_configuration:
+      label: Flat rate per unit
+      amount: Amount
+  shipping_category:
+    name: Name
+  shipping_method:
+    zone: Zone
+    calculator: Calculator
+    category: Category
+    category_requirement: Category requirement
+    channels: Channels
+    configuration: Configuration
+    enabled: Enabled
+    name: Name
+    position: Position
+    tax_category: Tax category
+    translations: Translations
+  review:
+    author: Author
+    comment: Comment
+    header: Add a review
+    rating: Rating
+    status:
+      approved: Approved
+      label: Status
+      new: New
+      rejected: Rejected
+    submit: Submit
+    title: Title
+  collection:
+    add: Add
+    delete: Delete
+  promotion:
+    channels: Channels
+    actions: Actions
+    add_action: Add action
+    add_rule: Add rule
+    coupon_based: Coupon based
+    ends_at: Ends at
+    exclusive: Exclusive
+    name: Name
+    priority: Priority
+    rules: Rules
+    starts_at: Starts at
+    usage_limit: Usage limit
+  promotion_action:
+    add_product_configuration:
+      product: Product
+    fixed_discount_configuration:
+      amount: Amount
+    percentage_discount_configuration:
+      percentage: Percentage
+    type: Type
+  promotion_coupon:
+    expires_at: Expires at
+    usage_limit: Usage limit
+    per_customer_usage_limit: Per-Customer Usage Limit
+  promotion_coupon_generator_instruction:
+    amount: Amount
+    code_length: Code length
+    expires_at: Expires at
+    usage_limit: Usage limit
+  promotion_filter:
+    price_range: Price range filter
+    products: Products filter
+    taxons: Taxons filter
+  promotion_rule:
+    customer_group:
+      group: Customer group
+    has_taxon:
+      taxons: Taxons
+    product:
+      products: Products
+    total_of_items_from_taxon:
+      taxon: Taxon
+      amount: Amount
+    taxonomy: Taxonomy
+    cart_quantity_configuration:
+      count: Count
+      equal: Equal
+    contains_product_configuration:
+      exclude: Exclude
+      variants: Products
+    item_total_configuration:
+      amount: Amount
+    nth_order_configuration:
+      nth: Nth
+    shipping_country_configuration:
+      country: Country
+    taxonomy_configuration:
+      exclude: Exclude
+      taxons: Taxons
+    type: Type
+  product:
+    name: Name
+    attributes: Attributes
+    options: Options
+    meta_keywords: Meta keywords
+    meta_description: Meta description
+    slug: Slug
+    taxons: Taxons
+    images: Images
+    restricted_zone: Restricted zone
+    variant_selection_method: Variant selection method
+    main_taxon: Main taxon
+    channels: Channels
+    enabled: Enabled
+  product_variant:
+    name: Name
+    tax_category: Tax category
+    shipping_category: Shipping category
+  association_type:
+    name: Name
+    translations: Translations
+  association:
+    type: Association Type
+    product: Associated Product
+  option_value:
+    add_value: Add value
+    value: Value
+  credit_card:
+    cardholder_name: Cardholder Name
+    expiry_month: Expiration Month
+    expiry_year: Expiration Year
+    number: Card Number
+    security_code: Security (CVV) Code
+    type: Card Type
+  payment:
+    amount: Payment amount
+    method: Payment method
+    state:
+      header: Payment state
+      checkout: Checkout
+      completed: Completed
+      authorized: Authorized
+      failed: Failed
+      new: New
+      pending: Pending
+      processing: Processing
+      unknown: Unknown
+      void: Void
+      cancelled: Cancelled
+      refunded: Refunded
+  payment_method:
+    channels: Channels
+    enabled: Enabled?
+    instructions: Instructions
+    name: Name
+    position: Position
+  customer:
+    first_name: First name
+    group: Group
+    last_name: Last name
+    email: Email
+    phone_number: Phone number
+    gender: Gender
+    birthday: Birthday
+    billing_address: Billing address
+    different_billing_address: Use different address for billing?
+    only_customer_registration: Create account?
+    subscribed_to_newsletter: Subscribe to the newsletter
+  customer_group:
+    name: Name
+    roles: Roles
+  gender:
+    unknown: Unknown
+    male: Male
+    female: Female
+  currency:
+    base: Base currency
+    code: Name
+    enabled: Enabled
+    exchange_rate: Exchange rate
+  exchange_rate:
+    source_currency: Source currency
+    target_currency: Target currency
+    ratio: Ratio
+  address:
+    city: City
+    company: Company
+    country: Country
+    first_name: First name
+    last_name: Last name
+    phone_number: Phone number
+    postcode: Postcode
+    street: Street address
+    province: Province
+    zone: Zone
+  country:
+    add_province: Add province
+    name: Name
+    provinces: Provinces
+    select: Select
+    enabled: Enabled
+  province:
+    name: Name
+    abbreviation: Abbreviation
+    select: Select
+  zone:
+    add_member: Add member
+    members: Members
+    name: Name
+    type: Type
+    types:
+      country: Country
+      province: Province
+      zone: Zone
+    scope: Scope
+    scopes:
+      shipping: Shipping
+      tax: Tax
+      all: All
+    select: Select
+    select_scope: Select scope
+  zone_member:
+    select: Select
+  attribute:
+    product_attribute_value:
+      attribute: Attribute
+      value: Value
+    add: Add
+    add_attributes: Add attributes
+    choices: Choices
+    code: Code
+    name: Name
+    translations: Translations
+    type: Type
+  attribute_type:
+    checkbox: Checkbox
+    configuration: Configuration
+    date: Date
+    datetime: Datetime
+    integer: Integer
+    percent: Percent
+    select: Select
+    text: Text
+    textarea: Textarea
+    title: Attribute types
+    validation: Validation
+  attribute_type_configuration:
+    datetime:
+      format: Format
+    date:
+      format: Format
+    select:
+      multiple: Multiple
+      values: Values
+      choose: Choose an option
+      min: Min entries
+      max: Max entries
+    text:
+      min: Min length
+      max: Max length
+  block:
+    body: Body
+    id: ID
+    title: Title
+  cart:
+    coupon: Coupon
+  checkout:
+    addressing:
+      different_billing_address: Use different address for billing?
+    payment_method: Payment Method
+    shipping_method: Shipping Method
+  group:
+    name: Name
+    roles: Roles
+  channel:
+    contact_email: Contact email
+    currencies: Currencies
+    currency_base: Base currency
+    account_verification_required: Is account verification required?
+    hostname: Hostname
+    locale_default: Default
+    locales: Locales
+    payment_methods: Payment Methods
+    shipping_methods: Shipping Methods
+    skipping_shipping_step_allowed: Skip shipping step if only one shipping method is available?
+    skipping_payment_step_allowed: Skip payment step if only one payment method is available?
+    tax_calculation_strategy: Tax calculation strategy
+    tax_zone_default: Default tax zone
+    taxonomies: Taxonomies
+    theme: Theme
+  image:
+    type: Type
+    file: Image
+  locale:
+    code: Code
+    enabled: Enabled
+  order_filter:
+    created_at_from: Created after
+    created_at_to: Created before
+    number: Number
+    total_from: From
+    total_to: To
+    payment_state: Payment state
+    channel: All channels
+  page:
+    body: Body
+    id: ID
+    title: Title
+  product_filter:
+    name: Name
+    code: Code
+  shipment_filter:
+    created_at_from: From
+    created_at_to: To
+    number: Order number
+    shipping_address: Ship to name
+    channel: All channels
+  payment_filter:
+    created_at_from: From
+    created_at_to: To
+    number: Order number
+    billing_address: Bill to name
+    channel: All channels
+  guest:
+    email: Email
+  product_association:
+    product: Associated product
+    type: Association type
+  product_association_type:
+    name: Name
+  product_attribute:
+    position: Position
+
+payum_gateway:
+  cash_on_delivery: Cash on delivery
+  offline: Offline
+  paypal_express_checkout: Paypal Express Checkout
+
+shipping_method_resolver:
+  by_zones_and_channel: By zones and channel
+
+flashes:
+  flash:
+    flash_batch_empty: 'Action aborted. No items were selected.'
+    flash_create_success: 'Item has been successfully created.'
+    flash_create_error: 'during the creation of item.'
+    flash_edit_success: 'Item has been successfully updated.'
+    flash_edit_error: 'during update of item.'
+    flash_batch_delete_success: 'Selected items have been successfully deleted.'
+    flash_batch_delete_error: 'during selected items deletion.'
+    flash_delete_error: 'during deletion of item.'
+    flash_delete_success: 'Item has been deleted successfully.'
+  channel:
+    delete_error: 'The channel cannot be deleted. At least one enabled channel is required.'
+  checkout:
+    complete_error: 'There was an unexpected problem with completing an order. Please, try to place your order again.'
+  contact:
+    request_success: 'Your contact request has been submitted successfully.'
+    request_error: 'A problem occurred while sending the contact request. Please try again later.'
+  customer:
+    register: 'Thank you for registering, check your email to verify your account.'
+    add_address: 'Address has been successfully added.'
+    impersonate: 'Successfully impersonated customer %name%.'
+    set_address_as_default: 'Address has been set as default.'
+  order:
+    apply_state_machine_transition_error: 'There was an unexpected problem with updating an order. Please, try to update order again.'
+    promotion_integrity: 'You are no longer eligible for this promotion %promotionName%.'
+    total_integrity: 'Your order total has been changed, check your order information and confirm it again.'
+    update_error: 'There was an unexpected problem with updating an order. Please, try to update order again.'
+  payment:
+    cancelled: 'Payment has been cancelled.'
+    completed: 'Payment has been completed.'
+    failed: 'Payment has failed.'
+    processing: 'Payment is being processed.'
+    refunded: 'Payment has been successfully refunded.'
+    unknown: 'There was an unknown problem with payment.'
+    apply_state_machine_transition_error: 'There was an unexpected problem with updating a payment. Please, try to update payment again.'
+  product:
+    out_of_stock: 'There is only %quantity% of this product in the stock.'
+  product_variant:
+    generate: 'Product variants have been successfully generated.'
+    update_error: 'There was an unexpected problem with updating a product variant. Please, try to update product variant again.'
+  review:
+    accept: 'Review has been successfully accepted.'
+    reject: 'Review has been successfully rejected.'
+    wait_for_the_acceptation: 'Your review is waiting for the acceptation.'
+  resource:
+    update: '%resource% has been successfully updated.'
+    delete: '%resource% has been successfully deleted.'
+    move: '%resource% has been successfully moved.'
+    generate: '%resource%s have been successfully generated.'
+    revert: '%resource% has been successfully reverted.'
+    restore_deleted: '%resource% has been successfully restored.'
+    enable: '%resource% has been successfully enabled.'
+    disable: '%resource% has been successfully disabled.'
+    delete_error: 'Cannot delete, the %resource% is in use.'
+    race_condition_error: 'Cannot update, the %resource% was previously modified.'
+    something_went_wrong_error: 'Something went wrong, please try again.'
+  promotion_coupon:
+    generate: 'Promotion coupons have been successfully generated.'
+  cart:
+    add_item: 'Item has been added to cart'
+    cannot_modify: 'An order has already been submitted for the cart you were trying to modify.'
+    remove_item: 'Item has been removed from cart'
+    save: 'The cart has been successfully updated'
+
+list:
+  product_category:
+    tree_title: 'Path'
+
+validators:
+  address:
+    city:
+      max_length: City must not be longer than 255 characters|City must not be longer than 255 characters.
+      min_length: City must be at least 2 characters long|City must be at least 2 characters long.
+      not_blank: Please enter city.
+    country:
+      not_blank: Please select country.
+      disabled: Chosen country is disabled. Please choose a different one.
+    first_name:
+      max_length: First name must not be longer than 255 characters|First name must not be longer than 255 characters.
+      min_length: First name must be at least 2 characters long|First name must be at least 2 characters long.
+      not_blank: Please enter first name.
+    last_name:
+      max_length: Last name must not be longer than 255 characters|Last name must not be longer than 255 characters.
+      min_length: Last name must be at least 2 characters long|Last name must be at least 2 characters long.
+      not_blank: Please enter last name.
+    postcode:
+      max_length: Postcode must not be longer than 255 characters|Postcode must not be longer than 255 characters.
+      min_length: Postcode must be at least 2 characters long|Postcode must be at least 2 characters long.
+      not_blank: Please enter postcode.
+    province:
+      valid: Please select proper province.
+    street:
+      max_length: Street must not be longer than 255 characters|Street must not be longer than 255 characters.
+      min_length: Street must be at least 2 characters long|Street must be at least 2 characters long.
+      not_blank: Please enter street.
+    not_shippable: This address is not a valid shipping destination.
+  country:
+    code:
+      not_blank: Please enter country ISO code.
+      regex: Country code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Country ISO code must be unique.
+  province:
+    code:
+      min_length: Province code must be at least 5 characters long|Province code must be at least 5 characters long.
+      not_blank: Please enter province code.
+      regex: Province code should have the following format XX-XX (e.g. US-FL).
+      unique: Province code must be unique.
+    name:
+      max_length: Province name must not be longer than 255 characters|Province name must not be longer than 255 characters.
+      min_length: Province name must be at least 2 characters long|Province name must be at least 2 characters long.
+      not_blank: Please enter province name.
+      unique: Province name must be unique.
+  zone:
+    scope:
+      not_blank: Please enter the scope.
+    code:
+      not_blank: Please enter zone code.
+      regex: Zone code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Zone code must be unique.
+    members:
+      min_count: Please add at least {{ limit }} zone member.
+    name:
+      max_length: Zone name must not be longer than 255 characters|Zone name must not be longer than 255 characters.
+      min_length: Zone name must be at least 2 characters long|Zone name must be at least 2 characters long.
+      not_blank: Please enter zone name.
+  zone_member:
+    code:
+      not_blank: Please choose a zone member.
+      regex: Zone member code can only be comprised of letters, numbers, dashes and underscores.
+    unique: Chosen zone member is already in this zone.
+  attribute:
+    name:
+      not_blank: Please enter attribute name.
+      min_length: Attribute name must be at least 1 character long.|Attribute name must be at least {{ limit }} characters long.
+      max_length: Attribute name must not be longer than 1 character.|Attribute name must not be longer than {{ limit }} characters.
+    code:
+      not_blank: Please enter attribute code.
+      regex: Attribute code can only be comprised of letters, numbers, dashes and underscores.
+      unique: This code is already in use.
+    configuration:
+      max_entries: Configuration max entries value must be greater or equal to the min entries value.
+      max_length: Configuration max length must be greater or equal to the min length.
+    presentation:
+      not_blank: Please enter attribute presentation.
+      min_length: Attribute presentation must be at least 1 character long.|Attribute presentation must be at least {{ limit }} characters long.
+      max_length: Attribute presentation must not be longer than 1 character.|Attribute presentation must not be longer than {{ limit }} characters.
+  attribute_value:
+    attribute:
+      not_blank: Please select attribute.
+    value:
+      not_blank: Please enter attribute value.
+  channel:
+    base_currency:
+      not_blank: Please enter channel base currency.
+    default_locale:
+      not_blank: Please enter channel default locale.
+    contact_email:
+      invalid: This email is invalid.
+      max: Email must not be longer than {{ limit }} characters.
+      min: Email must be at least {{ limit }} characters long.
+  channel_pricing:
+    price:
+      min: Price must be at least {{ limit }}.
+      not_blank: Please enter the price.
+  checkout:
+    shipping_method:
+      not_blank: Please select shipping method.
+  contact:
+    email:
+      invalid: This email is invalid.
+      not_blank: Please enter your email.
+    message:
+      not_blank: Please enter your message.
+  cart_item:
+    not_available: '%itemName% does not have sufficient stock.'
+  order:
+    currency_code:
+      not_valid: The currency code you entered is invalid.
+    payment_method_eligibility: 'This payment method %paymentMethodName% has been disabled. Please reselect your payment method.'
+    product_eligibility: 'This product %productName% has been disabled.'
+    shipping_method_eligibility: 'Product does not fit requirements for %shippingMethodName% shipping method. Please reselect your shipping method.'
+  locale:
+    code:
+      not_blank: Please enter locale code.
+      unique: This locale already exists.
+    enabled:
+      cannot_disable_base: The base locale cannot be disabled.
+  product_attribute:
+    invalid: Position must be an integer.
+  product_image:
+    file:
+      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
+      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+  product_variant:
+    combination: Variant with this option set already exists.
+    code:
+      not_blank: Please enter the code.
+      regex: Product variant code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Product variant code must be unique.
+      within_product_unique: This code must be unique within this product.
+    onHand:
+      min: On hand must be greater than {{ limit }}.
+      not_blank: Please enter on hand.
+      reserved: On hand must be greater than the number of on hold units
+    original_price:
+      min: Original price must not be negative.
+    weight:
+      min: Weight cannot be negative.
+      invalid: Weight must be a number.
+    width:
+      min: Width cannot be negative.
+      invalid: Width must be a number.
+    height:
+      min: Height cannot be negative.
+      invalid: Height must be a number.
+    depth:
+      min: Depth cannot be negative.
+      invalid: Depth must be a number.
+    channel_pricing:
+      all_defined: 'You must define price for every channel.'
+  taxon_image:
+    file:
+      max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
+      upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+  currency:
+    enabled:
+      cannot_disable_base: The base currency cannot be disabled.
+    code:
+      exact_length: Currency code must be exactly 3 characters long.
+      not_blank: Please choose currency code.
+      regex: Currency code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Currency code must be unique.
+    exchange_rate:
+      not_blank: Please enter exchange rate.
+  exchange_rate:
+    ratio:
+      greater_than: The ratio must be greater than 0.
+      invalid: The ratio must be a number.
+      not_blank: Please enter exchange rate ratio.
+    source_currency:
+      not_blank: Please enter from which currency the exchange rate should be derived.
+    target_currency:
+      not_blank: Please enter to which currency the exchange rate should be set.
+    unique_currency_pair: The currency pair must be unique.
+    different_source_target_currency: The source and target currencies must differ.
+  customer:
+    currency_code:
+      not_valid: The currency code you entered is invalid.
+    first_name:
+      max: First name must not be longer than {{ limit }} characters.
+      min: First name must be at least {{ limit }} characters long.
+      not_blank: Please enter your first name.
+    last_name:
+      max: Last name must not be longer than {{ limit }} characters.
+      min: Last name must be at least {{ limit }} characters long.
+      not_blank: Please enter your last name.
+    gender:
+      not_blank: Please choose your gender.
+    email:
+      already_used: This email is already used, please login or use forgotten password.
+      max: Email must not be longer than {{ limit }} characters.
+      not_blank: Please enter your email.
+      invalid: This email is invalid.
+      unique: This email is already used.
+      registered: This email is already registered, please login or use forgotten password.
+  customer_group:
+    code:
+      regex: Customer group code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Customer group code has to be unique.
+    name:
+      max: Customer group name must not be longer than {{ limit }} characters.
+      min: Customer group name must be at least {{ limit }} characters long.
+      not_blank: Please enter a customer group name.
+  order_item:
+    quantity:
+      min: Quantity of an order item cannot be lower than 1.
+  credit_card:
+    cardholder_name:
+      min_length: The cardholder's name must be at least {{ limit }} characters long.
+      not_blank: Please enter the name of the cardholder.
+    expiry_month:
+      max_range: The credit card's expiration month must be between {{ min }} and {{ max }}.
+      min_range: The credit card's expiration month must be between {{ min }} and {{ max }}.
+      not_blank: Please select the expiration month.
+    number:
+      not_blank: Please enter the card number.
+      luhn: The credit card number you entered is invalid.
+    security_code:
+      not_blank: Please enter the security code.
+      max_length: The credit card's CVV code must be at least {{ limit }} digits long.
+      min_length: The credit card's CVV code must be at most than {{ limit }} digits long.
+    expiry_year:
+      not_blank: Please select the expiration year.
+  payment:
+    currency_code:
+      not_valid: The currency code you entered is invalid.
+    method:
+      not_blank: 'Please select a payment method.'
+  payment_method:
+    gateway:
+      not_blank: Please select payment method gateway.
+    name:
+      max_length: Payment method name must be {{ limit }} characters long or less.
+      min_length: Payment method name must be at least {{ limit }} characters long.
+      not_blank: Please enter payment method name.
+    fee_calculator_configuration:
+      amount:
+        greater_than_or_equal: The fee cannot be lower than {{ compared_value }}.
+        not_blank: Please enter the fee amount.
+      percent:
+        max_range: Percent fee cannot be greater than {{ limit }}.
+        min_range: Percent fee cannot be lower than {{ limit }}.
+        not_blank: Please enter the fee percent.
+    code:
+      not_blank: 'Please enter payment method code.'
+      regex: 'Payment method code can only be comprised of letters, numbers, dashes and underscores.'
+      unique: 'The payment method with given code already exists.'
+  product:
+    variants:
+      all_prices_defined: You have to define product variants' prices for newly assigned channels first.
+    sku:
+      not_blank: Please enter product SKU.
+      unique: Product SKU must be unique.
+    slug:
+      not_blank: Please enter product slug.
+      unique: Product slug must be unique.
+    code:
+      not_blank: Please enter product code.
+      regex: Product code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Product code must be unique.
+    name:
+      not_blank: Please enter product name.
+      min_length: Product name must be at least 1 character long.|Product name must be at least {{ limit }} characters long.
+      max_length: Product name must not be longer than 1 character.|Product name must not be longer than {{ limit }} characters.
+  simple_product:
+    code:
+      unique: Simple product code must be unique among all products and product variants.
+  option:
+    code:
+      not_blank: Please enter option code.
+      regex: Option code can only be comprised of letters, numbers, dashes and underscores.
+      unique: The option with given code already exists.
+    name:
+      not_blank: Please enter option name.
+      min_length: Option name must be at least 1 character long.|Option name must be at least {{ limit }} characters long.
+      max_length: Option name must not be longer than 1 character.|Option name must not be longer than {{ limit }} characters.
+    values:
+      min_count: Please add at least {{ limit }} option value.|Please add at least {{ limit }} option values.
+  option_value:
+    code:
+      not_blank: Please enter option value code.
+      regex: Option value code can only be comprised of letters, numbers, dashes and underscores.
+      unique: The option value with given code already exists.
+    value:
+      not_blank: Please enter option value.
+  association_type:
+    name:
+      not_blank: Please enter association type name.
+      min_length: Association type name must be at least 1 character long.|Association name must be at least {{ limit }} characters long.
+      max_length: Association type name must not be longer than 1 character.|Association name must not be longer than {{ limit }} characters.
+    code:
+      not_blank: Please enter association type code.
+      regex: Association type code can only be comprised of letters, numbers, dashes and underscores.
+      unique: The association type with given code already exists.
+  promotion:
+    code:
+      unique: The promotion with given code already exists.
+      regex: Promotion code can only be comprised of letters, numbers, dashes and underscores.
+      not_blank: Please enter promotion code.
+    description:
+      max_length: Promotion description must not be longer than 1 character.|Promotion description must not be longer than {{ limit }} characters.
+      min_length: Promotion description must be at least 1 character long.|Promotion description must be at least {{ limit }} characters long.
+      not_blank: Please enter promotion description.
+    end_date_cannot_be_set_prior_start_date: End date cannot be set prior start date.
+    name:
+      max_length: Promotion name must not be longer than 1 character.|Promotion name must not be longer than {{ limit }} characters.
+      min_length: Promotion name must be at least 1 character long.|Promotion name must be at least {{ limit }} characters long.
+      not_blank: Please enter promotion name.
+  promotion_action:
+    percentage_discount_configuration:
+      min: The value of a percentage discount must be at least 0%.
+      max: The maximum value of a percentage discount is 100%.
+  promotion_coupon:
+    code:
+      max_length: Coupon code must not be longer than 1 character.|Coupon code must not be longer than {{ limit }} characters.
+      min_length: Coupon code must be at least 1 character long.|Coupon code must be at least {{ limit }} characters long.
+      not_blank: Please enter coupon code.
+      regex: Coupon code can only be comprised of letters, numbers, dashes and underscores.
+      unique: This coupon already exists.
+    is_invalid: Coupon code is invalid.
+    usage_limit:
+      min: Coupon usage limit must be at least {{ limit }}.
+  promotion_coupon_generator_instruction:
+    amount:
+      min: Amount of coupons to generate must be at least {{ limit }}.
+      not_blank: Please enter amount of coupons to generate.
+    code_length:
+      min: Coupon code must be at least {{ limit }} characters long.
+      max: Coupon code must not be longer than {{ limit }} characters.
+      not_blank: Please enter coupon code length.
+    possible_generation_amount: Invalid coupons code length or coupons amount. It is not possible to generate %expectedAmount% unique coupons with code length equals %codeLength%. Possible generate amount is %possibleAmount%.
+    usage_limit:
+      min: Usage limit of generated coupons must be at least {{ limit }}.
+  review:
+    author:
+      already_exists: This email is already registered, please login or use forgotten password.
+    comment:
+      not_blank: Review comment should not be blank.
+    rating:
+      not_blank: You must check review rating.
+    title:
+      not_blank: Review title should not be blank.
+      min_length: Review title must have at least 2 characters.
+      max_length: Review title must have at most 255 characters.
+  shipping_category:
+    name:
+      max_length: 'Category name must not be longer than {{ limit }} characters.'
+      min_length: 'Category name must be at least {{ limit }} characters long.'
+      not_blank: 'Please enter shipping category name.'
+    code:
+      not_blank: 'Please enter shipping category code.'
+      regex: 'Shipping category code can only be comprised of letters, numbers, dashes and underscores.'
+      unique: 'The shipping category with given code already exists.'
+  shipping_method:
+    name:
+      max_length: 'Shipping method name must not be longer than {{ limit }} characters.'
+      min_length: 'Shipping method name must be at least {{ limit }} characters long.'
+      not_blank: 'Please enter shipping method name.'
+    code:
+      not_blank: 'Please enter shipping method code.'
+      regex: 'Shipping method code can only be comprised of letters, numbers, dashes and underscores.'
+      unique: 'The shipping method with given code already exists.'
+    zone:
+      not_blank: 'Please select shipping method zone.'
+  shipment:
+    shipping_method:
+      not_blank: 'Please select shipping method.'
+  tax_category:
+    name:
+      not_blank: Please enter tax category name.
+    code:
+      not_blank: Please enter tax category code.
+      regex: Tax category code can only be comprised of letters, numbers, dashes and underscores.
+      unique: The tax category with given code already exists.
+  tax_rate:
+    category:
+      not_blank: Please select tax category.
+    name:
+      not_blank: Please enter tax rate name.
+    amount:
+      not_blank: Please enter tax rate amount.
+    calculator:
+      not_blank: Please select tax calculator.
+    zone:
+      not_blank: Please select tax zone.
+    code:
+      not_blank: Please enter tax rate code.
+      regex: Tax rate code can only be comprised of letters, numbers, dashes and underscores.
+      unique: The tax rate with given code already exists.
+  taxon:
+    code:
+      not_blank: Please enter taxon code.
+      regex: Taxon code can only be comprised of letters, numbers, dashes and underscores.
+      unique: Taxon with given code already exists.
+    name:
+      max_length: Taxon name must not be longer than 255 characters.
+      not_blank: Please enter taxon name.
+    slug:
+      not_blank: Please enter taxon slug.
+      unique: Taxon slug must be unique.
+  taxonomy:
+    name:
+      max_length: Taxonomy name must not be longer than 255 characters.
+      not_blank: Please enter taxonomy name.

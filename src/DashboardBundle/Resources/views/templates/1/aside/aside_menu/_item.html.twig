@@ -1,0 +1,55 @@
+{% set is_active = false %}
+
+{% for active in item['activeRoutes'] %}
+    {% if active == current_route %}
+        {% set is_active = true %}
+    {% endif %}
+{% endfor %}
+
+{% for active in item['editUrl'] %}
+    {% if active in current_uri %}
+        {% set is_active = true %}
+    {% endif %}
+{% endfor %}
+
+{% set itemsLength = item['items']|length %}
+
+<li class="kt-menu__item  {% if itemsLength > 0 %}kt-menu__item--submenu{% endif %} {% if is_active == true %}kt-menu__item--open kt-menu__item--here{% endif %}"
+    aria-haspopup="true" {% if itemsLength > 0 %}data-ktmenu-submenu-toggle="hover"{% endif %}>
+    <a href="{% if itemsLength > 0 %}javascript:void(0);{% else %}{{ item['url'] }}{% endif %}"
+       class="kt-menu__link kt-menu__toggle">
+        {% if item['useSVG'] is defined and item['useSVG'] == true %}
+            <span class="kt-menu__link-icon">{{ item['svgIcon']|raw }}</span>
+        {% else %}
+            <i class="kt-menu__link-icon {{ item['icon'] }}"></i>
+        {% endif %}
+        <span class="kt-menu__link-text">{{ item['title'] }}</span>
+
+        {% if item['count'] > 0 %}
+            <span class="kt-menu__link-badge">
+                <span class="kt-badge kt-badge--rounded kt-badge--brand">{{ item['count'] }}</span>
+            </span>
+        {% endif %}
+
+        {% if itemsLength > 0 %}
+            <i class="kt-menu__ver-arrow la la-angle-right"></i>
+        {% endif %}
+    </a>
+    {% if itemsLength > 0 %}
+        <div class="kt-menu__submenu ">
+            <span class="kt-menu__arrow"></span>
+            <ul class="kt-menu__subnav">
+                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true">
+                <span class="kt-menu__link">
+                    <span class="kt-menu__link-text">{{ item['title'] }}</span>
+                </span>
+                </li>
+                {% for children in item['items'] %}
+                    {% include '@Dashboard/templates/1/aside/aside_menu/_item.html.twig' with {
+                        'item': children
+                    } %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</li>

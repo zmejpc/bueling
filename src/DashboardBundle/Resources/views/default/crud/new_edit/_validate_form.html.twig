@@ -1,0 +1,22 @@
+{% for key, formItem in form.children %}
+    {% if key != '_token' and
+        key != 'createAndEdit' and key != 'createAndCreate' and key != 'createAndList' and
+        key != 'saveAndEdit' and key != 'saveAndCreate' and key != 'saveAndList' %}
+        rules['{{ formItem.vars.full_name }}'] = {};
+        {% for block_prefixes in formItem.vars.block_prefixes %}
+            {% if block_prefixes == 'email' %}
+                rules['{{ formItem.vars.full_name }}'].email = true;
+            {% endif %}
+        {% endfor %}
+        {% if formItem.vars['required'] is defined and formItem.vars['required'] == true %}
+            rules['{{ formItem.vars.full_name }}'].required = true;
+        {% else %}
+            rules['{{ formItem.vars.full_name }}'].required = false;
+        {% endif %}
+        {% if formItem.children|length > 0 %}
+            {% include '@Dashboard/default/crud/new_edit/_validate_form.html.twig' with {
+                'form': formItem
+            }%}
+        {% endif %}
+    {% endif %}
+{% endfor %}

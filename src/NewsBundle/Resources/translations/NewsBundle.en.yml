@@ -1,0 +1,14 @@
+sidebar:
+  news:
+    categories: 'Categories'
+    news: 'News'
+    articles: 'Articles'
+    author: 'Authors'
+
+select_author: 'Select author'
+signature: 'Photo caption'
+news_signature: 'Articles signature'
+is_main_news: 'Is main news?'
+tags: 'Tags'
+signature_url: 'Link for signature'
+text_under_the_photo: 'Text under the photo'

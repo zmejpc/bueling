@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    <section>
+        <div class="container">
+            <h1 class="h2">Контакты</h1>
+            <div class="col D(f)--lg Jc(sb)">
+                <div class="contact-block">
+                    {% for item in contactPhoneType %}
+                        <h3 class="h3 contact-block__title">{{ item.title }}</h3>
+                        <ul class="contact-block__list">
+                            {% for phone in item.phones %}
+                                <li class="contact-block__item">
+                                    <a class="contact-block__link"
+                                       href="{{ phone }}">
+                                        <span class="contact-block__text">{{ phone }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>
+                <div class="contact-block">
+                    {% if staticContent['contact_address'] is defined %}
+                        <h3 class="h3 contact-block__title">{{ staticContent['contact_address'].shortDescription|striptags }}</h3>
+                        <ul class="contact-block__list">
+                            <li class="contact-block__item">
+                                <a class="contact-block__link" href="#googlemap">
+                                    <span class="contact-block__text">{{ staticContent['contact_address'].description|striptags }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="contact-block">
+                    {% if staticContent['contact_email'] is defined %}
+                        <h3 class="h3 contact-block__title">{{ staticContent['contact_email'].shortDescription|striptags }}</h3>
+                        <ul class="contact-block__list">
+                            <li class="contact-block__item">
+                                <a class="contact-block__link" href="mailto:leskizzo@leskizzo.com">
+                                    <span class="contact-block__text">{{ staticContent['contact_email'].description|striptags }}</span></a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            {#            {{ page.translate.description|raw }}#}
+            <h2 class="h2 Mt(4rem)">Связаться с нами</h2>
+            {% include('support/contact/_form.html.twig') %}
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/contacts.js') }}{{ assetVersion }}"></script>{% endblock %}
+

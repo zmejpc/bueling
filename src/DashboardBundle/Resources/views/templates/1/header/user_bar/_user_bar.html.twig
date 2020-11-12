@@ -1,0 +1,35 @@
+<div class="kt-header__topbar-item kt-header__topbar-item--user">
+    <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+        <div class="kt-header__topbar-user">
+            {#<span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>#}
+            <span class="kt-header__topbar-username kt-hidden-mobile">
+                {{ app.user.email }}
+            </span>
+            <img class="kt-hidden" alt="Pic" src="{{ asset('bundles/dashboard/assets/media/users/default.jpg') }}"/>
+
+            <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+            <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">
+              {{ app.user.email|slice(0,1) }}
+            </span>
+        </div>
+    </div>
+
+    <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+        <!--begin: Head -->
+        {% include '@Dashboard/templates/1/header/user_bar/_head.html.twig' %}
+        <!--end: Head -->
+
+        <!--begin: Navigation -->
+        <div class="kt-notification">
+            {#{% include '@Dashboard/templates/1/header/user_bar/_notification.html.twig' %}#}
+            <div class="kt-notification__custom">
+                <a data-toggle="kt-tooltip" data-placement="right"
+                   data-original-title="{{ 'ui.logout'|trans([], 'DashboardBundle') }}"
+                   href="{{ path('security_logout') }}" class="btn btn-label-brand btn-sm btn-bold">
+                    {{ 'ui.logout'|trans([], 'DashboardBundle') }}
+                </a>
+            </div>
+        </div>
+        <!--end: Navigation -->
+    </div>
+</div>

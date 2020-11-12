@@ -1,0 +1,60 @@
+{% trans_default_domain 'FrontendBundle' %}
+
+    <form class="filters" action="" method="POST">
+        <button class="filters__close js-close-filters" type="button">
+            <svg class="svg-icon filters__close-icon" aria-hidden="true">
+                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#close"></use>
+            </svg>
+        </button>
+        <div class="filters__inner">
+            <div class="filters__blocks-holder">
+                <ul class="filters__blocks">
+                    {% if categories %}
+                        <li class="filters__block">
+                            <button class="filters__btn js-check-all filters__btn--active" data-index="0" type="button">
+                                <span class="filters__btn-text">{{ 'filter.product_type'|trans }}</span>
+                                <svg class="svg-icon filters__btn-icon" aria-hidden="true">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down"></use>
+                                </svg>
+                            </button>
+                            <ul class="filters__list filters__list--visible" data-index="0" data-opened="1">
+                                {% for category in categories %}
+                                    <li class="filters__item">
+                                        <div class="checkbox">
+                                            <label class="checkbox__inner">
+                                                <input class="checkbox__input" name="filter[category][]" value="{{ category.id }}" type="checkbox" {% if filter.category is defined and category.id in filter.category %} checked="checked"{% endif %}>
+                                                <div class="checkbox__indicator"></div>
+                                                <span class="checkbox__text">{{ category.translate.title }}</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if prices %}
+                        <li class="filters__block">
+                            <button class="filters__btn {{ filter['min-price'] is defined or filter['max-price'] is defined ? 'filters__btn--active' }}" type="button">
+                                <span class="filters__btn-text">{{ 'filter.price'|trans }}</span>
+                                <svg class="svg-icon filters__btn-icon" aria-hidden="true">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down"></use>
+                                </svg>
+                            </button>
+                            <ul class="filters__list filters__list--range {{ filter['min-price'] is defined or filter['max-price'] is defined ? 'filters__list--visible' }}" data-index="2" data-opened="{{ filter['min-price'] is defined or filter['max-price'] is defined ? '1' : '0' }}">
+                                <li class="filters__item">
+                                    <div class="filters__item-holder filters__item-holder--input">
+                                        <input class="filters__input filters__input--left js-min-price" name="filter[min-price]" value="{{ filter['min-price'] is defined ? filter['min-price'] : prices.min }}">
+                                        <span class="filters__input-decor"></span>
+                                        <input class="filters__input filters__input--right js-max-price" name="filter[max-price]" value="{{ filter['max-price'] is defined ? filter['max-price'] : prices.max }}">
+                                    </div>
+                                    <div class="filters__item-holder filters__item-holder--range">
+                                        <div class="js-input-range" data-input="{{ prices.min }}|{{ prices.max }}" data-input-start="{{ filter['min-price'] is defined ? filter['min-price'] : prices.min }}|{{ filter['max-price'] is defined ? filter['max-price'] : prices.max }}"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </form>

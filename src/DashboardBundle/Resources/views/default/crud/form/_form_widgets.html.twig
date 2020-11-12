@@ -1,0 +1,211 @@
+{% block dashboard_submit_and_drop_down_widget %}
+    {% spaceless %}
+        {%- if label is empty -%}
+            {%- if label_format is not empty -%}
+                {% set label = label_format|replace({'%name%': name,'%id%': id}) %}
+            {%- elseif label is same as(false) -%}
+                {% set translation_domain = false %}
+            {%- else -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {%- endif -%}
+        <li class="kt-nav__item">
+            <button form="{{ full_name|replace({('['~name~']'): ''}) }}" {{ block('button_attributes') }} type="submit"
+                    class="btn btn-outline-hover-brand" aria-haspopup="true" aria-expanded="false">
+                {% if attr['data-svg-icon'] is defined %}
+                    {{ attr['data-svg-icon']|raw }}
+                {% endif %}
+                {% if attr['data-i-icon'] is defined %}
+                    <i class="kt-nav__link-icon {{ attr['data-i-icon'] }}"></i>
+                {% endif %}
+                <span class="kt-nav__link-text">
+                    {{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}
+                </span>
+            </button>
+        </li>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_submit_widget %}
+    {% spaceless %}
+        {%- if label is empty -%}
+            {%- if label_format is not empty -%}
+                {% set label = label_format|replace({'%name%': name,'%id%': id}) %}
+            {%- elseif label is same as(false) -%}
+                {% set translation_domain = false %}
+            {%- else -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {%- endif -%}
+        <button form="{{ full_name|replace({('['~name~']'): ''}) }}" {{ block('button_attributes') }} type="submit"
+                class="btn btn-sm btn-elevate btn-outline-brand ">
+            <i class="la la-save"></i>
+            <span class="kt-hidden-mobile">
+                {{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}
+            </span>
+        </button>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_text_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_text.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_textarea_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_textarea.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_translations_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_tabbable_locale.html.twig' with {'field': form} %}
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_wysiwyg_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_wysiwyg.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_email_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_text.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_yes_no_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_yes_no.html.twig' with {'field': form} %}
+    {% endspaceless %}
+{% endblock %}
+
+{%- block dashboard_choice_widget -%}
+    {% if expanded %}
+        {{- block('dashboard_choice_widget_expanded') -}}
+    {% else %}
+        {{- block('dashboard_choice_widget_collapsed') -}}
+    {% endif %}
+{%- endblock dashboard_choice_widget -%}
+
+{%- block dashboard_choice_widget_collapsed -%}
+    {% include '@Dashboard/default/crud/form/fields/_select2.html.twig' with {'field': form} %}
+    <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+{%- endblock dashboard_choice_widget_collapsed -%}
+
+{%- block dashboard_choice_widget_expanded -%}
+    <div class="form-group form-group-marginless kt-margin-t-20 {% if form.vars.data is null and form.vars['required'] == true or form.vars.valid == false %} validated validate is-invalid{% endif %} row">
+        {{ form_label(form, label|default(null), {'label_attr': {'class': labelLg~ ' col-form-label'}}) }}
+        <div class="kt-checkbox-inline col-lg-{% if label != false %}10{% else %}12{% endif %}">
+            {% for name, choices in form.vars.choices %}
+                {% include '@Dashboard/default/crud/form/fields/_helper_for_dashboard_choice_widget_expanded.html.twig' with  {
+                    'name': name,
+                    'choices': choices,
+                } %}
+                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+            {% endfor %}
+        </div>
+    </div>
+{%- endblock dashboard_choice_widget_expanded -%}
+
+{% block dashboard_position_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_position.html.twig' with {'field': form} %}
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_date_time_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_date_time.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_url_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_text.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_select2_entity_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            {{- block('dashboard_select2_entity_widget_expanded') -}}
+        {% else %}
+            {% include '@Dashboard/default/crud/form/fields/_select2.html.twig' with {'field': form} %}
+        {% endif %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{%- block dashboard_select2_entity_widget_expanded -%}
+    <div class="form-group form-group-marginless kt-margin-t-20 {% if form.vars.data is null and form.vars['required'] == true or form.vars.valid == false %} validated validate is-invalid{% endif %} row">
+        {{ form_label(form, label|default(null), {
+            'label_attr': {
+                'class': labelLg~ ' col-form-label'
+            }
+        }) }}
+        <div class="kt-checkbox-inline row">
+            {% for name, choices in form.vars.choices %}
+                {% include '@Dashboard/default/crud/form/fields/_helper_for_dashboard_select2_widget_expanded.html.twig' with  {
+                    'name': name,
+                    'choices': choices,
+                } %}
+                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+            {% endfor %}
+        </div>
+    </div>
+{%- endblock dashboard_select2_entity_widget_expanded -%}
+
+{% block dashboard_collection_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_collection.html.twig' with {'field': form} %}
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_autocomplete_entity_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_autocomplete_text.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_integer_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_text.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dashboard_number_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_number.html.twig' with {'field': form} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
+{%- block form_widget_compound -%}
+    {%- if form is rootform -%}
+        {{ form_errors(form) }}
+    {%- endif -%}
+    {{- block('form_rows') -}}
+    {{- form_rest(form) -}}
+{%- endblock form_widget_compound -%}
+
+{%- block form_row -%}
+    {%- set widget_attr = {} -%}
+    {%- if help is not empty -%}
+        {%- set widget_attr = {attr: {'aria-describedby': id ~"_help"}} -%}
+    {%- endif -%}
+    {{- form_errors(form) -}}
+    {{- form_widget(form, widget_attr) -}}
+    {{- form_help(form) -}}
+{%- endblock form_row -%}

@@ -1,0 +1,55 @@
+<script>
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": true,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+</script>
+
+{% for message in app.flashes('js_flash_create_error') %}
+    <script>
+        toastr.error("{{ message|raw }}", "{{ 'ui.error'|trans([], 'DashboardBundle')~'!' }}");
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('js_flash_create_success') %}
+    <script>
+        toastr.success("{{ message|raw }}", "{{ 'ui.success'|trans([], 'DashboardBundle')~'!' }}");
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('js_flash_edit_error') %}
+    <script>
+        toastr.error("{{ message|raw }}", "{{ 'ui.error'|trans([], 'DashboardBundle')~'!' }}");
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('js_flash_edit_success') %}
+    <script>
+        toastr.success("{{ message|raw }}", "{{ 'ui.success'|trans([], 'DashboardBundle')~'!' }}");
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('js_flash_delete_error') %}
+    <script>
+        toastr.error("{{ message|raw }}", "{{ 'ui.error'|trans([], 'DashboardBundle')~'!' }}");
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('js_flash_delete_success') %}
+    <script>
+        toastr.success("{{ message|raw }}", "{{ 'ui.success'|trans([], 'DashboardBundle')~'!' }}");
+    </script>
+{% endfor %}

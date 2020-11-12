@@ -1,0 +1,40 @@
+**/.idea/**
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/public/assets/
+/public/*.txt
+/public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/tinymce-uploads/.gitkeep
+!public/uploads/uploads/.gitkeep
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/data
+!/var/log
+/var/log/*
+!var/log/.gitkeep
+/vendor/
+composer.lock
+symfony.lock
+yarn.lock
+###< symfony/framework-bundle ###
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-pack ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###

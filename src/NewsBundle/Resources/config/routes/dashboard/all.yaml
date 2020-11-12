@@ -1,0 +1,23 @@
+dashboard_news:
+    resource: "@NewsBundle/Resources/config/routes/dashboard/news.yaml"
+    prefix:   /news
+
+dashboard_news_category:
+    resource: "@NewsBundle/Resources/config/routes/dashboard/news_category.yaml"
+    prefix:   /news-category
+
+dashboard_news_author:
+    resource: "@NewsBundle/Resources/config/routes/dashboard/news_author.yaml"
+    prefix:   /news-author
+
+dashboard_news_quiz:
+    resource: "@NewsBundle/Resources/config/routes/dashboard/quiz.yaml"
+    prefix:   /news
+
+dashboard_news_tag:
+    resource: "@NewsBundle/Resources/config/routes/dashboard/news_tag.yaml"
+    prefix:   /news-tag
+
+dashboard_news_comments:
+    resource: "@NewsBundle/Resources/config/routes/dashboard/news_comments.yaml"
+    prefix:   /news-comments

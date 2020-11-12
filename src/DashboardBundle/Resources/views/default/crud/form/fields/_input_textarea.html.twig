@@ -1,0 +1,39 @@
+{% set divClass = '' %}
+{% set class = '' %}
+
+{% if field.vars.data is null and field.vars['required'] == true or field.vars.valid == false %}
+    {% set divClass = divClass ~ ' ' ~ 'validate is-invalid' %}
+    {% set class = 'is-invalid' %}
+{% endif %}
+
+{% set placeholder = '' %}
+{% set countChars = '' %}
+{% if form.vars.maxLength is defined and form.vars.maxLength is not null %}
+    {% set class = class ~ ' kt_maxlength' %}
+    {% set countChars = form.vars.maxLength %}
+{% endif %}
+
+<div class="form-group form-group-marginless kt-margin-t-20 {{ divClass }} row">
+    {{ form_label(field, label|default(null), {'label_attr': {'class': labelLg~ ' col-form-label'}}) }}
+    <div class="{{ divLg }}">
+        {% if form.vars.maxLength is defined and form.vars.maxLength is not null %}
+            {{ form_widget(field, {
+                'attr': {
+                    'class': class~ ' form-control kt_autosize',
+                    'maxlength': countChars
+                }}) }}
+        {% else %}
+            {{ form_widget(field, {'attr': {'class': 'form-control kt_autosize '~class}}) }}
+        {% endif %}
+
+        {% if form_errors(field) is empty and field.vars.help_block is defined and field.vars.help_block is not null %}
+            <span class="form-text text-muted">
+             {{ field.vars.help_block }}
+            </span>
+        {% elseif form_errors(field) is not empty %}
+            <div class="error invalid-feedback">
+                {{ form_errors(field) }}
+            </div>
+        {% endif %}
+    </div>
+</div>

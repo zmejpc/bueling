@@ -1,0 +1,15 @@
+{% for itemSidebar in sidebar %}
+    {% if itemSidebar['isSection'] is defined and itemSidebar['isSection'] == true %}
+        <li class="kt-menu__section ">
+            <h4 class="kt-menu__section-text">{{ itemSidebar['title'] }}</h4>
+            {#<i class="kt-menu__section-icon flaticon-more-v2"></i>#}
+        </li>
+    {% endif %}
+
+    {% for item in itemSidebar['items'] %}
+        {% include '@Dashboard/templates/1/aside/aside_menu/_item.html.twig' with {
+            'item': item,
+            'parent': null
+        } %}
+    {% endfor %}
+{% endfor %}

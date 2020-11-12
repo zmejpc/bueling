@@ -1,0 +1,15 @@
+sidebar:
+  news:
+    categories: 'Категории'
+    news: 'Блог'
+    articles: 'Статьи'
+    author: 'Авторы'
+    comments: 'Коментарии'
+
+select_author: 'Выбрать автора'
+signature: 'Подпись к фотографии'
+news_signature: 'Подпись статьи'
+is_main_news: 'Главная новость?'
+tags: 'Теги'
+signature_url: 'Ссылка для подписи'
+text_under_the_photo: 'Текст под фотографией'

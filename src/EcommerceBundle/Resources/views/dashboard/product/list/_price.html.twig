@@ -1,0 +1,8 @@
+{% if element.oldPrice > 0 and element.oldPrice != element.price %}
+    <span class="price__prev" title="{{ element.price }}">
+        {{ element.oldPrice }}
+    </span>
+    {{ element.price }}
+{% else %}
+    {{ element.price }}
+{% endif %}

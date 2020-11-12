@@ -1,0 +1,35 @@
+dashboard_contact:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/contact.yaml"
+    prefix:   /contact
+
+dashboard_contact_manager:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/contact_manager.yaml"
+    prefix:   /contact/manager
+
+dashboard_contact_status:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/contact_status.yaml"
+    prefix:   /contact/status
+
+dashboard_contact_mail_setting:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/contact_mail_setting.yaml"
+    prefix:   /contact/setting/mail
+
+dashboard_contact_phone_type:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/contact_phone_type.yaml"
+    prefix:   /contact/phone-type
+
+dashboard_callback:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/callback.yaml"
+    prefix:   /callback
+
+dashboard_callback_manager:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/callback_manager.yaml"
+    prefix:   /callback/manager
+
+dashboard_callback_status:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/callback_status.yaml"
+    prefix:   /callback/status
+
+dashboard_callback_mail_setting:
+    resource: "@ContactBundle/Resources/config/routes/dashboard/callback_mail_setting.yaml"
+    prefix:   /callback/setting/mail

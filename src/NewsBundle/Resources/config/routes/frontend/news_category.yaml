@@ -1,0 +1,14 @@
+frontend_news_category_show:
+  path:     /{category}
+  methods: [GET]
+  controller: NewsBundle\Controller\Frontend\NewsCategoryController::showAction
+
+frontend_partial_get_news_elements_by_category:
+  path:     /{category}/{page}/{countInPage}
+  controller: NewsBundle\Controller\Frontend\NewsController::getNewsElementsByCategoryAction
+  requirements:
+    page:  \d+
+    countInPage:  \d+
+  defaults:
+    page: 1
+    countInPage: 10

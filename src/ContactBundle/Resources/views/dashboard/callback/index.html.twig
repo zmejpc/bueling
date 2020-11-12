@@ -1,0 +1,20 @@
+{% set counterup = true %}
+
+{% extends '@Dashboard/crud/index.html.twig' %}
+
+{% block dashboard_stat %}
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            {% include '@Dashboard/default/_dashboard_stat.html.twig' with{
+                'dashboardColor': constant('DashboardBundle\\Entity\\ColorLibrary::COLOR_9'),
+                'visualIcon': 'icon-call-in',
+                'value': countNewCallbackRequests,
+                'desc': 'dashboard_stat.new_requests'|trans([], 'DashboardBundle'),
+                'href': null,
+                'buttonText':  null,
+                'buttonIcon': null
+            } %}
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{% endblock %}

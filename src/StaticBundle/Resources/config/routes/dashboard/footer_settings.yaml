@@ -1,0 +1,13 @@
+dashboard_footer_settings_new:
+  path:     /new/
+  controller: StaticBundle\Controller\Dashboard\FooterSettingsController::newAction
+  methods:  [GET, POST]
+
+dashboard_footer_settings_edit:
+  path:     /edit/{id}
+  controller: StaticBundle\Controller\Dashboard\FooterSettingsController::editAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+
+  defaults:
+    id: 1

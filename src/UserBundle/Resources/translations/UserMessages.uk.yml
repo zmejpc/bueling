@@ -1,0 +1,39 @@
+ui:
+  email: 'Адреса електронної пошти'
+  repeat_password: 'Повторіть пароль.'
+
+validators:
+  user:
+    email:
+      not_blank: Будь ласка, введіть свою адресу електронної пошти.
+    plainPassword:
+      not_blank: Будь ласка, введіть ваш пароль.
+
+form:
+  user:
+    billing_address: Адреса для рахунків
+    different_billing_address: Використати іншу адресу для виставлення рахунків?
+    first_name: Iм'я
+    groups: Групи
+    roles: Ролі
+    last_name: Прізвище
+    email: "*Адреса електронної пошти"
+    enabled: Ввімкнено
+    password:
+      label: "*Пароль"
+      password_confirmation: Підтвердіть пароль
+      confirmation: Перевірка
+    remember_me: Пам'ятати мене
+    shipping_address: Адреса доставки
+    username: Ім'я користувача
+  login:
+    username: 'Ім''я користувача'
+    password: 'Пароль'
+    remember_me: 'Пам''ятати мене'
+  user_change_password:
+    confirmation: Підтвердження
+    current: Поточний пароль
+    new: Новий пароль
+  user_reset_password:
+    confirmation: Підтвердження
+    new: Новий пароль

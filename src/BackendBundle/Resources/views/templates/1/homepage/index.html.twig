@@ -1,0 +1,12 @@
+{% extends '@Dashboard/templates/'~templateNumber~'/_template.html.twig' %}
+
+{% block page_body_sub_header %}{% endblock %}
+
+{% block page_body_content %}
+    {% include '@Backend/homepage/widget/_widgets.html.twig' %}
+
+    {#{{ render(controller('IhorDrevetskyi\\eCommerce\\Ecommerce\\Controller\\Dashboard\\OrderController::renderTableForHomepage')) }}#}
+    {#{{ render(controller('IhorDrevetskyi\\SupportCenter\\CallbackBundle\\Controller\\Dashboard\\CallbackController::renderTableForHomepage')) }}#}
+    {#{{ render(controller('IhorDrevetskyi\\SupportCenter\\ContactBundle\\Controller\\Dashboard\\ContactController::renderTableForHomepage')) }}#}
+    {#{{ render(controller('IhorDrevetskyi\\SupportCenter\\ReviewBundle\\Controller\\Dashboard\\ReviewController::renderTableForHomepage')) }}#}
+{% endblock %}

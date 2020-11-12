@@ -1,0 +1,9 @@
+<div class="kt-widget5__pic">
+    {% if element|json_decode is not null and element|json_decode.admin is defined %}
+        <img class="kt-widget7__img" style="height: 100px; max-width: 100px;"
+             src="{{ asset(element|json_decode.admin) }}" alt="">
+    {% else %}
+        <img class="kt-widget7__img" style="height: 100px; max-height: 100px; max-width: 100px;"
+             src="{{ asset('bundles/upload/images/no-image-400.png') }}" alt="no-image">
+    {% endif %}
+</div>

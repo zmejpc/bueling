@@ -1,0 +1,23 @@
+dashboard_news_category_index:
+    path:     /
+    controller: NewsBundle\Controller\Dashboard\NewsCategoryController::listAction
+    methods:  [GET, POST]
+
+dashboard_news_category_new:
+    path:     /new/
+    controller: NewsBundle\Controller\Dashboard\NewsCategoryController::newAction
+    methods:  [GET, POST]
+
+dashboard_news_category_edit:
+    path:     /edit/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsCategoryController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_news_category_delete:
+    path:     /delete/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsCategoryController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

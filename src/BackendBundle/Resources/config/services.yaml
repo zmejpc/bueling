@@ -1,0 +1,47 @@
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    BackendBundle\:
+        resource: '../../*'
+        exclude: '../{Entity,Migrations,Tests}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    BackendBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    referer_listener:
+        class: BackendBundle\EventListener\RefererListener
+        arguments:
+            - '@controller_resolver'
+            - '@Symfony\Component\Security\Core\Security'
+        tags:
+        - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+
+    backend_file.delete.listener:
+        class: BackendBundle\EventListener\FileDeleteListener
+        arguments:
+            - '@UploadBundle\Services\FileHandler'
+        tags:
+            - { name: doctrine.event_listener, event: preRemove }
+
+    backend_file.update.listener:
+        class: BackendBundle\EventListener\FileUpdateListener
+        arguments:
+            - '@UploadBundle\Services\FileHandler'
+        tags:
+            - { name: doctrine.event_listener, event: preUpdate }
+
+    dashboard.list.filter.listener:
+        class: BackendBundle\EventSubscriber\BackendEventSubscriber
+        tags:
+            - { name: kernel.event_listener, event: dashboard.list.filter.listener, method: onFilterEvent }

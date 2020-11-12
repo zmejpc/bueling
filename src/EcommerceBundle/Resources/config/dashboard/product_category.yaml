@@ -1,0 +1,43 @@
+dashboard_product_category_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::listAction
+    methods:  [GET, POST]
+
+dashboard_product_category_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::newAction
+    methods:  [GET, POST]
+
+dashboard_product_category_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_product_category_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_product_category_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::ajaxDeleteGroupAction
+    methods:  POST
+
+dashboard_product_category_ajax_sort:
+    path:     /ajax/sort/
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::ajaxSortAction
+    methods:  POST
+
+dashboard_category_set_product_attributes:
+    path:     /set-product-attributes/{category_id}/{attr_id}
+    controller: Ecommerce\Controller\Dashboard\ProductCategoryController::setProductAttributesAction
+    methods:  [GET, POST]
+    requirements:
+        category_id:  \d+
+        attr_id:  \d+
+    defaults:
+        attr_id: null

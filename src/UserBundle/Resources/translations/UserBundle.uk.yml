@@ -1,0 +1,38 @@
+sidebar:
+  customers:
+    customers: 'Клієнти'
+    users: 'Користувачі'
+    user_settings:
+      user_settings: 'Налаштування'
+      user_mail_setting: 'Налаштування електронної пошти'
+
+ui:
+  authorization: 'Авторизація'
+  administration_panel_login: 'Вхід до адміністративної панелі'
+  remember_me: 'Пам''ятати мене'
+  forgot_password: 'Забули пароль?'
+  login_button: 'Вхід'
+  no:
+    no_account: 'Немає облікового запису'
+  create:
+    create_an_account: 'Створити обліковий запис'
+    create_a_new_customer_account: 'Створіть нову обліковку клієнта'
+  confirmation_of_registration_on_the_site: 'Підтвердження реєстрації на сайті'
+  password_reset_on_the_site: 'Скидання пароля на сайті'
+  reset_password: 'Скинути пароль'
+  password: 'Пароль'
+  new_password: 'Новий пароль'
+  current_password: 'Поточний пароль'
+  change:
+    change_password: 'Змінити пароль'
+    change_your_password: 'Змінити пароль'
+  have_an_account_already: 'Вже маєте акаунт?'
+  register:
+    register: 'Реєстрація'
+    register_button: 'Реєстрація'
+    register_in_the_store: 'Реєстрація в крамниці'
+    registered_customers: 'Зареєстровані клієнти'
+    registration_create_an_account_in_store: 'Реєстрація <small>Створіть обліковку в крамниці</small>'
+    registration_date: 'Дата реєстрації'
+  reset_button: 'Скинути'
+  login_as_user: 'Ввійти як користувач'

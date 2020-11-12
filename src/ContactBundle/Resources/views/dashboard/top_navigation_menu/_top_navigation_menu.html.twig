@@ -1,0 +1,34 @@
+<!-- BEGIN TODO DROPDOWN -->
+<li class="dropdown dropdown-hoverable dropdown-extended dropdown-dark dropdown-tasks"
+    id="header_task_bar">
+    <a href="javascript:void(0);" class="dropdown-toggle">
+        <i class="icon-call-in"></i>
+        <span class="badge badge-default"> {{ countNewCallbackRequests }} </span>
+    </a>
+    <ul class="dropdown-menu extended tasks">
+        <li class="external">
+            <h3>
+                <span class="bold">
+                    {{ 'ui.pending'|trans([], 'DashboardBundle') }}: {{ countNewCallbackRequests }}
+                </span>
+            </h3>
+            <a href="{{ path('dashboard_callback_index') }}">{{ 'ui.view_more'|trans([], 'DashboardBundle') }}</a>
+        </li>
+        <li>
+            <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                <li>
+                    <a href="#">
+                        {#<span class="photo">#}
+                        {#<img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>#}
+                        <span class="subject">
+                            <span class="from"> Lisa Wong </span>
+                            <span class="time">Just Now </span>
+                        </span>
+                        <span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<!-- END TODO DROPDOWN -->

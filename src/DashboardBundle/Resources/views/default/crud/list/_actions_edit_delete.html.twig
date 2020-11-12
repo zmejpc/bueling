@@ -1,0 +1,15 @@
+{% if action_edit_url is defined and action_edit_role is defined and is_granted(action_edit_role) %}
+    <a href="{% if action_edit_url is not empty %}{{ action_edit_url }}{% else %}javascript:void(0);{% endif %}"
+       class="btn btn-hover-brand btn-icon btn-icon-only btn-pill"
+       title="{{ 'ui.action.action_edit'|trans([], 'DashboardBundle') }}">
+        <i class="flaticon-edit-1"></i>
+    </a>
+{% endif %}
+{% if action_delete_url is defined and action_delete_role is defined and is_granted(action_delete_role) %}
+    <a href="{% if action_delete_url is not empty %}{{ action_delete_url }}{% else %}javascript:void(0);{% endif %}"
+       class="btn btn-hover-danger btn-icon btn-icon-only btn-pill"
+       title="{{ 'ui.action.action_delete'|trans([], 'DashboardBundle') }}">
+        <i class="flaticon-delete"></i>
+    </a>
+{% endif %}
+

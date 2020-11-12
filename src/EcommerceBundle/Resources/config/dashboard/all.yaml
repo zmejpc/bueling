@@ -1,0 +1,11 @@
+dashboard_product:
+    resource: "@EcommerceBundle/Resources/config/dashboard/product.yaml"
+    prefix:   /product
+
+dashboard_product_category:
+    resource: "@EcommerceBundle/Resources/config/dashboard/product_category.yaml"
+    prefix:   /product-category
+
+dashboard_product_status:
+    resource: "@EcommerceBundle/Resources/config/dashboard/product_status.yaml"
+    prefix:   /product/status

@@ -1,0 +1,70 @@
+{% spaceless %}
+<div class="dialog page__dialog" role="dialog" aria-labelledby="dialog-label" aria-modal="true">
+  <div class="dialog__backdrop"></div>
+  <div class="dialog__inner">
+    <h2 class="h1 dialog__title" id="dialog-label">ЗАКАЗАТЬ ЗВОНОК</h2>
+    <div class="dialog__content">
+      <div class="dialog__head">
+        <span class="D(b) C(Úrk)">
+          <a class="phones__link" href="tel:+380678305454">+38 (067) 830-54-54</a>
+        </span>
+        <span class="D(b) C(Úrk) Mt(1rem)">
+          <a class="phones__link" href="tel:+380931820334">+38 (093) 182-03-34</a>
+        </span>
+      </div>
+      {{ form_start(form, {'attr': {'class': 'form js-validate-form js-ajax-form','novalidate': 'novalidate'}}) }}
+        <div class="form__inner">
+          <div class="form__group form__group--100% form__group--transparent">
+            <div class="input">
+              {{ form_label(form.name, 'Имя:', {'label_attr': {'class': 'input__label'}, 'wrapper': 'span'}) }}
+              {{ form_widget(form.name, {'attr': {
+                  'class': 'input__field input__field--line--single',
+                  'data-field-type': 'name',
+                  'data-error': 'Имя должно содержать от 2 до 32 кириллических символов.',
+                  'placeholder': 'Имя',
+                  'value': app.user ? app.user.displayName
+              }}) }}
+              <span class="error input__error"></span>
+            </div>
+          </div>
+          <div class="form__group form__group--100% form__group--transparent">
+            <div class="input">
+              {{ form_label(form.phone, '*Телефон:', {'label_attr': {'class': 'input__label'}, 'wrapper': 'span'}) }}
+              {{ form_widget(form.phone, {'attr': {
+                  'class': 'input__field input__field--line--single js-validate-field',
+                  'maxlength': 13,
+                  'type': 'tel',
+                  'data-field-type': 'phone',
+                  'data-error': 'Телефон должен быть в формате +380XXXXXXXXX.',
+                  'placeholder': '+380XXXXXXXX',
+                  'value': app.user and app.user.phoneNumber ? app.user.phoneNumber : '+380'
+              }}) }}
+              <span class="error input__error"></span>
+            </div>
+          </div>
+          <div class="form__group form__group--100% form__group--transparent">
+            <div class="input">
+              {{ form_label(form.message, 'Сообщение:', {'label_attr': {'class': 'input__label'}, 'wrapper': 'span'}) }}
+              {{ form_widget(form.message, {'attr': {
+                  'class': 'input__field input__field--line--multi',
+                  'placeholder': 'Сообщение'
+              }}) }}
+            </div>
+          </div>
+          <div class="form__group form__group--100% Mt(1rem) D(f) Jc(c)">
+            {{ form_widget(form.recaptcha) }}
+          </div>
+          <div class="form__group form__group--100% Mt(1rem) D(f) Jc(c)">
+            <button class="btn W(100%)--xs-lg"><span class="btn__inner">Перезвонить мне</span></button>
+          </div>
+        </div>
+      {{ form_end(form) }}
+      <button class="dialog__close js-dialog-close" type="button" aria-label="Закрыть диалоговое окно" title="Закрыть диалоговое окно">
+        <svg class="svg-icon dialog__close-icon">
+          <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+{% endspaceless %}

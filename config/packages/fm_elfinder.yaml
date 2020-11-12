@@ -1,0 +1,20 @@
+#Fm-Elinder
+fm_elfinder:
+    instances:
+        default:
+            relative_path: true
+            locale: "%locale%" # defaults to current request locale
+            editor: ckeditor
+            fullscreen: true # defaults true, applies to simple and ckeditor editors
+            theme: smoothness # jquery theme
+            include_assets: true # disable if you want to handle loading of the javascript and css assets yourself
+            connector:
+                debug: false # defaults to false
+                roots:       # at least one root must be defined
+                    uploads:
+                        show_hidden: false # defaults to false
+                        driver: LocalFileSystem
+                        path: uploads/uploads
+                        upload_allow: ['all']
+                        upload_deny: ['all']
+                        upload_max_size: 1024M

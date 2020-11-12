@@ -1,0 +1,41 @@
+<div class="pagination Mt(2rem)">
+    {% if pageCount > 1 %}
+        <ul class="pagination__list W(100%)" role="navigation" aria-label="pagination">
+            <li class="pagination__item">
+                {% if current == first %}
+                    <a class="pagination__link pagination__link--active" aria-label="Page {{ current }}" aria-current="page" href="{{ path(route, query|merge({(pageParameterName): first})) }}">1</a>
+                {% else %}
+                    <a class="pagination__link" href="{{ path(route, query|merge({(pageParameterName): first})) }}">1</a>
+                {% endif %}
+            </li>
+
+            {% if pagesInRange[0] - first >= 2 %}
+                <li class="pagination__separator" role="presentation">…</li>
+            {% endif %}
+
+            {% for page in pagesInRange %}
+                {% if first != page and page != last %}
+                    <li class="pagination__item">
+                        {% if page == current %}
+                            <a class="pagination__link pagination__link--active" aria-label="Page {{ current }}" aria-current="page" href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+                        {% else %}
+                            <a class="pagination__link" aria-label="Goto page {{ page }}" href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if last - pagesInRange[pagesInRange|length - 1] >= 2 %}
+                <li class="pagination__separator" role="presentation">…</li><li>
+            {% endif %}
+
+            <li class="pagination__item">
+                {% if current == last %}
+                    <a class="pagination__link pagination__link--active" aria-label="Page {{ current }}" aria-current="page" href="{{ path(route, query|merge({(pageParameterName): last})) }}">{{ last }}</a>
+                {% else %}
+                    <a class="pagination__link" href="{{ path(route, query|merge({(pageParameterName): last})) }}">{{ last }}</a>
+                {% endif %}
+            </li>
+        </ul>
+    {% endif %}
+</div>

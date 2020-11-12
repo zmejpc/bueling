@@ -1,0 +1,31 @@
+{% include('mail/_header.html.twig') %}
+
+  <tr>
+    <td style="padding:25px 30px 32px 27px;vertical-align:top;border-bottom:1px solid #cccccc">
+      <p>Здравствуйте, {{ username }}.</p>
+
+      <p><b>На нашем сайте были технические неполадки, из-за которых не приходило письмо со ссылкой для смены пароля.</b></p>
+
+      <p>Приносим свои извинения за причинённые неудобства. Все ошибки уже устранены.</p>
+
+      <p><b>Напоминаем, что Вам установлена специальная цена на все наши товары.</b></p>
+
+      <p><b>Чтобы воспользоваться скидкой войдите в свой аккаунт:</b><br>
+        <a href="https://myprint.ua/login/">https://myprint.ua/login/</a>
+      </p>
+
+      <p><b>Если Вы забыли пароль, нажмите на эту ссылку для восстановления:</b><br>
+        <a href="https://myprint.ua/password-reset/">https://myprint.ua/password-reset/</a>
+      </p>
+      
+      <p>Если Вы не заинтересованы в получении скидки, просто проигнорируйте это письмо.</p>
+
+      <p>Хороших Вам продаж!</p>
+
+      <p>С уважением, команда My Print</p>
+      
+      <p>www.myprint.ua</p>
+    </td>
+  </tr>
+
+{% include('mail/_footer.html.twig') %}

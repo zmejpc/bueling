@@ -1,0 +1,23 @@
+dashboard_news_author_index:
+    path:     /
+    controller: NewsBundle\Controller\Dashboard\NewsAuthorController::listAction
+    methods:  [GET, POST]
+
+dashboard_news_author_new:
+    path:     /new/
+    controller: NewsBundle\Controller\Dashboard\NewsAuthorController::newAction
+    methods:  [GET, POST]
+
+dashboard_news_author_edit:
+    path:     /edit/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsAuthorController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_news_author_delete:
+    path:     /delete/{id}
+    controller: NewsBundle\Controller\Dashboard\NewsAuthorController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

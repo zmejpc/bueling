@@ -1,0 +1,48 @@
+{% if loop.parent.loop is defined  %}
+    {% set iterator = loop.parent.loop.index ~'_'~loop.index %}
+{% else %}
+    {% set iterator = loop.index %}
+{% endif %}
+<div class="accordion accordion-solid accordion-toggle-plus" id="accordion{{ iterator }}">
+    <div class="card">
+        <div class="card-header" id="headingOne{{ iterator }}">
+            <div class="card-title" data-toggle="collapse" data-target="#collapseOne{{ iterator }}"
+                 aria-expanded="true"
+                 aria-controls="collapseOne{{ iterator }}">
+                {{ name }}
+            </div>
+        </div>
+        <div id="collapseOne{{ iterator }}" class="collapse show" aria-labelledby="headingOne{{ iterator }}"
+             data-parent="#accordion{{ iterator }}">
+            <div class="card-body">
+                {% if choices is not iterable %}
+                    <label class="kt-checkbox">
+                        {{ form_widget(form[name]) }}
+                        {{ form[name].vars.label|trans([], choice_translation_domain) }}
+                        <span></span>
+                    </label>
+                {% else %}
+                    {% for key,choice in choices %}
+                        {% if class(choice) == 'ChoiceView' %}
+                            <label class="kt-checkbox">
+                                {{ form_widget(form[key]) }}
+                                {% if form[key].vars.data == false or form[key].vars.checked == true %}
+                                    {{ form[key].vars.label }}
+                                {% else %}
+                                    {{ form[key].vars.label|trans([], choice_translation_domain) }}
+                                {% endif %}
+                                <span></span>
+                            </label>
+                        {% elseif class(choice) == 'ChoiceGroupView' %}
+                            {% include '@Dashboard/default/crud/form/fields/_helper_for_dashboard_choice_widget_expanded.html.twig' with {
+                                'name': choice.label,
+                                'choices': choice.choices,
+                            } %}
+                            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

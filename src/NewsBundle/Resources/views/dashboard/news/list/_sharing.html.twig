@@ -1,0 +1,31 @@
+<script src="{{ asset('bundles/news/js/share2.js') }}"></script>
+<div id="share-news-{{ element.id }}"></div>
+{% set newsCategory = element.newsCategory %}
+{% if newsCategory is not null %}
+    {% set href = url('frontend_news_show_with_category', {
+        'slug': element.translations[element.defaultLocale].slug,
+        'category':  newsCategory.translations[newsCategory.defaultLocale].slug
+    }) %}
+{% else %}
+    {% set href = url('frontend_news_show', {
+        'slug': element.translations[element.defaultLocale].slug
+    }) %}
+{% endif %}
+
+<script>
+    var e = document.getElementById('share-news-{{ element.id }}');
+    Ya.share2(e, {
+        content: {
+            url: "{{ href }}",
+            title: "{{ element.translate.title }}",
+            description: "{{ element.translate.description|striptags|truncate(250, true)|replace({"\n": "", "\r\n": "", "\t": "", "\n\r": "", "\r": ""}) }}",
+            image: "{{ app.request.getSchemeAndHttpHost() ~ asset(element.poster|json_decode.default_file|default(asset('bundles/upload/images/no-image-400.png'))) }}"
+        },
+        theme: {services: 'facebook,vkontakte,odnoklassniki'}
+    });
+</script>
+<style>
+    .ya-share2__link {
+        pointer-events: none;
+    }
+</style>

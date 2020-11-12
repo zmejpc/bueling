@@ -1,0 +1,53 @@
+Bad credentials.: 'Неверный логин/пароль'
+form:
+  email: '*Адрес электронной почты:'
+  email_exists: 'E-mail занят'
+  password: '*Пароль:'
+  repeat_password: '*Повторите пароль:'
+  name: '*Имя:'
+  surname: '*Фамилия:'
+  phone: '*Телефон:'
+  email_exists_confirmation_mail_sent: 'Этот E-mail зарегистрирован но не подтвержден.Мы отправили посьмо с ссылкой для активации аккаунта.'
+  email_disabled_confirmation_mail_sent: 'Ваш аккаунт не подтвержден.Мы отправили посьмо с ссылкой для активации.'
+  login:
+    password: 'Пароль'
+
+sidebar:
+  customers:
+    customers: 'Клиенты'
+    users: 'Пользователи'
+    user_settings:
+      user_settings: 'Настройки'
+      user_mail_setting: 'Настройки электронной почты'
+
+ui:
+  email: 'E-mail:'
+  authorization: 'Авторизация'
+  administration_panel_login: 'Вход в панель администрирования'
+  remember_me: 'Запомнить меня'
+  forgot_password: 'Забыли пароль?'
+  login_button: 'Вход'
+  no:
+    no_account: 'Еще нет аккаунта'
+  create:
+    create_an_account: 'Создать аккаунт'
+    create_a_new_customer_account: 'Создание новой учетной записи клиента'
+  confirmation_of_registration_on_the_site: 'Подтверждение регистрации на сайте'
+  password_reset_on_the_site: 'Сброс пароля на сайте'
+  reset_password: 'Сбросить пароль'
+  password: 'Пароль'
+  new_password: 'Новый пароль'
+  current_password: 'Текущий пароль'
+  change:
+    change_password: 'Сменить пароль'
+    change_your_password: 'Изменить свой пароль'
+  have_an_account_already: 'Уже есть учетная запись?'
+  register:
+    register: 'Регистрация'
+    register_button: 'Регистрация'
+    register_in_the_store: 'Регистрация в магазине'
+    registered_customers: 'Зарегистрированные покупатели'
+    registration_create_an_account_in_store: 'Регистрация, <small>Создание учетной записи в магазине</small>'
+    registration_date: 'Дата регистрации'
+  reset_button: 'Сбросить'
+  login_as_user: 'Войти как пользователь'

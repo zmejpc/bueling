@@ -1,0 +1,11 @@
+form:
+  seo:
+    meta_title: 'Название страницы (SEO)'
+    meta_keyword: 'Ключевые слова страницы (SEO)'
+    meta_description: 'Описание страницы (SEO)'
+    bread_crumbs: 'Хлебные крошки'
+    h1: 'H1'
+
+sidebar:
+  configuration:
+    seo: 'SEO'

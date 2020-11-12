@@ -1,0 +1,67 @@
+{{ form_start(form, {'attr': {'class': 'form js-validate-form js-ajax-form','novalidate': 'novalidate'}}) }}
+<div class="form__inner">
+    <div class="form__group form__group--50% Mt(1rem)">
+        <div class="input">
+            <label class="input__label" for="name-field"><span>*Имя:</span></label>
+            {{ form_widget(form.name, {'attr': {
+                'class': 'input__field input__field--line--single js-validate-field',
+                'data-field-type': 'name',
+                'data-error': 'Имя должно содержать от 2 до 32 кириллических символов.',
+                'placeholder': 'Имя',
+                'value': ''
+            }}) }}
+            <span class="error input__error"></span>
+        </div>
+    </div>
+
+    <div class="form__group form__group--50% Mt(1rem)">
+        <div class="input">
+            <label class="input__label" for="phone-field"><span>*Телефон:</span></label>
+            {{ form_widget(form.phone, {'attr': {
+                'class': 'input__field input__field--line--single js-validate-field input--mask-needed',
+                'data-mask': '+{38}({0}00)000-00-00',
+                'data-field-type': 'phone',
+                'data-error': 'Телефон должен быть в формате +380XXXXXXXXX.',
+                'placeholder': 'Телефон',
+                'value': '+380'
+            }}) }}
+            <span class="error input__error"></span>
+        </div>
+    </div>
+
+    <div class="form__group form__group--100% Mt(1rem)">
+        <div class="input">
+            <label class="input__label" for="email-field"><span>*Email:</span></label>
+            {{ form_widget(form.email, {'attr': {
+                'class': 'input__field input__field--line--single js-validate-field',
+                'data-field-type': 'email',
+                'data-error': 'Введите корректный адрес электронной почты, например example@gmail.com.',
+                'placeholder': 'example@example.com',
+                'value': ''
+            }}) }}
+            <span class="error input__error"></span>
+        </div>
+    </div>
+
+    <div class="form__group form__group--100%">
+        <div class="input">
+            <label class="input__label" for="message-field"><span>Сообщение:</span></label>
+            {{ form_widget(form.message, {'attr': {
+                'class': 'input__field input__field--line--multi',
+                'placeholder': 'Сообщение',
+                'data-error': 'Сообщение должно содержать от 12 символов.',
+                'data-field-type': 'message',
+            }}) }}
+            <span class="error input__error"></span>
+        </div>
+    </div>
+
+    <div class="form__group form__group--100%">
+        <button class="btn W(100%)--xs-lg">
+            <div class="btn__inner"><span class="btn__text">Отправить</span></div>
+        </button>
+    </div>
+
+    {{ form_row(form._token) }}
+</div>
+{{ form_end(form) }}

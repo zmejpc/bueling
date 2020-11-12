@@ -1,0 +1,28 @@
+dashboard_callback_manager_index:
+    path:     /
+    controller: ContactBundle\Controller\Dashboard\CallbackManagerController::listAction
+    methods:  [GET, POST]
+
+dashboard_callback_manager_new:
+    path:     /new/
+    controller: ContactBundle\Controller\Dashboard\CallbackManagerController::newAction
+    methods:  [GET, POST]
+
+dashboard_callback_manager_edit:
+    path:     /edit/{id}
+    controller: ContactBundle\Controller\Dashboard\CallbackManagerController::editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_callback_manager_delete:
+    path:     /delete/{id}
+    controller: ContactBundle\Controller\Dashboard\CallbackManagerController::deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
+
+dashboard_callback_manager_ajax_delete_group:
+    path:     /ajax/delete-group/
+    controller: ContactBundle\Controller\Dashboard\CallbackManagerController::ajaxDeleteGroupAction
+    methods:  POST

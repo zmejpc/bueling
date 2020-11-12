@@ -1,0 +1,19 @@
+<div class="kt-portlet__head-label">
+    <h3 class="kt-portlet__head-title">
+        {% if portletHeadIcon is defined and portletHeadIcon is not empty %}
+            {% if portletHeadIcon['useSvg'] is defined and portletHeadIcon['useSvg'] == true %}
+                <span>
+                    {{ portletHeadIcon['svg']|raw }}
+                </span>
+            {% elseif portletHeadIcon['icon'] is defined %}
+                <span>
+                    <i class="{{ portletHeadIcon['icon'] }}"></i>
+                </span>
+            {% endif %}
+        {% endif %}
+        {% block head_title %}
+            {{ headTitle|raw }}
+        {% endblock %}
+        {#<small>try to scroll the page</small>#}
+    </h3>
+</div>

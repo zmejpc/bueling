@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<!-- begin::Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        {% block head_title %}
+            {{ 'ui.administration_dashboard'|trans([], 'DashboardBundle') }}
+        {% endblock %}
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="Design studio origami [https://origami.ua]"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% set asset_version = '?='~14 %}
+    <!--begin::Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    {% block web_font %}
+        <script>
+            WebFont.load({
+                google: {
+                    "families": ["Roboto:300,400,500,600,700"]
+                },
+                active: function () {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+    {% endblock %}
+    <!--end::Fonts -->
+    <!--begin::Page Vendors Styles(used by this page) -->
+    {% block page_vendors_styles %}{% endblock %}
+    <!--end::Page Vendors Styles -->
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="{{ asset('bundles/dashboard/assets/vendors/base/vendors.bundle.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('bundles/dashboard/assets/demo/default/custom/custom.css') }}{{ asset_version }}" rel="stylesheet"
+              type="text/css"/>
+    {% block global_theme_styles %}
+        <link href="{{ asset('bundles/dashboard/assets/demo/default/base/style.bundle.css') }}" rel="stylesheet"
+              type="text/css"/>
+    {% endblock %}
+    <!--end::Global Theme Styles -->
+    <!--begin::Layout Skins(used by all pages) -->
+    <link href="{{ asset('bundles/dashboard/assets/demo/default/skins/header/base/light.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('bundles/dashboard/assets/demo/default/skins/header/menu/light.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('bundles/dashboard/assets/demo/default/skins/brand/dark.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('bundles/dashboard/assets/demo/default/skins/aside/dark.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('bundles/dashboard/assets/app/custom/general/components/base/jquery.custom-scrollbar.css') }}" rel="stylesheet" type="text/css"/>
+    <!--end::Layout Skins -->
+    {% block page_vendors_scripts %}{% endblock %}
+
+    {% include '@Dashboard/default/_favicon.html.twig' %}
+</head>
+<!-- end::Head -->
+<!-- begin::Body -->
+{#kt-subheader--fixed kt-subheader--enabled kt-subheader--solid#}
+<body class="kt-header--fixed kt-header-mobile--fixed kt-aside--enabled kt-aside--fixed kt-page--loading">
+<!-- begin:: Page -->
+{% block page %}
+    <!-- begin:: Header Mobile -->
+    {% include '@Dashboard/templates/1/header/_header_mobile.html.twig' %}
+    <!-- end:: Header Mobile -->
+    <div class="kt-grid kt-grid--hor kt-grid--root">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+            <!-- begin:: Aside -->
+            {% include '@Dashboard/templates/1/aside/_aside.html.twig' %}
+            <!-- end:: Aside -->
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+                <!-- begin:: Header -->
+                {% block header %}
+                    {% include '@Dashboard/templates/'~templateNumber~'/header/_header.html.twig' %}
+                {% endblock %}
+                <!-- end:: Header -->
+                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+                    <!-- begin:: Subheader -->
+                    {#{% include '@Dashboard/templates/1/sub_header/_sub_header.html.twig' %}#}
+                    <!-- end:: Subheader -->
+                    <!-- begin:: Content -->
+                    <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+                        {% block content %}{% endblock %}
+                    </div>
+                    <!-- end:: Content -->
+                </div>
+                <!-- begin:: Footer -->
+                {% block footer %}
+                    {{ render(controller('BackendBundle\\Controller\\Dashboard\\DashboardConfig::renderFooter')) }}
+                {% endblock %}
+                <!-- end:: Footer -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!-- end:: Page -->
+<!-- begin::Quick Panel -->
+{#{% include '@Dashboard/default/quick_panel/_quick_panel.html.twig' %}#}
+<!-- end::Quick Panel -->
+<!-- begin::Scrolltop -->
+<div id="kt_scrolltop" class="kt-scrolltop">
+    <i class="fa fa-arrow-up"></i>
+</div>
+<!-- end::Scrolltop -->
+<!-- begin::Global Config(global config for global JS scripts) -->
+<script>
+    var KTAppOptions = {
+        "colors": {
+            "state": {
+                "brand": "#5d78ff",
+                "dark": "#282a3c",
+                "light": "#ffffff",
+                "primary": "#5867dd",
+                "success": "#34bfa3",
+                "info": "#36a3f7",
+                "warning": "#ffb822",
+                "danger": "#fd3995"
+            },
+            "base": {
+                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            }
+        }
+    };
+</script>
+<!-- end::Global Config -->
+<!--begin::Global Theme Bundle(used by all pages) -->
+<script src="{{ asset('bundles/dashboard/assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/dashboard/assets/global/scripts.js') }}{{ asset_version }}" type="text/javascript"></script>
+{% block global_theme_bundle %}
+    <script src="{{ asset('bundles/dashboard/assets/demo/default/base/scripts.bundle.js') }}"
+            type="text/javascript"></script>
+{% endblock %}
+<script>
+    var loading = new KTDialog({
+        'type': 'loader',
+        'placement': 'top center',
+        'message': '{{ 'ui.table.loadingMessage'|trans([], 'DashboardBundle') }}'
+    });
+    loading.show();
+</script>
+<!--end::Global Theme Bundle -->
+<!--begin::Page Vendors(used by this page) -->
+{% block script_page_vendors %}{% endblock %}
+<!--end::Page Vendors -->
+<!--begin::Page Scripts(used by this page) -->
+{% block script_page_scripts %}{% endblock %}
+<!--end::Page Scripts -->
+<!--begin::Global App Bundle(used by all pages) -->
+<script src="{{ asset('bundles/dashboard/assets/app/bundle/app.bundle.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/dashboard/assets/global/plugins/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/dashboard/assets/app/custom/general/components/base/jquery.custom-scrollbar.min.js') }}" type="text/javascript"></script>
+<!--end::Global App Bundle -->
+<!-- begin::Page Loader -->
+<script>
+    $(window).on('load', function () {
+        loading.hide();
+    });
+</script>
+<!-- end::Page Loader -->
+</body>
+<!-- end::Body -->
+</html>

@@ -1,0 +1,4 @@
+frontend_static_page_show:
+ path:     /{slug}
+ methods: [GET]
+ controller: StaticBundle\Controller\Frontend\StaticPageController::showAction
