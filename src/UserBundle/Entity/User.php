@@ -233,14 +233,6 @@ class User implements UserInterface, Serializable
     private $phoneNumber;
 
     /**
-     * @var \Ecommerce\Entity\ProductDiscount
-     *
-     * @Gedmo\Versioned
-     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\ProductDiscount")
-     */
-    private $discount;
-
-    /**
      * User constructor.
      */
     public function __construct()
@@ -800,17 +792,5 @@ class User implements UserInterface, Serializable
         $name = $this->name . ' ' . $this->surname;
 
         return trim($name) ? : $this->email;
-    }
-
-    public function getDiscount(): ?ProductDiscount
-    {
-        return $this->discount;
-    }
-
-    public function setDiscount(?ProductDiscount $discount): self
-    {
-        $this->discount = $discount;
-
-        return $this;
     }
 }

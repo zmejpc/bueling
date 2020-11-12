@@ -2,7 +2,6 @@
 
 namespace BackendBundle\Controller\Dashboard;
 
-use Ecommerce\Entity\Order;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,7 +29,6 @@ final class DashboardController extends \DashboardBundle\Controller\DashboardCon
     {
         return $this->render('@Backend/dashboard/homepage/index.html.twig', [
             'countNewContactsRequests' => $this->em->getRepository(Contact::class)->countNewContactRequests(),
-            'countNewOrders' => $this->em->getRepository(Order::class)->countNewOrders(),
             'templateNumber' => 1
         ]);
     }

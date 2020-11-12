@@ -27,7 +27,7 @@ class ContactMailSettingController extends CRUDController
     {
         return [
             'index' => null, 'new' => null,
-            'edit' => 'ROLE_CALLBACK_MAIL_SETTING_EDIT', 'delete' => null,
+            'edit' => 'ROLE_CONTACT_MAIL_SETTING_EDIT', 'delete' => null,
         ];
     }
 
@@ -88,6 +88,8 @@ class ContactMailSettingController extends CRUDController
             $object->setSmtpUsername($this->getParameter('MAILER_USERNAME'));
             $locale = $this->getParameter('locale');
             $object->translate($locale)->setSenderName($this->getParameter('MAILER_SENDER_NAME'));
+            $object->translate($locale)->setMessageSubject('Message Subject');
+            $object->translate($locale)->setMessageBody('Message Body');
             $object->translate($locale)->setManagerSubject('Manager Subject');
             $object->translate($locale)->setSuccessFlashTitle('Success Flash Title');
             $object->translate($locale)->setSuccessFlashMessage('Success Flash Message');

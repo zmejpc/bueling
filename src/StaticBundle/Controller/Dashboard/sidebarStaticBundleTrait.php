@@ -15,7 +15,6 @@ trait sidebarStaticBundleTrait
         return [
             'static_content' => 'static-content/edit/',
             'static_page' => 'static-page/edit/',
-            'footer_settings' => 'footer-settings/edit/',
         ];
     }
 
@@ -31,9 +30,6 @@ trait sidebarStaticBundleTrait
             'static_content' => [
                 'index' => 'dashboard_static_content_index', 'new' => 'dashboard_static_content_new'
             ],
-            'footer_settings' => [
-                'index' => null, 'new' => 'dashboard_footer_settings_new'
-            ],
         ];
     }
 
@@ -45,7 +41,6 @@ trait sidebarStaticBundleTrait
         return [
             'static_content' => 'ROLE_STATIC',
             'static_page' => 'ROLE_STATIC',
-            'footer_settings' => 'ROLE_STATIC',
         ];
     }
 
@@ -126,15 +121,6 @@ trait sidebarStaticBundleTrait
                 'dashboard_slider_index', 'DashboardBundle', true,
                 '<i class="fa fa-image"></i>');
             (!is_null($slider)) ? $static['items'][] = $slider : null;
-
-            $footerSettings = self::itemSidebar(['ROLE_STATIC'], ['footer-settings/edit/'], [
-                'dashboard_footer_settings_edit'
-            ],
-                'flaticon-file-2', false, null, null,
-                'Футер', [],
-                'dashboard_footer_settings_edit', 'DashboardBundle', true,
-                '<i class="fa fa-battery-empty"></i>');
-            (!is_null($footerSettings)) ? $static['items'][] = $footerSettings : null;
 
             return $static;
         }

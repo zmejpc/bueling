@@ -6,16 +6,12 @@ use Doctrine\ORM\EntityManagerInterface;
 use SeoBundle\Entity\Seo;
 use DashboardBundle\Controller\CRUDController;
 use Ecommerce\Entity\Product;
-use Ecommerce\Entity\Currency;
 use Ecommerce\Entity\ProductCategory;
-use Ecommerce\Entity\ProductAttributeValue;
 use Ecommerce\Form\Type\Dashboard\ProductType;
-use Ecommerce\Form\Type\Dashboard\ProductGroupType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;
 use Ecommerce\Entity\ProductGalleryImage;
-use Ecommerce\Entity\ProductHasSize;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -107,20 +103,11 @@ class ProductController extends CRUDController
         return [
             'translations-title' => $translator->trans('ui.title', [], 'DashboardBundle'),
             'galleryImages-image' => $translator->trans('ui.poster', [], 'DashboardBundle'),
-            'sizes-size-title' => [
-                'title' => 'Размеры',
-                'width' => 130,
-            ],
-            'price' => 'Цена',
-            // 'residual' => 'Остаток',
+            // 'price' => 'Цена',
             'categories-translations-title' => $translator->trans('ui.categories', [], 'DashboardBundle'),
             'categories-slug' => '',
             'position' => [
                 'title' => $translator->trans('ui.position', [], 'DashboardBundle'),
-                'width' => 80
-            ],
-            'topSale' => [
-                'title' => $translator->trans('ui.top_sale', [], 'DashboardBundle'),
                 'width' => 80
             ],
             'showOnWebsite' => [
@@ -155,21 +142,15 @@ class ProductController extends CRUDController
             'galleryImages-image' => $twig->render('@Dashboard/default/crud/list/element/_img.html.twig', [
                 'element' => $item->getGalleryImages()->first() ? $item->getGalleryImages()->first()->getImage() : null
             ]),
-            'sizes-size-title' => $twig->render('@Dashboard/default/list/_sizes.html.twig', [
-                'elements' => $item->getSizes()
-            ]),
-            'price' => $twig->render('@Ecommerce/dashboard/product/list/_price.html.twig', [
-                'element' => $item
-            ]),
+            // 'price' => $twig->render('@Ecommerce/dashboard/product/list/_price.html.twig', [
+            //     'element' => $item
+            // ]),
             // 'residual' => $item->getResidual(),
             'categories-translations-title' => $twig->render('@Dashboard/default/list/_categories.html.twig', [
                 'elements' => $item->getCategories()
             ]),
             'position' => $twig->render('@Dashboard/default/crud/list/element/_position.html.twig', [
                 'element' => $item
-            ]),
-            'topSale' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
-                'element' => $item, 'fieldName' => 'topSale',
             ]),
             'showOnWebsite' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
                 'element' => $item, 'fieldName' => 'showOnWebsite',
@@ -197,52 +178,6 @@ class ProductController extends CRUDController
         return '@Ecommerce/dashboard/product/form/_portlet_body.html.twig';
     }
 
-    public function deleteAttrAction(int $attr_id)
-    {
-        $groupIds = $this->get('session')->get(Product::class . 'groupEditableIds');
-
-        if(!$groupIds) {
-            throw $this->createNotFoundException(
-                $this->translator->trans('ui.notFound', [], 'DashboardBundle')
-            );
-        }
-
-        $products = $this->getRepository($this->em)->findByIds($groupIds);
-
-        foreach($products as $product) {
-            foreach($product->getAttributes() as $attrValue) {
-                if($attrValue->getProductAttribute()->getId() == $attr_id)
-                    $this->em->remove($attrValue);
-            }
-        }
-
-        $this->em->flush();
-        exit;
-    }
-
-    public function clearAttrValueAction(int $attr_id)
-    {
-        $groupIds = $this->get('session')->get(Product::class . 'groupEditableIds');
-
-        if(!$groupIds) {
-            throw $this->createNotFoundException(
-                $this->translator->trans('ui.notFound', [], 'DashboardBundle')
-            );
-        }
-
-        $products = $this->getRepository($this->em)->findByIds($groupIds);
-
-        foreach($products as $product) {
-            foreach($product->getAttributes() as $attrValue) {
-                if($attrValue->getProductAttribute()->getId() == $attr_id)
-                    $attrValue->translate()->setTitle('');
-            }
-        }
-
-        $this->em->flush();
-        exit;
-    }
-
     private function helperForNewEditElement($object)
     {
         $this->em->persist($object);
@@ -257,97 +192,14 @@ class ProductController extends CRUDController
     public function customActionInNewAction($object)
     {
         $object = self::helperForNewEditElement($object);
-        $object = self::setCurrency($object);
 
         return $object;
     }
 
     public function customActionInEditAction($object)
     {
-        $object = self::setCurrency($object);
         $object = self::helperForNewEditElement($object);
 
         return $object;
-    }
-
-    public function setCurrency($object)
-    {
-        $currency = $this->em->getRepository(Currency::class)->findOneBy(['isMain' => 1]);
-
-        if($currency) {
-            $object->setCurrency($currency);
-        }
-
-        return $object;
-    }
-
-    public function copyAction(int $id)
-    {
-        try {
-            $originalProduct = $this->em->getRepository(Product::class)->find($id);
-            $newProduct = new Product;
-
-            foreach($originalProduct->getTranslations() as $originalTranslation) {
-                $newTranslation = $newProduct->translate($originalTranslation->getLocale());
-                $newTranslation->setTitle($originalTranslation->getTitle() . ' (копия)');
-                $newTranslation->setDescription($originalTranslation->getDescription());
-                $newTranslation->setComposition($originalTranslation->getComposition());
-                $newTranslation->setSizes($originalTranslation->getSizes());
-            }
-
-            $newProduct->mergeNewTranslations();
-
-            foreach($originalProduct->getCategories() as $category)
-                $newProduct->addCategory($category);
-
-            foreach($originalProduct->getCapsules() as $capsule)
-                $newProduct->addCapsule($capsule);
-
-            foreach($originalProduct->getCollaborations() as $collaboration)
-                $newProduct->addCollaboration($collaboration);
-
-            foreach($originalProduct->getSizes() as $originalProductHasSize) {
-                $newProductHasSize = new ProductHasSize;
-                $newProductHasSize->setSize($originalProductHasSize->getSize());
-                $newProductHasSize->setStatus($originalProductHasSize->getStatus());
-                $newProductHasSize->setPosition($originalProductHasSize->getPosition());
-                $newProductHasSize->setShowOnWebsite($originalProductHasSize->getShowOnWebsite());
-
-                $newProduct->addSize($newProductHasSize);
-            }
-
-            $newProduct->setPrice($originalProduct->getPrice());
-            $newProduct->setOldPrice($originalProduct->getOldPrice());
-            $newProduct->setTopSale($originalProduct->getTopSale());
-            $newProduct->setIsNova($originalProduct->getIsNova());
-            $newProduct->setShowOnWebsite($originalProduct->getShowOnWebsite());
-            $newProduct->setStatus($originalProduct->getStatus());
-            $newProduct->setCurrency($originalProduct->getCurrency());
-            $newProduct->setPosition($originalProduct->getPosition());
-
-            $newSeo = new Seo;
-            
-            foreach($originalProduct->getSeo()->getTranslations() as $originalSeoTranslation) {
-                $newSeoTranslation = $newSeo->translate($originalSeoTranslation->getLocale());
-                $newSeoTranslation->setMetaTitle($originalSeoTranslation->getMetaTitle());
-                $newSeoTranslation->setH1($originalSeoTranslation->getH1());
-                $newSeoTranslation->setBreadcrumb($originalSeoTranslation->getBreadcrumb());
-                $newSeoTranslation->setMetaKeyword($originalSeoTranslation->getMetaKeyword());
-                $newSeoTranslation->setMetaDescription($originalSeoTranslation->getMetaDescription());
-            }
-
-            $newSeo->mergeNewTranslations();
-            $newProduct->setSeo($newSeo);
-
-            $newProduct = self::helperForNewEditElement($newProduct);
-
-            $this->em->persist($newProduct);
-            $this->em->flush();
-            return $this->redirectToRoute($this->getRouteElements()['edit'], ['id' => $newProduct->getId()]);
-            
-        } catch (\Exception $e) {
-            $this->addFlash('flash_edit_error', $e->getMessage());
-            return $this->redirectToRoute($this->getRouteElements()['index']);
-        }
     }
 }

@@ -1,1870 +1,1985 @@
 locale:
-  en: 'English'
   ru: 'Русский'
   uk: 'Українська'
-  it: 'Італійська'
+
+dashboard_stat:
+  new_requests: 'Новые запросы'
+  contact:
+    from_contact_form: 'от контактной формы'
 
 sidebar:
-  partners: 'Партнери'
-  back_to_site: 'Повернутися на сайт'
-  homepage: 'Головна сторінка'
-  support_center: 'Центр підтримки'
-  subscription:
-    subscription: 'Підписка'
-    subscription_form: 'Повідомлення від форми підписки'
-    subscription_settings:
-      subscription_settings: 'Налаштування'
-      subscription_statuses: 'Статуси'
-      subscription_managers: 'Менеджери'
-  messages:
-    messages: 'Повідомлення'
-    messages_form: 'Повідомлення з форми повідомлень'
-    messages_settings:
-      messages_settings: 'Налаштування'
-      messages_statuses: 'Статуси'
-      messages_managers: 'Менеджери'
+  products_statuses: 'Статусы товаров'
+  size_statuses: 'Статусы размеров'
   catalog:
     catalog: 'Каталог'
-    collections: 'Колекції'
+    categories: 'Категории товаров'
+    collections: 'Коллекции'
+    kits: 'Комплекты'
+    products:
+      products: 'Товары'
+      products_tags: 'Теги товаров'
+      products_types: 'Типы товаров'
+      products_attributes: 'Атрибуты'
+  sales:
+    sales: 'Продажи'
+    orders:
+      orders: 'Заказы'
+      orders_settings:
+        orders_settings: 'Настройки'
+        orders_statuses: 'Статусы заказов'
+        orders_managers: 'Менеджеры'
   payment_shipping:
-    payment_shipping: 'Оплата та доставка'
+    payment_shipping: 'Оплата и доставка'
+    payment_methods: 'Способы оплаты'
+    shipping_methods: 'Способы доставки'
+  customers:
+    customers: 'Клиенты'
+    users: 'Пользователи'
   marketing:
     marketing: 'Маркетинг'
-    discounts: 'Знижки'
-    slider_on_the_main: 'Слайдер на головній'
+    discounts: 'Скидки'
+    slider_on_the_main: 'Слайдер на главной'
+    seo: 'SEO'
+    static_partition:
+      static_partition: 'Статический раздел'
+      static_content: 'Статический контент'
+      static_pages: 'Статические страницы'
+    log: 'Log'
+  currencies:
+    currencies: 'Валюты'
+    currency: 'Валюта'
+    exchange_rates: 'Курсы валют'
+  partners: 'Партнеры'
+  back_to_site: "Вернуться на сайт"
+  homepage: "Главная страница"
+  support_center: 'Центр поддержки'
+  contacts:
+    contacts: 'Контакты'
+    contact_form: 'Сообщение из контактной формы'
+    contact_settings:
+      contact_settings: 'Настройки'
+      contact_statuses: 'Статусы'
+      contact_managers: 'Менеджеры'
+      contact_mail_setting: 'Почта'
+    contact_phones: 'Контактные телефоны'
+    callback:
+      callback: 'Обратные звонки'
+      callback_form: 'Сообщение из формы обратного вызова'
+      callback_settings:
+        callback_settings: 'Настройки'
+        callback_statuses: 'Статусы'
+        callback_managers: 'Менеджеры'
+        callback_mail_setting: 'Почта'
+  callback:
+    callback: 'Обратные звонки'
+    callback_form: 'Сообщение из формы обратного вызова'
+    callback_settings:
+      callback_settings: 'Настройки'
+      callback_statuses: 'Статусы'
+      callback_managers: 'Менеджеры'
+      callback_mail_setting: 'Почта'
+  subscription:
+    subscription: 'Подписка'
+    subscription_form: 'Сообщения из формы подписки'
+    subscription_settings:
+      subscription_settings: 'Настройки'
+      subscription_statuses: 'Статусы'
+      subscription_managers: 'Менеджеры'
+  messages:
+    messages: 'Сообщения'
+    messages_form: 'Сообщения из формы сообщений'
+    messages_settings:
+      messages_settings: 'Настройки'
+      messages_statuses: 'Статусы'
+      messages_managers: 'Менеджеры'
   configuration:
-    configuration: 'Конфігурація'
-    synchronization_delovod: 'Синхронізація (delovod.ua)'
-    import_by_waybill_number: 'Імпорт за № накладної'
+    configuration: 'Конфигурация'
+    synchronization_delovod: 'Синхронизация (delovod.ua)'
+    import_by_waybill_number: 'Импорт по № накладной'
     log: 'Logs'
-  warehouses: 'Склади'
+    seo : 'SEO'
+  warehouses: 'Склады'
   photo_gallery:
-    photo_gallery: 'Фотогалерея'
+    photo_gallery: "Фотогалерея"
     photo: 'Фото'
-    сategory: 'Категорії'
+    сategory: "Категории"
 
 ui:
-  answer: 'Відповідь'
-  video: 'Відео'
+  processed: 'Обработан'
+  contact_info: 'Контактная информация'
+  attr_name: 'Название атрибута'
+  show_in_categories: 'Отображать на карточке товара'
+  gallery_image_from_product: 'Изображение галереи из продукта'
+  delovod:
+    synchronize: 'Синхронизировать'
+    title: 'Название'
+    process: 'Процесс'
+    categories_of_goods: 'Категории товаров'
+    exchange_rates: 'Курсы валют'
+    availability_status_of_goods_for_ordering: 'Статусы наличии товаров для заказа'
+    goods: 'Товары'
+  sum: 'Сумма'
+  sale: 'Распродажа'
+  product_associations: 'Ассоциации продуктов'
+  top_sale: 'Топ-продаж'
+  categories: 'Категории'
+  is_limited_count: 'Или количество ограничено?'
+  is_send_for_subscription: 'Отправить для подписки?'
+  is_work_without_promo_code: 'Работает без промо-кода?'
+  product_variant: 'Вариант товара'
+  products: 'Товары'
+  order_details: 'Детали заказа'
+  customer_details: 'Информация о клиенте'
+  payment_method: 'Метод оплаты'
+  shipping_method: 'Способ доставки'
+  size: 'Размер'
+  summary_of_order: 'Итого по заказу'
+  order_state: 'Статус заказа'
+  order_date: 'Дата заказа'
+  order_number: 'Номер заказа'
+  order_comment: 'Комментарий к заказу'
+  order_manager_comment: 'Комментарий менеджера к заказу'
+  order_comments: 'Комментарии к заказу'
+  new_order: 'Новый заказ'
+  new_orders: 'Новые заказы'
+  answer: 'Ответ'
+  read_more: 'Читать далее'
+  view_more: 'Показать еще'
+  view_all: 'Показать все'
+  video: 'Видео'
   background: 'Фон'
-  sender_name: "Ім'я відправника"
-  manager_subject: 'Теми email повідомлення для менеджера'
-  message_subject: 'Тема повідомлення для користувача'
-  message_body: 'Тіло повідомлення для користувача'
-  success_flash_message: 'Успішне флеш повідомлення'
-  title_for_flash_message: 'Назва для флеш повідомлення'
+  sender_name: 'Имя отправителя'
+  manager_subject: 'Темы email сообщения для менеджера'
+  message_subject: 'Тема сообщения для пользователя'
+  message_body: 'Тело сообщения для пользователя'
+  success_flash_message: 'Успешное флэш сообщение'
+  title_for_flash_message: 'Название для флэш сообщения'
   smtp_host: 'Хост (smtp)'
-  smtp_username: "Ім'я користувача (smtp)"
+  smtp_username: 'Имя пользователя (smtp)'
   smtp_password: 'Пароль (smtp)'
   smtp_port: 'Порт (smtp)'
   key: 'Ключ'
-  short_title: 'Коротко название'
-  sharing: 'Поділитися в соціальних мережах'
-  quizzes: 'Опитування'
-  nothing_is_selected: 'Нічого не вибрано'
-  poster_alt: 'Альтернативний текст для зображення'
-  poster: 'Зображення'
-  show_in_menu: 'Показати в меню?'
-  show_on_website: 'Відображати на сайті?'
-  show_in_html_site_map: 'Відображати в HTML карті сайту?'
+  short_title: 'Краткое название'
+  sharing: 'Поделиться в социальных сетях'
+  quizzes: 'Опросы'
+  nothing_is_selected: 'Ничего не выбрано'
+  poster_alt: 'Альтернативный текст для изображения'
+  poster: 'Изображение'
+  show_in_menu: 'Показать в меню?'
+  show_on_website: 'Отображать на сайте?'
+  show_on_main_page: 'Отображать на главной?'
+  show_in_html_site_map: 'Отображать в HTML карте сайта?'
+  site_pages:
+    main: 'Главная страница'
+    news_feed: 'Страница категории'
+    news_item: 'Страница новости'
+    contacts: 'Страница контактов'
+  banner_positions:
+    upper_page: 'Сверху страницы'
+    aside_page: 'С боку страницы'
+    bottom_page: 'Снизу страницы'
   synchronization:
-    synchronization: 'Синхронізація'
-    category: 'Синхронізація за категоріями'
-    goods: 'Синхронізація товарів'
-  size: 'Розмір'
-  notFound: 'Не знайдено.'
-  accessDenied: 'Доступ заборонено.'
+    synchronization: 'Синхронизация'
+    category: 'Синхронизация по категориям'
+    goods: 'Синхронизация товаров'
+  notFound: 'Не найдено.'
+  accessDenied: 'Доступ закрыт.'
   table:
-    metronicGroupActions: 'Вибрано _TOTAL_ записів'
-    metronicAjaxRequestGeneralError: 'Не вдалося заповнити запит. Перевірте підключення до Інтернету'
+    metronicGroupActions: 'Выбрано _TOTAL_ записей'
+    metronicAjaxRequestGeneralError: 'Не удалось выполнить запрос. Пожалуйста, проверьте подключение к интернету'
     lengthMenu:
-      lengthMenu: 'Показати _MENU_ записів'
-      all: 'Всі'
-    select: 'Виберіть розмір сторінки'
-    input: 'Номер сторінки'
-    more: 'Більше сторінок'
-    infoEmpty: 'Немає записів для показу'
-    emptyTable: 'У таблиці відсутні дані'
-    zeroRecords: 'Записи відсутні.'
+      lengthMenu: 'Показать _MENU_ записей'
+      all: 'Все'
+    select: 'Выбрать размер страницы'
+    input: 'Номер страницы'
+    more: 'Другие страницы'
+    infoEmpty: 'Не найдено записей для показа'
+    emptyTable: 'В таблице отсутствуют данные'
+    zeroRecords: 'Записи отсутствуют.'
     paginate:
-      previous: 'Попередня'
-      next: 'Наступна'
-      last: 'Остання'
-      first: 'Перша'
-      page: 'Сторінка'
-      pageOf: 'з'
-    loadingMessage: "Зачекайте..."
-    info: 'Записи з {{start}} по {{end}} з {{total}} записів'
-  select_your_language: 'Виберіть мову'
-  by: 'від'
-  abandoned: 'Покинуто'
-  about: 'Про нас'
-  accept: 'Прийняти'
-  accepted: 'Прийнято'
-  access_token: 'Маркер доступу'
-  access_your_store_account_or_create_a_new_one: 'Увійдійть до вашої крамничної обліковки або створіть нову'
-  account_credentials: 'Облікові дані'
-  account_panel_outline: 'Користуйтеся всіма функціями, що доступні в вашому особистому просторі для перегляду, відстеження та керування вашими даними'
+      previous: 'Предыдущая'
+      next: 'Следующая'
+      last: 'Последняя'
+      first: 'Первая'
+      page: 'Страница'
+      pageOf: 'из'
+    loadingMessage: "Подождите..."
+    info: 'Записи с {{start}} до {{end}} из {{total}} записей'
+  select_your_language: 'Выберите ваш язык'
+  by: 'от'
+  abandoned: 'Отменен'
+  about: 'О нас'
+  accept: 'Принять'
+  accepted: 'Принят'
+  access_token: 'Ключ доступа'
+  access_your_store_account_or_create_a_new_one: 'Войдите в вашу учетную запись или создайте новую'
+  account_credentials: 'Данные учетной записи'
+  account_panel_outline: 'Насладжайтесь всеми возможностями которые доступны для просмотра, отслеживания и управлени всеми вашими данными'
   action:
-    action: 'Дія'
-    action_delete: 'Видалити'
-    action_create: 'Додати новий'
-    action_list: 'Повернутись до списку'
-    action_show: 'Показати'
-    action_edit: 'Редагувати'
-  actions: 'Дії'
+    action: 'Действие'
+    action_delete: 'Удалить'
+    action_create: 'Добавить новый'
+    action_list:  'Вернуться к списку'
+    action_show: 'Показать'
+    action_edit: 'Редактировать'
+  actions: 'Действия'
   add:
-    add: 'Додати'
-    add_action: 'Додати дію'
-    add_address: 'Додати адресу'
-    add_association: 'Додати асоціювання'
-    add_attribute: 'Додати атрибут'
-    add_attributes: 'Додати атрибути'
-    add_channel: 'Додати канал'
-    add_choice: 'Додати вибір'
-    add_coupon: 'Додати купон'
-    add_image: 'Додати зображення'
-    add_member: 'Додати учасника'
-    add_menu_element: 'Додати елемент меню'
-    add_new_email: 'Додати нову адресу електронної пошти'
-    add_new_permission: 'Додати новий дозвіл'
-    add_new_role: 'Додати нову роль'
-    add_province: 'Додати регіон'
-    add_rule: 'Додати правило'
-    add_to_cart: 'У кошик'
-    add_value: 'Додати значення'
-    add_your_review: 'Додайте ваш відгук'
-    add_new_entry: 'Додати новий запис'
-    add_new: 'Додати новий'
-    adding_new_customer_groups: 'Додавання нових клієнтських груп'
-    adding_new_email: 'Додавання нової адреси електронної пошти'
-    adding_new_locale: 'Додавання нової мови'
-  additional_information: 'Додаткова інформація'
-  address: 'Адреса'
-  address_book: 'Адресна книга'
-  adjustments: 'Коригування'
-  administration: 'Адміністрування'
-  administration_dashboard: 'Панель адміністрування'
-  admin_users: 'Адміністратори'
-  all: 'Всі'
-  all_your_addresses: 'Усі ваші адреси'
-  amount: 'Обсяг'
-  an_error_occurred: 'Сталася помилка'
-  api: 'Прикладний програмний інтерфейс (API)'
-  apply_coupon: 'Використати купон'
-  archival: 'Архівний'
-  archive: 'Архів'
-  are_your_sure_you_want_to_perform_this_action: 'Ви дійсно бажаєте виконати цю дію?'
-  association: 'Асоціювання'
-  association_types: 'Типи асоціювання'
-  associations: 'Асоціювання'
-  assortment: 'Асортимент'
-  attributes: 'Атрибути'
+    add: 'Добавить'
+    add_action: 'Добавить действие'
+    add_address: 'Добавить адрес'
+    add_association: 'Добавить связь'
+    add_attribute: 'Добавить атрибут'
+    add_attributes: 'Добавить атрибуты'
+    add_channel: 'Добавить канал'
+    add_choice: 'Добавить вариант'
+    add_coupon: 'Добавить купон'
+    add_image: 'Добавить изображение'
+    add_member: 'Добавить'
+    add_menu_element: 'Добавить элемент меню'
+    add_new_email: 'Добавить новый Email'
+    add_new_permission: 'Добавить новую привилегию'
+    add_new_role: 'Добавить новую роль'
+    add_province: 'Добавить регион'
+    add_rule: 'Добавить правило'
+    add_to_cart: 'Добавить в корзину'
+    add_value: 'Добавить значение'
+    add_your_review: 'Добавить свой отзыв'
+    add_new_entry: 'Добавить новую запись'
+    add_new: 'Добавить новый'
+    adding_new_customer_groups: 'Добавление новых групп клиентов'
+    adding_new_email: 'Добавление новых почтовых ящиков'
+    adding_new_locale: 'Добавление нового языка'
+  additional_information: 'Дополнительная информация'
+  address: 'Адрес'
+  address_book: 'Адресная книга'
+  adjustments: 'Корректировки'
+  administration: 'Управление'
+  administration_dashboard: 'Административная панель'
+  admin_users: 'Администраторы'
+  all: 'Все'
+  all_your_addresses: 'Ваши адреса'
+  amount: 'Количество'
+  an_error_occurred: 'Произошла ошибка'
+  api: 'API'
+  apply_coupon: 'Применить купон'
+  archival: 'Архивный'
+  archive: 'Архив'
+  are_your_sure_you_want_to_perform_this_action: 'Вы действительно хотите выполнить это действие?'
+  association: 'Взаимосвязи'
+  association_types: 'Типы взаимосвязей'
+  associations: 'Связи'
+  assortment: 'Ассортимент'
+  attributes: 'Атрибуты'
   author: 'Автор'
-  availability: 'Доступність'
-  available_on: 'Доступно на'
-  available_on_hand: 'Наявно під рукою'
+  availability: 'Доступность'
+  available_on: 'Доступен с'
+  available_on_hand: 'В наличии'
   available_until: 'Доступно до'
-  average_order_value: 'Середній обсяг замовлень'
-  awaiting_payment: 'Очікування оплати'
+  average_order_value: 'Средний чек'
+  awaiting_payment: 'Ожидание оплаты'
   back: 'Назад'
-  back_to_store: 'Назад до крамниці'
-  back_to_details: 'Назад до опису'
-  backorder: 'Звільняється'
-  backordered: 'Попередньо замовлено'
-  balance_due: 'Сума до сплати'
-  base_currency: 'Основна валюта'
-  bill_to: 'Для надсилання рахунків'
-  billing_address: 'Адреса для рахунків'
-  billing_address_changes_history: 'Платіжна адреса змінює історію'
+  back_to_store: 'Вернуться в магазин'
+  back_to_details: 'Вернуться к деталям'
+  backorder: 'Не выполнен'
+  backordered: 'Временно недоступен'
+  balance_due: 'Сумма к оплате'
+  base_currency: 'Базовая валюта'
+  bill_to: 'Адрес для оформления счета'
+  billing_address: 'Адрес для выставления счета'
+  billing_address_changes_history: 'История изменений платёжного адреса'
   blocks: 'Блоки'
-  body: 'Тіло'
-  browse_products: 'Перегляд товарів'
-  browse_all_products: 'Переглянути всі товари'
-  browse_your_addresses: 'Переглянути ваші адреси'
-  browse_your_orders_from_the_past: 'Переглянути ваші минулі замовлення'
-  build: 'Побудувати'
-  by_position: 'По позиції'
+  body: 'Содержание'
+  browse_products: 'Обзор продукции'
+  browse_all_products: 'Просмотреть все продукты'
+  browse_your_addresses: 'Просмотр адресов'
+  browse_your_orders_from_the_past: 'Просмотреть ваши заказы из прошлого'
+  build: 'Построить'
+  by_position: 'По позиции'
   calculator: 'Калькулятор'
-  call_us: 'Зателефонуйте нам!'
-  cancel: 'Скасувати'
-  cancelled: 'Скасовано'
-  cart: 'Кошик'
-  cart_locked: 'Кошик заблокований'
-  cart_summary: 'Підсумок кошика'
-  categorization: 'Категоризація'
-  category: 'Категорія'
-  category_requirements: 'Вимоги категорії'
+  call_us: 'Позвоните нам!'
+  cancel: 'Отмена'
+  cancelled: 'Отменён'
+  cart: 'Корзина'
+  cart_locked: 'Корзина заблокирована'
+  cart_summary: 'Итого'
+  categorization: 'Каталоги'
+  category: 'Категория'
+  category_requirements: 'Требования категории'
   change:
-    change_address: 'Змінити адресу'
-    change_file: 'Змінити файл'
-    change_password: 'Змінити пароль'
-    change_payment_method: 'Змінити спосіб оплати'
-    change_position: 'Змінити позицію'
-    change_shipping_method: 'Змінити спосіб доставки'
-    change_your_password: 'Змінити пароль'
-  changes: 'Зміни'
+    change_address: 'Изменить адрес'
+    change_file: 'Изменить файл'
+    change_password: 'Сменить пароль'
+    change_payment_method: 'Изменить способ оплаты'
+    change_position: 'Изменить положение'
+    change_shipping_method: 'Изменить способ доставки'
+    change_your_password: 'Изменить свой пароль'
+  changes: 'Изменения'
   channel: 'Канал'
-  channels: 'Канали'
-  charges_and_taxes: 'Збори та податки'
-  cheapest_first: 'Спочатку найдешевші'
-  checkbox: 'Позначка'
-  checking_out_as: 'Перевірити як'
-  checkout: 'Підрахунок'
-  choose_channel: 'Виберіть канал'
-  choose_file: 'Обрати файл'
-  choose_how_your_goods_will_be_delivered: 'Виберіть, як ваші товари будуть доставлятись'
-  choose_how_you_will_pay: 'Виберіть, як ви будете платити'
-  city: 'Місто'
-  clear: 'Очистити'
-  clear_cart: 'Очистити кошик'
-  clear_filters: 'Очистити фільтри'
+  channels: 'Каналы'
+  charges_and_taxes: 'Сборы и налоги'
+  cheapest_first: 'Дешёвые первыми'
+  checkbox: 'Флажок'
+  checking_out_as: 'Проверить как'
+  checkout: 'Оформление заказа'
+  choose_channel: 'Выберите канал'
+  choose_file: 'Выбрать файл'
+  choose_how_your_goods_will_be_delivered: 'Выберите, как ваш товар будет доставлен'
+  choose_how_you_will_pay: 'Выберите, как вы будете платить'
+  city: 'Город'
+  clear: 'Очистить'
+  clear_cart: 'Очистка корзины'
+  clear_filters: 'Сбросить фильтр'
   code: 'Код'
-  color: 'Колір'
-  comment: 'Коментар'
-  company: 'Компанія'
+  color: 'Цвет'
+  comment: 'Комментарий'
+  company: 'Компания'
   complete: 'Завершено'
-  completed: 'Завершено'
-  configurable_product: 'Товар, що має варіанти конфігурації'
-  configuration: 'Конфігурація'
-  configure_channels_available_in_your_store: 'Налаштуйте доступні у вашій крамниці канали'
-  confirm_your_action: 'Підтвердьте свою дію'
-  confirmation: 'Підтвердження'
-  confirmation_title: 'Підтвердження'
-  confirmed: 'Підтверджено'
-  contact_us: 'Зв''язатися з нами'
-  contact_your_technician_to_upgrade: 'Зверніться до свого технічного спеціаліста для оновлення'
-  contain_variants: 'Містять варіанти'
-  contains: 'Містить'
-  content: 'Вміст'
-  countries: 'Країни'
-  country: 'Країна'
-  country_details: 'Подробиці про країну'
+  completed: 'Завершен'
+  configurable_product: 'Вариативный товар'
+  configuration: 'Конфигурация'
+  configure_channels_available_in_your_store: 'Настройка каналов, доступных в вашем магазине'
+  confirm_your_action: 'Подтвердите ваше действие'
+  confirmation: 'Подтверждение'
+  confirmation_title: 'Подтверждение'
+  confirmed: 'Подтвержден'
+  contact_us: 'Напишите нам'
+  contact_your_technician_to_upgrade: 'Свяжитесь с администратором для обновления'
+  contain_variants: 'Содержит варианты'
+  contains: 'Содержит'
+  content: 'Содержимое'
+  countries: 'Страны'
+  country: 'Страна'
+  country_details: 'Информация о стране'
   coupon: 'Купон'
-  coupon_based: 'На основі купону'
-  coupons: 'Купони'
+  coupon_based: 'Основана на купонах'
+  coupons: 'Купоны'
   create:
-    create: 'Створити'
-    create_and_return_to_the_list: 'Створити і повернутися до списку'
-    create_and_add_new: 'Створити і додати новий'
-    create_a_new_address: 'Створити нову адресу'
-    create_association_type: 'Створити тип асоціювання'
-    create_country: 'Створити країну'
-    create_currency: 'Створити валюту'
-    create_customer: 'Створити клієнта'
-    create_imagine_block: 'Створити блок зображень'
-    create_locale: 'Створити мову'
-    create_menu: 'Створити меню'
-    create_menu_node: 'Створити пункт меню'
-    create_new_coupon: 'Створити новий купон'
-    create_new_page: 'Створити нову сторінку'
-    create_new_report: 'Створити новий звіт'
-    create_option: 'Створити опцію'
-    create_order: 'Створити замовлення'
-    create_payment: 'Створити оплату'
-    create_payment_method: 'Створити метод оплати'
-    create_product: 'Створити товар'
-    create_product_association: 'Створити асоціювання товару'
-    create_product_association_type: 'Створити тип асоціювання товару'
-    create_product_attribute: 'Створити атрибут товару'
-    create_promotion: 'Створити акцію'
-    create_report: 'Створити звіт'
-    create_shipping_category: 'Створити категорію доставки'
-    create_shipping_method: 'Створити спосіб доставки'
-    create_simple_block: 'Створити простий блок'
-    create_slideshow_block: 'Створити блок слайд-шоу'
-    create_string_block: 'Створити текстовий блок'
-    create_tax_category: 'Створення категорії оподаткування'
-    create_tax_rate: 'Створити ставку податку'
-    create_taxon: 'Створити таксон'
-    create_user: 'Створити користувача'
-    create_variant: 'Створити варіант'
-    create_zone: 'Створити зону'
-    created: 'Створено'
-    created_at: 'Створено'
-    creating_a_new_imagine_block: 'Створення нового блоку зображень'
-    creating_a_new_simple_block: 'Створення нового простого блоку'
-    creating_a_new_slideshow_block: 'Створення нового блоку слайд-шоу'
-    creating_a_new_string_block: 'Створення нового текстового блоку'
-    creating_menu: 'Створення меню'
-    creating_menu_node: 'Створення пункту меню'
-    creating_new_page: 'Створення нової сторінки'
-    creation_date: 'Дата створення'
-    creation_time: 'Час створення'
-  criteria: 'Критерії'
-  currencies: 'Валюти'
+    create: 'Создать'
+    create_and_return_to_the_list: 'Создать и вернуться к списку'
+    create_and_add_new: 'Создать и добавить новый'
+    create_a_new_address: 'Добавить адрес'
+    create_association_type: 'Создать тип взаимосвязи'
+    create_country: 'Добавить поселок, село'
+    create_currency: 'Добавить валюту'
+    create_customer: 'Создание клиента'
+    create_imagine_block: 'Создать блок-изображение'
+    create_locale: 'Добавить язык'
+    create_menu: 'Создать меню'
+    create_menu_node: 'Создание пункта меню'
+    create_new_coupon: 'Создать новый купон'
+    create_new_page: 'Создать новую страницу'
+    create_new_report: 'Создание нового отчета'
+    create_option: 'Добавить опцию'
+    create_order: 'Заказать'
+    create_payment: 'Создать платеж'
+    create_payment_method: 'Создать метод оплаты'
+    create_product: 'Создать товар'
+    create_product_association: 'Создание связи товара'
+    create_product_association_type: 'Создание типа связи товара'
+    create_product_attribute: 'Создать атрибут товара'
+    create_promotion: 'Создать акцию'
+    create_report: 'Создать отчет'
+    create_shipping_category: 'Создать категорию доставки'
+    create_shipping_method: 'Создать способ доставки'
+    create_simple_block: 'Создать простой блок'
+    create_slideshow_block: 'Создать слайд-шоу блок'
+    create_string_block: 'Создать строковой блок'
+    create_tax_category: 'Создать налоговую категорию'
+    create_tax_rate: 'Создать налоговую ставку'
+    create_taxon: 'Создать категорию'
+    create_user: 'Создать пользователя'
+    create_variant: 'Создать вариант'
+    create_zone: 'Создать новую зону'
+    created: 'Время создания'
+    created_at: 'Создано'
+    creating_a_new_imagine_block: 'Создание нового блока-изображения'
+    creating_a_new_simple_block: 'Создание нового простого блока'
+    creating_a_new_slideshow_block: 'Создание нового слайд-шоу блока'
+    creating_a_new_string_block: 'Создание нового стрового блока'
+    creating_menu: 'Создание меню'
+    creating_menu_node: 'Создание элемента меню'
+    creating_new_page: 'Создание новой страницы'
+    creation_date: 'По дате создания'
+    creation_time: 'Время создания'
+  criteria: 'Критерий'
   currency: 'Валюта'
-  current_orders: 'Поточні замовлення'
-  current_promotions: 'Діючі акції'
-  current_stock: 'Поточний запас'
+  current_orders: 'Текущие заказы'
+  current_promotions: 'Список рекламных акций'
+  current_stock: 'Количество на складе'
   customer:
-    customer: 'Клієнт'
-    customer_can_login_to_the_store: 'Чи може клієнт входити до крамниці?'
-    customer_care: 'Турбота про клієнтів'
-    customer_details: 'Інформація про клієнта'
-    customer_groups: 'Групи клієнтів'
-    customer_id: 'ID клієнта'
-    customer_login: 'Вхід для клієнта'
-    customer_not_notified: 'Клієнту не повідомлялось'
-    customer_notified: 'Клієнт сповіщений'
-    customer_orders: 'Замовлення клієнта'
-    customer_since: 'Є клієнтом з'
-    customers: 'Клієнти'
-    customers_list_of_all_customers_in_store: 'Клієнти <small>Список всіх клієнтів крамниці</small>'
-  customize_default_metadata: 'Користувацькі налаштування типових метаданих'
-  customize_metadata: 'Користувацькі налаштування метаданих'
-  customize_products_metadata: 'Користувацькі налаштування метаданих продукції'
-  customizing_metadata: 'Користувацьке налаштування метаданих'
-  dashboard: 'Панель керування'
-  data: 'Дані'
+    customer: 'Клиент'
+    customer_can_login_to_the_store: 'Клиент может войти в магазин?'
+    customer_care: 'Служба поддержки'
+    customer_details: 'Информация о клиенте'
+    customer_groups: 'Группы клиентов'
+    customer_id: 'Идентификатор клиента'
+    customer_login: 'Авторизация пользователя'
+    customer_not_notified: 'Клиент не уведомлён'
+    customer_notified: 'Клиент уведомлён'
+    customer_orders: 'Заказы клиента'
+    customer_since: 'Клиент начиная с'
+    customers: 'Клиенты'
+    customers_list_of_all_customers_in_store: 'Клиенты <small>список всех клиентов магазина</small>'
+  customize_default_metadata: 'Настроить метаданные по умолчанию'
+  customize_metadata: 'Настроить метаданные'
+  customize_products_metadata: 'Настройка метаданных товаров'
+  customizing_metadata: 'Настройка метаданных'
+  dashboard: 'Панель инструментов'
+  data: 'Данные'
   date: 'Дата'
-  datetime: 'Дата й час'
+  datetime: 'Дата и время'
   default:
-    default: 'За замовчуванням'
-    default_address: 'Адреса за змовчуванням'
-    default_billing_address: 'Платіжна адреса за замовчуванням'
-    default_currency: 'Валюта за замовчуванням'
-    default_locale: 'Типова локаль'
-    default_shipping_address: 'Адреса доставки за замовчуванням'
-  delete: 'Видалити'
-  delete_image: 'Видалити зображення'
-  deleted: 'Видалено'
-  delivery_and_shipping: 'Доставка та транспортування'
-  description: 'Опис'
-  composition: 'Склад і догляд'
-  sizes: 'Розмірна сітка'
-  details: 'Подробиці'
-  disable: 'Вимкнути'
-  disabled: 'Вимкнений'
-  discount: 'Знижка'
-  discounted_unit_price: 'Ціна одиниці зі знижкою'
-  display: 'Показувати'
+    default: 'По умолчанию'
+    default_address: 'Адрес по умолчанию'
+    default_billing_address: 'Адрес оплаты по умолчанию'
+    default_currency: 'Валюта по умолчанию'
+    default_locale: 'Локаль по умолчанию'
+    default_shipping_address: 'Адрес доставки по умолчанию'
+  delete: 'Удалить'
+  delete_image: 'Удалить товар'
+  deleted: '﻿Удалено'
+  delivery_and_shipping: 'Отправка и доставка'
+  description: 'Описание'
+  composition: 'Состав и уход'
+  sizes: 'Размерная сетка'
+  details: 'Подробнее'
+  disable: 'Выкл'
+  disabled: 'Отключёно'
+  discount: 'Скидка'
+  discounted_unit_price: 'Цена со скидкой'
+  display: 'Показать'
   edit:
-    edit: 'Редагувати'
-    edit_admin_user: 'Редагувати адміністратора'
-    edit_association_type: 'Редагувати тип асоціювання'
-    edit_channel: 'Редагувати канал'
-    edit_country: 'Редагувати країну'
-    edit_coupon: 'Редагувати купон'
-    edit_currency: 'Редагувати валюту'
-    edit_customer: 'Редагувати клієнта'
-    edit_exchange_rate: 'Редагувати курс обміну'
-    edit_locale: 'Редагувати мову'
-    edit_my_address: 'Редагувати мою адресу'
-    edit_order: 'Редагувати замовлення'
-    edit_payment_method: 'Редагувати спосіб оплати'
-    edit_product: 'Редагувати товар'
-    edit_product_association_type: 'Редагувати тип асоціювання товару'
-    edit_product_attribute: 'Редагувати атрибут товару'
-    edit_product_option: 'Редагувати опцію товару'
-    edit_product_review: 'Редагувати відгук щодо товару'
-    edit_product_variant: 'Редагувати різновид товару'
-    edit_promotion: 'Редагувати акцію'
-    edit_promotion_coupon: 'Редагувати промо-купон'
-    edit_report: 'Редагувати звіт'
-    edit_shipping_address: 'Редагувати адресу доставки'
-    edit_shipping_category: 'Редагувати категорію доставки'
-    edit_shipping_method: 'Редагувати спосіб доставки'
-    edit_tax_category: 'Редагувати категорію оподаткування'
-    edit_tax_rate: 'Редагувати податкову ставку'
-    edit_taxon: 'Редагувати таксон'
-    edit_your_items_apply_coupon_or_proceed_to_the_checkout: 'Відредагуйте ваші елементи, використайте купон або перейдіть до оформлення купівлі'
-    edit_your_personal_information: 'Редагувати особисті відомості'
-    edit_zone: 'Редагувати зону'
-    editing_attribute: 'Редагування атрибуту'
-    editing_channel: 'Редагування каналу'
-    editing_country: 'Редагування країни'
-    editing_coupon: 'Редагування купону'
-    editing_currency: 'Редагування валюти'
-    editing_customer: 'Редагування клієнта'
-    editing_email: 'Редагування адреси електронної пошти'
-    editing_exchange_rate: 'Редагування обмінного курсу'
-    editing_imagine_block: 'Редагування блоку зображень'
-    editing_menu: 'Редагування меню'
-    editing_menu_node: 'Редагування пункту меню'
-    editing_option: 'Редагування опції'
-    editing_order: 'Редагування замовлення'
-    editing_page: 'Редагування сторінки'
-    editing_payment: 'Редагування оплати'
-    editing_payment_method: 'Редагування способу оплати'
-    editing_permission: 'Редагування дозволу'
-    editing_product: 'Редагування товару'
-    editing_promotion: 'Редагування акції'
-    editing_review: 'Редагування відгуку'
-    editing_role: 'Редагування ролі'
-    editing_shipment: 'Редагування відправки'
-    editing_shipping_category: 'Редагування категорії доставки'
-    editing_shipping_method: 'Редагування методу доставки'
-    editing_simple_block: 'Редагування простого блоку'
-    editing_slideshow_block: 'Редагування блоку слайд-шоу'
-    editing_string_block: 'Редагування текстового блоку'
-    editing_tax_category: 'Редагування категорій оподаткування'
-    editing_taxon: 'Редагування таксону'
-    editing_user: 'Редагування користувача'
-    editing_variant: 'Редагування варіанту'
-    editing_zone: 'Редагування зони'
-  email: 'Адреса електронної пошти'
-  email_templates: 'Шаблони електронної пошти'
-  email_verified: 'Електронна пошта перевірена'
-  emails: 'Повідомлення електронної пошти'
-  empty: 'Порожній'
-  enable: 'Увімкнути'
-  enabled: 'Ввімкнено'
-  end_date: 'Дата завершення'
-  ends_at: 'Кінець дії'
-  ends_with: 'Закінчується на'
-  enjoy_all_the_features_that_are_available_on_your_personal_space_to_view_track_and_manage_all_your_data: 'Користуйтеся всіма функціями, що доступні в вашому особистому просторі для перегляду, відстеження та керування вашими даними'
-  enter_your_code: 'Введіть ваш код'
-  equal: 'Дорівнює'
-  error: 'Помилка'
-  exchange_rate: 'Курс валют'
-  exchange_rates: 'Обмінний курс'
-  exclusive: 'Ексклюзивно'
-  existing_customer: 'Існуючий клієнт'
-  expiration_and_usage_limits: 'Обмеження щодо терміну дії та використання'
-  expires_at: 'Дійсний до'
-  extra_information: 'Додаткова інформація'
-  extra_notes: 'Додаткові примітки'
-  failed: 'Невдало'
-  female: 'Жіноча'
-  filter: 'Фільтр'
-  filters: 'Фільтри'
-  fill_in_your_billing_and_shipping_addresses: 'Заповніть ваші адреси для оплати й доставки'
-  name_first: 'Iм''я'
-  first_name: '*Iм''я'
-  from: 'Від'
-  from_a_to_z: 'Від А до Я'
-  from_the_newest: 'Від найновіших'
-  from_the_oldest: 'Від найдавніших'
-  from_z_to_a: 'Від Я до А'
-  fulfill: 'Виконано'
-  fulfilled: 'Виконано'
-  fulfilled_orders: 'Виконані замовлення'
-  gateway: 'Шлюз'
-  gateway_configuration: 'Конфігурація шлюзу'
-  general_info: 'Основна інформація'
-  general_settings: 'Загальні налаштування'
-  generate: 'Генерувати'
-  generate_coupons: 'Генерувати купони'
-  generate_variants: 'Генерувати варіанти'
-  generating_coupons: 'Створення купонів'
+    edit: 'Редактировать'
+    edit_admin_user: 'Редактировать администратора'
+    edit_association_type: 'Редактировать тип взаимосвязи'
+    edit_channel: 'Редактировать канал'
+    edit_country: 'Редактировать страну'
+    edit_coupon: 'Редактировать купон'
+    edit_currency: 'Редактировать валюту'
+    edit_customer: 'Редактировать клиента'
+    edit_exchange_rate: 'Изменить валютный курс'
+    edit_locale: 'Редактировать язык'
+    edit_my_address: 'Изменить адрес'
+    edit_order: 'Редактировать Заказ'
+    edit_payment_method: 'Редактировать способ оплаты'
+    edit_product: 'Редактировать товар'
+    edit_product_association_type: 'Редактировать тип связи товара'
+    edit_product_attribute: 'Изменить атрибут продукта'
+    edit_product_option: 'Изменить вариант продукта'
+    edit_product_review: 'Редактировать отзыв товара'
+    edit_product_variant: 'Изменить вариант товара'
+    edit_promotion: 'Редактировать продвижение'
+    edit_promotion_coupon: 'Редактировать купон'
+    edit_report: 'Редактировать отчет'
+    edit_shipping_address: 'Редактировать адрес доставки'
+    edit_shipping_category: 'Изменить категорию доставки'
+    edit_shipping_method: 'Редактировать способ доставки'
+    edit_tax_category: 'Редактировать категорию наголовой ставки'
+    edit_tax_rate: 'Редактирование налоговой ставки'
+    edit_taxon: 'Редактировать категорию'
+    edit_your_items_apply_coupon_or_proceed_to_the_checkout: 'Отредактируйте заказ, примените купон или перейдите к оформлению заказа'
+    edit_your_personal_information: 'Edit my personal information'
+    edit_zone: 'Редактирование зоны'
+    editing_attribute: 'Редактирование атрибута'
+    editing_channel: 'Редактировать каналы'
+    editing_country: 'Редактировать страну'
+    editing_coupon: 'Редактирование купона'
+    editing_currency: 'Изменение валюты'
+    editing_customer: 'Редактирование клиента'
+    editing_email: 'Редактирование электронной почты'
+    editing_exchange_rate: 'Изменение валютного курса'
+    editing_imagine_block: 'Редактирование блока изображения'
+    editing_menu: 'Редактирование меню'
+    editing_menu_node: 'Редактирование элемента меню'
+    editing_option: 'Редактирование опции'
+    editing_order: 'Редактирование заказа'
+    editing_page: 'Редактирование страницы'
+    editing_payment: 'Редактирование платежа'
+    editing_payment_method: 'Изменение способа метода оплаты'
+    editing_permission: 'Редактирование прав доступа'
+    editing_product: 'Редактирование товара'
+    editing_promotion: 'Редактирование акции'
+    editing_review: 'Редактирование отзыва'
+    editing_role: 'Изменение роли'
+    editing_shipment: 'Редактирование отгрузки'
+    editing_shipping_category: 'Редактировать категорию доставки'
+    editing_shipping_method: 'Редактировать способ доставки'
+    editing_simple_block: 'Редактирование простого блока'
+    editing_slideshow_block: 'Редактирование слайд-шоу блока'
+    editing_string_block: 'Редактирование строкового блока'
+    editing_tax_category: 'Редактирование налоговой категории'
+    editing_taxon: 'Редактировать подкатегорию'
+    editing_user: 'Редактировать пользователя'
+    editing_variant: 'Редактирование вариантов'
+    editing_zone: 'Редактирование зоны'
+  email: 'Адрес электронной почты'
+  email_templates: 'Шаблоны электронной почты'
+  email_verified: 'Электронная почта проверена'
+  emails: 'Emails'
+  empty: 'Пусто'
+  enable: 'Вкл'
+  enabled: 'Активен'
+  end_date: 'Дата окончания'
+  ends_at: 'Конец'
+  ends_with: 'Заканчивается на'
+  enjoy_all_the_features_that_are_available_on_your_personal_space_to_view_track_and_manage_all_your_data: 'Насладжайтесь всеми возможностями которые доступны для просмотра, отслеживания и управлени всеми вашими данными'
+  enter_your_code: 'Введите код'
+  equal: 'Равно'
+  error: 'Ошибка'
+  exchange_rate: 'Обменный курс'
+  exchange_rates: 'Обменный курс'
+  exclusive: 'Эксклюзив'
+  existing_customer: 'Существующий клиент'
+  expiration_and_usage_limits: 'Окончание срока действия и ограничения использования'
+  expires_at: 'Истекает'
+  extra_information: 'Дополнительная информация'
+  extra_notes: 'Дополнительные заметки'
+  failed: 'Провален'
+  female: 'Женский'
+  filter: 'Фильтровать'
+  filters: 'Фильтры'
+  fill_in_your_billing_and_shipping_addresses: 'Заполните ваши адреса для отправки счета-фактуры и доставки товара'
+  name_first: 'Имя'
+  first_name: '*Имя'
+  fio: 'ФИО'
+  from: 'От'
+  from_a_to_z: 'От А до Я'
+  from_the_newest: 'От новых к старым'
+  from_the_oldest: 'От старых к новым'
+  from_z_to_a: 'От Я до А'
+  fulfill: 'Завершён'
+  fulfilled: 'Заполненные'
+  fulfilled_orders: 'Выполненные заказы'
+  gateway: 'Терминал'
+  gateway_configuration: 'Конфигурация шлюза'
+  general_info: 'Общая информация'
+  general_settings: 'Общие настройки'
+  generate: 'Сгенерировать'
+  generate_coupons: 'Генерировать купоны'
+  generate_variants: 'Генерировать варианты'
+  generating_coupons: 'Генерирование купонов'
   go: 'Перейти'
-  go_level_up: 'Перейти на рівень вище'
-  go_to_dashboard: 'Перейти до панелі інструментів'
-  grand_total: 'Загальний підсумок'
-  greater_than: 'Більше ніж'
-  group_membership: 'Членство в групі'
-  guest: 'Гість'
-  hello: 'Вітаємо'
-  hello_name: 'Вітаємо, <b>%name%</b>'
-  hide_deleted: 'Приховати видалений'
-  history: 'Історія'
-  home: 'Головна'
-  hostname: 'Ім''я хоста'
+  go_level_up: 'Перейти на уровень вверх'
+  go_to_dashboard: 'Перейти в панель управления'
+  grand_total: 'Всего в корзине'
+  greater_than: 'Больше, чем'
+  group_membership: 'Членство в группе'
+  guest: 'Гость'
+  hello: 'Здравствуйте'
+  hello_name: 'Здравствуйте, <b>%name%</b>'
+  hide_deleted: 'Скрыть удаленные'
+  history: 'История'
+  home: 'Домой'
+  hostname: 'Хост'
   id: 'ID'
-  identifier: 'Ідентифікатор'
-  if_you_have_an_account_sign_in_with_your_email_address: 'Якщо у вас є обліковка, увійдіть за допомогою вашої адреси електронної пошти'
-  image: 'Зображення'
-  images: 'Зображення'
-  imagine_blocks: 'Блоки малюнків'
-  impersonate: 'Представитись як користувач'
+  identifier: 'Идентификатор'
+  if_you_have_an_account_sign_in_with_your_email_address: 'Если у вас есть учетная запись, войдите с помошью Вашего адреса электронной почты'
+  image: 'Изображение'
+  images: 'Изображения'
+  imagine_blocks: 'Блоки изображений'
+  impersonate: 'Представиться как пользователь'
   in: 'В'
-  included_in_price: 'Входить у ціну'
-  index_metadata: 'Метадані'
-  index_of_all_configured_locales: 'Список усіх сконфігурованих мов'
-  info: 'Довідка'
-  information: 'Інформація'
-  integer: 'Ціле число'
-  inventory: 'Інвентаризація'
-  inventory_here_you_can_see_current_stock_levels: 'Інвентаризація <small>Тут ви можете побачити поточний рівень запасів</small>'
-  inventory_index: 'Інвентаризація'
-  inventory_tracking: 'Відстеження інвентаризації'
-  invoice: 'Рахунок'
-  is_enabled: 'Ввімкнено'
-  it_seems_you_have_an_account_already: 'Схоже у вас вже є обліковка'
-  item: 'Елемент'
-  items: 'Елементи'
-  item.choice: "{0} |{1}, 1 item|]1,Inf], %count% items"
-  items_total: 'Загальна кількість елементів'
-  jump_to_page: 'Перейти до сторінки'
-  label: 'Мітка'
-  last_login: 'Останній вхід'
-  last_name: 'Прізвище'
-  last_update: 'Останнє оновлення'
-  last_updated: 'Останнє оновлення'
-  last_week_orders: 'Замовлення минулого тижня'
-  last_week_revenue: 'Доходи за минулий тиждень'
-  lastname: 'Прізвище'
-  latest_orders: 'Останні замовлення'
-  latest_products: 'Останні товари'
-  less_than: 'Менше ніж'
-  links: 'Посилання'
-  link: 'Посилання'
-  list_coupons: 'Список купонів'
-  list_variants: 'Список варіантів'
-  locale: 'Мова'
-  locales: 'Локалі'
-  lock: 'Блокувати'
-  locked: 'Заблоковано'
-  logged_at: 'Дата входу'
-  logged_in_as: 'Ви авторизовані як %username%'
-  login: 'Вхід'
-  logout: 'Вихід'
-  main_taxon: 'Основний таксон'
-  male: 'Чоловічий'
+  included_in_price: 'Включено в цену'
+  index_metadata: 'Метаданные'
+  index_of_all_configured_locales: 'Список всех настроенных языков'
+  info: 'Сведения'
+  information: 'Информация'
+  integer: 'Целое число'
+  inventory: 'Остатки'
+  inventory_here_you_can_see_current_stock_levels: 'Склад <small>Здесь вы можете увидеть уровень запасов</small>'
+  inventory_index: 'Остатки'
+  inventory_tracking: 'Отслеживание продаж'
+  invoice: 'Счет-фактура'
+  is_enabled: 'Включено'
+  it_seems_you_have_an_account_already: 'Кажется, что у вас уже есть учетная запись'
+  item: 'Товар'
+  items: 'Элементы'
+  item.choice: "|, %count% товар|, %count% товара|, %count% товаров"
+  items_total: 'Всего товаров'
+  jump_to_page: 'Перейти на страницу'
+  label: 'Метка'
+  last_login: 'Последний вход'
+  last_name: 'Фамилия'
+  last_update: 'Последнее изменение'
+  last_updated: 'Последнее обновление'
+  last_week_orders: 'Заказы прошлой недели'
+  last_week_revenue: 'Доход прошлой недели'
+  lastname: 'Фамилия'
+  latest_orders: 'Заказы'
+  latest_products: 'Новые продукты'
+  less_than: 'Менее, чем'
+  links: 'Ссылки'
+  link: 'Ссылка'
+  list_coupons: 'Список купонов'
+  list_variants: 'Список вариантов'
+  locale: 'Язык'
+  locales: 'Языки'
+  lock: 'Блокировать'
+  locked: 'Заблокировано'
+  logged_at: 'Дата входа'
+  logged_in_as: 'Вы вошли в систему как %username%'
+  login: 'Вход'
+  logout: 'Выход'
+  main_taxon: 'Основной таксон'
+  male: 'Мужской'
   manage:
-    manage: 'Управління'
-    manage_adjustments: 'Керувати налаштуваннями'
-    manage_admin_users: 'Управління адміністраторами'
-    manage_attributes: 'Управління атрибутами'
-    manage_association_types_of_your_products: 'Керуйте типами асоціювання ваших товарів'
-    manage_attributes_of_your_products: 'Керуйте атрибутами ваших товарів'
-    manage_categorization_of_your_products: 'Керуйте категоризацією ваших товарів'
-    manage_channels: 'Управління каналами'
-    manage_configuration_options_of_your_products: 'Керуйте налаштуванням опцій ваших товарів'
-    manage_countries: 'Управління країнами'
-    manage_coupons: 'Управління купонами'
-    manage_currencies_available_in_the_store: 'Керування валютами в магазині'
-    manage_customers: 'Управління клієнтами'
-    manage_customer_groups: 'Керуйте групами ваших клієнтів'
-    manage_discounts_and_promotional_campaigns: 'Керуйте знижками та рекламними акціями'
-    manage_emails: 'Управління електронними поштами'
-    manage_exchange_rates: 'Управління валютними курсами'
-    manage_geographical_zones: 'Керування географічними зонами'
-    manage_inventory: 'Керування інвентаризацією'
-    manage_languages_available_in_the_store: 'Керування мовами, які доступні в магазині'
-    manage_metadata: 'Керування метаданними'
-    manage_options: 'Керування опціями'
-    manage_orders: 'Керувати замовленнями'
-    manage_payment_methods_available_to_your_customers: 'Керування способами оплати, які доступні для ваших клієнтів'
-    manage_payments: 'Керувати платежами'
-    manage_products: 'Керування товарами'
-    manage_promotions: 'Керувати акціями'
-    manage_reviews: 'Керування відгуками'
-    manage_reviews_of_your_products: 'Керуйте відгуками про ваші товари'
-    manage_shipments: 'Керування відправками'
-    manage_shipping_categories: 'Управління категоріями доставки'
-    manage_shipping_categories_for_your_store: 'Керування категоріями доставки для вашого магазину'
-    manage_shipping_destinations: 'Керування напрямками доставки'
-    manage_shipping_methods: 'Керувати методами доставки'
-    manage_shipping_methods_for_your_store: 'Управління методами доставки для вашого магазину'
-    manage_taxons: 'Керування таксонами'
-    manage_tax_categories: 'Управління категоріями оподаткування'
-    manage_tax_rates: 'Керувати податковими ставками'
-    manage_taxation_of_your_products: 'Керування категоріями ваших товарів'
-    manage_users: 'Керування користувачами'
-    manage_users_able_to_access_administration_panel: "Управління користувачами, в яких є можливість доступу до панелі адміністрування"
-    manage_variants: 'Керувати варіантами'
-    manage_your_customers: 'Керування вашими Клієнтами'
-    manage_your_personal_information_and_preferences: 'Керуйте вашими персональними даними та налаштуваннями'
-    manage_your_product_catalog: 'Керуйте вашим каталогом товарів'
-    manage_your_saved_addresses: 'Керування вашими збереженими адресами'
-    manage_zones: 'Керувати зонами'
+    manage: 'Управление'
+    manage_adjustments: 'Управление настройками'
+    manage_admin_users: 'Управление администраторами'
+    manage_attributes: 'Управление атрибутами'
+    manage_association_types_of_your_products: 'Управление типами связей ваших товаров'
+    manage_attributes_of_your_products: 'Управление атрибутами ваших товаров'
+    manage_categorization_of_your_products: 'Управление категориями продуктов'
+    manage_channels: 'Управление каналами'
+    manage_configuration_options_of_your_products: 'Управление параметрами конфигурации вашей продукции'
+    manage_countries: 'Управление странами'
+    manage_coupons: 'Управление купонами'
+    manage_currencies_available_in_the_store: 'Управление валютами, что доступны в магазине'
+    manage_customers: 'Управление клиентами'
+    manage_customer_groups: 'Управление группами покупателей'
+    manage_discounts_and_promotional_campaigns: 'Управление скидками и рекламными кампаниями'
+    manage_emails: 'Управление адресами электронной почты'
+    manage_exchange_rates: 'Управление валютными курсами'
+    manage_geographical_zones: 'Управление географическими зонами'
+    manage_inventory: 'Управление инвентаризацией'
+    manage_languages_available_in_the_store: 'Управление языками, доступными в магазине'
+    manage_metadata: 'Управление метаданными'
+    manage_options: 'Настройка опций'
+    manage_orders: 'Управление заказами'
+    manage_payment_methods_available_to_your_customers: 'Управление способами оплаты, доступными для ваших клиентов'
+    manage_payments: 'Платежи'
+    manage_products: 'Редактировать товары'
+    manage_promotions: 'Управление рекламными акциями'
+    manage_reviews: 'Управление отзывами'
+    manage_reviews_of_your_products: 'Управление отзывами о ваших товарах'
+    manage_shipments: 'Управление посылками'
+    manage_shipping_categories: 'Редактировать категорию доставки'
+    manage_shipping_categories_for_your_store: 'Управление категориями доставки для вашего магазина'
+    manage_shipping_destinations: 'Управление направлениями доставки'
+    manage_shipping_methods: 'Редактировать способы доставки'
+    manage_shipping_methods_for_your_store: 'Управление методами доставки для вашего магазина'
+    manage_taxons: 'Управление таксонами'
+    manage_tax_categories: 'Редактировать налоговые категории'
+    manage_tax_rates: 'Налоговые ставки'
+    manage_taxation_of_your_products: 'Управление категориями товаров'
+    manage_users: 'Управление пользователями'
+    manage_users_able_to_access_administration_panel: "Управление пользователями, которые имеют доступ к панели администрирования"
+    manage_variants: 'Управление вариантами'
+    manage_your_customers: 'Управление клиентами'
+    manage_your_personal_information_and_preferences: 'Управление вашей личной информацией и настройками'
+    manage_your_product_catalog: 'Управление каталогом товаров'
+    manage_your_saved_addresses: 'Управление вашими сохраненными адресами'
+    manage_zones: 'Редактирование зон'
   marketing: 'Маркетинг'
-  media: 'Файли зображень'
-  members: 'Учасники'
-  menu_nodes: 'Елементи меню'
-  menus: 'Меню'
-  message: 'Повідомлення'
-  metadata_index: 'Метадані'
-  method: 'Метод'
-  modified: 'Змінено'
-  most_expensive_first: 'Найдорожчий перший'
-  move_down: 'Перемістити нижче'
-  move_up: 'Перемістити вище'
-  my_account: 'Мій обліковий запис'
+  media: 'Медия'
+  members: 'Области'
+  menu_nodes: 'Узлы меню'
+  menus: 'Элементы меню'
+  message: 'Сообщение'
+  metadata_index: 'Метаданные'
+  method: 'Способ'
+  modified: 'Изменен'
+  most_expensive_first: 'Сначала самые дорогие'
+  move_down: 'Переместить ниже'
+  move_up: 'Переместить выше'
+  my_account: 'Моя учетная запись'
   n_a: 'Н/Д'
-  name: 'Назва'
-  need_assistance: 'Потрібна допомога?'
+  name: 'Название'
+  need_assistance: 'Нужна помощь?'
   new:
-    new: 'Новий'
-    new_admin_user: 'Новий адміністратор'
-    new_channel: 'Новий канал'
-    new_comment_posted_on_order: 'Новий коментар, доданий до замовлення'
-    new_country: 'Нова країна'
-    new_coupon: 'Новий купон'
-    new_currency: 'Нова валюта'
-    new_customer: 'Новий клієнт'
-    new_customers: 'Нові клієнти'
-    new_exchange_rate: 'Новий курс обміну'
-    new_locale: 'Нова локаль'
-    new_order: 'Нове замовлення'
-    new_orders: 'Нові замовлення'
-    new_payment: 'Нова оплата'
-    new_payment_method: 'Новий метод оплати'
-    new_permission: 'Новий дозвіл'
-    new_product: 'Новий товар'
-    new_product_association_type: 'Новий тип асоціювання товару'
-    new_product_attribute: 'Новий атрибут товару'
-    new_product_option: 'Нова опція товару'
-    new_product_variant: 'Новий варіант товару'
-    new_promotion: 'Нова акція'
-    new_promotion_coupon: 'Новий промо-купон'
-    new_review: 'Новий відгук'
-    new_role: 'Нова роль'
-    new_shipping_category: 'Нова категорія доставки'
-    new_shipping_method: 'Новий спосіб доставки'
-    new_tax_category: 'Нова категорія оподаткування'
-    new_tax_rate: 'Нова ставка податку'
-    new_taxon: 'Новий таксон'
-    new_user: 'Новий користувач'
-    new_zone: 'Нова зона'
-  newest_products: 'Найновіші товари'
-  newest_first: 'Спочатку найновіші'
-  next: 'Наступний'
+    new: 'Новый'
+    new_admin_user: 'Новый администратор'
+    new_channel: 'Новый канал'
+    new_comment_posted_on_order: 'Новый комментарий, добавленный к заказу'
+    new_country: 'Добавить страну'
+    new_coupon: 'Новый купон'
+    new_currency: 'Новая валюта'
+    new_customer: 'Новый клиент'
+    new_customers: 'Новые клиенты'
+    new_exchange_rate: 'Новый обменный курс'
+    new_locale: 'Новый язык'
+    new_order: 'Новый заказ'
+    new_orders: 'Новые заказы'
+    new_payment: 'Новый платеж'
+    new_payment_method: 'Новый метод оплаты'
+    new_permission: 'Новая привилегия'
+    new_product: 'Добавить товар'
+    new_product_association_type: 'Новый тип связи товара'
+    new_product_attribute: 'Новый атрибут товара'
+    new_product_option: 'Новая опция продукта'
+    new_product_variant: 'Новый вариант продукта'
+    new_promotion: 'Новая акция'
+    new_promotion_coupon: 'Новый акционный купон'
+    new_review: 'Новый отзыв'
+    new_role: 'Новая роль'
+    new_shipping_category: 'Новая категория доставки'
+    new_shipping_method: 'Новый способ доставки'
+    new_tax_category: 'Создать налоговую категорию'
+    new_tax_rate: 'Создание налоговой ставки'
+    new_taxon: 'Новая категория'
+    new_user: 'Новый пользователь'
+    new_zone: 'Новая зона'
+  newest_products: 'Новейшие продукты'
+  newest_first: 'Сначала новые'
+  next: 'Следующее'
   no:
-    no_label: 'Ні'
-    no_addresses: 'Немає жодної адреси для показу'
-    no_association_types_to_display: 'Немає налаштованих типів асоціювання'
-    no_comment: 'Без коментаря'
-    no_default_billing_address: 'Немає платіжної адреси за замовчуванням'
-    no_default_shipping_address: 'Немає адреси доставки за замовчуванням'
-    no_description: 'Немає опису'
-    no_new_notifications: 'Немає нових повідомлень'
-    no_payment_methods_available: 'Наразі немає способів оплати, доступних для вашого замовлення'
-    no_pricing_configuration: 'Нема налаштованого ціноутворення'
-    no_promotion: 'Промо-код не застосовано'
-    no_requirement: 'Без вимог'
-    no_results: 'Без результатів'
-    no_results_to_display: 'Немає результатів для показу'
-    no_shipping_category: 'Без категорії доставки'
-    no_shipping_charges: 'Націнки за доставку не застосовано'
-    no_shipping_methods_available: 'Наразі немає способів доставки, доступних для вашої адреси доставки'
-    no_short_description: '<i>Без короткого опису</i>'
-    no_sku: 'Без SKU'
-    no_tax_category: 'Без категорії оподаткування'
-    no_taxes: 'Податки не застосовані'
-    no_theme: 'Без теми'
-    not_available_in_your_country: 'Не доступно у вашій країні'
-    not_contains: 'Не містить'
-    not_empty: 'Непорожнє'
-    not_equal: 'Не дорівнює'
-    not_in: 'Нема серед'
-    not_verified: 'Не перевірено'
-    not_tracked: 'Без відстеження'
-  notes: 'Примітки'
-  notify_customer: 'Сповістити клієнта'
+    no_label: 'Нет'
+    no_addresses: 'Нету адресов для отображения'
+    no_association_types_to_display: 'Не определено ни одной связи'
+    no_comment: 'Комментариев нет'
+    no_default_billing_address: 'Адрес оплаты не по умолчанию'
+    no_default_shipping_address: 'Адрес доставки не по умолчанию'
+    no_description: 'Нет описания'
+    no_new_notifications: 'Нет новых уведомлений'
+    no_payment_methods_available: 'В настоящее время не существует методов оплаты для вашего заказа'
+    no_pricing_configuration: 'Нет настроенных цен'
+    no_promotion: 'Без скидки'
+    no_requirement: 'Нет требований'
+    no_results: 'Нет результатов'
+    no_results_to_display: 'Нет результатов для отображения'
+    no_shipping_category: 'Нет категории доставки'
+    no_shipping_charges: 'Без оплаты за пересылку'
+    no_shipping_methods_available: 'В настоящее время не существует способов доставки для вашего адреса'
+    no_short_description: '<i>Нет краткого описания</i>'
+    no_sku: '<i>Без ИПТ</i>'
+    no_tax_category: 'Нет налоговой категории'
+    no_taxes: 'Без НДС'
+    no_theme: 'Нет темы'
+    not_available_in_your_country: 'Недоступно в вашей стране'
+    not_contains: 'Не содержит'
+    not_empty: 'Не пустой'
+    not_equal: 'Не равно'
+    not_in: 'Не в списке'
+    not_verified: 'Не подтверждено'
+    not_tracked: 'Не отслеживается'
+  notes: 'Примечания'
+  notify_customer: 'Уведомление клиента'
   number: 'Номер'
-  number_of_orders: 'Кількість замовлень'
-  oauth_provider: 'OAuth-постачальник'
-  oldest_first: 'Спочатку найстаріші'
-  on_hold: 'Призупинено'
-  options: 'Опції'
-  options_matching: 'Параметри відповідності'
-  or: 'або'
+  number_of_orders: 'Количество заказов'
+  oauth_provider: 'OAuth провайдер'
+  oldest_first: 'Сначала старые'
+  on_hold: 'В ожидании'
+  options: 'Список опций'
+  options_matching: 'Параметры сопоставления'
+  or: 'или'
   order:
-    order: 'Замовлення'
-    order_comment: 'Коментар до замовлення'
-    order_manager_comment: 'Коментар менеджера до замовлення'
-    order_comments: 'Коментарі до замовлення'
-    order_confirmation_name: 'Підтвердження замовлення'
-    order_details: 'Деталі замовлення'
-    order_history: 'Історія замовлень'
-    order_item_product: 'Елемент'
-    order_state: 'Стан замовлення'
-    order_summary: 'Підсумок замовлення'
-    order_total: 'Підсумок замовлення'
-    base_currency_order_total: 'Сума замовлення в базовій валюті'
-    order_value: 'Вартість замовлення'
-    ordered: 'Замовлено'
-    orders: 'Замовлення'
-    orders_statistics: 'Статистика замовлень'
-  original_price: 'Початкова ціна'
-  out_of_stock: 'Немає в наявності'
-  overall_this_customer_has_placed_orders_across_all_channels.choice: '{0}|{1}Цей клієнт розмістив одне замовлення|]1,Inf]Загалом, цей клієнт розмістив %count% замовлень на всіх каналах'
-  overview_of_your_store: 'Огляд вашої крамниці'
-  page: 'Сторінка'
-  pages: 'Сторінки'
-  paid: 'Оплачено'
-  parent: 'Батьківський об''єкт'
-  partially_paid: 'Частково оплачено'
-  partially_shipped: 'Частково доставлено'
+    order: 'заказ'
+    order_comment: 'Комментарий к заказу'
+    order_manager_comment: 'Комментарий менеджера к заказу'
+    order_comments: 'Комментарии к заказу'
+    order_confirmation_name: 'Подтверждение заказа'
+    order_details: 'Детали заказа'
+    order_history: 'История заказов'
+    order_item_product: 'Товар'
+    order_state: 'Статус заказа'
+    order_summary: 'Ваш заказ'
+    order_total: 'Итого'
+    base_currency_order_total: 'Сумма заказа в основной валюте'
+    order_value: 'Стоимость заказа'
+    ordered: 'Заказан'
+    orders: 'Заказы'
+    orders_statistics: 'Статистика заказов'
+  original_price: 'Исходная цена'
+  old_price: 'Старая цена'
+  out_of_stock: 'Нет на складе'
+  overall_this_customer_has_placed_orders_across_all_channels.choice: '{0}|{1}Этот клиент разместил один заказ |] 1, Inf] в целом, этот клиент разместил %count% заказы(-ов) по всем каналам'
+  overview_of_your_store: 'Обзор вашего магазина'
+  page: 'Страница'
+  pages: 'Страницы'
+  paid: 'Оплачен'
+  parent: 'Родитель'
+  partially_paid: 'Оплачено частично'
+  partially_shipped: 'Частично отгружено'
   payment:
     payment: 'Оплата'
-    payment_details: 'Деталі платежу'
-    payment_method: 'Спосіб оплати'
-    payment_methods: 'Методи оплати'
-    payment_mode: 'Форма оплати'
-    payment_ready_to_pay: 'Тепер ви можете здійснити вашу оплату'
-    payment_state: 'Статус платежу'
-    payments: 'Платежі'
-    pay: 'Сплатити'
-    pay_again: 'Клацніть сплатити, щоб спробувати знов'
-  pending: 'В очікуванні'
-  per_customer_usage_limit: 'Ліміт використання на клієнта'
-  percent: 'Відсоток'
-  permissions: 'Дозволи'
-  personal_information: 'Особисті відомості'
-  phone: 'Номер телефону'
-  phone_number: '*Номер телефону'
-  place_order: 'Розмістити замовлення'
-  placed_an_order: 'Ви успішно розмістили замовлення.'
-  placed_at: 'Розміщено'
-  please_sign_in: 'Будь ласка, увійдіть'
-  postcode: 'Поштовий індекс'
-  position: 'Позиція'
-  powered_by: 'Засновано на технології'
-  preferences: 'Налаштування'
-  presentation: 'Презентація'
-  previous: 'Попередній'
-  price: 'Ціна'
-  pricing: 'Ціноутворення'
-  priority: 'Пріоритет'
-  privacy_policy: 'Політика конфіденційності'
-  process_your_orders: 'Обробити замовлення'
-  processing: 'В процесі'
+    payment_details: 'Детали платежа'
+    payment_method: 'Метод оплаты'
+    payment_methods: 'Способы оплаты'
+    payment_mode: 'Способ оплаты'
+    payment_ready_to_pay: 'Теперь вы можете сделать платеж'
+    payment_state: 'Статус платежа'
+    payments: 'Платежи'
+    pay: 'Оплатить'
+    pay_again: 'Нажмите заплатить, чтобы повторить попытку'
+  pending: 'Ожидает'
+  per_customer_usage_limit: 'Клиентские ограничения'
+  percent: 'Процент'
+  permissions: 'Права доступа'
+  personal_information: 'Персональные данные'
+  phone: 'Контактный телефон'
+  phone_number: '*Контактный телефон'
+  place_order: 'Заказать'
+  placed_an_order: 'Вы успешно оформили заказ.'
+  placed_at: 'Создан'
+  please_sign_in: 'Пожалуйста, войдите'
+  postcode: 'Индекс'
+  position: 'Позиция'
+  powered_by: 'Разработано в'
+  preferences: 'Настройки'
+  presentation: 'Публичное название'
+  previous: 'Предыдущее'
+  price: 'Цена'
+  pricing: 'ценообразование'
+  priority: 'Приоритет'
+  privacy_policy: 'Политика конфидециальности'
+  process_your_orders: 'Обработать ваши заказы'
+  processing: 'Обрабатывается'
   product:
+    attribute: 'Атрибут'
     product: 'Товар'
-    product_association_index: 'Асоціювання'
-    product_association_type_index: 'Тип асоціювання'
-    product_association_types: 'Типи асоціювання товарів'
-    product_associations: 'Асоціації товарів'
-    product_attributes: 'Атрибути товарів'
-    product_details_viewing_product_product: 'Деталі продукту <small>Перегляд продукту "<strong>%product%</strong>"</small>'
-    product_options: 'Опції товарів'
-    product_review: 'Відгук про товари'
-    product_reviews: 'Відгуки про товари'
-    product_taxon: 'Таксон продукту'
-    product_variant: 'Варіант товара'
-    product_variants: 'Варіанти товара'
-    products: 'Товари'
-    products_categorized_as_name: 'Товар категоризовано як "%name%"'
-    products_categorized_under_taxon_taxon: 'Товари <small>Класифіковані таксоном "%taxon%"</small>'
-    products_index_of_all_products_in_your_store: 'Товари <small>Індекс усіх товарів у вашому магазині</small>'
-  profile: 'Профіль'
+    product_association_index: 'Взаимосвязи'
+    product_association_type_index: 'Типы взаимосвязи'
+    product_association_types: 'Типы взаимосвязей продуктов'
+    product_associations: 'Ассоциации продуктов'
+    product_attributes: 'Характеристики товара'
+    product_details_viewing_product_product: 'Детали товара <small>Просмотр товара "<strong>%product%</strong>"</small>'
+    product_options: 'Опции товара'
+    product_review: 'Отзыв о товаре'
+    product_reviews: 'Отзывы о товаре'
+    product_taxon: 'Категория товара'
+    product_variant: 'Вариант товара'
+    product_variants: 'Варианты товара'
+    products: 'Товары'
+    products_categorized_as_name: 'Товары категории «%name%»'
+    products_categorized_under_taxon_taxon: 'Товары <small>категории "%taxon%"</small>'
+    products_index_of_all_products_in_your_store: 'Товары <small>Список всех товаров в вашем магазине</small>'
+  profile: 'Профиль'
   promotion:
-    promotion_coefficient: 'Коефіцієнт'
-    promotion_configuration: 'Налаштування акції'
-    promotion_coupons: 'Купони'
-    promotion_details: 'Подробиці акції'
-    promotion_discount: 'Промо-знижка'
-    promotion_information: 'Інформація щодо акції'
-    promotion_total: 'Загальна сума промо-знижки'
-    promotions: 'Промоції'
-  properties: 'Властивості'
-  province: 'Регіон'
-  provinces: 'Регіони'
-  purchased_from: 'Куплено'
-  qty: 'К-сть'
-  qty_max: 'Максимальна к-сть'
-  qty_min: 'Мінімальна к-сть'
-  quantity: 'Кількість'
+    promotion_coefficient: 'Коэффициент'
+    promotion_configuration: 'Конфигурация продвижения'
+    promotion_coupons: 'Купоны'
+    promotion_details: 'Детали акции'
+    promotion_discount: 'Продвижение скидки'
+    promotion_information: 'Информация по продвижению'
+    promotion_total: 'Сумма скидки'
+    promotions: 'Рекламные акции'
+  properties: 'Настройки'
+  province: 'Область'
+  provinces: 'Области'
+  purchased_from: 'Приобретенные'
+  qty: 'Кол-во'
+  qty_max: 'Макс. кол-во'
+  qty_min: 'Мин. кол-во'
+  quantity: 'Количество'
   rating: 'Рейтинг'
-  ratio: 'Рейтинг'
-  ready: 'Готове'
-  recent_customers: 'Останні відвідувачі'
-  recent_orders: 'Останні замовлення'
-  recent_users: 'Недавні користувачі'
+  ratio: 'По рейтингу'
+  ready: 'Готов'
+  recent_customers: 'Последние клиенты'
+  recent_orders: 'Недавние заказы'
+  recent_users: 'Последние пользователи'
   records: 'Записи'
-  refund: 'Повернення коштів'
-  refunded: 'Відшкодовано'
-  reject: 'Відхилити'
-  rejected: 'Відхилений'
-  release_inventory: 'Інвентаризація випуску'
-  remove_attribute: 'Видалити атрибут'
-  report_details: 'Повідомити про подробиці'
-  reports: 'Звіти'
-  reserved: 'Зарезервовано'
-  reset: 'Скинути'
-  restore: 'Відновити'
-  retail_price: 'Роздрібна ціна'
-  return: 'Повернення'
-  returned: 'Повернене'
-  returns_policy: 'Умови обміну та повернення'
-  revert: 'Повернути'
-  review_and_confirm_your_order: 'Перегляньте та підтвердьте ваше замовлення'
-  review_details: 'Перегляньте деталі'
-  reviews: 'Відгуки'
-  roles: 'Ролі'
+  refund: 'Возврат'
+  refunded: 'Возвращено'
+  reject: 'Отменить'
+  rejected: 'Отклонено'
+  release_inventory: 'Инвентаризация выпуска'
+  remove_attribute: 'Удалить атрибут'
+  report_details: 'Сведения об отчете'
+  reports: 'Отчеты'
+  reserved: 'Зарезервировано'
+  reset: 'Сбросить'
+  restore: 'Восстановить'
+  retail_price: 'Розничная цена'
+  return: 'Возврат'
+  returned: 'Возвращено'
+  returns_policy: 'Условия возврата товара'
+  revert: 'Вернуть'
+  review_and_confirm_your_order: 'Просмотрите и подтвердите свой заказ'
+  review_details: 'Просмотрите сведения о'
+  reviews: 'Отзывы'
+  roles: 'Роли'
   rules: 'Правила'
-  sales: 'Продажі'
-  sales_this_month: 'Продажі'
+  sales_this_month: 'Продажи'
   save:
-    save: 'Зберегти'
-    save_and_return_to_the_list: 'Зберегти і повернутися до списку'
-    save_and_add_new: 'Зберегти і додати новий'
-    save_changes: 'Зберегти зміни'
-    save_positions: 'Зберегти позиції'
-  scope: 'Покриття'
-  search: 'Пошук'
-  search_products: 'Пошук товарів'
-  security_settings: 'Налаштування безпеки'
-  select_address_from_book: 'Виберіть адресу з моєї книги'
-  select_products: 'Обрати товари'
-  select_taxon: 'Виберіть таксон'
-  send: 'Надіслати'
-  server_has_encountered_some_errors: 'Сервер виявив деякі помилки.'
-  set_a_new_password_for_your_account: 'Встановити новий пароль для вашого облікового запису'
-  set_as_default: 'Встановити як типове'
-  set_as_default_billing_address: 'Встановити як платіжну адресу за замовчуванням'
-  set_as_default_shipping_address: 'Встановити, як адресу доставки за замовчуванням'
+    save: 'Сохранить'
+    save_and_return_to_the_list: 'Сохранить и вернуться к списку'
+    save_and_add_new: 'Сохранить и добавить новый'
+    save_changes: 'Сохранить изменения'
+    save_positions: 'Сохранить позиции'
+  scope: 'Область'
+  search: 'Поиск'
+  search_products: 'Поиск товаров'
+  security_settings: 'Настройки безопасности'
+  select_address_from_book: 'Выберите адрес из адресной книги'
+  select_products: 'Выберите товар'
+  select_taxon: 'Выберите категорию'
+  send: 'Послать'
+  server_has_encountered_some_errors: 'Сервер обнаружил некоторые ошибки.'
+  set_a_new_password_for_your_account: 'Установить новый пароль для вашей учетной записи'
+  set_as_default: 'Установить по умолчанию'
+  set_as_default_billing_address: 'Сделать адресом для выставления счёта по-умолчанию'
+  set_as_default_shipping_address: 'Сделать адресом доставки по-умолчанию'
   ship:
-    ship: 'Доставити'
-    ship_to: 'Відправити до'
+    ship: 'Доставка'
+    ship_to: 'Доставить в'
     shipment: 'Доставка'
-    shipment_confirmation_name: 'Підтвердження відправки товару'
-    shipment_details: 'Деталі відправки'
-    shipment_mode: 'Спосіб доставки'
+    shipment_confirmation_name: 'Подтверждение посылки'
+    shipment_details: 'Детали посылки'
+    shipment_mode: 'Способ доставки'
     shipment_state: 'Статус доставки'
-    shipments: 'Відправки'
-    shipped: 'Доставлене'
+    shipments: 'Посылки'
+    shipped: 'Доставлено'
   shipping:
-    shipping: 'Спосіб доставки'
-    shipping_address: 'Адреса доставки'
-    shipping_and_payment_methods: 'Способи доставки і оплати'
-    shipping_categories: 'Категорії доставки'
-    shipping_category: 'Категорія доставки'
-    shipping_address_changes_history: 'Історія змін адреси доставки'
-    shipping_charges: 'Націнки за доставку'
-    shipping_method: 'Метод доставки'
-    shipping_method_details: 'Деталі способу доставки'
-    shipping_methods: 'Методи доставки'
+    shipping: 'Способ доставки'
+    shipping_address: 'Адрес доставки'
+    shipping_and_payment_methods: 'Способы доставки и оплаты'
+    shipping_categories: 'Категории доставки'
+    shipping_category: 'Категория доставки'
+    shipping_address_changes_history: 'История изменений адреса доставки'
+    shipping_charges: 'Затраты на доставку'
+    shipping_method: 'Способ доставки'
+    shipping_method_details: 'Детали способа доставки'
+    shipping_methods: 'Способы доставки'
     shipping_state: 'Статус доставки'
-    shipping_total: 'Всього за доставку'
-  shop_by: 'Купуйте по'
-  shop_by_brand: 'Магазин по марці'
+    shipping_total: 'Стоимость доставки'
+  shop_by: 'Каталог товаров'
+  shop_by_brand: 'Магазин по марке'
   show:
-    show: 'Показати'
-    show_all: 'Показати все'
-    show_deleted: 'Показати видалені'
-    show_in_store: 'Показати в магазині'
-    show_metadata: 'Показати метадані'
-    show_order_details: 'Показати деталі по замовленню'
-    show_orders: 'Показати замовлення'
+    show: 'Просмотр'
+    show_all: 'Показать все'
+    show_deleted: 'Показать удаленные'
+    show_in_store: 'Показать в магазине'
+    show_metadata: 'Показать метаданные'
+    show_order_details: 'Показать сведения о заказе'
+    show_orders: 'Показать заказы'
   sign_in:
-    sign_in: 'Увійти'
-    sign_in_here: 'Увійдіть тут'
-    sign_in_to_the_store_or_create_new_account: 'Увійдіть до крамниці <small>або створіть нову обліковку</small>'
-  sign_out: 'Вийти'
-  simple_blocks: 'Прості блоки'
-  simple_product: 'Звичайний товар'
+    sign_in: 'Войти'
+    sign_in_here: 'Вход здесь'
+    sign_in_to_the_store_or_create_new_account: 'Войти <small>или зарегистрироваться</small>'
+  sign_out: 'Выйти'
+  simple_blocks: 'Простые блок'
+  simple_product: 'Простой товар'
   sku: 'Артикул'
   slideshow: 'Слайд-шоу'
   slideshow_blocks: 'Слайд-шоу блоки'
-  sort: 'Сортування'
-  sort_by_date: 'Сортування за датою'
-  source_currency: 'Початкова валюта'
-  start_date: 'Дата початку'
-  starts_at: 'Початок дії'
-  starts_with: 'Розпочати з'
-  state: 'Стан'
-  status: 'Стан'
-  street: 'Вулиця'
-  string_blocks: 'Текстові блоки'
-  subject: 'Тема повідомлення'
-  subscribed_to_newsletter: 'Підписатися на розсилку новин'
-  subtotal: 'Попередній підсумок'
-  success: 'Успішно'
+  sort: 'Сортировка'
+  sort_by_date: 'Сортировка по дате'
+  source_currency: 'Исходная валюта'
+  start_date: 'Дата начала'
+  starts_at: 'Начало'
+  starts_with: 'Начинается с'
+  state: 'Статус'
+  status: 'Статус'
+  street: 'Улица'
+  string_blocks: 'Текстовые блоки'
+  subject: 'Тема сообщения'
+  subscribed_to_newsletter: 'Подписаться на рассылку новостей'
+  subtotal: 'Промежуточный итог'
+  success: 'Успешно'
   summary: 'Резюме'
-  summary_of_your_order: 'Висновок замовлення'
-  support: 'Служба підтримки'
-  target_currency: 'Цільова валюта'
+  summary_of_your_order: 'Итого по заказу'
+  support: 'Поддержка'
+  target_currency: 'Целевая валюта'
   tax:
-    tax: 'Податок'
-    tax_categories: 'Категорії оподаткування'
-    tax_category: 'Категорія податку'
-    tax_rate_details: 'Подробиці про податкову ставку'
-    tax_rates: 'Податкові ставки'
-    tax_total: 'Всього податок'
-    taxation_categories: 'Категорії оподаткування'
-    taxation_settings: 'Налаштування оподаткування'
-    taxes: 'Податки'
-  taxonomy: 'Таксономія'
-  taxons: 'Таксони'
-  terms_and_conditions: 'Правила та умови'
+    tax: 'Налог'
+    tax_categories: 'Список налоговых категорий'
+    tax_category: 'Категория налогов'
+    tax_rate_details: 'Детали налоговой ставки'
+    tax_rates: 'Налоговые ставки'
+    tax_total: 'Сумма налогов'
+    taxation_categories: 'Налоговые категории'
+    taxation_settings: 'Настройки налогооблажения'
+    taxes: 'Налоги'
+  taxonomy: 'Тип товара'
+  taxons: 'Категории'
+  terms_and_conditions: 'Условия использования'
   text: 'Текст'
-  textarea: 'Текстове поле'
+  textarea: 'Текстовая область'
   thank_you:
-    thank_you: 'Дякуємо Вам!'
-    thank_you_for_your_order: 'Дякуємо за ваше замовлення'
-  theme: 'Тема'
-  the_instructions_below_will_be_displayed_to_the_customer: 'Інструкції нижче будуть відображатись для клієнта'
-  the_page_you_are_looking_for_does_not_exist: 'Сторінка, яку ви шукаєте, не існує.'
+    thank_you: 'Спасибо!'
+    thank_you_for_your_order: 'Спасибо за Ваш заказ'
+  theme: 'Тема оформления'
+  the_instructions_below_will_be_displayed_to_the_customer: 'Инструкции будут отображаться для клиента'
+  the_page_you_are_looking_for_does_not_exist: 'Страница, которую вы ищете, не существует.'
   there_are_no:
-    there_are_no_attributes_configured: 'Немає налаштованих атрибутів'
-    there_are_no_blocks_to_display: 'Немає блоків для відображення'
-    there_are_no_channels_configured: 'Немає налаштованих каналів'
-    there_are_no_countries_configured: 'Жодна країна не налаштована'
-    there_are_no_coupon_to_display: 'Немає купонів для відображення'
-    there_are_no_currencies_to_display: 'Немає валюти для відображення'
-    there_are_no_customers_to_display: 'Немає клієнтів для відображення'
-    there_are_no_emails_configured: 'Немає підключених емейлів'
-    there_are_no_images_for_this_product: 'Немає зображень для цього товару'
-    there_are_no_inventory_items_to_display: 'Немає товарів для відображення'
-    there_are_no_inventory_units_to_display: 'Відсутні предмети для відображення'
-    there_are_no_locales_configured: 'Немає налаштованих мов'
-    there_are_no_logged_events_to_display: 'Немає зареєстрованих подій для відображення'
-    there_are_no_menu_nodes_to_display: 'Немає елементів меню для відображення'
-    there_are_no_menus_to_display: 'Немає меню для відображення'
-    there_are_no_options_configured: 'Немає налаштованих опцій'
-    there_are_no_options_for_this_product: 'Немає опцій для цього товару'
-    there_are_no_orders_for_this_customer_to_display: 'Немає замовлень цього користувача для відображення'
-    there_are_no_pages_to_display: 'Немає сторінок для відображення'
-    there_are_no_payment_methods_configured: 'Не налаштовано способи оплати'
-    there_are_no_payments_configured: 'Не налаштовані способи оплати'
-    there_are_no_permissions_defined: 'Не визначено дозволи'
-    there_are_no_products_to_display: 'Немає товарів для відображення'
-    there_are_no_promotions_configured: 'Немає налаштованих акцій'
-    there_are_no_reports_created: 'Немає створених звітів'
-    there_are_no_reviews: 'Немає відгуків'
-    there_are_no_roles_defined: 'Ролі не визначені'
-    there_are_no_shipments_to_display: 'Немає відправок для показу'
-    there_are_no_shipping_categories_configured: 'Немає сконфігурованих категорій доставки'
-    there_are_no_shipping_methods_configured: 'Немає налаштованих методів доставки'
-    there_are_no_tax_categories_configured: 'Немає сконфігурованих категорій оподаткування'
-    there_are_no_tax_rates_configured: 'Немає налаштованих податкових ставок'
-    there_are_no_taxons_for_this_product: 'Немає таксонів для цього товару'
-    there_are_no_taxons_to_display: 'Немає таксонів для показу'
-    there_are_no_users_to_display: 'Немає користувачів для відображення'
-    there_are_no_variants_to_display: 'Немає варіантів для відображення'
-    there_are_no_zones_configured: 'Немає налаштованих зон'
-  there_is_no_main_taxon_for_this_product: 'Для цього товару немає основного таксону'
-  this_customer_does_not_have_a_default_address: 'Цей клієнт не має адреси за замовчуванням'
-  this_customer_has_not_completed_any_orders_yet: 'Цей користувач ще не здійснив жодного замовлення'
-  this_months_statistics: 'Статистика цього місяця'
-  this_product_has_no_attributes_defined: 'Цей продукт не має визначених атрибутів'
-  title: 'Заголовок'
+    there_are_no_attributes_configured: 'Нет настроенных атрибутов'
+    there_are_no_blocks_to_display: 'Нет блоков для отображения'
+    there_are_no_channels_configured: 'Нет настроенных каналов'
+    there_are_no_countries_configured: 'Ни одна страна не была настроена'
+    there_are_no_coupon_to_display: 'Нет купонов для отображения'
+    there_are_no_currencies_to_display: 'Нет валюты для отображения'
+    there_are_no_customers_to_display: 'Нету клиентов для отображения'
+    there_are_no_emails_configured: 'Нет подключенных емейлов'
+    there_are_no_images_for_this_product: 'Нет изображений для данного товара'
+    there_are_no_inventory_items_to_display: 'Нет товаров для отображения'
+    there_are_no_inventory_units_to_display: 'Отсутствуют предметы для отображения'
+    there_are_no_locales_configured: 'Нет настроенных языков'
+    there_are_no_logged_events_to_display: 'Нет зарегистрированных событий для отображения'
+    there_are_no_menu_nodes_to_display: 'Нет элементов меню для отображения'
+    there_are_no_menus_to_display: 'Нет меню для отображения'
+    there_are_no_options_configured: 'Нету сконфигурированных опций'
+    there_are_no_options_for_this_product: 'Нет опций для данного товара'
+    there_are_no_orders_for_this_customer_to_display: 'Нет заказов этого пользователя для отображения'
+    there_are_no_pages_to_display: 'Нет страниц для отображения'
+    there_are_no_payment_methods_configured: 'Способы оплаты не настроены'
+    there_are_no_payments_configured: 'Способы оплаты не настроены'
+    there_are_no_permissions_defined: 'Не определено привилегий'
+    there_are_no_products_to_display: 'Нет товаров для отображения'
+    there_are_no_promotions_configured: 'Нет настроенных промо-акций'
+    there_are_no_reports_created: 'Нет созданных отчетов'
+    there_are_no_reviews: 'Нет отзывов'
+    there_are_no_roles_defined: 'Роли не определены'
+    there_are_no_shipments_to_display: 'Нет отправлений для отображения'
+    there_are_no_shipping_categories_configured: 'Нет созданных категорий доставки'
+    there_are_no_shipping_methods_configured: 'Нет созданных способов доставки'
+    there_are_no_tax_categories_configured: 'Нет налоговых категорий для отображения'
+    there_are_no_tax_rates_configured: 'Нет налоговых ставок для отображения'
+    there_are_no_taxons_for_this_product: 'У этого товара не заданы категории'
+    there_are_no_taxons_to_display: 'Нет категорий для отображения'
+    there_are_no_users_to_display: 'Нет пользователей для отображения'
+    there_are_no_variants_to_display: 'Нет вариантов для отображения'
+    there_are_no_zones_configured: 'Нет настроенных зон'
+  there_is_no_main_taxon_for_this_product: 'Нет основных таксон для этого продукта'
+  this_customer_does_not_have_a_default_address: 'У этого клиента не указан адрес по умолчанию'
+  this_customer_has_not_completed_any_orders_yet: 'Этот пользователь еще не совершил ни одного заказа'
+  this_months_statistics: 'Статистика за этот месяц'
+  this_product_has_no_attributes_defined: 'Этот продукт не имеет определенных атрибутов'
+  title: 'Название'
   to: 'До'
-  toggle_sidebar: 'Бічна панель'
+  toggle_sidebar: 'Боковая панель'
   topic: 'Тема'
   total:
-    total: 'Усього'
-    total_in_base_currency: 'Всього в базовій валюті'
-    total_orders: 'Всього замовлень'
-    total_qty: 'Загальна кількість'
-    total_records: 'Загалом записів'
-    total_registrations: 'Всього реєстрацій'
-    total_value_of_orders: 'Загальна вартість замовлень'
-  tracking_code: 'Код відстеження'
-  tracking_number: 'Трекінг-номер'
-  translations: 'Переклади'
+    total: 'Итого'
+    total_in_base_currency: 'Всего в основной валюте'
+    total_orders: 'Заказов в этом месяце'
+    total_qty: 'Общее количество'
+    total_records: 'Всего записей'
+    total_registrations: 'Регистраций в этом месяце'
+    total_value_of_orders: 'Общая стоимость заказов'
+  tracking_code: 'Код для отслеживания'
+  tracking_number: 'Номер для отслеживания'
+  translations: '﻿Переводы'
   type: 'Тип'
-  unavailable: 'Недоступно'
-  unexpected_error_occurred: 'Вийшла не передбачувана помилка.'
-  unit_price: 'Ціна за одиницю'
-  unknown: 'Невідомо'
-  unlimited: 'Необмежена кількість'
-  unlock: 'Розблокувати'
+  unavailable: 'Недоступен'
+  unexpected_error_occurred: 'Произошла непредвиденная ошибка.'
+  unit_price: 'Цена'
+  unknown: 'Неизвестен'
+  unlimited: 'Безлимитный'
+  unlock: 'Разблокировать'
   update:
-    update: 'Оновити'
-    updated: 'Оновлено'
-    update_cart: 'Оновити кошик'
-    update_product_association_type: 'Оновлення типу зв''язку товару'
-    updating_tax_rate: 'Оновлення ставки податку'
-    updating_date: 'Оновити дату'
-  usage: 'Використання'
-  usage_limit: 'Обмеження використання'
-  use_the_contact_form_below_to_send_us_a_message: 'Use the contact form below to send us a message.'
-  used: 'Використано'
-  user_details: 'Інформація про користувача'
-  username: 'Ім''я користувача'
-  users_list_of_all_users_registered_in_store: 'Користувачі <small>Список всіх користувачів, зареєстрованих в магазині</small>'
-  value: 'Значення'
-  values: 'Значення'
-  variant: 'Різновид'
-  variant_choice: 'Варіант вибору'
-  variant_selection_method: 'Метод вибору варіанту'
-  variants: 'Варіанти'
-  verified: 'Перевірено'
-  verify: 'Перевірити'
+    update: 'Обновить'
+    updated: 'Дата изменения'
+    update_cart: 'Обновить корзину'
+    update_product_association_type: 'Обновление типа связи товара'
+    updating_tax_rate: 'Редактирование налоговой ставки'
+    updating_date: 'Дата обновления'
+  usage: 'Использование'
+  usage_limit: 'Предел использования'
+  use_the_contact_form_below_to_send_us_a_message: 'Используйте контактную форму ниже, чтобы отправить нам сообщение.'
+  used: 'Использован'
+  user_details: 'Детали пользователя'
+  username: 'Имя пользователя'
+  users_list_of_all_users_registered_in_store: 'Пользователи <small>список всех пользователей зарегистрированных в магазине</small>'
+  value: 'Значение'
+  values: 'Значения'
+  variant: 'Вариант'
+  variant_choice: 'Вариант выбора'
+  variant_selection_method: 'Метод выбора вариантов'
+  variants: 'Варианты'
+  verified: 'Проверено'
+  verify: 'Подтвердите'
   view:
-    view: 'Перегляд'
-    view_and_edit_cart: 'Переглянути та редагувати кошик'
-    view_more: 'Детальніше'
-    view_product_details: 'Перегляд %product% подробиць'
-    view_your_order_or_change_payment_method: 'Перегляньте порядок або змініть спосіб оплати'
-    view_your_store: 'Перегляд вашого магазину'
-  void: 'Порожньо'
-  volume_based_pricing: 'Об''єм на основі ціни'
-  warning: 'Попередження'
+    view: 'Просмотреть'
+    view_and_edit_cart: 'Перейти в корзину'
+    view_more: 'Посмотреть больше'
+    view_product_details: 'Просмотреть подробные сведения о %product%'
+    view_your_order_or_change_payment_method: 'Просмотреть заказ или изменить способ оплаты'
+    view_your_store: 'Просмотр вашего магазина'
+  void: 'Пустой'
+  volume_based_pricing: 'Объем на основе цены'
+  warning: 'Предупреждение'
   welcome:
-    welcome: 'Ласкаво просимо'
-    welcome_to_our_store: 'Ласкаво просимо до нашої крамниці'
-    welcome_to_your_space: 'Ласкаво просимо до вашого простору'
-  write_your_own_review: 'Написати власний відгук'
-  yes_label: 'Так'
+    welcome: 'Добро пожаловать'
+    welcome_to_our_store: 'Добро пожаловать в наш магазин'
+    welcome_to_your_space: 'Добро пожаловать в ваш кабинет'
+  write_your_own_review: 'Написать собственный отзыв'
+  yes_label: 'Да'
   you:
-    you_are_customer_since: 'Ви є клієнтом з'
-    you_are_reviewing: 'Ви переглядаєте'
-    you_can_no_longer_change_payment_method_of_this_order: 'Ви вже не можете змінити спосіб оплати цього замовлення'
-    you_have_no_addresses_defined: 'Ви не вказали адресу'
-    you_have_no_new_orders: 'У вас немає нових замовлень'
-    you_may_also_like: 'Вам також може сподобатись'
+    you_are_customer_since: 'Вы являетесь клиентом с'
+    you_are_reviewing: 'Вы просматриваете'
+    you_can_no_longer_change_payment_method_of_this_order: 'Вы уже не можете изменить способ оплаты данного заказа'
+    you_have_no_addresses_defined: 'Вы не указали ни одного адреса'
+    you_have_no_new_orders: 'У вас нет новых заказов'
+    you_may_also_like: 'Вам также может понравиться'
   your:
-    your_cart_is_empty: 'Ваш кошик порожній'
-    your_default_address: 'Ваша адреса за замовчуванням'
-    your_last_5_orders: '5 останніх замовлень'
-    your_order_has_been_shipped: 'Ваше замовлення відправлено'
-    your_products: 'Ваші товари'
-    your_profile: 'Ваш профіль'
-    your_shopping_cart: 'Ваш кошик'
-    your_store: 'Ваша крамниця'
+    your_cart_is_empty: 'Ваша корзина пуста'
+    your_default_address: 'Ваш адрес по умолчанию'
+    your_last_5_orders: '5 последних заказов'
+    your_order_has_been_shipped: 'Ваш заказ был отправлен'
+    your_products: 'Товары'
+    your_profile: 'Ваш профиль'
+    your_shopping_cart: 'Ваша корзина'
+    your_store: 'Ваш магазин'
 
 form:
-  is_send_for_email: 'Відправляти на електронну адресу?'
-  short_description: 'Короткий опис'
+  main_product: 'Основной товар'
+  empty:
+    data: 'Ничего не выбрано'
+  is_send_for_email: 'Отправлять на электронный адрес?'
+  short_description: 'Краткое описание'
   static_content:
-    link_name: 'Назва блоку ( англійською )'
-    page: 'Відносний шлях до сторінки'
-  system_name: "Системне ім'я"
+    link_name: 'Название блока (на английском)'
+    page: 'Относительный путь к странице'
+  system_name: "Системное имя"
   option:
-    name: 'Назва'
-  notes: 'Додаткові примітки'
+    name: 'Округ'
+  notes: 'Дополнительные заметки'
   variant:
-    depth: Глибина
-    height: Висота
-    on_hand: Поточний запас
-    price: Ціна
-    sku: Артикул
-    shipping_required: Доставка потрібна?
-    weight: Вага
+    depth: Глубина
+    height: Высота
+    on_hand: Количество на складе
+    price: Цена
+    sku: Идентификатор товарной позиции
+    shipping_required: Требуется ли доставка?
+    weight: Вес
     width: Ширина
-    tracked: 'З відстеженням'
+    tracked: 'Отслеживаемая'
   taxon:
-    name: Назва
-    parent: Батьківський об'єкт
-    slug: Слаґ
+    name: Округ
+    parent: Родитель
+    slug: Псевдоним
     code: Код
-    file: Вибрати зображення
-    images: Зображення
+    file: Выберите изображение
+    images: Изображения
   taxonomy:
-    name: Назва
-    file: Вибрати зображення
+    name: Округ
+    file: Выберите изображение
   user_filter:
-    query: Пошук
+    query: Поиск
   tax_category:
-    name: Назва
+    name: Округ
   tax_rate:
-    category: Категорія
-    name: Назва
-    amount: Обсяг
-    included_in_price: Включено в ціну?
+    category: Категория
+    name: Округ
+    amount: Количество
+    included_in_price: Включено в цену?
     calculator: Калькулятор
   rule:
     unit_count_configuration:
-      count: Кількість
-      equal: Дорівнює
-    type: Тип правила
+      count: Кол-во
+      equal: Равно
+    type: Тип измерения
   shipment:
-    state: Стан
+    state: Cтатус
     states:
-      checkout: Підрахунок
-      pending: В очікуванні
-      ready: Готове
-      shipped: Доставлене
-      returned: Повернене
-      cancelled: Скасовано
-    tracking_code: Код відстеження
+      checkout: Сверка
+      pending: Ожидает
+      ready: Готов
+      shipped: Доставлено
+      returned: Возвращено
+      cancelled: Отменён
+    tracking_code: Код отслеживания
   shipping_calculator:
     flat_rate_configuration:
-      label: Фіксована ставка за доставку
-      amount: Обсяг
+      label: Фиксированная ставка за доставку
+      amount: Количество
     per_unit_rate_configuration:
-      label: Фіксована ставка за одиницю
-      amount: Обсяг
+      label: Фиксированная ставка за единицу товара
+      amount: Количество
   shipping_category:
-    name: Назва
+    name: Округ
   shipping_method:
     zone: Зона
     calculator: Калькулятор
-    category: Категорія
-    category_requirement: Вимоги категорії
-    channels: Канали
-    configuration: Конфігурація
-    enabled: Ввімкнено
-    name: Назва
-    position: Позиція
-    tax_category: Категорія податку
-    translations: Переклади
+    category: Категория
+    category_requirement: Условия категории
+    channels: Каналы
+    configuration: Конфигурация
+    enabled: Активен
+    name: Округ
+    position: Позиция
+    tax_category: Категория налогов
+    translations: '﻿Переводы'
   review:
     author: Автор
-    comment: Коментар
-    header: Додати відгук
+    comment: Комментарий
+    header: Добавить отзыв
     rating: Рейтинг
     status:
-      approved: Затверджений
-      label: Стан
-      new: Новий
-      rejected: Відхилений
-    submit: Продовжити
-    title: Заголовок
+      approved: Одобрено
+      label: Статус
+      new: Новый
+      rejected: Отклонено
+    submit: Отправить
+    title: Название
   collection:
-    add: Додати
-    delete: Видалити
+    add: Добавить
+    delete: Удалить
   promotion:
-    channels: Канали
-    actions: Дії
-    add_action: Додати дію
-    add_rule: Додати правило
-    coupon_based: На основі купону
-    ends_at: Кінець дії
-    exclusive: Ексклюзивно
-    name: Назва
-    priority: Пріоритет
+    channels: Каналы
+    actions: Действия
+    add_action: Добавить действие
+    add_rule: Добавить правило
+    coupon_based: Основана на купонах
+    ends_at: Конец
+    exclusive: Эксклюзив
+    name: Округ
+    priority: Приоритет
     rules: Правила
-    starts_at: Початок дії
-    usage_limit: Обмеження використання
+    starts_at: Начало
+    usage_limit: Предел
   promotion_action:
     add_product_configuration:
-      product: Товар
+      product: Продукт
     fixed_discount_configuration:
-      amount: Обсяг
+      amount: Количество
     percentage_discount_configuration:
-      percentage: Відсоток
+      percentage: Процент
     type: Тип
   promotion_coupon:
-    expires_at: Дійсний до
-    usage_limit: Обмеження використання
-    per_customer_usage_limit: Ліміт використання на клієнта
+    expires_at: Истекает
+    usage_limit: Предел
+    per_customer_usage_limit: Лимит использования на клиента
   promotion_coupon_generator_instruction:
-    amount: Обсяг
-    code_length: Довжина коду
-    expires_at: Дійсний до
-    usage_limit: Обмеження використання
+    amount: Количество
+    code_length: Длина кода
+    expires_at: Истекает
+    usage_limit: Предел
   promotion_filter:
-    price_range: Фільтр цінових діапазонів
-    products: Фільтр товарів
-    taxons: Фільтр таксонів
+    price_range: Фильтр диапазона цен
+    products: Фильтр товаров
+    taxons: Фильтр таксонов
   promotion_rule:
     customer_group:
-      group: Група клієнтів
+      group: Группа клиента
     has_taxon:
-      taxons: Таксони
+      taxons: Категории
     product:
-      products: Продукція
+      products: Товары
     total_of_items_from_taxon:
-      taxon: Таксон
-      amount: Обсяг
-    taxonomy: Таксономія
+      taxon: Налог
+      amount: Количество
+    taxonomy: Тип товара
     cart_quantity_configuration:
-      count: Кількість
-      equal: Дорівнює
+      count: Кол-во
+      equal: Равно
     contains_product_configuration:
-      exclude: Виключити
-      variants: Продукція
+      exclude: Исключить
+      variants: Товары
     item_total_configuration:
-      amount: Обсяг
+      amount: Количество
     nth_order_configuration:
-      nth: Кількість
+      nth: Количество
     shipping_country_configuration:
-      country: Країна
+      country: Страна
     taxonomy_configuration:
-      exclude: Виключити
-      taxons: Таксони
+      exclude: Исключить
+      taxons: Категории
     type: Тип
   product:
-    name: Назва
-    attributes: Атрибути
-    options: Опції
-    meta_keywords: Мета ключові слова
-    meta_description: Мета-опис
-    slug: Слаґ
-    taxons: Таксони
-    images: Зображення
-    restricted_zone: Заборонена зона
-    variant_selection_method: Метод вибору варіанту
-    main_taxon: Основний таксон
-    channels: Канали
-    enabled: Ввімкнено
+    name: Округ
+    attributes: Атрибуты
+    options: Список опций
+    meta_keywords: Ключевые слова метаданных
+    meta_description: Описание метаданных
+    slug: Псевдоним
+    taxons: Категории
+    images: Изображения
+    restricted_zone: Зона ограничений
+    variant_selection_method: Метод выбора вариантов
+    main_taxon: Основной таксон
+    channels: Каналы
+    enabled: Активен
   product_variant:
-    name: Назва
-    tax_category: Категорія податку
-    shipping_category: Категорія доставки
+    name: Округ
+    tax_category: Категория налогов
+    shipping_category: Категория доставки
   association_type:
-    name: Назва
-    translations: Переклади
+    name: Округ
+    translations: '﻿Переводы'
   association:
-    type: Тип асоціювання
-    product: Асоційований продукт
+    type: Тип взаимосвязи
+    product: Связанные продукты
   option_value:
-    add_value: Додати значення
-    value: Значення
+    add_value: Добавить значение
+    value: Значение
   credit_card:
-    cardholder_name: Ім'я власника кредитної картки
-    expiry_month: Місяць закінчення строку дії
-    expiry_year: Рік закінчення строку дії
-    number: Номер картки
-    security_code: Код захисту (CVV)
-    type: Тип картки
+    cardholder_name: Имя владельца карты
+    expiry_month: Месяц
+    expiry_year: Год
+    number: Номер карты
+    security_code: Код безопасности (CVV)
+    type: Тип карты
   payment:
-    amount: Сума платежу
-    method: Спосіб оплати
+    amount: Сумма платежа
+    method: Метод платежа
     state:
-      header: Статус платежу
-      checkout: Підрахунок
-      completed: Завершено
-      authorized: Авторизований
-      failed: Невдало
-      new: Новий
-      pending: В очікуванні
-      processing: В процесі
-      unknown: Невідомо
-      void: Порожньо
-      cancelled: Скасовано
-      refunded: Відшкодовано
+      header: Статус платежа
+      checkout: Сверка
+      completed: Завершен
+      authorized: Авторизовано
+      failed: Провален
+      new: Новый
+      pending: Ожидает
+      processing: Обрабатывается
+      unknown: Неизвестен
+      void: Пустой
+      cancelled: Отменён
+      refunded: Возвращено
   payment_method:
-    channels: Канали
-    enabled: Увімкнено?
-    instructions: Інструкції
-    name: Назва
-    position: Позиція
+    channels: Каналы
+    enabled: Включен?
+    instructions: Инструкции
+    name: Округ
+    position: Позиция
   customer:
-    first_name: Iм'я
-    group: Група
-    last_name: Прізвище
-    email: Адреса електронної пошти
-    phone_number: Номер телефону
-    gender: Стать
-    birthday: Дата народження
-    billing_address: Адреса для рахунків
-    different_billing_address: Використати іншу адресу для виставлення рахунків?
-    only_customer_registration: Створити обліковку?
-    subscribed_to_newsletter: Підписатись на інформаційний бюлетень
+    first_name: Имя
+    group: Группа
+    last_name: Фамилия
+    email: Email
+    phone_number: Контактный телефон
+    gender: Пол
+    birthday: День рождения
+    billing_address: Адрес для выставления счета
+    different_billing_address: Использовать другой адрес для выставления счета?
+    only_customer_registration: Создать учетную запись?
+    subscribed_to_newsletter: Подписаться на рассылку новостей
   customer_group:
-    name: Назва
-    roles: Ролі
+    name: Округ
+    roles: Роли
   gender:
-    unknown: Невідомо
-    male: Чоловіча
-    female: Жіноча
+    unknown: Неизвестен
+    male: Мужской
+    female: Женский
   currency:
-    base: Основна валюта
-    code: Назва
-    enabled: Ввімкнено
-    exchange_rate: Курс валют
+    base: Базовая валюта
+    code: Округ
+    enabled: Активен
+    exchange_rate: Обменный курс
   exchange_rate:
-    source_currency: Джерело валюти
-    target_currency: Цільова валюта
-    ratio: Рейтинг
+    source_currency: Исходная валюта
+    target_currency: Целевая валюта
+    ratio: По рейтингу
   address:
-    city: Місто
-    company: Компанія
-    country: Країна
-    first_name: Iм'я
-    last_name: Прізвище
-    phone_number: Номер телефону
-    postcode: Поштовий індекс
-    street: Вулиця
-    province: Регіон
+    city: Город
+    company: Компания
+    country: Страна
+    first_name: Имя
+    last_name: Фамилия
+    phone_number: Контактный телефон
+    postcode: Индекс
+    street: Улица
+    province: Область
     zone: Зона
   country:
-    add_province: Додати регіон
-    name: Назва
-    provinces: Регіони
-    select: Виберіть
-    enabled: Ввімкнено
+    add_province: Добавить регион
+    name: Округ
+    provinces: Области
+    select: Выбрать
+    enabled: Активен
   province:
-    name: Назва
-    abbreviation: Абревіатура
-    select: Виберіть
+    name: Округ
+    abbreviation: Аббревиатура
+    select: Выбрать
   zone:
-    add_member: Додати учасника
-    members: Учасники
-    name: Назва
+    add_member: Добавить
+    members: Области
+    name: Округ
     type: Тип
     types:
-      country: Країна
-      province: Регіон
+      country: Страна
+      province: Область
       zone: Зона
-    scope: Покриття
+    scope: Область
     scopes:
-      shipping: Спосіб доставки
-      tax: Податок
-      all: Всі
-    select: Виберіть
-    select_scope: Виберіть покриття
+      shipping: Способ доставки
+      tax: Налог
+      all: Все
+    select: Выбрать
+    select_scope: Выберите область
   zone_member:
-    select: Виберіть
+    select: Выбрать
   attribute:
     product_attribute_value:
       attribute: Атрибут
-      value: Значення
-    add: Додати
-    add_attributes: Додати атрибути
-    choices: Варіанти вибору
+      value: Значение
+    add: Добавить
+    add_attributes: Добавить атрибуты
+    choices: Выбор
     code: Код
-    name: Назва
-    translations: Переклади
+    name: Округ
+    translations: '﻿Переводы'
     type: Тип
   attribute_type:
-    checkbox: Позначка
-    configuration: Конфігурація
+    checkbox: Флажок
+    configuration: Конфигурация
     date: Дата
-    datetime: Дата й час
-    integer: Ціле число
-    percent: Відсоток
-    select: Виберіть
+    datetime: Дата и время
+    integer: Целое число
+    percent: Процент
+    select: Выбрать
     text: Текст
-    textarea: Текстове поле
-    title: Типи атрибутів
-    validation: Перевірка
+    textarea: Текстовая область
+    title: Тип атрибута
+    validation: Проверка
   attribute_type_configuration:
     datetime:
       format: Формат
     date:
       format: Формат
     select:
-      multiple: Кілька
-      values: Значення
-      choose: Виберіть параметр
-      min: Мінімальна кількість
-      max: Максимальна кількість
+      multiple: Несколько
+      values: Значения
+      choose: Выберите настройку
+      min: Минимальное количество
+      max: Максимальное количество
     text:
-      min: Мінімальна довжина
-      max: Максимальна довжина
+      min: Минимальная длина
+      max: Максимальная длина
   block:
-    body: Тіло
+    body: Содержание
     id: ID
-    title: Заголовок
+    title: Название
   cart:
     coupon: Купон
   checkout:
     addressing:
-      different_billing_address: Використати іншу адресу для виставлення рахунків?
-    payment_method: Спосіб оплати
-    shipping_method: Спосіб доставки
+      different_billing_address: Использовать другой адрес для выставления счета?
+    payment_method: Способ оплаты
+    shipping_method: Способ доставки
   group:
-    name: Назва
-    roles: Ролі
+    name: Округ
+    roles: Роли
   channel:
-    contact_email: Контактна електронна пошта
-    currencies: Валюти
-    currency_base: Основна валюта
-    account_verification_required: Потрібна перевірка акаунту?
-    hostname: Ім'я хоста
-    locale_default: За замовчуванням
-    locales: Локалі
-    payment_methods: Способи оплати
-    shipping_methods: Методи доставки
-    skipping_shipping_step_allowed: Пропустити крок доставки, якщо доступний лише один метод доставки?
-    skipping_payment_step_allowed: Пропустити крок доставки, якщо доступний лише один метод доставки?
-    tax_calculation_strategy: Стратегія податкового розрахунку
-    tax_zone_default: Податкова зона за замовчуванням
-    taxonomies: Таксономії
-    theme: Тема
+    contact_email: Контактный email
+    currencies: Валюты
+    currency_base: Базовая валюта
+    account_verification_required: Требуется ли подтверждение аккаунта?
+    hostname: Хост
+    locale_default: По умолчанию
+    locales: Языки
+    payment_methods: Список методов оплаты
+    shipping_methods: Список способов доставки
+    skipping_shipping_step_allowed: Пропустить шаг доставки, если доступен только один способ доставки?
+    skipping_payment_step_allowed: Пропустить шаг оплаты, если только один способ оплаты доступен?
+    tax_calculation_strategy: Способ расчета налогов
+    tax_zone_default: Налоговая зона по умолчанию
+    taxonomies: Список каталогов
+    theme: Тема оформления
   image:
     type: Тип
-    file: Зображення
+    file: Изображение
   locale:
     code: Код
-    enabled: Ввімкнено
+    enabled: Активен
   order_filter:
-    created_at_from: Створені після
-    created_at_to: Створений перед
+    created_at_from: Создан после
+    created_at_to: Создан до
     number: Номер
-    total_from: Від
+    total_from: От
     total_to: До
-    payment_state: Статус платежу
-    channel: Усі канали
+    payment_state: Статус платежа
+    channel: Все каналы
   page:
-    body: Тіло
+    body: Содержание
     id: ID
-    title: Заголовок
+    title: Название
   product_filter:
-    name: Назва
+    name: Округ
     code: Код
   shipment_filter:
-    created_at_from: Від
+    created_at_from: От
     created_at_to: До
-    number: Номер замовлення
-    shipping_address: Ім'я одержувача
-    channel: Усі канали
+    number: Номер заказа
+    shipping_address: Имя получателя
+    channel: Все каналы
   payment_filter:
-    created_at_from: Від
+    created_at_from: От
     created_at_to: До
-    number: Номер замовлення
-    billing_address: Ім'я платника
-    channel: Усі канали
+    number: Номер заказа
+    billing_address: Счет на имя
+    channel: Все каналы
   guest:
-    email: Адреса електронної пошти
+    email: Email
   product_association:
-    product: Асоційований продукт
-    type: Тип асоціювання
+    product: Связанные продукты
+    type: Типы взаимосвязи
   product_association_type:
-    name: Назва
+    name: Округ
   product_attribute:
-    position: Позиція
+    position: Позиция
 
 payum_gateway:
-  cash_on_delivery: Накладений платіж
-  offline: Автономний
-  paypal_express_checkout: Платіж PayPal Express
+  cash_on_delivery: Наличными при доставке
+  offline: Офлайн
+  paypal_express_checkout: PayPal Express Checkout
 
 shipping_method_resolver:
-  by_zones_and_channel: З використанням зон і каналу
+  by_zones_and_channel: По зонам и каналам
 
 flashes:
   flash:
-    flash_batch_empty: 'Невибрано жодного об’єкта.'
-    flash_create_success: 'Елемент створено.'
-    flash_create_error: 'при створенні об’єкта.'
-    flash_edit_success: 'Елемент зредаговано.'
-    flash_edit_error: 'при редагуванні об’єкта.'
-    flash_batch_delete_success: 'Вибрані елементи виделені.'
-    flash_batch_delete_error: 'під час видалення вибраних елементів.'
-    flash_delete_error: 'під час видалення елемента.'
-    flash_delete_success: 'Об’єкт видалено.'
+    flash_batch_empty: 'Действие отменено. Нет выбранных объектов.'
+    flash_create_success: 'Элемент создан успешно.'
+    flash_create_error: 'при создании элемента.'
+    flash_edit_success: 'Элемент успешно обновлен.'
+    flash_edit_error: 'во время обновления элемента.'
+    flash_batch_delete_success: 'Выбранные элементы были успешно удалены.'
+    flash_batch_delete_error: 'во время удаления выбранных элементов.'
+    flash_delete_error: 'во время удаления элемента.'
+    flash_delete_success: 'Элемент успешно удален.'
+    flash_data_success: 'Данные сохранены.'
   channel:
-    delete_error: 'Канал не можна видалити. Потрібно принаймні один активний канал.'
+    delete_error: 'Канал не может быть удален. Требуется по крайней мере один активный канал.'
   checkout:
-    complete_error: 'Виникла неочікувана помилка під час завершення замовлення. Будь ласка, спробуйте ще раз оформити замовлення.'
+    complete_error: 'Произошла неожиданная проблема при завершении заказа. Пожалуйста попробуйте зарегистрировать заказ еще раз.'
   contact:
-    request_success: 'Ваш запит успішно надіслано.'
-    request_error: 'Виникла помилка під час надсилання запиту. Будь ласка, спробуйте ще раз пізніше.'
+    request_success: 'Ваш запрос успешно отправлен.'
+    request_error: 'Возникла проблема при отправке запроса. Пожалуйста, повторите попытку позже.'
   customer:
-    register: 'Дякуємо вам за реєстрацію, перевірте вашу електронну пошту, щоб підтвердити свій обліковий запис.'
-    add_address: 'Адреса була успішно додана.'
-    impersonate: 'Успішно змінили ім''я на %name%.'
-    set_address_as_default: 'Адреса була встановлена за замовчуванням.'
+    register: 'Благодарим вас за регистрацию, проверьте свою электронную почту, чтобы подтвердить свой аккаунт.'
+    add_address: 'Адрес был успешно добавлен.'
+    impersonate: 'Имя успешно изменено на %name%.'
+    set_address_as_default: 'Адрес выбран в качестве основного.'
   order:
-    apply_state_machine_transition_error: 'Виникла неочікувана помилка під час оновлення замовлення. Будь ласка, спробуйте ще раз оновити замовлення.'
-    promotion_integrity: 'Ви вже не учасник акції %promotionName%.'
-    total_integrity: 'Вартість вашого замовлення було змінено, перегляньте відомості про замовлення і підтвердіть його знову.'
-    update_error: 'Виникла неочікувана помилка під час оновлення замовлення. Будь ласка, спробуйте ще раз оновити замовлення.'
+    apply_state_machine_transition_error: 'Произошла неожиданная проблема при обновлении заказа. Пожалуйста попробуйте обновить заказ еще раз.'
+    promotion_integrity: 'Вы больше не являетесь участником акции %promotionName%.'
+    total_integrity: 'Стоимость вашего заказа была изменена, пожалуйста проверьте информацию вашего заказа и подтвердите его снова.'
+    update_error: 'Произошла неожиданная проблема при обновлении заказа. Пожалуйста попробуйте обновить заказ еще раз.'
   payment:
-    cancelled: 'Оплата була скасована.'
-    completed: 'Оплата завершена.'
-    failed: 'Оплата не виконана.'
-    processing: 'Оплата обробляється.'
-    refunded: 'Оплату було успішно повернуто.'
-    unknown: 'Виникла невідома проблема з оплатою.'
-    apply_state_machine_transition_error: 'Виникла неочікувана помилка під час оновлення платежу. Будь ласка, спробуйте ще раз оновити платіж.'
+    cancelled: 'Оплата была отменена.'
+    completed: 'Оплата прошла успешно.'
+    failed: 'Ошибка платежа.'
+    processing: 'Оплата обрабатывается.'
+    refunded: 'Оплата была успешно возвращена.'
+    unknown: 'Произошла неизвестная проблема во время оплаты.'
+    apply_state_machine_transition_error: 'Произошла неожиданная проблема при обновлении платежа. Пожалуйста попробуйте обновить платеж еще раз.'
   product:
-    out_of_stock: 'В наявності тільки %quantity% продуктів на складі.'
+    out_of_stock: 'В наличии только %quantity% этого продукта.'
   product_variant:
-    generate: 'Варіанти продукта були успішно створено.'
-    update_error: 'Виникла неочікувана помилка під час оновлення різновиду продукту. Будь ласка, спробуйте ще раз оновити різновид продукту.'
+    generate: 'Варианты продукта были успешно созданы.'
+    update_error: 'Произошла неожиданная проблема при обновлении варианта продукта. Пожалуйста попробуйте обновить вариант еще раз.'
   review:
-    accept: 'Відгук був успішно прийнятий.'
-    reject: 'Відгук відхилено.'
-    wait_for_the_acceptation: 'Ваш відгук очікує підтвердження.'
+    accept: 'Отзыв был успешно принят.'
+    reject: 'Отзыв отклонен.'
+    wait_for_the_acceptation: 'Ваш отзыв ожидает подтверждения.'
   resource:
-    update: '%resource% був успішно оновлений.'
-    delete: '%resource% був успішно видалений.'
-    move: '%resource% був успішно переміщений.'
-    generate: '%resource%и були успішно згенеровані.'
-    revert: '%resource% був успішно повернутий.'
-    restore_deleted: '%resource% був успішно відновлений.'
-    enable: '%resource% був успішно ввімкнений.'
-    disable: '%resource% був успішно вимкнений.'
-    delete_error: 'Неможливо видалити, %resource% знаходиться у використанні.'
-    race_condition_error: 'Не вдається оновити, %resource% був змінений раніше.'
-    something_went_wrong_error: 'Щось пішло не так. Будь ласка, спробуйте ще раз.'
+    update: '%resource% успешно изменен.'
+    delete: '%resource% удален успешно.'
+    move: '%resource% успешно перемещен.'
+    generate: '% resource%ы созданы успешно.'
+    revert: '%resource% успешно откачен.'
+    restore_deleted: '%resource% успешно восстановлен.'
+    enable: '%resource% успешно включен.'
+    disable: '%resource% успешно отключен.'
+    delete_error: 'Не удается удалить %resource%, т. к. он используется.'
+    race_condition_error: 'Не удается обновить, %resource% был изменен ранее.'
+    something_went_wrong_error: 'Что-то пошло не так. Попробуйте еще раз.'
   promotion_coupon:
-    generate: 'Промо-купони успішно згенеровані.'
+    generate: 'Промокупоны были успешно созданы.'
   cart:
-    add_item: 'Ця позиція була додана в кошик'
-    cannot_modify: 'Замовлення вже надіслано для кошика, який ви намагалися змінити.'
-    remove_item: 'Товар був видалений з кошика'
-    save: 'Кошик був успішно оновлений'
+    add_item: 'Позиция добавлена в корзину'
+    cannot_modify: 'Корзина, которую вы пытаетесь изменить уже содержит заказы.'
+    remove_item: 'Позиция удалена из корзины'
+    save: 'Корзина успешно обновлена'
 
 list:
   product_category:
-    tree_title: 'Шлях'
+    tree_title: 'Путь'
 
 validators:
   address:
     city:
-      max_length: Назва міста не має перевищувати 255 символів|Назва міста не має перевищувати 255 символів.
-      min_length: Довжина назви міста має бути принаймні 2 символи|Довжина назви міста має бути принаймні 2 символи.
-      not_blank: Будь ласка, введіть назву міста.
+      max_length: Название города не должно превышать 255 символов.
+      min_length: Название города не должно быть короче 2 символов.
+      not_blank: Пожалуйста, укажите город.
     country:
-      not_blank: Будь ласка, виберіть країну.
-      disabled: Обрана країна буде вимкнута. Будь ласка, виберіть іншу.
+      not_blank: Пожалуйста, выберите страну.
+      disabled: Выбранная страна отключена. Пожалуйста, выберите другую страну.
     first_name:
-      max_length: Ім'я не має бути довшим за 255 символів|Ім'я не має бути довшим за 255 символів.
-      min_length: Довжина імені має бути принаймні 2 символи|Довжина імені має бути принаймні 2 символи.
-      not_blank: Будь ласка, введіть ім'я.
+      max_length: Имя не должно превышать 255 символов.
+      min_length: Имя не должно быть короче 2 символов.
+      not_blank: Пожалуйста, введите имя.
     last_name:
-      max_length: Прізвище не має бути довшим за 255 символів|Прізвище не має бути довшим за 255 символів.
-      min_length: Довжина прізвища має бути принаймні 2 символи|Довжина прізвища має бути принаймні 2 символи.
-      not_blank: Будь ласка, введіть прізвище.
+      max_length: Фамилия не должна быть длиннее 255 символов.
+      min_length: Фамилия не должна быть короче 2 символов.
+      not_blank: Пожалуйста, введите фамилию.
     postcode:
-      max_length: Поштовий індекс не має бути довшим за 255 символів|Поштовий індекс не має не має бути довшим за 255 символів.
-      min_length: Довжина поштового індексу має бути принаймні 2 символи|Довжина поштового індексу має бути принаймні 2 символи.
-      not_blank: Будь ласка, введіть поштовий індекс.
+      max_length: Индекс не должен превышать 255 символов.
+      min_length: Индекс не должен быть короче 2 символов.
+      not_blank: Пожалуйста, укажите индекс.
     province:
-      valid: Будь ласка, виберіть правильний регіон.
+      valid: Пожалуйста, укажите существующую область.
     street:
-      max_length: Довжина назви вулиці не має перевищувати 255 символів|Довжина назви вулиці не має перевищувати 255 символів.
-      min_length: Довжина назви вулиці повинна бути принаймні 2 символи|Довжина назви вулиці повинна бути принаймні 2 символи.
-      not_blank: Будь ласка, введіть назву вулиці.
-    not_shippable: Ця адреса не є дійсним пунктом призначення для доставки.
+      max_length: Название улицы не должно превышать 255 символов.
+      min_length: Название улицы не должно быть короче 2 символов.
+      not_blank: Пожалуйста, укажите улицу.
+    not_shippable: Этот адрес не является допустимым адресом доставки.
   country:
     code:
-      not_blank: Будь ласка, введіть ISO-код країни.
-      regex: Код країни може складатися лише з букв, цифр, дефісів та підкреслень.
-      unique: ISO-код країни має бути унікальним.
+      not_blank: Пожалуйста, введите ISO код страны.
+      regex: Код страны может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: ISO код страны должен быть уникальным.
   province:
     code:
-      min_length: Код регіону має складатися щонайменше з 5-ти символів|Код регіону має складатися щонайменше з 5-ти символів.
-      not_blank: Будь ласка, введіть код регіону.
-      regex: Код регіону має бути в форматі ХХ-ХХ (наприклад, UA-Київська або UA-32).
-      unique: Код регіону має бути унікальним.
+      min_length: Название области не должно быть короче 2 символов.
+      not_blank: Пожалуйста, введите код области.
+      regex: Код области должен иметь формат XX-XX (например US-FL).
+      unique: Код области должен быть уникальным.
     name:
-      max_length: Назва регіону не має перевищувати 255 символів|Назва регіону не має перевищувати 255 символів.
-      min_length: Довжина назви регіону має бути принаймні 2 символи|Довжина назви регіону має бути принаймні 2 символи.
-      not_blank: Будь ласка, введіть назву регіону.
-      unique: Назва регіону має бути унікальною.
+      max_length: Название области не должно превышать 255 символов.
+      min_length: Название области не должно быть короче 2 символов.
+      not_blank: Пожалуйста, укажите область.
+      unique: Название области должно быть уникально.
   zone:
     scope:
-      not_blank: Будь ласка, введіть область застосування.
+      not_blank: Пожалуйста, введите границы.
     code:
-      not_blank: Будь ласка, введіть код зони.
-      regex: Код зони може складатися лише з букв, цифр, дефісів та підкреслень.
-      unique: Код зони має бути унікальним.
+      not_blank: Пожалуста, введите код зоны.
+      regex: Код зоны может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код зоны должен быть уникальным.
     members:
-      min_count: Будь ласка, додайте принаймні {{ limit }} зону.
+      min_count: Пожалуйста, добавьте как минимум {{ limit }} область.|Пожалуйста, добавьте как минимум {{ limit }} области.|Пожалуйста, добавьте как минимум {{ limit }} областей.
     name:
-      max_length: Назва зони не має перевищувати 255 символів|Назва зони не має перевищувати 255 символів.
-      min_length: Назва зони має складатись принаймні з 2 символів|Назва зони має складатись принаймні з 2 символів.
-      not_blank: Будь ласка, введіть зону.
+      max_length: Наименование округа не должно превышать 255 символов.
+      min_length: Название зоны должно быть не менее 2 символов.
+      not_blank: Пожалуйста, укажите округ.
   zone_member:
     code:
-      not_blank: Будь ласка, виберіть учасника зони.
-      regex: Код учасника зони може складатися лише з букв, цифр, тире і підкреслення.
-    unique: Обраний учасник вже в цій зоні.
+      not_blank: Пожалуйста, выберите члена зоны.
+      regex: Код пользователя может состоять только из букв, цифр, тире и знаков подчеркивания.
+    unique: Выбранный член уже находится в этой зоне.
   attribute:
     name:
-      not_blank: Будь ласка, введіть назву атрибута.
-      min_length: Назва атрибуту має складатись принаймні з 1 символу.|Назва атрибуту має складатись принаймні з {{ limit }} символів.
-      max_length: Назва атрибуту не має бути довшою за 1 символ.|Назва атрибуту не має бути довшою за {{ limit }} символів.
+      not_blank: Пожалуйста, введите имя атрибута.
+      min_length: Имя атрибута должно состоять хотя бы из одного символа. |Имя атрибута должно быть не менее {{ limit }} символов.
+      max_length: Имя атрибута должно быть не больше одного символа.|Имя атрибута не должно быть длиннее, чем {{ limit }} символов.
     code:
-      not_blank: Будь ласка, введіть код атрибуту.
-      regex: Код атрибута може складатися лише з букв, цифр, тире і підкреслення.
-      unique: Цей код вже використовується.
+      not_blank: Пожалуйста, введите код атрибута.
+      regex: Код аттрибута может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Этот код уже используется.
     configuration:
-      max_entries: Максимальна кількість налаштувань має бути більшою або такою ж як і мінімальна кількість.
-      max_length: Максимальна довжина налаштування має бути більшою або такою ж як і мінімальна довжина.
+      max_entries: Максимальное число вариантов должно быть больше или равно минимальному.
+      max_length: Максимальная длина должна быть больше или равна минимальной длине.
     presentation:
-      not_blank: Будь ласка, введіть виклад атрибуту.
-      min_length: Виклад атрибуту має складатись принаймні з 1 символу.|Виклад атрибуту має складатись принаймні з {{ limit }} символів.
-      max_length: Виклад атрибуту не має бути довшим за 1 символ.|Виклад атрибуту не має бути довшим за {{ limit }} символів.
+      not_blank: Пожалуйста, заполние отображение атрибута.
+      min_length: Отоброжение атрибута должно состоять хотя бы из одного символа.|Отоброжение атрибута должно быть не менее {{ limit }} символов.
+      max_length: Отоброжение атрибута не должно превышать 1 символа.|Отоброжение атрибута должно быть не длиннее {{ limit }} символов.
   attribute_value:
     attribute:
-      not_blank: Будь ласка, виберіть атрибут.
+      not_blank: Пожалуйста, выберите атрибут.
     value:
-      not_blank: Будь ласка, введіть значення атрибута.
+      not_blank: Пожалуйста, введите значение атрибута.
   channel:
     base_currency:
-      not_blank: Будь ласка, введіть основну валюту каналу.
+      not_blank: Пожалуйста, установите основную валюту.
     default_locale:
-      not_blank: Будь ласка, введіть типову локаль каналу.
+      not_blank: Пожалуйста, введите язык по умолчанию для канала.
     contact_email:
-      invalid: Ця адреса електронної пошти невірна.
-      max: Адреса електронної пошти не має бути довшою за {{ limit }} символ(-и,-ів).
-      min: Адреса електронної пошти має бути щонайменше {{ limit }} символ(-и,-ів).
+      invalid: Не правильный e-mail адрес.
+      max: E-mail не должен быть длиннее {{ limit }} символов.
+      min: E-mail должн быть по крайней мере {{ limit }} символов.
   channel_pricing:
     price:
-      min: Ціна повинна бути не менша {{ limit }}.
-      not_blank: Будь ласка, введіть ціну.
+      min: Цена должна быть не менее {{ limit }}.
+      not_blank: Пожалуйста введите стоимость.
   checkout:
     shipping_method:
-      not_blank: Будь ласка, виберіть спосіб доставки.
+      not_blank: Пожалуйста, выберите метод доставки.
   contact:
     email:
-      invalid: Ця адреса електронної пошти невірна.
-      not_blank: Будь ласка, введіть свою адресу електронної пошти.
+      invalid: Не правильный e-mail адрес.
+      not_blank: Пожалуйста, введите ваш email.
     message:
-      not_blank: Будь ласка, введіть ваше повідомлення.
+      not_blank: Пожалуйста, введите ваше сообщение.
   cart_item:
-    not_available: '%itemName% не має достатнього запасу.'
+    not_available: 'Недостаточное количество %itemName%.'
   order:
     currency_code:
-      not_valid: Код валюти, що ви ввели, не є вірним.
-    payment_method_eligibility: 'Цей спосіб оплати %paymentMethodName% відключений. Будь ласка, повторно виберіть спосіб оплати.'
-    product_eligibility: 'Цей продукт %productName% був відключений.'
-    shipping_method_eligibility: 'Продукт не відповідає вимогам для %shippingMethodName% способу доставки. Будь ласка, повторно виберіть метод доставки.'
+      not_valid: Код валюты, что вы ввели, неверный.
+    payment_method_eligibility: 'Метод оплаты %paymentMethodName% был выключен. Пожалуйста выберете другой метод оплаты.'
+    product_eligibility: 'Продукт %productName% был выключен.'
+    shipping_method_eligibility: 'Продукт не соответствует требованиям способа доставки %shippingMethodName%. Пожалуйста выберете другой способ доставки.'
   locale:
     code:
-      not_blank: Будь ласка, введіть код локалі.
-      unique: Ця локаль вже існує.
+      not_blank: Пожалуйста, введите код языка.
+      unique: Этот язык уже существует.
     enabled:
-      cannot_disable_base: Базова локаль не може бути недоступною.
+      cannot_disable_base: Базовый язык не может быть отключен.
   product_attribute:
-    invalid: Позиція має бути цілим числом.
+    invalid: Значение должно быть целым числом.
   product_image:
     file:
-      max_size: Зображення є занадто великим - {{ size }}{{ suffix }}. Максимально дозволений розмір становить {{ limit }}{{ suffix }}.
-      upload_ini_size: Зображення є занадто великим. Максимально дозволений розмір становить {{ limit }}{{ suffix }}.
+      max_size: Изображение слишком велико - {{ size }}{{ suffix }}. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
+      upload_ini_size: Изображение слишком велико. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
   product_variant:
-    combination: Варіант із таким параметром уже існує.
+    combination: Вариант с этой опцией уже существует.
     code:
-      not_blank: Будь ласка, введіть код.
-      regex: Код варіанту продукту може складатися лише з букв, цифр, дефісів та підкреслень.
-      unique: Код варіанту продукту повинен бути унікальним.
-      within_product_unique: Цей код повинен бути унікальним у цьому товарі.
+      not_blank: Пожалуйста, введите код.
+      regex: Код варианта продукта может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код варианта продукта должен быть уникальным.
+      within_product_unique: Этот код должен быть уникальным в пределах данного продукта.
     onHand:
-      min: Кількість товару під рукою має бути більшою за {{ limit }}.
-      not_blank: Будь ласка, вкажіть кількість товару під рукою.
-      reserved: Кількість замовлених товарів не повинна перевищувати кількість товарів в наявності
+      min: Количество товара на складе должно быть больше {{ limit }}.
+      not_blank: Пожалуйста, укажите количество товара на складе.
+      reserved: Количество заказанных товаров не должно превышать количество товаров в наличии
     original_price:
-      min: Початкова ціна не має бути негативною.
+      min: Первоначальная стоимость не может быть отрицательной.
     weight:
-      min: Вага не може бути від'ємною.
-      invalid: Вага повинна бути числом.
+      min: Вес не может быть отрицательным.
+      invalid: Вес должен быть числом.
     width:
-      min: Ширина не може бути від'ємною.
-      invalid: Ширина має бути числом.
+      min: Ширина не может быть отрицательной.
+      invalid: Ширина должна быть числом.
     height:
-      min: Висота не може бути від'ємною.
-      invalid: Висота має бути числом.
+      min: Высота не может быть отрицательной.
+      invalid: Высота должна быть числом.
     depth:
-      min: Глибина не може бути від'ємною.
-      invalid: Глибина має бути числом.
+      min: Глубина не может быть отрицательной.
+      invalid: Глубина должна быть числом.
     channel_pricing:
-      all_defined: 'Ви повинні визначити ціну для кожного каналу.'
+      all_defined: 'Необходимо определить цену для каждого канала.'
   taxon_image:
     file:
-      max_size: Зображення є занадто великим - {{ size }}{{ suffix }}. Максимально дозволений розмір становить {{ limit }}{{ suffix }}.
-      upload_ini_size: Зображення є занадто великим. Максимально дозволений розмір становить {{ limit }}{{ suffix }}.
+      max_size: Изображение слишком велико - {{ size }}{{ suffix }}. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
+      upload_ini_size: Изображение слишком велико. Максимально допустимый размер равен {{ limit }}{{ suffix }}.
   currency:
     enabled:
-      cannot_disable_base: Базова валюта не може бути відключена.
+      cannot_disable_base: Базовая валюта не может быть отключена.
     code:
-      exact_length: Код валюти має бути завдовжки рівно 3 символи.
-      not_blank: Будь ласка, виберіть код валюти.
-      regex: Код валюти може складатися лише з букв, цифр, дефісів та підкреслень.
-      unique: Код валюти має бути унікальним.
+      exact_length: Код валюты должен быть точно 3 символов.
+      not_blank: Пожалуйста выберите код валюты.
+      regex: Код валюты может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код валюты должен быть уникальным.
     exchange_rate:
-      not_blank: Будь ласка, введіть курс обміну.
+      not_blank: Пожалуйста введите обменный курс.
   exchange_rate:
     ratio:
-      greater_than: Співвідношення має бути більшим за 0.
-      invalid: Співвідношення має бути числом.
-      not_blank: Будь ласка, введіть курс обміну.
+      greater_than: Соотношение должно быть больше 0.
+      invalid: Соотношение должно быть числом.
+      not_blank: Пожалуйста, введите коэффициент обменного курса.
     source_currency:
-      not_blank: Будь ласка, введіть з якої валюти повинен бути виведений обмінний курс.
+      not_blank: Введите, пожалуйста, из какой валюты должен быть получен обменный курс.
     target_currency:
-      not_blank: Будь ласка, введіть, в яку валюту слід встановити обмінний курс.
-    unique_currency_pair: Валютна пара має бути унікальною.
-    different_source_target_currency: Джерело та цільові валюти повинні відрізнятися.
+      not_blank: Пожалуйста, укажите в какой валюте должен быть установлен валютный курс.
+    unique_currency_pair: Валютная пара должна быть уникальной.
+    different_source_target_currency: Исходная и целевая валюты должны отличаться.
   customer:
     currency_code:
-      not_valid: Код валюти, що ви ввели, не є вірним.
+      not_valid: Код валюты, что вы ввели, неверный.
     first_name:
-      max: Ім'я не має бути довшим за {{ limit }} символ(-и,-ів).
-      min: Ім'я має бути принаймні {{ limit }} символ(-и,-ів).
-      not_blank: Будь ласка, введіть ваше ім'я.
+      max: Имя не должно быть длиннее {{ limit }} символов.
+      min: Имя должно содержать как минимум {{ limit }} символов.
+      not_blank: Пожалуйста, введите ваше имя.
     last_name:
-      max: Прізвище не має бути довшим за {{ limit }} символ(-и,-ів).
-      min: Прізвище має містити щонайменше {{ limit }} символ(-и,-ів).
-      not_blank: Будь ласка, введіть ваше прізвище.
+      max: Фамилия не должна быть длиннее {{ limit }} символов.
+      min: Фамилия должна содержать как минимум {{ limit }} символов.
+      not_blank: Пожалуйста введите фамилию.
     gender:
-      not_blank: Будь ласка, виберіть вашу стать.
+      not_blank: Пожалуйста, выберите ваш пол.
     email:
-      already_used: Ця адреса електронної пошти вже використовується, будь ласка, увійдіть або скористайтеся відновленням забутого паролю.
-      max: Адреса електронної пошти не має бути довшою за {{ limit }} символ(-и,-ів).
-      not_blank: Будь ласка, введіть свою адресу електронної пошти.
-      invalid: Ця адреса електронної пошти невірна.
-      unique: Ця адреса електронної пошти вже використовується.
-      registered: Ця адреса електронної пошти вже зареєстрована, будь ласка, увійдіть або скористайтеся відновленням забутого паролю.
+      already_used: Этот e-mail уже занят, пожалуйста, войдите или используйте восстановлением пароля.
+      max: E-mail не должен быть длиннее {{ limit }} символов.
+      not_blank: Пожалуйста, введите ваш email.
+      invalid: Не правильный e-mail адрес.
+      unique: Этот адрес электронной почты уже используется.
+      registered: Этот e-mail уже занят, пожалуйста, войдите или используйте восстановление пароля.
   customer_group:
     code:
-      regex: Код групи клієнтів може складатися лише з букв, цифр, тире і підкреслення.
-      unique: Код групи клієнта має бути унікальним.
+      regex: Код группы клиентов может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код группы клиента должен быть уникальным.
     name:
-      max: Ім'я групи клієнтів має бути не довшою за {{ limit }} символів.
-      min: Ім'я групи клієнтів має бути принаймні {{ limit }} символів.
-      not_blank: Будь ласка, введіть ім'я групи клієнтів.
+      max: Имя группы клиентов не должно быть длиннее {{ limit }} символов.
+      min: Имя группы клиентов должно быть не менее {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя группы клиентов.
   order_item:
     quantity:
-      min: Кількість товарів замовлення не може бути нижче 1.
+      min: Количество товаров заказа не может быть меньше 1.
   credit_card:
     cardholder_name:
-      min_length: Ім'я власника картки має бути принаймні {{ limit }} символ(-и,-ів).
-      not_blank: Будь ласка, введіть ім'я власника картки.
+      min_length: Имя владельца карты должно быть по крайней мере {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя владельца карты.
     expiry_month:
-      max_range: Місяць терміну дії кредитної картки має бути між {{ min }} та {{ max }}.
-      min_range: Місяць терміну дії кредитної картки має бути між {{ min }} та {{ max }}.
-      not_blank: Будь ласка, виберіть місяць закінчення терміну дії.
+      max_range: Месяц окончания срока действия кредитной карты должны быть между {{ min }} и {{ max }}.
+      min_range: Месяц окончания срока действия кредитной карты должны быть между {{ min }} и {{ max }}.
+      not_blank: Пожалуйста, выберите месяц окончания срока действия.
     number:
-      not_blank: Будь ласка, введіть номер картки.
-      luhn: Номер кредитної картки, що ви ввели - невірний.
+      not_blank: Пожалуйста, введите номер карты.
+      luhn: Недопустимый номер кредитной карты.
     security_code:
-      not_blank: Будь ласка, введіть код захисту.
-      max_length: Код CVV кредитної карти має бути щонайменше {{ limit }} цифр(-и,-у).
-      min_length: Код CVV кредитної карти має бути щонайбільше {{ limit }} цифр(-и,-у).
+      not_blank: Пожалуйста, введите защитный код.
+      max_length: CVV код кредитной карты должен содержать по крайней мере {{ limit }} цифр.
+      min_length: CVV код кредитной карты должен быть длиннее чем {{ limit }} цифр.
     expiry_year:
-      not_blank: Будь ласка, виберіть рік закінчення терміну дії.
+      not_blank: Пожалуйста, выберите год окончания.
   payment:
     currency_code:
-      not_valid: Код валюти, що ви ввели, не є вірним.
+      not_valid: Код валюты, что вы ввели, неверный.
     method:
-      not_blank: 'Будь ласка, оберіть спосіб оплати.'
+      not_blank: 'Пожалуйста, выберите способ оплаты.'
   payment_method:
     gateway:
-      not_blank: Будь ласка, виберіть шлюз способу оплати.
+      not_blank: Пожалуйста, выберите способ оплаты.
     name:
-      max_length: Назва способу оплати повинна бути {{ limit }} символ(-и,-ів) або менше.
-      min_length: Назва способу оплати повинна бути щонайменше {{ limit }} символ(-и,-ів).
-      not_blank: Будь ласка, введіть назву способу оплати.
+      max_length: Имя метода оплаты должно быть {{ limit }} символов длиной или меньше.
+      min_length: Имя метода оплаты должно быть по крайней мере {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя метода оплаты.
     fee_calculator_configuration:
       amount:
-        greater_than_or_equal: Комісія не може бути нижчою за {{ compared_value }}.
-        not_blank: Будь ласка, введіть розмір комісії.
+        greater_than_or_equal: Комиссия не может быть ниже, чем {{ compared_value }}.
+        not_blank: Пожалуйста, введите сумму комиссии.
       percent:
-        max_range: Відсоток комісії не може бути більшим за {{ limit }}.
-        min_range: Відсоток комісії не може бути меншим від {{ limit }}.
-        not_blank: Будь ласка, введіть процент комісії.
+        max_range: Процент комиссии не может быть больше чем {{ limit }}.
+        min_range: Процент комиссии не может быть меньше, чем {{ limit }}.
+        not_blank: Пожалуйста, введите процент комиссии.
     code:
-      not_blank: 'Будь ласка, введіть код способу оплати.'
-      regex: 'Код способу оплати може містити лише літери, цифри, дефіси та підкреслення.'
-      unique: 'Спосіб оплати з даним кодом вже існує.'
+      not_blank: 'Пожалуйста, введите название метода оплаты.'
+      regex: 'Код метода оплаты может состоять только из букв, цифр, тире и знаков подчеркивания.'
+      unique: 'Метод оплаты с данным кодом уже существует.'
   product:
     variants:
-      all_prices_defined: Потрібно спочатку визначити ціни варіантів продуктів для нових призначених каналів.
+      all_prices_defined: Вы должны сначала определить цены продуктов для вновь назначенных каналов.
     sku:
-      not_blank: Будь ласка, введіть артикул продукту.
-      unique: Артикул продукту має бути унікальним.
+      not_blank: Пожалуйста введите идентификатор товарной позиции продукта.
+      unique: Идентификатор товарной позиции продукта должен быть уникальным.
     slug:
-      not_blank: Будь ласка, введіть слаґ продукту.
-      unique: Слаґ продукту повинен бути унікальним.
+      not_blank: Пожалуйста, введите псевдоним продукта.
+      unique: Slug продукта должен быть уникальным.
     code:
-      not_blank: Будь ласка, введіть код продукту.
-      regex: Код продукту може складатися лише з літер, цифр, дефісів та символів підкреслювання.
-      unique: Код продукту має бути унікальним.
+      not_blank: Пожалуйста, введите код товара.
+      regex: Код продукта может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Код товара должен быть уникальным.
     name:
-      not_blank: Будь ласка, введіть назву продукту.
-      min_length: Назва продукту повинна бути завдовжки принаймні 1 символ.|Назва продукту повинна бути завдовжки принаймні {{ limit }} символ(-и,-ів).
-      max_length: Назва продукту не може бути більшою за 1 символ.|Назва продукту не може бути більшою за {{ limit }} символ(-и,-ів).
+      not_blank: Пожалуйста введите название продукта.
+      min_length: Название продукта должно быть не менее 1 символа.|Название продукта должно быть не менее {{ limit }} символов.
+      max_length: Название продукта должно быть длиннее 1 символа.|Название продукта должно быть длиннее {{ limit }} символов.
   simple_product:
     code:
-      unique: Простий код продукту повинен бути унікальним серед усіх продуктів та варіантів продукту.
+      unique: Простой код продукта должен быть уникальным среди всех продуктов и вариантов продукта.
   option:
     code:
-      not_blank: Будь ласка, введіть код опції.
-      regex: Код варіанту може складатися лише з букв, цифр, дефісів та підкреслень.
-      unique: Опція з даним кодом вже існує.
+      not_blank: Пожалуйста введите код опции.
+      regex: Код опции может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Опция с таким кодом уже существует.
     name:
-      not_blank: Будь ласка, введіть назву опції.
-      min_length: Назва опції має бути щонайменше 1 символ.|Назва опції має бути щонайменше {{ limit }} символ(-и,-ів).
-      max_length: Назва опції не має бути довшою за 1 символ.|Назва опції не має бути довшою за {{ limit }} символ(-и,-ів).
+      not_blank: Пожалуйста введите название опции.
+      min_length: Название опции должно быть не менее 1 символа.|Название опции должно быть не менее {{ limit }} символов.
+      max_length: Название опции должно быть длиннее 1 символа.|Название опции должно быть длиннее {{ limit }} символов.
     values:
-      min_count: Будь ласка, додайте принаймні {{ limit }} значення опції.|Будь ласка, додайте принаймні {{ limit }} значень опції.
+      min_count: Пожалуйста введите не менее {{ limit }} значения опции.|Пожалуйста введите не менее {{ limit }} значений опции.
   option_value:
     code:
-      not_blank: Будь ласка, введіть код значення опції.
-      regex: Код значення параметра може складатися лише з букв, цифр, дефісів та підкреслень.
-      unique: Значення опції з даним кодом вже існує.
+      not_blank: Пожалуйста введите код значения опции.
+      regex: Значение опции может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Значение опции с таким кодом уже существует.
     value:
-      not_blank: Будь ласка, введіть значення опції.
+      not_blank: Пожалуйста введите значение опции.
   association_type:
     name:
-      not_blank: Будь ласка, введіть назву типу асоціювання.
-      min_length: Назва асоціації має бути довжиною не менше 1 символу. |Назва асоціації повинна бути як мінімум {{ limit }} символів.
-      max_length: Назва типу асоціювання не має бути довшою за 1 символ.|Назва асоціювання не має бути довшою за {{ limit }} символів.
+      not_blank: Пожалуйста, введите название типа связи.
+      min_length: Название взаимосвязи должно содержать по крайней мере 1 символ.|Название взаимосвязи должно быть по крайней мере {{ limit }} символов.
+      max_length: Название взаимосвязи не должно превышать 1 символ.|Название взаимосвязи не должно превышать {{ limit }} символов.
     code:
-      not_blank: Будь ласка, введіть код типу асоціювання.
-      regex: Код типу асоціації може складатися лише з букв, цифр, тире і підкреслення.
-      unique: Тип асоціації з даним кодом вже існує.
+      not_blank: Пожалуйста, введите название типа связи.
+      regex: Код типа ассоциации может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Тип связи с таким кодом уже существует.
   promotion:
     code:
-      unique: Промоція з даним кодом вже існує.
-      regex: Промо-код може містити лише літери, цифри, дефіси та підкреслення.
-      not_blank: Будь ласка, введіть акційний код.
+      unique: Акция с данным кодом уже существует.
+      regex: Код промоакции может состоять только из букв, цифр, тире и знаков подчеркивания.
+      not_blank: Пожалуйста, введите промо-код.
     description:
-      max_length: Опис акції не має бути довшим за 1 символ.|Опис акції не має бути довшим за {{ limit }} символ(-и,-ів).
-      min_length: Опис акції має бути щонайменше 1 символ завдовжки.|Опис акції має бути щонайменше {{ limit }} символ(-и,-ів) завдовжки.
-      not_blank: Будь ласка, введіть опис акції.
-    end_date_cannot_be_set_prior_start_date: Дата завершення не може бути встановлена раніше за дату початку.
+      max_length: Описание акции должно быть не более 1 символа.|Описание акции должно быть не более {{ limit }} символов.
+      min_length: Описание акции должно быть не менее 1 символа.|Описание акции должно быть не менее {{ limit }} символов.
+      not_blank: Пожалуйста, введите описание акции.
+    end_date_cannot_be_set_prior_start_date: Дата окончания не может быть раньше даты начала.
     name:
-      max_length: Назва акції не має бути довшою за 1 символ.|Назва акції не має бути довшою за {{ limit }} символ(-и,-ів).
-      min_length: Назва акції повинна бути щонайменше 1 символ завдовжки.|Назва акції повинна бути щонайменше {{ limit }} символ(-и,-ів) завдовжки.
-      not_blank: Будь ласка, введіть назву акції.
+      max_length: Название акции должно быть не более 1 символа.|Название акции должно быть не более {{ limit }} символов.
+      min_length: Название акции должно быть не менее 1 символа.|Название акции должно быть не менее {{ limit }} символов.
+      not_blank: Пожалуйста, введите имя акции.
   promotion_action:
     percentage_discount_configuration:
-      min: Значення процентної знижки має становити принаймні 0%.
-      max: Максимальна відсоткова знижка становить 100%.
+      min: Значение процента скидки должно быть как минимум 0%.
+      max: Максимальное значение процента скидки составляет 100%.
   promotion_coupon:
     code:
-      max_length: Код купона не має бути довшим за 1 символ.|Код купона не має бути довшим за {{ limit }} символ(-и,-ів).
-      min_length: Код купону не має бути довшим за 1 символ.|Код купону не має бути довшим за {{ limit }} символ(-и,-ів).
-      not_blank: Будь ласка, введіть код купона.
-      regex: Купонний код може складатися лише з букв, цифр, тире і підкреслення.
-      unique: Цей купон вже існує.
-    is_invalid: Код купона недійсний.
+      max_length: Длинна кода купона должна быть не более 1 символа.|Код купона должен быть не более чем {{ limit }} символов.
+      min_length: Код купона должен содержать хотя бы один символ.|Код купона должен содержать минимум {{ limit }} символов.
+      not_blank: Пожалуйста, введите код купона.
+      regex: Код купона может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Этот купон уже существует.
+    is_invalid: Код скидки недействительный.
     usage_limit:
-      min: Ліміт використання купону має бути принаймні {{ limit }}.
+      min: Лимит использования купона должен быть не менее {{ limit }}.
   promotion_coupon_generator_instruction:
     amount:
-      min: Кількість створених купонів має бути як мінімум {{ limit }}.
-      not_blank: Будь ласка, введіть кількість купонів для створення.
+      min: Количество купонов для генерации должно быть не меньше {{ limit }}.
+      not_blank: Пожалуйста, введите количество купонов для генерации.
     code_length:
-      min: Код купона повинен бути принаймні {{ limit }} символів.
-      max: Код купона не повинен перевищувати {{ limit }} символів.
-      not_blank: Будь ласка, введіть довжину коду купона.
-    possible_generation_amount: Недійсні довжини коду купонів або кількість купонів. Неможливо генерувати %expectedAmount% унікальні купони з довжиною коду дорівнюють %codeLength%. Можлива кількість складає %possibleAmount%.
+      min: Код купона должен быть не менее {{ limit }} символов.
+      max: Код купона не должен быть длиннее {{ limit }} символов.
+      not_blank: Пожалуйста, введите длину кода купона.
+    possible_generation_amount: Недопустимая длина кода купона или количество купонов. Невозможно генерировать %expectedAmount% уникальных купонов с длиной равной %codeLength%. Возможное количество составляет %possibleAmount%.
     usage_limit:
-      min: Ліміт на використання згенерованих купонів повинен бути не менше {{ limit }}.
+      min: Лимит на использование сгенерированных купонов должен быть не менее {{ limit }}.
   review:
     author:
-      already_exists: Ця адреса електронної пошти вже зареєстрована, будь ласка, увійдіть або скористайтеся відновленням забутого паролю.
+      already_exists: Этот e-mail уже занят, пожалуйста, войдите или используйте восстановление пароля.
     comment:
-      not_blank: Коментар до відгуку не повинен бути пустим.
+      not_blank: Комментарий к отзыву не должен быть пустым.
     rating:
-      not_blank: Ви маєте перевірити рейтинг відгуку.
+      not_blank: Вы должны проверить рейтинг обзора.
     title:
-      not_blank: Заголовок відгуку не повинний бути порожнім.
-      min_length: Заголовок відгуку має мати щонайменше 2 символи.
-      max_length: Заголовок відгуку повинен бути максимум 255 символів.
+      not_blank: Заголовок отзыва не должен быть пустым.
+      min_length: Заголовок отзыва должен иметь по крайней мере 2 символа.
+      max_length: Заголовок отзыва может иметь не более чем 255 символов.
   shipping_category:
     name:
-      max_length: 'Назва категорії має бути не довшою за {{ limit }} символ(-и,-ів).'
-      min_length: 'Назва категорії має містити щонайменше {{ limit }} символ(-и,-ів).'
-      not_blank: 'Будь ласка, введіть назву категорії доставки.'
+      max_length: 'Название категории не должно быть длиннее {{ limit }} символов.'
+      min_length: 'Название категории должно содержать не менее {{ limit }} символов.'
+      not_blank: 'Пожалуйста, введите название категории доставки.'
     code:
-      not_blank: 'Будь ласка, введіть код категорії доставки.'
-      regex: 'Код категорії доставки може містити лише літери, цифри, дефіси та підкреслення.'
-      unique: 'Категорія доставки з даним кодом вже існує.'
+      not_blank: 'Пожалуйста, введите код категории доставки.'
+      regex: 'Код категории доставки может состоять только из букв, цифр, тире и знаки подчеркивания.'
+      unique: 'Категория доставки с данным кодом уже существует.'
   shipping_method:
     name:
-      max_length: 'Назва способу доставки має бути не довшою за {{ limit }} символ(-и,-ів).'
-      min_length: 'Назва способу доставки має містити щонайменше {{ limit }} символ(-и,-ів).'
-      not_blank: 'Будь ласка, введіть назву способу доставки.'
+      max_length: 'Название способа доставки не должно быть длиннее {{ limit }} символов.'
+      min_length: 'Название способа доставки должно содержать не менее {{ limit }} символов.'
+      not_blank: 'Пожалуйста, введите название способа доставки.'
     code:
-      not_blank: 'Будь ласка, введіть код способу доставки.'
-      regex: 'Код способу доставки може складатися лише з букв, цифр, тире і підкреслення.'
-      unique: 'Спосіб доставки з даним кодом вже існує.'
+      not_blank: 'Пожалуйста, введите код способа доставки.'
+      regex: 'Код метода доставки может состоять только из букв, цифр, тире и знаки подчеркивания.'
+      unique: 'Метод доставки с данным кодом уже существует.'
     zone:
-      not_blank: 'Будь ласка, виберіть зону способу доставки.'
+      not_blank: 'Пожалуйста, выберите метод доставки.'
   shipment:
     shipping_method:
-      not_blank: 'Будь ласка, виберіть спосіб доставки.'
+      not_blank: 'Пожалуйста, выберите метод доставки.'
   tax_category:
     name:
-      not_blank: Будь ласка, введіть назву категорії податку.
+      not_blank: Пожалуйста, введите название категории налога.
     code:
-      not_blank: Будь ласка, введіть код категорії податку.
-      regex: Код податкової категорії може містити лише літери, цифри, дефіси та підкреслення.
-      unique: Категорія податку з даним кодом вже існує.
+      not_blank: Пожалуйста, введите код категории налога.
+      regex: Код налоговой категории может состоять только из букв, цифр, тире и знаки подчеркивания.
+      unique: Категория налога с таким кодом уже существует.
   tax_rate:
     category:
-      not_blank: Будь ласка, виберіть категорію податку.
+      not_blank: Пожалуйста, выберите категорию налога.
     name:
-      not_blank: Будь ласка, введіть назву податкової ставки.
+      not_blank: Пожалуйста, введите название ставки налога.
     amount:
-      not_blank: Будь ласка, введіть розмір податкової ставки.
+      not_blank: Пожалуйста, введите сумму ставки налога.
     calculator:
-      not_blank: Будь ласка, виберіть спосіб розрахунку податку.
+      not_blank: Пожалуйста, выберите калькулятор налогов.
     zone:
-      not_blank: Будь ласка, виберіть зону оподаткування.
+      not_blank: Пожалуйста, выберите налоговую зону.
     code:
-      not_blank: Будь ласка, введіть код податкової ставки.
-      regex: Код податкової категорії може містити лише літери, цифри, дефіси та підкреслення.
-      unique: Податкова ставка з даним кодом вже існує.
+      not_blank: Пожалуйста, введите код ставки налога.
+      regex: Код налоговой категории может состоять только из букв, цифр, тире и знаки подчеркивания.
+      unique: Ставка налога с таким кодом уже существует.
   taxon:
     code:
-      not_blank: Будь ласка, введіть код таксону.
-      regex: Код таксон може включати тільки літери, цифри, дефіси та символи підкреслювання.
-      unique: Таксон з даним кодом вже існує.
+      not_blank: Пожалуйста, введите код категории.
+      regex: Код категории может состоять только из букв, цифр, тире и знаков подчеркивания.
+      unique: Категория с таким кодом уже существует.
     name:
-      max_length: Назва таксону не має бути довшою за 255 символів.
-      not_blank: Будь ласка, введіть назву таксону.
+      max_length: Название категории не должно быть длиннее 255 символов.
+      not_blank: Пожалуйста, введите название категории.
     slug:
-      not_blank: Будь ласка, введіть слаґ таксону.
-      unique: Слаґ таксону повинен бути унікальним.
+      not_blank: Пожалуйста, введите псевдоним для категории.
+      unique: Псевдоним для категории должен быть уникальным.
   taxonomy:
     name:
-      max_length: Назва таксономії не має бути довшою за 255 символів.
-      not_blank: Будь ласка, введіть назву таксономії.
+      max_length: Название категории не должно быть длиннее 255 символов.
+      not_blank: Пожалуйста, введите название категории
