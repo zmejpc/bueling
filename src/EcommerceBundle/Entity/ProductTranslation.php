@@ -23,7 +23,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as UniqueEntity;
  * @ORM\DiscriminatorColumn(name="entity_class", type="string")
  * @author Design studio origami <https://origami.ua>
  */
-class ProductTranslation implements ProductTranslationInterface
+class ProductTranslation
 {
     use ORMBehaviors\Translatable\Translation,
         ORMBehaviors\Timestampable\Timestampable;

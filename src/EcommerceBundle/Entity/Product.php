@@ -35,7 +35,7 @@ use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
  * @ORM\DiscriminatorColumn(name="entity_class", type="string")
  * @author Design studio origami <https://origami.ua>
  */
-class Product implements ProductInterface
+class Product
 {
     use ORMBehaviors\Timestampable\Timestampable,
         ORMBehaviors\Translatable\Translatable;
@@ -110,18 +110,6 @@ class Product implements ProductInterface
      * @ORM\Column(name="is_nova", type="integer", nullable=false)
      */
     protected $isNova = self::NO;
-
-    /**
-     * @var \Ecommerce\Entity\ProductStatus
-     *
-     * @Gedmo\Versioned
-     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\ProductStatus")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="status", referencedColumnName="id", onDelete="SET NULL")
-     * })
-     * @ORM\OrderBy({"position" = "ASC"})
-     */
-    private $status;
 
     /**
      * @var string
@@ -312,22 +300,6 @@ class Product implements ProductInterface
     public function setIsNova(bool $isNova): void
     {
         $this->isNova = $isNova;
-    }
-
-    /**
-     * @return ProductStatus
-     */
-    public function getStatus(): ?ProductStatus
-    {
-        return $this->status;
-    }
-
-    /**
-     * @param ProductStatus $status
-     */
-    public function setStatus(ProductStatus $status): void
-    {
-        $this->status = $status;
     }
 
     /**

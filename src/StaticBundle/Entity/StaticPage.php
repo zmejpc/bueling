@@ -2,6 +2,8 @@
 
 namespace StaticBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use SeoBundle\Entity\SeoTrait;
 use Doctrine\ORM\Mapping as ORM;
 use ComponentBundle\Entity\Id\IdTrait;
@@ -42,5 +44,47 @@ class StaticPage implements StaticPageInterface, SeoTraitInterface
     public function __toString(): string
     {
         return (string)$this->translate()->getTitle();
+    }
+
+    /**
+     * @ORM\OneToMany(targetEntity="StaticPageGalleryImage", mappedBy="staticPage", cascade={"persist","remove"}, orphanRemoval=true)
+     * @ORM\OrderBy({"position" = "ASC"})
+     */
+    private $galleryImages;
+
+    public function __construct()
+    {
+        $this->galleryImages = new ArrayCollection();
+    }
+
+    /**
+     * @return Collection|StaticPageGalleryImage[]
+     */
+    public function getGalleryImages(): Collection
+    {
+        return $this->galleryImages;
+    }
+
+    public function addGalleryImage(StaticPageGalleryImage $galleryImage): self
+    {
+        if (!$this->galleryImages->contains($galleryImage)) {
+            $this->galleryImages[] = $galleryImage;
+            $galleryImage->setStaticPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGalleryImage(StaticPageGalleryImage $galleryImage): self
+    {
+        if ($this->galleryImages->contains($galleryImage)) {
+            $this->galleryImages->removeElement($galleryImage);
+            // set the owning side to null (unless already changed)
+            if ($galleryImage->getStaticPage() === $this) {
+                $galleryImage->setStaticPage(null);
+            }
+        }
+
+        return $this;
     }
 }

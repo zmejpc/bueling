@@ -26,7 +26,7 @@ use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
  * @ORM\Entity(repositoryClass="Ecommerce\Entity\Repository\ProductCategoryRepository")
  * @author Design studio origami <https://origami.ua>
  */
-class ProductCategory implements ProductCategoryInterface
+class ProductCategory
 {
     use ORMBehaviors\Timestampable\Timestampable,
         ORMBehaviors\Translatable\Translatable;

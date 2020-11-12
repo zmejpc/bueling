@@ -161,6 +161,7 @@ security:
         - ROLE_NEWS_AUTHOR_FULL
         #
         - ROLE_STATIC
+        - ROLE_SLIDER
         - ROLE_SEO
         #
         - ROLE_USERS_EDIT

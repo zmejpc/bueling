@@ -19,7 +19,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as UniqueEntity;
  * @ORM\Entity
  * @author Design studio origami <https://origami.ua>
  */
-class ProductCategoryTranslation implements ProductCategoryTranslationInterface
+class ProductCategoryTranslation
 {
     use ORMBehaviors\Translatable\Translation,
         ORMBehaviors\Timestampable\Timestampable;

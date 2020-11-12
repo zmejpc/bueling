@@ -3,11 +3,9 @@
 namespace UserBundle\Form\Type\Dashboard;
 
 use UserBundle\Entity\User;
-use Ecommerce\Entity\ProductDiscount;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Security\Core\Security;
 use DashboardBundle\Form\Type\DashboardFormType;
-use DashboardBundle\Form\Type\DashboardSelect2EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use DashboardBundle\Form\Type\DashboardTextType;
 use DashboardBundle\Form\Type\DashboardEmailType;
@@ -17,6 +15,7 @@ use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use BackendBundle\Controller\Dashboard\DashboardConfig;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -77,13 +76,9 @@ class UserType extends AbstractType
                         'translation_domain' => 'UserMessages',
                         'maxLength' => 255
                     ])
-                    ->add('discount', DashboardSelect2EntityType::class, [
-                        'required' => false,
-                        'multiple' => false,
-                        'label' => 'Скидка',
-                        'class' => ProductDiscount::class,
-                        'choice_label' => 'title',
-                        'allow_clear' => true,
+                    ->add('plainPassword', PasswordType::class, [
+                        'label' => 'Пароль',
+                        'translation_domain' => 'UserMessages',
                     ])
                     ->add(
                         $builder

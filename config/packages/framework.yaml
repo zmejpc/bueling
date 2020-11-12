@@ -237,3 +237,26 @@ upload:
                     width: 1280
                     height: 624
                     action: resize_and_crop
+        slider_image:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/slider'
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 120
+                    height: 120
+                    action: resize_and_crop
+                580x180:
+                    width: 580
+                    height: 580
+                    action: resize_and_crop
+                800x250:
+                    width: 800
+                    height: 800
+                    action: resize_and_crop
+                1200x375:
+                    width: 1200
+                    height: 1200
+                    action: resize_and_crop

@@ -1,39 +1,40 @@
 ui:
-  email: 'Адреса електронної пошти'
-  repeat_password: 'Повторіть пароль.'
+  email: 'Адрес электронной почты'
+  repeat_password: 'Повторите пароль.'
 
 validators:
   user:
     email:
-      not_blank: Будь ласка, введіть свою адресу електронної пошти.
+      not_blank: Пожалуйста, введите ваш email.
+      unique: Этот адрес электронной почты уже используется.
     plainPassword:
-      not_blank: Будь ласка, введіть ваш пароль.
+      not_blank: Пожалуйста, введите ваш пароль.
 
 form:
   user:
-    billing_address: Адреса для рахунків
-    different_billing_address: Використати іншу адресу для виставлення рахунків?
-    first_name: Iм'я
-    groups: Групи
-    roles: Ролі
-    last_name: Прізвище
-    email: "*Адреса електронної пошти"
-    enabled: Ввімкнено
+    billing_address: Адрес для выставления счета
+    different_billing_address: Использовать другой адрес для выставления счета?
+    first_name: Имя
+    groups: Группы
+    roles: Роли
+    last_name: Фамилия
+    email: "*Адрес электронной почты"
+    enabled: Активен
     password:
       label: "*Пароль"
-      password_confirmation: Підтвердіть пароль
-      confirmation: Перевірка
-    remember_me: Пам'ятати мене
-    shipping_address: Адреса доставки
-    username: Ім'я користувача
+      password_confirmation: Подтвердите пароль
+      confirmation: Верификация
+    remember_me: Запомнить меня
+    shipping_address: Адрес доставки
+    username: Имя пользователя
   login:
-    username: 'Ім''я користувача'
+    username: 'Имя пользователя'
     password: 'Пароль'
-    remember_me: 'Пам''ятати мене'
+    remember_me: 'Запомнить меня'
   user_change_password:
-    confirmation: Підтвердження
-    current: Поточний пароль
-    new: Новий пароль
+    confirmation: Подтверждение
+    current: Текущий пароль
+    new: Новый пароль
   user_reset_password:
-    confirmation: Підтвердження
-    new: Новий пароль
+    confirmation: Подтверждение
+    new: Новый пароль

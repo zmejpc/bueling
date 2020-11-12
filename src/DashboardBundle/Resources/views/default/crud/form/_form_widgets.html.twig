@@ -192,6 +192,13 @@
     {% endspaceless %}
 {% endblock %}
 
+{% block password_widget %}
+    {% spaceless %}
+        {% include '@Dashboard/default/crud/form/fields/_input_text.html.twig' with {'field': form, 'labelLg': 'col-lg-2', 'divLg': 'col-lg-10'} %}
+        <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit kt-margin-10"></div>
+    {% endspaceless %}
+{% endblock %}
+
 {%- block form_widget_compound -%}
     {%- if form is rootform -%}
         {{ form_errors(form) }}

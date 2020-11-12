@@ -1,9 +1,9 @@
 form:
   seo:
-    meta_title: 'Назва сторінки (SEO)'
-    meta_keyword: 'Ключові слова сторінки (SEO)'
-    meta_description: 'Опис сторінки (SEO)'
-    bread_crumbs: 'Хлібні крихти'
+    meta_title: 'Название страницы (SEO)'
+    meta_keyword: 'Ключевые слова страницы (SEO)'
+    meta_description: 'Описание страницы (SEO)'
+    bread_crumbs: 'Хлебные крошки'
     h1: 'H1'
 
 sidebar:

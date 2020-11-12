@@ -3,6 +3,11 @@ dashboard_user_index:
     controller: UserBundle\Controller\Dashboard\UserController::listAction
     methods:  [GET, POST]
 
+dashboard_user_new:
+    path:     /user/new
+    controller: UserBundle\Controller\Dashboard\UserController::newAction
+    methods:  [GET, POST]
+
 dashboard_user_edit:
     path:     /user/edit/{id}
     controller: UserBundle\Controller\Dashboard\UserController::editAction

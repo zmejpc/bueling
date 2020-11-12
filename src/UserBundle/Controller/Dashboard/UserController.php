@@ -5,11 +5,9 @@ namespace UserBundle\Controller\Dashboard;
 use Twig\Environment;
 use UserBundle\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
-use Ecommerce\Entity\DiscountMailSetting;
-use Ecommerce\Entity\Order;
 use UserBundle\Form\Type\Dashboard\UserType;
 use DashboardBundle\Controller\CRUDController;
-use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -22,7 +20,7 @@ final class UserController extends CRUDController
     public function getGrantedRoles(): array
     {
         return [
-            'index' => 'ROLE_DIRECTOR', 'new' => null,
+            'index' => 'ROLE_DIRECTOR', 'new' => 'ROLE_DIRECTOR',
             'edit' => 'ROLE_DIRECTOR', 'delete' => null
         ];
     }
@@ -33,7 +31,7 @@ final class UserController extends CRUDController
     public function getRouteElements(): array
     {
         return [
-            'index' => 'dashboard_user_index', 'new' => null,
+            'index' => 'dashboard_user_index', 'new' => 'dashboard_user_new',
             'edit' => 'dashboard_user_edit', 'delete' => null,
         ];
     }
@@ -92,7 +90,6 @@ final class UserController extends CRUDController
             'name' => $this->translator->trans('ui.name_first', [], 'DashboardBundle'),
             'surname' => $this->translator->trans('ui.lastname', [], 'DashboardBundle'),
             'phoneNumber' => $this->translator->trans('ui.phone', [], 'DashboardBundle'),
-            'notinsearch_alias_ordersSum' => 'Сумма заказов',
             'lastLogin' => $this->translator->trans('ui.last_login', [], 'DashboardBundle'),
             'enabled' => $this->translator->trans('form.user.enabled', [], 'UserMessages'),
             'locked' => $this->translator->trans('ui.locked', [], 'DashboardBundle'),
@@ -117,7 +114,6 @@ final class UserController extends CRUDController
             'name' => $item->getName(),
             'surname' => $item->getSurname(),
             'phoneNumber' => $item->getPhoneNumber(),
-            'notinsearch_alias_ordersSum' => $this->em->getRepository(Order::class)->getTotalPriceByUser($item),
             'lastLogin' => $this->twig->render('@Dashboard/default/crud/list/element/_data.html.twig', [
                 'element' => $item->getLastLogin(),
             ]),
@@ -151,46 +147,23 @@ final class UserController extends CRUDController
 
     public function customActionInEditAction($object)
     {
-        if($object->getDiscount() && filter_var($object->getEmail(), FILTER_VALIDATE_EMAIL)) {
-            $uow = $this->em->getUnitOfWork();
-            $originalData = $uow->getOriginalEntityData($object);
-
-            if($originalData['discount_id'] != $object->getDiscount()->getId()) {
-                if($discountMailSetting = $this->em->getRepository(DiscountMailSetting::class)->getElement()) {
-
-                    try {
-
-                        $transport = (new \Swift_SmtpTransport(
-                            $discountMailSetting->getSmtpHost(), $discountMailSetting->getSmtpPort()
-                        ));
-                        $transport
-                            ->setUsername($discountMailSetting->getSmtpUsername())
-                            ->setPassword($discountMailSetting->getSmtpPassword());
-
-                        $mailer = new \Swift_Mailer($transport);
-
-                        $body = $this->twig->render('mail/user/discount/index.html.twig', [
-                            'message' => str_replace('[username]', $object->getDisplayName(), $discountMailSetting->getMessageBody()),
-                            'discount' => $object->getDiscount(),
-                            'footerMessage' => $discountMailSetting->getMessageFooter(),
-                        ]);
-
-                        $subject = str_replace('[discount]', $object->getDiscount()->getTitle(), $discountMailSetting->getMessageSubject());
-
-                        $message = (new \Swift_Message($subject))
-                            ->setFrom([$discountMailSetting->getSmtpUsername() => $discountMailSetting->getSenderName()])
-                            ->setTo($object->getEmail())
-                            ->setBody($body, 'text/html; charset=utf-8');
-                        $mailer->send($message);
-
-                    } catch (\Throwable $e) {
-                        // dump($e->getMessage());exit;
-                    }
-
-                }
-            }
-        }
+        $object = $this->setPassword($object);
         
+        return $object;
+    }
+
+    public function customActionInNewAction($object)
+    {
+        $object = $this->setPassword($object);
+
+        return $object;
+    }
+
+    private function setPassword($object)
+    {
+        $event = new \UserBundle\Event\UserEvent($object);
+        $this->eventDispatcher->dispatch('user.created.success', $event);
+
         return $object;
     }
 

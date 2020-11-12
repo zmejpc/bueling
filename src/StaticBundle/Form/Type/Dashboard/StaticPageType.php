@@ -14,8 +14,10 @@ use SeoBundle\Form\Type\Dashboard\AddSeoSubscriber;
 use DashboardBundle\Form\Type\DashboardWYSIWYGType;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 use DashboardBundle\Form\Type\DashboardTextareaType;
+use DashboardBundle\Form\Type\DashboardCollectionType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use DashboardBundle\Form\Type\DashboardTranslationsType;
+use StaticBundle\Form\Type\Dashboard\StaticPageGalleryImageType;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -81,14 +83,22 @@ class StaticPageType extends AbstractType
                             'slug', 'id', 'locale', 'translatable', 'createdAt', 'updatedAt', 'treeTitle'
                         ]
                     ])
-                    ->add('poster', UploadType::class, [
-                        'file_type' => 'static_page_poster',
-                        'extensions' => '.jpg, .gif, .png, .svg',
-                        'label' => 'ui.image',
-                        'required' => false,
+            )
+            ->add(
+                $builder->create('galleryImages', DashboardFormType::class, [
+                    'inherit_data' => true,
+                    'tabName' => 'sidebar.photo_gallery.photo_gallery',
+                    'translation_domain' => 'DashboardBundle',
+                ])
+                    ->add('galleryImages', DashboardCollectionType::class, [
+                        'prototype_template' => '@Ecommerce/dashboard/product/form/_product_gallery_images_prototype.html.twig',
+                        'entry_type' => StaticPageGalleryImageType::class,
+                        'allow_add' => true,
+                        'allow_delete' => true,
+                        'prototype' => true,
+                        'by_reference' => false,
                     ])
             )
-            // ->addEventSubscriber(new AddSeoSubscriber())
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
 
         if ($this->security->isGranted('ROLE_DEVELOPER')) {

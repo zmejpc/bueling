@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\Entity;
+namespace StaticBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -10,17 +10,17 @@ use ComponentBundle\Entity\Position\PositionTrait;
 use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
 
 /**
- * ProductGalleryImage
+ * StaticPageGalleryImage
  *
  * @Gedmo\Loggable
- * @ORM\Table(name="product_gallery_image_table", indexes={
+ * @ORM\Table(name="static_page_gallery_image_table", indexes={
  *     @ORM\Index(name="position_idx", columns={"position"}),
  *     @ORM\Index(name="show_on_website_idx", columns={"show_on_website"}),
  *     })
  * @ORM\Entity
  * @author Design studio origami <https://origami.ua>
  */
-class ProductGalleryImage
+class StaticPageGalleryImage
 {
     use ORMBehaviors\Timestampable\Timestampable;
     use PositionTrait;
@@ -45,15 +45,15 @@ class ProductGalleryImage
     private $image;
 
     /**
-     * @var \Ecommerce\Entity\ProductVariant
+     * @var StaticBundle\Entity\StaticPage
      *
      * @Gedmo\Versioned
-     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\Product", inversedBy="galleryImages")
+     * @ORM\ManyToOne(targetEntity="StaticBundle\Entity\StaticPage", inversedBy="galleryImages")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="id", onDelete="cascade")
+     *   @ORM\JoinColumn(name="static_page_id", referencedColumnName="id", onDelete="cascade")
      * })
      */
-    private $product;
+    private $staticPage;
 
     /**
      * @return array|mixed
@@ -104,18 +104,18 @@ class ProductGalleryImage
     }
 
     /**
-     * @return Product
+     * @return StaticPage
      */
-    public function getProduct(): Product
+    public function getStaticPage(): StaticPage
     {
-        return $this->product;
+        return $this->staticPage;
     }
 
     /**
-     * @param Product $product
+     * @param StaticPage $staticPage
      */
-    public function setProduct(Product $product): void
+    public function setStaticPage(StaticPage $staticPage): void
     {
-        $this->product = $product;
+        $this->staticPage = $staticPage;
     }
 }

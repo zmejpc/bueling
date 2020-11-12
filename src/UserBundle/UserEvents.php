@@ -141,4 +141,6 @@ final class UserEvents
     const RESETTING_SEND_EMAIL_COMPLETED = 'user.resetting.send_email.completed';
 
     const AUTO_REGISTRATION_SUCCESS = 'user.autoregistration.success';
+
+    const NEW_CREATED_SUCCESS = 'user.created.success';
 }

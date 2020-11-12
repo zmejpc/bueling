@@ -46,9 +46,6 @@ final class DashboardConfig extends \DashboardBundle\Controller\DashboardConfig
     {
         $sidebar = [];
 
-        $news = self::sidebarNewsBundle();
-        (!is_null($news)) ? $sidebar['news'] = $news : null;
-
         $ecommerce = self::sidebarEcommerceBundle();
         (!is_null($ecommerce)) ? $sidebar['ecommerce'] = $ecommerce : null;
 
@@ -65,13 +62,16 @@ final class DashboardConfig extends \DashboardBundle\Controller\DashboardConfig
             $sidebar['supportCenter'] = $supportCenter;
         }
 
+        $news = self::sidebarNewsBundle();
+        (!is_null($news)) ? $sidebar['news'] = $news : null;
+
         if (!is_null($settings)) {
             $seo = self::sidebarSeoBundle();
             (!is_null($seo)) ? $settings['items'][] = $seo : null;
             $static = self::sidebarStaticBundle();
             (!is_null($static)) ? $settings['items'][] = $static : null;
-            // $user = self::sidebarUserBundle();
-            // (!is_null($user)) ? $settings['items'][] = $user : null;
+            $user = self::sidebarUserBundle();
+            (!is_null($user)) ? $settings['items'][] = $user : null;
                 
             $sidebar['settings'] = $settings;
         }
