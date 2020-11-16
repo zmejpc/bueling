@@ -57,12 +57,12 @@ class ProductCategoryType extends AbstractType
                 ],
                 'excluded_fields' => ['createdAt', 'updatedAt', 'slug', 'treeTitle']
             ])
-            // ->add('poster', UploadType::class, [
-            //     'file_type' => 'product_category_poster',
-            //     'extensions' => '.jpg, .gif, .png, .svg',
-            //     'label' => 'ui.poster',
-            //     'required' => false,
-            // ])
+            ->add('poster', UploadType::class, [
+                'file_type' => 'product_category_poster',
+                'extensions' => '.jpg, .gif, .png, .svg',
+                'label' => 'ui.poster',
+                'required' => false,
+            ])
             ->add('position', DashboardPositionType::class, [
                 'label' => 'ui.position',
             ])

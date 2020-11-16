@@ -260,3 +260,18 @@ upload:
                     width: 1200
                     height: 1200
                     action: resize_and_crop
+        product_feature_poster:
+            type: image
+            mime_type: []  # default
+            format: 'jpg, gif, png, svg'
+            upload_dir: '/uploads/product_feature'
+            main_action: 'resize_and_crop'
+            thumbnails:
+                admin:
+                    width: 120
+                    height: 120
+                    action: resize_and_crop
+                frontend:
+                    width: 120
+                    height: 120
+                    action: resize_and_crop

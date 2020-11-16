@@ -44,7 +44,7 @@ class ProductController extends CRUDController
 
     public function isCustomActionForList(): bool
     {
-        return true;
+        return false;
     }
 
     public function getGrantedRoles(): array

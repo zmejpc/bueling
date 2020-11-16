@@ -3,11 +3,8 @@
 namespace Ecommerce\Entity;
 
 use Doctrine\Common\Collections\Collection;
-use Ecommerce\Entity\OrderHasProduct;
-use UserBundle\Entity\User;
 use SeoBundle\Entity\SeoTrait;
 use Doctrine\ORM\Mapping as ORM;
-use Ecommerce\Entity\ProductAssociated;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -43,6 +40,9 @@ class Product
     use SeoTrait;
     use PositionTrait;
     use ShowOnWebsiteTrait;
+
+    public const YES = 1;
+    public const NO = 0;
 
     /**
      * @param $method
@@ -93,6 +93,15 @@ class Product
      * @ORM\OrderBy({"position" = "ASC"})
      */
     private $galleryImages;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ProductFeature")
+     * @ORM\JoinTable(name="product_has_feature",
+     *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="product_fature_id", referencedColumnName="id")}
+     *  )
+     */
+    private $features;
 
     /**
      * @var integer
@@ -161,6 +170,7 @@ class Product
     {
         $this->galleryImages = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->features = new ArrayCollection();
     }
 
     /**
@@ -350,5 +360,31 @@ class Product
     public function setSlug(string $slug): void
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * @return Collection|ProductFeature[]
+     */
+    public function getFeatures(): Collection
+    {
+        return $this->features;
+    }
+
+    public function addFeature(ProductFeature $feature): self
+    {
+        if (!$this->features->contains($feature)) {
+            $this->features[] = $feature;
+        }
+
+        return $this;
+    }
+
+    public function removeFeature(ProductFeature $feature): self
+    {
+        if ($this->features->contains($feature)) {
+            $this->features->removeElement($feature);
+        }
+
+        return $this;
     }
 }

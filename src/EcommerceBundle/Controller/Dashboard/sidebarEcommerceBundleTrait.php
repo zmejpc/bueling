@@ -23,6 +23,10 @@ trait sidebarEcommerceBundleTrait
             $products = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['product/edit/'], ['dashboard_product_index', 'dashboard_product_new', 'dashboard_product_edit'], 'fa fa-gem', false, null, null, 'sidebar.catalog.products.products', [], 'dashboard_product_index');
 
             (!is_null($products)) ? $menu['items'][] = $products : null;
+
+            $features = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['product/feature/edit/'], ['dashboard_product_feature_index', 'dashboard_product_feature_new', 'dashboard_product_feature_edit'], 'fa fa-ankh', false, null, null, 'Характеристики', [], 'dashboard_product_feature_index');
+
+            (!is_null($features)) ? $menu['items'][] = $features : null;
         }
 
         return $menu;

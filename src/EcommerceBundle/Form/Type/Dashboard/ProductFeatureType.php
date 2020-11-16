@@ -2,30 +2,23 @@
 
 namespace Ecommerce\Form\Type\Dashboard;
 
-use SeoBundle\Form\Type\Dashboard\SeoType;
-use DashboardBundle\Form\Type\DashboardCollectionType;
+use UploadBundle\Form\Type\UploadType;
 use DashboardBundle\Form\Type\DashboardWYSIWYGType;
-use DashboardBundle\Form\Type\DashboardPositionType;
-use DashboardBundle\Form\Type\DashboardSelect2EntityType;
-use DashboardBundle\Form\Type\DashboardYesNoType;
-use DashboardBundle\Form\Type\DashboardTextareaType;
 use DashboardBundle\Form\Type\DashboardTextType;
-use DashboardBundle\Form\Type\DashboardNumberType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Doctrine\ORM\EntityRepository;
-use Ecommerce\Entity\Product;
-use DashboardBundle\Form\Type\DashboardTranslationsType;
-use Ecommerce\Entity\ProductCategory;
+use DashboardBundle\Form\Type\DashboardPositionType;
+use DashboardBundle\Form\Type\DashboardYesNoType;
 use Ecommerce\Entity\ProductFeature;
+use DashboardBundle\Form\Type\DashboardTranslationsType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * @author Design studio origami <https://origami.ua>
  */
-class ProductType extends AbstractType
+class ProductFeatureType extends AbstractType
 {
     protected $security;
 
@@ -36,13 +29,7 @@ class ProductType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $id = null;
-        if ($builder->getData()) {
-            $id = $builder->getData()->getId();
-        }
-
         $builder
-            ->add('seo', SeoType::class)
             ->add('translations', DashboardTranslationsType::class, [
                 'label' => false,
                 'fields' => [
@@ -62,7 +49,13 @@ class ProductType extends AbstractType
                         'required' => false,
                     ],
                 ],
-                'excluded_fields' => ['createdAt', 'updatedAt', 'slug']
+                'excluded_fields' => ['createdAt', 'updatedAt']
+            ])
+            ->add('poster', UploadType::class, [
+                'file_type' => 'product_feature_poster',
+                'extensions' => '.jpg, .gif, .png, .svg',
+                'label' => 'ui.poster',
+                'required' => false,
             ])
             ->add('position', DashboardPositionType::class, [
                 'label' => 'ui.position',
@@ -72,33 +65,11 @@ class ProductType extends AbstractType
                 'translation_domain' => 'DashboardBundle',
                 'required' => false,
             ])
-            ->add('categories', DashboardSelect2EntityType::class, [
-                'required' => false,
-                'multiple' => true,
-                'label' => 'ui.categories',
-                'class' => ProductCategory::class,
-                'choice_label' => 'translate.title',
-            ])
-            ->add('features', DashboardSelect2EntityType::class, [
-                'required' => false,
-                'multiple' => true,
-                'label' => 'Характеристики',
-                'class' => ProductFeature::class,
-                'choice_label' => 'translate.title',
-            ])
-            ->add('galleryImages', DashboardCollectionType::class, [
-                'prototype_template' => '@Ecommerce/dashboard/product/form/_product_gallery_images_prototype.html.twig',
-                'entry_type' => ProductGalleryImageType::class,
-                'allow_add' => true,
-                'allow_delete' => true,
-                'prototype' => true,
-                'by_reference' => false,
-            ])
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(['data_class' => Product::class, 'grantedRoles' => null]);
+        $resolver->setDefaults(['data_class' => ProductFeature::class, 'grantedRoles' => null]);
     }
 }

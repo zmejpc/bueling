@@ -9,21 +9,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints as UniqueEntity;
 
 /**
- * ProductTranslation
+ * ProductFeatureTranslation
  *
  * @Gedmo\Loggable
- * @ORM\Table(name="product_translation_table", indexes={
- *     @ORM\Index(name="slug_idx", columns={"slug", "entity_class"}),
- *     @ORM\Index(name="title_idx", columns={"title", "entity_class"}),
- *     })
- * @UniqueEntity\UniqueEntity(fields="slug")
+ * @ORM\Table(name="product_feature_translation_table")
  * @ORM\Entity
- * @ORM\MappedSuperclass
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="entity_class", type="string")
  * @author Design studio origami <https://origami.ua>
  */
-class ProductTranslation
+class ProductFeatureTranslation
 {
     use ORMBehaviors\Translatable\Translation,
         ORMBehaviors\Timestampable\Timestampable;
@@ -31,8 +24,8 @@ class ProductTranslation
     /**
      * @var string
      *
-     * @Assert\NotBlank()
      * @Gedmo\Versioned
+     * @Assert\NotBlank()
      * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     private $title;
@@ -41,16 +34,7 @@ class ProductTranslation
      * @var string
      *
      * @Gedmo\Versioned
-     * @Gedmo\Slug(fields={"title"})
-     * @ORM\Column(name="slug", type="string", length=255, nullable=false, unique=true)
-     */
-    private $slug;
-
-    /**
-     * @var string
-     *
-     * @Gedmo\Versioned
-     * @ORM\Column(name="description", type="text", nullable=true)
+     * @ORM\Column(name="description", type="text", nullable=false)
      */
     private $description;
 
@@ -70,22 +54,6 @@ class ProductTranslation
         $this->title = $title;
     }
 
-    /**
-     * @return string
-     */
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * @param string $slug
-     */
-    public function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
-    }
-    
     /**
      * @return string
      */
