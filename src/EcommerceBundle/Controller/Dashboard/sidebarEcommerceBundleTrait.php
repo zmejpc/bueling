@@ -31,6 +31,10 @@ trait sidebarEcommerceBundleTrait
             $activityAreas = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['activity-area/edit/'], ['dashboard_activity_area_index', 'dashboard_activity_area_new', 'dashboard_activity_area_edit'], 'fa fa-won-sign', false, null, null, 'Направления', [], 'dashboard_activity_area_index');
 
             (!is_null($activityAreas)) ? $menu['items'][] = $activityAreas : null;
+
+            $projects = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['project/edit/'], ['dashboard_project_index', 'dashboard_project_new', 'dashboard_project_edit'], 'fa fa-window-restore', false, null, null, 'Проекты', [], 'dashboard_project_index');
+
+            (!is_null($projects)) ? $menu['items'][] = $projects : null;
         }
 
         return $menu;

@@ -1,0 +1,23 @@
+dashboard_project_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\ProjectController:listAction
+    methods:  [GET, POST]
+
+dashboard_project_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\ProjectController:newAction
+    methods:  [GET, POST]
+
+dashboard_project_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\ProjectController:editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_project_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\ProjectController:deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
