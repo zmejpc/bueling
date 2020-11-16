@@ -10,14 +10,11 @@ use DashboardBundle\Form\Type\DashboardSelect2EntityType;
 use DashboardBundle\Form\Type\DashboardYesNoType;
 use DashboardBundle\Form\Type\DashboardTextareaType;
 use DashboardBundle\Form\Type\DashboardTextType;
-use DashboardBundle\Form\Type\DashboardNumberType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityRepository;
-use Ecommerce\Entity\Product;
-use DashboardBundle\Form\Type\DashboardTranslationsType;
-use Ecommerce\Entity\ProductCategory;
-use Ecommerce\Entity\ProductFeature;
 use Ecommerce\Entity\ActivityArea;
+use DashboardBundle\Form\Type\DashboardTranslationsType;
+use Ecommerce\Entity\ProductFeature;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
@@ -26,7 +23,7 @@ use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 /**
  * @author Design studio origami <https://origami.ua>
  */
-class ProductType extends AbstractType
+class ActivityAreaType extends AbstractType
 {
     protected $security;
 
@@ -73,20 +70,6 @@ class ProductType extends AbstractType
                 'translation_domain' => 'DashboardBundle',
                 'required' => false,
             ])
-            ->add('categories', DashboardSelect2EntityType::class, [
-                'required' => false,
-                'multiple' => true,
-                'label' => 'ui.categories',
-                'class' => ProductCategory::class,
-                'choice_label' => 'translate.title',
-            ])
-            ->add('activityAreas', DashboardSelect2EntityType::class, [
-                'required' => false,
-                'multiple' => true,
-                'label' => 'Направления',
-                'class' => ActivityArea::class,
-                'choice_label' => 'translate.title',
-            ])
             ->add('features', DashboardSelect2EntityType::class, [
                 'required' => false,
                 'multiple' => true,
@@ -95,8 +78,8 @@ class ProductType extends AbstractType
                 'choice_label' => 'translate.title',
             ])
             ->add('galleryImages', DashboardCollectionType::class, [
-                'prototype_template' => '@Ecommerce/dashboard/product/form/_product_gallery_images_prototype.html.twig',
-                'entry_type' => ProductGalleryImageType::class,
+                'prototype_template' => '@Ecommerce/dashboard/activity_area/form/_activity_area_gallery_images_prototype.html.twig',
+                'entry_type' => ActivityAreaGalleryImageType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
@@ -107,6 +90,6 @@ class ProductType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(['data_class' => Product::class, 'grantedRoles' => null]);
+        $resolver->setDefaults(['data_class' => ActivityArea::class, 'grantedRoles' => null]);
     }
 }

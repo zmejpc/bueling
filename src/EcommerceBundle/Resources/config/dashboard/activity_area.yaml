@@ -1,0 +1,23 @@
+dashboard_activity_area_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\ActivityAreaController:listAction
+    methods:  [GET, POST]
+
+dashboard_activity_area_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\ActivityAreaController:newAction
+    methods:  [GET, POST]
+
+dashboard_activity_area_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\ActivityAreaController:editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_activity_area_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\ActivityAreaController:deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

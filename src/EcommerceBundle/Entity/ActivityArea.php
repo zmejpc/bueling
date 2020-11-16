@@ -14,25 +14,24 @@ use ComponentBundle\Entity\Position\PositionTrait;
 use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
 
 /**
- * Product
+ * ActivityArea
  *
  * @Gedmo\Loggable
- * @ORM\Table(name="product_table", uniqueConstraints={
+ * @ORM\Table(name="activity_area_table", uniqueConstraints={
  *     @ORM\UniqueConstraint(name="seo_UNIQUE", columns={"seo_id"})
  * }, indexes={
  *     @ORM\Index(name="seo_idx", columns={"seo_id", "entity_class"}),
  *     @ORM\Index(name="position_idx", columns={"position", "entity_class"}),
  *     @ORM\Index(name="show_on_website_idx", columns={"show_on_website", "entity_class"}),
- *     @ORM\Index(name="price_idx", columns={"price"}),
  *     })
  * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Ecommerce\Entity\Repository\ProductRepository")
+ * @ORM\Entity(repositoryClass="Ecommerce\Entity\Repository\ActivityAreaRepository")
  * @ORM\MappedSuperclass
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="entity_class", type="string")
  * @author Design studio origami <https://origami.ua>
  */
-class Product
+class ActivityArea
 {
     use ORMBehaviors\Timestampable\Timestampable,
         ORMBehaviors\Translatable\Translatable;
@@ -74,68 +73,19 @@ class Product
     private $id;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ProductCategory", inversedBy="products")
-     * @ORM\JoinTable(name="product_has_product_category",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="product_id", referencedColumnName="id", onDelete="CASCADE")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="product_category_id", referencedColumnName="id", onDelete="CASCADE")
-     *   }
-     * )
-     */
-    private $categories;
-
-    /**
-     * @ORM\OneToMany(targetEntity="ProductGalleryImage", mappedBy="product", cascade={"persist","remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="ActivityAreaGalleryImage", mappedBy="activityArea", cascade={"persist","remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"position" = "ASC"})
      */
     private $galleryImages;
 
     /**
      * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ProductFeature")
-     * @ORM\JoinTable(name="product_has_feature",
-     *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     * @ORM\JoinTable(name="activity_area_has_feature",
+     *   joinColumns={@ORM\JoinColumn(name="activity_area_id", referencedColumnName="id")},
      *   inverseJoinColumns={@ORM\JoinColumn(name="product_fature_id", referencedColumnName="id")}
      *  )
      */
     private $features;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ActivityArea")
-     * @ORM\JoinTable(name="product_has_activity_area",
-     *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
-     *   inverseJoinColumns={@ORM\JoinColumn(name="activity_area_id", referencedColumnName="id")}
-     *  )
-     */
-    private $activityAreas;
-
-    /**
-     * @var integer
-     *
-     * @Gedmo\Versioned
-     * @ORM\Column(name="top_sale", type="integer", options="{default: 0}")
-     */
-    protected $topSale = self::NO;
-
-    /**
-     * @var integer
-     *
-     * @Gedmo\Versioned
-     * @Assert\NotBlank()
-     * @ORM\Column(name="is_nova", type="integer", nullable=false)
-     */
-    protected $isNova = self::NO;
-
-    /**
-     * @var string
-     *
-     * @Gedmo\Versioned
-     * @ORM\Column(name="price", type="decimal", precision=11, scale=0, nullable=true)
-     */
-    private $price;
 
     /**
      * @var string
@@ -178,9 +128,7 @@ class Product
     public function __construct()
     {
         $this->galleryImages = new ArrayCollection();
-        $this->categories = new ArrayCollection();
         $this->features = new ArrayCollection();
-        $this->activityAreas = new ArrayCollection();
     }
 
     /**
@@ -193,55 +141,7 @@ class Product
         return $this->id;
     }
 
-    public function hasProductCategory(ProductCategory $category)
-    {
-        return $this->categories->contains($category);
-    }
-
-    /**
-     * Add category
-     *
-     * @param \Ecommerce\Entity\ProductCategory $category
-     *
-     * @return Product
-     */
-    public function addCategory(ProductCategory $category)
-    {
-        if (!$this->hasProductCategory($category)) {
-            $this->categories->add($category);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Remove category
-     *
-     * @param \Ecommerce\Entity\ProductCategory $category
-     */
-    public function removeCategory(ProductCategory $category)
-    {
-        if ($this->hasProductCategory($category)) {
-            $this->categories->removeElement($category);
-        }
-    }
-
-    /**
-     * Get categories
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
-
-    public function hasCategories()
-    {
-        return !$this->getCategories()->isEmpty();
-    }
-
-    public function hasGalleryImage(ProductGalleryImage $galleryImage)
+    public function hasGalleryImage(ActivityAreaGalleryImage $galleryImage)
     {
         return $this->galleryImages->contains($galleryImage);
     }
@@ -249,14 +149,14 @@ class Product
     /**
      * Add galleryImage
      *
-     * @param \Ecommerce\Entity\ProductGalleryImage $galleryImage
+     * @param \Ecommerce\Entity\ActivityAreaGalleryImage $galleryImage
      *
      * @return Product
      */
-    public function addGalleryImage(ProductGalleryImage $galleryImage)
+    public function addGalleryImage(ActivityAreaGalleryImage $galleryImage)
     {
         if (!$this->hasGalleryImage($galleryImage)) {
-            $galleryImage->setProduct($this);
+            $galleryImage->setActivityArea($this);
             $this->galleryImages->add($galleryImage);
         }
 
@@ -266,9 +166,9 @@ class Product
     /**
      * Remove galleryImage
      *
-     * @param \Ecommerce\Entity\ProductGalleryImage $galleryImage
+     * @param \Ecommerce\Entity\ActivityAreaGalleryImage $galleryImage
      */
-    public function removeGalleryImage(ProductGalleryImage $galleryImage)
+    public function removeGalleryImage(ActivityAreaGalleryImage $galleryImage)
     {
         if ($this->hasGalleryImage($galleryImage)) {
             $this->galleryImages->removeElement($galleryImage);
@@ -288,54 +188,6 @@ class Product
     public function hasGalleryImages()
     {
         return !$this->getGalleryImages()->isEmpty();
-    }
-
-    /**
-     * @return int
-     */
-    public function getTopSale(): bool
-    {
-        return $this->topSale;
-    }
-
-    /**
-     * @param bool $topSale
-     */
-    public function setTopSale(bool $topSale): void
-    {
-        $this->topSale = $topSale;
-    }
-
-    /**
-     * @return int
-     */
-    public function getIsNova(): bool
-    {
-        return $this->isNova;
-    }
-
-    /**
-     * @param bool $isNova
-     */
-    public function setIsNova(bool $isNova): void
-    {
-        $this->isNova = $isNova;
-    }
-
-    /**
-     * @return float
-     */
-    public function getPrice(): ?float
-    {
-        return $this->price;
-    }
-
-    /**
-     * @param float $price
-     */
-    public function setPrice($price): void
-    {
-        $this->price = (float)$price;
     }
 
     public function getSlugForUrl()
@@ -393,32 +245,6 @@ class Product
     {
         if ($this->features->contains($feature)) {
             $this->features->removeElement($feature);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|ActivityArea[]
-     */
-    public function getActivityAreas(): Collection
-    {
-        return $this->activityAreas;
-    }
-
-    public function addActivityArea(ActivityArea $activityArea): self
-    {
-        if (!$this->activityAreas->contains($activityArea)) {
-            $this->activityAreas[] = $activityArea;
-        }
-
-        return $this;
-    }
-
-    public function removeActivityArea(ActivityArea $activityArea): self
-    {
-        if ($this->activityAreas->contains($activityArea)) {
-            $this->activityAreas->removeElement($activityArea);
         }
 
         return $this;

@@ -27,6 +27,10 @@ trait sidebarEcommerceBundleTrait
             $features = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['product/feature/edit/'], ['dashboard_product_feature_index', 'dashboard_product_feature_new', 'dashboard_product_feature_edit'], 'fa fa-ankh', false, null, null, 'Характеристики', [], 'dashboard_product_feature_index');
 
             (!is_null($features)) ? $menu['items'][] = $features : null;
+
+            $activityAreas = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['activity-area/edit/'], ['dashboard_activity_area_index', 'dashboard_activity_area_new', 'dashboard_activity_area_edit'], 'fa fa-won-sign', false, null, null, 'Направления', [], 'dashboard_activity_area_index');
+
+            (!is_null($activityAreas)) ? $menu['items'][] = $activityAreas : null;
         }
 
         return $menu;

@@ -9,3 +9,7 @@ dashboard_product_category:
 dashboard_product_feature:
     resource: "@EcommerceBundle/Resources/config/dashboard/product_feature.yaml"
     prefix:   /product/feature
+
+dashboard_activity_area:
+    resource: "@EcommerceBundle/Resources/config/dashboard/activity_area.yaml"
+    prefix:   /activity-area
