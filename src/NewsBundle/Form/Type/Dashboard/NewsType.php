@@ -96,12 +96,6 @@ class NewsType extends AbstractType
                             'id', 'locale', 'translatable', 'createdAt', 'updatedAt', 'treeTitle', 'slug', 'posterAlt', 'signature'
                         ]
                     ])
-                    ->add('poster', UploadType::class, [
-                        'file_type' => 'news_poster',
-                        'extensions' => '.jpg, .gif, .png, .svg',
-                        'label' => 'ui.image',
-                        'required' => false,
-                    ])
                     ->add('newsCategory', DashboardSelect2EntityType::class, [
                         'label' => 'Категория',
                         'class' => NewsCategory::class,
@@ -135,6 +129,21 @@ class NewsType extends AbstractType
                                 'labelLg' => 'col-lg-6'
                             ])
                     )
+            )
+            ->add(
+                $builder->create('gallery', DashboardFormType::class, [
+                    'inherit_data' => true,
+                    'tabName' => 'sidebar.photo_gallery.photo_gallery',
+                    'translation_domain' => 'DashboardBundle',
+                ])
+                ->add('galleryImages', DashboardCollectionType::class, [
+                    'prototype_template' => '@News/dashboard/news/gallery_images/form/_news_gallery_images_prototype.html.twig',
+                    'entry_type' => NewsGalleryImageType::class,
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                ])
             )
             ->addEventSubscriber(new AddSeoSubscriber())
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));

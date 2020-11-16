@@ -67,19 +67,19 @@ class NewsCategoryType extends AbstractType
                                 'helpBlock' => null,
                                 'maxLength' => 255,
                             ],
-                            'shortDescription' => [
-                                'field_type' => DashboardWYSIWYGType::class,
-                                'label' => 'form.short_description',
-                                'required' => false,
-                            ],
-                            'description' => [
-                                'field_type' => DashboardWYSIWYGType::class,
-                                'required' => false,
-                                'label' => 'ui.description',
-                            ]
+                            // 'shortDescription' => [
+                            //     'field_type' => DashboardWYSIWYGType::class,
+                            //     'label' => 'form.short_description',
+                            //     'required' => false,
+                            // ],
+                            // 'description' => [
+                            //     'field_type' => DashboardWYSIWYGType::class,
+                            //     'required' => false,
+                            //     'label' => 'ui.description',
+                            // ]
                         ],
                         'excluded_fields' => [
-                            'slug', 'id', 'locale', 'translatable', 'createdAt', 'updatedAt', 'treeTitle'
+                            'slug', 'id', 'locale', 'translatable', 'createdAt', 'updatedAt', 'treeTitle', 'description', 'shortDescription'
                         ]
                     ])
                     ->add(
