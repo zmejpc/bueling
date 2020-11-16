@@ -17,3 +17,7 @@ dashboard_activity_area:
 dashboard_project:
     resource: "@EcommerceBundle/Resources/config/dashboard/project.yaml"
     prefix:   /project
+
+dashboard_partner:
+    resource: "@EcommerceBundle/Resources/config/dashboard/partner.yaml"
+    prefix:   /partner

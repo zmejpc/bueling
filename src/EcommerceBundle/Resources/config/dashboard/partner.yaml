@@ -1,0 +1,23 @@
+dashboard_partner_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\PartnerController:listAction
+    methods:  [GET, POST]
+
+dashboard_partner_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\PartnerController:newAction
+    methods:  [GET, POST]
+
+dashboard_partner_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\PartnerController:editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_partner_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\PartnerController:deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

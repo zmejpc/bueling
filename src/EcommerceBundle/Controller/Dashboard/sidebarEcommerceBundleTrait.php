@@ -35,6 +35,10 @@ trait sidebarEcommerceBundleTrait
             $projects = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['project/edit/'], ['dashboard_project_index', 'dashboard_project_new', 'dashboard_project_edit'], 'fa fa-window-restore', false, null, null, 'Проекты', [], 'dashboard_project_index');
 
             (!is_null($projects)) ? $menu['items'][] = $projects : null;
+
+            $partners = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['partner/edit/'], ['dashboard_partner_index', 'dashboard_partner_new', 'dashboard_partner_edit'], 'fa fa-hands-helping', false, null, null, 'Партнери', [], 'dashboard_partner_index');
+
+            (!is_null($partners)) ? $menu['items'][] = $partners : null;
         }
 
         return $menu;
