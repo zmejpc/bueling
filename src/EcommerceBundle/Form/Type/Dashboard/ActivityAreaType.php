@@ -19,6 +19,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
+use FrontendBundle\Form\Type\Dashboard\FaqType;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -80,6 +81,14 @@ class ActivityAreaType extends AbstractType
             ->add('galleryImages', DashboardCollectionType::class, [
                 'prototype_template' => '@Ecommerce/dashboard/activity_area/form/_activity_area_gallery_images_prototype.html.twig',
                 'entry_type' => ActivityAreaGalleryImageType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+                'by_reference' => false,
+            ])
+            ->add('faq', DashboardCollectionType::class, [
+                'prototype_template' => '@Frontend/dashboard/faq/form/_faq_prototype.html.twig',
+                'entry_type' => FaqType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,

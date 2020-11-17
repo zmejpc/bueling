@@ -46,24 +46,6 @@ class Faq
     private $id;
 
     /**
-     *
-     * @var \Ecommerce\Entity\ProductCategory
-     *
-     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\ProductCategory", inversedBy="faq")
-     *
-     */
-    private $productCategory;
-
-    /**
-     *
-     * @var \StaticBundle\Entity\StaticPage
-     *
-     * @ORM\ManyToOne(targetEntity="StaticBundle\Entity\StaticPage")
-     *
-     */
-    private $staticPage;
-
-    /**
      * @param $method
      * @param $arguments
      * @return mixed|null
@@ -89,30 +71,6 @@ class Faq
 
     public function __toString()
     {
-        return (string)$this->translate()->getTitle();
-    }
-
-    public function getProductCategory(): ?ProductCategory
-    {
-        return $this->productCategory;
-    }
-
-    public function setProductCategory(?ProductCategory $productCategory): self
-    {
-        $this->productCategory = $productCategory;
-
-        return $this;
-    }
-
-    public function getStaticPage(): ?StaticPage
-    {
-        return $this->staticPage;
-    }
-
-    public function setStaticPage(?StaticPage $staticPage): self
-    {
-        $this->staticPage = $staticPage;
-
-        return $this;
+        return (string)$this->translate()->getQuestion();
     }
 }

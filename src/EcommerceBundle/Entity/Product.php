@@ -3,6 +3,7 @@
 namespace Ecommerce\Entity;
 
 use Doctrine\Common\Collections\Collection;
+use FrontendBundle\Entity\Faq;
 use SeoBundle\Entity\SeoTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -20,16 +21,13 @@ use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
  * @ORM\Table(name="product_table", uniqueConstraints={
  *     @ORM\UniqueConstraint(name="seo_UNIQUE", columns={"seo_id"})
  * }, indexes={
- *     @ORM\Index(name="seo_idx", columns={"seo_id", "entity_class"}),
- *     @ORM\Index(name="position_idx", columns={"position", "entity_class"}),
- *     @ORM\Index(name="show_on_website_idx", columns={"show_on_website", "entity_class"}),
+ *     @ORM\Index(name="seo_idx", columns={"seo_id"}),
+ *     @ORM\Index(name="position_idx", columns={"position"}),
+ *     @ORM\Index(name="show_on_website_idx", columns={"show_on_website"}),
  *     @ORM\Index(name="price_idx", columns={"price"}),
  *     })
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass="Ecommerce\Entity\Repository\ProductRepository")
- * @ORM\MappedSuperclass
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="entity_class", type="string")
  * @author Design studio origami <https://origami.ua>
  */
 class Product
@@ -113,6 +111,15 @@ class Product
     private $activityAreas;
 
     /**
+     * @ORM\ManyToMany(targetEntity="FrontendBundle\Entity\Faq", cascade={"persist","remove"})
+     * @ORM\JoinTable(name="product_has_faq",
+     *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="faq_id", referencedColumnName="id", unique=true)}
+     *  )
+     */
+    private $faq;
+
+    /**
      * @var integer
      *
      * @Gedmo\Versioned
@@ -181,6 +188,7 @@ class Product
         $this->categories = new ArrayCollection();
         $this->features = new ArrayCollection();
         $this->activityAreas = new ArrayCollection();
+        $this->faq = new ArrayCollection();
     }
 
     /**
@@ -419,6 +427,32 @@ class Product
     {
         if ($this->activityAreas->contains($activityArea)) {
             $this->activityAreas->removeElement($activityArea);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Faq[]
+     */
+    public function getFaq(): Collection
+    {
+        return $this->faq;
+    }
+
+    public function addFaq(Faq $faq): self
+    {
+        if (!$this->faq->contains($faq)) {
+            $this->faq[] = $faq;
+        }
+
+        return $this;
+    }
+
+    public function removeFaq(Faq $faq): self
+    {
+        if ($this->faq->contains($faq)) {
+            $this->faq->removeElement($faq);
         }
 
         return $this;

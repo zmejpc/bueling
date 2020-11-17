@@ -4,6 +4,7 @@ namespace Ecommerce\Entity;
 
 use Doctrine\Common\Collections\Collection;
 use SeoBundle\Entity\SeoTrait;
+use FrontendBundle\Entity\Faq;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
@@ -20,15 +21,12 @@ use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
  * @ORM\Table(name="project_table", uniqueConstraints={
  *     @ORM\UniqueConstraint(name="seo_UNIQUE", columns={"seo_id"})
  * }, indexes={
- *     @ORM\Index(name="seo_idx", columns={"seo_id", "entity_class"}),
- *     @ORM\Index(name="position_idx", columns={"position", "entity_class"}),
- *     @ORM\Index(name="show_on_website_idx", columns={"show_on_website", "entity_class"}),
+ *     @ORM\Index(name="seo_idx", columns={"seo_id"}),
+ *     @ORM\Index(name="position_idx", columns={"position"}),
+ *     @ORM\Index(name="show_on_website_idx", columns={"show_on_website"}),
  *     })
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass="Ecommerce\Entity\Repository\ProjectRepository")
- * @ORM\MappedSuperclass
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="entity_class", type="string")
  * @author Design studio origami <https://origami.ua>
  */
 class Project
@@ -86,6 +84,15 @@ class Project
      *  )
      */
     private $activityAreas;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="FrontendBundle\Entity\Faq", cascade={"persist","remove"})
+     * @ORM\JoinTable(name="project_has_faq",
+     *   joinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="faq_id", referencedColumnName="id", unique=true)}
+     *  )
+     */
+    private $faq;
 
     /**
      * @var string
@@ -237,6 +244,32 @@ class Project
     {
         if ($this->activityAreas->contains($activityArea)) {
             $this->activityAreas->removeElement($activityArea);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Faq[]
+     */
+    public function getFaq(): Collection
+    {
+        return $this->faq;
+    }
+
+    public function addFaq(Faq $faq): self
+    {
+        if (!$this->faq->contains($faq)) {
+            $this->faq[] = $faq;
+        }
+
+        return $this;
+    }
+
+    public function removeFaq(Faq $faq): self
+    {
+        if ($this->faq->contains($faq)) {
+            $this->faq->removeElement($faq);
         }
 
         return $this;
