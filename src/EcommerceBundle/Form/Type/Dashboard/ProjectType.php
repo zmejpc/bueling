@@ -77,6 +77,11 @@ class ProjectType extends AbstractType
                 'translation_domain' => 'DashboardBundle',
                 'required' => false,
             ])
+            ->add('showOnHomepage', DashboardYesNoType::class, [
+                'label' => 'Отображать на главной?',
+                'translation_domain' => 'DashboardBundle',
+                'required' => false,
+            ])
             ->add('activityAreas', DashboardSelect2EntityType::class, [
                 'required' => false,
                 'multiple' => true,

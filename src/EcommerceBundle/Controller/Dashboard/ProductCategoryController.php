@@ -23,12 +23,12 @@ class ProductCategoryController extends CRUDController
 {
     public function getHeadTitle(): string
     {
-        return $this->translator->trans('sidebar.catalog.categories', [], 'DashboardBundle');
+        return 'Бренды';
     }
 
     public function getHeadTitleForEdit($object)
     {
-        return ' > ' . $object->translate()->getTreeTitle();
+        return ' > ' . $object->translate()->getTitle();
     }
 
     public function getGrantedRoles(): array

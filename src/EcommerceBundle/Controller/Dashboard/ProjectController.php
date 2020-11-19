@@ -85,6 +85,10 @@ class ProjectController extends CRUDController
                 'title' => $translator->trans('ui.show_on_website', [], 'DashboardBundle'),
                 'width' => 80
             ],
+            'showOnHomepage' => [
+                'title' => 'Отображать на главной?',
+                'width' => 80
+            ],
         ];
     }
     public function createDataForList($item, Environment $twig): array
@@ -102,6 +106,9 @@ class ProjectController extends CRUDController
             ]),
             'showOnWebsite' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
                 'element' => $item, 'fieldName' => 'showOnWebsite',
+            ]),
+            'showOnHomepage' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
+                'element' => $item, 'fieldName' => 'showOnHomepage',
             ]),
         ];
     }

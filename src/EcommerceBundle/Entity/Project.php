@@ -102,6 +102,14 @@ class Project
      */
     private $slug;
 
+    /**
+     * @var boolean
+     *
+     * @Gedmo\Versioned
+     * @ORM\Column(name="show_on_homepage", type="boolean", nullable=false)
+     */
+    protected $showOnHomepage = self::NO;
+
     public function __toString()
     {
         return $this->translate()->getTitle();
@@ -136,6 +144,7 @@ class Project
     {
         $this->galleryImages = new ArrayCollection();
         $this->activityAreas = new ArrayCollection();
+        $this->faq = new ArrayCollection();
     }
 
     /**
@@ -273,5 +282,21 @@ class Project
         }
 
         return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getShowOnHomepage(): ?bool
+    {
+        return $this->showOnHomepage;
+    }
+
+    /**
+     * @param bool $showOnHomepage
+     */
+    public function setShowOnHomepage(bool $showOnHomepage): void
+    {
+        $this->showOnHomepage = $showOnHomepage;
     }
 }
