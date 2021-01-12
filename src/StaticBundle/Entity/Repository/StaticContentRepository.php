@@ -37,6 +37,20 @@ final class StaticContentRepository extends DashboardRepository implements Stati
         return $query->getQuery()->getResult();
     }
 
+    public function getByPageForFrontend(string $page): array
+    {
+        $static = $this->getByPage($page);
+        $staticContent = [];
+
+        foreach ($static as $item) {
+            $staticContent[$item->getLinkName()]['title'] = $item->translate()->getTitle();
+            $staticContent[$item->getLinkName()]['text'] = $item->translate()->getDescription();
+            $staticContent[$item->getLinkName()]['short_text'] = $item->translate()->getShortDescription();
+            $staticContent[$item->getLinkName()]['poster'] = $item->getImg();
+        }
+
+        return $staticContent;
+    }
 
     public function getByPageAndBlock(string $page,string $block)
     {

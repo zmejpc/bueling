@@ -6,9 +6,9 @@ frontend_contact_from_vendor:
   resource: "@ContactBundle/Resources/config/routes/frontend/contact.yaml"
   prefix:   /contact
 
-frontend_news_category_from_vendor:
-  resource: "@NewsBundle/Resources/config/routes/frontend/news_category.yaml"
-  prefix:   /category
+# frontend_news_category_from_vendor:
+#   resource: "@NewsBundle/Resources/config/routes/frontend/news_category.yaml"
+#   prefix:   /category
 
 frontend_search_from_vendor:
   resource: "@ComponentBundle/Resources/config/routes/frontend/search_shop_routing.yaml"

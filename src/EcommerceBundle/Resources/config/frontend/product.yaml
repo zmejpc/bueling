@@ -1,9 +1,9 @@
 frontend_product_photoswipe:
-  path:  /product/photoswipe
+  path:  /photoswipe
   controller: Ecommerce\Controller\Frontend\ProductController::photoswipeAction
   
 frontend_product_show:
-  path:  /product/{slug}
+  path:  /{slug}
   controller: Ecommerce\Controller\Frontend\ProductController::showProductAction
   requirements:
     _locale: '%app_locales%'

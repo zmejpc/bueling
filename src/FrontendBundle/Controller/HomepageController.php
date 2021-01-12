@@ -19,16 +19,7 @@ final class HomepageController extends AbstractController
 {
     public function indexAction(EntityManagerInterface $em, SeoManager $seoManager)
     {
-        $static = $em->getRepository(StaticContent::class)->getByPage('homepage');
-
-        $staticContent = [];
-        foreach ($static as $item) {
-            $staticContent[$item->getLinkName()]['title'] = $item->translate()->getTitle();
-            $staticContent[$item->getLinkName()]['text'] = $item->translate()->getDescription();
-            $staticContent[$item->getLinkName()]['short_text'] = $item->translate()->getShortDescription();
-            $staticContent[$item->getLinkName()]['poster'] = $item->getImg();
-        }
-
+        $staticContent = $em->getRepository(StaticContent::class)->getByPageForFrontend('homepage');
         $categories = $em->getRepository(ProductCategory::class)->getForFrontend();
         $areas = $em->getRepository(ActivityArea::class)->getForFrontend(4);
         $news = $em->getRepository(News::class)->getLimitRANDElements(3);

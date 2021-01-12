@@ -348,7 +348,7 @@ class Product
 
     public function getSlugForUrl()
     {
-        $slug = $this->translate($this->getDefaultLocale())->getSlug();
+        return $this->translate($this->getDefaultLocale())->getSlug();
 
         if ($this->hasCategories()) {
             $strSlug = $this->getCategories()[0]->getSlug() . '/' . $slug;

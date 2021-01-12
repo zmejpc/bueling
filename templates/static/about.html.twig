@@ -125,14 +125,14 @@
                     </a>
                 </div>
                 <div class="about-page__block__wrap-item">
-                    <a href="{{ path('frontend_show_product_categories') }}">
+                    <a href="{{ path('frontend_show_product_category', {slug: product.slugForUrl}) }}">
                         <p class="about-page__block__wrap-item--title">
                             {{ 'menu.products'|trans }}
                         </p>
                         {% set poster = product.poster|default('')|json_decode %}
                         <img src="{{ asset(poster.list_416_416|default('')) }}" alt="{{ 'menu.products'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
-                    <a href="{{ path('frontend_show_product_categories') }}" class="btn btn--white btn--small">
+                    <a href="{{ path('frontend_show_product_category', {slug: product.slugForUrl}) }}" class="btn btn--white btn--small">
                         <div class="btn__inner">
                             <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
                         </div>
