@@ -1,210 +1,126 @@
 {% trans_default_domain 'FrontendBundle' %}
 {% extends 'base.html.twig' %}
 
-{% block head_stylesheets %}
-    {{ parent() }}
-    {# <link rel="canonical" href="{{ absolute_url(path('frontend_product_show', { 'slug': product.slugForUrl() })) }}" /> #}
-{% endblock %}
-
-{% set defaultImage = 'build/frontend/img/temp/product_1_370.jpg' %}
-
 {% block main %}
-    <section>
+    <section class="single-product">
         <div class="container">
-            <div class="page-product">
-                <div class="row">
-                    <div class="col col-lg-4">
-                        <div class="page-product__images-container">
-                            {% if product.discount and product.discount.isEnabled %}
-                                <div class="product__decorator product__decorator--main"
-                                     {% if product.discount.color %}style="background-color: {{ product.discount.color }}"{% endif %}>
-                                    <span class="product__decorator-text">
-                                        <span style="color:{{ product.discount.textColor }}">{{ product.discount.translate.title }}</span>
-                                    </span>
-                                </div>
-                            {% endif %}
-                            <div class="page-product__images-wrap glide--image-slider js-photoswipe"
-                                 data-template-url="{{ path('frontend_product_photoswipe') }}">
-                                <div class="glide__track H(100%)" data-glide-el="track">
-                                    <ul class="page-product__images glide__slides">
-                                        {% for galleryImage in product.galleryImages %}
-                                            {% set imageData = galleryImage.image|json_decode %}
-                                            <li class="glide__slide">
-                                                <a class="page-product__img-wrap lazyload-container js-photoswipe-link"
-                                                   href="{{ asset(imageData['list_740_990']|default(defaultImage)) }}"
-                                                   data-index="{{ loop.index0 }}" data-size="740x990">
-                                                    <img class="page-product__img lazyload"
-                                                         data-srcset="{{ asset(imageData['list_370_493']|default(defaultImage)) }} 370w, {{ asset(imageData['list_740_990']|default(defaultImage)) }} 740w"
-                                                         data-src="{{ asset(imageData['list_370_493']|default(defaultImage)) }}">
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                    <div class="page-product__thumbnails thumbnails">
-                                        <div class="thumbnails__inner">
-                                            <div class="thumbnails__list" data-glide-el="controls[nav]">
-                                                {% for galleryImage in product.galleryImages %}
-                                                    {% set imageData = galleryImage.image|json_decode %}
-                                                    <button class="thumbnails__item thumbnails__img-wrap lazyload-container js-image-preview-switch {% if loop.index0 == 0 %} thumbnails__item--active {% endif %}"
-                                                            data-glide-dir="={{ loop.index0 }}"
-                                                            data-index="{{ loop.index0 }}">
-                                                        <img class="thumbnails__img lazyload"
-                                                             data-srcset="{{ asset(imageData['list_64_85']|default(defaultImage)) }} 64w, {{ asset(imageData['list_128_170']|default(defaultImage)) }} 128w"
-                                                             data-src="{{ asset(imageData['list_64_85']|default(defaultImage)) }}">
-                                                    </button>
-                                                {% endfor %}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="single-product__wrap">
+
+                {% include 'product/slider.html.twig' %}
+
+                <div class="single-product__wrap-item">
+                    <div class="single-product__title">
+                        <h2 class="h2 single-product__title-main">
+                            {{ product.categories|first.translate.title|default('') }}
+                        </h2>
                     </div>
-                    <div class="col col-lg-5 Mt(2rem)">
-                        <h1
-                                class="h2 page-product__title">{{ product.translate.title }}</h1>
-                        <form class="product__form product-form js-ajax-form js-form-selection form-selection--inner-page product-form--inner-page"
-                              action="{{ path('frontend_cart_add_product', {id:product.id}) }}" method="POST">
-                            <div class="product-form__item">
-                                {% if not product.status or product.status.systemName != 'in_stock' %}
-                                    <p class="suplementary-text suplementary-text--inner-page Pt(1rem)--lg Mb(2rem)--xs-lg">{{ 'product.not_in_stock'|trans }}</p>
-                                {% else %}
-                                    {% include 'product/_price.html.twig' with {class: 'price--inner-page Ta(l-767px)'} %}
-                                    {% include 'product/_add_to_cart.html.twig' with { 'product': product, product_page: true } %}
-                                {% endif %}
-                            </div>
-                            <div class="product-form__item">
-                                {% if product.sizes is not empty %}
-                                    <div class="form-selection js-form-selection product__form-selection Mt(35px)">
-                                        <div class="form-selection__item animate__animated">
-                                            <span class="form-selection__text">&nbsp;</span>
-                                            <div class="form-selection__holder">
-                                                <div class="form-selection__select">
-                                                    <div class="form-selection__imitator">
-                                                        <span>{{ 'ui.select_size_btn'|trans }}:</span>
-                                                    </div>
-                                                    <select class="js-select" name="size">
-                                                        <option value="" data-label="true">{{ 'ui.select_size_btn'|trans }}:</option>
-                                                        {% for item in product.sizes if item.showOnWebsite %}
-                                                            <option value="{{ item.size.id }}"
-                                                                    {% if not item.status or item.status.systemName != 'in_stock' %}disabled="disabled"{% endif %}>{{ item.size }}</option>
-                                                        {% endfor %}
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-selection__item Ml(3rem)--lg Ml(3rem)--xs-lg"><span
-                                                    class="form-selection__text">qty</span>
-                                            <div class="form-selection__holder"><input class="form-selection__input"
-                                                                                       name="count"
-                                                                                       value="1"/>
-                                                <div class="form-selection__buttons">
-                                                    <button class="form-selection__button js-add-to-cart-count"
-                                                            data-action="increment">
-                                                        <svg class="svg-icon form-selection__button-icon"
-                                                             aria-hidden="true">
-                                                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-up"></use>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="form-selection__button js-add-to-cart-count"
-                                                            data-action="decrement">
-                                                        <svg class="svg-icon form-selection__button-icon"
-                                                             aria-hidden="true">
-                                                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down"></use>
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            </div>
-                        </form>
-                        <div class="product-info Mt(2rem)--xs-lg D(n)--xs-lg">
-                            <div class="product-info__inner">
-                                <div class="product-info__content">
-                                    {% if staticContent['product_info_content'] is defined %}
-                                        <span class="product-info__text product-info__text--main">
-                                            {{ staticContent['product_info_content'].shortDescription|raw }}
-                                        </span>
-                                        <span class="product-info__text product-info__text">
-                                            {{ staticContent['product_info_content'].description|raw }}
-                                        </span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
+                    <div class="single-product__subtitle">
+                        {{ product.translate.title }}
                     </div>
-                    <div class="col col-lg-3 D(n)--xs-lg">
-                        <div class="icon-list">
-                            <div class="icon-list__inner">
-                                <ul class="icon-list__list">
-                                    {% if staticContent.payment is defined %}
-                                        <li class="icon-list__item icon-list-item">
-                                            <svg class="svg-icon icon-list-item__icon" aria-hidden="true">
-                                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#cards"></use>
-                                            </svg>
-                                            <div class="icon-list-item__content">
-                                                <span class="icon-list-item__title">
-                                                    {{ staticContent.payment.shortDescription|striptags('<p><a>')|raw }}
-                                                </span>
-                                                <span class="icon-list-item__text">
-                                                    {{ staticContent.payment.description|striptags('<p><a>')|raw }}
-                                                </span>
-                                            </div>
-                                        </li>
-                                    {% endif %}
-                                    {% if staticContent.delivery is defined %}
-                                        <li class="icon-list__item icon-list-item">
-                                            <svg class="svg-icon icon-list-item__icon" aria-hidden="true">
-                                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#box"></use>
-                                            </svg>
-                                            <div class="icon-list-item__content">
-                                                <span class="icon-list-item__title">
-                                                    {{ staticContent.delivery.shortDescription|striptags('<p><a>')|raw }}
-                                                </span>
-                                                <span class="icon-list-item__text">
-                                                    {{ staticContent.delivery.description|striptags('<p><a>')|raw }}
-                                                </span>
-                                            </div>
-                                        </li>
-                                    {% endif %}
-                                    {% if staticContent.faq is defined %}
-                                        <li class="icon-list__item icon-list-item">
-                                            <svg class="svg-icon icon-list-item__icon" aria-hidden="true">
-                                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#faq"></use>
-                                            </svg>
-                                            <div class="icon-list-item__content">
-                                                <span class="icon-list-item__title">
-                                                    {{ staticContent.faq.shortDescription|striptags('<p><a>')|raw }}
-                                                </span>
-                                                <span class="icon-list-item__text">
-                                                    {{ staticContent.faq.description|striptags('<p><a>')|raw }}
-                                                </span>
-                                            </div>
-                                        </li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="single-product__description">
+                        {{ product.translate.shortDescription|raw }}
                     </div>
+                </div>
+            </div>
+            
+            <div class="single-product__these-description">
+                {{ product.translate.description|raw }}
+            </div>
+
+            {% if product.features|length %}
+                <div class="single-area__these single-product__these">
+                    {% for feature in product.features %}
+                        <div class="thesis__item">
+                            <p class="thesis__item--icon">
+                                {% set poster = feature.poster|json_decode %}
+                                <img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default('')) }}" />
+                            </p>
+                            <p class="thesis__item--text">
+                                {{ feature.translate.title }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% include 'default/faq.html.twig' with {faq: product.faq} %}
+
+        </div>
+    </section>
+
+    <section class="form">
+        <div class="container">
+            <div class="form__wrap">
+                <div class="form__title">
+                    <div class="form__title-main">
+                        {{ 'contact_form.title'|trans }}
+                    </div>
+                    <div class="form__title-text">
+                        {{ 'contact_form.sub_title'|trans }}
+                    </div>
+                </div>
+                <div class="form__form">
+                    {{ render(controller('ContactBundle\\Controller\\Frontend\\ContactController::renderForm')) }}
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        {% include('product/_info.html.twig') %}
-    </section>
-    <section>
-        <div class="container">
-            {{ render(controller('Ecommerce\\Controller\\Frontend\\ProductController::getRecentlyViewedProductsAction', {
-                'productId': product.id
-            })) }}
+
+    <div class="container">
+        <div class="single-product__wrap--holder">
+
+            <div class="single-product__wrap--holder--item">
+                <h2 class="h2 single-product__title">{{ 'our_services'|trans }}</h2>
+                {% set poster = area.galleryImages|first.image|default('')|json_decode %}
+
+                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+                    <div class="single-product--block__title">
+                        {{ area.translate.title }}
+                    </div>
+                    <div class="single-product--block__text">
+                        <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
+                            {{ area.translate.shortDescription|striptags }}
+                        </a>
+                    </div>
+                    <div class="single-product--block__btn">
+                        <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="btn btn--primary btn--small">
+                            <div class="btn__inner">
+                                <span class="btn__text">{{ 'ui.more'|trans }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-product__wrap--holder--item">
+                <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
+                {% set poster = project.galleryImages|first.image|default('')|json_decode %}
+
+                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+                    <div class="single-product--block__title">
+                        {{ project.translate.company }}
+                    </div>
+                    <div class="single-product--block__text">
+                        <a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+                            {{ project.translate.title }}
+                        </a>
+                    </div>
+                    <div class="single-product--block__btn">
+                        <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="btn btn--primary btn--small">
+                            <div class="btn__inner">
+                                <span class="btn__text">{{ 'ui.more'|trans }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
 
 {% endblock %}
 
 {% block script %}
-    <script src="{{ asset('build/frontend/js/product.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/single-area.js') }}{{ assetVersion }}"></script>
 {% endblock %}

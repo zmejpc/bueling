@@ -183,23 +183,25 @@ class FileHandler implements FileHandlerInterface
 
     public function resizeAndCropImage($img, $width, $height)
     {
-        if($img->getImageWidth() < $width || $img->getImageHeight() < $height) {
-            if ($img->getImageWidth() > $img->getImageHeight()) {
-                $img->resizeImage(null, $height, Imagick::FILTER_LANCZOS, 1);
-                $x = abs($img->getImageWidth() - $width) / 2;
-                $y = 0;
-            }
-            else {
-                $img->resizeImage($width, null, Imagick::FILTER_LANCZOS, 1);
-                $x = 0;
-                $y = abs($img->getImageHeight() - $height) / 2;
-            }
+        if ($img->getImageWidth() > $img->getImageHeight()) {
+            $img->resizeImage(null, $height, Imagick::FILTER_LANCZOS, 1);
         } else {
-            $x = abs($img->getImageWidth() - $width) / 2;
-            $y = abs($img->getImageHeight() - $height) / 2;
+            $img->resizeImage($width, null, Imagick::FILTER_LANCZOS, 1);
         }
 
+        if ($width > $img->getImageWidth()) {
+            $img->resizeImage($width, null, Imagick::FILTER_LANCZOS, 1);
+        }
+
+        if ($height > $img->getImageHeight()) {
+            $img->resizeImage(null, $height, Imagick::FILTER_LANCZOS, 1);
+        }
+
+        $x = ($img->getImageWidth() - $width) / 2;
+        $y = ($img->getImageHeight() - $height) / 2;
+
         $img->cropImage($width, $height, $x, $y);
+
         return $img;
     }
 

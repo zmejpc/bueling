@@ -53,7 +53,7 @@ class ProductFeatureType extends AbstractType
             ])
             ->add('poster', UploadType::class, [
                 'file_type' => 'product_feature_poster',
-                'extensions' => '.jpg, .gif, .png, .svg',
+                'extensions' => '.svg',
                 'label' => 'ui.poster',
                 'required' => false,
             ])

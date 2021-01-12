@@ -1,0 +1,26 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% if faq|length %}
+    <div class="single-area__questions">
+        <h2 class="h2 single-area__questions--title">{{ 'faq_title'|trans }}</h2>
+        <div class="single-area__questions--wrap">
+            {% for item in faq %}
+                <div class="single-area__questions--wrap__item">
+                    <button class="single-area__questions--wrap__item--title">
+                        <p>{{ item.translate.question }}</p>
+                        <div class="minus-icon-link">
+                            <svg class="svg-icon minus-icon">
+                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#minus-icon" />
+                            </svg>
+                            <svg class="svg-icon plus-icon">
+                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#plus-icon" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="single-area__questions--wrap__item--text">
+                        {{ item.translate.answer|raw }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

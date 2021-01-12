@@ -54,6 +54,15 @@ class ProductType extends AbstractType
                         'helpBlock' => null,
                         'maxLength' => 255
                     ],
+                    'shortDescription' => [
+                        'field_type' => DashboardWYSIWYGType::class,
+                        'attr' => [
+                            'class' => 'tinymce',
+                            'data-theme' => 'medium'
+                        ],
+                        'label' => 'Краткое описание',
+                        'required' => false,
+                    ],
                     'description' => [
                         'field_type' => DashboardWYSIWYGType::class,
                         'attr' => [
