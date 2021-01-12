@@ -1,8 +1,53 @@
-<footer class="page-footer page__footer">
-    <div class="page-footer__inner container">
-        <hr class="page-footer__line">
-        <div class="media">
- 
-        </div>
+{% trans_default_domain 'FrontendBundle' %}
+<footer class="page__footer page-footer">
+    <div class="container">
+      	<div class="page-footer__wrap">
+        	<div class="page-footer__wrap-item page-footer__logo">
+        		<a href="{{ path('frontend_homepage') }}" class="footer-logo">
+        			<img src="{{ asset('build/frontend/img/logo.svg') }}" class="logo__img" alt="Лого" />
+        		</a>
+        	</div>
+        	<div class="page-footer__wrap-item page-footer-address">
+        		<span class="page-footer-city page-footer-address--item">{{ static.city.text|striptags }}</span>
+        		<span class="page-footer-street page-footer-address--item">
+        			{{ static.street.text|striptags }}
+        			{% for contactPhone in contactPhones %}
+	                    <a href="tel:{{ contactPhone.phone }}" class="page-footer-phone">{{ contactPhone.phone }},</a>
+	                {% endfor %}
+        		</span>
+        		<span class="page-footer-email page-footer-address--item">
+        			{{ static.email.text|striptags }}
+        		</span>
+        	</div>
+        	<div class="page-footer__wrap-item">
+          		<div class="media__icons" data-wow-duration="1s">
+          			<a href="javascript:void(0)" class="media__icon-link">
+          				<svg class="svg-icon media__icon">
+                			<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
+                		</svg>
+            		</a>
+            		<a href="javascript:void(0)" class="media__icon-link">
+            			<svg class="svg-icon media__icon">
+                			<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
+                		</svg>
+                	</a>
+                	<a href="javascript:void(0)" class="media__icon-link">
+                		<svg class="svg-icon media__icon">
+                			<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#instagram-icon" />
+                		</svg>
+                	</a>
+                </div>
+          		<div class="page-footer__form">
+            		<form action="" class="page-footer__form-inner">
+            			<input class="page-footer__form-input" type="email" id="footerEmail" name="email" placeholder="EMAIL*">
+            			<a href="#" class="btn btn--white btn--middle btn--white-footer">
+                			<div class="btn__inner">
+                				<span class="btn__text">{{ 'ui.sign_distribution'|trans }}</span>
+                			</div>
+              			</a>
+              		</form>
+          		</div>
+        	</div>
+      	</div>
     </div>
-</footer>
+ </footer>

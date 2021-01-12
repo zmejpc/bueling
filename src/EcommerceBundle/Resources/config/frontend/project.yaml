@@ -1,0 +1,9 @@
+frontend_projects:
+  path:     /
+  controller: Ecommerce\Controller\Frontend\ProjectController::listAction
+
+frontend_show_project:
+  path:     /{slug}
+  controller: Ecommerce\Controller\Frontend\ProjectController::showAction
+  requirements:
+    slug: "[\\w-]+"

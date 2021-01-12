@@ -219,4 +219,16 @@ class ContactController extends AbstractController
 
         return new JsonResponse($response);
     }
+
+    public function renderForm()
+    {
+        $form = $this->createForm(ContactType::class, new Contact, [
+            'action' => $this->generateUrl('frontend_contact_save'),
+            'method' => 'POST'
+        ]);
+
+        return $this->render('support/contact/_form.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }

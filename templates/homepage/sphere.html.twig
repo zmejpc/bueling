@@ -1,0 +1,29 @@
+{% trans_default_domain 'FrontendBundle' %}
+<section class="sphere">
+    <div class="container">
+        <div class="sphere__title">
+            <h2 class="h2 sphere__title-main">{{ 'homepage.areas'|trans }}</h2>
+        </div>
+        <div class="sphere__wrap">
+            {% for area in areas %}
+                <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="sphere__wrap-item">
+                    <div class="sphere__wrap-item--left">
+                        {# <svg class="svg-icon sphere__wrap-item--icon"> #}
+                            {% set poster = area.poster|json_decode %}
+                            <img class="svg-icon sphere__wrap-item--icon" src="{{ asset(poster.default|default('')) }}" />
+                        {# </svg> #}
+                    </div>
+                    <div class="sphere__wrap-item--right">
+                        <p class="sphere__wrap-item--title">{{ area.translate.title }}</p>
+                        <p class="sphere__wrap-item--text">{{ area.translate.shortDescription }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <a href="{{ path('frontend_activity_areas') }}" class="btn btn--primary btn--medium D(n)--md">
+            <div class="btn__inner">
+                <span class="btn__text">{{ 'ui.all_services'|trans }}</span>
+            </div>
+        </a>
+    </div>
+</section>

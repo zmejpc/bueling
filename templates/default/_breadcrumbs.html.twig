@@ -1,31 +1,23 @@
 {% if breadcrumbs is defined and breadcrumbs|length > 0 %}
-    <section class="Pt(10rem)--lg Pt(5rem)--xs-lg Pb(0)">
-        <div class="container">
-            <div class="breadcrumbs breadcrumbs--theme--light">
-                <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
-                    {% for breadcrumb in breadcrumbs %}
-                        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+                {% for breadcrumb in breadcrumbs %}
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop="item" href="{{ breadcrumb['url'] }}">
+                            <span itemprop="name">
+                                {{ breadcrumb.title }}
+                            </span>
                             {% if not loop.last %}
-                                <a class="breadcrumbs__link" itemprop="item" href="{{ breadcrumb['url'] }}">
-                                    <span itemprop="name">
-                                        {{ breadcrumb.title }}
-                                    </span>
-                                </a>
-                            {% else %}
-                                <span class="breadcrumbs__text" itemprop="name">
-                                    {{ breadcrumb.title }}
-                                </span>
-                            {% endif %}
-                            {% if not loop.last %}
-                                <svg class="svg-icon breadcrumbs__icon" aria-hidden="true">
-                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right"></use>
+                                <svg class="svg-icon breadcrumbs--icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right" />
                                 </svg>
                             {% endif %}
-                            <meta itemprop="position" content="{{ loop.index }}" />
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+                        </a>
+                        <meta itemprop="position" content="{{ loop.index }}" />
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
-    </section>
+    </div>
 {% endif %}

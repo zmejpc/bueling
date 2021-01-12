@@ -1,43 +1,248 @@
-<header class="page-header page__header">
-    <div class="page__overlay"></div>
-    <div class="page-header__decor"></div>
-    <div class="page-header__inner container">
-        <div class="page-header__holder D(n)--lg">
-            <button class="page-header__button page-header__toggle js-menu-switcher">
-                <svg class="svg-icon page-header__button-icon" aria-hidden="true">
-                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#menu"></use>
-                </svg>
-            </button>
-        </div>
-        <div class="page-header__holder"><a class="page-header__logo"
-                                            href="{{ path('frontend_homepage', {_locale: app.request.locale}) }}"><img
-                        class="page-header__logo-img"
-                        src="{{ asset('build/frontend/img/logo.svg') }}"></a></div>
-        <div class="page-header__holder page-header__holder--adaptive page-header__holder--desktop">
-            {% include('default/_menu.html.twig') %}
-        </div>
-        <div class="page-header__holder page-header__holder--row">
-            <div class="dropdown page-header__dropdown">
-                <div class="dropdown__inner">
-                    <a class="dropdown__btn" id="dropdownLink-2" href="#" role="button" aria-haspopup="true"
-                       aria-expanded="false">
-{#                        <span class="dropdown__btn-text">{{ app.request.locale|upper }}</span>#}
-                        <svg class="svg-icon dropdown__btn-icon" aria-hidden="true">
-                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#lang"></use>
+{% trans_default_domain 'FrontendBundle' %}
+
+<header class="page-header page__header page-header--{{ is_transparent ? 'transparent' : 'primary' }}">
+    <div class="container page-header__inner">
+        <a href="{{ path('frontend_homepage') }}" class="page-header__logo logo">
+            <img src="{{ asset('build/frontend/img/logo.svg') }}" class="logo__img" alt="Лого" />
+        </a>
+        <div class="page-header__content">
+            <div class="page-header__top">
+                <div class="media__icons page-header__inner" data-wow-duration="1s">
+                    <a href="" class="media__icon-link">
+                        <svg class="svg-icon media__icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
                         </svg>
                     </a>
-                    <div class="dropdown__menu" aria-labelledby="dropdownLink-2">
-                        <ul class="dropdown__list">
-                            {% for item in localeSupported %}
-                                <li class="dropdown__list-item">
-                                    <a class="dropdown__list-link Jc(c)"
-                                       href="{{ path('change_locale', {locale: item}) }}">{{ item|upper }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                    <a href="" class="media__icon-link">
+                        <svg class="svg-icon media__icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
+                        </svg>
+                    </a>
+                    <a href="" class="media__icon-link">
+                        <svg class="svg-icon media__icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#instagram-icon" />
+                        </svg>
+                    </a>
+                </div>
+                {% for contactPhone in contactPhones %}
+                    <a href="tel:{{ contactPhone.phone }}" class="phone">{{ contactPhone.phone }}</a>
+                {% endfor %}
+                <div class="page-header__top--lang">
+                    <a href="#" class="lang-link">
+                        <svg class="svg-icon lang-icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#lang" />
+                        </svg>
+                    </a>
+                    <ul class="lang-submenu">
+                        <li class="lang-item">
+                            <a href="#">українська</a>
+                        </li>
+                        <li class="lang-item">
+                            <a href="#">російська</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            <div class="page-header__bottom">
+                <nav class="page-header__nav">
+                    <nav class="menu page__menu">
+                        <div class="menu__inner">
+                            <div class="menu__holder">
+                                <div class="menu__list-wrap">
+                                    <ul class="menu__list">
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_homepage') }}" class="menu__item-link">
+                                                {{ 'menu.homepage'|trans }}
+                                            </a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_static_page_show', {slug: 'about'}) }}" class="menu__item-link">
+                                                {{ 'menu.about'|trans }}
+                                            </a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_show_product_categories') }}" class="menu__item-link">
+                                                {{ 'menu.products'|trans }}
+                                                <svg class="svg-icon menu__icon">
+                                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                                                </svg>
+                                            </a>
+                                            <div class="subMenu__list-wrap">
+                                                <ul class="subMenu__list">
+                                                    {% for category in categories %}
+                                                        <li class="subMenu__item">
+                                                            <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}" class="subMenu__item-link">
+                                                                {{ category.translate.title }}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_activity_areas') }}" class="menu__item-link">
+                                                {{ 'menu.activity_areas'|trans }}
+                                                <svg class="svg-icon menu__icon">
+                                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                                                </svg>
+                                            </a>
+                                            <div class="subMenu__list-wrap">
+                                                <ul class="subMenu__list">
+                                                    {% for area in areas %}
+                                                        <li class="subMenu__item">
+                                                            <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="subMenu__item-link">
+                                                                {{ area.translate.title }}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_projects') }}" class="menu__item-link">
+                                                {{ 'menu.projects'|trans }}
+                                            </a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="service.html" class="menu__item-link">
+                                                {{ 'menu.service_centre'|trans }}
+                                            </a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_news_list') }}" class="menu__item-link">
+                                                {{ 'menu.blog'|trans }}
+                                            </a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="{{ path('frontend_contact_index') }}" class="menu__item-link">
+                                                {{ 'menu.contacts'|trans }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+        {% for contactPhone in contactPhones %}
+            <a href="tel:{{ contactPhone.phone }}" class="phone-icon">
+                <svg class="svg-icon phone-icon__icon">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#phone-icon" />
+                </svg> 
+            </a>
+        {% endfor %}
+        <button class="page-header__button">
+            <input type="checkbox" id="menuButton" />
+             <span></span>
+             <span></span>
+             <span></span>
+        </button>
+        <div class="page-header__mobile">
+            <nav class="menu page__menu">
+                <div class="menu__inner-mobile">
+                    <div class="menu__holder">
+                        <div class="menu__list-wrap">
+                            <ul class="menu__list-mobile">
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_homepage') }}" class="menu__item-link">
+                                        {{ 'menu.homepage'|trans }}
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_static_page_show', {slug: 'about'}) }}" class="menu__item-link">
+                                        {{ 'menu.about'|trans }}
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_show_product_categories') }}" class="menu__item-link menu__item-link--has-list">
+                                        {{ 'menu.products'|trans }} 
+                                        <svg class="svg-icon menu__icon">
+                                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                                        </svg>
+                                    </a>
+                                    <div class="subMenu__list-wrap-mobile">
+                                        <span class="menu__item-line-mobile"></span>
+                                        <ul class="subMenu__list">
+                                            {% for category in categories %}
+                                                <li class="subMenu__item-mobile">
+                                                    <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}" class="subMenu__item-link-mobile">
+                                                        {{ category.translate.title }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_activity_areas') }}" class="menu__item-link menu__item-link--has-list">
+                                        {{ 'menu.activity_areas'|trans }}
+                                        <svg class="svg-icon menu__icon">
+                                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                                        </svg>
+                                    </a>
+                                    <div class="subMenu__list-wrap-mobile">
+                                        <span class="menu__item-line-mobile"></span>
+                                        <ul class="subMenu__list">
+                                            {% for area in areas %}
+                                                <li class="subMenu__item-mobile">
+                                                    <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="subMenu__item-link-mobile">
+                                                        {{ area.translate.title }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_projects') }}" class="menu__item-link">
+                                        {{ 'menu.activity_areas'|trans }}
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="service.html" class="menu__item-link">
+                                        {{ 'menu.service_centre'|trans }}
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_news_list') }}" class="menu__item-link">
+                                        {{ 'menu.blog'|trans }}
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="{{ path('frontend_contact_index') }}" class="menu__item-link">
+                                        {{ 'menu.contacts'|trans }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="media__icons media__icons-mobile" data-wow-duration="1s">
+                <a href="" class="media__icon-link">
+                    <svg class="svg-icon media__icon">
+                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
+                    </svg> 
+                </a>
+                <a href="" class="media__icon-link">
+                    <svg class="svg-icon media__icon">
+                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
+                    </svg> 
+                </a>
+                <a href="" class="media__icon-link">
+                    <svg class="svg-icon media__icon">
+                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#instagram-icon" />
+                    </svg>
+                </a>
+            </div>
+            {% for contactPhone in contactPhones %}
+                <a href="tel:{{ contactPhone.phone }}" class="phone-mobile">{{ contactPhone.phone }}</a> 
+            {% endfor %}
+            <a href="index.html" class="page-header__logo-mobile logo">
+                <img src="{{ asset('build/frontend/img/logo.svg') }}" class="logo__img-mobile" alt="Лого" />
+            </a>
         </div>
     </div>
 </header>

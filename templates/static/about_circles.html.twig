@@ -1,0 +1,41 @@
+<div class="about__circles">
+    <div class="circle wow animate__animated animate__zoomIn" data-wow-delay="0.25s">
+        <div class="circle__content">
+            <div class="circle__number">
+                {{ staticContent.analized.short_text|default('')|striptags }}
+            </div>
+            <div class="circle__text">
+                {{ staticContent.analized.text|default('')|striptags }}
+            </div>
+        </div>
+        <div class="circle__title">
+            {{ staticContent.analized.title|default('')|striptags }}
+        </div>
+    </div>
+    <div class="circle wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
+        <div class="circle__content">
+            <div class="circle__number">
+                {{ staticContent.realized.short_text|default('')|striptags }}
+            </div>
+            <div class="circle__text">
+                {{ staticContent.realized.text|default('')|striptags }}
+            </div>
+        </div>
+        <div class="circle__title">
+            {{ staticContent.realized.title|default('')|striptags }}
+        </div>
+    </div>
+    <div class="circle wow animate__animated animate__zoomIn" data-wow-delay="0.75s">
+        <div class="circle__content">
+            <div class="circle__number">
+                {{ staticContent.experience.short_text|default('')|striptags }}
+            </div>
+            <div class="circle__text">
+                {{ staticContent.experience.text|default('')|striptags }}
+            </div>
+        </div>
+        <div class="circle__title">
+            {{ staticContent.experience.title|default('')|striptags }}
+        </div>
+    </div>
+</div>

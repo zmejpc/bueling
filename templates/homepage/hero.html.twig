@@ -1,0 +1,19 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% set poster = staticContent.hero.poster|json_decode %}
+<section class="hero hero__wrap">
+    <div class="hero__wrap-background lazyload-container lazyload" data-bgset="{{ poster.webp.mobile|default('') }} [type=image/webp] | {{ poster.mobile|default('') }}">
+        <div class="hero__inner">
+            <div class="container Ta(c)">
+                <div class="hero__title">
+                    <h1 class="h1 hero__title-main">{{ staticContent.hero.short_text|default('')|striptags }}</h1>
+                    <span class="hero__title-text">{{ staticContent.hero.text|default('')|striptags }}</span>
+                </div>
+                <a href="{{ path('frontend_contact_index') }}" class="btn btn--primary btn--primary-transparent btn--medium">
+                    <div class="btn__inner">
+                        <span class="btn__text">{{ 'ui.get_consult'|trans }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

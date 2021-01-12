@@ -76,6 +76,39 @@ class ProductCategoryRepository extends DashboardRepository
         return $query->getQuery()->getResult();
     }
 
+    public function getForFrontend(int $max_results = 10)
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->orderBy('q.position', 'ASC')
+            ->setParameters([
+                'showOnWebsite' => ProductCategory::YES,
+            ]);
+
+        return $query
+            ->setMaxResults($max_results)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function getOneForFrontend()
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->andWhere('q.poster IS NOT NULL')
+            ->orderBy('RAND()')
+            ->setParameters([
+                'showOnWebsite' => ProductCategory::YES,
+            ])
+            ->setMaxResults(1);
+
+        return $query->getQuery()->getOneOrNullResult();
+    }
+
     public function getProductCategoryBySlug($slug)
     {
         $query = self::createQuery();

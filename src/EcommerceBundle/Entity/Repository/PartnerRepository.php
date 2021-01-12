@@ -34,4 +34,19 @@ class PartnerRepository extends DashboardRepository
 
         return $query->getQuery()->getOneOrNullResult();
     }
+
+    public function getForFrontend(int $max_results = 10)
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->orderBy('q.position', 'ASC')
+            ->setParameters([
+                'showOnWebsite' => Partner::YES,
+            ])
+            ->setMaxResults($max_results);
+
+        return $query->getQuery()->getResult();
+    }
 }

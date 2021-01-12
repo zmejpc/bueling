@@ -1,0 +1,37 @@
+{% trans_default_domain 'FrontendBundle' %}
+<section class="projects">
+    <div class="container">
+        <div class="projects__title">
+            <h2 class="h2 projects__title-main">{{ 'homepage.projects'|trans }}</h2>
+        </div>
+        <div class="projects__wrap">
+            {% for project in projects %}
+                {% set poster = project.galleryImages|first.image|default('')|json_decode %}
+                <div class="projects__wrap-item">
+                    <a href="projects.html" class="projects__wrap-item-image">
+                        <img src="{{ asset(poster.list_370_493|default('')) }}" alt="" class="projects__wrap-item--img">
+                    </a>
+                    <div class="projects__wrap-item-content">
+                        <p class="projects__wrap-item--subtitle">
+                            {{ project.translate.title }}
+                        </p>
+                        <p class="projects__wrap-item--title">
+                            {{ project.translate.company }}
+                        </p>
+                        <a href="projects.html" class="projects__wrap-item--text">
+                            {{ project.translate.description|striptags|slice(0, 150) }}...
+                        </a>
+                        <p class="projects__wrap-item-more">
+                            <a href="#" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ path('frontend_projects') }}" class="btn btn--white btn--medium">
+            <div class="btn__inner">
+                <span class="btn__text">{{ 'ui.other_projects'|trans }}</span>
+            </div>
+        </a>
+    </div>
+</section>

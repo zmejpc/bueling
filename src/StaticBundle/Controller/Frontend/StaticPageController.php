@@ -2,12 +2,16 @@
 
 namespace StaticBundle\Controller\Frontend;
 
-use StaticBundle\Entity\StaticPage;
-use StaticBundle\Entity\StaticContent;
-use Doctrine\ORM\EntityManagerInterface;
-use ComponentBundle\Utils\BreadcrumbsGenerator;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use ComponentBundle\Utils\BreadcrumbsGenerator;
+use Doctrine\ORM\EntityManagerInterface;
+use StaticBundle\Entity\StaticContent;
+use Ecommerce\Entity\ProductCategory;
+use StaticBundle\Entity\StaticPage;
+use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\Project;
+use Ecommerce\Entity\Partner;
 
 class StaticPageController extends AbstractController
 {
@@ -28,8 +32,18 @@ class StaticPageController extends AbstractController
 
         $staticContent = [];
         foreach ($static as $item) {
-            $staticContent[$item->getLinkName()]['shortDescription'] = $item->translate()->getShortDescription();
-            $staticContent[$item->getLinkName()]['description'] = $item->translate()->getDescription();
+            $staticContent[$item->getLinkName()]['title'] = $item->translate()->getTitle();
+            $staticContent[$item->getLinkName()]['text'] = $item->translate()->getDescription();
+            $staticContent[$item->getLinkName()]['short_text'] = $item->translate()->getShortDescription();
+            $staticContent[$item->getLinkName()]['poster'] = $item->getImg();
+        }
+
+        $static = $em->getRepository(StaticContent::class)->getByPage('homepage');
+        
+        foreach ($static as $item) {
+            $staticContent[$item->getLinkName()]['title'] = $item->translate()->getTitle();
+            $staticContent[$item->getLinkName()]['text'] = $item->translate()->getDescription();
+            $staticContent[$item->getLinkName()]['short_text'] = $item->translate()->getShortDescription();
             $staticContent[$item->getLinkName()]['poster'] = $item->getImg();
         }
 
@@ -50,8 +64,12 @@ class StaticPageController extends AbstractController
             'staticContent' => $staticContent,
         ];
 
-        if($element->getSystemName() == 'about_us') {
-            return $this->render('static/about_us.html.twig', $parameters);
+        if($element->getSystemName() == 'about') {
+            $parameters['partners'] = $em->getRepository(Partner::class)->getForFrontend();
+            $parameters['area'] = $em->getRepository(ActivityArea::class)->getOneForFrontend();
+            $parameters['product'] = $em->getRepository(ProductCategory::class)->getOneForFrontend();
+            $parameters['project'] = $em->getRepository(Project::class)->getOneForFrontend();
+            return $this->render('static/about.html.twig', $parameters);
         }
 
         return $this->render('static/show.html.twig', $parameters);

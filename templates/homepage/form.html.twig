@@ -1,0 +1,18 @@
+{% trans_default_domain 'FrontendBundle' %}
+<section class="form">
+    <div class="container">
+        <div class="form__wrap">
+            <div class="form__title">
+                <div class="form__title-main">
+                    {{ 'homepage.contact.title'|trans }}
+                </div>
+                <div class="form__title-text">
+                    {{ 'homepage.contact.sub_title'|trans }}
+                </div>
+            </div>
+            <div class="form__form">
+                {{ render(controller('ContactBundle\\Controller\\Frontend\\ContactController::renderForm')) }}
+            </div>
+        </div>
+    </div>
+</section>

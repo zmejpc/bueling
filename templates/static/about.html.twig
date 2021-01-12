@@ -1,0 +1,164 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="about-page">
+        <div class="container">
+            <h2 class="about-page__title h2 Ta(c)">{{ element.translate.title }}</h2>
+            <div class="about-page__wrap">
+                <div class="about-page__wrap-item js-photoswipe" data-href="modules/pswp.html">
+                    <div class="swiper-container area-slider-1 about-page__item-slider swiper-container--padding-bottom">
+                        <ul class="swiper-wrapper slider__list">
+                            {% for galleryImage in element.galleryImages %}
+                                {% if galleryImage.showOnWebsite %}
+                                    {% set poster = galleryImage.image|json_decode %}
+                                    <li class="swiper-slide">
+                                        <div class="slider__item slider-item">
+                                            <div class="slider-item__inner">
+                                                <a href="{{ poster.list_740_990|default('') }}" class="js-photoswipe-item" data-index="0" data-size="1926x1188">
+                                                    <picture class="slider-item__img-wrap lazyload-container">
+                                                        <source data-srcset="{{ poster.list_740_990|default('') }}">
+                                                        <img src="{{ poster.list_740_990|default('') }}" alt="" class="slider-item__img lazyload">
+                                                    </picture>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <button class="swiper__arrow swiper-button-prev swiper__arrow--left">
+                            <svg class="svg-icon swiper__icon">
+                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-left-slider" />
+                            </svg>
+                        </button>
+                        <button class="swiper__arrow swiper-button-next swiper__arrow--right">
+                            <svg class="svg-icon swiper__icon">
+                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right-slider" />
+                            </svg>
+                        </button>
+                        <div class="swiper-pagination slider__pagination"></div>
+                    </div>
+                </div>
+                <div class="about-page__wrap-item">
+                    <div class="about-page__description">
+                        {{ element.translate.shortDescription|raw }}
+                    </div>
+                    <div class="about-page__these">
+                        <div class="thesis__item">
+                            <p class="thesis__item--icon">
+                                <svg class="svg-icon thesis__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#thesis-icon-1" />
+                                </svg>
+                            </p>
+                            <p class="thesis__item--text">{{ 'about.features.feature_1'|trans }}</p>
+                        </div>
+                        <div class="thesis__item">
+                            <p class="thesis__item--icon">
+                                <svg class="svg-icon thesis__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#thesis-icon-2" />
+                            </p>
+                                </svg>
+                            <p class="thesis__item--text">{{ 'about.features.feature_2'|trans }}</p>
+                        </div>
+                        <div class="thesis__item">
+                            <p class="thesis__item--icon">
+                                <svg class="svg-icon thesis__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#thesis-icon-3" />
+                                </svg>
+                            </p>
+                            <p class="thesis__item--text">{{ 'about.features.feature_3'|trans }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'static/about_circles.html.twig' %}
+
+            <div class="about-page__description">
+                {{ element.translate.description|raw }}
+            </div>
+            <div class="about-page__text">
+                <div class="about-page__text--item">
+                    <p class="about-page__text--item__title">
+                        {{ staticContent.high_standart.title }}
+                    </p>
+                    <p class="about-page__text--item__text">
+                        {{ staticContent.high_standart.text|striptags }}
+                    </p>
+                </div>
+                <div class="about-page__text--item">
+                    <p class="about-page__text--item__title">
+                        {{ staticContent.inspired.title }}
+                    </p>
+                    <p class="about-page__text--item__text">
+                        {{ staticContent.inspired.text|striptags }}
+                    </p>
+                </div>
+                <div class="about-page__text--item">
+                    <p class="about-page__text--item__title">
+                        {{ staticContent.team_work.title }}
+                    </p>
+                    <p class="about-page__text--item__text">
+                        {{ staticContent.team_work.text|striptags }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {% include "homepage/partners_slider.html.twig" %}
+
+        <div class="container">
+            <div class="about-page__block__wrap">
+                <div class="about-page__block__wrap-item">
+                    <a href="{{ path('frontend_activity_areas') }}">
+                        <p class="about-page__block__wrap-item--title">
+                            {{ 'menu.activity_areas'|trans }}
+                        </p>
+                        {% set poster = area.galleryImages|first.image|default('')|json_decode %}
+                        <img src="{{ asset(poster.list_370_493|default('')) }}" alt="{{ 'menu.activity_areas'|trans }}" class="about-page__block__wrap-item--img">
+                    </a>
+                    <a href="{{ path('frontend_activity_areas') }}" class="btn btn--white btn--small">
+                        <div class="btn__inner">
+                            <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="about-page__block__wrap-item">
+                    <a href="{{ path('frontend_show_product_categories') }}">
+                        <p class="about-page__block__wrap-item--title">
+                            {{ 'menu.products'|trans }}
+                        </p>
+                        {% set poster = product.poster|default('')|json_decode %}
+                        <img src="{{ asset(poster.list_416_416|default('')) }}" alt="{{ 'menu.products'|trans }}" class="about-page__block__wrap-item--img">
+                    </a>
+                    <a href="{{ path('frontend_show_product_categories') }}" class="btn btn--white btn--small">
+                        <div class="btn__inner">
+                            <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="about-page__block__wrap-item">
+                    <a href="{{ path('frontend_projects') }}">
+                        <p class="about-page__block__wrap-item--title">
+                            {{ 'menu.projects'|trans }}
+                        </p>
+                        {% set poster = project.galleryImages|first.image|default('')|json_decode %}
+                        <img src="{{ asset(poster.list_370_493|default('')) }}" alt="{{ 'menu.projects'|trans }}" class="about-page__block__wrap-item--img">
+                    </a>
+                    <a href="{{ path('frontend_projects') }}" class="btn btn--white btn--small">
+                        <div class="btn__inner">
+                            <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/index.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/single-area.js') }}{{ assetVersion }}"></script>
+{% endblock %}

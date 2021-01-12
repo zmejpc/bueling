@@ -1,0 +1,36 @@
+{% trans_default_domain 'FrontendBundle' %}
+<section class="slider">
+    <div class="container">
+        <h2 class="h2 Ta(c)">{{ 'homepage.products'|trans }}</h2>
+        <div class="swiper-container products-slider">
+            <ul class="swiper-wrapper slider__list">
+                {% for category in categories %}
+                    <li class="swiper-slide">
+                        <div class="slider__item slider-item slider-item--grayscale">
+                            <div class="slider-item__inner">
+                                <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}">
+                                    {% set poster = category.poster|json_decode %}
+                                    <picture class="slider-item__img-wrap lazyload-container">
+                                        <source data-srcset="{{ poster.webp.list_256_256|default('') }}" type="image/webp">
+                                        <source data-srcset="{{ poster.list_256_256|default('') }}">
+                                            <img src="{{ poster.list_256_256|default('') }}" alt="" class="slider-item__img lazyload">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <button class="swiper__arrow swiper-button-prev swiper__arrow--left">
+                <svg class="svg-icon swiper__icon">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-left-slider" />
+                </svg>
+            </button>
+            <button class="swiper__arrow swiper-button-next swiper__arrow--right">
+                <svg class="svg-icon swiper__icon">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right-slider" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>

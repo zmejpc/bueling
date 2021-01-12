@@ -1,0 +1,9 @@
+frontend_activity_areas:
+  path:     /
+  controller: Ecommerce\Controller\Frontend\ActivityAreaController::listAction
+
+frontend_show_activity_area:
+  path:     /{slug}
+  controller: Ecommerce\Controller\Frontend\ActivityAreaController::showAction
+  requirements:
+    slug: "[\\w-]+"

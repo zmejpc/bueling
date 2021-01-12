@@ -35,6 +35,9 @@ class ProductCategory
     use PositionTrait;
     use ShowOnWebsiteTrait;
 
+    public const YES = 1;
+    public const NO = 0;
+
     /**
      * @var integer
      *

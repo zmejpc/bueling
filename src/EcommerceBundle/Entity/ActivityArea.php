@@ -12,6 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraints as Assert;
 use ComponentBundle\Entity\Position\PositionTrait;
+use ComponentBundle\Entity\Poster\PosterTrait;
 use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
 
 /**
@@ -36,6 +37,7 @@ class ActivityArea
 
     use SeoTrait;
     use PositionTrait;
+    use PosterTrait;
     use ShowOnWebsiteTrait;
 
     public const YES = 1;

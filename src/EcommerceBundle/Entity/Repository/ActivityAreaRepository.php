@@ -35,4 +35,49 @@ class ActivityAreaRepository extends DashboardRepository
 
         return $query->getQuery()->getOneOrNullResult();
     }
+
+    public function getForFrontendMenu()
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->orderBy('q.position', 'ASC')
+            ->setParameters([
+                'showOnWebsite' => ActivityArea::YES,
+            ]);
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getForFrontend(int $max_results = 10)
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->orderBy('q.position', 'ASC')
+            ->setParameters([
+                'showOnWebsite' => ActivityArea::YES,
+            ])
+            ->setMaxResults($max_results);
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getOneForFrontend()
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->join('q.galleryImages', 'galleryImages', 'WITH', 'galleryImages.showOnWebsite=:showOnWebsite')
+            ->orderBy('RAND()')
+            ->setParameters([
+                'showOnWebsite' => ActivityArea::YES,
+            ])
+            ->setMaxResults(1);
+
+        return $query->getQuery()->getOneOrNullResult();
+    }
 }

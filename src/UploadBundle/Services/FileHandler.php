@@ -348,26 +348,35 @@ class FileHandler implements FileHandlerInterface
 
         foreach ($thumbs as $key => $thumb) {
             if (isset($thumb['action']) == true) {
-                $img = $this->performResize($fullPath, $thumb['action'], $thumb['width'], $thumb['height']);
+
                 $this->checkDir($fullDestinationDir);
                 $name = uniqid();
-                $path = $fullDestinationDir . '/' . $name . '.' . $this->imageFormat;
-                $img->writeImage($path);
-                $result[$key] = $destinationDir . '/' . $name . '.' . $this->imageFormat;
 
-                if($this->imageFormat == 'png') {
-                    $sourse = imagecreatefrompng($path);
-                    imagealphablending($sourse, true);
-                    imagesavealpha($sourse, true);
+                if($fileAttr['extension'] == 'svg') {
+                    $path = $fullDestinationDir . '/' . $name . '.svg';
+                    copy($fullPath, $path);
+                    $result[$key] = $destinationDir . '/' . $name . '.svg';
                 } else {
-                    $sourse = imagecreatefromjpeg($path);
+                    $img = $this->performResize($fullPath, $thumb['action'], $thumb['width'], $thumb['height']);
+
+                    $path = $fullDestinationDir . '/' . $name . '.' . $this->imageFormat;
+                    $img->writeImage($path);
+                    $result[$key] = $destinationDir . '/' . $name . '.' . $this->imageFormat;
+
+                    if($this->imageFormat == 'png') {
+                        $sourse = imagecreatefrompng($path);
+                        imagealphablending($sourse, true);
+                        imagesavealpha($sourse, true);
+                    } else {
+                        $sourse = imagecreatefromjpeg($path);
+                    }
+
+                    imagepalettetotruecolor($sourse);
+
+                    $path = $fullDestinationDir . '/' . $name . '.webp';
+                    imagewebp($sourse, $path);
+                    $result['webp'][$key] = $destinationDir . '/' . $name . '.webp';
                 }
-
-                imagepalettetotruecolor($sourse);
-
-                $path = $fullDestinationDir . '/' . $name . '.webp';
-                imagewebp($sourse, $path);
-                $result['webp'][$key] = $destinationDir . '/' . $name . '.webp';
             }
 
 //            if (isset($thumb['watermark']) == true) {

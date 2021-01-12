@@ -43,8 +43,7 @@ final class DefaultController extends AbstractController
 
         $imageParameters = getimagesize($file);
 
-
-        if (isset($imageParameters['mime']) == 'image/jpeg' && $imageParameters['channels'] == 4) {
+        if (isset($imageParameters['mime']) == 'image/jpeg' && !empty($imageParameters['channels']) && $imageParameters['channels'] == 4) {
             return false;
         }
 

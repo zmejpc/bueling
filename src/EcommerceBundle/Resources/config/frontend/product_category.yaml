@@ -1,3 +1,7 @@
+frontend_show_product_categories:
+  path:     /
+  controller: Ecommerce\Controller\Frontend\ActivityAreaController::listAction
+
 frontend_show_product_category:
   path:     /{slug}
   controller: Ecommerce\Controller\Frontend\ProductCategoryController::showCategoryAction

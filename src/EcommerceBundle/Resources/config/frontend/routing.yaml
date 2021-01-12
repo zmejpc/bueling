@@ -5,3 +5,11 @@ frontend_product:
 frontend_product_category:
   resource: "@EcommerceBundle/Resources/config/frontend/product_category.yaml"
   prefix: /
+
+frontend_activity_area:
+  resource: "@EcommerceBundle/Resources/config/frontend/activity_area.yaml"
+  prefix: /activity-area
+
+frontend_project:
+  resource: "@EcommerceBundle/Resources/config/frontend/project.yaml"
+  prefix: /project

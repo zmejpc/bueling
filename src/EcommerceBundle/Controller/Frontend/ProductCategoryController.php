@@ -27,6 +27,23 @@ final class ProductCategoryController extends AbstractController
         $this->em = $em;
     }
 
+    public function listAction(TranslatorInterface $translator, Request $request)
+    {
+        $categories = $this->em->getRepository(ProductCategory::class)->getForFrontend();
+
+        if(!$category) {
+            throw $this->createNotFoundException($translator->trans('ui.notFound', [], 'FrontendBundle'));
+        }
+
+
+        return $this->render('product_category/index.html.twig', [
+            'seo' => $seo,
+            'filter' => $filter,
+            'category' => $category,
+            'breadcrumbs' => $this->generateBreadcrumbs($category, 'frontend_show_product_category'),
+        ]);
+    }
+
     public function showCategoryAction(TranslatorInterface $translator, string $slug, Request $request)
     {
         $category = $this->em->getRepository(ProductCategory::class)->getProductCategoryBySlug($slug);
@@ -37,7 +54,7 @@ final class ProductCategoryController extends AbstractController
 
         $seo = $category->getSeo()->getSeoForPage();
 
-        return $this->render('product_category/index.html.twig', [
+        return $this->render('product_category/show.html.twig', [
             'seo' => $seo,
             'filter' => $filter,
             'category' => $category,
