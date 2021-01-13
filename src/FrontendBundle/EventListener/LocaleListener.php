@@ -39,7 +39,7 @@ final class LocaleListener implements EventSubscriberInterface
                 $request_route_params = $request->attributes->get('_route_params');
                 foreach ($languages as $lang) {
                     $lang = preg_replace('/_\w+$/', '', $lang);
-                    if (in_array($lang, ['ru', 'uk', 'en', 'it'], true)) {
+                    if (in_array($lang, ['ru', 'uk'], true)) {
                         $locale = $lang;
                         $request_route_params['_locale'] = $locale;
                         $event->setResponse(new RedirectResponse($this->router->generate($request_route, $request_route_params), 302));

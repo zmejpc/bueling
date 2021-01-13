@@ -1,0 +1,103 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+	<section class="single-area">
+        <div class="container">
+          	<div class="single-area__wrap">
+
+          		{% include 'activity_area/slider.html.twig' %}
+            	
+            	<div class="single-area__wrap-item">
+              		<div class="single-area__title">
+                		<h2 class="h2 single-area__title-main">
+                			{{ area.translate.title }}
+                		</h2>
+              		</div>
+              		<div class="single-area__subtitle">
+              			{{ area.translate.shortDescription|striptags }}
+              		</div>
+              		<div class="single-area__description">
+              			{{ area.translate.description|raw }}
+              		</div>
+            	</div>
+          	</div>
+
+          	{% if area.features|length %}
+	          	<div class="single-area__these">
+	          		{% for feature in area.features %}
+		            	<div class="thesis__item">
+		              		<p class="thesis__item--icon">
+		              			{% set poster = feature.poster|json_decode %}
+		              			<img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default('')) }}" />
+		                  	</p>
+		              		<p class="thesis__item--text">
+		              			{{ feature.translate.title }}
+		              		</p>
+		            	</div>
+		            {% endfor %}
+	          	</div>
+	        {% endif %}
+
+          	{% include 'default/faq.html.twig' with {faq: area.faq} %}
+
+        </div>
+    </section>
+
+    <section class="form">
+    	<div class="container">
+      		<div class="form__wrap">
+        		<div class="form__title">
+          			<div class="form__title-main">
+          				{{ 'contact_form.title'|trans }}
+          			</div>
+          			<div class="form__title-text">
+          				{{ 'contact_form.sub_title'|trans }}
+          			</div>
+        		</div>
+        		<div class="form__form">
+        			{{ render(controller('ContactBundle\\Controller\\Frontend\\ContactController::renderForm')) }}
+        		</div>
+      		</div>
+    	</div>
+	</section>
+
+	<section class="projects projects__area">
+        <div class="container projects__area">
+          	<div class="projects__title">
+            	<h2 class="h2 projects__title-main">{{ 'homepage.projects'|trans }}</h2>
+          	</div>
+          	<div class="projects__wrap">
+          		{% for project in projects %}
+	            	<div class="projects__wrap-item">
+	            		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item-image">
+	            			{% set poster = project.galleryImages|first.image|default('')|json_decode %}
+	            			<img src="{{ asset(poster.list_370_493|default('')) }}" alt="{{ project.translate.title }}" class="projects__wrap-item--img">
+	            		</a>
+	              		<div class="projects__wrap-item-content">
+	                		<p class="projects__wrap-item--subtitle">{{ project.translate.title }}</p>
+	                		<p class="projects__wrap-item--title">{{ project.translate.company }}</p>
+	                		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--text">
+	                			{{ project.translate.description|striptags|slice(0, 150) }}...
+	                		</a>
+	                		<p class="projects__wrap-item-more">
+	                			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
+	                		</p>
+	              		</div>
+	            	</div>
+	            {% endfor %}
+          	</div>
+          	<a href="{{ path('frontend_projects') }}" class="btn btn--white btn--medium">
+            	<div class="btn__inner">
+            		<span class="btn__text">{{ 'ui.other_projects'|trans }}</span>
+            	</div>
+          	</a>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/single-area.js') }}{{ assetVersion }}"></script>
+{% endblock %}

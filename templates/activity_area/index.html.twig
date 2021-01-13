@@ -1,0 +1,45 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+	<section class="areas">
+        <div class="container">
+          	<div class="areas__title">
+            	<h2 class="h2 areas__title-main">
+            		{{ staticContent.top.title }}
+            	</h2>
+            	<span class="areas__title-text">
+            		{{ staticContent.top.short_text|striptags }}
+            	</span>
+          	</div>
+          	<div class="areas__content">
+            	<div class="areas__content-wrapper">
+	            	{% for area in areas %}
+	            		{% set poster = area.galleryImages|first.image|default('')|json_decode %}
+	              		<div class="areas__content--item lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+	              			<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
+	                  			<h3 class="areas__content--title">
+	                  				{{ area.translate.title }}
+	                  			</h3>
+	                		</a>
+	                		<div class="areas__content--text">
+	                			<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
+	                				{{ area.translate.shortDescription|striptags }}
+	                			</a>
+	                		</div>
+	                		<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="btn btn--primary btn--small">
+	                  			<div class="btn__inner">
+	                  				<span class="btn__text">{{ 'ui.more'|trans }}</span>
+	                  			</div>
+	                		</a>
+	              		</div>
+	              	{% endfor %}
+            	</div>
+          	</div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+{% endblock %}

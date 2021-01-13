@@ -8,7 +8,7 @@
             {% for project in projects %}
                 {% set poster = project.galleryImages|first.image|default('')|json_decode %}
                 <div class="projects__wrap-item">
-                    <a href="projects.html" class="projects__wrap-item-image">
+                    <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item-image">
                         <img src="{{ asset(poster.list_370_493|default('')) }}" alt="" class="projects__wrap-item--img">
                     </a>
                     <div class="projects__wrap-item-content">
@@ -18,11 +18,11 @@
                         <p class="projects__wrap-item--title">
                             {{ project.translate.company }}
                         </p>
-                        <a href="projects.html" class="projects__wrap-item--text">
+                        <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--text">
                             {{ project.translate.description|striptags|slice(0, 150) }}...
                         </a>
                         <p class="projects__wrap-item-more">
-                            <a href="#" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
+                            <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
                         </p>
                     </div>
                 </div>

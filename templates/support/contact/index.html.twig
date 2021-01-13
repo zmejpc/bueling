@@ -38,7 +38,7 @@
                         <h3 class="h3 contact-block__title">{{ staticContent['contact_email'].shortDescription|striptags }}</h3>
                         <ul class="contact-block__list">
                             <li class="contact-block__item">
-                                <a class="contact-block__link" href="mailto:leskizzo@leskizzo.com">
+                                <a class="contact-block__link" href="mailto:{{ staticContent['contact_email'].description|striptags }}">
                                     <span class="contact-block__text">{{ staticContent['contact_email'].description|striptags }}</span></a>
                             </li>
                         </ul>

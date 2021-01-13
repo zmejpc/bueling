@@ -307,26 +307,30 @@ upload:
                     width: 100
                     height: 100
                     action: exact_resize
-                cart:
-                    width: 126
-                    height: 126
-                    action: exact_resize
-                list_64_85:
-                    width: 370
-                    height: 85
-                    action: exact_resize
-                list_128_170:
-                    width: 128
-                    height: 170
-                    action: exact_resize
-                list_370_493:
-                    width: 370
-                    height: 493
-                    action: exact_resize
-                list_740_990:
-                    width: 740
-                    height: 990
-                    action: exact_resize
+                list_315_210:
+                    width: 315
+                    height: 210
+                    action: resize_and_crop
+                list_630_420:
+                    width: 630
+                    height: 420
+                    action: resize_and_crop
+                list_250_154:
+                    width: 250
+                    height: 154
+                    action: resize_and_crop
+                list_500_308:
+                    width: 500
+                    height: 308
+                    action: resize_and_crop
+                list_963_594:
+                    width: 963
+                    height: 594
+                    action: resize_and_crop
+                list_1926_1188:
+                    width: 1926
+                    height: 1188
+                    action: resize_and_crop
         project_gallery_image:
             type: image
             mime_type: []  # default

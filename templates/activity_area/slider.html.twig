@@ -1,0 +1,42 @@
+<div class="single-area__wrap-item js-photoswipe" data-href="{{ path('frontend_product_photoswipe') }}">
+	<div class="swiper-container area-slider-1 single-area__item-slider swiper-container--padding-bottom">
+		<ul class="swiper-wrapper slider__list">
+
+            {% set index = 0 %}
+            {% for galleryImage in area.galleryImages if galleryImage.showOnWebsite %}
+
+                {% set image = galleryImage.image|json_decode %}
+                {% if image %}
+
+        			<li class="swiper-slide">
+                        <div class="slider__item slider-item">
+                            <div class="slider-item__inner">
+                                <a href="{{ image.list_1926_1188|default('') }}" class="js-photoswipe-item" data-index="{{ index }}" data-size="1926x1188">
+                                    <picture class="slider-item__img-wrap lazyload-container">
+                                        <source data-srcset="{{ image.list_500_308|default('') }}">
+                                        <img src="{{ image.list_500_308|default('') }}" alt="" class="slider-item__img lazyload">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    {% set index = index + 1 %}
+
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+        <button class="swiper__arrow swiper-button-prev swiper__arrow--left">
+            <svg class="svg-icon swiper__icon">
+                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-left-slider" />
+            </svg>
+        </button>
+        <button class="swiper__arrow swiper-button-next swiper__arrow--right">
+            <svg class="svg-icon swiper__icon">
+                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right-slider" />
+            </svg>
+        </button>
+        <div class="swiper-pagination slider__pagination"></div>
+    </div>
+</div>

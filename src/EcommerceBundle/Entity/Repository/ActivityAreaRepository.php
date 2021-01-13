@@ -80,4 +80,18 @@ class ActivityAreaRepository extends DashboardRepository
 
         return $query->getQuery()->getOneOrNullResult();
     }
+
+    public function getBySlug(string $slug)
+    {
+        $query = self::createQuery();
+        $query
+            ->andWhere('q.slug=:slug')
+            ->andWhere('q.showOnWebsite=:showOnWebsite')
+            ->setParameters([
+                'slug' => $slug,
+                'showOnWebsite' => ActivityArea::YES
+            ]);
+
+        return $query->getQuery()->getOneOrNullResult();
+    }
 }
