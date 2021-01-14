@@ -18,6 +18,8 @@ ui:
   goto_area: 'перейти в розділ'
   all_regions: 'Всі регіони'
   all_activity_areas: 'Всі напрямки'
+  download_instruction: 'скачати інструкцію'
+  download: 'завантажити'
   video:
     not_supported: 'Ваш браузер не підтримує HTML5 video.'
   placeholder:
@@ -42,6 +44,12 @@ about:
     feature_1: 'програма для молодих талантів'
     feature_2: 'переїзд та повна підтримка'
     feature_3: '100+ експертівБ які працюють у різних сферах'
+service:
+  steps:
+    title: 'оформлення обладнання в діагностику або ремонт'
+  instruction:
+    title: 'інструкція використання техніки trimble'
+    sub_title: 'будь ласка, скачайте інструкцію і перевірте послідовність дій.'
 simple_steps: 'три простих кроки'
 faq_title: 'Найчастіші запитання'
 our_services: 'Наші послуги'
@@ -50,3 +58,4 @@ company: 'Компанія'
 date: 'Дата'
 share: 'Поділитись'
 main_office: 'Головний офіс'
+download_usefulll_files: 'скачати корисні файли'

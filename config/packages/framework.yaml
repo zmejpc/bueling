@@ -395,3 +395,10 @@ upload:
                     width: 260
                     height: 130
                     action: exact_resize
+        documents:
+            type: file
+            mime_type: []  # default
+            format: 'pdf, doc, docx, txt'
+            upload_dir: '/uploads/documents'
+            max_size: '476120000' #bytes
+            main_action: ''

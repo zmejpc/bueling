@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
 use Ecommerce\Entity\ProductCategory;
 use StaticBundle\Entity\StaticPage;
+use BackendBundle\Entity\Document;
 use Ecommerce\Entity\ActivityArea;
 use Ecommerce\Entity\Project;
 use Ecommerce\Entity\Partner;
@@ -70,6 +71,9 @@ class StaticPageController extends AbstractController
             $parameters['product'] = $em->getRepository(ProductCategory::class)->getOneForFrontend();
             $parameters['project'] = $em->getRepository(Project::class)->getOneForFrontend();
             return $this->render('static/about.html.twig', $parameters);
+        } elseif($element->getSystemName() == 'service') {
+            $parameters['documents'] = $em->getRepository(Document::class)->getForFrontend();
+            return $this->render('static/service.html.twig', $parameters);
         }
 
         return $this->render('static/show.html.twig', $parameters);

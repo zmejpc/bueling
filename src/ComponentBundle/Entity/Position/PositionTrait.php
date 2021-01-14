@@ -13,7 +13,6 @@ trait PositionTrait
     /**
      * @var integer
      *
-     * @Gedmo\Versioned
      * @Gedmo\SortablePosition
      * @ORM\Column(name="position", type="integer", nullable=true, options={"default": 0})
      */

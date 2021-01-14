@@ -85,3 +85,23 @@ dashboard_region_edit:
   methods:  [GET, POST]
   requirements:
     id:  \d+
+
+dashboard_documents_index:
+  path:     /documents/
+  controller: BackendBundle\Controller\Dashboard\DocumentController:listAction
+  methods:  [GET, POST]
+
+dashboard_documents_new:
+  path:     /documents/new/
+  controller: BackendBundle\Controller\Dashboard\DocumentController:newAction
+  methods:  [GET, POST]
+
+dashboard_documents_edit:
+  path:     /documents/edit/{id}
+  controller: BackendBundle\Controller\Dashboard\DocumentController:editAction
+  methods:  [GET, POST]
+
+dashboard_documents_delete:
+  path:     /documents/delete/{id}
+  controller: BackendBundle\Controller\Dashboard\DocumentController:deleteAction
+  methods:  GET

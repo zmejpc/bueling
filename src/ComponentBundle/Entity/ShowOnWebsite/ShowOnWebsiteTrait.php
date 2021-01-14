@@ -14,7 +14,6 @@ trait ShowOnWebsiteTrait
     /**
      * @var boolean
      *
-     * @Gedmo\Versioned
      * @ORM\Column(name="show_on_website", type="boolean", nullable=false)
      */
     protected $showOnWebsite = YesOrNoInterface::YES;  # показывать на сайте: 0 - нет, 1 - да

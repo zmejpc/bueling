@@ -1,0 +1,185 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="service">
+        <div class="container">
+
+          	<div class="service__title">
+            	<h2 class="h2 service__title--main">
+            		{{ element.translate.title }}
+            	</h2>
+            	<div class="service__subtitle">
+            		{{ element.translate.shortDescription|striptags }}
+            	</div>
+          	</div>
+
+          	<div class="service__wrap">
+            	<div class="service__wrap--item">
+            		{{ element.translate.description|raw }}
+            	</div>
+            	{% set galleryImage = element.galleryImages|first %}
+            	{% if galleryImage %}
+            		{% set poster = galleryImage.image|json_decode %}
+            		{% if poster %}
+		            	<div class="service__wrap--item">
+		            		<img src="{{ poster.list_500_308|default('') }}" alt="{{ element.translate.title }}" class="service__img">
+		            	</div>
+		            {% endif %}
+	            {% endif %}
+          	</div>
+
+          	<div class="service-instructions">
+            	<h2 class="h2 service-instructions__title">{{ 'service.steps.title'|trans }}</h2>
+            	<div class="service-instructions__wrap">
+
+              		<div class="service-instructions__wrap--item wow animate__animated animate__zoomIn" data-wow-delay="0.25s">
+                		<div class="service-instructions__holder">
+                			<span class="service-instructions--number">01</span>
+                		</div>
+                		<div class="service-instructions__holder__text">
+                  			<div class="service-instructions--text"></div>
+                  			<span class="service-instructions--description">
+                  				{{ staticContent.step_1.text|striptags|raw }}
+
+                  			</span>
+                		</div>
+              		</div>
+
+              		<div class="service-instructions__wrap--item wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
+                		<div class="service-instructions__holder">
+                			<span class="service-instructions--number">02</span>
+                		</div>
+                		<div class="service-instructions__holder__text">
+                  			<div class="service-instructions--text"></div>
+                  			<span class="service-instructions--description">
+                  				{{ staticContent.step_2.text|striptags|raw }}
+                  			</span>
+                		</div>
+              		</div>
+
+              		<div class="service-instructions__wrap--item wow animate__animated animate__zoomIn" data-wow-delay="0.75s">
+                		<div class="service-instructions__holder">
+                			<span class="service-instructions--number">03</span>
+                		</div>
+                		<div class="service-instructions__holder__text">
+                  			<div class="service-instructions--text"></div>
+                  			<span class="service-instructions--description">
+                  				{{ staticContent.step_3.text|striptags|raw }}
+                  			</span>
+                		</div>
+              		</div>
+
+            	</div>
+          	</div>
+        </div>
+        
+        <div class="service-download">
+          	<div class="container">
+            	<div class="service-download__wrap">
+              		<div class="service-download__wrap--item">
+                		<div class="h2 service-download--title">
+                			{{ 'service.instruction.title'|trans }}
+                		</div>
+                		<div class="service-download--subtitle">
+                			{{ 'service.instruction.sub_title'|trans }}
+                		</div>
+              		</div>
+              		<div class="service-download__wrap--item">
+              			{% set mainDoc = documents|first %}
+              			{% if mainDoc %}
+              				{% set link = mainDoc.document|json_decode %}
+              				{% if link %}
+		              			<a href="{{ link.default_file }}" download class="btn btn--primary btn--medium">
+		                  			<div class="btn__inner">
+		                  				<span class="btn__text">
+		                  					{{ 'ui.download_instruction'|trans }}
+		                  				</span>
+		                  			</div>
+		                		</a>
+		                	{% endif %}
+		                {% endif %}
+                	</div>
+            	</div>
+          	</div>
+        </div>
+
+        <div class="container">
+          	<div class="service-these__wrap">
+            	<div class="thesis__item">
+              		<p class="thesis__item--icon">
+              			<svg class="svg-icon thesis__icon">
+                  			<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#thesis-icon-1" />
+                  		</svg>
+                  	</p>
+              		<p class="thesis__item--title">
+              			{{ staticContent.sweetness.title }}:
+              		</p>
+              		<div class="thesis__item--list">
+              			{{ staticContent.sweetness.text|raw }}
+              		</div>
+            	</div>
+            	<div class="thesis__item">
+              		<p class="thesis__item--icon">
+              			<svg class="svg-icon thesis__icon">
+                  			<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#thesis-icon-2" />
+                  		</svg>
+                  	</p>
+              		<p class="thesis__item--title">
+              			{{ staticContent.tech_service.title }}:
+              		</p>
+              		<div class="thesis__item--list">
+              			{{ staticContent.tech_service.text|raw }}
+              		</div>
+            	</div>
+            	<div class="thesis__item">
+              		<p class="thesis__item--icon">
+              			<svg class="svg-icon thesis__icon">
+                  			<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#thesis-icon-3" />
+                  		</svg>
+                  	</p>
+              		<p class="thesis__item--title">
+              			{{ staticContent.info_service.title }}:
+              		</p>
+              		<div class="thesis__item--list">
+              			{{ staticContent.info_service.text|raw }}
+              		</div>
+            	</div>
+          	</div>
+        </div>
+
+        <div class="service-bottom">
+        	<a href="#" class="btn btn--primary btn--medium btn__forms">
+            	<div class="btn__inner">
+            		<span class="btn__text">
+            			{{ 'download_usefulll_files'|trans }}
+            		</span>
+            		<svg class="svg-icon btn__icon">
+                		<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                	</svg>
+                </div>
+          	</a>
+          	<div class="service-form">
+            	<div class="service-form__wrap">
+            		{% for doc in documents %}
+            				{% set link = doc.document|json_decode %}
+              				{% if not loop.first and link %}
+			              		<div class="service-form__wrap--item">
+			                		<div class="service-form__text">
+			                			{{ doc.translate.title }}
+			                		</div>
+			                		<div class="service-form__button">
+			                			<a href="{{ link.default_file }}" download class="btn btn--primary btn--small">
+			                    			<div class="btn__inner">
+			                    				<span class="btn__text">{{ 'ui.download'|trans }}</span>
+			                    			</div>
+			                  			</a>
+			                  		</div>
+			              		</div>
+			              	{% endif %}
+	              	{% endfor %}
+            	</div>
+          	</div>
+        </div>
+    </section>
+{% endblock %}

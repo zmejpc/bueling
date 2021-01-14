@@ -14,7 +14,6 @@ trait TitleTrait
     /**
      * @var string
      *
-     * @Gedmo\Versioned
      * @Assert\NotBlank()
      * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */

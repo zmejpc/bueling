@@ -37,9 +37,9 @@
                         <li class="lang-item">
                             <a href="#">українська</a>
                         </li>
-                        <li class="lang-item">
+                        {# <li class="lang-item">
                             <a href="#">російська</a>
-                        </li>
+                        </li> #}
                     </ul>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                                             </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="service.html" class="menu__item-link">
+                                            <a href="{{ path('frontend_static_page_show', {slug: 'service'}) }}" class="menu__item-link">
                                                 {{ 'menu.service_centre'|trans }}
                                             </a>
                                         </li>
@@ -201,7 +201,7 @@
                                     </a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="service.html" class="menu__item-link">
+                                    <a href="{{ path('frontend_static_page_show', {slug: 'service'}) }}" class="menu__item-link">
                                         {{ 'menu.service_centre'|trans }}
                                     </a>
                                 </li>
