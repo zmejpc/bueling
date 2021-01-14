@@ -28,6 +28,7 @@ use NewsBundle\Entity\Repository\NewsQuizRepository;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use StaticBundle\Entity\StaticContent;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -90,6 +91,7 @@ final class NewsController extends AbstractController
         $parameters = self::helperForindexAction();
         $parameters['news'] = $this->em->getRepository(News::class)->getLimitElements();
         $parameters['categories'] = $this->em->getRepository(NewsCategory::class)->getAsideElementsOnMain();
+        $parameters['staticContent'] = $this->em->getRepository(StaticContent::class)->getByPageForFrontend('blog');
 
         return $this->render('news/index.html.twig', $parameters);
     }
@@ -116,7 +118,7 @@ final class NewsController extends AbstractController
     private function helperForindexAction(int $page = null)
     {
         $breadcrumbsArr = $this->breadcrumbsGenerator->getBreadcrumbForHomePage();
-        $seo = $this->seoManager->getSeoForPage('news');
+        $seo = $this->seoManager->getSeoForPage('blog');
 
         $seo->og_url = $this->generateUrl('frontend_news_list');
 
@@ -478,68 +480,28 @@ final class NewsController extends AbstractController
         }
 
         $breadcrumbsArr = $breadcrumbsGenerator->getBreadcrumbForHomePage();
-        $seo = $seoManager->getSeoForPage('news');
+        $seo = $seoManager->getSeoForPage('blog');
         $breadcrumbsArr['frontend_news_list'][] = [
             'parameters' => [],
             'title' => (!empty($seo) and !empty($seo->breadcrumb)) ? $seo->breadcrumb : ''
         ];
 
         $seo = $element->getSeo()->getSeoForPage();
-        $newsCategory = $element->getNewsCategory();
 
-        if (!is_null($newsCategory)) {
-            $newsCategorySeo = $newsCategory->getSeo()->getSeoForPage();
-            $defaultCategoryLocale = $newsCategory->getDefaultLocale();
-            $newsCategorySlug = $newsCategory->translate($defaultCategoryLocale)->getSlug();
-
-            if (
-                is_null($category) or
-                (
-                    !is_null($newsCategory->getOldSlug()) and
-                    $newsCategory->getOldSlug() != $newsCategorySlug and
-                    !is_null($category) and $newsCategory->getOldSlug() == $category
-                )
-            ) {
-                return $this->redirectToRoute('frontend_news_show_with_category', [
-                    'slug' => $elementSlug,
-                    'category' => $newsCategorySlug
-                ]);
-            }
-
-            $breadcrumbsArr['frontend_news_category_show'][] = [
-                'parameters' => [
-                    'category' => $newsCategorySlug
-                ],
-                'title' => (!empty($newsCategorySeo) and !empty($newsCategorySeo->breadcrumb)) ? $newsCategorySeo->breadcrumb : ''
-            ];
-
-            $breadcrumbsArr['frontend_news_show_with_category'][] = [
-                'parameters' => [
-                    'slug' => $elementSlug,
-                    'category' => $newsCategorySlug
-                ],
-                'title' => (!empty($seo) and !empty($seo->breadcrumb)) ? $seo->breadcrumb : ''
-            ];
-        } else {
-            $breadcrumbsArr['frontend_news_show'][] = [
-                'parameters' => [
-                    'slug' => $elementSlug
-                ],
-                'title' => (!empty($seo) and !empty($seo->breadcrumb)) ? $seo->breadcrumb : ''
-            ];
-        }
-
-        $quizzes = $this->em->getRepository(NewsQuiz::class)->getElementsByNewsId($element->getId());
-        $comments = $this->em->getRepository(NewsComment::class)->getElementsByNewsIdForFrontend($element->getId());
+        $breadcrumbsArr['frontend_news_show'][] = [
+            'parameters' => [
+                'slug' => $elementSlug
+            ],
+            'title' => (!empty($seo) and !empty($seo->breadcrumb)) ? $seo->breadcrumb : ''
+        ];
 
         $seo->og_url = $this->generateUrl('frontend_news_show', ['slug' => $elementSlug]);
 
         $parameters = [
             'seo' => $seo,
-            'quizzes' => $quizzes,
-            'comments' => $comments,
             'element' => $element,
-            'breadcrumbs' => $breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr)
+            'posts' => $this->em->getRepository(News::class)->getLimitRANDElements(10),
+            'breadcrumbs' => $breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
         ];
 
         return $this->render('news/show.html.twig', $parameters);

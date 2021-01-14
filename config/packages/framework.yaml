@@ -202,10 +202,22 @@ upload:
                     width: 120
                     height: 120
                     action: exact_resize
-                show:
-                    width: 873
-                    height: 512
-                    action: exact_resize
+                list_355_200:
+                    width: 355
+                    height: 200
+                    action: resize_and_crop
+                list_710_400:
+                    width: 710
+                    height: 400
+                    action: resize_and_crop
+                list_499_283:
+                    width: 499
+                    height: 283
+                    action: resize_and_crop
+                list_998_566:
+                    width: 998
+                    height: 566
+                    action: resize_and_crop
         news_author_poster:
             type: image
             mime_type: []  # default

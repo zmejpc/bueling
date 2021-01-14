@@ -9,7 +9,7 @@
                 {% set poster = post.galleryImages|first.img|default('')|json_decode %}
                 <div class="news__wrap-item">
                     <a href="blog-item.html">
-                        <img src="{{ asset(poster.show|default('')) }}" alt="{{ post.translate.title }}" class="news__wrap-item--img">
+                        <img src="{{ asset(poster.list_355_200|default('')) }}" alt="{{ post.translate.title }}" class="news__wrap-item--img">
                     </a>
                     <p class="news__wrap-item--date">{{ post.publishAt|localizeddate('medium', 'none') }}</p>
                     <div class="news__wrap-item-content">

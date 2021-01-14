@@ -1,34 +1,120 @@
 {% trans_default_domain 'FrontendBundle' %}
 {% extends 'base.html.twig' %}
 
-{% block head_stylesheets %}
-    {{ parent() }}
-    <link rel="canonical" href="{{ absolute_url(path('frontend_news_list')) }}"/>
-{% endblock %}
-
 {% block main %}
-    <article>
-        <div class="container Mt(3rem) news-items">
-            <div class="news-item-page__img-holder">
-                <div class="news-item-page__img-wrap lazyload-container">
-                    {% set imageData = element.poster|json_decode %}
-                    <img class="news-item-page__img lazyload"
-                         data-srcset="{{ asset(imageData['370x655']|default('')) }} 370w, {{ asset(imageData['740x1310']|default('')) }} 740w"
-                         data-src="{{ asset(imageData['370x655']|default('')) }}">
+    <section class="blog-item">
+        <div class="container">
+            <div class="blog-item__title">
+                <h2 class="h2 blog-item__title-main">
+                    {{ element.translate.title }}
+                </h2>
+            </div>
+            <div class="blog-item__wrap">
+
+                {% include 'news/slider.html.twig' %}
+
+                <div class="blog-item__wrap--item">
+                    <div class="blog-item__description--text">
+                        {{ element.translate.shortDescription|striptags }}
+                    </div>
+
+                    <div class="blog-item__description--links">
+                        <p class="blog-item__description--links__text">{{ 'share'|trans }}:</p>
+                        <div class="media__icons" data-wow-duration="1s">
+                            <a href="javascript:void(0)" class="media__icon-link">
+                                <svg class="svg-icon media__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
+                                </svg>
+                            </a>
+                            <a href="javascript:void(0)" class="media__icon-link">
+                                <svg class="svg-icon media__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
+                                </svg>
+                            </a>
+                            <a href="javascript:void(0)" class="media__icon-link">
+                                <svg class="svg-icon media__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#instagram-icon" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="title">
-                <date class="news-item__date"
-                      time="{{ element.publishAt|localizeddate('medium', 'none', 'ru') }}">{{ element.publishAt|localizeddate('medium', 'none', 'ru') }}</date>
-                <h2 class="h2">{{ element.newsCategory.translate.title }}</h2>
-                <div class="title__description">
-                    {{ element.translate.shortDescription|raw }}
+
+            <div class="blog-item__description__holder">
+                <div class="blog-item__description--text">
+                    {{ element.translate.description|raw }}
                 </div>
-            </div>
-            <div class="static-content static-content--large W(75%)--lg Mx(a)--lg">
-                {{ element.translate.description|raw }}
             </div>
         </div>
-    </article>
+    </section>
 
+    <section class="blog-item-slider">
+        <div class="container">
+            <h2 class="h2 Ta(c) contacts__title">останні новини</h2>
+            <div class="swiper-container blog-item-slider swiper-container--padding-bottom--large">
+                <ul class="swiper-wrapper slider__list">
+                    {% for item in posts %}
+
+                        {% set galleryImage = item.galleryImages.first %}
+
+                        {% if galleryImage %}
+                            {% set image = galleryImage.img|json_decode %}
+                            {% if image %}
+                                <li class="swiper-slide">
+                                    <div class="slider__item slider-item">
+                                        <div class="slider-item__inner">
+                                            <div class="news__wrap-item news__wrap-item--vertical">
+                                                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+                                                    <picture class="news__wrap-item--img-wrap lazyload-container">
+                                                        <source data-srcset="{{ image.list_499_283|default('') }}">
+                                                        <img src="{{ image.list_499_283|default('') }}" alt="{{ element.translate.title }}" class="lazyload news__wrap-item--img">
+                                                    </picture>
+                                                </a>
+                                                <p class="news__wrap-item--date">
+                                                    {{ item.publishAt|localizeddate('medium', 'none') }}
+                                                </p>
+                                                <div class="news__wrap-item-content">
+                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+                                                        <p class="news__wrap-item-content--title">
+                                                            {{ element.translate.title }}
+                                                        </p>
+                                                    </a>
+                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}" class="news__wrap-item-content--more">
+                                                        {{ 'ui.read_more'|trans }}
+                                                        <svg class="svg-icon news__wrap-item--icon">
+                                                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right" />
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <button class="swiper__arrow swiper-button-prev swiper__arrow--left">
+                    <svg class="svg-icon swiper__icon">
+                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-left-slider" />
+                    </svg>
+                </button>
+                <button class="swiper__arrow swiper-button-next swiper__arrow--right">
+                    <svg class="svg-icon swiper__icon">
+                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right-slider" />
+                    </svg>
+                </button>
+                <div class="swiper-pagination slider__pagination slider__pagination--bottom-20"></div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/single-area.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/blog-item.js') }}{{ assetVersion }}"></script>
 {% endblock %}
