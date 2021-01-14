@@ -12,6 +12,7 @@ use DashboardBundle\Form\Type\DashboardTextareaType;
 use DashboardBundle\Form\Type\DashboardTextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityRepository;
+use BackendBundle\Entity\Region;
 use Ecommerce\Entity\Project;
 use DashboardBundle\Form\Type\DashboardTranslationsType;
 use Ecommerce\Entity\ActivityArea;
@@ -56,6 +57,15 @@ class ProjectType extends AbstractType
                         'label' => 'Компания',
                         'helpBlock' => null,
                         'maxLength' => 255
+                    ],
+                    'shortDescription' => [
+                        'field_type' => DashboardWYSIWYGType::class,
+                        'attr' => [
+                            'class' => 'tinymce',
+                            'data-theme' => 'medium'
+                        ],
+                        'label' => 'Краткое описание',
+                        'required' => false,
                     ],
                     'description' => [
                         'field_type' => DashboardWYSIWYGType::class,
@@ -104,6 +114,14 @@ class ProjectType extends AbstractType
                 'allow_delete' => true,
                 'prototype' => true,
                 'by_reference' => false,
+            ])
+            ->add('region', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => false,
+                'allow_clear' => true,
+                'label' => 'Регион',
+                'class' => Region::class,
+                'choice_label' => 'translate.title',
             ])
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }

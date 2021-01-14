@@ -2,18 +2,17 @@
 
 namespace BackendBundle\Controller\Dashboard;
 
-use BackendBundle\Entity\Video;
-use BackendBundle\Form\Type\Dashboard\VideoType;
-use Doctrine\ORM\EntityManagerInterface;
-use DashboardBundle\Controller\CRUDController;
-use SeoBundle\Entity\Seo;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use BackendBundle\Form\Type\Dashboard\RegionType;
+use DashboardBundle\Controller\CRUDController;
+use Doctrine\ORM\EntityManagerInterface;
+use BackendBundle\Entity\Region;
 use Twig\Environment;
 
 /**
  * @author Design studio origami <https://origami.ua>
  */
-final class VideoController extends CRUDController
+final class RegionController extends CRUDController
 {
     /**
      * @param TranslatorInterface $translator
@@ -21,7 +20,7 @@ final class VideoController extends CRUDController
      */
     public function getHeadTitle(): string
     {
-        return 'Видео';
+        return 'Регионы';
     }
 
     /**
@@ -41,8 +40,8 @@ final class VideoController extends CRUDController
     public function getRouteElements(): array
     {
         return [
-            'index' => 'dashboard_video_index', 'new' => 'dashboard_video_new',
-            'edit' => 'dashboard_video_edit', 'delete' => 'dashboard_video_delete',
+            'index' => 'dashboard_region_index', 'new' => null,
+            'edit' => 'dashboard_region_edit', 'delete' => null,
         ];
     }
 
@@ -52,7 +51,7 @@ final class VideoController extends CRUDController
      */
     public function getRepository(EntityManagerInterface $em)
     {
-        $repository = $em->getRepository(Video::class);
+        $repository = $em->getRepository(Region::class);
 
         return $repository;
     }
@@ -65,8 +64,8 @@ final class VideoController extends CRUDController
         return [
             'pageLength' => 25,
             'lengthMenu' => '10, 20, 25, 50, 100, 150',
-            'order_column' => 'publishAt',
-            'order_by' => "desc"
+            'order_column' => 'id',
+            'order_by' => "asc"
         ];
     }
 
@@ -78,9 +77,6 @@ final class VideoController extends CRUDController
     {
         return [
             'translations-title' => $translator->trans('ui.title', [], 'DashboardBundle'),
-            'position' => $translator->trans('ui.position', [], 'DashboardBundle'),
-            'showOnWebsite' => $translator->trans('ui.show_on_website', [], 'DashboardBundle'),
-            'publishAt' => $translator->trans('ui.date', [], 'DashboardBundle'),
         ];
     }
 
@@ -96,35 +92,16 @@ final class VideoController extends CRUDController
     {
         return [
             'translations-title' => $item->translate()->getTitle(),
-            'position' => $item->getPosition(),
-            'showOnWebsite' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
-                'element' => $item->getShowOnWebsite()
-            ]),
-            'publishAt' => $twig->render('@Dashboard/default/crud/list/element/_data.html.twig', [
-                'element' => $item->getPublishAt()
-            ])
         ];
     }
 
     public function getFormType(): string
     {
-        return VideoType::class;
+        return RegionType::class;
     }
 
     public function getFormElement()
     {
-        $seo = new Seo();
-        $new = new Video();
-        $new->setSeo($seo);
-
-        return $new;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPortletBodyTemplateForForm(): string
-    {
-        return '@Backend/dashboard/video/form/_portlet_body.html.twig';
+        return new Region;
     }
 }

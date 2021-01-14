@@ -1,0 +1,141 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+	<section class="projects-map product projects-page">
+        <div class="container">
+          	<div class="projects-page__title">
+
+            	<h2 class="h2 projects-page__title-main">
+            		{{ staticContent.top.title }}
+            	</h2>
+            	<div class="projects-page__subtitle">
+            		{{ staticContent.top.short_text|striptags }}
+            	</div>
+
+            	<div class="form-selection">
+
+              		<div class="form-selection__item">
+              			<span class="form-selection__text"></span>
+                		<div class="form-selection__holder">
+                  			<div class="form-selection__select">
+                    			<div class="form-selection__imitator">
+                    				<span>{{ 'ui.all_regions'|trans }} </span>
+                    				<svg class="svg-icon form-selection__icon">
+                        				<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                        			</svg>
+                        		</div>
+                        		{% set mapData = [] %}
+                        		<select name="region" class="js-select">
+			                      	<option value="" data-label="true">{{ 'ui.all_regions'|trans }}</option>
+			                      	{% for region in regions %}
+			                      		<option value="{{ region.id }}">{{ region.translate.title }}</option>
+			                      		{% set mapData = mapData|merge([{value: region.id~'', title: region.translate.title}]) %}
+			                      	{% endfor %}
+                    			</select>
+                  			</div>
+                		</div>
+              		</div>
+
+              		<div class="form-selection__item">
+              			<span class="form-selection__text"></span>
+                		<div class="form-selection__holder">
+                  			<div class="form-selection__select">
+                    			<div class="form-selection__imitator">
+                    				<span>{{ 'ui.all_activity_areas'|trans }} </span>
+                    				<svg class="svg-icon form-selection__icon">
+                        				<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                        			</svg>
+                        		</div>
+                        		<select name="areas" class="js-select">
+			                      	<option value="" data-label="true">{{ 'ui.all_activity_areas'|trans }}</option>
+			                      	{% for area in activityAreas %}
+			                      		<option value="{{ area.id }}">{{ area.translate.title }}</option>
+			                      	{% endfor %}
+                    			</select>
+                  			</div>
+                		</div>
+              		</div>
+
+            	</div>
+          	</div>
+
+          	<div class="map js-map" data-data='{"regions":{{ mapData|json_encode|raw }},"urls":{"getProjects":"{{ path('frontend_projects') }}"},"mode":"page"}'>
+
+          		{% for item in mapData %}
+	            	<div class="map__float-block" data-index="{{ item.value }}">{{ item.title }}</div>
+	            {% endfor %}
+            	
+	            {% include 'project/map.html.twig' %}
+
+          	</div>
+
+        </div>
+    </section>
+
+    <section class="projects-page-buttons">
+        <div class="container">
+          	<div class="projects__areas">
+          		{% for area in activityAreas %}
+	            	<div class="products__areas product__areas--item" data-category="{{ area.id }}" data-enabled="true">
+	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
+	                		<div class="btn__inner">
+	                			<span class="btn__text">{{ area.translate.title }}</span>
+	                		</div>
+	              		</a>
+	              	</div>
+	            {% endfor %}
+          	</div>
+        </div>
+    </section>
+
+    <section class="projects-list">
+        <div class="container">
+          	<div class="projects__handler">
+            	<ul class="projects-page__list product__wrap">
+            		{% for project in projects %}
+
+            			{% set poster = project.galleryImages|first.image|default('')|json_decode %}
+
+	              		<li class="product__wrap--item lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+	                		<div class="product__wrap--item__subtitle">
+	                			{{ project.translate.title }}
+	                		</div>
+	                		<div class="product__wrap--item__title">
+	                			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+	                    			<h2 class="h2">
+	                    				{{ project.translate.company }}
+	                    			</h2>
+	                  			</a>
+	                  		</div>
+	                		<div class="product__wrap--item__text">
+	                			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+	                				{{ project.translate.description|striptags|slice(0, 150) }}...
+	                			</a>
+	                		</div>
+	                		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="btn btn btn--primary btn--small">
+	                  			<div class="btn__inner">
+	                  				<span class="btn__text">{{ 'ui.more'|trans }}</span>
+	                  			</div>
+	                		</a>
+	              		</li>
+	              	{% endfor %}
+            	</ul>
+          </div>
+          <div class="pagination pagination__wrap project__pagination">
+            <ul class="pagination__list">
+              <li class="pagination__item" data-page="1"><a href="projects.html?page=1" data-index="1" class="pagination__link pagination__link--active"><span class="pagination__text">1</span></a></li>
+              <li class="pagination__item" data-page="2"><a href="projects.html?page=2" data-index="2" class="pagination__link"><span class="pagination__text">2</span></a></li>
+              <li class="pagination__item" data-page="3"><a href="projects.html?page=3" data-index="3" class="pagination__link"><span class="pagination__text">3</span></a></li>
+              <li class="pagination__item" data-page="4"><a href="projects.html?page=4" data-index="4" class="pagination__link"><span class="pagination__text">4</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/projects.js') }}{{ assetVersion }}"></script>
+{% endblock %}

@@ -33,22 +33,6 @@ final class LocaleListener implements EventSubscriberInterface
         $request = $event->getRequest();
         $session = $request->getSession();
 
-        if (!$request->hasPreviousSession()) {
-            if ($languages = $request->getLanguages()) {
-                $request_route = $request->attributes->get('_route');
-                $request_route_params = $request->attributes->get('_route_params');
-                foreach ($languages as $lang) {
-                    $lang = preg_replace('/_\w+$/', '', $lang);
-                    if (in_array($lang, ['ru', 'uk'], true)) {
-                        $locale = $lang;
-                        $request_route_params['_locale'] = $locale;
-                        $event->setResponse(new RedirectResponse($this->router->generate($request_route, $request_route_params), 302));
-                        break;
-                    }
-                }
-            }
-        }
-
         if ($session->get('_locale')) {
             $request->setLocale($session->get('_locale'));
         }

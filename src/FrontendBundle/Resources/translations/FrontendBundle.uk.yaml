@@ -16,6 +16,8 @@ ui:
   more_news: 'більше новин'
   sign_distribution: 'підписатись на розсилку'
   goto_area: 'перейти в розділ'
+  all_regions: 'Всі регіони'
+  all_activity_areas: 'Всі напрямки'
   video:
     not_supported: 'Ваш браузер не підтримує HTML5 video.'
   placeholder:
@@ -43,3 +45,5 @@ simple_steps: 'три простих кроки'
 faq_title: 'Найчастіші запитання'
 our_services: 'Наші послуги'
 our_projects: 'Наші проекти'
+company: 'Компанія'
+date: 'Дата'

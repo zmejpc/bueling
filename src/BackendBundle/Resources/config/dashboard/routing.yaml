@@ -73,3 +73,15 @@ dashboard_slider_ajax_delete_group:
   path:     /ajax/delete-group/
   controller: BackendBundle\Controller\Dashboard\SliderController::ajaxDeleteGroupAction
   methods:  POST
+
+dashboard_region_index:
+  path:     /region/
+  controller: BackendBundle\Controller\Dashboard\RegionController::listAction
+  methods:  [GET, POST]
+
+dashboard_region_edit:
+  path:     /region/edit/{id}
+  controller: BackendBundle\Controller\Dashboard\RegionController::editAction
+  methods:  [GET, POST]
+  requirements:
+    id:  \d+

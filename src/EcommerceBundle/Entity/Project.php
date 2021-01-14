@@ -2,6 +2,7 @@
 
 namespace Ecommerce\Entity;
 
+use BackendBundle\Entity\Region;
 use Doctrine\Common\Collections\Collection;
 use SeoBundle\Entity\SeoTrait;
 use FrontendBundle\Entity\Faq;
@@ -93,6 +94,13 @@ class Project
      *  )
      */
     private $faq;
+
+    /**
+     * @var \BackendBundle\Entity\Region
+     *
+     * @ORM\ManyToOne(targetEntity="BackendBundle\Entity\Region")
+     */
+    private $region;
 
     /**
      * @var string
@@ -298,5 +306,17 @@ class Project
     public function setShowOnHomepage(bool $showOnHomepage): void
     {
         $this->showOnHomepage = $showOnHomepage;
+    }
+
+    public function getRegion(): ?Region
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?Region $region): self
+    {
+        $this->region = $region;
+
+        return $this;
     }
 }

@@ -83,4 +83,18 @@ class ProjectRepository extends DashboardRepository
 
         return $query->getQuery()->getResult();
     }
+
+    public function getBySlug(string $slug)
+    {
+        $query = self::createQuery();
+        $query
+            ->andWhere('q.slug=:slug')
+            ->andWhere('q.showOnWebsite=:showOnWebsite')
+            ->setParameters([
+                'slug' => $slug,
+                'showOnWebsite' => Project::YES
+            ]);
+
+        return $query->getQuery()->getOneOrNullResult();
+    }
 }

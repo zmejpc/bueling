@@ -1,0 +1,114 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+	<div class="container">
+        <section class="single-project">
+          	<h2 class="h2 single-project__title">
+          		{{ project.translate.title }}
+          	</h2>
+          	<div class="single-project__text">
+          		{{ project.translate.shortDescription|raw }}
+          	</div>
+          	<div class="single-project__wrap">
+
+            	{% include 'project/slider.html.twig' %}
+
+            	<div class="single-project__wrap--item">
+              		<div class="single-project__description">
+                		<p class="single-project__description--item">
+                			{{ 'company'|trans }}:
+                			<span> {{ project.translate.company }}</span>
+                		</p>
+                		<p class="single-project__description--item">
+                			{{ 'date'|trans }}:
+                			<span> {{ project.createdAt|localizeddate('medium', 'none') }}</span>
+                		</p>
+              		</div>
+              		<div class="single-project__description__text">
+              			 {{ project.translate.description|raw }}
+              		</div>
+            	</div>
+          	</div>
+
+          	{% include 'default/faq.html.twig' with {faq: project.faq} %}
+
+        </section>
+    </div>
+
+    <section class="form">
+        <div class="container">
+          	<div class="form__wrap">
+            	<div class="form__title">
+              		<div class="form__title-main">
+              			{{ 'contact_form.title'|trans }}
+              		</div>
+              		<div class="form__title-text">
+              			{{ 'contact_form.sub_title'|trans }}
+              		</div>
+            	</div>
+            	<div class="form__form">
+            		{{ render(controller('ContactBundle\\Controller\\Frontend\\ContactController::renderForm')) }}
+            	</div>
+          	</div>
+        </div>
+    </section>
+
+	<div class="container">
+        <div class="single-product__wrap--holder">
+
+            <div class="single-product__wrap--holder--item">
+                <h2 class="h2 single-product__title">{{ 'our_services'|trans }}</h2>
+                {% set poster = area.galleryImages|first.image|default('')|json_decode %}
+
+                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+                    <div class="single-product--block__title">
+                        {{ area.translate.title }}
+                    </div>
+                    <div class="single-product--block__text">
+                        <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
+                            {{ area.translate.shortDescription|striptags }}
+                        </a>
+                    </div>
+                    <div class="single-product--block__btn">
+                        <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="btn btn--primary btn--small">
+                            <div class="btn__inner">
+                                <span class="btn__text">{{ 'ui.more'|trans }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-product__wrap--holder--item">
+                <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
+                {% set poster = randomProject.galleryImages|first.image|default('')|json_decode %}
+
+                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+                    <div class="single-product--block__title">
+                        {{ randomProject.translate.company }}
+                    </div>
+                    <div class="single-product--block__text">
+                        <a href="{{ path('frontend_show_project', {slug: randomProject.slug}) }}">
+                            {{ randomProject.translate.title }}
+                        </a>
+                    </div>
+                    <div class="single-product--block__btn">
+                        <a href="{{ path('frontend_show_project', {slug: randomProject.slug}) }}" class="btn btn--primary btn--small">
+                            <div class="btn__inner">
+                                <span class="btn__text">{{ 'ui.more'|trans }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/single-area.js') }}{{ assetVersion }}"></script>
+{% endblock %}

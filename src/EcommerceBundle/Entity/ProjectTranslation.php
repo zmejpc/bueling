@@ -64,6 +64,14 @@ class ProjectTranslation
     private $description;
 
     /**
+     * @var string
+     *
+     * @Gedmo\Versioned
+     * @ORM\Column(name="short_description", type="text", nullable=true)
+     */
+    private $shortDescription;
+
+    /**
      * @return string
      */
     public function getTitle(): ?string
@@ -125,5 +133,21 @@ class ProjectTranslation
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    /**
+     * @param string $shortDescription
+     */
+    public function setShortDescription(?string $shortDescription): void
+    {
+        $this->shortDescription = $shortDescription;
     }
 }

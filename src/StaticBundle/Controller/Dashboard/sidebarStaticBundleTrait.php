@@ -56,7 +56,7 @@ trait sidebarStaticBundleTrait
         ], [
             self::staticBundleRouteName()['static_content']['index'], self::staticBundleRouteName()['static_content']['new'],
             self::staticBundleRouteName()['static_page']['index'], self::staticBundleRouteName()['static_page']['new'],
-            'dashboard_slider_index', 'dashboard_slider_new', 'dashboard_slider_edit', 'dashboard_footer_settings_edit'
+            'dashboard_slider_index', 'dashboard_slider_new', 'dashboard_slider_edit', 'dashboard_region_index', 'dashboard_region_edit'
         ], 'flaticon-edit-1', false, null, null,
             'sidebar.configuration.static_partition.static_partition', [], null, 'StaticBundle',
             true, '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -121,6 +121,15 @@ trait sidebarStaticBundleTrait
                 'dashboard_slider_index', 'DashboardBundle', true,
                 '<i class="fa fa-image"></i>');
             (!is_null($slider)) ? $static['items'][] = $slider : null;
+
+            $regions = self::itemSidebar(['ROLE_DIRECTOR'], ['region/edit/'], [
+                'dashboard_region_index', 'dashboard_region_edit'
+            ],
+                'flaticon-file-2', false, null, null,
+                'Регионы', [],
+                'dashboard_region_index', 'DashboardBundle', true,
+                '<i class="fa fa-map-signs"></i>');
+            (!is_null($regions)) ? $static['items'][] = $regions : null;
 
             return $static;
         }
