@@ -136,7 +136,7 @@ class ContactController extends AbstractController
             }
         }
 
-        $static = $em->getRepository(StaticContent::class)->getByPage('contacts');
+        $static = $em->getRepository(StaticContent::class)->getByPage('contact');
 
         $staticContent = [];
         foreach ($static as $item) {

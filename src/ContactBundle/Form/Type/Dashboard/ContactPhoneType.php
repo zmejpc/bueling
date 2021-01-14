@@ -25,12 +25,7 @@ class ContactPhoneType extends AbstractType
             ])
             ->add('position', DashboardPositionType::class, [
                 'label' => 'ui.position',
-            ])
-            ->add('showOnWebsite', DashboardYesNoType::class, [
-                'label' => 'ui.show_on_website',
-                'translation_domain' => 'DashboardBundle'
-            ])
-           ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

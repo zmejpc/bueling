@@ -1,58 +1,76 @@
+{% trans_default_domain 'FrontendBundle' %}
 {% extends 'base.html.twig' %}
 
-
 {% block main %}
-    <section>
-        <div class="container">
-            <h1 class="h2">Контакты</h1>
-            <div class="col D(f)--lg Jc(sb)">
-                <div class="contact-block">
-                    {% for item in contactPhoneType %}
-                        <h3 class="h3 contact-block__title">{{ item.title }}</h3>
-                        <ul class="contact-block__list">
+    <section class="contacts">
+        <div class="contacts__wrap">
+            <div class="contacts__wrap--item">
+
+                <h1 class="h1 contacts__title">{{ seo.h1 }}</h1>
+
+                <div class="contacts__wrap--item__item">
+
+                    <div class="contacts__subtitle">{{ 'main_office'|trans }}</div>
+
+                    <div class="contacts__item">
+                        <svg class="svg-icon contacts__item--icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#nav-icon" />
+                        </svg>
+                        <a href="#" class="contacts__item--text">
+                            {{ staticContent.city.description|striptags }}, {{ staticContent.street.description|striptags }}
+                        </a>
+                    </div>
+
+                    <div class="contacts__item">
+                        <svg class="svg-icon contacts__item--icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#mail-icon" />
+                        </svg>
+                        <a href="mailto:office@buelinkin.com" class="contacts__item--text">
+                            {{ staticContent.email.description|striptags }}
+                        </a>
+                    </div>
+                </div>
+
+                {% for item in contactPhoneType %}
+                    <div class="contacts__wrap--item__item">
+                        <div class="contacts__subtitle">{{ item.title }}</div>
+                        <div class="contacts__item">
+                            <svg class="svg-icon contacts__item--icon">
+                                <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#phone-icon-2" />
+                            </svg>
                             {% for phone in item.phones %}
-                                <li class="contact-block__item">
-                                    <a class="contact-block__link"
-                                       href="{{ phone }}">
-                                        <span class="contact-block__text">{{ phone }}</span>
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endfor %}
-                </div>
-                <div class="contact-block">
-                    {% if staticContent['contact_address'] is defined %}
-                        <h3 class="h3 contact-block__title">{{ staticContent['contact_address'].shortDescription|striptags }}</h3>
-                        <ul class="contact-block__list">
-                            <li class="contact-block__item">
-                                <a class="contact-block__link" href="#googlemap">
-                                    <span class="contact-block__text">{{ staticContent['contact_address'].description|striptags }}</span>
+                                <a href="tel:{{ phone }}" class="contacts__item--text">
+                                    {{ phone }}
                                 </a>
-                            </li>
-                        </ul>
-                    {% endif %}
-                </div>
-                <div class="contact-block">
-                    {% if staticContent['contact_email'] is defined %}
-                        <h3 class="h3 contact-block__title">{{ staticContent['contact_email'].shortDescription|striptags }}</h3>
-                        <ul class="contact-block__list">
-                            <li class="contact-block__item">
-                                <a class="contact-block__link" href="mailto:{{ staticContent['contact_email'].description|striptags }}">
-                                    <span class="contact-block__text">{{ staticContent['contact_email'].description|striptags }}</span></a>
-                            </li>
-                        </ul>
-                    {% endif %}
-                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
-            {#            {{ page.translate.description|raw }}#}
-            <h2 class="h2 Mt(4rem)">Связаться с нами</h2>
-            {% include('support/contact/_form.html.twig') %}
+
+            <div class="contacts__wrap--item">
+                <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.8017152887205!2d30.38941091562247!3d50.48203499296976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cd1dc7068f29%3A0xc1900911ec6f0ed1!2z0LLRg9C70LjRhtGPINCQ0LrQsNC00LXQvNGW0LrQsCDQotGD0L_QvtC70ZTQstCwLCAxNywg0JrQuNGX0LIsIDA0MTI4!5e0!3m2!1suk!2sua!4v1606903846957!5m2!1suk!2sua" frameborder="0" style="border:0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>        
+            </div>
+
         </div>
     </section>
 
+    <section class="form">
+        <div class="container">
+            <div class="form__wrap">
+                <div class="form__title">
+                    <div class="form__title-main">
+                        {{ 'contact_form.contact_title'|trans }}
+                    </div>
+                    <div class="form__title-text">
+                        {{ 'contact_form.sub_title'|trans }}
+                    </div>
+                </div>
+                <div class="form__form">
+                    {{ render(controller('ContactBundle\\Controller\\Frontend\\ContactController::renderForm')) }}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
-
-{% block script %}
-    <script src="{{ asset('build/frontend/js/contacts.js') }}{{ assetVersion }}"></script>{% endblock %}
-

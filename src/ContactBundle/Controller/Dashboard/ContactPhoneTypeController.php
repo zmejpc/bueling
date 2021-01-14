@@ -89,8 +89,7 @@ final class ContactPhoneTypeController extends CRUDController
     {
         return [
             'translations-title' => $translator->trans('ui.title', [], 'DashboardBundle'),
-            'position' => $translator->trans('ui.position', [], 'DashboardBundle'),
-            'showOnWebsite' => $translator->trans('ui.show_on_website', [], 'DashboardBundle'),
+            'contactPhones' => 'Телефоны',
         ];
     }
 
@@ -106,8 +105,9 @@ final class ContactPhoneTypeController extends CRUDController
                 'href' => $this->generateUrl($this->getRouteElements()['edit'], ['id' => $item->getId()]),
                 'title' => $item->translate()->getTitle(),
             ]),
-            'position' => $item->getPosition(),
-            'showOnWebsite' => $item->getShowOnWebsite()
+            'contactPhones' => $twig->render('@Contact/dashboard/contact/list/phones.html.twig', [
+                'elements' => $item->getContactPhones(),
+            ]),
         ];
     }
 }

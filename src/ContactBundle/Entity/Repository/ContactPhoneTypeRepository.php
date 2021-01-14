@@ -16,7 +16,6 @@ class ContactPhoneTypeRepository extends DashboardRepository
             ->select('q, t, contactPhones')
             ->leftJoin('q.translations', 't')
             ->leftJoin('q.contactPhones', 'contactPhones', 'WITH', 'contactPhones.showOnWebsite = :showOnWebsite')
-            ->addOrderBy('q.position', 'ASC')
             ->andWhere('q.showOnWebsite =:showOnWebsite')
             ->setParameter('showOnWebsite', ContactPhoneTypeInterface::YES);
 
