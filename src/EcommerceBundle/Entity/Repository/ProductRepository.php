@@ -63,4 +63,19 @@ class ProductRepository extends DashboardRepository
 
         return $query->getQuery()->getOneOrNullResult();
     }
+
+    public function getOneForFrontend()
+    {
+        $query = self::getQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->orderBy('RAND()')
+            ->setParameters([
+                'showOnWebsite' => Product::YES,
+            ])
+            ->setMaxResults(1);
+
+        return $query->getQuery()->getOneOrNullResult();
+    }
 }

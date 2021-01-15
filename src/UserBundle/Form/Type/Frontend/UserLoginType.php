@@ -37,7 +37,7 @@ final class UserLoginType extends AbstractType
                 'translation_domain' => 'UserBundle',
             ])
             ->add('_remember_me', CheckboxType::class, [
-                'label' => 'form.login.remember_me',
+                'label' => 'ui.remember_me',
                 'translation_domain' => 'UserBundle',
                 'required' => false,
             ]);

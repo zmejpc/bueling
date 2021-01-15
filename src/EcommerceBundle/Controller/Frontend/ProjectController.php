@@ -30,6 +30,8 @@ final class ProjectController extends AbstractController
 
     public function listAction()
     {
+        $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('projects');
+
         $breadcrumbsArr = [];
         $seoHomepage = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('homepage');
         $breadcrumbsArr['frontend_homepage'][] = [
@@ -37,13 +39,13 @@ final class ProjectController extends AbstractController
             'title' => (!empty($seoHomepage) and !empty($seoHomepage->breadcrumb)) ? $seoHomepage->breadcrumb : ''
         ];
 
-        $breadcrumbsArr['frontend_activity_areas'][] = [
+        $breadcrumbsArr['frontend_projects'][] = [
             'parameters' => [],
-            'title' => $this->translator->trans('menu.activity_areas', [], 'FrontendBundle'),
+            'title' => $seo->breadcrumb ?? $this->translator->trans('menu.projects', [], 'FrontendBundle'),
         ];
 
         return $this->render('project/index.html.twig', [
-            'seo' => $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('projects'),
+            'seo' => $seo,
             'projects' => $this->em->getRepository(Project::class)->getForFrontend(),
             'regions' => $this->em->getRepository(Region::class)->findAll(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
@@ -60,6 +62,8 @@ final class ProjectController extends AbstractController
             throw $this->createNotFoundException($translator->trans('ui.notFound', [], 'FrontendBundle'));
         }
 
+        $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('projects');
+
         $breadcrumbsArr = [];
         $seoHomepage = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('homepage');
         $breadcrumbsArr['frontend_homepage'][] = [
@@ -67,12 +71,12 @@ final class ProjectController extends AbstractController
             'title' => (!empty($seoHomepage) and !empty($seoHomepage->breadcrumb)) ? $seoHomepage->breadcrumb : ''
         ];
 
-        $breadcrumbsArr['frontend_activity_areas'][] = [
+        $breadcrumbsArr['frontend_projects'][] = [
             'parameters' => [],
-            'title' => $this->translator->trans('menu.activity_areas', [], 'FrontendBundle'),
+            'title' => $seo->breadcrumb ?? $this->translator->trans('menu.projects', [], 'FrontendBundle'),
         ];
 
-        $breadcrumbsArr['frontend_show_activity_area'][] = [
+        $breadcrumbsArr['frontend_show_project'][] = [
             'parameters' => [
                 'slug' => $project->translate()->getSlug(),
             ],

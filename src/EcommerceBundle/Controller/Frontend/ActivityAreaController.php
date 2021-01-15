@@ -29,6 +29,8 @@ final class ActivityAreaController extends AbstractController
 
     public function listAction()
     {
+        $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('activity_areas');
+
         $breadcrumbsArr = [];
         $seoHomepage = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('homepage');
         $breadcrumbsArr['frontend_homepage'][] = [
@@ -38,11 +40,11 @@ final class ActivityAreaController extends AbstractController
 
         $breadcrumbsArr['frontend_activity_areas'][] = [
             'parameters' => [],
-            'title' => $this->translator->trans('menu.activity_areas', [], 'FrontendBundle'),
+            'title' => $seo->breadcrumb ?? $this->translator->trans('menu.activity_areas', [], 'FrontendBundle'),
         ];
 
         return $this->render('activity_area/index.html.twig', [
-            'seo' => $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('activity_areas'),
+            'seo' => $seo,
             'areas' => $this->em->getRepository(ActivityArea::class)->getForFrontend(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
             'staticContent' => $this->em->getRepository(StaticContent::class)->getByPageForFrontend('activity_areas'),
@@ -57,6 +59,8 @@ final class ActivityAreaController extends AbstractController
             throw $this->createNotFoundException($translator->trans('ui.notFound', [], 'FrontendBundle'));
         }
 
+        $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('activity_areas');
+
         $breadcrumbsArr = [];
         $seoHomepage = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('homepage');
         $breadcrumbsArr['frontend_homepage'][] = [
@@ -66,7 +70,7 @@ final class ActivityAreaController extends AbstractController
 
         $breadcrumbsArr['frontend_activity_areas'][] = [
             'parameters' => [],
-            'title' => $this->translator->trans('menu.activity_areas', [], 'FrontendBundle'),
+            'title' => $seo->breadcrumb ?? $this->translator->trans('menu.activity_areas', [], 'FrontendBundle'),
         ];
 
         $breadcrumbsArr['frontend_show_activity_area'][] = [

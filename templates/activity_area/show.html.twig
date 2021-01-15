@@ -72,7 +72,7 @@
 	            	<div class="projects__wrap-item">
 	            		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item-image">
 	            			{% set poster = project.galleryImages|first.image|default('')|json_decode %}
-	            			<img src="{{ asset(poster.list_370_493|default('')) }}" alt="{{ project.translate.title }}" class="projects__wrap-item--img">
+	            			<img src="{{ asset(poster.list_500_308|default('')) }}" alt="{{ project.translate.title }}" class="projects__wrap-item--img">
 	            		</a>
 	              		<div class="projects__wrap-item-content">
 	                		<p class="projects__wrap-item--subtitle">{{ project.translate.title }}</p>

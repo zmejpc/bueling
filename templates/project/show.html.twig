@@ -61,7 +61,7 @@
                 <h2 class="h2 single-product__title">{{ 'our_services'|trans }}</h2>
                 {% set poster = area.galleryImages|first.image|default('')|json_decode %}
 
-                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
                     <div class="single-product--block__title">
                         {{ area.translate.title }}
                     </div>
@@ -84,7 +84,7 @@
                 <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
                 {% set poster = randomProject.galleryImages|first.image|default('')|json_decode %}
 
-                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+                <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
                     <div class="single-product--block__title">
                         {{ randomProject.translate.company }}
                     </div>

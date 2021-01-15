@@ -8,17 +8,17 @@
         <div class="page-header__content">
             <div class="page-header__top">
                 <div class="media__icons page-header__inner" data-wow-duration="1s">
-                    <a href="" class="media__icon-link">
+                    <a href="javascript:void(0)" class="media__icon-link">
                         <svg class="svg-icon media__icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
                         </svg>
                     </a>
-                    <a href="" class="media__icon-link">
+                    <a href="javascript:void(0)" class="media__icon-link">
                         <svg class="svg-icon media__icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
                         </svg>
                     </a>
-                    <a href="" class="media__icon-link">
+                    <a href="javascript:void(0)" class="media__icon-link">
                         <svg class="svg-icon media__icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#instagram-icon" />
                         </svg>
@@ -197,7 +197,7 @@
                                 </li>
                                 <li class="menu__item">
                                     <a href="{{ path('frontend_projects') }}" class="menu__item-link">
-                                        {{ 'menu.activity_areas'|trans }}
+                                        {{ 'menu.projects'|trans }}
                                     </a>
                                 </li>
                                 <li class="menu__item">
@@ -221,17 +221,17 @@
                 </div>
             </nav>
             <div class="media__icons media__icons-mobile" data-wow-duration="1s">
-                <a href="" class="media__icon-link">
+                <a href="javascript:void(0)" class="media__icon-link">
                     <svg class="svg-icon media__icon">
                         <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
                     </svg> 
                 </a>
-                <a href="" class="media__icon-link">
+                <a href="javascript:void(0)" class="media__icon-link">
                     <svg class="svg-icon media__icon">
                         <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
                     </svg> 
                 </a>
-                <a href="" class="media__icon-link">
+                <a href="javascript:void(0)" class="media__icon-link">
                     <svg class="svg-icon media__icon">
                         <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#instagram-icon" />
                     </svg>
@@ -240,7 +240,7 @@
             {% for contactPhone in contactPhones %}
                 <a href="tel:{{ contactPhone.phone }}" class="phone-mobile">{{ contactPhone.phone }}</a> 
             {% endfor %}
-            <a href="index.html" class="page-header__logo-mobile logo">
+            <a href="/" class="page-header__logo-mobile logo">
                 <img src="{{ asset('build/frontend/img/logo.svg') }}" class="logo__img-mobile" alt="Лого" />
             </a>
         </div>

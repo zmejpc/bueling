@@ -114,6 +114,7 @@ final class NewsController extends CRUDController
     public function createDataForList($item, Environment $twig): array
     {
         $category = $item->getNewsCategory();
+        $galleryImage = $item->getGalleryImages()->first();
 
         return [
             'newsCategory-translations-title' => ($category) ? $category->translate()->getTitle() : '',
@@ -122,7 +123,7 @@ final class NewsController extends CRUDController
                 'title' => $item->translate()->getTitle(),
             ]),
             'poster' => $this->twig->render('@Dashboard/default/crud/list/element/_img.html.twig', [
-                'element' => $item->getPoster()
+                'element' => $galleryImage ? $galleryImage->getImg(): null,
             ]),
             'position' => $item->getPosition(),
             'showOnWebsite' => $this->twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [

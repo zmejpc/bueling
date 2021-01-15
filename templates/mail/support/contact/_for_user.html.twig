@@ -15,17 +15,6 @@
       <p class="text" style="font-size:15px;line-height:24px;margin:0">
           Телефон: {{ entity.phone }}
       </p>
-      <p class="text" style="font-size:15px;line-height:24px;margin:0">
-          Тема сообщения: {{ entity.subject }}
-      </p>
-      {% if entity.product %}
-          <p class="text" style="font-size:15px;line-height:24px;margin:0">
-              Товар: {{ entity.product.title }}
-          </p>
-      {% endif %}
-      <p class="text" style="font-size:15px;line-height:24px;margin:0">
-          Сообщение: {{ entity.message }}
-      </p>
     </td>
   </tr>
 

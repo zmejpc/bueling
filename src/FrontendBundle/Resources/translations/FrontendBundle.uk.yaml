@@ -50,6 +50,8 @@ service:
   instruction:
     title: 'інструкція використання техніки trimble'
     sub_title: 'будь ласка, скачайте інструкцію і перевірте послідовність дій.'
+mail:
+  button_link: 'Перейти'
 simple_steps: 'три простих кроки'
 faq_title: 'Найчастіші запитання'
 our_services: 'Наші послуги'

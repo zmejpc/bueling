@@ -116,7 +116,7 @@
                             {{ 'menu.activity_areas'|trans }}
                         </p>
                         {% set poster = area.galleryImages|first.image|default('')|json_decode %}
-                        <img src="{{ asset(poster.list_370_493|default('')) }}" alt="{{ 'menu.activity_areas'|trans }}" class="about-page__block__wrap-item--img">
+                        <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ 'menu.activity_areas'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
                     <a href="{{ path('frontend_activity_areas') }}" class="btn btn--white btn--small">
                         <div class="btn__inner">
@@ -125,14 +125,14 @@
                     </a>
                 </div>
                 <div class="about-page__block__wrap-item">
-                    <a href="{{ path('frontend_show_product_category', {slug: product.slugForUrl}) }}">
+                    <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}">
                         <p class="about-page__block__wrap-item--title">
                             {{ 'menu.products'|trans }}
                         </p>
-                        {% set poster = product.poster|default('')|json_decode %}
-                        <img src="{{ asset(poster.list_416_416|default('')) }}" alt="{{ 'menu.products'|trans }}" class="about-page__block__wrap-item--img">
+                        {% set poster = product.galleryImages|first.image|default('')|json_decode %}
+                        <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ 'menu.products'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
-                    <a href="{{ path('frontend_show_product_category', {slug: product.slugForUrl}) }}" class="btn btn--white btn--small">
+                    <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}" class="btn btn--white btn--small">
                         <div class="btn__inner">
                             <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
                         </div>
@@ -144,7 +144,7 @@
                             {{ 'menu.projects'|trans }}
                         </p>
                         {% set poster = project.galleryImages|first.image|default('')|json_decode %}
-                        <img src="{{ asset(poster.list_370_493|default('')) }}" alt="{{ 'menu.projects'|trans }}" class="about-page__block__wrap-item--img">
+                        <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ 'menu.projects'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
                     <a href="{{ path('frontend_projects') }}" class="btn btn--white btn--small">
                         <div class="btn__inner">

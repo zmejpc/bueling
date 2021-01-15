@@ -16,7 +16,7 @@
             	<div class="areas__content-wrapper">
 	            	{% for area in areas %}
 	            		{% set poster = area.galleryImages|first.image|default('')|json_decode %}
-	              		<div class="areas__content--item lazyload" data-bgset="{{ asset(poster.webp.list_370_493|default('')) }} [type=image/webp] | {{ asset(poster.list_370_493|default('')) }}">
+	              		<div class="areas__content--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
 	              			<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
 	                  			<h3 class="areas__content--title">
 	                  				{{ area.translate.title }}

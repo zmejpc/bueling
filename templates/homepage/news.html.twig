@@ -8,17 +8,17 @@
             {% for post in news %}
                 {% set poster = post.galleryImages|first.img|default('')|json_decode %}
                 <div class="news__wrap-item">
-                    <a href="blog-item.html">
+                    <a href="{{ path('frontend_news_show', {slug: post.translate(post.defaultLocale).slug}) }}">
                         <img src="{{ asset(poster.list_355_200|default('')) }}" alt="{{ post.translate.title }}" class="news__wrap-item--img">
                     </a>
                     <p class="news__wrap-item--date">{{ post.publishAt|localizeddate('medium', 'none') }}</p>
                     <div class="news__wrap-item-content">
-                        <a href="blog-item.html">
+                        <a href="{{ path('frontend_news_show', {slug: post.translate(post.defaultLocale).slug}) }}">
                             <p class="news__wrap-item-content--title">
                                 {{ post.translate.title }}
                             </p>
                         </a>
-                        <a href="blog-item.html" class="news__wrap-item-content--more">
+                        <a href="{{ path('frontend_news_show', {slug: post.translate(post.defaultLocale).slug}) }}" class="news__wrap-item-content--more">
                             {{ 'ui.read_more'|trans }}
                             <svg class="svg-icon news__wrap-item--icon">
                                 <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right" />
@@ -28,7 +28,7 @@
                 </div>
             {% endfor %}
         </div>
-        <a href="blog.html" class="btn btn--white btn--medium">
+        <a href="{{ path('frontend_news_list') }}" class="btn btn--white btn--medium">
             <div class="btn__inner">
                 <span class="btn__text">{{ 'ui.more_news'|trans }}</span>
             </div>

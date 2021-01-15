@@ -133,25 +133,13 @@ upload:
                     width: 100
                     height: 100
                     action: exact_resize
-                search_mini:
-                    width: 78
-                    height: 78
-                    action: exact_resize
-                list_150_150:
-                    width: 128
+                list_255_128:
+                    width: 255
                     height: 128
                     action: exact_resize
-                list_208_208:
-                    width: 208
-                    height: 208
-                    action: exact_resize
-                list_256_256:
-                    width: 256
+                list_510_256:
+                    width: 510
                     height: 256
-                    action: exact_resize
-                list_416_416:
-                    width: 416
-                    height: 416
                     action: exact_resize
         static_content_img:
             type: image
@@ -391,9 +379,13 @@ upload:
                     width: 100
                     height: 100
                     action: exact_resize
-                list_260_130:
-                    width: 260
-                    height: 130
+                list_255_128:
+                    width: 255
+                    height: 128
+                    action: exact_resize
+                list_510_256:
+                    width: 510
+                    height: 256
                     action: exact_resize
         documents:
             type: file

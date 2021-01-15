@@ -57,20 +57,6 @@ class ContactController extends AbstractController
                 $mailer->send($message);
             }
 
-            // Пользователю
-            if (!is_null($contact->getEmail())) {
-                $body = $this->renderView('mail/support/contact/_for_user.html.twig', [
-                    'body' => $translate->getMessageBody(),
-                    'entity' => $contact
-                ]);
-
-                $message = (new \Swift_Message($translate->getMessageSubject()))
-                    ->setFrom([$object->getSmtpUsername() => $translate->getSenderName()])
-                    ->setTo($contact->getEmail())
-                    ->setBody($body, 'text/html; charset=utf-8');
-                $mailer->send($message);
-            }
-
             $status = true;
             $message = [
                 'title' => $translate->getSuccessFlashTitle(),
@@ -79,7 +65,7 @@ class ContactController extends AbstractController
         } catch (\Exception $e) {
             $status = false;
             $message = [];
-            dump($e->getMessage());exit();
+            // dump($e->getMessage());exit();
         }
 
         return $this->forward('FrontendBundle\Controller\DefaultController::ajaxDialogAction', [

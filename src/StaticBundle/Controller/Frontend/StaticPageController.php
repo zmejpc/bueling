@@ -7,10 +7,10 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use ComponentBundle\Utils\BreadcrumbsGenerator;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
-use Ecommerce\Entity\ProductCategory;
 use StaticBundle\Entity\StaticPage;
 use BackendBundle\Entity\Document;
 use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\Product;
 use Ecommerce\Entity\Project;
 use Ecommerce\Entity\Partner;
 
@@ -68,7 +68,7 @@ class StaticPageController extends AbstractController
         if($element->getSystemName() == 'about') {
             $parameters['partners'] = $em->getRepository(Partner::class)->getForFrontend();
             $parameters['area'] = $em->getRepository(ActivityArea::class)->getOneForFrontend();
-            $parameters['product'] = $em->getRepository(ProductCategory::class)->getOneForFrontend();
+            $parameters['product'] = $em->getRepository(Product::class)->getOneForFrontend();
             $parameters['project'] = $em->getRepository(Project::class)->getOneForFrontend();
             return $this->render('static/about.html.twig', $parameters);
         } elseif($element->getSystemName() == 'service') {
