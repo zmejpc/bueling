@@ -4,7 +4,7 @@
     <div class="container about__inner">
         <div class="about__wrap">
             <div class="about__wrap-item">
-                <div class="about__title">{{ staticContent.about.text }}</div>
+                <div class="about__title">{{ staticContent.about.text|striptags|raw }}</div>
                 <p class="about__text">{{ staticContent.about.short_text|default('')|striptags|raw }}</p>
                 <a href="{{ path('frontend_static_page_show', {slug: 'about'}) }}" class="btn btn btn--primary btn--medium">
                     <div class="btn__inner">

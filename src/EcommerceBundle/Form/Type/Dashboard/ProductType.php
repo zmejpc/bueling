@@ -84,9 +84,9 @@ class ProductType extends AbstractType
                 'required' => false,
             ])
             ->add('categories', DashboardSelect2EntityType::class, [
-                'required' => false,
+                'required' => true,
                 'multiple' => true,
-                'label' => 'ui.categories',
+                'label' => 'Бренд',
                 'class' => ProductCategory::class,
                 'choice_label' => 'translate.title',
             ])

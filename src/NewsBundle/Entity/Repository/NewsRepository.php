@@ -276,6 +276,22 @@ final class NewsRepository extends DashboardRepository implements NewsRepository
         return self::getQueryForLimitElements($count)->getResult();
     }
 
+    public function getForFrontend(int $category_id = 0)
+    {   
+        $query = self::createQuery();
+        $query = self::helperForShowOnWebsite($query);
+
+        if($category_id) {
+            $query
+            ->andWhere('newsCategory.id =:category_id')
+            ->setParameter('category_id', $category_id);
+        }
+
+        return $query
+            ->getQuery()
+            ->getResult();
+    }
+
     /**
      * @param int|null $count
      * @return array|mixed

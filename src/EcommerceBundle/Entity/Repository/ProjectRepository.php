@@ -3,8 +3,10 @@
 namespace Ecommerce\Entity\Repository;
 
 use DashboardBundle\Entity\Repository\DashboardRepository;
-use Doctrine\ORM\QueryBuilder;
+use Ecommerce\Entity\ActivityArea;
+use BackendBundle\Entity\Region;
 use Doctrine\ORM\AbstractQuery;
+use Doctrine\ORM\QueryBuilder;
 use Ecommerce\Entity\Project;
 
 /**
@@ -36,7 +38,7 @@ class ProjectRepository extends DashboardRepository
         return $query->getQuery()->getOneOrNullResult();
     }
 
-    public function getForFrontend(int $max_results = 10)
+    public function getForFrontend(int $max_results = 10, ActivityArea $activityArea = null, Region $region = null)
     {
         $query = self::createQuery();
         
@@ -47,6 +49,19 @@ class ProjectRepository extends DashboardRepository
                 'showOnWebsite' => Project::YES,
             ])
             ->setMaxResults($max_results);
+
+        if ($activityArea) {
+            $query
+                ->leftJoin('q.activityAreas', 'activityAreas')
+                ->andWhere($query->expr()->in('activityAreas', [$activityArea->getId()]));
+        }
+
+        if ($region) {
+            $query
+                ->leftJoin('q.region', 'region')
+                ->andWhere('region=:region')
+                ->setParameter('region', $region->getId());
+        }
 
         return $query->getQuery()->getResult();
     }

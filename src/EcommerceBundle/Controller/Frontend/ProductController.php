@@ -5,9 +5,14 @@ namespace Ecommerce\Controller\Frontend;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use ComponentBundle\Utils\BreadcrumbsGenerator;
+use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
+use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\ActivityArea;
 use Ecommerce\Entity\Project;
 use Ecommerce\Entity\Product;
@@ -63,32 +68,32 @@ final class ProductController extends AbstractController
         return $this->render('product/photoswipe.html.twig');
     }
 
-    public function getProductsByCategoryAction(EntityManagerInterface $em, int $category_id, bool $is_ajax = false, int $page = 0)
+    public function getProductsByCategoryAction(string $slug, RequestStack $requestStack, PaginatorInterface $paginator)
     {
-        $filter = $this->get('session')->get('filter');
-        $filter['category'] = [$category_id];
+        $request = $requestStack->getMasterRequest();
 
-        $per_page = $this->getParameter('products_per_page');
+        $category = $this->em->getRepository(ProductCategory::class)->getProductCategoryBySlug($slug);
+        $activityArea = $this->em->getRepository(ActivityArea::class)->find($request->query->getInt('activity-area', 0));
 
-        $products = $em->getRepository(Product::class)
-            ->getProductsByFilter($filter, $per_page, $per_page * $page);
+        $products = $this->em->getRepository(Product::class)->getForFrontend($category, $activityArea);
 
-        $currentCart = $orderController->getCurrentCart();
+        $elements = $paginator->paginate($products, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
+        $elements->setTemplate('default/pagination.html.twig');
+        $elements->setUsedRoute('frontend_show_product_category');
 
-        if($is_ajax) {
-            return $this->renderView('product/_category_elements.html.twig', [
-                'products' => $products,
-                'per_page' => $per_page,
-                'page' => $page,
-                'is_ajax' => true,
+        if($request->isXmlHttpRequest()) {
+            $html = $this->renderView('product_category/elements.html.twig', [
+                'elements' => $elements,
+            ]);
+
+            return new JsonResponse([
+                'html' => $html,
+                'status' => true,
             ]);
         }
 
-        return $this->render('product/_category_elements.html.twig', [
-            'products' => $products,
-            'noFilter' => $noFilter,
-            'per_page' => $per_page,
-            'page' => $page,
+        return $this->render('product_category/elements.html.twig', [
+            'elements' => $elements,
         ]);
     }
 }

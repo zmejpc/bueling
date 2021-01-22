@@ -2,10 +2,12 @@
 
 namespace FrontendBundle\Controller;
 
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
+use FrontendBundle\Entity\Distribution;
 use ContactBundle\Entity\ContactPhone;
 use StaticBundle\Entity\StaticContent;
 use Ecommerce\Entity\ProductCategory;
@@ -16,8 +18,8 @@ use Ecommerce\Entity\ActivityArea;
  */
 final class DefaultController extends \ComponentBundle\Controller\Frontend\DefaultController
 {
-    public const FAIL_MESSAGE_TITLE = 'Упс... Что-то пошло не так';
-    public const FAIL_MESSAGE_BODY = 'При отправке сообщения произошла ошибка. Попробуйте ещё раз.';
+    public const FAIL_MESSAGE_TITLE = 'Упс... Щось пішло не так';
+    public const FAIL_MESSAGE_BODY = 'Спробуйте ще раз.';
 
     public function initHeaderAction(EntityManagerInterface $em, Request $request, bool $is_transparent = false)
     {
@@ -60,13 +62,35 @@ final class DefaultController extends \ComponentBundle\Controller\Frontend\Defau
             ];
 
         $response = [
-            'status' => $status,
-            'dialog' => $this->renderView('default/dialog.html.twig', $message)
+            'status' => true,
+            'html' => $this->renderView('default/dialog.html.twig', $message)
         ];
 
         foreach ($data as $key => $item)
             $response[$key] = $item;
 
         return new JsonResponse($response);
+    }
+
+    public function distributionAction(Request $request, EntityManagerInterface $em, TranslatorInterface $translator)
+    {
+        try {
+            $distribution = new Distribution;
+            $distribution->setEmail($request->request->get('email'));
+            $em->persist($distribution);
+            $em->flush();
+
+            $status = true;
+            $message = [
+                'title' => $translator->trans('distribution.title', [], 'FrontendBundle'),
+                'body' => $translator->trans('distribution.success', [], 'FrontendBundle')
+            ];
+
+        } catch (\Throwable $e) {
+            $status = false;
+            $message = [];
+        }
+        
+        return $this->ajaxDialogAction($status, $message);
     }
 }

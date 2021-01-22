@@ -1,0 +1,31 @@
+{% trans_default_domain 'FrontendBundle' %}
+<div class="news__wrap">
+    {% for item in elements %}
+        <div class="news__wrap-item">
+            <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+
+                {% set poster = item.galleryImages|first.img|default('')|json_decode %}
+
+                <img src="{{ asset(poster.list_355_200|default('')) }}" alt="{{ item.translate.title }}" class="news__wrap-item--img">
+            </a>
+            <p class="news__wrap-item--date">
+                {{ item.publishAt|localizeddate('medium', 'none') }}
+            </p>
+            <div class="news__wrap-item-content">
+                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+                    <p class="news__wrap-item-content--title">
+                        {{ item.translate.title }}
+                    </p>
+                </a>
+                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}" class="news__wrap-item-content--more">
+                    {{ 'ui.read_more'|trans }}
+                    <svg class="svg-icon news__wrap-item--icon">
+                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{{ knp_pagination_render(elements) }}

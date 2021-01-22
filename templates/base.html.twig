@@ -37,6 +37,10 @@
                 {{ render(controller('FrontendBundle:Default:initFooter')) }}
             {% endblock %}
 
+            <div class="page__loader loader">
+                <img class="loader__img" src="{{ asset('build/frontend/img/loader.svg') }}" />
+            </div>
+
             <script src="{{ asset('build/frontend/js/common.js') }}{{ assetVersion }}"></script>
             <script src="{{ asset('build/frontend/js/vendors~blog-item~common~index~product~projects~single-area.bundle.js') }}{{ assetVersion }}"></script>
             {% block script %}{% endblock %}

@@ -104,7 +104,7 @@ class ProductController extends CRUDController
             'translations-title' => $translator->trans('ui.title', [], 'DashboardBundle'),
             'galleryImages-image' => $translator->trans('ui.poster', [], 'DashboardBundle'),
             // 'price' => 'Цена',
-            'categories-translations-title' => $translator->trans('ui.categories', [], 'DashboardBundle'),
+            'categories-translations-title' => 'Бренд',
             'categories-slug' => '',
             'position' => [
                 'title' => $translator->trans('ui.position', [], 'DashboardBundle'),

@@ -17,7 +17,7 @@
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#nav-icon" />
                         </svg>
                         <a href="#" class="contacts__item--text">
-                            {{ staticContent.city.description|striptags }}, {{ staticContent.street.description|striptags }}
+                            {{ staticContent.city.description|striptags|raw }}, {{ staticContent.street.description|striptags|raw }}
                         </a>
                     </div>
 
@@ -26,7 +26,7 @@
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#mail-icon" />
                         </svg>
                         <a href="mailto:office@buelinkin.com" class="contacts__item--text">
-                            {{ staticContent.email.description|striptags }}
+                            {{ staticContent.email.description|striptags|raw }}
                         </a>
                     </div>
                 </div>
@@ -60,6 +60,7 @@
         <div class="container">
             <div class="form__wrap">
                 <div class="form__title">
+                    <span id="form"></span>
                     <div class="form__title-main">
                         {{ 'contact_form.contact_title'|trans }}
                     </div>

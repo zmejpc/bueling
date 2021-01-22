@@ -10,6 +10,7 @@ menu:
 ui:
   get_consult: 'отримати консультацію'
   all_services: 'всі послуги'
+  all_categories: 'всі категорії'
   other_projects: 'інші проєкти'
   more: 'детальніше'
   read_more: 'читати далі'
@@ -20,6 +21,7 @@ ui:
   all_activity_areas: 'Всі напрямки'
   download_instruction: 'скачати інструкцію'
   download: 'завантажити'
+  close_dialog: 'закрити діалогове вікно'
   video:
     not_supported: 'Ваш браузер не підтримує HTML5 video.'
   placeholder:
@@ -52,6 +54,14 @@ service:
     sub_title: 'будь ласка, скачайте інструкцію і перевірте послідовність дій.'
 mail:
   button_link: 'Перейти'
+form:
+  error:
+    name: "Ім'я повинне містити від 2 до 32 символів"
+    phone: 'Телефон повинен бути в форматі +380XXXXXXXXX'
+    email: 'Введіть коректний email'
+distribution:
+  title: 'Розсилка'
+  success: 'Ви підписались на розсилку'
 simple_steps: 'три простих кроки'
 faq_title: 'Найчастіші запитання'
 our_services: 'Наші послуги'

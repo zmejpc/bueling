@@ -1,0 +1,26 @@
+{% trans_default_domain 'FrontendBundle' %}
+<div class="product__wrap">
+    {% for product in elements %}
+        <div class="product__wrap--item">
+            <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}">
+                <div class="product__wrap--item__title">{{ product.translate.title }}</div>
+            </a>
+            <div class="product__wrap--item__img">
+                <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}">
+                    {% set poster = product.galleryImages|first.image|default('')|json_decode %}
+                    <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ product.translate.title }}">
+                </a>
+            </div>
+            <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}">
+                <div class="product__wrap--item__subtitle">{{ product.categories|first.translate.title }}</div>
+            </a>
+            <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}" class="btn btn btn--transparent btn--small">
+                <div class="btn__inner">
+                    <span class="btn__text">{{ 'ui.more'|trans }}</span>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{{ knp_pagination_render(elements) }}

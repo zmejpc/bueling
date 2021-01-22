@@ -1,17 +1,25 @@
 {% trans_default_domain 'FrontendBundle' %}
 {% extends 'base.html.twig' %}
 
+{% block head_javascript %}
+    <script>
+        window.__URLS__ = {
+            getProducts: '{{ path('frontend_ajax_category_products', {slug: category.translate.slug }) }}',
+        };
+    </script>
+{% endblock %}
+
 {% block main %}
 	<section class="product">
         <div class="container">
         	{% set poster = category.poster|json_decode %}
         	{% if poster %}
 	          	<div class="product__logo">
-	          		<img class="product__logo--img" src="{{ poster.list_255_128|default('') }}" alt="{{ category.translate.title }}">
+	          		<img class="product__logo--img" src="{{ poster.list_510_256|default('') }}" alt="{{ category.translate.title }}">
 	          	</div>
 	        {% endif %}
           	<p class="product__subtitle">
-          		{{ category.translate.title }}
+          		{{ category.translate.subTitle }}
           	</p>
           	<div class="product__text">
           		{{ category.translate.description|raw }}
@@ -19,7 +27,7 @@
          	<div class="service-instructions">
             	<h2 class="h2 service-instructions__title">{{ 'simple_steps'|trans }}</h2>
             	<div class="service-instructions__wrap">
-              		<div class="service-instructions__wrap--item wow animate__animated animate__zoomIn" data-wow-delay="0.25s">
+              		<div class="service-instructions__wrap--item animate__animated animate__zoomIn" style="animation-delay:0.50s">
                 		<div class="service-instructions__holder">
                 			<span class="service-instructions--number">01</span>
                 		</div>
@@ -30,7 +38,7 @@
 	                  		</span>
 	                	</div>
 	              	</div>
-	              	<div class="service-instructions__wrap--item wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
+	              	<div class="service-instructions__wrap--item animate__animated animate__zoomIn" style="animation-delay:0.70s">
 	                	<div class="service-instructions__holder">
 	                		<span class="service-instructions--number">02</span>
 	                	</div>
@@ -41,7 +49,7 @@
                   			</span>
                 		</div>
               		</div>
-              		<div class="service-instructions__wrap--item wow animate__animated animate__zoomIn" data-wow-delay="0.75s">
+              		<div class="service-instructions__wrap--item animate__animated animate__zoomIn" style="animation-delay:0.90s">
                 		<div class="service-instructions__holder">
                 			<span class="service-instructions--number">03</span>
                 		</div>
@@ -54,102 +62,46 @@
               		</div>
             	</div>
           	</div>
-          	<div class="product__areas">
-          		{% for area in activityAreas %}
-	            	<div class="product__areas--item" data-index="{{ loop.index0 }}" data-enabled="true">
-	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
-	                		<div class="btn__inner">
-	                			<span class="btn__text">{{ area.translate.title }}</span>
-	                		</div>
-	              		</a>
-	              	</div>
-	            {% endfor %}
-          	</div>
-          <div class="product__wrap">
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">KEETON SEED FARMER</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="KEETON SEED FARMER"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ПРИЖИМНИЙ ХВОСТОВИК</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
+            <div class="form-selection">
+                <div class="form-selection__item">
+                    <span class="form-selection__text"></span>
+                    <div class="form-selection__holder">
+                        <div class="form-selection__select">
+                            <div class="form-selection__imitator"><span>{{ 'ui.all_activity_areas'|trans }}</span>
+                                <svg class="svg-icon form-selection__icon">
+                                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                                </svg>
+                            </div>
+                            <select name="region" class="js-select" data-type="activity-area">
+                                <option value="0">{{ 'ui.all_activity_areas'|trans }}</option>
+                                {% for area in activityAreas %}
+                                    <option value="{{ area.id }}">{{ area.translate.title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">WAVEVISION</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="WAVEVISION"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ЗАХИСТ ВІД ПИЛУ</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
+            <div class="product__areas__holder">
+            	<div class="product__areas">
+            		{% for area in activityAreas %}
+                      <div class="product__areas--item products__areas" data-activity-area="{{ area.id }}" data-enabled="{{ loop.first ? 'true' : 'false' }}">
+  	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
+  	                		<div class="btn__inner">
+  	                			<span class="btn__text">{{ area.translate.title }}</span>
+  	                		</div>
+  	              		</a>
+  	              	</div>
+  	            {% endfor %}
+            	</div>
             </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">SMARTFIRMER</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="SMARTFIRMER"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ВІДПОВІДНІСТЬ В КОЖНІЙ ТОЧЦІ</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
+            <div class="product__handler">
+                {{ render(controller('Ecommerce\\Controller\\Frontend\\ProductController::getProductsByCategoryAction', {
+                    slug: category.translate.slug
+                })) }}
             </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">KEETON SEED FARMER</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="KEETON SEED FARMER"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ПРИЖИМНИЙ ХВОСТОВИК</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
-            </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">WAVEVISION</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="WAVEVISION"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ЗАХИСТ ВІД ПИЛУ</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
-            </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">SMARTFIRMER</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="SMARTFIRMER"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ВІДПОВІДНІСТЬ В КОЖНІЙ ТОЧЦІ</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
-            </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">KEETON SEED FARMER</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="KEETON SEED FARMER"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ПРИЖИМНИЙ ХВОСТОВИК</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
-            </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">WAVEVISION</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="WAVEVISION"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ЗАХИСТ ВІД ПИЛУ</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
-            </div>
-            <div class="product__wrap--item"><a href="product-page.html">
-                <div class="product__wrap--item__title">SMARTFIRMER</div>
-              </a>
-              <div class="product__wrap--item__img"><a href="product-page.html"><img src="img/temp/product.png" alt="SMARTFIRMER"></a></div><a href="product-page.html">
-                <div class="product__wrap--item__subtitle">ВІДПОВІДНІСТЬ В КОЖНІЙ ТОЧЦІ</div>
-              </a><a href="product-page.html" class="btn btn btn--transparent btn--small">
-                <div class="btn__inner"><span class="btn__text">ДЕТАЛЬНІШЕ</span></div>
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 {% endblock %}
 
 {% block script %}

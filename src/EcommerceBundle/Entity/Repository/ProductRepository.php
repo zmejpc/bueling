@@ -3,8 +3,8 @@
 namespace Ecommerce\Entity\Repository;
 
 use DashboardBundle\Entity\Repository\DashboardRepository;
-use Doctrine\ORM\QueryBuilder;
-use Doctrine\ORM\Query;
+use Ecommerce\Entity\ProductCategory;
+use Ecommerce\Entity\ActivityArea;
 use Doctrine\ORM\AbstractQuery;
 use Ecommerce\Entity\Product;
 
@@ -77,5 +77,26 @@ class ProductRepository extends DashboardRepository
             ->setMaxResults(1);
 
         return $query->getQuery()->getOneOrNullResult();
+    }
+
+    public function getForFrontend(ProductCategory $category, ActivityArea $activityArea = null)
+    {
+        $query = self::getQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->andWhere($query->expr()->in('categories', [$category->getId()]))
+            ->orderBy('q.position')
+            ->setParameters([
+                'showOnWebsite' => Product::YES,
+            ]);
+
+        if ($activityArea) {
+            $query
+                ->leftJoin('q.activityAreas', 'activityAreas')
+                ->andWhere($query->expr()->in('activityAreas', [$activityArea->getId()]));
+        }
+
+        return $query->getQuery()->getResult();
     }
 }

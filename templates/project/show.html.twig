@@ -2,44 +2,47 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-	<div class="container">
-        <section class="single-project">
-          	<h2 class="h2 single-project__title">
-          		{{ project.translate.title }}
-          	</h2>
-          	<div class="single-project__text">
-          		{{ project.translate.shortDescription|raw }}
-          	</div>
-          	<div class="single-project__wrap">
+    <section class="single-project">
+    	<div class="container">
+            <section class="single-project">
+              	<h2 class="h2 single-project__title">
+              		{{ project.translate.title }}
+              	</h2>
+              	<div class="single-project__text">
+              		{{ project.translate.shortDescription|raw }}
+              	</div>
+              	<div class="single-project__wrap">
 
-            	{% include 'project/slider.html.twig' %}
+                	{% include 'project/slider.html.twig' %}
 
-            	<div class="single-project__wrap--item">
-              		<div class="single-project__description">
-                		<p class="single-project__description--item">
-                			{{ 'company'|trans }}:
-                			<span> {{ project.translate.company }}</span>
-                		</p>
-                		<p class="single-project__description--item">
-                			{{ 'date'|trans }}:
-                			<span> {{ project.createdAt|localizeddate('medium', 'none') }}</span>
-                		</p>
-              		</div>
-              		<div class="single-project__description__text">
-              			 {{ project.translate.description|raw }}
-              		</div>
-            	</div>
-          	</div>
+                	<div class="single-project__wrap--item">
+                  		<div class="single-project__description">
+                    		<p class="single-project__description--item">
+                    			{{ 'company'|trans }}:
+                    			<span> {{ project.translate.company }}</span>
+                    		</p>
+                    		<p class="single-project__description--item">
+                    			{{ 'date'|trans }}:
+                    			<span> {{ project.createdAt|localizeddate('medium', 'none') }}</span>
+                    		</p>
+                  		</div>
+                  		<div class="single-project__description__text">
+                  			 {{ project.translate.description|raw }}
+                  		</div>
+                	</div>
+              	</div>
 
-          	{% include 'default/faq.html.twig' with {faq: project.faq} %}
+              	{% include 'default/faq.html.twig' with {faq: project.faq} %}
 
-        </section>
-    </div>
+            </section>
+        </div>
+    </section>
 
     <section class="form">
         <div class="container">
           	<div class="form__wrap">
             	<div class="form__title">
+                    <span id="form"></span>
               		<div class="form__title-main">
               			{{ 'contact_form.title'|trans }}
               		</div>

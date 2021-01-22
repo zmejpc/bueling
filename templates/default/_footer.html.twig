@@ -8,15 +8,15 @@
         		</a>
         	</div>
         	<div class="page-footer__wrap-item page-footer-address">
-        		<span class="page-footer-city page-footer-address--item">{{ static.city.text|striptags }}</span>
+        		<span class="page-footer-city page-footer-address--item">{{ static.city.text|striptags|raw }}</span>
         		<span class="page-footer-street page-footer-address--item">
-        			{{ static.street.text|striptags }}
+        			{{ static.street.text|striptags|raw }}
         			{% for contactPhone in contactPhones %}
 	                    <a href="tel:{{ contactPhone.phone }}" class="page-footer-phone">{{ contactPhone.phone }},</a>
 	                {% endfor %}
         		</span>
         		<span class="page-footer-email page-footer-address--item">
-        			{{ static.email.text|striptags }}
+        			{{ static.email.text|striptags|raw }}
         		</span>
         	</div>
         	<div class="page-footer__wrap-item">
@@ -38,14 +38,15 @@
                 	</a>
                 </div>
           		<div class="page-footer__form">
-            		<form action="" class="page-footer__form-inner">
-            			<input class="page-footer__form-input" type="email" id="footerEmail" name="email" placeholder="EMAIL*">
-            			<a href="#" class="btn btn--white btn--middle btn--white-footer">
-                			<div class="btn__inner">
-                				<span class="btn__text">{{ 'ui.sign_distribution'|trans }}</span>
-                			</div>
-              			</a>
-              		</form>
+                    <form action="{{ path('frontend_ajax_distribution') }}" method="POST" novalidate class="page-footer__form-inner js-ajax-form">
+                        <input class="page-footer__form-input js-validate-field" data-field-type="email" type="email" data-error="{{ 'form.error.email'|trans }}" id="footerEmail" name="email" placeholder="EMAIL*">
+                        <span class="input__error"></span>
+                        <button type="submit" class="btn btn--white btn--medium btn--white-footer">
+                            <div class="btn__inner">
+                                <span class="btn__text">{{ 'ui.sign_distribution'|trans }}</span>
+                            </div>
+                        </button>
+                    </form>
           		</div>
         	</div>
       	</div>

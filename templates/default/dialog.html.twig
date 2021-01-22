@@ -1,0 +1,20 @@
+<div class="dialog page__dialog" role="dialog" aria-labelledby="dialog-label" aria-modal="true">
+    <div class="dialog__backdrop"></div>
+    <div class="dialog__inner">
+        <div class="dialog__content">
+            <button class="dialog__close js-dialog-close" type="button" aria-label="{{ 'ui.close_dialog'|trans }}" title="{{ 'ui.close_dialog'|trans }}">
+                <svg class="svg-icon close__icon">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#close"/>
+                </svg>
+            </button>
+            <div class="title">
+                <h1 class="h2 Tt(u) Ta(c) dialog__title dialog__title--dark" id="dialog-label">
+                    {{ title }}
+                </h1>
+                <span class="title__text">
+                    {{ body|raw }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

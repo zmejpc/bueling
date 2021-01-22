@@ -1,0 +1,31 @@
+{% trans_default_domain 'FrontendBundle' %}
+<ul class="projects-page__list product__wrap">
+	{% for project in elements %}
+
+		{% set poster = project.galleryImages|first.image|default('')|json_decode %}
+
+  		<li class="product__wrap--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
+    		<div class="product__wrap--item__subtitle">
+    			{{ project.translate.title }}
+    		</div>
+    		<div class="product__wrap--item__title">
+    			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+        			<h2 class="h2">
+        				{{ project.translate.company }}
+        			</h2>
+      			</a>
+      		</div>
+    		<div class="product__wrap--item__text">
+    			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+    				{{ project.translate.description|striptags|slice(0, 80) }}...
+    			</a>
+    		</div>
+    		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="btn btn btn--primary btn--small">
+      			<div class="btn__inner">
+      				<span class="btn__text">{{ 'ui.more'|trans }}</span>
+      			</div>
+    		</a>
+  		</li>
+  	{% endfor %}
+</ul>
+{{ knp_pagination_render(elements) }}

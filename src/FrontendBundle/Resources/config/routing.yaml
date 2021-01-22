@@ -6,14 +6,6 @@ frontend_contact_from_vendor:
   resource: "@ContactBundle/Resources/config/routes/frontend/contact.yaml"
   prefix:   /contact
 
-# frontend_news_category_from_vendor:
-#   resource: "@NewsBundle/Resources/config/routes/frontend/news_category.yaml"
-#   prefix:   /category
-
-frontend_search_from_vendor:
-  resource: "@ComponentBundle/Resources/config/routes/frontend/search_shop_routing.yaml"
-  prefix:   /search
-
 frontend_Static:
   resource: "@StaticBundle/Resources/config/routes/frontend/all.yaml"
   prefix:   /
@@ -22,3 +14,9 @@ frontend_homepage:
   path:     /
   methods: [GET]
   controller: FrontendBundle\Controller\HomepageController::indexAction
+
+frontend_ajax_distribution:
+  path:     /ajax/distribution
+  controller: FrontendBundle\Controller\DefaultController::distributionAction
+  requirements:
+    slug: "[\\w-]+"

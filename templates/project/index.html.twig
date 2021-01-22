@@ -1,6 +1,14 @@
 {% trans_default_domain 'FrontendBundle' %}
 {% extends 'base.html.twig' %}
 
+{% block head_javascript %}
+    <script>
+        window.__URLS__ = {
+            getProjects: '{{ path('frontend_projects') }}',
+        };
+    </script>
+{% endblock %}
+
 {% block main %}
 	<section class="projects-map product projects-page">
         <div class="container">
@@ -26,7 +34,7 @@
                         			</svg>
                         		</div>
                         		{% set mapData = [] %}
-                        		<select name="region" class="js-select">
+                        		<select name="region" class="js-select" data-type="region">
 			                      	<option value="" data-label="true">{{ 'ui.all_regions'|trans }}</option>
 			                      	{% for region in regions %}
 			                      		<option value="{{ region.id }}">{{ region.translate.title }}</option>
@@ -47,7 +55,7 @@
                         				<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
                         			</svg>
                         		</div>
-                        		<select name="areas" class="js-select">
+                        		<select name="areas" class="js-select" data-type="activity-area">
 			                      	<option value="" data-label="true">{{ 'ui.all_activity_areas'|trans }}</option>
 			                      	{% for area in activityAreas %}
 			                      		<option value="{{ area.id }}">{{ area.translate.title }}</option>
@@ -63,7 +71,7 @@
           	<div class="map js-map" data-data='{"regions":{{ mapData|json_encode|raw }},"urls":{"getProjects":"{{ path('frontend_projects') }}"},"mode":"page"}'>
 
           		{% for item in mapData %}
-	            	<div class="map__float-block" data-index="{{ item.value }}">{{ item.title }}</div>
+	            	<div class="map__float-block {{ app.request.query.get('region') == item.value ? 'map__float-block--active' }}" data-index="{{ item.value }}">{{ item.title }}</div>
 	            {% endfor %}
             	
 	            {% include 'project/map.html.twig' %}
@@ -75,60 +83,26 @@
 
     <section class="projects-page-buttons">
         <div class="container">
-          	<div class="projects__areas">
-          		{% for area in activityAreas %}
-	            	<div class="products__areas product__areas--item" data-category="{{ area.id }}" data-enabled="true">
-	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
-	                		<div class="btn__inner">
-	                			<span class="btn__text">{{ area.translate.title }}</span>
-	                		</div>
-	              		</a>
-	              	</div>
-	            {% endfor %}
-          	</div>
+            <div class="projects__areas__holder">
+              	<div class="projects__areas">
+              		{% for area in activityAreas %}
+    	            	<div class="products__areas product__areas--item" data-activity-area="{{ area.id }}" data-enabled="{{ loop.first ? 'true' : 'false' }}">
+    	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
+    	                		<div class="btn__inner">
+    	                			<span class="btn__text">{{ area.translate.title }}</span>
+    	                		</div>
+    	              		</a>
+    	              	</div>
+    	            {% endfor %}
+              	</div>
+            </div>
         </div>
     </section>
 
     <section class="projects-list">
         <div class="container">
           	<div class="projects__handler">
-            	<ul class="projects-page__list product__wrap">
-            		{% for project in projects %}
-
-            			{% set poster = project.galleryImages|first.image|default('')|json_decode %}
-
-	              		<li class="product__wrap--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
-	                		<div class="product__wrap--item__subtitle">
-	                			{{ project.translate.title }}
-	                		</div>
-	                		<div class="product__wrap--item__title">
-	                			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
-	                    			<h2 class="h2">
-	                    				{{ project.translate.company }}
-	                    			</h2>
-	                  			</a>
-	                  		</div>
-	                		<div class="product__wrap--item__text">
-	                			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
-	                				{{ project.translate.description|striptags|slice(0, 150) }}...
-	                			</a>
-	                		</div>
-	                		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="btn btn btn--primary btn--small">
-	                  			<div class="btn__inner">
-	                  				<span class="btn__text">{{ 'ui.more'|trans }}</span>
-	                  			</div>
-	                		</a>
-	              		</li>
-	              	{% endfor %}
-            	</ul>
-          </div>
-          <div class="pagination pagination__wrap project__pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item" data-page="1"><a href="projects.html?page=1" data-index="1" class="pagination__link pagination__link--active"><span class="pagination__text">1</span></a></li>
-              <li class="pagination__item" data-page="2"><a href="projects.html?page=2" data-index="2" class="pagination__link"><span class="pagination__text">2</span></a></li>
-              <li class="pagination__item" data-page="3"><a href="projects.html?page=3" data-index="3" class="pagination__link"><span class="pagination__text">3</span></a></li>
-              <li class="pagination__item" data-page="4"><a href="projects.html?page=4" data-index="4" class="pagination__link"><span class="pagination__text">4</span></a></li>
-            </ul>
+                {% include 'project/elements.html.twig' %}
           </div>
         </div>
       </section>

@@ -1,12 +1,43 @@
 {% trans_default_domain 'FrontendBundle' %}
-{{ form_start(form, {'attr': {'class': 'form-inner'}}) }}
-    {{ form_widget(form.name, {'attr': {'class': 'form-inner-input', 'placeholder': 'ui.placeholder.first_name'|trans}}) }}
-    {{ form_widget(form.phone, {'attr': {'class': 'form-inner-input', 'placeholder': 'ui.placeholder.phone_number'|trans}}) }}
-    {{ form_widget(form.email, {'attr': {'class': 'form-inner-input', 'placeholder': 'ui.placeholder.email'|trans}}) }}
-    <a href="#" class="btn btn--primary btn--big">
-        <div class="btn__inner">
-            <span class="btn__text">{{ 'ui.get_consult'|trans }}</span>
-        </div>
-    </a>
+{{ form_start(form, {'attr': {'class': 'form-inner js-ajax-form', 'novalidate': 'novalidate'}}) }}
+	<div class="form--input">
+	    {{ form_widget(form.name, {
+	    	'attr': {
+	    		'class': 'form-inner-input js-validate-field',
+	    		'placeholder': 'ui.placeholder.first_name'|trans,
+	    		'data-field-type': 'name',
+	    		'data-error': 'form.error.name'|trans
+	    	}
+	    }) }}
+	    <span class="input__error"></span>
+	</div>
+    <div class="form--input">
+	    {{ form_widget(form.phone, {
+	    	'attr': {
+	    		'class': 'form-inner-input js-validate-field',
+	    		'placeholder': 'ui.placeholder.phone_number'|trans,
+	    		'data-field-type': 'phone',
+	    		'data-error': 'form.error.phone'|trans,
+	    		'data-mask': '+{38}({0}00)000-00-00'
+	    	}
+	    }) }}
+	    <span class="input__error"></span>
+	</div>
+    <div class="form--input">
+	    {{ form_widget(form.email, {
+	    	'attr': {
+	    		'class': 'form-inner-input js-validate-field',
+	    		'placeholder': 'ui.placeholder.email'|trans,
+	    		'data-field-type': 'email',
+	    		'data-error': 'form.error.email'|trans
+	    	}
+	    }) }}
+	    <span class="input__error"></span>
+	</div>
+    <button type="submit" class="btn btn--primary btn--big">
+      	<div class="btn__inner">
+      		<span class="btn__text">{{ 'ui.get_consult'|trans }}</span>
+      	</div>
+    </button>
     {{ form_row(form._token) }}
 {{ form_end(form) }}

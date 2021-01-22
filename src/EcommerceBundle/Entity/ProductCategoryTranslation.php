@@ -37,6 +37,15 @@ class ProductCategoryTranslation
      * @var string
      *
      * @Gedmo\Versioned
+     * @Assert\NotBlank()
+     * @ORM\Column(name="sub_title", type="string", length=255, nullable=true)
+     */
+    private $subTitle;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Versioned
      * @Gedmo\Slug(fields={"title"}, unique=false, updatable=false)
      * @ORM\Column(name="slug", type="string", length=255, nullable=false, unique=false)
      */
@@ -71,6 +80,22 @@ class ProductCategoryTranslation
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubTitle(): ?string
+    {
+        return $this->subTitle;
+    }
+
+    /**
+     * @param string $subTitle
+     */
+    public function setSubTitle(string $subTitle): void
+    {
+        $this->subTitle = $subTitle;
     }
 
     /**

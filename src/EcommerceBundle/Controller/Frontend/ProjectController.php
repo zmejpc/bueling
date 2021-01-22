@@ -4,7 +4,10 @@ namespace Ecommerce\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use ComponentBundle\Utils\BreadcrumbsGenerator;
+use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
 use Ecommerce\Entity\ActivityArea;
@@ -28,7 +31,7 @@ final class ProjectController extends AbstractController
         $this->em = $em;
     }
 
-    public function listAction()
+    public function listAction(Request $request, PaginatorInterface $paginator)
     {
         $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('projects');
 
@@ -44,9 +47,28 @@ final class ProjectController extends AbstractController
             'title' => $seo->breadcrumb ?? $this->translator->trans('menu.projects', [], 'FrontendBundle'),
         ];
 
+        $activityArea = $this->em->getRepository(ActivityArea::class)->find($request->query->getInt('activity-area', 0));
+        $region = $this->em->getRepository(Region::class)->find($request->query->getInt('region', 0));
+        $projects = $this->em->getRepository(Project::class)->getForFrontend(1000, $activityArea, $region);
+
+        $elements = $paginator->paginate($projects, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
+        $elements->setTemplate('default/pagination.html.twig');
+        $elements->setUsedRoute('frontend_projects');
+
+        if($request->isXmlHttpRequest()) {
+            $html = $this->renderView('project/elements.html.twig', [
+                'elements' => $elements,
+            ]);
+
+            return new JsonResponse([
+                'html' => $html,
+                'status' => true,
+            ]);
+        }
+
         return $this->render('project/index.html.twig', [
             'seo' => $seo,
-            'projects' => $this->em->getRepository(Project::class)->getForFrontend(),
+            'elements' => $elements,
             'regions' => $this->em->getRepository(Region::class)->findAll(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
             'activityAreas' => $this->em->getRepository(ActivityArea::class)->getForFrontend(8),

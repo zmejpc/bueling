@@ -1,0 +1,17 @@
+{% if pageCount > 1 %}
+    <div class="pagination pagination__wrap product__pagination project__pagination">
+        <ul class="pagination__list">
+
+            {% for page in pagesInRange %}
+
+                <li class="pagination__item" data-page="{{ page }}">
+                    <button data-index="{{ page }}" class="pagination__link {{ page == current ? 'pagination__link--active' }}">
+                        <span class="pagination__text">{{ page }}</span>
+                    </button>
+                </li>
+                
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endif %}

@@ -86,10 +86,27 @@ final class NewsController extends AbstractController
         $this->newsRepository = $this->em->getRepository(News::class);
     }
 
-    public function indexAction()
+    public function indexAction(Request $request, PaginatorInterface $paginator)
     {
+        $news = $this->em->getRepository(News::class)->getForFrontend($request->query->getInt('activity-area', 0));
+
         $parameters = self::helperForindexAction();
-        $parameters['news'] = $this->em->getRepository(News::class)->getLimitElements();
+        $parameters['elements'] = $paginator->paginate($news, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
+
+        $parameters['elements']->setTemplate('default/pagination.html.twig');
+        $parameters['elements']->setUsedRoute('frontend_news_list');
+        
+        if($request->isXmlHttpRequest()) {
+            $html = $this->renderView('news/elements.html.twig', [
+                'elements' => $parameters['elements'],
+            ]);
+
+            return new JsonResponse([
+                'html' => $html,
+                'status' => true,
+            ]);
+        }
+
         $parameters['categories'] = $this->em->getRepository(NewsCategory::class)->getAsideElementsOnMain();
         $parameters['staticContent'] = $this->em->getRepository(StaticContent::class)->getByPageForFrontend('blog');
 
