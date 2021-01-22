@@ -11,6 +11,7 @@ use DashboardBundle\Form\Type\DashboardYesNoType;
 use DashboardBundle\Form\Type\DashboardTextareaType;
 use DashboardBundle\Form\Type\DashboardTextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use DashboardBundle\Form\Type\DashboardDateTimeType;
 use Doctrine\ORM\EntityRepository;
 use BackendBundle\Entity\Region;
 use Ecommerce\Entity\Project;
@@ -78,6 +79,12 @@ class ProjectType extends AbstractType
                     ],
                 ],
                 'excluded_fields' => ['createdAt', 'updatedAt', 'slug']
+            ])
+            ->add('publishAt', DashboardDateTimeType::class, [
+                'label' => 'Дата выполнения',
+                'widget' => 'single_text',
+                'html5' => false,
+                'format' => 'dd.MM.yyyy HH:mm'
             ])
             ->add('position', DashboardPositionType::class, [
                 'label' => 'ui.position',

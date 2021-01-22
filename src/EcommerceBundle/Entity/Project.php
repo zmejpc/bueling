@@ -118,6 +118,14 @@ class Project
      */
     protected $showOnHomepage = self::NO;
 
+    /**
+     * @var \DateTimeInterface|null
+     *
+     * @ORM\Column(name="publish_at", type="datetime", nullable=false)
+     * @Gedmo\Versioned
+     */
+    private $publishAt;
+
     public function __toString()
     {
         return $this->translate()->getTitle();
@@ -316,6 +324,34 @@ class Project
     public function setRegion(?Region $region): self
     {
         $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     * @throws \Exception
+     */
+    public function getPublishAt(): ?\DateTimeInterface
+    {
+        if (!$this->publishAt) {
+            self::setPublishAt(null);
+        }
+
+        return $this->publishAt;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $publishAt
+     * @throws \Exception
+     */
+    public function setPublishAt(?\DateTimeInterface $publishAt)
+    {
+        if (is_null($publishAt)) {
+            $this->publishAt = new \DateTime();
+        } else {
+            $this->publishAt = $publishAt;
+        }
 
         return $this;
     }

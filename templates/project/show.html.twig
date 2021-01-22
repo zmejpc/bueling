@@ -18,13 +18,21 @@
                 	<div class="single-project__wrap--item">
                   		<div class="single-project__description">
                     		<p class="single-project__description--item">
-                    			{{ 'company'|trans }}:
+                    			{{ 'household'|trans }}:
                     			<span> {{ project.translate.company }}</span>
                     		</p>
+                        <p class="single-project__description--item">
+                          {{ 'works'|trans }}:
+                          <span> </span>
+                        </p>
                     		<p class="single-project__description--item">
-                    			{{ 'date'|trans }}:
-                    			<span> {{ project.createdAt|localizeddate('medium', 'none') }}</span>
+                    			{{ 'realize_date'|trans }}:
+                    			<span> {{ project.publishAt|localizeddate('medium', 'none') }}</span>
                     		</p>
+                        <p class="single-project__description--item">
+                          {{ 'region'|trans }}:
+                          <span> {{ project.region.translate.title }}</span>
+                        </p>
                   		</div>
                   		<div class="single-project__description__text">
                   			 {{ project.translate.description|raw }}
