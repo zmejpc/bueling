@@ -12,7 +12,7 @@
                 </a>
             </div>
             <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}">
-                <div class="product__wrap--item__subtitle">{{ product.categories|first.translate.title }}</div>
+                <div class="product__wrap--item__subtitle">{{ product.translate.subtitle }}</div>
             </a>
             <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}" class="btn btn btn--transparent btn--small">
                 <div class="btn__inner">
