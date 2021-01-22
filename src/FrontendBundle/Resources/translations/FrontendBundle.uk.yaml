@@ -3,7 +3,7 @@ menu:
   about: 'про нас'
   products: 'продукти'
   activity_areas: 'напрямки діяльності'
-  projects: 'проєкти'
+  projects: 'проекти'
   service_centre: 'сервісний центр'
   blog: 'блог'
   contacts: 'контакти'
@@ -11,7 +11,7 @@ ui:
   get_consult: 'отримати консультацію'
   all_services: 'всі послуги'
   all_categories: 'всі категорії'
-  other_projects: 'інші проєкти'
+  other_projects: 'інші проекти'
   more: 'детальніше'
   read_more: 'читати далі'
   more_news: 'більше новин'
@@ -31,7 +31,7 @@ ui:
 homepage:
   products: 'Продукти'
   areas: 'Сфери застосування'
-  projects: 'наші проєкти'
+  projects: 'наші проекти'
   blog: 'блог'
   contact:
     title: 'не знайшли потрібної інформації?'

@@ -11,9 +11,9 @@
                                 <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}">
                                     {% set poster = category.poster|json_decode %}
                                     <picture class="slider-item__img-wrap lazyload-container">
-                                        <source data-srcset="{{ poster.webp.list_255_128|default('') }}" type="image/webp">
-                                        <source data-srcset="{{ poster.list_255_128|default('') }}">
-                                            <img src="{{ poster.list_255_128|default('') }}" alt="" class="slider-item__img lazyload">
+                                        <source data-srcset="{{ poster.webp.list_510_256|default('') }}" type="image/webp">
+                                        <source data-srcset="{{ poster.list_510_256|default('') }}">
+                                            <img src="{{ poster.list_510_256|default('') }}" alt="" class="slider-item__img lazyload">
                                     </picture>
                                 </a>
                             </div>

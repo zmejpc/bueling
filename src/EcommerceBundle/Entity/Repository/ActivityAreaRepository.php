@@ -50,6 +50,23 @@ class ActivityAreaRepository extends DashboardRepository
         return $query->getQuery()->getResult();
     }
 
+    public function getForHomepage()
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->andWhere('q.showOnHomepage = :showOnHomepage')
+            ->orderBy('q.position', 'ASC')
+            ->setParameters([
+                'showOnWebsite' => ActivityArea::YES,
+                'showOnHomepage' => ActivityArea::YES,
+            ])
+            ->setMaxResults(4);
+
+        return $query->getQuery()->getResult();
+    }
+
     public function getForFrontend(int $max_results = 10)
     {
         $query = self::createQuery();

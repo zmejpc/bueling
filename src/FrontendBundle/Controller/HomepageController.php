@@ -21,7 +21,7 @@ final class HomepageController extends AbstractController
     {
         $staticContent = $em->getRepository(StaticContent::class)->getByPageForFrontend('homepage');
         $categories = $em->getRepository(ProductCategory::class)->getForFrontend();
-        $areas = $em->getRepository(ActivityArea::class)->getForFrontend(4);
+        $areas = $em->getRepository(ActivityArea::class)->getForHomepage();
         $news = $em->getRepository(News::class)->getLimitRANDElements(3);
         $projects = $em->getRepository(Project::class)->getForHomepage();
         $partners = $em->getRepository(Partner::class)->getForFrontend();

@@ -15,7 +15,7 @@
         	{% set poster = category.poster|json_decode %}
         	{% if poster %}
 	          	<div class="product__logo">
-	          		<img class="product__logo--img" src="{{ poster.list_510_256|default('') }}" alt="{{ category.translate.title }}">
+	          		<img class="product__logo--img" src="{{ poster.default_file|default('') }}" alt="{{ category.translate.title }}">
 	          	</div>
 	        {% endif %}
           	<p class="product__subtitle">
