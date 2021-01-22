@@ -14,6 +14,7 @@ use DashboardBundle\Form\Type\DashboardNumberType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityRepository;
 use Ecommerce\Entity\Product;
+use Ecommerce\Entity\Project;
 use DashboardBundle\Form\Type\DashboardTranslationsType;
 use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\ProductFeature;
@@ -119,6 +120,22 @@ class ProductType extends AbstractType
                 'allow_delete' => true,
                 'prototype' => true,
                 'by_reference' => false,
+            ])
+            ->add('relatedProject', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => false,
+                'allow_clear' => true,
+                'label' => 'Проект (внузу внутренней страницы)',
+                'class' => Project::class,
+                'choice_label' => 'translate.title',
+            ])
+            ->add('relatedActivityArea', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => false,
+                'allow_clear' => true,
+                'label' => 'Направление (внузу внутренней страницы)',
+                'class' => ActivityArea::class,
+                'choice_label' => 'translate.title',
             ])
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }

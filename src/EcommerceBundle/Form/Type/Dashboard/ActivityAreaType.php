@@ -13,6 +13,7 @@ use DashboardBundle\Form\Type\DashboardTextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityRepository;
 use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\Project;
 use UploadBundle\Form\Type\UploadType;
 use DashboardBundle\Form\Type\DashboardTranslationsType;
 use Ecommerce\Entity\ProductFeature;
@@ -110,6 +111,14 @@ class ActivityAreaType extends AbstractType
                 'allow_delete' => true,
                 'prototype' => true,
                 'by_reference' => false,
+            ])
+            ->add('relatedProjects', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => true,
+                'allow_clear' => true,
+                'label' => 'Проекты (внузу внутренней страницы)',
+                'class' => Project::class,
+                'choice_label' => 'translate.title',
             ])
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }

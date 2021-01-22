@@ -83,7 +83,6 @@ final class ActivityAreaController extends AbstractController
         return $this->render('activity_area/show.html.twig', [
             'area' => $area,
             'seo' => $area->getSeo()->getSeoForPage(),
-            'projects' => $this->em->getRepository(Project::class)->getForFrontend(2),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
         ]);
     }

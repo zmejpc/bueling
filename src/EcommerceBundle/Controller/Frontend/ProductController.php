@@ -57,8 +57,6 @@ final class ProductController extends AbstractController
         return $this->render('product/index.html.twig', [
             'product' => $product,
             'seo' => $product->getSeo()->getSeoForPage(),
-            'area' => $this->em->getRepository(ActivityArea::class)->getOneForFrontend(),
-            'project' => $this->em->getRepository(Project::class)->getOneForFrontend(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
         ]);
     }

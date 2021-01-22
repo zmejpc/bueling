@@ -112,6 +112,12 @@ class ActivityArea
      */
     protected $showOnHomepage = self::NO;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\Project")
+     * @ORM\JoinTable(name="area_has_project")
+     */
+    private $relatedProjects;
+
     public function __toString()
     {
         return $this->translate()->getTitle();
@@ -147,6 +153,7 @@ class ActivityArea
         $this->galleryImages = new ArrayCollection();
         $this->features = new ArrayCollection();
         $this->faq = new ArrayCollection();
+        $this->relatedProjects = new ArrayCollection();
     }
 
     /**
@@ -308,5 +315,31 @@ class ActivityArea
     public function setShowOnHomepage(bool $showOnHomepage): void
     {
         $this->showOnHomepage = $showOnHomepage;
+    }
+
+    /**
+     * @return Collection|Project[]
+     */
+    public function getRelatedProjects(): Collection
+    {
+        return $this->relatedProjects;
+    }
+
+    public function addRelatedProject(Project $relatedProject): self
+    {
+        if (!$this->relatedProjects->contains($relatedProject)) {
+            $this->relatedProjects[] = $relatedProject;
+        }
+
+        return $this;
+    }
+
+    public function removeRelatedProject(Project $relatedProject): self
+    {
+        if ($this->relatedProjects->contains($relatedProject)) {
+            $this->relatedProjects->removeElement($relatedProject);
+        }
+
+        return $this;
     }
 }
