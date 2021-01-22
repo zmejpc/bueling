@@ -55,6 +55,12 @@ class ProductType extends AbstractType
                         'helpBlock' => null,
                         'maxLength' => 255
                     ],
+                    'subTitle' => [
+                        'field_type' => DashboardTextType::class,
+                        'label' => 'Подназвание',
+                        'helpBlock' => null,
+                        'maxLength' => 255
+                    ],
                     'shortDescription' => [
                         'field_type' => DashboardWYSIWYGType::class,
                         'attr' => [
