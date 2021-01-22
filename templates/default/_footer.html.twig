@@ -12,7 +12,7 @@
         		<span class="page-footer-street page-footer-address--item">
         			{{ static.street.text|striptags|raw }}
         			{% for contactPhone in contactPhones %}
-	                    <a href="tel:{{ contactPhone.phone }}" class="page-footer-phone">{{ contactPhone.phone }},</a>
+	                    <a href="tel:{{ contactPhone.phone }}" class="page-footer-phone">{{ contactPhone.phone }}</a>
 	                {% endfor %}
         		</span>
         		<span class="page-footer-email page-footer-address--item">
