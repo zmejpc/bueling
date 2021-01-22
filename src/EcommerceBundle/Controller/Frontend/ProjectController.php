@@ -108,8 +108,6 @@ final class ProjectController extends AbstractController
         return $this->render('project/show.html.twig', [
             'project' => $project,
             'seo' => $project->getSeo()->getSeoForPage(),
-            'area' => $this->em->getRepository(ActivityArea::class)->getOneForFrontend(),
-            'randomProject' => $this->em->getRepository(Project::class)->getOneForFrontend(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
         ]);
     }

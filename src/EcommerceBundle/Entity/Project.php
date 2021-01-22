@@ -126,6 +126,28 @@ class Project
      */
     private $publishAt;
 
+    /**
+     * @var \Ecommerce\Entity\Project
+     *
+     * @Gedmo\Versioned
+     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\Project")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="related_project", referencedColumnName="id", onDelete="SET NULL")
+     * })
+     */
+    private $relatedProject;
+
+    /**
+     * @var \Ecommerce\Entity\ActivityArea
+     *
+     * @Gedmo\Versioned
+     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\ActivityArea")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="related_area", referencedColumnName="id", onDelete="SET NULL")
+     * })
+     */
+    private $relatedActivityArea;
+
     public function __toString()
     {
         return $this->translate()->getTitle();
@@ -352,6 +374,30 @@ class Project
         } else {
             $this->publishAt = $publishAt;
         }
+
+        return $this;
+    }
+
+    public function getRelatedProject(): ?self
+    {
+        return $this->relatedProject;
+    }
+
+    public function setRelatedProject(?self $relatedProject): self
+    {
+        $this->relatedProject = $relatedProject;
+
+        return $this;
+    }
+
+    public function getRelatedActivityArea(): ?ActivityArea
+    {
+        return $this->relatedActivityArea;
+    }
+
+    public function setRelatedActivityArea(?ActivityArea $relatedActivityArea): self
+    {
+        $this->relatedActivityArea = $relatedActivityArea;
 
         return $this;
     }
