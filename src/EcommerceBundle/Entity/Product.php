@@ -152,6 +152,28 @@ class Product
      */
     private $slug;
 
+    /**
+     * @var \Ecommerce\Entity\Project
+     *
+     * @Gedmo\Versioned
+     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\Project")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="related_project", referencedColumnName="id", onDelete="SET NULL")
+     * })
+     */
+    private $relatedProject;
+
+    /**
+     * @var \Ecommerce\Entity\ActivityArea
+     *
+     * @Gedmo\Versioned
+     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\ActivityArea")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="related_area", referencedColumnName="id", onDelete="SET NULL")
+     * })
+     */
+    private $relatedActivityArea;
+
     public function __toString()
     {
         return $this->translate()->getTitle();
@@ -454,6 +476,30 @@ class Product
         if ($this->faq->contains($faq)) {
             $this->faq->removeElement($faq);
         }
+
+        return $this;
+    }
+
+    public function getRelatedProject(): ?Project
+    {
+        return $this->relatedProject;
+    }
+
+    public function setRelatedProject(?Project $relatedProject): self
+    {
+        $this->relatedProject = $relatedProject;
+
+        return $this;
+    }
+
+    public function getRelatedActivityArea(): ?ActivityArea
+    {
+        return $this->relatedActivityArea;
+    }
+
+    public function setRelatedActivityArea(?ActivityArea $relatedActivityArea): self
+    {
+        $this->relatedActivityArea = $relatedActivityArea;
 
         return $this;
     }

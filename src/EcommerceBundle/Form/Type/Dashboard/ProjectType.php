@@ -130,6 +130,22 @@ class ProjectType extends AbstractType
                 'class' => Region::class,
                 'choice_label' => 'translate.title',
             ])
+            ->add('relatedProject', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => false,
+                'allow_clear' => true,
+                'label' => 'Проект (внузу внутренней страницы)',
+                'class' => Project::class,
+                'choice_label' => 'translate.title',
+            ])
+            ->add('relatedActivityArea', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => false,
+                'allow_clear' => true,
+                'label' => 'Направление (внузу внутренней страницы)',
+                'class' => ActivityArea::class,
+                'choice_label' => 'translate.title',
+            ])
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }
 

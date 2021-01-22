@@ -69,7 +69,7 @@
             	<h2 class="h2 projects__title-main">{{ 'homepage.projects'|trans }}</h2>
           	</div>
           	<div class="projects__wrap">
-          		{% for project in projects %}
+          		{% for project in area.relatedProjects if project.showOnWebsite %}
 	            	<div class="projects__wrap-item">
 	            		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item-image">
 	            			{% set poster = project.galleryImages|first.image|default('')|json_decode %}
