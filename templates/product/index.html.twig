@@ -11,22 +11,17 @@
                 <div class="single-product__wrap-item">
                     <div class="single-product__title">
                         <h2 class="h2 single-product__title-main">
-                            {{ product.categories|first.translate.title|default('') }}
+                            {{ product.translate.title }}
                         </h2>
                     </div>
                     <div class="single-product__subtitle">
-                        {{ product.translate.title }}
+{#                        {{ product.translate.subtitle }}#}Subtitle
                     </div>
                     <div class="single-product__description">
                         {{ product.translate.shortDescription|raw }}
                     </div>
                 </div>
             </div>
-            
-            <div class="single-product__these-description">
-                {{ product.translate.description|raw }}
-            </div>
-
             {% if product.features|length %}
                 <div class="single-area__these single-product__these">
                     {% for feature in product.features %}
@@ -40,6 +35,16 @@
                             </p>
                         </div>
                     {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if product.description|length %}
+                <div class="service__wrap">
+                    <div class="service__wrap--item">
+                        <div class="service__text">
+                            {{ product.translate.description|raw }}
+                        </div>
+                    </div>
                 </div>
             {% endif %}
 
