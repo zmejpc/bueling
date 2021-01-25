@@ -116,7 +116,7 @@ class ActivityAreaType extends AbstractType
                 'required' => false,
                 'multiple' => true,
                 'allow_clear' => true,
-                'label' => 'Проекты (внузу внутренней страницы)',
+                'label' => 'Проекты (внизу внутренней страницы)',
                 'class' => Project::class,
                 'choice_label' => 'translate.title',
             ])

@@ -131,7 +131,7 @@ class ProductType extends AbstractType
                 'required' => false,
                 'multiple' => false,
                 'allow_clear' => true,
-                'label' => 'Проект (внузу внутренней страницы)',
+                'label' => 'Проект (внизу внутренней страницы)',
                 'class' => Project::class,
                 'choice_label' => 'translate.title',
             ])
@@ -139,7 +139,7 @@ class ProductType extends AbstractType
                 'required' => false,
                 'multiple' => false,
                 'allow_clear' => true,
-                'label' => 'Направление (внузу внутренней страницы)',
+                'label' => 'Направление (внизу внутренней страницы)',
                 'class' => ActivityArea::class,
                 'choice_label' => 'translate.title',
             ])

@@ -113,14 +113,14 @@ trait sidebarStaticBundleTrait
 </svg>');
             (!is_null($staticPage)) ? $static['items'][] = $staticPage : null;
 
-            $slider = self::itemSidebar(['ROLE_SLIDER'], ['slider/edit/'], [
-                'dashboard_slider_index', 'dashboard_slider_new', 'dashboard_slider_edit'
-            ],
-                'flaticon-file-2', false, null, null,
-                'Слайдер', [],
-                'dashboard_slider_index', 'DashboardBundle', true,
-                '<i class="fa fa-image"></i>');
-            (!is_null($slider)) ? $static['items'][] = $slider : null;
+            // $slider = self::itemSidebar(['ROLE_SLIDER'], ['slider/edit/'], [
+            //     'dashboard_slider_index', 'dashboard_slider_new', 'dashboard_slider_edit'
+            // ],
+            //     'flaticon-file-2', false, null, null,
+            //     'Слайдер', [],
+            //     'dashboard_slider_index', 'DashboardBundle', true,
+            //     '<i class="fa fa-image"></i>');
+            // (!is_null($slider)) ? $static['items'][] = $slider : null;
 
             $regions = self::itemSidebar(['ROLE_DIRECTOR'], ['region/edit/'], [
                 'dashboard_region_index', 'dashboard_region_edit'
