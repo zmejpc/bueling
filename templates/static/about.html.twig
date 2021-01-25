@@ -6,7 +6,7 @@
         <div class="container">
             <h2 class="about-page__title h2 Ta(c)">{{ element.translate.title }}</h2>
             <div class="about-page__wrap">
-                <div class="about-page__wrap-item js-photoswipe" data-href="modules/pswp.html">
+                <div class="about-page__wrap-item js-photoswipe" data-href="{{ path('frontend_product_photoswipe') }}">
                     <div class="swiper-container area-slider-1 about-page__item-slider swiper-container--padding-bottom">
                         <ul class="swiper-wrapper slider__list">
                             {% for galleryImage in element.galleryImages %}
@@ -17,8 +17,8 @@
                                             <div class="slider-item__inner">
                                                 <a href="{{ poster.list_1926_1188|default('') }}" class="js-photoswipe-item" data-index="0" data-size="1926x1188">
                                                     <picture class="slider-item__img-wrap lazyload-container">
-                                                        <source data-srcset="{{ poster.list_500_308|default('') }}">
-                                                        <img src="{{ poster.list_500_308|default('') }}" alt="" class="slider-item__img lazyload">
+                                                        <source data-srcset="{{ poster.list_963_594|default('') }}">
+                                                        <img src="{{ poster.list_963_594|default('') }}" alt="" class="slider-item__img lazyload">
                                                     </picture>
                                                 </a>
                                             </div>
