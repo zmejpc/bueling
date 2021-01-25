@@ -31,7 +31,7 @@
                                 <img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default('')) }}" />
                             </p>
                             <p class="thesis__item--text">
-                                {{ feature.translate.title }}
+                                {{ feature.translate.description|striptags|raw }}
                             </p>
                         </div>
                     {% endfor %}
