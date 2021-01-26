@@ -36,7 +36,7 @@ final class ProductCategoryController extends AbstractController
 
         $seo = $category->getSeo()->getSeoForPage();
         $staticContent = $this->em->getRepository(StaticContent::class)->getByPageForFrontend('category');
-        $activityAreas = $this->em->getRepository(ActivityArea::class)->getForFrontend(8);
+        $activityAreas = $this->em->getRepository(ActivityArea::class)->getForFilter();
 
         return $this->render('product_category/show.html.twig', [
             'seo' => $seo,

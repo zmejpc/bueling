@@ -82,6 +82,22 @@ class ActivityAreaRepository extends DashboardRepository
         return $query->getQuery()->getResult();
     }
 
+    public function getForFilter()
+    {
+        $query = self::createQuery();
+        
+        $query
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->andWhere('q.showInFilter = :showInFilter')
+            ->orderBy('q.position', 'ASC')
+            ->setParameters([
+                'showOnWebsite' => ActivityArea::YES,
+                'showInFilter' => ActivityArea::YES,
+            ]);
+
+        return $query->getQuery()->getResult();
+    }
+
     public function getOneForFrontend()
     {
         $query = self::createQuery();

@@ -71,7 +71,7 @@ final class ProjectController extends AbstractController
             'elements' => $elements,
             'regions' => $this->em->getRepository(Region::class)->findAll(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
-            'activityAreas' => $this->em->getRepository(ActivityArea::class)->getForFrontend(8),
+            'activityAreas' => $this->em->getRepository(ActivityArea::class)->getForFilter(),
             'staticContent' => $this->em->getRepository(StaticContent::class)->getByPageForFrontend('projects'),
         ]);
     }

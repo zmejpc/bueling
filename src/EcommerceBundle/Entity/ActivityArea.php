@@ -113,6 +113,14 @@ class ActivityArea
     protected $showOnHomepage = self::NO;
 
     /**
+     * @var boolean
+     *
+     * @Gedmo\Versioned
+     * @ORM\Column(name="show_in_filter", type="boolean", nullable=false)
+     */
+    protected $showInFilter = self::NO;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\Project")
      * @ORM\JoinTable(name="area_has_project")
      */
@@ -315,6 +323,22 @@ class ActivityArea
     public function setShowOnHomepage(bool $showOnHomepage): void
     {
         $this->showOnHomepage = $showOnHomepage;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getShowInFilter(): ?bool
+    {
+        return $this->showInFilter;
+    }
+
+    /**
+     * @param bool $showInFilter
+     */
+    public function setShowInFilter(bool $showInFilter): void
+    {
+        $this->showInFilter = $showInFilter;
     }
 
     /**

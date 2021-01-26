@@ -89,6 +89,11 @@ class ActivityAreaType extends AbstractType
                 'translation_domain' => 'DashboardBundle',
                 'required' => false,
             ])
+            ->add('showInFilter', DashboardYesNoType::class, [
+                'label' => 'Отображать в фильтре?',
+                'translation_domain' => 'DashboardBundle',
+                'required' => false,
+            ])
             ->add('features', DashboardSelect2EntityType::class, [
                 'required' => false,
                 'multiple' => true,

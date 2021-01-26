@@ -89,6 +89,10 @@ class ActivityAreaController extends CRUDController
                 'title' => 'Отображать на главной?',
                 'width' => 80
             ],
+            'showInFilter' => [
+                'title' => 'Отображать в фильтре?',
+                'width' => 80
+            ],
         ];
     }
 
@@ -110,6 +114,9 @@ class ActivityAreaController extends CRUDController
             ]),
             'showOnHomepage' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
                 'element' => $item, 'fieldName' => 'showOnHomepage',
+            ]),
+            'showInFilter' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
+                'element' => $item, 'fieldName' => 'showInFilter',
             ]),
         ];
     }

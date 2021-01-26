@@ -4,21 +4,60 @@
         <div class="sphere__title">
             <h2 class="h2 sphere__title-main">{{ 'homepage.areas'|trans }}</h2>
         </div>
+
         <div class="sphere__wrap">
-            {% for area in areas %}
-                <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="sphere__wrap-item">
+            {% if areas[0] is defined %}
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[0].slug}) }}" class="sphere__wrap-item">
                     <div class="sphere__wrap-item--left">
-                        {# <svg class="svg-icon sphere__wrap-item--icon"> #}
-                            {% set poster = area.poster|json_decode %}
-                            <img class="svg-icon sphere__wrap-item--icon" src="{{ asset(poster.default|default('')) }}" />
-                        {# </svg> #}
+                        <svg class="svg-icon sphere__wrap-item--icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-1" />
+                        </svg>
                     </div>
                     <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">{{ area.translate.title }}</p>
-                        <p class="sphere__wrap-item--text">{{ area.translate.shortDescription }}</p>
+                        <p class="sphere__wrap-item--title">ГРУНТООБРОБІТОК</p>
+                        <p class="sphere__wrap-item--text">Переобладнання, ремонт, обслуговування</p>
                     </div>
                 </a>
-            {% endfor %}
+            {% endif %}
+            {% if areas[1] is defined %}
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[1].slug}) }}" class="sphere__wrap-item">
+                    <div class="sphere__wrap-item--left">
+                        <svg class="svg-icon sphere__wrap-item--icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-2" />
+                        </svg>
+                    </div>
+                    <div class="sphere__wrap-item--right">
+                        <p class="sphere__wrap-item--title">ПОСІВНІ РОБОТИ</p>
+                        <p class="sphere__wrap-item--text">Налаштування, калібровка, ремонт</p>
+                    </div>
+                </a>
+            {% endif %}
+            {% if areas[2] is defined %}
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[2].slug}) }}" class="sphere__wrap-item">
+                    <div class="sphere__wrap-item--left">
+                        <svg class="svg-icon sphere__wrap-item--icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-3" />
+                        </svg>
+                    </div>
+                    <div class="sphere__wrap-item--right">
+                        <p class="sphere__wrap-item--title">ЖИВЛЕННЯ ТА ВНЕСЕННЯ ЗЗР</p>
+                        <p class="sphere__wrap-item--text">Обладнання для оприскувачів</p>
+                    </div>
+                </a>
+            {% endif %}
+            {% if areas[3] is defined %}
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[3].slug}) }}" class="sphere__wrap-item">
+                    <div class="sphere__wrap-item--left">
+                        <svg class="svg-icon sphere__wrap-item--icon">
+                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-4" />
+                        </svg>
+                    </div>
+                    <div class="sphere__wrap-item--right">
+                        <p class="sphere__wrap-item--title">ЗБІР ВРОЖАЮ</p>
+                        <p class="sphere__wrap-item--text">Монтаж на сівалки, культиватори, тощо.</p>
+                    </div>
+                </a>
+            {% endif %}
         </div>
         <a href="{{ path('frontend_activity_areas') }}" class="btn btn--primary btn--medium D(n)--md">
             <div class="btn__inner">

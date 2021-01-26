@@ -66,12 +66,12 @@
                                     <div class="slider__item slider-item">
                                         <div class="slider-item__inner">
                                             <div class="news__wrap-item news__wrap-item--vertical">
-                                                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
-                                                    <picture class="news__wrap-item--img-wrap lazyload-container">
-                                                        <source data-srcset="{{ image.list_499_283|default('') }}">
+                                                <picture class="news__wrap-item--img-wrap lazyload-container">
+                                                    <source data-srcset="{{ image.list_499_283|default('') }}">
+                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
                                                         <img src="{{ image.list_499_283|default('') }}" alt="{{ element.translate.title }}" class="lazyload news__wrap-item--img">
-                                                    </picture>
-                                                </a>
+                                                    </a>
+                                                </picture>
                                                 <p class="news__wrap-item--date">
                                                     {{ item.publishAt|localizeddate('medium', 'none') }}
                                                 </p>
