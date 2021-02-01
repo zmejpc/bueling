@@ -24,6 +24,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 use FrontendBundle\Form\Type\Dashboard\FaqType;
+use SeoBundle\Form\Type\Dashboard\AddSeoSubscriber;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -143,6 +144,7 @@ class ProductType extends AbstractType
                 'class' => ActivityArea::class,
                 'choice_label' => 'translate.title',
             ])
+            ->addEventSubscriber(new AddSeoSubscriber())
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }
 

@@ -19,6 +19,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 use Symfony\Component\Security\Core\Security;
+use SeoBundle\Form\Type\Dashboard\AddSeoSubscriber;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -77,15 +78,7 @@ class ProductCategoryType extends AbstractType
                 'translation_domain' => 'DashboardBundle',
                 'required' => false,
             ])
-            // ->add('parent', DashboardSelect2EntityType::class, [
-            //     'label' => 'ui.parent',
-            //     'class' => ProductCategory::class,
-            //     'choice_label' => 'translate.title',
-            //     'query_builder' => function (EntityRepository $er) use ($notArr) {
-            //         return $er->getParentForProductCategoryNewForm($notArr);
-            //     },
-            //     'required' => false
-            // ])
+            ->addEventSubscriber(new AddSeoSubscriber())
             ->addEventSubscriber(new AddSaveBtnSubscriber($this->security));
     }
 
