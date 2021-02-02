@@ -17,22 +17,22 @@
 
                 	<div class="single-project__wrap--item">
                   		<div class="single-project__description">
-                    		<p class="single-project__description--item">
-                    			{{ 'household'|trans }}:
-                    			<span> {{ project.translate.company }}</span>
-                    		</p>
-                        <p class="single-project__description--item">
-                          {{ 'works'|trans }}:
-                          <span> {% for area in project.activityAreas %}{{ area.translate.title }}{{ not loop.last ? ', ' }}{% endfor %}</span>
-                        </p>
-                    		<p class="single-project__description--item">
-                    			{{ 'realize_date'|trans }}:
-                    			<span> {{ project.publishAt|localizeddate('medium', 'none') }}</span>
-                    		</p>
-                        <p class="single-project__description--item">
-                          {{ 'region'|trans }}:
-                          <span> {{ project.region.translate.title }}</span>
-                        </p>
+                    		<div class="single-project__description--item">
+                                <p class="left">{{ 'household'|trans }}:</p>
+                    			<span class="right"> {{ project.translate.company }}</span>
+                    		</div>
+                            <div class="single-project__description--item">
+                                <p class="left">{{ 'works'|trans }}:</p>
+                                <span class="right"> {% for area in project.activityAreas %}{{ area.translate.title }}{{ not loop.last ? ', ' }}{% endfor %}</span>
+                            </div>
+                    		<div class="single-project__description--item">
+                                <p class="left">{{ 'realize_date'|trans }}:</p>
+                    			<span class="right"> {{ project.publishAt|localizeddate('medium', 'none') }}</span>
+                    		</div>
+                            <div class="single-project__description--item">
+                                <p class="left">{{ 'region'|trans }}:</p>
+                                <span class="right"> {{ project.region.translate.title }}</span>
+                            </div>
                   		</div>
                   		<div class="single-project__description__text">
                   			 {{ project.translate.description|raw }}
