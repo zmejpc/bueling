@@ -21,7 +21,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
-use FrontendBundle\Form\Type\Dashboard\FaqType;
 use SeoBundle\Form\Type\Dashboard\AddSeoSubscriber;
 
 /**
@@ -110,14 +109,6 @@ class ProjectType extends AbstractType
             ->add('galleryImages', DashboardCollectionType::class, [
                 'prototype_template' => '@Ecommerce/dashboard/project/form/_project_gallery_images_prototype.html.twig',
                 'entry_type' => ProjectGalleryImageType::class,
-                'allow_add' => true,
-                'allow_delete' => true,
-                'prototype' => true,
-                'by_reference' => false,
-            ])
-            ->add('faq', DashboardCollectionType::class, [
-                'prototype_template' => '@Frontend/dashboard/faq/form/_faq_prototype.html.twig',
-                'entry_type' => FaqType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
