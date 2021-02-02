@@ -35,7 +35,7 @@
                         		</div>
                         		{% set mapData = [] %}
                         		<select name="region" class="js-select" data-type="region">
-			                      	<option value="" data-label="true">{{ 'ui.all_regions'|trans }}</option>
+			                      	<option value="">{{ 'ui.all_regions'|trans }}</option>
 			                      	{% for region in regions %}
 			                      		<option value="{{ region.id }}">{{ region.translate.title }}</option>
 			                      		{% set mapData = mapData|merge([{value: region.id~'', title: region.translate.title}]) %}
@@ -56,7 +56,7 @@
                         			</svg>
                         		</div>
                         		<select name="areas" class="js-select" data-type="activity-area">
-			                      	<option value="" data-label="true">{{ 'ui.all_activity_areas'|trans }}</option>
+			                      	<option value="">{{ 'ui.all_activity_areas'|trans }}</option>
 			                      	{% for area in activityAreas %}
 			                      		<option value="{{ area.id }}">{{ area.translate.title }}</option>
 			                      	{% endfor %}
