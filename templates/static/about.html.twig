@@ -15,10 +15,10 @@
                                     <li class="swiper-slide">
                                         <div class="slider__item slider-item">
                                             <div class="slider-item__inner">
-                                                <a href="{{ poster.list_1926_1188|default('') }}" class="js-photoswipe-item" data-index="0" data-size="1926x1188">
+                                                <a href="{{ poster.list_1926_1188|default(no_image) }}" class="js-photoswipe-item" data-index="0" data-size="1926x1188">
                                                     <picture class="slider-item__img-wrap lazyload-container">
-                                                        <source data-srcset="{{ poster.list_963_594|default('') }}">
-                                                        <img src="{{ poster.list_963_594|default('') }}" alt="" class="slider-item__img lazyload">
+                                                        <source data-srcset="{{ poster.list_963_594|default(no_image) }}">
+                                                        <img src="{{ poster.list_963_594|default(no_image) }}" alt="" class="slider-item__img lazyload">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -111,42 +111,42 @@
         <div class="container">
             <div class="about-page__block__wrap">
                 <div class="about-page__block__wrap-item">
-                    <a href="{{ path('frontend_activity_areas') }}">
+                    <a href="{{ path('frontend_activity_areas', {_locale: app.request.locale}) }}">
                         <p class="about-page__block__wrap-item--title">
                             {{ 'menu.activity_areas'|trans }}
                         </p>
                         {% set poster = area.galleryImages|first.image|default('')|json_decode %}
-                        <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ 'menu.activity_areas'|trans }}" class="about-page__block__wrap-item--img">
+                        <img src="{{ asset(poster.list_630_420|default(no_image)) }}" alt="{{ 'menu.activity_areas'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
-                    <a href="{{ path('frontend_activity_areas') }}" class="btn btn--white btn--small">
+                    <a href="{{ path('frontend_activity_areas', {_locale: app.request.locale}) }}" class="btn btn--white btn--small">
                         <div class="btn__inner">
                             <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
                         </div>
                     </a>
                 </div>
                 <div class="about-page__block__wrap-item">
-                    <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}">
+                    <a href="{{ path('frontend_product_show', {slug: product.slugForUrl, _locale: app.request.locale}) }}">
                         <p class="about-page__block__wrap-item--title">
                             {{ 'menu.products'|trans }}
                         </p>
                         {% set poster = product.galleryImages|first.image|default('')|json_decode %}
-                        <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ 'menu.products'|trans }}" class="about-page__block__wrap-item--img">
+                        <img src="{{ asset(poster.list_630_420|default(no_image)) }}" alt="{{ 'menu.products'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
-                    <a href="{{ path('frontend_product_show', {slug: product.slugForUrl}) }}" class="btn btn--white btn--small">
+                    <a href="{{ path('frontend_product_show', {slug: product.slugForUrl, _locale: app.request.locale}) }}" class="btn btn--white btn--small">
                         <div class="btn__inner">
                             <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
                         </div>
                     </a>
                 </div>
                 <div class="about-page__block__wrap-item">
-                    <a href="{{ path('frontend_projects') }}">
+                    <a href="{{ path('frontend_projects', {_locale: app.request.locale}) }}">
                         <p class="about-page__block__wrap-item--title">
                             {{ 'menu.projects'|trans }}
                         </p>
                         {% set poster = project.galleryImages|first.image|default('')|json_decode %}
-                        <img src="{{ asset(poster.list_630_420|default('')) }}" alt="{{ 'menu.projects'|trans }}" class="about-page__block__wrap-item--img">
+                        <img src="{{ asset(poster.list_630_420|default(no_image)) }}" alt="{{ 'menu.projects'|trans }}" class="about-page__block__wrap-item--img">
                     </a>
-                    <a href="{{ path('frontend_projects') }}" class="btn btn--white btn--small">
+                    <a href="{{ path('frontend_projects', {_locale: app.request.locale}) }}" class="btn btn--white btn--small">
                         <div class="btn__inner">
                             <span class="btn__text">{{ 'ui.goto_area'|trans }}</span>
                         </div>

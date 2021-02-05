@@ -11,9 +11,9 @@
                             <div class="slider-item__inner">
                                 <a href="javascript:;">
                                     <picture class="slider-item__img-wrap lazyload-container">
-                                        <source data-srcset="{{ poster.webp.list_255_128|default('') }}" type="image/webp">
-                                        <source data-srcset="{{ poster.list_255_128|default('') }}">
-                                        <img src="{{ poster.list_255_128|default('') }}" alt="" class="slider-item__img lazyload">
+                                        <source data-srcset="{{ poster.webp.list_255_128|default(no_image) }}" type="image/webp">
+                                        <source data-srcset="{{ poster.list_255_128|default(no_image) }}">
+                                        <img src="{{ poster.list_255_128|default(no_image) }}" alt="" class="slider-item__img lazyload">
                                     </picture>
                                 </a>
                             </div>

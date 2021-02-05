@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 final class LocaleListener implements EventSubscriberInterface
 {
-    private $defaultLocale = 'ru';
+    private $defaultLocale = 'uk';
 
     /**
      * @var \Symfony\Component\DependencyInjection\ContainerInterface

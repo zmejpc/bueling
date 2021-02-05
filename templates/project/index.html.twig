@@ -4,7 +4,7 @@
 {% block head_javascript %}
     <script>
         window.__URLS__ = {
-            getProjects: '{{ path('frontend_projects') }}',
+            getProjects: '{{ path('frontend_projects', {_locale: app.request.locale}) }}',
         };
     </script>
 {% endblock %}
@@ -68,7 +68,7 @@
             	</div>
           	</div>
 
-          	<div class="map js-map" data-data='{"regions":{{ mapData|json_encode|raw }},"urls":{"getProjects":"{{ path('frontend_projects') }}"},"mode":"page"}'>
+          	<div class="map js-map" data-data='{"regions":{{ mapData|json_encode|raw }},"urls":{"getProjects":"{{ path('frontend_projects', {_locale: app.request.locale}) }}"},"mode":"page"}'>
 
           		{% for item in mapData %}
 	            	<div class="map__float-block {{ app.request.query.get('region') == item.value ? 'map__float-block--active' }}" data-index="{{ item.value }}">{{ item.title }}</div>

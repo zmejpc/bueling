@@ -7,6 +7,7 @@ twig:
       localeSupported: '%locale_supported%'
       default_locale: "%locale%"
       app: "@app.app_variable"
+      no_image: 'build/frontend/img/no_image.jpg'
     form_themes:
         - '@Dashboard/default/crud/form/_form_widgets.html.twig'
         - '@Upload/default/crud/form/_form_widgets.html.twig'

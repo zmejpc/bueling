@@ -51,7 +51,7 @@ final class NewsRepository extends DashboardRepository implements NewsRepository
     private function createQuery(): QueryBuilder
     {
         return $this->createQueryBuilder('q')
-            ->addSelect('q, t, newsCategory, newsCategory_t')
+            ->addSelect('newsCategory')
             ->leftJoin('q.translations', 't')
             ->leftJoin('q.newsCategory', 'newsCategory')
             ->leftJoin('newsCategory.translations', 'newsCategory_t');

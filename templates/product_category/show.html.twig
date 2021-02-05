@@ -4,7 +4,7 @@
 {% block head_javascript %}
     <script>
         window.__URLS__ = {
-            getProducts: '{{ path('frontend_ajax_category_products', {slug: category.translate.slug }) }}',
+            getProducts: '{{ path('frontend_ajax_category_products', {slug: category.translate.slug, _locale: app.request.locale }) }}',
         };
     </script>
 {% endblock %}
@@ -15,7 +15,7 @@
         	{% set poster = category.poster|json_decode %}
         	{% if poster %}
 	          	<div class="product__logo">
-	          		<img class="product__logo--img" src="{{ poster.default_file|default('') }}" alt="{{ category.translate.title }}">
+	          		<img class="product__logo--img" src="{{ poster.default_file|default(no_image) }}" alt="{{ category.translate.title }}">
 	          	</div>
 	        {% endif %}
           	<p class="product__subtitle">

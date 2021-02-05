@@ -16,18 +16,18 @@
             	<div class="areas__content-wrapper">
 	            	{% for area in areas %}
 	            		{% set poster = area.galleryImages|first.image|default('')|json_decode %}
-	              		<div class="areas__content--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
-	              			<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
+	              		<div class="areas__content--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
+	              			<a href="{{ path('frontend_show_activity_area', {slug: area.slug, _locale: app.request.locale}) }}">
 	                  			<h3 class="areas__content--title">
 	                  				{{ area.translate.title }}
 	                  			</h3>
 	                		</a>
 	                		<div class="areas__content--text">
-	                			<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}">
+	                			<a href="{{ path('frontend_show_activity_area', {slug: area.slug, _locale: app.request.locale}) }}">
 	                				{{ area.translate.shortDescription|striptags }}
 	                			</a>
 	                		</div>
-	                		<a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="btn btn--primary btn--small">
+	                		<a href="{{ path('frontend_show_activity_area', {slug: area.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
 	                  			<div class="btn__inner">
 	                  				<span class="btn__text">{{ 'ui.more'|trans }}</span>
 	                  			</div>

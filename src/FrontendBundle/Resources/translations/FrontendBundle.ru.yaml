@@ -1,0 +1,94 @@
+locale:
+  uk: 'українська'
+  ru: 'русский'
+
+menu:
+  homepage: 'главная'
+  about: 'о нас'
+  products: 'продукты'
+  activity_areas: 'направления деятельности'
+  projects: 'проекты'
+  service_centre: 'сервисный центр'
+  blog: 'блог'
+  contacts: 'контакты'
+ui:
+  get_consult: 'получить консультацию'
+  all_services: 'все услуги'
+  all_categories: 'все категории'
+  other_projects: 'другие проекты'
+  more: 'подробнее'
+  read_more: 'читать дальше'
+  more_news: 'больше новостей'
+  sign_distribution: 'подписаться на рассылку'
+  goto_area: 'перейти в раздел'
+  all_regions: 'Все регионы'
+  all_activity_areas: 'Все направления'
+  download_instruction: 'скачать инструкцию'
+  download: 'загрузить'
+  close_dialog: 'закрыть диалоговое окно'
+  video:
+    not_supported: 'Ваш браузер не поддерживает HTML5 video.'
+  placeholder:
+    first_name: 'ИМЯ*'
+    phone_number: 'ТЕЛЕФОН*'
+    email: 'EMAIL*'
+homepage:
+  products: 'Продукты'
+  areas: 'Сферы применения'
+  projects: 'наши проекты'
+  blog: 'блог'
+  spheres:
+    spheres_1:
+      title: 'землеобработка'
+      text: 'Переоборудование, ремонт, обслуживание'
+    spheres_2:
+      title: 'посевные работы'
+      text: 'Настройка, калибровка, ремонт'
+    spheres_3:
+      title: 'подпитка и внесение сзр'
+      text: 'Оборудование для опрыскивателей'
+    spheres_4:
+      title: 'сбор урожая'
+      text: 'Монтаж на сеялки, культиваторы и т.д.'
+  contact:
+    title: 'не нашли нужной информации?'
+    sub_title: 'Оставьте свои контактные данные и наш менеджер позвонит вам и проведет бесплатную консультацию!'
+  partners: 'партнеры'
+contact_form:
+    title: 'Остались вопросы?'
+    contact_title: 'Закажите обратный дзинок!'
+    sub_title: 'Оставьте свои контактные данные и наш менеджер позвонит вам и проведет бесплатную консультацию!'
+about:
+  features:
+    feature_1: 'программа для молодых талантов'
+    feature_2: 'переезд и полная поддержка'
+    feature_3: '100+ экспертов работающих в различных сферах'
+service:
+  steps:
+    title: 'оформление оборудования в диагностику или ремонт'
+  instruction:
+    title: 'инструкция использования техники trimble'
+    sub_title: 'пожалуйста, скачайте инструкцию и проверьте последовательность действий.'
+mail:
+  button_link: 'Перейти'
+form:
+  error:
+    name: "Имя должно содержать от 2 до 32 символов"
+    phone: 'Телефон должен быть в формате +380XXXXXXXXX'
+    email: 'Введите корректный email'
+distribution:
+  title: 'Рассылка'
+  success: 'Вы подписались на рассылку'
+simple_steps: 'три простых шага'
+faq_title: 'Часто задаваемые вопросы'
+our_services: 'Наши услуги'
+our_projects: 'Наши проекты'
+company: 'Компания'
+household: 'Хозяйство'
+date: 'Дата'
+realize_date: 'Дата выполнения'
+share: 'Поделиться'
+main_office: 'Главный офис'
+download_usefulll_files: 'скачать полезные файлы'
+region: 'Регион'
+works: 'Виды работ'

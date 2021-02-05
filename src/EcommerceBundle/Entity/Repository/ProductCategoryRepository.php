@@ -17,7 +17,7 @@ class ProductCategoryRepository extends DashboardRepository
     private function createQuery()
     {
         $query = $this->createQueryBuilder('q')
-            ->select('q, t')
+            // ->select('q, t')
             ->leftJoin('q.translations', 't');
 
         return $query;

@@ -1,6 +1,6 @@
 {% trans_default_domain 'FrontendBundle' %}
 <section class="hero hero__wrap">
-    <div class="hero__wrap-background lazyload-container lazyload" data-bgset="{{ poster.webp.mobile|default('') }} [type=image/webp] | {{ poster.mobile|default('') }}">
+    <div class="hero__wrap-background lazyload-container lazyload" data-bgset="{{ poster.webp.mobile|default(no_image) }} [type=image/webp] | {{ poster.mobile|default(no_image) }}">
         <div class="page__video--container">
             <video class="page__video js-lazyvideo" autoplay muted loop>
                 <source src="{{ asset('build/frontend/video/video.mp4') }}" type="video/mp4">
@@ -13,7 +13,7 @@
                     <h1 class="h1 hero__title-main">{{ staticContent.hero.short_text|default('')|striptags }}</h1>
                     <span class="hero__title-text">{{ staticContent.hero.text|default('')|striptags }}</span>
                 </div>
-                <a href="{{ path('frontend_contact_index') }}" class="btn btn--primary btn--primary-transparent btn--medium">
+                <a href="{{ path('frontend_contact_index', {_locale: app.request.locale}) }}" class="btn btn--primary btn--primary-transparent btn--medium">
                     <div class="btn__inner">
                         <span class="btn__text">{{ 'ui.get_consult'|trans }}</span>
                     </div>

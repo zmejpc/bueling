@@ -67,21 +67,21 @@
                                         <div class="slider-item__inner">
                                             <div class="news__wrap-item news__wrap-item--vertical">
                                                 <picture class="news__wrap-item--img-wrap lazyload-container">
-                                                    <source data-srcset="{{ image.list_499_283|default('') }}">
-                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
-                                                        <img src="{{ image.list_499_283|default('') }}" alt="{{ element.translate.title }}" class="lazyload news__wrap-item--img">
+                                                    <source data-srcset="{{ image.list_499_283|default(no_image) }}">
+                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}">
+                                                        <img src="{{ image.list_499_283|default(no_image) }}" alt="{{ element.translate.title }}" class="lazyload news__wrap-item--img">
                                                     </a>
                                                 </picture>
                                                 <p class="news__wrap-item--date">
                                                     {{ item.publishAt|localizeddate('medium', 'none') }}
                                                 </p>
                                                 <div class="news__wrap-item-content">
-                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}">
                                                         <p class="news__wrap-item-content--title">
                                                             {{ element.translate.title }}
                                                         </p>
                                                     </a>
-                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}" class="news__wrap-item-content--more">
+                                                    <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}" class="news__wrap-item-content--more">
                                                         {{ 'ui.read_more'|trans }}
                                                         <svg class="svg-icon news__wrap-item--icon">
                                                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right" />

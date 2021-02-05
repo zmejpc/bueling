@@ -2,7 +2,7 @@
 
 <header class="page-header page__header page-header--{{ is_transparent ? 'transparent' : 'primary' }}">
     <div class="container page-header__inner">
-        <a href="{{ path('frontend_homepage') }}" class="page-header__logo logo">
+        <a href="{{ path('frontend_homepage', {_locale: app.request.locale}) }}" class="page-header__logo logo">
             <img src="{{ asset('build/frontend/img/logo.svg') }}" class="logo__img" alt="Лого" />
         </a>
         <div class="page-header__content">
@@ -34,12 +34,11 @@
                         </svg>
                     </a>
                     <ul class="lang-submenu">
-                        <li class="lang-item">
-                            <a href="#">українська</a>
-                        </li>
-                        {# <li class="lang-item">
-                            <a href="#">російська</a>
-                        </li> #}
+                        {% for locale in localeSupported %}
+                            <li class="lang-item">
+                                <a href="{{ path('change_locale', {locale: locale} ) }}">{{ ('locale.'~locale)|trans }}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -51,12 +50,12 @@
                                 <div class="menu__list-wrap">
                                     <ul class="menu__list">
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_homepage') }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_homepage', {_locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.homepage'|trans }}
                                             </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_static_page_show', {slug: 'about'}) }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_static_page_show', {slug: 'about', _locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.about'|trans }}
                                             </a>
                                         </li>
@@ -71,7 +70,7 @@
                                                 <ul class="subMenu__list">
                                                     {% for category in categories %}
                                                         <li class="subMenu__item">
-                                                            <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}" class="subMenu__item-link">
+                                                            <a href="{{ path('frontend_show_product_category', {slug: category.slug, _locale: app.request.locale}) }}" class="subMenu__item-link">
                                                                 {{ category.translate.title }}
                                                             </a>
                                                         </li>
@@ -80,7 +79,7 @@
                                             </div>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_activity_areas') }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_activity_areas', {_locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.activity_areas'|trans }}
                                                 <svg class="svg-icon menu__icon">
                                                     <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
@@ -90,7 +89,7 @@
                                                 <ul class="subMenu__list">
                                                     {% for area in areas %}
                                                         <li class="subMenu__item">
-                                                            <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="subMenu__item-link">
+                                                            <a href="{{ path('frontend_show_activity_area', {slug: area.slug, _locale: app.request.locale}) }}" class="subMenu__item-link">
                                                                 {{ area.translate.title }}
                                                             </a>
                                                         </li>
@@ -99,22 +98,22 @@
                                             </div>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_projects') }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_projects', {_locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.projects'|trans }}
                                             </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_static_page_show', {slug: 'service'}) }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_static_page_show', {slug: 'service', _locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.service_centre'|trans }}
                                             </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_news_list') }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_news_list', {_locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.blog'|trans }}
                                             </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a href="{{ path('frontend_contact_index') }}" class="menu__item-link">
+                                            <a href="{{ path('frontend_contact_index', {_locale: app.request.locale}) }}" class="menu__item-link">
                                                 {{ 'menu.contacts'|trans }}
                                             </a>
                                         </li>
@@ -146,12 +145,12 @@
                         <div class="menu__list-wrap">
                             <ul class="menu__list-mobile">
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_homepage') }}" class="menu__item-link">
+                                    <a href="{{ path('frontend_homepage', {_locale: app.request.locale}) }}" class="menu__item-link">
                                         {{ 'menu.homepage'|trans }}
                                     </a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_static_page_show', {slug: 'about'}) }}" class="menu__item-link">
+                                    <a href="{{ path('frontend_static_page_show', {slug: 'about', _locale: app.request.locale}) }}" class="menu__item-link">
                                         {{ 'menu.about'|trans }}
                                     </a>
                                 </li>
@@ -167,7 +166,7 @@
                                         <ul class="subMenu__list">
                                             {% for category in categories %}
                                                 <li class="subMenu__item-mobile">
-                                                    <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}" class="subMenu__item-link-mobile">
+                                                    <a href="{{ path('frontend_show_product_category', {slug: category.slug, _locale: app.request.locale}) }}" class="subMenu__item-link-mobile">
                                                         {{ category.translate.title }}
                                                     </a>
                                                 </li>
@@ -176,7 +175,7 @@
                                     </div>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_activity_areas') }}" class="menu__item-link menu__item-link--has-list">
+                                    <a href="{{ path('frontend_activity_areas', {_locale: app.request.locale}) }}" class="menu__item-link menu__item-link--has-list">
                                         {{ 'menu.activity_areas'|trans }}
                                         <svg class="svg-icon menu__icon">
                                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
@@ -187,7 +186,7 @@
                                         <ul class="subMenu__list">
                                             {% for area in areas %}
                                                 <li class="subMenu__item-mobile">
-                                                    <a href="{{ path('frontend_show_activity_area', {slug: area.slug}) }}" class="subMenu__item-link-mobile">
+                                                    <a href="{{ path('frontend_show_activity_area', {slug: area.slug, _locale: app.request.locale}) }}" class="subMenu__item-link-mobile">
                                                         {{ area.translate.title }}
                                                     </a>
                                                 </li>
@@ -196,22 +195,22 @@
                                     </div>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_projects') }}" class="menu__item-link">
+                                    <a href="{{ path('frontend_projects', {_locale: app.request.locale}) }}" class="menu__item-link">
                                         {{ 'menu.projects'|trans }}
                                     </a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_static_page_show', {slug: 'service'}) }}" class="menu__item-link">
+                                    <a href="{{ path('frontend_static_page_show', {slug: 'service', _locale: app.request.locale}) }}" class="menu__item-link">
                                         {{ 'menu.service_centre'|trans }}
                                     </a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_news_list') }}" class="menu__item-link">
+                                    <a href="{{ path('frontend_news_list', {_locale: app.request.locale}) }}" class="menu__item-link">
                                         {{ 'menu.blog'|trans }}
                                     </a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="{{ path('frontend_contact_index') }}" class="menu__item-link">
+                                    <a href="{{ path('frontend_contact_index', {_locale: app.request.locale}) }}" class="menu__item-link">
                                         {{ 'menu.contacts'|trans }}
                                     </a>
                                 </li>

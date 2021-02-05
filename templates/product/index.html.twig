@@ -4,7 +4,7 @@
 {% block main %}
     <section class="single-product">
         <div class="container">
-            <div class="single-product__wrap">
+            <div class="single-product__wrap W(100%)">
 
                 {% include 'product/slider.html.twig' %}
 
@@ -28,7 +28,7 @@
                         <div class="thesis__item">
                             <p class="thesis__item--icon">
                                 {% set poster = feature.poster|json_decode %}
-                                <img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default('')) }}" />
+                                <img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default(no_image)) }}" />
                             </p>
                             <p class="thesis__item--text">
                                 {{ feature.translate.description|striptags|raw }}
@@ -80,17 +80,17 @@
                     <h2 class="h2 single-product__title">{{ 'our_services'|trans }}</h2>
                     {% set poster = product.relatedActivityArea.galleryImages|first.image|default('')|json_decode %}
 
-                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
+                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
                         <div class="single-product--block__title">
                             {{ product.relatedActivityArea.translate.title }}
                         </div>
                         <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_activity_area', {slug: product.relatedActivityArea.slug}) }}">
+                            <a href="{{ path('frontend_show_activity_area', {slug: product.relatedActivityArea.slug, _locale: app.request.locale}) }}">
                                 {{ product.relatedActivityArea.translate.shortDescription|striptags }}
                             </a>
                         </div>
                         <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_activity_area', {slug: product.relatedActivityArea.slug}) }}" class="btn btn--primary btn--small">
+                            <a href="{{ path('frontend_show_activity_area', {slug: product.relatedActivityArea.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
                                 <div class="btn__inner">
                                     <span class="btn__text">{{ 'ui.more'|trans }}</span>
                                 </div>
@@ -105,17 +105,17 @@
                     <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
                     {% set poster = product.relatedProject.galleryImages|first.image|default('')|json_decode %}
 
-                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
+                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
                         <div class="single-product--block__title">
                             {{ product.relatedProject.translate.company }}
                         </div>
                         <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_project', {slug: product.relatedProject.slug}) }}">
+                            <a href="{{ path('frontend_show_project', {slug: product.relatedProject.slug, _locale: app.request.locale}) }}">
                                 {{ product.relatedProject.translate.title }}
                             </a>
                         </div>
                         <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_project', {slug: product.relatedProject.slug}) }}" class="btn btn--primary btn--small">
+                            <a href="{{ path('frontend_show_project', {slug: product.relatedProject.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
                                 <div class="btn__inner">
                                     <span class="btn__text">{{ 'ui.more'|trans }}</span>
                                 </div>

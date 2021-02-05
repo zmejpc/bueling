@@ -29,7 +29,7 @@
 		            	<div class="thesis__item">
 		              		<p class="thesis__item--icon">
 		              			{% set poster = feature.poster|json_decode %}
-		              			<img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default('')) }}" />
+		              			<img class="svg-icon thesis__icon" src="{{ asset(poster.frontend|default(no_image)) }}" />
 		                  	</p>
 		              		<p class="thesis__item--text">
 		              			{{ feature.translate.description|striptags|raw }}
@@ -71,24 +71,24 @@
           	<div class="projects__wrap">
           		{% for project in area.relatedProjects if project.showOnWebsite %}
 	            	<div class="projects__wrap-item">
-	            		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item-image">
+	            		<a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="projects__wrap-item-image">
 	            			{% set poster = project.galleryImages|first.image|default('')|json_decode %}
-	            			<img src="{{ asset(poster.list_500_308|default('')) }}" alt="{{ project.translate.title }}" class="projects__wrap-item--img">
+	            			<img src="{{ asset(poster.list_500_308|default(no_image)) }}" alt="{{ project.translate.title }}" class="projects__wrap-item--img">
 	            		</a>
 	              		<div class="projects__wrap-item-content">
 	                		<p class="projects__wrap-item--subtitle">{{ project.translate.title }}</p>
 	                		<p class="projects__wrap-item--title">{{ project.translate.company }}</p>
-	                		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--text">
+	                		<a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="projects__wrap-item--text">
 	                			{{ project.translate.description|striptags|slice(0, 150) }}...
 	                		</a>
 	                		<p class="projects__wrap-item-more">
-	                			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
+	                			<a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
 	                		</p>
 	              		</div>
 	            	</div>
 	            {% endfor %}
           	</div>
-          	<a href="{{ path('frontend_projects') }}" class="btn btn--white btn--medium">
+          	<a href="{{ path('frontend_projects', {_locale: app.request.locale}) }}" class="btn btn--white btn--medium">
             	<div class="btn__inner">
             		<span class="btn__text">{{ 'ui.other_projects'|trans }}</span>
             	</div>

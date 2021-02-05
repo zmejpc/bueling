@@ -2,22 +2,22 @@
 <div class="news__wrap">
     {% for item in elements %}
         <div class="news__wrap-item">
-            <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+            <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}">
 
                 {% set poster = item.galleryImages|first.img|default('')|json_decode %}
 
-                <img src="{{ asset(poster.list_710_400|default('')) }}" alt="{{ item.translate.title }}" class="news__wrap-item--img">
+                <img src="{{ asset(poster.list_710_400|default(no_image)) }}" alt="{{ item.translate.title }}" class="news__wrap-item--img">
             </a>
             <p class="news__wrap-item--date">
                 {{ item.publishAt|localizeddate('medium', 'none') }}
             </p>
             <div class="news__wrap-item-content">
-                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}">
+                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}">
                     <p class="news__wrap-item-content--title">
                         {{ item.translate.title }}
                     </p>
                 </a>
-                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug}) }}" class="news__wrap-item-content--more">
+                <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}" class="news__wrap-item-content--more">
                     {{ 'ui.read_more'|trans }}
                     <svg class="svg-icon news__wrap-item--icon">
                         <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-right" />

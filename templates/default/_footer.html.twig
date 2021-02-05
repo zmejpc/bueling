@@ -3,7 +3,7 @@
     <div class="container">
       	<div class="page-footer__wrap">
         	<div class="page-footer__wrap-item page-footer__logo">
-        		<a href="{{ path('frontend_homepage') }}" class="footer-logo">
+        		<a href="{{ path('frontend_homepage', {_locale: app.request.locale}) }}" class="footer-logo">
         			<img src="{{ asset('build/frontend/img/logo.svg') }}" class="logo__img" alt="Лого" />
         		</a>
         	</div>

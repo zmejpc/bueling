@@ -4,7 +4,7 @@
 {% block head_javascript %}
     <script>
         window.__URLS__ = {
-            getProducts: '{{ path('frontend_news_list') }}',
+            getProducts: '{{ path('frontend_news_list', {_locale: app.request.locale}) }}',
         };
     </script>
 {% endblock %}

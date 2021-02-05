@@ -11,10 +11,10 @@
         			<li class="swiper-slide">
                         <div class="slider__item slider-item">
                             <div class="slider-item__inner">
-                                <a href="{{ image.list_1926_1188|default('') }}" class="js-photoswipe-item" data-index="{{ index }}" data-size="1926x1188">
+                                <a href="{{ image.list_1926_1188|default(no_image) }}" class="js-photoswipe-item" data-index="{{ index }}" data-size="1926x1188">
                                     <picture class="slider-item__img-wrap lazyload-container">
-                                        <source data-srcset="{{ image.list_963_594|default('') }}">
-                                        <img src="{{ image.list_963_594|default('') }}" alt="" class="slider-item__img lazyload">
+                                        <source data-srcset="{{ image.list_963_594|default(no_image) }}">
+                                        <img src="{{ image.list_963_594|default(no_image) }}" alt="" class="slider-item__img lazyload">
                                     </picture>
                                 </a>
                             </div>

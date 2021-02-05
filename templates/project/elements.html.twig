@@ -4,23 +4,23 @@
 
 		{% set poster = project.galleryImages|first.image|default('')|json_decode %}
 
-  		<li class="product__wrap--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
+  		<li class="product__wrap--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
     		<div class="product__wrap--item__subtitle">
     			{{ project.translate.title }}
     		</div>
     		<div class="product__wrap--item__title">
-    			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+    			<a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}">
         			<h2 class="h2">
         				{{ project.translate.company }}
         			</h2>
       			</a>
       		</div>
     		<div class="product__wrap--item__text">
-    			<a href="{{ path('frontend_show_project', {slug: project.slug}) }}">
+    			<a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}">
     				{{ project.translate.description|striptags|slice(0, 80) }}...
     			</a>
     		</div>
-    		<a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="btn btn btn--primary btn--small">
+    		<a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="btn btn btn--primary btn--small">
       			<div class="btn__inner">
       				<span class="btn__text">{{ 'ui.more'|trans }}</span>
       			</div>

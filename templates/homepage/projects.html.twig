@@ -8,8 +8,8 @@
             {% for project in projects %}
                 {% set poster = project.galleryImages|first.image|default('')|json_decode %}
                 <div class="projects__wrap-item">
-                    <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item-image">
-                        <img src="{{ asset(poster.list_1926_1188|default('')) }}" alt="" class="projects__wrap-item--img">
+                    <a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="projects__wrap-item-image">
+                        <img src="{{ asset(poster.list_1926_1188|default(no_image)) }}" alt="" class="projects__wrap-item--img">
                     </a>
                     <div class="projects__wrap-item-content">
                         <p class="projects__wrap-item--subtitle">
@@ -18,17 +18,17 @@
                         <p class="projects__wrap-item--title">
                             {{ project.translate.company }}
                         </p>
-                        <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--text">
+                        <a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="projects__wrap-item--text">
                             {{ project.translate.description|striptags|slice(0, 150) }}...
                         </a>
                         <p class="projects__wrap-item-more">
-                            <a href="{{ path('frontend_show_project', {slug: project.slug}) }}" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
+                            <a href="{{ path('frontend_show_project', {slug: project.slug, _locale: app.request.locale}) }}" class="projects__wrap-item--link">{{ 'ui.more'|trans }}</a>
                         </p>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <a href="{{ path('frontend_projects') }}" class="btn btn--white btn--medium">
+        <a href="{{ path('frontend_projects', {_locale: app.request.locale}) }}" class="btn btn--white btn--medium">
             <div class="btn__inner">
                 <span class="btn__text">{{ 'ui.other_projects'|trans }}</span>
             </div>

@@ -7,59 +7,59 @@
 
         <div class="sphere__wrap">
             {% if areas[0] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[0].slug}) }}" class="sphere__wrap-item">
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[0].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
                     <div class="sphere__wrap-item--left">
                         <svg class="svg-icon sphere__wrap-item--icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-1" />
                         </svg>
                     </div>
                     <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">ГРУНТООБРОБІТОК</p>
-                        <p class="sphere__wrap-item--text">Переобладнання, ремонт, обслуговування</p>
+                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_1.title'|trans }}</p>
+                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_1.text'|trans }}</p>
                     </div>
                 </a>
             {% endif %}
             {% if areas[1] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[1].slug}) }}" class="sphere__wrap-item">
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[1].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
                     <div class="sphere__wrap-item--left">
                         <svg class="svg-icon sphere__wrap-item--icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-2" />
                         </svg>
                     </div>
                     <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">ПОСІВНІ РОБОТИ</p>
-                        <p class="sphere__wrap-item--text">Налаштування, калібровка, ремонт</p>
+                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_2.title'|trans }}</p>
+                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_2.text'|trans }}</p>
                     </div>
                 </a>
             {% endif %}
             {% if areas[2] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[2].slug}) }}" class="sphere__wrap-item">
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[2].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
                     <div class="sphere__wrap-item--left">
                         <svg class="svg-icon sphere__wrap-item--icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-3" />
                         </svg>
                     </div>
                     <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">ЖИВЛЕННЯ ТА ВНЕСЕННЯ ЗЗР</p>
-                        <p class="sphere__wrap-item--text">Обладнання для оприскувачів</p>
+                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_3.title'|trans }}</p>
+                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_3.text'|trans }}</p>
                     </div>
                 </a>
             {% endif %}
             {% if areas[3] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[3].slug}) }}" class="sphere__wrap-item">
+                <a href="{{ path('frontend_show_activity_area', {slug: areas[3].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
                     <div class="sphere__wrap-item--left">
                         <svg class="svg-icon sphere__wrap-item--icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-4" />
                         </svg>
                     </div>
                     <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">ЗБІР ВРОЖАЮ</p>
-                        <p class="sphere__wrap-item--text">Монтаж на сівалки, культиватори, тощо.</p>
+                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_4.title'|trans }}</p>
+                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_4.text'|trans }}</p>
                     </div>
                 </a>
             {% endif %}
         </div>
-        <a href="{{ path('frontend_activity_areas') }}" class="btn btn--primary btn--medium D(n)--md">
+        <a href="{{ path('frontend_activity_areas', {_locale: app.request.locale}) }}" class="btn btn--primary btn--medium D(n)--md">
             <div class="btn__inner">
                 <span class="btn__text">{{ 'ui.all_services'|trans }}</span>
             </div>

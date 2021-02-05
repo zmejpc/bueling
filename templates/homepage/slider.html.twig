@@ -8,12 +8,12 @@
                     <li class="swiper-slide">
                         <div class="slider__item slider-item slider-item--grayscale">
                             <div class="slider-item__inner">
-                                <a href="{{ path('frontend_show_product_category', {slug: category.slug}) }}">
+                                <a href="{{ path('frontend_show_product_category', {slug: category.slug, _locale: app.request.locale}) }}">
                                     {% set poster = category.poster|json_decode %}
                                     <picture class="slider-item__img-wrap lazyload-container">
-                                        <source data-srcset="{{ poster.webp.list_510_256|default('') }}" type="image/webp">
-                                        <source data-srcset="{{ poster.list_510_256|default('') }}">
-                                            <img src="{{ poster.list_510_256|default('') }}" alt="" class="slider-item__img lazyload">
+                                        <source data-srcset="{{ poster.webp.list_510_256|default(no_image) }}" type="image/webp">
+                                        <source data-srcset="{{ poster.list_510_256|default(no_image) }}">
+                                            <img src="{{ poster.list_510_256|default(no_image) }}" alt="" class="slider-item__img lazyload">
                                     </picture>
                                 </a>
                             </div>

@@ -1,12 +1,12 @@
 {% trans_default_domain 'FrontendBundle' %}
 {% set poster = staticContent.about.poster|json_decode %}
-<section id="about" class="about lazyload-container lazyload" data-bgset="{{ poster.webp.mobile|default('') }} [type=image/webp] | {{ poster.mobile|default('') }}">
+<section id="about" class="about lazyload-container lazyload" data-bgset="{{ poster.webp.mobile|default(no_image) }} [type=image/webp] | {{ poster.mobile|default(no_image) }}">
     <div class="container about__inner">
         <div class="about__wrap">
             <div class="about__wrap-item">
                 <div class="about__title">{{ staticContent.about.text|striptags|raw }}</div>
                 <p class="about__text">{{ staticContent.about.short_text|default('')|striptags|raw }}</p>
-                <a href="{{ path('frontend_static_page_show', {slug: 'about'}) }}" class="btn btn btn--primary btn--medium">
+                <a href="{{ path('frontend_static_page_show', {slug: 'about', _locale: app.request.locale}) }}" class="btn btn btn--primary btn--medium">
                     <div class="btn__inner">
                         <span class="btn__text">{{ 'ui.more'|trans }}</span>
                     </div>

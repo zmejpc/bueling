@@ -73,17 +73,17 @@
                     <h2 class="h2 single-product__title">{{ 'our_services'|trans }}</h2>
                     {% set poster = project.relatedActivityArea.galleryImages|first.image|default('')|json_decode %}
 
-                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
+                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
                         <div class="single-product--block__title">
                             {{ project.relatedActivityArea.translate.title }}
                         </div>
                         <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_activity_area', {slug: project.relatedActivityArea.slug}) }}">
+                            <a href="{{ path('frontend_show_activity_area', {slug: project.relatedActivityArea.slug, _locale: app.request.locale}) }}">
                                 {{ project.relatedActivityArea.translate.shortDescription|striptags }}
                             </a>
                         </div>
                         <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_activity_area', {slug: project.relatedActivityArea.slug}) }}" class="btn btn--primary btn--small">
+                            <a href="{{ path('frontend_show_activity_area', {slug: project.relatedActivityArea.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
                                 <div class="btn__inner">
                                     <span class="btn__text">{{ 'ui.more'|trans }}</span>
                                 </div>
@@ -98,17 +98,17 @@
                     <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
                     {% set poster = project.relatedProject.galleryImages|first.image|default('')|json_decode %}
 
-                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default('')) }} [type=image/webp] | {{ asset(poster.list_630_420|default('')) }}">
+                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
                         <div class="single-product--block__title">
                             {{ project.relatedProject.translate.company }}
                         </div>
                         <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_project', {slug: project.relatedProject.slug}) }}">
+                            <a href="{{ path('frontend_show_project', {slug: project.relatedProject.slug, _locale: app.request.locale}) }}">
                                 {{ project.relatedProject.translate.title }}
                             </a>
                         </div>
                         <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_project', {slug: project.relatedProject.slug}) }}" class="btn btn--primary btn--small">
+                            <a href="{{ path('frontend_show_project', {slug: project.relatedProject.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
                                 <div class="btn__inner">
                                     <span class="btn__text">{{ 'ui.more'|trans }}</span>
                                 </div>
