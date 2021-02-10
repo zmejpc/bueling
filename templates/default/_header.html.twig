@@ -13,7 +13,7 @@
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
                         </svg>
                     </a>
-                    <a href="javascript:void(0)" class="media__icon-link">
+                    <a href="https://www.youtube.com/channel/UCc_bFVwwuhypJ4l2OhAXW9w" class="media__icon-link">
                         <svg class="svg-icon media__icon">
                             <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
                         </svg>
@@ -125,6 +125,19 @@
                 </nav>
             </div>
         </div>
+        <div class="page-header__top--lang-mobile"><a href="#" class="lang-link">
+                <svg class="svg-icon lang-icon">
+                    <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#lang" />
+                </svg>
+            </a>
+            <ul class="lang-submenu submenu-mobile D(n)">
+                {% for locale in localeSupported %}
+                    <li class="lang-item">
+                        <a href="{{ path('change_locale', {locale: locale} ) }}">{{ ('locale.'~locale)|trans }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
         {% for contactPhone in contactPhones %}
             <a href="tel:{{ contactPhone.phone }}" class="phone-icon">
                 <svg class="svg-icon phone-icon__icon">
@@ -225,7 +238,7 @@
                         <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#facebook-icon" />
                     </svg> 
                 </a>
-                <a href="javascript:void(0)" class="media__icon-link">
+                <a href="https://www.youtube.com/channel/UCc_bFVwwuhypJ4l2OhAXW9w" class="media__icon-link">
                     <svg class="svg-icon media__icon">
                         <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#youtube-icon" />
                     </svg> 
