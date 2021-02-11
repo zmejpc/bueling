@@ -61,8 +61,7 @@ class ActivityAreaRepository extends DashboardRepository
             ->setParameters([
                 'showOnWebsite' => ActivityArea::YES,
                 'showOnHomepage' => ActivityArea::YES,
-            ])
-            ->setMaxResults(4);
+            ]);
 
         return $query->getQuery()->getResult();
     }

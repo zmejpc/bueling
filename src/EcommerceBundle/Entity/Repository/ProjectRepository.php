@@ -93,8 +93,7 @@ class ProjectRepository extends DashboardRepository
             ->setParameters([
                 'showOnWebsite' => Project::YES,
                 'showOnHomepage' => Project::YES,
-            ])
-            ->setMaxResults(2);
+            ]);
 
         return $query->getQuery()->getResult();
     }
