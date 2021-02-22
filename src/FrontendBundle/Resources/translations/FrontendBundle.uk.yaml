@@ -79,6 +79,7 @@ form:
 distribution:
   title: 'Розсилка'
   success: 'Ви підписались на розсилку'
+  exists: 'Ви вже підписані'
 simple_steps: 'три простих кроки'
 faq_title: 'Найчастіші запитання'
 our_services: 'Наші послуги'

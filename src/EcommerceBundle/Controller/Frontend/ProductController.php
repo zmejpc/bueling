@@ -37,7 +37,7 @@ final class ProductController extends AbstractController
         $product = $this->em->getRepository(Product::class)->getProductBySlug($slug);
 
         if (!$product) {
-            throw $this->createNotFoundException($translator->trans('ui.notFound', [], 'FrontendBundle'));
+            throw $this->createNotFoundException();
         }
 
         $breadcrumbsArr = [];
@@ -46,6 +46,20 @@ final class ProductController extends AbstractController
             'parameters' => [],
             'title' => (!empty($seoHomepage) and !empty($seoHomepage->breadcrumb)) ? $seoHomepage->breadcrumb : ''
         ];
+
+        if ($product->hasCategories()) {
+
+            $category = $product->getCategories()->first();
+            $categorySeo = $category->getSeo()->getSeoForPage();
+            $title = !empty($categorySeo->breadcrumb) ? $categorySeo->breadcrumb : $category->translate()->getTitle();
+
+            $breadcrumbsArr['frontend_show_product_category'][] = [
+                'parameters' => [
+                    'slug' => $category->getSlug(),
+                ],
+                'title' => $title,
+            ];
+        }
 
         $breadcrumbsArr['frontend_product_show'][] = [
             'parameters' => [

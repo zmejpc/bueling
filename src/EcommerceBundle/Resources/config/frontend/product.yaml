@@ -7,7 +7,7 @@ frontend_product_show:
   controller: Ecommerce\Controller\Frontend\ProductController::showProductAction
   requirements:
     _locale: '%app_locales%'
-    slug: "[\\w-]+"
+    slug: ".+"
 
 frontend_ajax_category_products:
   path:     /ajax/{slug}

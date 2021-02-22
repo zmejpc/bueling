@@ -75,16 +75,28 @@ final class DefaultController extends \ComponentBundle\Controller\Frontend\Defau
     public function distributionAction(Request $request, EntityManagerInterface $em, TranslatorInterface $translator)
     {
         try {
-            $distribution = new Distribution;
-            $distribution->setEmail($request->request->get('email'));
-            $em->persist($distribution);
-            $em->flush();
 
             $status = true;
-            $message = [
-                'title' => $translator->trans('distribution.title', [], 'FrontendBundle'),
-                'body' => $translator->trans('distribution.success', [], 'FrontendBundle')
-            ];
+            $email = $request->request->get('email');
+
+            $distribution = $em->getRepository(Distribution::class)->findOneBy(['email' => $email]);
+
+            if ($distribution) {
+                $message = [
+                    'title' => $translator->trans('distribution.title', [], 'FrontendBundle'),
+                    'body' => $translator->trans('distribution.exists', [], 'FrontendBundle')
+                ];
+            } else {
+                $distribution = new Distribution;
+                $distribution->setEmail($email);
+                $em->persist($distribution);
+                $em->flush();
+
+                $message = [
+                    'title' => $translator->trans('distribution.title', [], 'FrontendBundle'),
+                    'body' => $translator->trans('distribution.success', [], 'FrontendBundle')
+                ];
+            }
 
         } catch (\Throwable $e) {
             $status = false;

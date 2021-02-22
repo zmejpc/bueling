@@ -52,6 +52,9 @@ class ProductRepository extends DashboardRepository
 
     public function getProductBySlug(string $slug)
     {
+        $slug = array_reverse(explode('/', $slug));
+        $slug = reset($slug);
+        
         $query = self::getQuery();
         $query
             ->andWhere('q.slug=:slug')

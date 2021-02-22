@@ -79,6 +79,7 @@ form:
 distribution:
   title: 'Рассылка'
   success: 'Вы подписались на рассылку'
+  exists: 'Ви уже подписались'
 simple_steps: 'три простых шага'
 faq_title: 'Часто задаваемые вопросы'
 our_services: 'Наши услуги'
