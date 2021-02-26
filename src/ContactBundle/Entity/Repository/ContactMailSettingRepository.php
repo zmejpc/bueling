@@ -12,8 +12,6 @@ class ContactMailSettingRepository extends EntityRepository
     public function getElementForEditForm()
     {
         $query = $this->createQueryBuilder('q')
-            ->select('q, t')
-            ->leftJoin('q.translations', 't')
             ->setMaxResults(1);
 
         return $query->getQuery()->getOneOrNullResult();
@@ -22,8 +20,6 @@ class ContactMailSettingRepository extends EntityRepository
     public function getElement()
     {
         $query = $this->createQueryBuilder('q')
-            ->select('q, t')
-            ->leftJoin('q.translations', 't')
             ->setMaxResults(1);
 
         return $query->getQuery()->getOneOrNullResult();
