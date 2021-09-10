@@ -85,7 +85,7 @@
             <div class="product__areas__holder">
             	<div class="product__areas">
             		{% for area in activityAreas %}
-                      <div class="product__areas--item products__areas" data-activity-area="{{ area.id }}" data-enabled="{{ loop.first ? 'true' : 'false' }}">
+                      <div class="product__areas--item products__areas" data-activity-area="{{ area.id }}" data-enabled="false">
   	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
   	                		<div class="btn__inner">
   	                			<span class="btn__text">{{ area.translate.title }}</span>

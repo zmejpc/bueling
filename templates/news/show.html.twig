@@ -69,7 +69,7 @@
                                                 <picture class="news__wrap-item--img-wrap lazyload-container">
                                                     <source data-srcset="{{ image.list_499_283|default(no_image) }}">
                                                     <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}">
-                                                        <img src="{{ image.list_499_283|default(no_image) }}" alt="{{ element.translate.title }}" class="lazyload news__wrap-item--img">
+                                                        <img src="{{ image.list_499_283|default(no_image) }}" alt="{{ item.translate.title }}" class="lazyload news__wrap-item--img">
                                                     </a>
                                                 </picture>
                                                 <p class="news__wrap-item--date">
@@ -78,7 +78,7 @@
                                                 <div class="news__wrap-item-content">
                                                     <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}">
                                                         <p class="news__wrap-item-content--title">
-                                                            {{ element.translate.title }}
+                                                            {{ item.translate.title }}
                                                         </p>
                                                     </a>
                                                     <a href="{{ path('frontend_news_show', {slug: item.translate(item.defaultLocale).slug, _locale: app.request.locale}) }}" class="news__wrap-item-content--more">

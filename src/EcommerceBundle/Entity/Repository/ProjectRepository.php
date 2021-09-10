@@ -3,6 +3,7 @@
 namespace Ecommerce\Entity\Repository;
 
 use DashboardBundle\Entity\Repository\DashboardRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Ecommerce\Entity\ActivityArea;
 use BackendBundle\Entity\Region;
 use Doctrine\ORM\AbstractQuery;
@@ -44,7 +45,7 @@ class ProjectRepository extends DashboardRepository
         
         $query
             ->where('q.showOnWebsite = :showOnWebsite')
-            ->orderBy('q.position', 'ASC')
+            ->orderBy('q.publishAt', 'DESC')
             ->setParameters([
                 'showOnWebsite' => Project::YES,
             ])
@@ -89,13 +90,15 @@ class ProjectRepository extends DashboardRepository
         $query
             ->where('q.showOnWebsite = :showOnWebsite')
             ->andWhere('q.showOnHomepage = :showOnHomepage')
-            ->orderBy('q.position', 'ASC')
+            ->orderBy('RAND()')
+            ->setMaxResults(2)
             ->setParameters([
                 'showOnWebsite' => Project::YES,
                 'showOnHomepage' => Project::YES,
-            ]);
+            ])
+            ->getQuery();
 
-        return $query->getQuery()->getResult();
+        return new Paginator($query);
     }
 
     public function getBySlug(string $slug)

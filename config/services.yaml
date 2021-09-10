@@ -5,8 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'uk'
-    app_locales: 'uk|ru'
-    locale_supported: ['uk', 'ru']
+    app_locales: 'uk|ru|en'
+    locale_supported: ['uk', 'ru', 'en']
     currency: uah
     products_per_page: 9
     

@@ -785,9 +785,7 @@ final class NewsRepository extends DashboardRepository implements NewsRepository
             ->addOrderBy('rand')
             ->addOrderBy('q.publishAt', 'DESC')
             ->addOrderBy('q.position', 'DESC')
-//            ->addSelect('newsAuthor, newsAuthor_t')
-//            ->leftJoin('q.newsAuthor', 'newsAuthor')
-//            ->leftJoin('newsAuthor.translations', 'newsAuthor_t')
+            ->groupBy('q')
             ->setParameters([
                 'publishAt' => new \DateTime('now'),
                 'showOnWebsite' => NewsInterface::YES,

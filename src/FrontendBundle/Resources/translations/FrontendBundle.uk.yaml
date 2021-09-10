@@ -1,6 +1,7 @@
 locale:
   uk: 'українська'
   ru: 'русский'
+  en: 'english'
 
 menu:
   homepage: 'головна'

@@ -4,7 +4,7 @@
 
 		{% set poster = project.galleryImages|first.image|default('')|json_decode %}
 
-  		<li class="product__wrap--item lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
+  		<li class="product__wrap--item product__wrap--item--gray lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
     		<div class="product__wrap--item__subtitle">
     			{{ project.translate.title }}
     		</div>

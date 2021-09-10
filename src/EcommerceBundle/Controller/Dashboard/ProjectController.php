@@ -77,10 +77,6 @@ class ProjectController extends CRUDController
         return [
             'translations-title' => $translator->trans('ui.title', [], 'DashboardBundle'),
             'galleryImages-image' => $translator->trans('ui.poster', [], 'DashboardBundle'),
-            'position' => [
-                'title' => $translator->trans('ui.position', [], 'DashboardBundle'),
-                'width' => 80
-            ],
             'showOnWebsite' => [
                 'title' => $translator->trans('ui.show_on_website', [], 'DashboardBundle'),
                 'width' => 80
@@ -100,9 +96,6 @@ class ProjectController extends CRUDController
             ]),
             'galleryImages-image' => $twig->render('@Dashboard/default/crud/list/element/_img.html.twig', [
                 'element' => $item->getGalleryImages()->first() ? $item->getGalleryImages()->first()->getImage() : null
-            ]),
-            'position' => $twig->render('@Dashboard/default/crud/list/element/_position.html.twig', [
-                'element' => $item
             ]),
             'showOnWebsite' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
                 'element' => $item, 'fieldName' => 'showOnWebsite',

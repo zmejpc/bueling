@@ -44,7 +44,7 @@
             <div class="blog__buttons__holder">
                 <div class="blog__buttons__wrap">
                     {% for category in categories %}
-                        <div class="blog__button product__areas--item" data-activity-area="{{ category.id }}" data-enabled="{{ loop.first ? 'true' : 'false' }}">
+                        <div class="blog__button product__areas--item" data-activity-area="{{ category.id }}" data-enabled="false">
                             <a href="#" class="btn btn--primary btn--medium product-btn">
                                 <div class="btn__inner">
                                     <span class="btn__text">{{ category.translate.title }}</span>

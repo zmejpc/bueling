@@ -1,6 +1,7 @@
 locale:
   uk: 'українська'
   ru: 'русский'
+  en: 'english'
 
 menu:
   homepage: 'главная'
@@ -56,7 +57,7 @@ homepage:
   partners: 'партнеры'
 contact_form:
     title: 'Остались вопросы?'
-    contact_title: 'Закажите обратный дзинок!'
+    contact_title: 'Закажите обратный звонок!'
     sub_title: 'Оставьте свои контактные данные и наш менеджер позвонит вам и проведет бесплатную консультацию!'
 about:
   features:
@@ -79,7 +80,7 @@ form:
 distribution:
   title: 'Рассылка'
   success: 'Вы подписались на рассылку'
-  exists: 'Ви уже подписались'
+  exists: 'Вы уже подписались'
 simple_steps: 'три простых шага'
 faq_title: 'Часто задаваемые вопросы'
 our_services: 'Наши услуги'

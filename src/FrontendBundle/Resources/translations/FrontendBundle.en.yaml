@@ -1,0 +1,96 @@
+locale:
+  uk: 'українська'
+  ru: 'русский'
+  en: 'english'
+
+menu:
+  homepage: 'homepage'
+  about: 'about us'
+  products: 'products'
+  activity_areas: 'activities'
+  projects: 'projects'
+  service_centre: 'service center'
+  blog: 'blog'
+  contacts: 'contacts'
+ui:
+  get_consult: 'get a consultation'
+  all_services: 'all services'
+  all_categories: 'all categories'
+  other_projects: 'other projects'
+  more: 'more'
+  read_more: 'read more'
+  more_news: 'more news'
+  sign_distribution: 'subscribe'
+  goto_area: 'go to section'
+  all_regions: 'All regions'
+  all_activity_areas: 'All directions'
+  download_instruction: 'download instructions'
+  download: 'download'
+  close_dialog: 'close the dialog'
+  video:
+    not_supported: 'Your browser does not support HTML5 video.'
+  placeholder:
+    first_name: 'NAME*'
+    phone_number: 'PHONE*'
+    email: 'EMAIL*'
+homepage:
+  products: 'Products'
+  areas: 'Applications'
+  projects: 'Our projects'
+  blog: 'blog'
+  spheres:
+    spheres_1:
+      title: 'land cultivation'
+      text: 'Conversion, repair, service'
+    spheres_2:
+      title: 'sowing work'
+      text: 'Adjustment, calibration, repair'
+    spheres_3:
+      title: 'replenishment and introduction of NWR'
+      text: 'Sprayer equipment'
+    spheres_4:
+      title: 'harvesting'
+      text: 'Mounting on seeders, cultivators, etc.'
+  contact:
+    title: 'did not find the information you needed?'
+    sub_title: 'Leave your contact details and our manager will call you and give you a free consultation!'
+  partners: 'partners'
+contact_form:
+    title: 'Still have questions?'
+    contact_title: 'Request a call back!'
+    sub_title: 'Leave your contact details and our manager will call you and give you a free consultation!'
+about:
+  features:
+    feature_1: 'program for young talents'
+    feature_2: 'relocation and full support'
+    feature_3: '100+ experts working in various fields'
+service:
+  steps:
+    title: 'registration of equipment for diagnostics or repair'
+  instruction:
+    title: 'instruction for using trimble technique'
+    sub_title: 'please download the instruction and check the sequence of actions.'
+mail:
+  button_link: 'Go to'
+form:
+  error:
+    name: "Name must be between 2 and 32 characters"
+    phone: 'The phone must be in the format +380XXXXXXXXX'
+    email: 'Please enter a valid email'
+distribution:
+  title: 'Newsletter'
+  success: 'You have subscribed to the newsletter'
+  exists: 'You have already subscribed'
+simple_steps: 'three easy steps'
+faq_title: 'FAQ'
+our_services: 'Our services'
+our_projects: 'Our projects'
+company: 'Company'
+household: 'Household'
+date: 'Date'
+realize_date: 'Date of completion'
+share: 'Share'
+main_office: 'Main office'
+download_usefulll_files: 'download useful files'
+region: 'Region'
+works: 'Types of jobs'
