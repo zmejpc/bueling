@@ -13,7 +13,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
 use Ecommerce\Entity\ProductCategory;
-use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\SmartLink;
 use Ecommerce\Entity\Project;
 use Ecommerce\Entity\Product;
 use SeoBundle\Entity\SeoPage;
@@ -85,9 +85,9 @@ final class ProductController extends AbstractController
         $request = $requestStack->getMasterRequest();
 
         $category = $this->em->getRepository(ProductCategory::class)->getProductCategoryBySlug($slug);
-        $activityArea = $this->em->getRepository(ActivityArea::class)->find($request->query->getInt('activity-area', 0));
+        $smartLink = $this->em->getRepository(SmartLink::class)->find($request->query->getInt('activity-area', 0));
 
-        $products = $this->em->getRepository(Product::class)->getForFrontend($category, $activityArea);
+        $products = $this->em->getRepository(Product::class)->getForFrontend($category, $smartLink);
 
         $elements = $paginator->paginate($products, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
         $elements->setTemplate('default/pagination.html.twig');

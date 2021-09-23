@@ -102,13 +102,13 @@ class Product
     private $features;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ActivityArea")
-     * @ORM\JoinTable(name="product_has_activity_area",
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\SmartLink", inversedBy="products")
+     * @ORM\JoinTable(name="product_has_smart_link",
      *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
-     *   inverseJoinColumns={@ORM\JoinColumn(name="activity_area_id", referencedColumnName="id")}
+     *   inverseJoinColumns={@ORM\JoinColumn(name="smart_link_id", referencedColumnName="id")}
      *  )
      */
-    private $activityAreas;
+    private $smartLinks;
 
     /**
      * @ORM\ManyToMany(targetEntity="FrontendBundle\Entity\Faq", cascade={"persist","remove"})
@@ -209,7 +209,7 @@ class Product
         $this->galleryImages = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->features = new ArrayCollection();
-        $this->activityAreas = new ArrayCollection();
+        $this->smartLinks = new ArrayCollection();
         $this->faq = new ArrayCollection();
     }
 
@@ -429,26 +429,26 @@ class Product
     }
 
     /**
-     * @return Collection|ActivityArea[]
+     * @return Collection|SmartLink[]
      */
-    public function getActivityAreas(): Collection
+    public function getSmartLinks(): Collection
     {
-        return $this->activityAreas;
+        return $this->smartLinks;
     }
 
-    public function addActivityArea(ActivityArea $activityArea): self
+    public function addSmartLink(SmartLink $smartLink): self
     {
-        if (!$this->activityAreas->contains($activityArea)) {
-            $this->activityAreas[] = $activityArea;
+        if (!$this->smartLinks->contains($smartLink)) {
+            $this->smartLinks[] = $smartLink;
         }
 
         return $this;
     }
 
-    public function removeActivityArea(ActivityArea $activityArea): self
+    public function removeSmartLink(SmartLink $smartLink): self
     {
-        if ($this->activityAreas->contains($activityArea)) {
-            $this->activityAreas->removeElement($activityArea);
+        if ($this->smartLinks->contains($smartLink)) {
+            $this->smartLinks->removeElement($smartLink);
         }
 
         return $this;

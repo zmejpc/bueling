@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
 use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\SmartLink;
 use SeoBundle\Entity\SeoPage;
 
 /**
@@ -36,12 +37,12 @@ final class ProductCategoryController extends AbstractController
 
         $seo = $category->getSeo()->getSeoForPage();
         $staticContent = $this->em->getRepository(StaticContent::class)->getByPageForFrontend('category');
-        $activityAreas = $this->em->getRepository(ActivityArea::class)->getForFilter();
+        $smartLinks = $this->em->getRepository(SmartLink::class)->getForFilterByCategory($category);
 
         return $this->render('product_category/show.html.twig', [
             'seo' => $seo,
             'category' => $category,
-            'activityAreas' => $activityAreas,
+            'smartLinks' => $smartLinks,
             'staticContent' => $staticContent,
             'breadcrumbs' => $this->generateBreadcrumbs($category, 'frontend_show_product_category'),
         ]);

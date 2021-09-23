@@ -4,7 +4,7 @@ namespace Ecommerce\Entity\Repository;
 
 use DashboardBundle\Entity\Repository\DashboardRepository;
 use Ecommerce\Entity\ProductCategory;
-use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\SmartLink;
 use Doctrine\ORM\AbstractQuery;
 use Ecommerce\Entity\Product;
 
@@ -82,7 +82,7 @@ class ProductRepository extends DashboardRepository
         return $query->getQuery()->getOneOrNullResult();
     }
 
-    public function getForFrontend(ProductCategory $category, ActivityArea $activityArea = null)
+    public function getForFrontend(ProductCategory $category, SmartLink $smartLink = null)
     {
         $query = self::getQuery();
         
@@ -94,10 +94,10 @@ class ProductRepository extends DashboardRepository
                 'showOnWebsite' => Product::YES,
             ]);
 
-        if ($activityArea) {
+        if ($smartLink) {
             $query
-                ->leftJoin('q.activityAreas', 'activityAreas')
-                ->andWhere($query->expr()->in('activityAreas', [$activityArea->getId()]));
+                ->leftJoin('q.smartLinks', 'smartLinks')
+                ->andWhere($query->expr()->in('smartLinks', [$smartLink->getId()]));
         }
 
         return $query->getQuery()->getResult();

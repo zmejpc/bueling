@@ -74,8 +74,8 @@
                             </div>
                             <select name="region" class="js-select" data-type="activity-area">
                                 <option value="0">{{ 'ui.all_activity_areas'|trans }}</option>
-                                {% for area in activityAreas %}
-                                    <option value="{{ area.id }}">{{ area.translate.title }}</option>
+                                {% for link in smartLinks %}
+                                    <option value="{{ link.id }}">{{ link.translate.title }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -84,11 +84,11 @@
             </div>
             <div class="product__areas__holder">
             	<div class="product__areas">
-            		{% for area in activityAreas %}
-                      <div class="product__areas--item products__areas" data-activity-area="{{ area.id }}" data-enabled="false">
+            		{% for link in smartLinks %}
+                      <div class="product__areas--item products__areas" data-activity-area="{{ link.id }}" data-enabled="false">
   	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
   	                		<div class="btn__inner">
-  	                			<span class="btn__text">{{ area.translate.title }}</span>
+  	                			<span class="btn__text">{{ link.translate.title }}</span>
   	                		</div>
   	              		</a>
   	              	</div>

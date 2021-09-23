@@ -19,6 +19,7 @@ use DashboardBundle\Form\Type\DashboardTranslationsType;
 use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\ProductFeature;
 use Ecommerce\Entity\ActivityArea;
+use Ecommerce\Entity\SmartLink;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
@@ -98,11 +99,11 @@ class ProductType extends AbstractType
                 'class' => ProductCategory::class,
                 'choice_label' => 'translate.title',
             ])
-            ->add('activityAreas', DashboardSelect2EntityType::class, [
+            ->add('smartLinks', DashboardSelect2EntityType::class, [
                 'required' => false,
                 'multiple' => true,
-                'label' => 'Направления',
-                'class' => ActivityArea::class,
+                'label' => 'Смарт ссылки',
+                'class' => SmartLink::class,
                 'choice_label' => 'translate.title',
             ])
             ->add('features', DashboardSelect2EntityType::class, [

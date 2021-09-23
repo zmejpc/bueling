@@ -2,6 +2,8 @@
 
 namespace Ecommerce\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
@@ -37,6 +39,31 @@ class SmartLink
     public const NO = 0;
 
     /**
+     * @var integer
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
+     * @Gedmo\Versioned
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\Product", mappedBy="smartLinks")
+     */
+    private $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
      * @param $method
      * @param $arguments
      * @return mixed|null
@@ -56,17 +83,30 @@ class SmartLink
     }
 
     /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
-     * @Gedmo\Versioned
+     * @return Collection|SmartLink[]
      */
-    private $id;
-
-    public function getId(): ?int
+    public function getProducts(): Collection
     {
-        return $this->id;
+        return $this->products;
+    }
+
+    public function addProduct(SmartLink $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->addSmartLink($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(SmartLink $product): self
+    {
+        if ($this->products->contains($product)) {
+            $this->products->removeElement($product);
+            $product->removeSmartLink($this);
+        }
+
+        return $this;
     }
 }
