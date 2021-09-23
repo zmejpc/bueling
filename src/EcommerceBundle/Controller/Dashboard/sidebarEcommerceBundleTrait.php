@@ -39,6 +39,10 @@ trait sidebarEcommerceBundleTrait
             $partners = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['partner/edit/'], ['dashboard_partner_index', 'dashboard_partner_new', 'dashboard_partner_edit'], 'fa fa-hands-helping', false, null, null, 'Партнери', [], 'dashboard_partner_index');
 
             (!is_null($partners)) ? $menu['items'][] = $partners : null;
+
+            $smartLinks = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['smart-link/edit/'], ['dashboard_smart_link_index', 'dashboard_smart_link_new', 'dashboard_smart_link_edit'], 'fa fa-arrow-alt-circle-right', false, null, null, 'Смарт ссылки', [], 'dashboard_smart_link_index');
+
+            (!is_null($smartLinks)) ? $menu['items'][] = $smartLinks : null;
         }
 
         return $menu;

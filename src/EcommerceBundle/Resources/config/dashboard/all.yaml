@@ -21,3 +21,7 @@ dashboard_project:
 dashboard_partner:
     resource: "@EcommerceBundle/Resources/config/dashboard/partner.yaml"
     prefix:   /partner
+
+dashboard_smart_link:
+    resource: "@EcommerceBundle/Resources/config/dashboard/smart_link.yaml"
+    prefix:   /smart-link

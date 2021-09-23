@@ -1,0 +1,23 @@
+dashboard_smart_link_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\SmartLinkController:listAction
+    methods:  [GET, POST]
+
+dashboard_smart_link_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\SmartLinkController:newAction
+    methods:  [GET, POST]
+
+dashboard_smart_link_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\SmartLinkController:editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_smart_link_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\SmartLinkController:deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
