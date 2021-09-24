@@ -47,6 +47,10 @@ trait sidebarEcommerceBundleTrait
             $applicationFields = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['application-field/edit/'], ['dashboard_application_field_index', 'dashboard_application_field_new', 'dashboard_application_field_edit'], 'fa fa-globe', false, null, null, 'Сферы применения', [], 'dashboard_application_field_index');
 
             (!is_null($applicationFields)) ? $menu['items'][] = $applicationFields : null;
+
+            $technicType = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['technic-type/edit/'], ['dashboard_application_field_index', 'dashboard_technic_type_new', 'dashboard_technic_type_edit'], 'fa fa-bus', false, null, null, 'Виды техники', [], 'dashboard_technic_type_index');
+
+            (!is_null($technicType)) ? $menu['items'][] = $technicType : null;
         }
 
         return $menu;

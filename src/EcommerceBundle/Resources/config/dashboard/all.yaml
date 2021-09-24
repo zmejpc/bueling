@@ -29,3 +29,7 @@ dashboard_smart_link:
 dashboard_application_field:
     resource: "@EcommerceBundle/Resources/config/dashboard/application_field.yaml"
     prefix:   /application-field
+
+dashboard_technic_type:
+    resource: "@EcommerceBundle/Resources/config/dashboard/technic_type.yaml"
+    prefix:   /technic-type

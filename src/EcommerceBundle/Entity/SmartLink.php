@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use ComponentBundle\Entity\Position\PositionTrait;
 use ComponentBundle\Entity\Poster\PosterTrait;
 use ComponentBundle\Entity\ShowOnWebsite\ShowOnWebsiteTrait;
+use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
  * SmartLink

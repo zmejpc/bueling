@@ -1,0 +1,23 @@
+dashboard_technic_type_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\TechnicTypeController:listAction
+    methods:  [GET, POST]
+
+dashboard_technic_type_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\TechnicTypeController:newAction
+    methods:  [GET, POST]
+
+dashboard_technic_type_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\TechnicTypeController:editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_technic_type_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\TechnicTypeController:deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+

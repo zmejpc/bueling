@@ -22,6 +22,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
 use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 use SeoBundle\Form\Type\Dashboard\AddSeoSubscriber;
+use Ecommerce\Entity\ApplicationField;
+use Ecommerce\Entity\Product;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -122,20 +124,18 @@ class ProjectType extends AbstractType
                 'class' => Region::class,
                 'choice_label' => 'translate.title',
             ])
-            ->add('relatedProject', DashboardSelect2EntityType::class, [
+            ->add('applicationFields', DashboardSelect2EntityType::class, [
                 'required' => false,
-                'multiple' => false,
-                'allow_clear' => true,
-                'label' => 'Проект (внизу внутренней страницы)',
-                'class' => Project::class,
+                'multiple' => true,
+                'label' => 'Сферы применения',
+                'class' => ApplicationField::class,
                 'choice_label' => 'translate.title',
             ])
-            ->add('relatedActivityArea', DashboardSelect2EntityType::class, [
+            ->add('products', DashboardSelect2EntityType::class, [
                 'required' => false,
-                'multiple' => false,
-                'allow_clear' => true,
-                'label' => 'Направление (внизу внутренней страницы)',
-                'class' => ActivityArea::class,
+                'multiple' => true,
+                'label' => 'Товары',
+                'class' => Product::class,
                 'choice_label' => 'translate.title',
             ])
             ->addEventSubscriber(new AddSeoSubscriber())

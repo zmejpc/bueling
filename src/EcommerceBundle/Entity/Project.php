@@ -127,26 +127,22 @@ class Project
     private $publishAt;
 
     /**
-     * @var \Ecommerce\Entity\Project
-     *
-     * @Gedmo\Versioned
-     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\Project")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="related_project", referencedColumnName="id", onDelete="SET NULL")
-     * })
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ApplicationField")
+     * @ORM\JoinTable(name="project_has_application_field",
+     *   joinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="application_field_id", referencedColumnName="id")}
+     *  )
      */
-    private $relatedProject;
+    private $applicationFields;
 
     /**
-     * @var \Ecommerce\Entity\ActivityArea
-     *
-     * @Gedmo\Versioned
-     * @ORM\ManyToOne(targetEntity="Ecommerce\Entity\ActivityArea")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="related_area", referencedColumnName="id", onDelete="SET NULL")
-     * })
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\Product")
+     * @ORM\JoinTable(name="project_has_product",
+     *   joinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")}
+     *  )
      */
-    private $relatedActivityArea;
+    private $products;
 
     public function __toString()
     {
@@ -183,6 +179,8 @@ class Project
         $this->galleryImages = new ArrayCollection();
         $this->activityAreas = new ArrayCollection();
         $this->faq = new ArrayCollection();
+        $this->applicationFields = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     /**
@@ -378,26 +376,54 @@ class Project
         return $this;
     }
 
-    public function getRelatedProject(): ?self
+    /**
+     * @return Collection|ApplicationField[]
+     */
+    public function getApplicationFields(): Collection
     {
-        return $this->relatedProject;
+        return $this->applicationFields;
     }
 
-    public function setRelatedProject(?self $relatedProject): self
+    public function addApplicationField(ApplicationField $applicationField): self
     {
-        $this->relatedProject = $relatedProject;
+        if (!$this->applicationFields->contains($applicationField)) {
+            $this->applicationFields[] = $applicationField;
+        }
 
         return $this;
     }
 
-    public function getRelatedActivityArea(): ?ActivityArea
+    public function removeApplicationField(ApplicationField $applicationField): self
     {
-        return $this->relatedActivityArea;
+        if ($this->applicationFields->contains($applicationField)) {
+            $this->applicationFields->removeElement($applicationField);
+        }
+
+        return $this;
     }
 
-    public function setRelatedActivityArea(?ActivityArea $relatedActivityArea): self
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProducts(): Collection
     {
-        $this->relatedActivityArea = $relatedActivityArea;
+        return $this->products;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        if ($this->products->contains($product)) {
+            $this->products->removeElement($product);
+        }
 
         return $this;
     }
