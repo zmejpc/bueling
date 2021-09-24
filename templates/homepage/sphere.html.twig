@@ -6,63 +6,17 @@
         </div>
 
         <div class="sphere__wrap">
-            {% if areas[0] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[0].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
+            {% for item in applicationFields %}
+                <a href="{{ path('frontend_show_application_field', {slug: item.slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
                     <div class="sphere__wrap-item--left">
-                        <svg class="svg-icon sphere__wrap-item--icon">
-                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-1" />
-                        </svg>
+                        <img class="svg-icon sphere__wrap-item--icon" src="{{ asset(item.poster|json_decode.default_file|default('')) }}" />
                     </div>
                     <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_1.title'|trans }}</p>
-                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_1.text'|trans }}</p>
+                        <p class="sphere__wrap-item--title">{{ item.translate.title }}</p>
+                        <p class="sphere__wrap-item--text">{{ item.translate.shortDescription }}</p>
                     </div>
                 </a>
-            {% endif %}
-            {% if areas[1] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[1].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
-                    <div class="sphere__wrap-item--left">
-                        <svg class="svg-icon sphere__wrap-item--icon">
-                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-2" />
-                        </svg>
-                    </div>
-                    <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_2.title'|trans }}</p>
-                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_2.text'|trans }}</p>
-                    </div>
-                </a>
-            {% endif %}
-            {% if areas[2] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[2].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
-                    <div class="sphere__wrap-item--left">
-                        <svg class="svg-icon sphere__wrap-item--icon">
-                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-3" />
-                        </svg>
-                    </div>
-                    <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_3.title'|trans }}</p>
-                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_3.text'|trans }}</p>
-                    </div>
-                </a>
-            {% endif %}
-            {% if areas[3] is defined %}
-                <a href="{{ path('frontend_show_activity_area', {slug: areas[3].slug, _locale: app.request.locale}) }}" class="sphere__wrap-item">
-                    <div class="sphere__wrap-item--left">
-                        <svg class="svg-icon sphere__wrap-item--icon">
-                            <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#sphere-icon-4" />
-                        </svg>
-                    </div>
-                    <div class="sphere__wrap-item--right">
-                        <p class="sphere__wrap-item--title">{{ 'homepage.spheres.spheres_4.title'|trans }}</p>
-                        <p class="sphere__wrap-item--text">{{ 'homepage.spheres.spheres_4.text'|trans }}</p>
-                    </div>
-                </a>
-            {% endif %}
+            {% endfor %}
         </div>
-        <a href="{{ path('frontend_activity_areas', {_locale: app.request.locale}) }}" class="btn btn--primary btn--medium D(n)--md">
-            <div class="btn__inner">
-                <span class="btn__text">{{ 'ui.all_services'|trans }}</span>
-            </div>
-        </a>
     </div>
 </section>

@@ -20,6 +20,7 @@ use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\ProductFeature;
 use Ecommerce\Entity\ActivityArea;
 use Ecommerce\Entity\SmartLink;
+use Ecommerce\Entity\ApplicationField;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Security;
@@ -104,6 +105,13 @@ class ProductType extends AbstractType
                 'multiple' => true,
                 'label' => 'Смарт ссылки',
                 'class' => SmartLink::class,
+                'choice_label' => 'translate.title',
+            ])
+            ->add('applicationFields', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => true,
+                'label' => 'Сферы применения',
+                'class' => ApplicationField::class,
                 'choice_label' => 'translate.title',
             ])
             ->add('features', DashboardSelect2EntityType::class, [

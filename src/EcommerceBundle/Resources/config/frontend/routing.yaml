@@ -13,3 +13,7 @@ frontend_activity_area:
 frontend_project:
   resource: "@EcommerceBundle/Resources/config/frontend/project.yaml"
   prefix: /project
+
+application_field:
+  resource: "@EcommerceBundle/Resources/config/frontend/application_field.yaml"
+  prefix: /application-field

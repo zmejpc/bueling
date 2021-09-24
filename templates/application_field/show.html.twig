@@ -1,0 +1,38 @@
+{% trans_default_domain 'FrontendBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block head_javascript %}
+    <script>
+        window.__URLS__ = {
+            getProducts: '{{ path('frontend_ajax_application_field_products', {slug: applicationField.translate.slug, _locale: app.request.locale }) }}',
+        };
+    </script>
+{% endblock %}
+
+{% block main %}
+	<section class="product">
+        <div class="container">
+        	{% set poster = applicationField.poster|json_decode %}
+        	{% if poster %}
+	          	<div class="product__logo">
+	          		<img class="product__logo--img" src="{{ poster.default_file|default(no_image) }}" alt="{{ applicationField.translate.title }}">
+	          	</div>
+	        {% endif %}
+          	<p class="product__subtitle">
+          		{{ applicationField.translate.title }}
+          	</p>
+          	<div class="product__text">
+          		{{ applicationField.translate.description|raw }}
+          	</div>
+            <div class="product__handler">
+                {{ render(controller('Ecommerce\\Controller\\Frontend\\ProductController::getProductsByApplicationFieldAction', {
+                    slug: applicationField.translate.slug
+                })) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('build/frontend/js/product.js') }}{{ assetVersion }}"></script>
+{% endblock %}

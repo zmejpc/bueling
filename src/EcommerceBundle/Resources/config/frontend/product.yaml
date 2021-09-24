@@ -7,6 +7,12 @@ frontend_ajax_category_products:
   controller: Ecommerce\Controller\Frontend\ProductController::getProductsByCategoryAction
   requirements:
     slug: "[\\w-]+"
+
+frontend_ajax_application_field_products:
+  path:     /application-field/ajax/{slug}
+  controller: Ecommerce\Controller\Frontend\ProductController::getProductsByApplicationFieldAction
+  requirements:
+    slug: "[\\w-]+"
   
 frontend_product_show:
   path:  /{slug}

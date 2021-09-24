@@ -85,11 +85,6 @@ class ActivityAreaType extends AbstractType
                 'translation_domain' => 'DashboardBundle',
                 'required' => false,
             ])
-            ->add('showOnHomepage', DashboardYesNoType::class, [
-                'label' => 'Отображать на главной?',
-                'translation_domain' => 'DashboardBundle',
-                'required' => false,
-            ])
             ->add('showInFilter', DashboardYesNoType::class, [
                 'label' => 'Отображать в фильтре?',
                 'translation_domain' => 'DashboardBundle',

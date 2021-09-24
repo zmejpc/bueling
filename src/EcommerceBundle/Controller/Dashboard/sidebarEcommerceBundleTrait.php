@@ -43,6 +43,10 @@ trait sidebarEcommerceBundleTrait
             $smartLinks = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['smart-link/edit/'], ['dashboard_smart_link_index', 'dashboard_smart_link_new', 'dashboard_smart_link_edit'], 'fa fa-arrow-alt-circle-right', false, null, null, 'Смарт ссылки', [], 'dashboard_smart_link_index');
 
             (!is_null($smartLinks)) ? $menu['items'][] = $smartLinks : null;
+
+            $applicationFields = self::itemSidebar(['ROLE_PRODUCT_CREATE_EDIT'], ['application-field/edit/'], ['dashboard_application_field_index', 'dashboard_application_field_new', 'dashboard_application_field_edit'], 'fa fa-globe', false, null, null, 'Сферы применения', [], 'dashboard_application_field_index');
+
+            (!is_null($applicationFields)) ? $menu['items'][] = $applicationFields : null;
         }
 
         return $menu;

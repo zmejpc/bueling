@@ -2,29 +2,26 @@
 
 namespace Ecommerce\Controller\Dashboard;
 
-use Doctrine\ORM\EntityManagerInterface;
-use SeoBundle\Entity\Seo;
-use DashboardBundle\Controller\CRUDController;
-use Ecommerce\Entity\ActivityArea;
-use Ecommerce\Form\Type\Dashboard\ActivityAreaType;
-use Symfony\Component\HttpFoundation\Request;
+use Ecommerce\Form\Type\Dashboard\ApplicationFieldType;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use DashboardBundle\Controller\CRUDController;
+use Doctrine\ORM\EntityManagerInterface;
+use Ecommerce\Entity\ApplicationField;
 use Twig\Environment;
-use Ecommerce\Entity\ActivityAreaGalleryImage;
 
 /**
  * @author Design studio origami <https://origami.ua>
  */
-class ActivityAreaController extends CRUDController
+class ApplicationFieldController extends CRUDController
 {
     public function getHeadTitle(): string
     {
-        return 'Направления';
+        return 'Сферы применения';
     }
 
     public function getHeadTitleForEdit($object)
     {
-        return ' > ' . $object->translate()->getTitle();
+        return '';
     }
 
     public function getGrantedRoles(): array
@@ -38,8 +35,8 @@ class ActivityAreaController extends CRUDController
     public function getRouteElements(): array
     {
         return [
-            'index' => 'dashboard_activity_area_index', 'new' => 'dashboard_activity_area_new',
-            'edit' => 'dashboard_activity_area_edit', 'delete' => 'dashboard_activity_area_delete',
+            'index' => 'dashboard_application_field_index', 'new' => 'dashboard_application_field_new',
+            'edit' => 'dashboard_application_field_edit', 'delete' => 'dashboard_application_field_delete',
         ];
     }
 
@@ -50,21 +47,17 @@ class ActivityAreaController extends CRUDController
 
     public function getFormType(): string
     {
-        return ActivityAreaType::class;
+        return ApplicationFieldType::class;
     }
 
     public function getFormElement()
     {
-        $seo = new Seo();
-        $activityArea = new ActivityArea();
-        $activityArea->setSeo($seo);
-
-        return $activityArea;
+        return new ApplicationField();
     }
 
     public function getRepository(EntityManagerInterface $em)
     {
-        $repository = $em->getRepository(ActivityArea::class);
+        $repository = $em->getRepository(ApplicationField::class);
 
         return $repository;
     }
@@ -76,7 +69,7 @@ class ActivityAreaController extends CRUDController
     {
         return [
             'translations-title' => $translator->trans('ui.title', [], 'DashboardBundle'),
-            'galleryImages-image' => $translator->trans('ui.poster', [], 'DashboardBundle'),
+            'poster' => $translator->trans('ui.poster', [], 'DashboardBundle'),
             'position' => [
                 'title' => $translator->trans('ui.position', [], 'DashboardBundle'),
                 'width' => 80
@@ -85,13 +78,8 @@ class ActivityAreaController extends CRUDController
                 'title' => $translator->trans('ui.show_on_website', [], 'DashboardBundle'),
                 'width' => 80
             ],
-            'showInFilter' => [
-                'title' => 'Отображать в фильтре?',
-                'width' => 80
-            ],
         ];
     }
-
     public function createDataForList($item, Environment $twig): array
     {
         return [
@@ -99,17 +87,14 @@ class ActivityAreaController extends CRUDController
                 'href' => $this->generateUrl($this->getRouteElements()['edit'], ['id' => $item->getId()]),
                 'title' => $item->translate()->getTitle(),
             ]),
-            'galleryImages-image' => $twig->render('@Dashboard/default/crud/list/element/_img.html.twig', [
-                'element' => $item->getGalleryImages()->first() ? $item->getGalleryImages()->first()->getImage() : null
+            'poster' => $twig->render('@Dashboard/default/crud/list/element/_img.html.twig', [
+                'element' => $item->getPoster(),
             ]),
             'position' => $twig->render('@Dashboard/default/crud/list/element/_position.html.twig', [
                 'element' => $item
             ]),
             'showOnWebsite' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
                 'element' => $item, 'fieldName' => 'showOnWebsite',
-            ]),
-            'showInFilter' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
-                'element' => $item, 'fieldName' => 'showInFilter',
             ]),
         ];
     }
@@ -129,33 +114,8 @@ class ActivityAreaController extends CRUDController
         ];
     }
 
-    private function helperForNewEditElement($object)
-    {
-        $this->em->persist($object);
-        $this->em->flush();
-
-        $slug = $object->translate($object->getDefaultLocale())->getSlug();
-        $object->setSlug($slug);
-
-        return $object;
-    }
-
-    public function customActionInNewAction($object)
-    {
-        $object = self::helperForNewEditElement($object);
-
-        return $object;
-    }
-
-    public function customActionInEditAction($object)
-    {
-        $object = self::helperForNewEditElement($object);
-
-        return $object;
-    }
-
     public function getPortletBodyTemplateForForm(): string
     {
-        return '@Ecommerce/dashboard/activity_area/form/_portlet_body.html.twig';
+        return '@Ecommerce/dashboard/application_field/form/_portlet_body.html.twig';
     }
 }

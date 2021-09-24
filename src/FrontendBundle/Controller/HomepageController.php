@@ -5,8 +5,8 @@ namespace FrontendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
+use Ecommerce\Entity\ApplicationField;
 use Ecommerce\Entity\ProductCategory;
-use Ecommerce\Entity\ActivityArea;
 use SeoBundle\Utils\SeoManager;
 use Ecommerce\Entity\Project;
 use Ecommerce\Entity\Partner;
@@ -21,7 +21,7 @@ final class HomepageController extends AbstractController
     {
         $staticContent = $em->getRepository(StaticContent::class)->getByPageForFrontend('homepage');
         $categories = $em->getRepository(ProductCategory::class)->getForFrontend();
-        $areas = $em->getRepository(ActivityArea::class)->getForHomepage();
+        $applicationFields = $em->getRepository(ApplicationField::class)->getForFrontend();
         $news = $em->getRepository(News::class)->getLimitRANDElements(3);
         $projects = $em->getRepository(Project::class)->getForHomepage();
         $partners = $em->getRepository(Partner::class)->getForFrontend();
@@ -33,7 +33,7 @@ final class HomepageController extends AbstractController
             'categories' => $categories,
             'projects' => $projects,
             'partners' => $partners,
-            'areas' => $areas,
+            'applicationFields' => $applicationFields,
             'news' => $news,
         ]);
     }

@@ -1,0 +1,12 @@
+{% include '@Dashboard/default/crud/form/fields/_tabbable.html.twig' with {
+    'tabs': {
+        'general_info': {
+            'name': 'ui.general_info'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.translations)~form_widget(form.showOnWebsite)~form_widget(form.position)~form_widget(form.poster),
+        },
+        'seo': {
+            'name': 'sidebar.configuration.seo'|trans([], 'DashboardBundle'),
+            'body': form_widget(form.seo)
+        },
+    }
+} %}

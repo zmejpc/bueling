@@ -1,0 +1,5 @@
+frontend_show_application_field:
+  path:     /{slug}
+  controller: Ecommerce\Controller\Frontend\ApplicationFieldController::showAction
+  requirements:
+    slug: "[\\w-]+"

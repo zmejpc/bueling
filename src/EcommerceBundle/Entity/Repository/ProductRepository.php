@@ -3,6 +3,7 @@
 namespace Ecommerce\Entity\Repository;
 
 use DashboardBundle\Entity\Repository\DashboardRepository;
+use Ecommerce\Entity\ApplicationField;
 use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\SmartLink;
 use Doctrine\ORM\AbstractQuery;
@@ -101,5 +102,20 @@ class ProductRepository extends DashboardRepository
         }
 
         return $query->getQuery()->getResult();
+    }
+
+    public function getForFrontendByApplicationField(ApplicationField $applicationField)
+    {
+        return self::getQuery()
+            ->leftJoin('q.applicationFields', 'applicationFields')
+            ->where('q.showOnWebsite = :showOnWebsite')
+            ->andWhere('applicationFields=:applicationField')
+            ->orderBy('q.position')
+            ->setParameters([
+                'applicationField' => $applicationField,
+                'showOnWebsite' => Product::YES,
+            ])
+            ->getQuery()
+            ->getResult();
     }
 }

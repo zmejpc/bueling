@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
+use Ecommerce\Entity\ApplicationField;
 use Ecommerce\Entity\ProductCategory;
 use Ecommerce\Entity\SmartLink;
 use Ecommerce\Entity\Project;
@@ -92,6 +93,33 @@ final class ProductController extends AbstractController
         $elements = $paginator->paginate($products, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
         $elements->setTemplate('default/pagination.html.twig');
         $elements->setUsedRoute('frontend_show_product_category');
+
+        if($request->isXmlHttpRequest()) {
+            $html = $this->renderView('product_category/elements.html.twig', [
+                'elements' => $elements,
+            ]);
+
+            return new JsonResponse([
+                'html' => $html,
+                'status' => true,
+            ]);
+        }
+
+        return $this->render('product_category/elements.html.twig', [
+            'elements' => $elements,
+        ]);
+    }
+
+    public function getProductsByApplicationFieldAction(string $slug, RequestStack $requestStack, PaginatorInterface $paginator)
+    {
+        $request = $requestStack->getMasterRequest();
+
+        $applicationField = $this->em->getRepository(ApplicationField::class)->getBySlug($slug);
+
+        $products = $this->em->getRepository(Product::class)->getForFrontendByApplicationField($applicationField);
+
+        $elements = $paginator->paginate($products, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
+        $elements->setTemplate('default/pagination.html.twig');
 
         if($request->isXmlHttpRequest()) {
             $html = $this->renderView('product_category/elements.html.twig', [

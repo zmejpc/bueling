@@ -111,6 +111,15 @@ class Product
     private $smartLinks;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\ApplicationField")
+     * @ORM\JoinTable(name="product_has_application_field",
+     *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="application_field_id", referencedColumnName="id")}
+     *  )
+     */
+    private $applicationFields;
+
+    /**
      * @ORM\ManyToMany(targetEntity="FrontendBundle\Entity\Faq", cascade={"persist","remove"})
      * @ORM\JoinTable(name="product_has_faq",
      *   joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
@@ -211,6 +220,7 @@ class Product
         $this->features = new ArrayCollection();
         $this->smartLinks = new ArrayCollection();
         $this->faq = new ArrayCollection();
+        $this->applicationFields = new ArrayCollection();
     }
 
     /**
@@ -500,6 +510,32 @@ class Product
     public function setRelatedActivityArea(?ActivityArea $relatedActivityArea): self
     {
         $this->relatedActivityArea = $relatedActivityArea;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ApplicationField[]
+     */
+    public function getApplicationFields(): Collection
+    {
+        return $this->applicationFields;
+    }
+
+    public function addApplicationField(ApplicationField $applicationField): self
+    {
+        if (!$this->applicationFields->contains($applicationField)) {
+            $this->applicationFields[] = $applicationField;
+        }
+
+        return $this;
+    }
+
+    public function removeApplicationField(ApplicationField $applicationField): self
+    {
+        if ($this->applicationFields->contains($applicationField)) {
+            $this->applicationFields->removeElement($applicationField);
+        }
 
         return $this;
     }

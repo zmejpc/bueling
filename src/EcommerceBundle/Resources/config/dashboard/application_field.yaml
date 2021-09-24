@@ -1,0 +1,23 @@
+dashboard_application_field_index:
+    path:     /
+    controller: Ecommerce\Controller\Dashboard\ApplicationFieldController:listAction
+    methods:  [GET, POST]
+
+dashboard_application_field_new:
+    path:     /new/
+    controller: Ecommerce\Controller\Dashboard\ApplicationFieldController:newAction
+    methods:  [GET, POST]
+
+dashboard_application_field_edit:
+    path:     /edit/{id}
+    controller: Ecommerce\Controller\Dashboard\ApplicationFieldController:editAction
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+
+
+dashboard_application_field_delete:
+    path:     /delete/{id}
+    controller: Ecommerce\Controller\Dashboard\ApplicationFieldController:deleteAction
+    methods:  GET
+    requirements:
+        id:  \d+
