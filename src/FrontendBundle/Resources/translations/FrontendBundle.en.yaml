@@ -13,6 +13,8 @@ menu:
   blog: 'blog'
   contacts: 'contacts'
 ui:
+  prev_project: 'previous project'
+  next_project: 'next project'
   get_consult: 'get a consultation'
   all_services: 'all services'
   all_categories: 'all categories'
@@ -94,3 +96,27 @@ main_office: 'Main office'
 download_usefulll_files: 'download useful files'
 region: 'Region'
 works: 'Types of jobs'
+filter:
+  years:
+    title: 'Year of the project'
+    all_selected: 'All years'
+  application_fields:
+    title: 'Sphere of application'
+    all_selected: 'All spheres'
+  activity_areas:
+    title: 'Direction of activity'
+    all_selected: 'All directions'
+  technic_types:
+    title: 'Type of equipment'
+    all_selected: 'All equipments'
+  regions:
+    title: 'Region'
+    all_selected: 'All regions'
+  categories:
+    title: 'Brand'
+    all_selected: 'All brands'
+  products:
+    title: 'Product'
+    all_selected: 'All products'
+projects:
+  filter: 'Projects filter'

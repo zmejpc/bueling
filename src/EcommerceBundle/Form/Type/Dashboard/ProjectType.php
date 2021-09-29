@@ -24,6 +24,7 @@ use DashboardBundle\Form\Type\AddSaveBtnSubscriber;
 use SeoBundle\Form\Type\Dashboard\AddSeoSubscriber;
 use Ecommerce\Entity\ApplicationField;
 use Ecommerce\Entity\Product;
+use Ecommerce\Entity\TechnicType;
 
 /**
  * @author Design studio origami <https://origami.ua>
@@ -106,6 +107,13 @@ class ProjectType extends AbstractType
                 'multiple' => true,
                 'label' => 'Направления',
                 'class' => ActivityArea::class,
+                'choice_label' => 'translate.title',
+            ])
+            ->add('technicTypes', DashboardSelect2EntityType::class, [
+                'required' => false,
+                'multiple' => true,
+                'label' => 'Виды техники',
+                'class' => TechnicType::class,
                 'choice_label' => 'translate.title',
             ])
             ->add('galleryImages', DashboardCollectionType::class, [

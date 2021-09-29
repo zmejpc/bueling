@@ -31,7 +31,7 @@
                     		</div>
                             <div class="single-project__description--item">
                                 <p class="left">{{ 'region'|trans }}:</p>
-                                <span class="right"> {{ project.region.translate.title }}</span>
+                                <span class="right"> {{ project.region.translate.title|default('-') }}</span>
                             </div>
                   		</div>
                   		<div class="single-project__description__text">
@@ -40,11 +40,38 @@
                 	</div>
               	</div>
 
-{#              	{% include 'default/faq.html.twig' with {faq: project.faq} %}#}
-
             </section>
         </div>
     </section>
+
+    <section>
+      <div class="container">
+        <div class="Mb(2rem) D(f) Jc(sa)">
+
+          {% if prevProject %}
+            <a class="link" href="{{ path('frontend_show_project', {slug: prevProject.slug, _locale: app.request.locale}) }}">
+              <span class="link__text">{{ 'ui.prev_project'|trans }}</span>
+            </a>
+          {% else %}
+            <span class="link link--disabled">
+              <span class="link__text">{{ 'ui.prev_project'|trans }}</span>
+            </span>
+          {% endif %}
+
+          {% if nextProject %}
+            <a class="link" href="{{ path('frontend_show_project', {slug: nextProject.slug, _locale: app.request.locale}) }}">
+              <span class="link__text">{{ 'ui.next_project'|trans }}</span>
+            </a>
+          {% else %}
+            <span class="link link--disabled">
+              <span class="link__text">{{ 'ui.next_project'|trans }}</span>
+            </span>
+          {% endif %}
+
+        </div>
+      </div>
+    </section>
+
 
     <section class="form">
         <div class="container">
@@ -66,60 +93,34 @@
     </section>
 
 	<div class="container">
-        <div class="single-product__wrap--holder">
+    <h2 class="h2 single-product__title Ta(c) Mt(3rem)">{{ 'our_projects'|trans }}</h2>
+    <div class="single-product__wrap--holder">
+      {% for relatedProject in relatedProjects %}
+        <div class="single-product__wrap--holder--item">
 
-            {% if project.relatedActivityArea and project.relatedActivityArea.showOnWebsite %}
-                <div class="single-product__wrap--holder--item">
-                    <h2 class="h2 single-product__title">{{ 'our_services'|trans }}</h2>
-                    {% set poster = project.relatedActivityArea.galleryImages|first.image|default('')|json_decode %}
+          {% set poster = relatedProject.galleryImages|first.image|default('')|json_decode %}
 
-                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
-                        <div class="single-product--block__title">
-                            {{ project.relatedActivityArea.translate.title }}
-                        </div>
-                        <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_activity_area', {slug: project.relatedActivityArea.slug, _locale: app.request.locale}) }}">
-                                {{ project.relatedActivityArea.translate.shortDescription|striptags }}
-                            </a>
-                        </div>
-                        <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_activity_area', {slug: project.relatedActivityArea.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
-                                <div class="btn__inner">
-                                    <span class="btn__text">{{ 'ui.more'|trans }}</span>
-                                </div>
-                            </a>
-                        </div>
+          <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
+            <div class="single-product--block__title">
+                {{ relatedProject.translate.company }}
+            </div>
+            <div class="single-product--block__text">
+                <a href="{{ path('frontend_show_project', {slug: relatedProject.slug, _locale: app.request.locale}) }}">
+                    {{ relatedProject.translate.title }}
+                </a>
+            </div>
+            <div class="single-product--block__btn">
+                <a href="{{ path('frontend_show_project', {slug: relatedProject.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
+                    <div class="btn__inner">
+                        <span class="btn__text">{{ 'ui.more'|trans }}</span>
                     </div>
-                </div>
-            {% endif %}
-
-            {% if project.relatedProject and project.relatedProject.showOnWebsite %}
-                <div class="single-product__wrap--holder--item">
-                    <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
-                    {% set poster = project.relatedProject.galleryImages|first.image|default('')|json_decode %}
-
-                    <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
-                        <div class="single-product--block__title">
-                            {{ project.relatedProject.translate.company }}
-                        </div>
-                        <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_project', {slug: project.relatedProject.slug, _locale: app.request.locale}) }}">
-                                {{ project.relatedProject.translate.title }}
-                            </a>
-                        </div>
-                        <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_project', {slug: project.relatedProject.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
-                                <div class="btn__inner">
-                                    <span class="btn__text">{{ 'ui.more'|trans }}</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-
+                </a>
+            </div>
+          </div>
         </div>
+      {% endfor %}
     </div>
+  </div>
 
 {% endblock %}
 

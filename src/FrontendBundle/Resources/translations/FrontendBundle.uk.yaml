@@ -13,6 +13,8 @@ menu:
   blog: 'блог'
   contacts: 'контакти'
 ui:
+  prev_project: 'попередній проект'
+  next_project: 'наступний проект'
   get_consult: 'отримати консультацію'
   all_services: 'всі послуги'
   all_categories: 'всі категорії'
@@ -94,3 +96,27 @@ main_office: 'Головний офіс'
 download_usefulll_files: 'скачати корисні файли'
 region: 'Регіон'
 works: 'Види робіт'
+filter:
+  years:
+    title: 'Рік проекту'
+    all_selected: 'Всі роки'
+  application_fields:
+    title: 'Сфера застосування'
+    all_selected: 'Всі сфери'
+  activity_areas:
+    title: 'Напрямок діяльності'
+    all_selected: 'Всі напрямки'
+  technic_types:
+    title: 'Вид техніки'
+    all_selected: 'Всі види'
+  regions:
+    title: 'Регион'
+    all_selected: 'Всі регіони'
+  categories:
+    title: 'Продукт'
+    all_selected: 'Всі продукти'
+  products:
+    title: 'Товар'
+    all_selected: 'Всі товари'
+projects:
+  filter: 'Фільтр проектів'

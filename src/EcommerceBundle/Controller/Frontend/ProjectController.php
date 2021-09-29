@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use StaticBundle\Entity\StaticContent;
+use Ecommerce\Services\ProjectFilter;
 use Ecommerce\Entity\ActivityArea;
 use BackendBundle\Entity\Region;
 use Ecommerce\Entity\Project;
@@ -22,12 +23,14 @@ final class ProjectController extends AbstractController
 {
     private $breadcrumbsGenerator;
     private $translator;
+    private $filter;
     private $em;
 
-    public function __construct(BreadcrumbsGenerator $breadcrumbsGenerator, EntityManagerInterface $em, TranslatorInterface $translator)
+    public function __construct(BreadcrumbsGenerator $breadcrumbsGenerator, EntityManagerInterface $em, TranslatorInterface $translator, ProjectFilter $filter)
     {
         $this->breadcrumbsGenerator = $breadcrumbsGenerator;
         $this->translator = $translator;
+        $this->filter = $filter;
         $this->em = $em;
     }
 
@@ -47,9 +50,11 @@ final class ProjectController extends AbstractController
             'title' => $seo->breadcrumb ?? $this->translator->trans('menu.projects', [], 'FrontendBundle'),
         ];
 
-        $activityArea = $this->em->getRepository(ActivityArea::class)->find($request->query->getInt('activity-area', 0));
-        $region = $this->em->getRepository(Region::class)->find($request->query->getInt('region', 0));
-        $projects = $this->em->getRepository(Project::class)->getForFrontend(1000, $activityArea, $region);
+        $filterData = $this->filter->getFilterData($request->getLocale());
+        $selectedilter = $this->filter->getSelectedFilter($request->query->all(), $filterData);
+        $countInFilter = $this->filter->getCountInFilter($selectedilter, $filterData);
+
+        $projects = $this->em->getRepository(Project::class)->getByFilter($selectedilter);
 
         $elements = $paginator->paginate($projects, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
         $elements->setTemplate('default/pagination.html.twig');
@@ -60,7 +65,14 @@ final class ProjectController extends AbstractController
                 'elements' => $elements,
             ]);
 
+            $formHTML = $this->renderView('project/filter.html.twig', [
+                'countInFilter' => $countInFilter,
+                'selectedilter' => $selectedilter,
+                'filterData' => $filterData,
+            ]);
+
             return new JsonResponse([
+                'formHTML' => $formHTML,
                 'html' => $html,
                 'status' => true,
             ]);
@@ -69,9 +81,11 @@ final class ProjectController extends AbstractController
         return $this->render('project/index.html.twig', [
             'seo' => $seo,
             'elements' => $elements,
+            'filterData' => $filterData,
+            'selectedilter' => $selectedilter,
+            'countInFilter' => $countInFilter,
             'regions' => $this->em->getRepository(Region::class)->findAll(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
-            'activityAreas' => $this->em->getRepository(ActivityArea::class)->getForFilter(),
             'staticContent' => $this->em->getRepository(StaticContent::class)->getByPageForFrontend('projects'),
         ]);
     }
@@ -105,8 +119,16 @@ final class ProjectController extends AbstractController
             'title' => $project->translate()->getTitle(),
         ];
 
+        $prevProject = $this->em->getRepository(Project::class)->getNeighborForFrontend($project, 'prev');
+        $nextProject = $this->em->getRepository(Project::class)->getNeighborForFrontend($project, 'next');
+
+        $relatedProjects = $this->em->getRepository(Project::class)->getRelatedForFrontend($project);
+
         return $this->render('project/show.html.twig', [
             'project' => $project,
+            'prevProject' => $prevProject,
+            'nextProject' => $nextProject,
+            'relatedProjects' => $relatedProjects,
             'seo' => $project->getSeo()->getSeoForPage(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
         ]);

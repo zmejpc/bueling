@@ -13,60 +13,18 @@
 	<section class="projects-map product projects-page">
         <div class="container">
           	<div class="projects-page__title">
-
             	<h2 class="h2 projects-page__title-main">
             		{{ staticContent.top.title }}
             	</h2>
             	<div class="projects-page__subtitle">
             		{{ staticContent.top.short_text|striptags }}
             	</div>
-
-            	<div class="form-selection">
-
-              		<div class="form-selection__item">
-              			<span class="form-selection__text"></span>
-                		<div class="form-selection__holder">
-                  			<div class="form-selection__select">
-                    			<div class="form-selection__imitator">
-                    				<span>{{ 'ui.all_regions'|trans }} </span>
-                    				<svg class="svg-icon form-selection__icon">
-                        				<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
-                        			</svg>
-                        		</div>
-                        		{% set mapData = [] %}
-                        		<select name="region" class="js-select" data-type="region">
-			                      	<option value="">{{ 'ui.all_regions'|trans }}</option>
-			                      	{% for region in regions %}
-			                      		<option value="{{ region.id }}">{{ region.translate.title }}</option>
-			                      		{% set mapData = mapData|merge([{value: region.id~'', title: region.translate.title}]) %}
-			                      	{% endfor %}
-                    			</select>
-                  			</div>
-                		</div>
-              		</div>
-
-              		<div class="form-selection__item">
-              			<span class="form-selection__text"></span>
-                		<div class="form-selection__holder">
-                  			<div class="form-selection__select">
-                    			<div class="form-selection__imitator">
-                    				<span>{{ 'ui.all_activity_areas'|trans }} </span>
-                    				<svg class="svg-icon form-selection__icon">
-                        				<use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
-                        			</svg>
-                        		</div>
-                        		<select name="areas" class="js-select" data-type="activity-area">
-			                      	<option value="">{{ 'ui.all_activity_areas'|trans }}</option>
-			                      	{% for area in activityAreas %}
-			                      		<option value="{{ area.id }}">{{ area.translate.title }}</option>
-			                      	{% endfor %}
-                    			</select>
-                  			</div>
-                		</div>
-              		</div>
-
-            	</div>
           	</div>
+
+            {% set mapData = [] %}
+            {% for region in regions %}
+              {% set mapData = mapData|merge([{value: region.id~'', title: region.translate.title}]) %}
+            {% endfor %}
 
           	<div class="map js-map" data-data='{"regions":{{ mapData|json_encode|raw }},"urls":{"getProjects":"{{ path('frontend_projects', {_locale: app.request.locale}) }}"},"mode":"page"}'>
 
@@ -81,22 +39,13 @@
         </div>
     </section>
 
-    <section class="projects-page-buttons">
-        <div class="container">
-            <div class="projects__areas__holder">
-              	<div class="projects__areas">
-              		{% for area in activityAreas %}
-    	            	<div class="products__areas product__areas--item" data-activity-area="{{ area.id }}" data-enabled="false">
-    	            		<a href="#" class="btn btn btn--primary btn--medium product-btn">
-    	                		<div class="btn__inner">
-    	                			<span class="btn__text">{{ area.translate.title }}</span>
-    	                		</div>
-    	              		</a>
-    	              	</div>
-    	            {% endfor %}
-              	</div>
-            </div>
+    <section>
+      <div class="container">
+        <h2 class="h3 Ta(c)">{{ 'projects.filter'|trans }}</h2>
+        <div class="filters__form-wrap filters">
+          {% include 'project/filter.html.twig' %}
         </div>
+      </div>
     </section>
 
     <section class="projects-list">
@@ -110,5 +59,6 @@
 {% endblock %}
 
 {% block script %}
-    <script src="{{ asset('build/frontend/js/projects.js') }}{{ assetVersion }}"></script>
+  <script src="{{ asset('build/frontend/js/vendors~product~projects.bundle.js') }}{{ assetVersion }}"></script>
+  <script src="{{ asset('build/frontend/js/projects.js') }}{{ assetVersion }}"></script>
 {% endblock %}

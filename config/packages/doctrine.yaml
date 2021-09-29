@@ -27,6 +27,8 @@ doctrine:
         dql:
             numeric_functions:
                 Rand: ComponentBundle\DQL\RandFunction
+            datetime_functions:
+                DATE_FORMAT: ComponentBundle\DQL\DateFormatFunction
         mappings:
             gedmo_loggable:
                 type: annotation

@@ -87,6 +87,15 @@ class Project
     private $activityAreas;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Ecommerce\Entity\TechnicType")
+     * @ORM\JoinTable(name="project_has_technic_type",
+     *   joinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="technic_type_id", referencedColumnName="id")}
+     *  )
+     */
+    private $technicTypes;
+
+    /**
      * @ORM\ManyToMany(targetEntity="FrontendBundle\Entity\Faq", cascade={"persist","remove"})
      * @ORM\JoinTable(name="project_has_faq",
      *   joinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")},
@@ -181,6 +190,7 @@ class Project
         $this->faq = new ArrayCollection();
         $this->applicationFields = new ArrayCollection();
         $this->products = new ArrayCollection();
+        $this->technicTypes = new ArrayCollection();
     }
 
     /**
@@ -423,6 +433,32 @@ class Project
     {
         if ($this->products->contains($product)) {
             $this->products->removeElement($product);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|TechnicType[]
+     */
+    public function getTechnicTypes(): Collection
+    {
+        return $this->technicTypes;
+    }
+
+    public function addTechnicType(TechnicType $technicType): self
+    {
+        if (!$this->technicTypes->contains($technicType)) {
+            $this->technicTypes[] = $technicType;
+        }
+
+        return $this;
+    }
+
+    public function removeTechnicType(TechnicType $technicType): self
+    {
+        if ($this->technicTypes->contains($technicType)) {
+            $this->technicTypes->removeElement($technicType);
         }
 
         return $this;

@@ -1,0 +1,44 @@
+{% trans_default_domain 'FrontendBundle' %}
+<form class="form form--simple form--transparent filters">
+  <div class="form__inner form__holder">
+    <div class="form__group">
+      {% for name, data in filterData %}
+        <div class="form__field form__field--33 form__field--center">
+          <div class="form-selection">
+            <div class="form-selection__item">
+              <span class="form-selection__text"></span>
+              <div class="form-selection__holder">
+                <div class="form-selection__select">
+                  <div class="form-selection__imitator">
+                    <span>{{ data.title|trans }}</span>
+                    <svg class="svg-icon form-selection__icon">
+                      <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
+                    </svg>
+                  </div>
+                  <select name="{{ name }}" class="js-select {{ data.class|default('') }}" data-type="{{ name }}">
+                    <option value="0">{{ data.all_selected|trans }}</option>
+                    {% for value, title in data.options %}
+                      <option value="{{ value }}" {% if selectedilter[name]|default('') == value %}selected="selected"{% endif %}>
+                        {{ title }} [{{countInFilter[name][value]}}]
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="choices-wrap">
+            <select name="{{ name }}" class="js-select js-custom-select {{ data.class|default('') }}" data-type="{{ name }}">
+              <option value="0">{{ data.all_selected|trans }}</option>
+              {% for value, title in data.options %}
+                <option value="{{ value }}" {% if selectedilter[name]|default('') == value %}selected="selected"{% endif %}>
+                  {{ title }} [{{countInFilter[name][value]}}]
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</form>
