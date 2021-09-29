@@ -42,17 +42,15 @@
             </div>
             </div>
             <div class="blog__buttons__holder product__areas">
-                <div class="blog__buttons__wrap">
-                    {% for category in categories %}
-                        <div class="blog__button product__areas--item" data-activity-area="{{ category.id }}" data-enabled="false">
-                            <a href="#" class="btn btn--primary btn--medium product-btn">
-                                <div class="btn__inner">
-                                    <span class="btn__text">{{ category.translate.title }}</span>
-                                </div>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
+                {% for category in categories %}
+                    <div class="blog__button product__areas--item" data-activity-area="{{ category.id }}" data-enabled="false">
+                        <a href="#" class="btn btn--primary btn--medium product-btn">
+                            <div class="btn__inner">
+                                <span class="btn__text">{{ category.translate.title }}</span>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
             <div class="product__handler">
                 {% include 'news/elements.html.twig' %}
@@ -63,4 +61,5 @@
 
 {% block script %}
     <script src="{{ asset('build/frontend/js/product.js') }}{{ assetVersion }}"></script>
+    <script src="{{ asset('build/frontend/js/vendors~product~projects.bundle.js') }}{{ assetVersion }}"></script>
 {% endblock %}
