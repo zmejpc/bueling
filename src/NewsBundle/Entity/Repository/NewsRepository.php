@@ -817,4 +817,26 @@ final class NewsRepository extends DashboardRepository implements NewsRepository
     {
         return self::getQueryBuilderForLimitElements(null)->getQuery()->getResult();
     }
+
+    public function getLimitLastElements(int $count = null)
+    {
+        $query = self::createQuery();
+        $query
+            ->andWhere('q.showOnWebsite =:showOnWebsite')
+            ->andWhere('q.publishAt <=:publishAt')
+            ->andWhere('q.showOnlyOnAuthorPage =:showOnlyOnAuthorPage')
+            ->orderBy('q.id', 'DESC')
+            ->groupBy('q')
+            ->setParameters([
+                'publishAt' => new \DateTime('now'),
+                'showOnWebsite' => NewsInterface::YES,
+                'showOnlyOnAuthorPage' => NewsInterface::NO,
+            ]);
+
+        if (!is_null($count)) {
+            $query->setMaxResults($count);
+        }
+
+        return $query->getQuery()->getResult();
+    }
 }

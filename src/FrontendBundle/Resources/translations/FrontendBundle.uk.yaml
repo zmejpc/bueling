@@ -37,7 +37,7 @@ ui:
     email: 'EMAIL*'
 homepage:
   products: 'Продукти'
-  areas: 'Сфери застосування'
+  areas: 'Ефективні рішення для всіх типів с/г робіт'
   projects: 'наші проекти'
   blog: 'блог'
   spheres:
@@ -98,25 +98,25 @@ region: 'Регіон'
 works: 'Види робіт'
 filter:
   years:
-    title: 'Рік проекту'
+    title: 'По рокам'
     all_selected: 'Всі роки'
   application_fields:
-    title: 'Сфера застосування'
-    all_selected: 'Всі сфери'
+    title: 'По с/г операціям'
+    all_selected: 'Всі операції'
   activity_areas:
-    title: 'Напрямок діяльності'
+    title: 'По напрямкам діяльності'
     all_selected: 'Всі напрямки'
   technic_types:
-    title: 'Вид техніки'
-    all_selected: 'Всі види'
+    title: 'По техніці'
+    all_selected: 'Вся техніка'
   regions:
-    title: 'Регион'
+    title: 'По регіонам'
     all_selected: 'Всі регіони'
   categories:
-    title: 'Продукт'
-    all_selected: 'Всі продукти'
+    title: 'По виробникам обладнання'
+    all_selected: 'Всі виробники'
   products:
-    title: 'Товар'
-    all_selected: 'Всі товари'
+    title: 'По обладнанню'
+    all_selected: 'Все обладнання'
 projects:
   filter: 'Фільтр проектів'

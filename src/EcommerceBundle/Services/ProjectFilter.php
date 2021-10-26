@@ -34,6 +34,9 @@ class ProjectFilter
 
 	public function getFilterData(string $locale)
 	{
+		$technicTypes = $this->getRelatedItemData('technicTypes', $locale);
+		asort($technicTypes);
+
 		return [
 			'years' => [
 				'title' => 'filter.years.title',
@@ -53,7 +56,7 @@ class ProjectFilter
 			'technicTypes' => [
 				'title' => 'filter.technic_types.title',
 				'all_selected' => 'filter.technic_types.all_selected',
-				'options' => $this->getRelatedItemData('technicTypes', $locale),
+				'options' => $technicTypes,
 			],
 			'region' => [
 				'title' => 'filter.regions.title',

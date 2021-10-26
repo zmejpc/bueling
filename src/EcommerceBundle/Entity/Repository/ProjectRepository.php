@@ -9,6 +9,7 @@ use BackendBundle\Entity\Region;
 use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\QueryBuilder;
 use Ecommerce\Entity\Project;
+use Ecommerce\Entity\Product;
 
 /**
  * ProjectRepository
@@ -96,7 +97,7 @@ class ProjectRepository extends DashboardRepository
             ->leftJoin('q.translations', 't')
             ->where('q.showOnWebsite=:showOnWebsite')
             ->andWhere('q.id<>:id')
-            ->orderBy('RAND()')
+            ->orderBy('RAND()()')
             ->setParameters([
                 'id' => $project->getId(),
                 'showOnWebsite' => Project::YES,
@@ -322,5 +323,24 @@ class ProjectRepository extends DashboardRepository
             ->orderBy('q.publishAt', 'DESC')
             ->getQuery()
             ->getResult();
+    }
+
+    public function getRelatedByProduct(Product $product)
+    {
+        $query = self::createQuery()
+            ->join('q.products', 'products', 'WITH', 'products.showOnWebsite=:showOnWebsite')
+            ->where('q.showOnWebsite=:showOnWebsite')
+            ->andWhere('products=:product')
+            ->setParameters([
+                'product' => $product,
+                'showOnWebsite' => Project::YES
+            ])
+            ->orderBy('RAND()')
+            ->getQuery()
+            ->setMaxResults(1);
+
+        $result = (new Paginator($query))->getIterator()->getArrayCopy();
+
+        return reset($result);
     }
 }

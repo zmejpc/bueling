@@ -100,22 +100,22 @@
                 </div>
             {% endif %}
 
-            {% if product.relatedProject and product.relatedProject.showOnWebsite %}
+            {% if relatedProject %}
                 <div class="single-product__wrap--holder--item">
                     <h2 class="h2 single-product__title">{{ 'our_projects'|trans }}</h2>
-                    {% set poster = product.relatedProject.galleryImages|first.image|default('')|json_decode %}
+                    {% set poster = relatedProject.galleryImages|first.image|default('')|json_decode %}
 
                     <div class="single-product--block lazyload" data-bgset="{{ asset(poster.webp.list_630_420|default(no_image)) }} [type=image/webp] | {{ asset(poster.list_630_420|default(no_image)) }}">
                         <div class="single-product--block__title">
-                            {{ product.relatedProject.translate.company }}
+                            {{ relatedProject.translate.company }}
                         </div>
                         <div class="single-product--block__text">
-                            <a href="{{ path('frontend_show_project', {slug: product.relatedProject.slug, _locale: app.request.locale}) }}">
-                                {{ product.relatedProject.translate.title }}
+                            <a href="{{ path('frontend_show_project', {slug: relatedProject.slug, _locale: app.request.locale}) }}">
+                                {{ relatedProject.translate.title }}
                             </a>
                         </div>
                         <div class="single-product--block__btn">
-                            <a href="{{ path('frontend_show_project', {slug: product.relatedProject.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
+                            <a href="{{ path('frontend_show_project', {slug: relatedProject.slug, _locale: app.request.locale}) }}" class="btn btn--primary btn--small">
                                 <div class="btn__inner">
                                     <span class="btn__text">{{ 'ui.more'|trans }}</span>
                                 </div>

@@ -3,14 +3,15 @@
   <div class="form__inner form__holder">
     <div class="form__group">
       {% for name, data in filterData %}
-        <div class="form__field form__field--33 form__field--center">
+        <div class="form__field form-field form__field--33 form__field--center">
+          <div class="form-field__label">{{ data.title|trans }}</div>
           <div class="form-selection">
             <div class="form-selection__item">
               <span class="form-selection__text"></span>
               <div class="form-selection__holder">
                 <div class="form-selection__select">
                   <div class="form-selection__imitator">
-                    <span>{{ data.title|trans }}</span>
+                    <span>{{ data.options[selectedilter[name]|default()]|default(data.all_selected|trans) }}</span>
                     <svg class="svg-icon form-selection__icon">
                       <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}#arrow-down" />
                     </svg>

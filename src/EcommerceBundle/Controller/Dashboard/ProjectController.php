@@ -85,6 +85,7 @@ class ProjectController extends CRUDController
                 'title' => 'Отображать на главной?',
                 'width' => 80
             ],
+            'publishAt' => 'Дата проекта',
         ];
     }
     public function createDataForList($item, Environment $twig): array
@@ -103,6 +104,9 @@ class ProjectController extends CRUDController
             'showOnHomepage' => $twig->render('@Dashboard/default/crud/list/element/_yes_no.html.twig', [
                 'element' => $item, 'fieldName' => 'showOnHomepage',
             ]),
+            'publishAt' => $this->twig->render('@Dashboard/default/crud/list/element/_data.html.twig', [
+                'element' => $item->getPublishAt()
+            ]),
         ];
     }
 
@@ -116,8 +120,8 @@ class ProjectController extends CRUDController
         return [
             'pageLength' => 50,
             'lengthMenu' => '10, 20, 25, 50',
-            'order_column' => 4,
-            'order_by' => "asc"
+            'order_column' => 'publishAt',
+            'order_by' => "desc"
         ];
     }
 

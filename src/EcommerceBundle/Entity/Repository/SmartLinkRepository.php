@@ -15,19 +15,6 @@ use Ecommerce\Entity\SmartLink;
  */
 class SmartLinkRepository extends DashboardRepository
 {
-    public function getElementByIdForDashboardEditOrDeleteFormAction(int $id)
-    {
-        $query = self::createQuery();
-
-        $query
-            ->where('q.id =:id')
-            ->setParameters([
-                'id' => $id,
-            ]);
-
-        return $query->getQuery()->getOneOrNullResult();
-    }
-
     public function getForFilterByCategory(ProductCategory $category)
     {
         return $this->createQueryBuilder('q')

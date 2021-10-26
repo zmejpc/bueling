@@ -37,7 +37,7 @@ ui:
     email: 'EMAIL*'
 homepage:
   products: 'Products'
-  areas: 'Applications'
+  areas: 'Effective solutions for all types of agricultural work'
   projects: 'Our projects'
   blog: 'blog'
   spheres:
@@ -98,25 +98,25 @@ region: 'Region'
 works: 'Types of jobs'
 filter:
   years:
-    title: 'Year of the project'
+    title: 'By years'
     all_selected: 'All years'
   application_fields:
-    title: 'Sphere of application'
-    all_selected: 'All spheres'
+    title: 'By agricultural operations'
+    all_selected: 'All operations'
   activity_areas:
-    title: 'Direction of activity'
+    title: 'By direction of activity'
     all_selected: 'All directions'
   technic_types:
-    title: 'Type of equipment'
-    all_selected: 'All equipments'
+    title: 'By technic'
+    all_selected: 'All technic'
   regions:
-    title: 'Region'
+    title: 'By Region'
     all_selected: 'All regions'
   categories:
-    title: 'Brand'
-    all_selected: 'All brands'
+    title: 'By equipment manufacturers'
+    all_selected: 'All manufacturers'
   products:
-    title: 'Product'
-    all_selected: 'All products'
+    title: 'By equipment'
+    all_selected: 'All equipment'
 projects:
   filter: 'Projects filter'

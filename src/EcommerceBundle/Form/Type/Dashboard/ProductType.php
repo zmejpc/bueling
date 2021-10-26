@@ -137,14 +137,6 @@ class ProductType extends AbstractType
                 'prototype' => true,
                 'by_reference' => false,
             ])
-            ->add('relatedProject', DashboardSelect2EntityType::class, [
-                'required' => false,
-                'multiple' => false,
-                'allow_clear' => true,
-                'label' => 'Проект (внизу внутренней страницы)',
-                'class' => Project::class,
-                'choice_label' => 'translate.title',
-            ])
             ->add('relatedActivityArea', DashboardSelect2EntityType::class, [
                 'required' => false,
                 'multiple' => false,

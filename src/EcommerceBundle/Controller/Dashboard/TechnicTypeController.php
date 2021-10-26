@@ -98,7 +98,7 @@ class TechnicTypeController extends CRUDController
         return [
             'pageLength' => 50,
             'lengthMenu' => '10, 20, 25, 50',
-            'order_column' => 4,
+            'order_column' => 'translations-title',
             'order_by' => "asc"
         ];
     }

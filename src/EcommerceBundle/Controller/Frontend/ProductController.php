@@ -69,10 +69,13 @@ final class ProductController extends AbstractController
             'title' => $product->translate()->getTitle(),
         ];
 
+        $relatedProject = $this->em->getRepository(Project::class)->getRelatedByProduct($product);
+
         return $this->render('product/index.html.twig', [
             'product' => $product,
             'seo' => $product->getSeo()->getSeoForPage(),
             'breadcrumbs' => $this->breadcrumbsGenerator->generateBreadcrumbs($breadcrumbsArr),
+            'relatedProject' => $relatedProject,
         ]);
     }
 
@@ -90,7 +93,7 @@ final class ProductController extends AbstractController
 
         $products = $this->em->getRepository(Product::class)->getForFrontend($category, $smartLink);
 
-        $elements = $paginator->paginate($products, $request->query->getInt('page', 1), $this->getParameter('products_per_page'));
+        $elements = $paginator->paginate($products, $request->query->getInt('page', 1), 1000);
         $elements->setTemplate('default/pagination.html.twig');
         $elements->setUsedRoute('frontend_show_product_category');
 
