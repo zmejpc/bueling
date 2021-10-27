@@ -97,7 +97,7 @@ class ProjectRepository extends DashboardRepository
             ->leftJoin('q.translations', 't')
             ->where('q.showOnWebsite=:showOnWebsite')
             ->andWhere('q.id<>:id')
-            ->orderBy('RAND()()')
+            ->orderBy('RAND()')
             ->setParameters([
                 'id' => $project->getId(),
                 'showOnWebsite' => Project::YES,
