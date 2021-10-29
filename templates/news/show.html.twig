@@ -22,14 +22,26 @@
                         <p class="blog-item__description--links__text">{{ 'share'|trans }}:</p>
                         <div class="media__icons" data-wow-duration="1s">
                             <div class="shareon">
-                                <a class="facebook" data-url="">facebook</a>
-                                <a class="twitter" data-url="">twitter</a>
-                                <a class="linkedin" data-url="">linkedin</a>
-                                <a class="telegram" data-url="">telegram</a>
-                                <a class="viber" data-url="">viber</a>
-                                <a class="messenger" data-url="">messenger</a>
-                                <a class="whatsapp" data-url="">whatsapp</a>
-                                <a class="pinterest" data-url="">Pinterest</a>
+                                <a class="facebook" data-url="">
+                                    <svg class="svg-icon media__icon">
+                                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}?v1#facebook" />
+                                    </svg>
+                                </a>
+                                <a class="telegram" data-url="">
+                                    <svg class="svg-icon media__icon">
+                                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}?v1#telegram" />
+                                    </svg>
+                                </a>
+                                <a class="viber" data-url="">
+                                    <svg class="svg-icon media__icon">
+                                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}?v1#viber" />
+                                    </svg>
+                                </a>
+                                <a class="messenger" data-url="">
+                                    <svg class="svg-icon media__icon">
+                                        <use xlink:href="{{ asset('build/frontend/img/icons/svg/sprite.symbol.svg') }}?v1#messenger" />
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
