@@ -1,3 +1,7 @@
 <title>{{ seo is defined ? seo.title|default('Bueling') : 'Bueling' }}</title>
 <meta name="keywords" content="{{ seo is defined ? seo.metaKeyword|default('') }}"/>
 <meta name="description" content="{{ seo is defined ? seo.metaDescription|default('') }}"/>
+
+{% if seo.og_image is defined %}
+	<meta property="og:image" content="{{ absolute_url(asset(seo.og_image)) }}"/>
+{% endif %}

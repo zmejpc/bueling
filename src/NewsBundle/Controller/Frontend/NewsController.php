@@ -514,6 +514,14 @@ final class NewsController extends AbstractController
 
         $seo->og_url = $this->generateUrl('frontend_news_show', ['slug' => $elementSlug]);
 
+        $galleryImage = $element->getGalleryImages()->first();
+        if ($galleryImage) {
+            $galleryImageData = json_decode($galleryImage->getImg(), true);
+            if (!empty($galleryImageData['list_998_566'])) {
+                $seo->og_image = $galleryImageData['list_998_566'];
+            }
+        }
+
         $parameters = [
             'seo' => $seo,
             'element' => $element,
