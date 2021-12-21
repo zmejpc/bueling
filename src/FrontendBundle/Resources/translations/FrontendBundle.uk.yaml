@@ -26,7 +26,7 @@ ui:
   goto_area: 'перейти в розділ'
   all_regions: 'Всі регіони'
   all_activity_areas: 'Всі напрямки'
-  download_instruction: 'скачати інструкцію'
+  download_instruction: 'скачати бланк'
   download: 'завантажити'
   close_dialog: 'закрити діалогове вікно'
   video:
@@ -70,7 +70,7 @@ service:
   steps:
     title: 'оформлення обладнання в діагностику або ремонт'
   instruction:
-    title: 'інструкція використання техніки trimble'
+    title: 'бланк замовлення ремонту'
     sub_title: 'будь ласка, скачайте інструкцію і перевірте послідовність дій.'
 mail:
   button_link: 'Перейти'

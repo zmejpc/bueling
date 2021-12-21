@@ -26,7 +26,7 @@ ui:
   goto_area: 'go to section'
   all_regions: 'All regions'
   all_activity_areas: 'All directions'
-  download_instruction: 'download instructions'
+  download_instruction: 'download form'
   download: 'download'
   close_dialog: 'close the dialog'
   video:
@@ -70,7 +70,7 @@ service:
   steps:
     title: 'registration of equipment for diagnostics or repair'
   instruction:
-    title: 'instruction for using trimble technique'
+    title: 'repair order form'
     sub_title: 'please download the instruction and check the sequence of actions.'
 mail:
   button_link: 'Go to'

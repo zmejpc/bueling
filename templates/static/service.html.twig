@@ -39,10 +39,21 @@
                 		</div>
                 		<div class="service-instructions__holder__text">
                   			<div class="service-instructions--text"></div>
-                  			<span class="service-instructions--description">
-                  				{{ staticContent.step_1.text|striptags|raw }}
-
-                  			</span>
+                        <span class="service-instructions--description">
+                          {% set mainDoc = documents|first %}
+                          {% if mainDoc %}
+                            {% set link = mainDoc.document|json_decode %}
+                            {% if link %}
+                              <a href="{{ link.default_file }}" download style="color: #0e5977;">
+                                {{ staticContent.step_1.text|striptags|raw }}
+                              </a>
+                            {% else %}
+                              {{ staticContent.step_1.text|striptags|raw }}
+                            {% endif %}
+                          {% else %}
+                            {{ staticContent.step_1.text|striptags|raw }}
+                          {% endif %}
+                        </span>
                 		</div>
               		</div>
 
