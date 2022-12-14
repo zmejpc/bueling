@@ -56,7 +56,7 @@ final class ActivityAreaController extends AbstractController
         $area = $this->em->getRepository(ActivityArea::class)->getBySlug($slug);
 
         if (!$area) {
-            throw $this->createNotFoundException($translator->trans('ui.notFound', [], 'FrontendBundle'));
+            throw $this->createNotFoundException($this->translator->trans('ui.notFound', [], 'FrontendBundle'));
         }
 
         $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('activity_areas');

@@ -95,7 +95,7 @@ final class ProjectController extends AbstractController
         $project = $this->em->getRepository(Project::class)->getBySlug($slug);
 
         if (!$project) {
-            throw $this->createNotFoundException($translator->trans('ui.notFound', [], 'FrontendBundle'));
+            throw $this->createNotFoundException($this->translator->trans('ui.notFound', [], 'FrontendBundle'));
         }
 
         $seo = $this->em->getRepository(SeoPage::class)->getSeoForPageBySystemName('projects');
